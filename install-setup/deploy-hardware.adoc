@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: install-setup/deploy-hardware.html 
+keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a70, asa a90, asa c80 
+summary: Erfahren Sie, wie Sie die Schienenkits für das ASA r2 Storage-System und die Storage-Shelfs installieren und die ASA r2 Hardware im Schrank oder Telco-Rack sichern. 
+---
+= Installieren Sie Ihr ASA r2-Speichersystem
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nachdem Sie die Installation des ASA r2-Speichersystems vorbereitet haben, installieren Sie die Hardware für das System. Installieren Sie zunächst die Schienensätze. Installieren und sichern Sie dann Ihr Speichersystem in einem Schrank oder einem Telco-Rack.
+
+.Bevor Sie beginnen
+* Stellen Sie sicher, dass die Anweisungen im Schienensatz enthalten sind.
+* Beachten Sie die Sicherheitsbedenken im Zusammenhang mit dem Gewicht des Lagersystems und des Lagerregals.
+* Stellen Sie fest, dass der Luftstrom durch das Speichersystem von der Vorderseite, an der die Blende oder die Endkappen installiert sind, einströmt und an der Rückseite, an der sich die Anschlüsse befinden, absaugt.
+
+
+.Schritte
+. Installieren Sie die Schienen-Kits für Ihr Speichersystem und die Lagerregale nach Bedarf gemäß den Anweisungen, die den Kits beiliegen.
+. Installieren und sichern Sie Ihr Speichersystem im Schrank oder im Telco-Rack:
++
+.. Positionieren Sie das Speichersystem auf den Schienen in der Mitte des Schranks oder des Telco-Racks, und stützen Sie das Speichersystem von unten ab, und schieben Sie es hinein.
+.. Befestigen Sie das Speichersystem mit den mitgelieferten Befestigungsschrauben am Schrank oder Telco-Rack.
+
+
+. Montieren Sie das Lagerregal:
++
+.. Positionieren Sie die Rückseite des Lagerregals auf den Schienen, und stützen Sie das Regal von unten ab, und schieben Sie es in den Schrank oder das Telco-Rack.
++
+Wenn Sie mehrere Storage-Shelfs installieren, platzieren Sie das erste Storage-Shelf direkt über den Controllern. Platzieren Sie das zweite Storage-Shelf direkt unter den Controllern. Wiederholen Sie dieses Muster für zusätzliche Storage-Shelfs.
+
+.. Befestigen Sie den Aufbewahrungs-Shelf mit den mitgelieferten Befestigungsschrauben am Schrank oder Telco-Rack.
+
+
+. Schließen Sie die Kabelverwaltungsgeräte an der Rückseite des Speichersystems an.
++
+image::../media/drw_affa1k_install_cable_mgmt_ieops-1697.svg[Installieren Sie das Kabelverwaltungsgerät]
+
+. Befestigen Sie die Blende an der Vorderseite des Speichersystems.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie die Hardware für Ihr ASA r2-System installiert haben, können Sie link:cable-hardware.html["Verkabeln Sie die Controller und Storage Shelfs für Ihr ASA r2 System"].

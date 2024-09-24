@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: administer/update-firmware.html 
+keywords: update, firmware, system files, automatic updates, automated updates, asa r2, disable, 
+summary: ONTAP aktualisiert automatisch die Firmware auf ASA r2-Systemen. Sie können System Manager verwenden, um automatische Updates zu deaktivieren und Updates anzuzeigen, bevor sie installiert werden. 
+---
+= Aktualisieren der Firmware auf ASA r2-Speichersystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP lädt automatisch Firmware- und Systemdateien auf Ihrem ASA r2-System herunter und aktualisiert diese standardmäßig. Wenn Sie die Möglichkeit haben möchten, empfohlene Updates vor dem Herunterladen und Installieren anzuzeigen, können Sie ONTAP System Manager verwenden, um automatisierte Updates zu deaktivieren oder Aktualisierungsparameter zu bearbeiten, um Ihnen Benachrichtigungen über verfügbare Updates anzuzeigen, bevor eine Aktion durchgeführt wird.
+
+
+
+== Aktivieren Sie automatische Updates
+
+Empfohlene Updates für Speicher-Firmware, SP/BMC-Firmware und Systemdateien werden automatisch heruntergeladen und standardmäßig auf Ihrem ASA r2-System installiert. Wenn automatische Updates deaktiviert wurden, können Sie sie aktivieren, um das Standardverhalten wiederherzustellen.
+
+.Schritte
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
+. Wählen Sie neben *Automatic Update* image:icon_kabob.gif["Drei vertikale blaue Punkte"], und wählen Sie dann *enable*.
+. Lesen und akzeptieren Sie die EULA.
+. Akzeptieren Sie die Standardeinstellungen, um Ihre Firmware und Systemdateien automatisch zu aktualisieren. Wählen Sie optional aus, um Benachrichtigungen anzuzeigen oder empfohlene Updates automatisch zu verwerfen.
+. Wählen Sie diese Option, um zu bestätigen, dass Ihre Aktualisierungsänderungen auf alle aktuellen und zukünftigen Aktualisierungen angewendet werden.
+. Wählen Sie *Speichern*.
+
+
+.Ergebnis
+Empfohlene Aktualisierungen werden automatisch heruntergeladen und auf Ihrem ASA r2-System installiert, basierend auf Ihrer Auswahl für das Update.
+
+
+
+== Deaktivieren Sie automatische Updates
+
+Deaktivieren Sie automatische Updates, wenn Sie die Möglichkeit haben möchten, empfohlene Updates vor der Installation anzuzeigen. Wenn Sie automatische Updates deaktivieren, müssen Sie Firmware- und Systemdateiaktualisierungen manuell durchführen.
+
+.Schritte
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
+. Wählen Sie neben *Automatic Update* image:icon_kabob.gif["Drei vertikale blaue Punkte"], und wählen Sie dann *Disable*.
+
+
+.Ergebnis
+Automatische Updates sind deaktiviert. Sie sollten regelmäßig nach empfohlenen Updates suchen und entscheiden, ob Sie eine manuelle Installation durchführen möchten.
+
+
+
+== Automatische Updates anzeigen
+
+Zeigen Sie eine Liste der Firmware- und Systemdatei-Updates an, die auf das Cluster heruntergeladen wurden und für die automatische Installation geplant sind. Zeigen Sie auch Updates an, die zuvor automatisch installiert wurden.
+
+.Schritte
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
+. Wählen Sie neben *Automatisches Update* image:icon_kabob.gif["Drei vertikale blaue Punkte"], und wählen Sie dann *Alle automatischen Updates anzeigen*.
+
+
+
+
+== Automatische Aktualisierungen bearbeiten
+
+Sie können festlegen, dass empfohlene Updates für Storage-Firmware, SP/BMC Firmware und Ihre Systemdateien automatisch heruntergeladen und auf dem Cluster installiert werden. Alternativ können Sie festlegen, dass empfohlene Updates automatisch verworfen werden. Wenn Sie die Installation oder das Entlassen von Updates manuell steuern möchten, wählen Sie die Option, um benachrichtigt zu werden, wenn eine empfohlene Aktualisierung verfügbar ist. Sie können dann manuell auswählen, um sie zu installieren oder zu schließen.
+
+.Schritte
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
+. Wählen Sie neben *Automatisches Update* image:icon_kabob.gif["Drei vertikale blaue Punkte"], und wählen Sie dann *Automatische Updates bearbeiten*.
+. Aktualisieren Sie die Auswahl für automatische Aktualisierungen.
+. Wählen Sie *Speichern*.
+
+
+.Ergebnis
+Automatische Aktualisierungen werden basierend auf Ihrer Auswahl geändert.
+
+
+
+== Aktualisieren Sie die Firmware manuell
+
+Wenn Sie die Möglichkeit haben möchten, empfohlene Updates vor dem Herunterladen und Installieren anzuzeigen, können Sie automatische Updates deaktivieren und Ihre Firmware manuell aktualisieren.
+
+.Schritte
+. Laden Sie die Firmware-Aktualisierungsdatei auf einen Server oder lokalen Client herunter.
+. Wählen Sie im System Manager *Cluster > Übersicht*, und wählen Sie dann *Update*.
+. Wählen Sie *Firmware-Update*; die Option image:icon_update_firmware.png["Blaues Rechteck mit einem Pluszeichen, gefolgt von den Wörtern Firmware aktualisieren in weißen Buchstaben"].
+
+
+.Ergebnis
+Ihre Firmware wird aktualisiert.

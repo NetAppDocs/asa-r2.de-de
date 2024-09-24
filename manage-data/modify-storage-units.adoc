@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: manage-data/modify-storage-units.html 
+keywords: increase storage units, resize luns, resize namespaces, san, nvme,  increase lun size, increase namespace, increase, modify, edit, luns, namespaces, modify quality of service, qos, host mapping, mapping host 
+summary: 'Reagieren Sie auf Änderungen an der Performance und den Daten Ihres Storage-Systems, indem Sie Storage-Einheiten bearbeiten, um die Kapazität zu erhöhen, QoS-Richtlinien (Quality of Service) zu aktualisieren oder die Host-Zuordnungen zu ändern.' 
+---
+= Ändern Sie die Speichereinheiten auf ASA r2-Speichersystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Optimieren der Performance auf Ihrem ASA r2 System müssen Sie möglicherweise Ihre Storage-Einheiten anpassen, um deren Kapazität zu erhöhen, QoS-Richtlinien zu aktualisieren oder die Hosts zu ändern, die den Einheiten zugeordnet sind. Wenn beispielsweise ein neuer, kritischer Applikations-Workload zu einer vorhandenen Storage-Einheit hinzugefügt wird, müssen Sie möglicherweise die Richtlinie zur Quality of Service (QoS), die auf die Storage-Einheit angewendet wird, ändern, um das Performance-Level zu unterstützen, das für die neue Applikation erforderlich ist.
+
+.Erhöhte Kapazität
+Vergrößern Sie eine Speichereinheit, bevor sie die volle Kapazität erreicht, um einen Verlust des Datenzugriffs zu verhindern, der auftreten kann, wenn der beschreibbare Speicherplatz der Speichereinheit nicht mehr verfügbar ist. Die Kapazität einer Speichereinheit kann auf 128 TB erhöht werden, was der von ONTAP maximal zulässigen Größe entspricht.
+
+.Ändern von Host-Zuordnungen
+Ändern Sie die Hosts, die einer Speichereinheit zugeordnet sind, um den Workload-Ausgleich oder die Neukonfiguration der Systemressourcen zu unterstützen.
+
+.QoS-Richtlinie ändern
+Die Richtlinien zur Quality of Service (QoS) garantieren, dass die Performance bei kritischen Workloads nicht durch konkurrierende Workloads beeinträchtigt wird. Mithilfe von QoS-Richtlinien können Sie einen QoS Throughput _Limit_ und einen QoS Throughput _guarantee_ festlegen.
+
+* QoS-Durchsatzbegrenzung
++
+Der QoS Throughput _Limit_ begrenzt die Auswirkungen eines Workloads auf Systemressourcen, indem der Durchsatz des Workloads auf eine maximale Anzahl an IOPS oder MB/s bzw. IOPS und MB/s begrenzt wird.
+
+* QoS-Durchsatzgarantie
++
+Der QoS Throughput _guarantee_ sorgt dafür, dass kritische Workloads unabhängig von der Anforderung durch konkurrierende Workloads Mindestdurchsatzziele erfüllen, indem sichergestellt wird, dass der Durchsatz für den kritischen Workload nicht unter eine Mindestanzahl an IOPS oder MB/s bzw. IOPS und MB/s fällt.
+
+
+
+.Schritte
+. Wählen Sie im System Manager *Storage* aus.
+. Bewegen Sie den Mauszeiger über den Namen der Speichereinheit, die Sie bearbeiten möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Bearbeiten*.
+. Aktualisieren Sie die Parameter der Speichereinheit nach Bedarf, um die Kapazität zu erhöhen, die QoS-Richtlinie zu ändern und die Host-Zuordnung zu aktualisieren.
+
+
+.Was kommt als Nächstes?
+Wenn Sie die Größe der Speichereinheit erhöht haben, müssen Sie die Speichereinheit auf dem Host erneut scannen, damit der Host die Änderung der Größe erkennen kann.

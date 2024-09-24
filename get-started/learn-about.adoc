@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: get-started/learn-about.html 
+keywords: asa r2, asa a1k, asa 70, asa 90 
+summary: 'ASA r2 Systeme (ASA A1K, ASA A70 und ASA A90) bieten eine einheitliche Hardware- und Softwarelösung, die reine SAN-Kunden eine vereinfachte Benutzererfahrung ermöglicht.' 
+searchtitle: Erfahren Sie mehr über die Storage-Systeme ASA A1K, ASA A70 und ASA A90 
+---
+= Erfahren Sie mehr über ASA r2 Storage-Systeme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die neuen NetApp ASA r2 Systeme (ASA A1K, ASA A70 und ASA A90) bieten eine einheitliche Hardware- und Softwarelösung, mit der die Benutzerfreundlichkeit speziell auf die Anforderungen reiner SAN-Kunden abgestimmt wird.
+
+ASA r2 Systeme unterstützen alle SAN-Protokolle (iSCSI, FC, NVMe/FC, NVMe/TCP) in einer einzigen HA-Paar-Implementierung. SCSI-Protokolle (iSCSI und FC) verwenden für Multipathing eine symmetrische aktiv/aktiv-Architektur, sodass alle Pfade zwischen Hosts und Storage aktiv/optimiert sind. NVMe-Protokolle unterstützen direkte Pfade zwischen den Hosts und dem Storage.
+
+Auf einem ASA r2 System sind ONTAP Software und System Manager optimiert, um die grundlegenden SAN-Funktionen zu unterstützen und gleichzeitig Funktionen zu entfernen, die in SAN-Umgebungen nicht unterstützt werden.
+
+Bei ASA r2-Systemen werden Storage-Einheiten mit Konsistenzgruppen eingesetzt:
+
+* Eine _Storage unit_ stellt Ihren SAN-Hosts Speicherplatz für Datenoperationen zur Verfügung. Eine Storage-Einheit bezieht sich auf eine LUN für SCSI-Hosts oder einen NVMe-Namespace für NVMe-Hosts.
+* _Eine Consistency Group_ ist eine Sammlung von Speichereinheiten, die als eine Einheit verwaltet werden.
+
+
+ASA r2 Systeme verwenden Storage-Einheiten und Konsistenzgruppen, um das Storage-Management und die Datensicherung zu vereinfachen. Angenommen, Sie haben eine Datenbank, die aus 10 Speichereinheiten in einer Konsistenzgruppe besteht, und Sie müssen die gesamte Datenbank sichern. Anstatt jede Storage-Einheit einzeln zu sichern, können Sie die gesamte Datenbank schützen, indem Sie die Konsistenzgruppe sichern.
+
+ASA r2 Systeme unterstützen einen integrierten Schlüsselmanager, eine zweischichtige Verschlüsselung, manipulationssichere Snapshots, Multi-Faktor-Authentifizierung und die Verifizierung durch mehrere Administratoren, um Daten vor schädlichen Angriffen wie Diebstahl oder Ransomware zu schützen.
+
+ASA r2-Systeme unterstützen keine gemeinsame Verwendung von Clustern mit aktuellen ASA-, AFF- oder FAS-Systemen.
+
+.Finden Sie weitere Informationen
+* Weitere Informationen zur Unterstützung und Einschränkungen von ASA r2-Systemen finden Sie im link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
+* Erfahren Sie mehr über link:../learn-more/hardware-comparison.html["Die neuen ASA r2 Systeme im Vergleich zu den ASA Systemen"].
+* Erfahren Sie mehr über die link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"].
+

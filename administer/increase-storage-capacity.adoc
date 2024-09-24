@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: administer/increase-storage-capacity.html 
+keywords: increase, capacity, node, shelf, drive, expand, storage, asa r2, asa r2, asa a1k, asa 70, asa 90 
+summary: Fügen Sie Laufwerke zu einem Node oder Shelf hinzu, um die Kapazität der ASA r2 Storage-Einheiten zu erhöhen. 
+---
+= Erhöhen Sie die Storage-Kapazität auf ASA r2 Storage-Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Fügen Sie zu einem Node oder Shelf Laufwerke hinzu, um die Storage-Kapazität Ihres ASA r2 Systems zu erhöhen.
+
+
+
+== Verwenden Sie NetApp Hardware Universe, um die Installation eines neuen Laufwerks vorzubereiten
+
+Bevor Sie ein neues Laufwerk an einem Node oder Shelf installieren, verwenden Sie den NetApp Hardware Universe, um sicherzustellen, dass das hinzuzufügende Laufwerk von Ihrer ASA r2-Plattform unterstützt wird, und um den richtigen Steckplatz für das neue Laufwerk zu ermitteln. Die richtigen Steckplätze zum Hinzufügen von Laufwerken variieren je nach Plattformmodell und ONTAP-Version. In einigen Fällen müssen Sie in der Folge Laufwerke zu bestimmten Steckplätzen hinzufügen.
+
+.Schritte
+. Gehen Sie zum link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
+. Wählen Sie unter *Produkte* Ihre Hardwarekonfigurationen aus.
+. Wählen Sie Ihre ASA r2-Plattform aus.
+. Wählen Sie Ihre ONTAP-Version aus, und wählen Sie dann *Ergebnisse anzeigen*.
+. Wählen Sie unter der Grafik *Klicken Sie hier, um alternative Ansichten zu sehen*; wählen Sie dann die Ansicht, die Ihrer Konfiguration entspricht.
+. Überprüfen Sie anhand der Konfigurationsansicht, ob das neue Laufwerk unterstützt wird und ob der richtige Steckplatz für die Installation vorhanden ist.
+
+
+.Ergebnis
+Sie haben bestätigt, dass Ihr neues Laufwerk unterstützt wird, und Sie kennen den passenden Steckplatz für die Installation.
+
+
+
+== Installieren Sie ein neues Laufwerk auf dem ASA r2
+
+Die Mindestanzahl der Laufwerke, die Sie in einem einzigen Verfahren hinzufügen sollten, beträgt sechs. Das Hinzufügen eines einzigen Laufwerks kann zu einer Performance-Verringerung führen.
+
+.Über diese Aufgabe
+Wiederholen Sie die Schritte in diesem Verfahren für jedes Laufwerk.
+
+.Schritte
+. Richtig gemahlen.
+. Entfernen Sie vorsichtig die Blende von der Vorderseite der Plattform.
+. Setzen Sie das neue Laufwerk in den richtigen Steckplatz ein.
++
+.. Setzen Sie den neuen Antrieb mit beiden Händen ein, indem Sie den Nockengriff in die offene Position bringen.
+.. Drücken Sie, bis das Laufwerk stoppt.
+.. Schließen Sie den Nockengriff, so dass der Antrieb fest in der Mittelebene sitzt und der Griff einrastet.
++
+Schließen Sie den Nockengriff langsam, damit er korrekt an der Antriebsfläche ausgerichtet ist.
+
+
+
+. Vergewissern Sie sich, dass die Aktivitäts-LED (grün) des Laufwerks leuchtet.
++
+** WENN die LED konstant leuchtet, wird das Laufwerk mit Strom versorgt.
+** Wenn die LED blinkt, wird das Laufwerk mit Strom versorgt und E/A wird ausgeführt. Die LED blinkt auch, wenn die Laufwerksfirmware aktualisiert wird.
++
+Die Laufwerk-Firmware wird automatisch (unterbrechungsfrei) auf neuen Laufwerken aktualisiert, die keine aktuellen Firmware-Versionen aufweisen.
+
+
+
+. Wenn der Node für die automatische Laufwerkszuweisung konfiguriert ist, können Sie warten, bis ONTAP die neuen Laufwerke einem Node automatisch zuweist. Ist der Node nicht für die automatische Laufwerkszuweisung konfiguriert oder ist er vorzuziehen, können Sie die Laufwerke manuell zuweisen.
++
+Die neuen Laufwerke werden erst erkannt, wenn sie einem Node zugewiesen sind.
+
+
+
+.Was kommt als Nächstes?
+Nachdem die neuen Laufwerke erkannt wurden, überprüfen Sie, ob sie hinzugefügt wurden und ihre Eigentumsrechte korrekt angegeben wurden.

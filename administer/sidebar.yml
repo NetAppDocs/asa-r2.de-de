@@ -1,0 +1,34 @@
+---
+section: administer
+title: Administration und Überwachung
+entries:
+- title: Management des Client-Zugriffs auf Storage-VMs
+  url: "/administer/manage-client-vm-access.html"
+- title: Management von Cluster-Netzwerken
+  url: "/administer/manage-cluster-networking.html"
+- title: Überwachung der Nutzung und Erhöhung der Kapazität
+  entries:
+  - title: Monitoring der Storage-Performance
+    url: "/monitor/monitor-performance.html"
+  - title: Überwachen der Storage-Auslastung
+    url: "/monitor/monitor-storage.html"
+  - title: Erhöhung der Storage-Kapazität
+    url: "/administer/increase-storage-capacity.html"
+- title: Aktualisiert die Firmware
+  url: "/administer/update-firmware.html"
+- title: Einblicke anzeigen
+  url: "/monitor/view-insights.html"
+- title: Anzeigen von Clusterereignissen und -Jobs
+  url: "/monitor/view-events-jobs.html"
+- title: Managen von Nodes
+  entries:
+  - title: Neustart, Übernahme und Übergabe von Nodes
+    url: "/administer/reboot-take-over-give-back-nodes.html"
+  - title: Benennen Sie Nodes um
+    url: "/administer/rename-nodes.html"
+- title: Verwalten von Benutzerkonten und Rollen
+  url: "/administer/user-accounts-roles.html"
+- title: Verwalten von Sicherheitszertifikaten
+  url: "/administer/manage-certificates.html"
+- title: Überprüfen Sie die Host-Konnektivität
+  url: "/administer/verify-host-connectivity.html"

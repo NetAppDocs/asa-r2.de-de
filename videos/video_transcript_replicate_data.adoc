@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: videos/video_transcript_replicate_data.html 
+keywords: frontmatter, front matter 
+summary: Sehen Sie sich kurze Videos an, die zeigen, wie Sie mit ONTAP System Manager häufige Aufgaben auf ASA r2 Storage-Systemen schnell und einfach ausführen. 
+---
+= Replizierung von Daten aus einem ASA r2 Storage-System in einen Remote-Cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das folgende Transkript ist für das Video `Replicate data to a remote cluster from an ASA r2 storage system`zur Verfügung gestellt.
+
+link:videos-common-tasks.html#video_transcript_return_replicate_data["Zurück zur Seite"]
+
+Mit ONTAP System Manager können Sie Ihre Daten schützen, indem Sie Snapshots Ihrer Storage-Einheiten oder Konsistenzgruppen planen und an einen Remote-Standort replizieren.
+
+In diesem Beispiel planen wir Snapshots für vorhandene Storage-Einheiten.
+
+Wählen Sie im Menü System Manager *Storage*.
+
+Wählen Sie die Speichereinheit aus, die Sie schützen möchten, und wählen Sie dann *protect*.
+
+Sie können optional einen On-Demand-Snapshot erstellen, indem Sie *Add a Snapshot now* auswählen.
+
+Wählen Sie unter *Remote Protection* *Replicate to a Remote Cluster* aus.
+
+Wählen Sie die Storage-VM und Replizierungsrichtlinie für die Replizierung aus. Standardmäßig beginnt die erste Datenübertragung sofort.
+
+Wählen Sie *Speichern*.
+
+Wenn sich die Speichereinheit nicht in einer Konsistenzgruppe befindet, müssen Sie eine erstellen. Geben Sie einen Namen für die neue Konsistenzgruppe ein, und wählen Sie dann *Create* aus.
+
+Sie haben Ihre Konsistenzgruppe schnell und einfach in einem Remote-Cluster repliziert.

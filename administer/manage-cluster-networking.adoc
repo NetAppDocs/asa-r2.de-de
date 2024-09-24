@@ -1,0 +1,94 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-cluster-networking.html 
+keywords: add a broadcast domain, broadcast domains, reassign ports, create a vlan, create vlans 
+summary: Verwenden Sie ONTAP System Manager für die grundlegende Storage-Netzwerk-Administration auf Ihrem ASA r2 System. 
+---
+= Managen Sie Cluster-Netzwerke auf ASA r2 Storage-Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit ONTAP System Manager können Sie eine grundlegende Storage-Netzwerkadministration auf Ihrem ASA r2 System durchführen. Sie können beispielsweise eine Broadcast-Domäne hinzufügen oder Ports einer anderen Broadcast-Domäne neu zuweisen.
+
+
+
+== Fügen Sie eine Broadcast-Domäne hinzu
+
+Verwenden Sie Broadcast-Domänen, um das Management Ihres Cluster-Netzwerks zu vereinfachen, indem Sie Netzwerkports gruppieren, die zum gleichen Layer-2-Netzwerk gehören. Storage Virtual Machines (VMs) können dann die Ports in der Gruppe für Daten- oder Managementdatenverkehr verwenden.
+
+Während des Cluster-Setups werden die „Standard“-Broadcast-Domäne und die „Cluster“ Broadcast-Domäne erstellt. Die „Standard“-Broadcast-Domäne enthält Ports, die sich im „Standard“-IPspace befinden. Diese Ports werden hauptsächlich zum Bereitstellen von Daten genutzt. Auch Cluster-Management- und Node-Management-Ports befinden sich in dieser Broadcast-Domäne. Die Broadcast-Domain „Cluster“ enthält Ports die sich im „Cluster“ IPspace befinden. Diese Ports werden für die Cluster-Kommunikation verwendet und umfassen alle Cluster-Ports aus allen Nodes im Cluster.
+
+Sie können zusätzliche Broadcast-Domänen erstellen, nachdem das Cluster initialisiert wurde. Wenn Sie eine Broadcast-Domäne erstellen, wird automatisch eine Failover-Gruppe erstellt, die dieselben Ports enthält.
+
+.Über diese Aufgabe
+Die maximale Übertragungseinheit (MTU) der Ports, die einer Broadcast-Domäne hinzugefügt wurden, wird auf den in der Broadcast-Domäne eingestellten MTU-Wert aktualisiert.
+
+.Schritte
+. Wählen Sie im System Manager *Netzwerk > Übersicht* aus.
+. Wählen Sie unter *Broadcast* Domains die Option image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"].
+. Geben Sie einen Namen für die Broadcast-Domäne ein, oder akzeptieren Sie den Standardnamen.
++
+Alle Broadcast-Domain-Namen müssen innerhalb eines IPspaces eindeutig sein.
+
+. Wählen Sie den IPspace für die Broadcast-Domäne aus.
++
+Wenn Sie keinen IPspace-Namen angeben, wird die Broadcast-Domain im „Standard“-IPspace erstellt.
+
+. Geben Sie die maximale Übertragungseinheit (MTU) ein.
++
+MTU ist das größte Datenpaket, das in Ihrer Broadcast-Domäne akzeptiert werden kann.
+
+. Wählen Sie die gewünschten Ports aus, und wählen Sie dann *Speichern*.
+
+
+.Ergebnis
+Sie haben eine neue Broadcast-Domäne hinzugefügt.
+
+
+
+== Weisen Sie Ports einer anderen Broadcast-Domäne neu zu
+
+Ports können nur zu einer Broadcast-Domäne gehören. Wenn Sie die Broadcast-Domäne ändern möchten, zu der ein Port gehört, müssen Sie den Port seiner vorhandenen Broadcast-Domäne einer neuen Broadcast-Domäne zuweisen.
+
+.Schritte
+. Wählen Sie im System Manager *Netzwerk > Übersicht* aus.
+. Wählen Sie unter *Broadcast Domains* image:icon_kabob.gif["Drei vertikale blaue Punkte"]neben dem Domainnamen aus, und wählen Sie dann *Bearbeiten*.
+. Heben Sie die Auswahl der Ethernet-Ports auf, die Sie einer anderen Domäne neu zuweisen möchten.
+. Wählen Sie die Broadcast-Domain aus, der Sie den Port neu zuweisen möchten, und wählen Sie dann *Neu zuweisen* aus.
+. Wählen Sie *Speichern*.
+
+
+.Ergebnis
+Sie haben Ports einer anderen Broadcast-Domäne neu zugewiesen.
+
+
+
+== Erstellen Sie eine VLAN
+
+Ein VLAN besteht aus Switch-Ports, die zu einer Broadcast-Domäne zusammengefasst sind. Mithilfe von VLANs können Sie die Sicherheit erhöhen, Probleme isolieren und verfügbare Pfade innerhalb Ihrer IP-Netzwerkinfrastruktur einschränken.
+
+.Bevor Sie beginnen
+Die im Netzwerk implementierten Switches müssen entweder den IEEE 802.1Q Standards entsprechen oder über eine anbieterspezifische Implementierung von VLANs verfügen.
+
+.Über diese Aufgabe
+* Ein VLAN kann nicht auf einem Port der Schnittstellengruppe erstellt werden, der keine Mitgliedsports enthält.
+* Wenn Sie ein VLAN zum ersten Mal über einen Port konfigurieren, könnte der Port ausfallen, was zu einer vorübergehenden Trennung des Netzwerks führt. Nachfolgende VLAN-Erweiterungen zum selben Port wirken sich nicht auf den Portstatus aus.
+* Sie sollten kein VLAN auf einer Netzwerkschnittstelle mit derselben Kennung wie das native VLAN des Switches erstellen. Wenn beispielsweise die Netzwerkschnittstelle e0b auf nativem VLAN 10 ist, sollten Sie keine VLAN e0b-10 auf dieser Schnittstelle erstellen.
+
+
+.Schritte
+. Wählen Sie im System Manager *Netzwerk > Ethernet-Ports* aus, und wählen Sie dann image:icon_vlan.png["Ein blaues Pluszeichen gefolgt vom Wort vlan"].
+. Wählen Sie den Knoten und die Broadcast-Domäne für das VLAN aus.
+. Wählen Sie den Port für das VLAN aus.
++
+Das VLAN kann nicht mit einem Port verbunden werden, der eine Cluster-LIF hostet, oder mit den dem Cluster-IPspace zugewiesenen Ports.
+
+. Geben Sie eine VLAN-ID ein.
+. Wählen Sie *Speichern*.
+
+
+.Ergebnis
+Sie haben ein VLAN erstellt, um die Sicherheit zu erhöhen, Probleme zu isolieren und die verfügbaren Pfade innerhalb Ihrer IP-Netzwerkinfrastruktur einzuschränken.

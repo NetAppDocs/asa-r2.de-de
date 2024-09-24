@@ -1,0 +1,129 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-certificates.html 
+keywords: asa r2, security, certificates, digital, certificate signing request, signing, request, trusted, authority, trusted certificate authority, client, server, local certificate, authorities, add, renew, delete, generate 
+summary: Verwenden Sie digitale Sicherheitszertifikate, um die Identität von Remote-Servern zu überprüfen. 
+---
+= Managen von Sicherheitszertifikaten auf ASA r2-Speichersystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie digitale Sicherheitszertifikate, um die Identität von Remote-Servern zu überprüfen.
+
+Online Certificate Status Protocol (OCSP) validiert den Status von digitalen Zertifikatsanforderungen von ONTAP-Diensten mithilfe von SSL- und TLS-Verbindungen (Transport Layer Security).
+
+
+
+== Generieren Sie eine Anforderung zum Signieren eines Zertifikats
+
+Erstellen Sie eine Zertifikatsignierungsanforderung (CSR), um einen privaten Schlüssel zu erstellen, mit dem ein öffentliches Zertifikat erstellt werden kann.
+
+.Schritte
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
+. Wählen Sie unter *Security* neben *Certificates* die Option image:icon_arrow.gif["Blauer Pfeil, der nach rechts zeigt"]; und wählen Sie dann image:icon_generate_csr.png["Blaues Rechteck mit einem Pluszeichen, gefolgt von den Worten csr generieren"].
+. Geben Sie den allgemeinen Namen des Studienteilnehmers ein, und wählen Sie dann das Land aus.
+. Wenn Sie die GSR-Standardwerte ändern möchten, wählen Sie Erweiterte Tastenverwendung oder fügen Sie alternative Namen für image:icon_more_options.png["Zwei Pfeile, die diagonal entgegengesetzte Richtungen zeigen, gefolgt von den Wörtern weitere Optionen"]das Thema hinzu, wählen Sie ; und dann die gewünschten Aktualisierungen vornehmen.
+. Wählen Sie *Erzeugen*.
+
+
+.Ergebnis
+Sie haben eine CSR erstellt, mit der Sie ein öffentliches Zertifikat erstellen können.
+
+
+
+== Fügen Sie eine vertrauenswürdige Zertifizierungsstelle hinzu
+
+ONTAP bietet einen Standardsatz vertrauenswürdiger Stammzertifikate für Anwendungen, die TLS (Transport Layer Security) verwenden. Sie können bei Bedarf weitere vertrauenswürdige Zertifizierungsstellen hinzufügen.
+
+.Schritte
+. Wählen Sie *Cluster > Einstellungen*.
+. Wählen Sie unter *Sicherheit* neben *Zertifikate* die Option image:icon_arrow.gif["Blauer Pfeil, der nach rechts zeigt"].
+. Wählen Sie *Vertrauenswürdige Zertifizierungsstellen*.
+. Geben Sie die Zertifikatdetails ein oder importieren Sie image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"]sie, und wählen Sie dann .
+
+
+.Ergebnis
+Sie haben Ihrem ASA r2-System eine neue vertrauenswürdige Zertifizierungsstelle hinzugefügt.
+
+
+
+== Erneuern oder Löschen einer vertrauenswürdigen Zertifizierungsstelle
+
+Vertrauenswürdige Zertifizierungsstellen müssen jährlich erneuert werden. Wenn Sie ein abgelaufenes Zertifikat nicht erneuern möchten, sollten Sie es löschen.
+
+.Schritte
+. Wählen Sie *Cluster > Einstellungen*.
+. Wählen Sie unter *Sicherheit* neben *Zertifikate* die Option image:icon_arrow.gif["Blauer Pfeil, der nach rechts zeigt"].
+. Wählen Sie *Vertrauenswürdige Zertifizierungsstellen*.
+. Wählen Sie die Zertifizierungsstelle aus, die Sie erneuern oder löschen möchten.
+. Erneuern oder löschen Sie die Zertifizierungsstelle.
++
+[cols="2"]
+|===
+| Um die Zertifizierungsstelle zu erneuern, gehen Sie folgendermaßen vor: | Gehen Sie folgendermaßen vor, um die Zertifizierungsstelle zu löschen: 
+
+
+ a| 
+.. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *erneuern*.
+.. Geben Sie die Zertifikatinformationen ein oder importieren Sie sie, und wählen Sie dann *Renew* aus.
+
+ a| 
+.. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Löschen*.
+.. Bestätigen Sie, dass Sie löschen möchten, und wählen Sie dann *Löschen*.
+
+
+|===
+
+
+.Ergebnis
+Sie haben eine vorhandene vertrauenswürdige Zertifizierungsstelle auf Ihrem ASA r2-System erneuert oder gelöscht.
+
+
+
+== Fügen Sie ein Client/Server-Zertifikat oder lokale Zertifizierungsstellen hinzu
+
+Fügen Sie ein Client/Server-Zertifikat oder lokale Zertifizierungsstellen hinzu, um sichere Webdienste zu ermöglichen.
+
+.Schritte
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
+. Wählen Sie unter *Sicherheit* neben *Zertifikate* die Option image:icon_arrow.gif["Blauer Pfeil, der nach rechts zeigt"].
+. Wählen Sie *Client/Server-Zertifikate* oder *Local Certificate Authorities* aus.
+. Fügen Sie die Zertifikatinformationen hinzu, und wählen Sie dann image:icon_add_blue_bg.png["Blaues Rechteck mit blauem Pluszeichen, gefolgt vom Wort add"].
+
+
+.Ergebnis
+Sie haben Ihrem ASA r2-System ein neues Client/Server-Zertifikat oder lokale Behörden hinzugefügt.
+
+
+
+== Erneuern oder löschen Sie ein Client/Server-Zertifikat oder lokale Zertifizierungsstellen
+
+Client/Server-Zertifikate und lokale Zertifizierungsstellen müssen jährlich erneuert werden. Wenn Sie ein abgelaufenes Zertifikat oder eine lokale Zertifizierungsstelle nicht erneuern möchten, sollten Sie diese löschen.
+
+.Schritte
+. Wählen Sie *Cluster > Einstellungen*.
+. Wählen Sie unter *Sicherheit* neben Zertifikate die Option image:icon_arrow.gif["Blauer Pfeil, der nach rechts zeigt"].
+. Wählen Sie *Client/Server-Zertifikate* oder *Lokale Zertifizierungsstellen* aus.
+. Wählen Sie das Zertifikat aus, das Sie erneuern oder löschen möchten.
+. Erneuern oder löschen Sie die Zertifizierungsstelle.
++
+[cols="2"]
+|===
+| Um die Zertifizierungsstelle zu erneuern, gehen Sie folgendermaßen vor: | Gehen Sie folgendermaßen vor, um die Zertifizierungsstelle zu löschen: 
+
+
+ a| 
+.. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *erneuern*.
+.. Geben Sie die Zertifikatinformationen ein oder importieren Sie sie, und wählen Sie dann *Renew* aus.
+
+ a| 
+Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Löschen*.
+
+|===
+
+
+.Ergebnis
+Sie haben ein vorhandenes Client/Server-Zertifikat oder eine lokale Zertifizierungsstelle auf Ihrem ASA r2-System erneuert oder gelöscht.

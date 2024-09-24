@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: learn-more/rest-api-support.html 
+keywords: asa, asa r2, rest, rest api, asa r2 rest api 
+summary: Die REST-API von ASA r2 basiert auf der REST-API, die mit der einheitlichen ONTAP-Persönlichkeit ausgestattet ist. Eine Reihe von Änderungen wird an die einzigartigen Merkmale und Funktionen der ASA r2-Persönlichkeit angepasst. 
+---
+= REST-API-Unterstützung für ASA r2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die REST-API von ASA r2 basiert auf der REST-API, die mit der einheitlichen ONTAP-Persönlichkeit ausgestattet ist. Eine Reihe von Änderungen wird an die einzigartigen Merkmale und Funktionen der ASA r2-Persönlichkeit angepasst.
+
+
+
+== Typen von API-Änderungen
+
+Es gibt verschiedene Arten von Unterschieden zwischen der REST API für ASA r2 Systeme und der einheitlichen ONTAP REST API für FAS, AFF und ASA Systeme. Wenn Sie die Arten von Änderungen verstehen, können Sie die Online-API-Referenzdokumentation besser nutzen.
+
+.Neue ASA r2 Endpunkte werden in Unified ONTAP nicht unterstützt
+Die REST-API von ASA r2 wurde um mehrere Endpunkte erweitert, die mit Unified ONTAP nicht verfügbar sind.
+
+Beispielsweise wurde der REST-API für ASA r2 Systeme ein neuer Block-Volume-Endpunkt hinzugefügt. Der Block-Volume-Endpunkt ermöglicht den Zugriff auf LUN- und NVMe Namespace-Objekte und eine aggregierte Ansicht der Ressourcen. Diese Funktion ist nur über die REST-API verfügbar.
+
+Ein weiteres Beispiel: Die Endpunkte *Storage-units* bieten eine aggregierte Ansicht der LUNs und NVMe-Namespaces. Es gibt mehrere Endpunkte, die alle auf Basis oder abgeleitet von basieren `/api/storage/storage-units`. Sie sollten auch überprüfen `/api/storage/luns` und `/api/storage/namespaces`.
+
+.Einschränkungen der HTTP-Methoden, die für einige Endpunkte verwendet werden
+Mehrere mit ASA r2 verfügbare Endpunkte haben im Vergleich zu Unified ONTAP Einschränkungen, welche HTTP-Methoden verwendet werden können. Beispielsweise sind POST und DELETE nicht zulässig, wenn der Endpunkt `/api/protocols/nvme/services` mit ASA r2-Systemen verwendet wird.
+
+.Eigenschaftsänderungen für einen Endpunkt und eine HTTP-Methode
+Einige ASA r2-Systemendpunkt- und Methodenkombinationen unterstützen nicht alle definierten Eigenschaften, die in der einheitlichen ONTAP-Persönlichkeit verfügbar sind. Wenn Sie beispielsweise PATCH mit dem Endpunkt verwenden `/api/storage/volumes/{uuid}`, werden mehrere Eigenschaften von ASA r2 nicht unterstützt, darunter:
+
+* `autosize.maximum`
+* `autosize.minimum`
+* `autosize.mode`
+
+
+.Änderungen an der internen Verarbeitung
+Es gibt mehrere Änderungen, wie ASA r2 bestimmte REST-API-Anforderungen verarbeitet. So `/api/storage/luns/{uuid}` wird beispielsweise eine LÖSCHANFORDERUNG mit dem Endpunkt asynchron verarbeitet.
+
+
+
+== Erhöhte Sicherheit mit OAuth 2.0
+
+OAuth 2.0 ist das Standard-Autorisierungsframework der Branche. Er wird verwendet, um den Zugriff auf geschützte Ressourcen basierend auf signierten Zugriffstoken zu beschränken und zu steuern. Sie können OAuth 2.0 mit System Manager konfigurieren, um ASA r2-Systemressourcen zu schützen.
+
+Nachdem OAuth 2.0 mit System Manager eingerichtet wurde, kann der Zugriff durch die REST-API-Clients gesteuert werden. Sie müssen zuerst ein Zugriffstoken von einem Autorisierungsserver beziehen. Der REST-Client leitet das Token dann als Inhabertoken über den Header der HTTP-Autorisierungsanforderung an das ASA r2-Cluster weiter. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["Authentifizierung und Autorisierung mit OAuth 2.0"^] .
+
+
+
+== Greifen Sie über die Swagger-Benutzeroberfläche auf die Referenzdokumentation zur ASA r2-API zu
+
+Sie können über die Swagger-Benutzeroberfläche Ihres ASA r2-Systems auf die REST-API-Referenzdokumentation zugreifen.
+
+.Über diese Aufgabe
+Details zur REST-API finden Sie auf der Referenzdokumentationsseite von ASA r2. Als Teil davon können Sie nach dem String *Plattformspezifika* suchen, um Details über die ASA r2 Systemunterstützung für die API-Aufrufe und -Eigenschaften zu finden.
+
+.Bevor Sie beginnen
+Sie müssen Folgendes haben:
+
+* Die IP-Adresse oder der Hostname der Cluster-Management-LIF des ASA r2-Systems
+* Benutzername und Passwort für ein Konto, das über eine Berechtigung für den Zugriff auf die REST-API verfügt
+
+
+.Schritte
+. Geben Sie die URL in Ihren Browser ein und drücken Sie *Enter*: +
+`https://<ip_address>/docs/api`
+. Melden Sie sich mit Ihrem Administratorkonto an.
++
+Die Dokumentationsseite der ASA r2-API wird angezeigt, wobei die API-Aufrufe in den wichtigsten Ressourcenkategorien organisiert sind.
+
+. Um ein Beispiel eines API-Aufrufs zu sehen, der nur für ASA r2-Systeme gilt, scrollen Sie nach unten in die Kategorie *SAN* und klicken Sie auf *GET /Storage/Storage-units*.
+

@@ -1,0 +1,189 @@
+---
+sidebar: sidebar 
+permalink: data-protection/create-snapshots.html 
+keywords: protect data, snapshots, asa r2, data protection, create snapshots, snapshots, create consistency groups, consistency groups 
+summary: Erstellen Sie einen Snapshot, um Ihre Daten auf Ihrem ASA r2-System zu sichern. Sie können manuelle Snapshots erstellen oder eine Konsistenzgruppe verwenden, um automatische Snapshots zu planen. 
+searchtitle: Erstellen Sie mit ONTAP ASA r2 Snapshots für die Datensicherung 
+---
+= Erstellen Sie Snapshots für die Sicherung Ihrer Daten auf ASA r2 Storage-Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um Daten auf Ihrem ASA r2-System zu sichern, müssen Sie einen Snapshot erstellen. Mit ONTAP System Manager können Sie einen manuellen Snapshot einer einzelnen Storage-Einheit erstellen oder eine Konsistenzgruppe erstellen und automatische Snapshots mehrerer Storage-Einheiten gleichzeitig planen.
+
+
+
+== Schritt 1: Optional: Erstellen Sie eine Konsistenzgruppe
+
+Eine Konsistenzgruppe ist eine Sammlung von Speichereinheiten, die als eine Einheit gemanagt werden. Erstellen von Konsistenzgruppen zur Vereinfachung des Storage-Managements und der Datensicherung bei Applikations-Workloads über mehrere Storage-Einheiten hinweg Angenommen, Sie haben eine Datenbank, die aus 10 Speichereinheiten in einer Konsistenzgruppe besteht, und Sie müssen die gesamte Datenbank sichern. Anstatt jede Storage-Einheit zu sichern, können Sie die gesamte Datenbank sichern, indem Sie der Konsistenzgruppe einfach Snapshot-Datenschutz hinzufügen.
+
+Erstellen Sie eine Konsistenzgruppe mit neuen Speichereinheiten oder erstellen Sie eine Konsistenzgruppe mit vorhandenen Speichereinheiten.
+
+[role="tabbed-block"]
+====
+.Neue Speichereinheiten verwenden
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Wählen Sie image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"]; und dann *mit neuen Speichereinheiten*.
+. Geben Sie einen Namen für die neue Speichereinheit, die Anzahl der Einheiten und die Kapazität pro Einheit ein.
++
+Wenn Sie mehr als eine Einheit erstellen, wird jede Einheit mit derselben Kapazität und demselben Host-Betriebssystem erstellt. Um jeder Einheit eine andere Kapazität zuzuweisen, wählen Sie *Weitere Optionen* und wählen Sie dann *eine andere Kapazität hinzufügen*.
+
+. Wählen Sie das Host-Betriebssystem und die Host-Zuordnung aus.
+. Wählen Sie *Hinzufügen*.
+
+
+.Was kommt als Nächstes?
+Sie haben eine Konsistenzgruppe erstellt, die die Speichereinheiten enthält, die Sie schützen möchten. Sie können jetzt einen Snapshot erstellen.
+
+--
+.Nutzung vorhandener Storage-Einheiten
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Wählen Sie image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"]; und dann *mit vorhandenen Speichereinheiten*.
+. Geben Sie einen Namen für die Konsistenzgruppe ein, suchen Sie dann nach, und wählen Sie die Speichereinheiten aus, die in die Konsistenzgruppe aufgenommen werden sollen.
+. Wählen Sie *Hinzufügen*.
+
+
+.Was kommt als Nächstes?
+Sie haben eine Konsistenzgruppe erstellt, die die Speichereinheiten enthält, die Sie schützen möchten. Sie können jetzt einen Snapshot erstellen.
+
+--
+====
+
+
+== Schritt 2: Erstellen Sie einen Snapshot
+
+Ein Snapshot ist eine lokale, schreibgeschützte Kopie Ihrer Daten, mit der Sie Storage-Einheiten zu einem bestimmten Zeitpunkt wiederherstellen können.
+
+Snapshots können nach Bedarf erstellt werden, oder sie können automatisch in regelmäßigen Abständen auf Basis eines erstellt werdenlink:https://review.docs.netapp.com/us-en/asa-r2_asa-r2-9160/data-protection/policies-schedules.html["snapshot Richtlinie und Zeitplan"]. Die Snapshot-Richtlinie und der Zeitplan legen fest, wann die Snapshots erstellt werden sollen, wie viele Kopien beibehalten werden sollen, wie sie benannt werden und wie sie für die Replikation beschriftet werden sollen. Beispielsweise erstellt ein System jeden Tag um 12:10 Uhr einen Snapshot, behält die beiden neuesten Kopien bei, benennt sie „täglich“ (angehängt mit einem Zeitstempel) und kennzeichnet sie zur Replizierung „täglich“.
+
+.Snapshot-Typen
+Sie können einen On-Demand-Snapshot einer einzelnen Speichereinheit oder einer Konsistenzgruppe erstellen. Sie können automatische Snapshots einer Konsistenzgruppe erstellen, die mehrere Speichereinheiten enthält. Sie können keine automatischen Snapshots einer einzelnen Speichereinheit erstellen.
+
+* On-Demand-Snapshots
++
+Ein On-Demand-Snapshot einer Speichereinheit kann jederzeit erstellt werden. Die Speichereinheit muss kein Mitglied einer Consistency Group sein, die durch einen On-Demand-Snapshot geschützt werden soll. Wenn Sie einen On-Demand-Snapshot einer Speichereinheit erstellen, die Mitglied einer Konsistenzgruppe ist, werden die anderen Speichereinheiten der Konsistenzgruppe nicht in den On-Demand-Snapshot aufgenommen. Wenn Sie einen On-Demand-Snapshot einer Konsistenzgruppe erstellen, werden alle Speichereinheiten in der Konsistenzgruppe in den Snapshot aufgenommen.
+
+* Automatisierte Snapshots
++
+Automatisierte Snapshots werden mit Snapshot-Richtlinien erstellt. Um eine Snapshot-Richtlinie auf eine Speichereinheit für die automatische Snapshot-Erstellung anzuwenden, muss die Speichereinheit Mitglied einer Konsistenzgruppe sein. Wenn Sie eine Snapshot-Richtlinie auf eine Konsistenzgruppe anwenden, werden alle Speichereinheiten in der Konsistenzgruppe durch automatische Snapshots geschützt.
+
+
+
+Erstellen Sie einen Snapshot einer Konsistenzgruppe oder einer Speichereinheit.
+
+[role="tabbed-block"]
+====
+.Snapshot einer Konsistenzgruppe
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Bewegen Sie den Mauszeiger über den Namen der Konsistenzgruppe, die Sie schützen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"] ; und dann *protect*.
+. Wenn Sie einen sofortigen Snapshot nach Bedarf erstellen möchten, wählen Sie unter *lokaler Schutz* *Jetzt Snapshot hinzufügen* aus.
++
+Der lokale Schutz erstellt den Snapshot auf demselben Cluster, das die Speichereinheit enthält.
+
++
+.. Geben Sie einen Namen für den Snapshot ein, oder übernehmen Sie den Standardnamen, und geben Sie optional eine SnapMirror-Bezeichnung ein.
++
+Das SnapMirror-Label wird vom entfernten Ziel verwendet.
+
+
+
+. Wenn Sie automatisierte Snapshots mithilfe einer Snapshot-Richtlinie erstellen möchten, wählen Sie *Snapshots planen*.
++
+.. Wählen Sie eine Snapshot-Richtlinie aus.
++
+Akzeptieren Sie die standardmäßige Snapshot-Richtlinie, wählen Sie eine vorhandene Richtlinie aus, oder erstellen Sie eine neue Richtlinie.
+
++
+[cols="2,6a"]
+|===
+| Option | Schritte 
+
+
+| Wählen Sie eine vorhandene Snapshot-Richtlinie aus  a| 
+Wählen Sie image:icon_dropdown_arrow.gif["Nach unten zeigender blauer Pfeil"] neben der Standardrichtlinie aus, und wählen Sie dann die vorhandene Richtlinie aus, die Sie verwenden möchten.
+
+
+
+| Neue Snapshot-Richtlinie erstellen  a| 
+... Wählen Sie image:icon_add.gif["Blaues Pluszeichen, gefolgt vom Wort Add"] ; und geben Sie dann die Snapshot Policy-Parameter ein.
+... Wählen Sie *Richtlinie hinzufügen*.
+
+
+|===
+
+
+. Wenn Sie Ihre Snapshots auf einen Remote-Cluster replizieren möchten, wählen Sie unter *Remote-Schutz* *auf einen Remote-Cluster replizieren*.
++
+.. Wählen Sie das Quell-Cluster und die Storage-VM aus, und wählen Sie dann die Replizierungsrichtlinie aus.
++
+Die erste Datenübertragung für die Replikation wird standardmäßig sofort gestartet.
+
+
+
+. Wählen Sie *Speichern*.
+
+
+--
+.Momentaufnahme der Speichereinheit
+--
+.Schritte
+. Wählen Sie im System Manager *Storage* aus.
+. Bewegen Sie den Mauszeiger über den Namen der Speichereinheit, die Sie schützen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"] ; und dann *protect*. Wenn Sie einen sofortigen Snapshot nach Bedarf erstellen möchten, wählen Sie unter *lokaler Schutz* *Jetzt Snapshot hinzufügen* aus.
++
+Der lokale Schutz erstellt den Snapshot auf demselben Cluster, das die Speichereinheit enthält.
+
+. Geben Sie einen Namen für den Snapshot ein, oder übernehmen Sie den Standardnamen, und geben Sie optional eine SnapMirror-Bezeichnung ein.
++
+Das SnapMirror-Label wird vom entfernten Ziel verwendet.
+
+. Wenn Sie automatisierte Snapshots mithilfe einer Snapshot-Richtlinie erstellen möchten, wählen Sie *Snapshots planen*.
++
+.. Wählen Sie eine Snapshot-Richtlinie aus.
++
+Akzeptieren Sie die standardmäßige Snapshot-Richtlinie, wählen Sie eine vorhandene Richtlinie aus, oder erstellen Sie eine neue Richtlinie.
+
++
+[cols="2,6a"]
+|===
+| Option | Schritte 
+
+
+| Wählen Sie eine vorhandene Snapshot-Richtlinie aus  a| 
+Wählen Sie image:icon_dropdown_arrow.gif["Nach unten zeigender blauer Pfeil"] neben der Standardrichtlinie aus, und wählen Sie dann die vorhandene Richtlinie aus, die Sie verwenden möchten.
+
+
+
+| Neue Snapshot-Richtlinie erstellen  a| 
+... Wählen Sie image:icon_add.gif["Blaues Pluszeichen, gefolgt vom Wort Add"] ; und geben Sie dann die Snapshot Policy-Parameter ein.
+... Wählen Sie *Richtlinie hinzufügen*.
+
+
+|===
+
+
+. Wenn Sie Ihre Snapshots auf einen Remote-Cluster replizieren möchten, wählen Sie unter *Remote-Schutz* *auf einen Remote-Cluster replizieren*.
++
+.. Wählen Sie das Quell-Cluster und die Storage-VM aus, und wählen Sie dann die Replizierungsrichtlinie aus.
++
+Die erste Datenübertragung für die Replikation wird standardmäßig sofort gestartet.
+
+
+
+. Wählen Sie *Speichern*.
+
+
+--
+====
+.Was kommt als Nächstes?
+Nachdem Ihre Daten nun durch Snapshots geschützt sind, sollten Sie link:../secure-data/encrypt-data-at-rest.html["Richten Sie die Snapshot-Replikation ein"]Ihre Konsistenzgruppen für das Backup und Disaster Recovery an einen geografisch Remote Standort kopieren.

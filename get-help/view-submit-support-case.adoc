@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: get-help/view-submit-support-case.html 
+keywords:  
+summary:  
+---
+= Support-Cases für ASA r2-Speichersysteme übermitteln und anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn bei einem Problem Unterstützung erforderlich ist, können Sie den ONTAP System Manager verwenden, um einen Case an den technischen Support zu übermitteln. Sie können ONTAP System Manager auch verwenden, um abgeschlossene oder laufende Fälle anzuzeigen.
+
+Sie müssen link:https://activeiq-link.netapp.com/["Bei Active IQ registriert"]Support-Fälle für Ihr ASA r2-System anzeigen.
+
+.Schritte
+. Um einen Support-Fall zu senden, wählen Sie im System-Manager *Cluster >Support* aus, und wählen Sie dann *Gehe zu NetApp-Unterstützung* aus.
+. Um einen zuvor gesendeten Fall anzuzeigen, wählen Sie im System Manager *Cluster >Support* aus, und wählen Sie dann *Meine Fälle anzeigen* aus.
+

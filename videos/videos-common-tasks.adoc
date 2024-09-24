@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: videos/videos-common-tasks.html 
+keywords: demo,asa r2, videos 
+summary: Sehen Sie sich kurze Videos an, die zeigen, wie Sie mit ONTAP System Manager häufige Aufgaben auf ASA r2 Storage-Systemen schnell und einfach ausführen. 
+---
+= ASA r2 Storage-System – Video-Demos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sehen Sie sich kurze Videos an, die zeigen, wie Sie mit ONTAP System Manager häufige Aufgaben auf ASA r2 Storage-Systemen schnell und einfach ausführen.
+
+.Konfigurieren Sie SAN-Protokolle auf Ihrem ASA r2-System
+video::96cf3b2d-1cbd-4fff-a6e7-b1f0014ef793[panopto]
+link:video_transcript_configure_san_protocols.html["Video-Transkript"]
+
+[#video_transcript_return_configure_san_protocols]
+.Stellen Sie SAN Storage auf Ihrem ASA r2-System bereit
+video::1d3e1a18-7dbe-44e9-a53d-b1f0014ef7c5[panopto]
+link:video_transcript_provision_san_storage.html["Video-Transkript"]
+
+[#video_transcript_return_provision_san_storage]
+.Replizieren Sie Daten von einem ASA r2 System auf einen Remote-Cluster
+video::4b78312d-1bfa-4df5-afac-b1f0014ef80e[panopto]
+link:video_transcript_replicate_data.html["Video-Transkript"]

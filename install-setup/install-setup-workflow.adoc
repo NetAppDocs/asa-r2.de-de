@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: install-setup/install-setup-workflow.html 
+keywords: asa r2, install, setup, workflow 
+summary: Beginnen Sie mit der Installation und Einrichtung des ASA r2 Storage-Systems und implementieren Sie es als HA-Paar in Ihrer ONTAP Umgebung. 
+---
+= Installations- und Setup-Workflow für ASA r2 Storage-Systeme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Installieren und Konfigurieren des ASA r2 Systems überprüfen Sie die Hardwareanforderungen, bereiten den Standort vor, installieren und verkabeln die Hardwarekomponenten, schalten das System ein und richten den ONTAP-Cluster ein.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:install-setup-requirements.html["Überprüfen Sie die Anforderungen für die Hardwareinstallation"]
+[role="quick-margin-para"]
+Überprüfen Sie die Hardwareanforderungen für die Installation Ihres ASA r2-Speichersystems.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Eins"]link:prepare-hardware.html["Bereiten Sie die Installation des ASA r2-Speichersystems vor"]
+[role="quick-margin-para"]
+Um die Installation Ihres ASA r2-Systems vorzubereiten, müssen Sie den Standort vorbereiten, die Umgebung und die elektrischen Anforderungen prüfen und sicherstellen, dass genügend Rack-Platz vorhanden ist. Packen Sie dann das Gerät aus, vergleichen Sie dessen Inhalt mit dem Packzettel, und registrieren Sie die Hardware, um auf Support-Vorteile zuzugreifen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Zwei"]link:deploy-hardware.html["Installieren Sie die Hardware für das ASA r2-Speichersystem"]
+[role="quick-margin-para"]
+Um die Hardware zu installieren, installieren Sie die Schienenkits für Ihr Speichersystem und die Regale, und installieren und sichern Sie dann das Speichersystem im Schrank oder im Telco-Rack. Schieben Sie dann die Regale auf die Schienen. Schließen Sie schließlich die Kabelverwaltungsgeräte an der Rückseite des Speichersystems an, um die Kabelführung zu organisieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Drittens"]link:cable-hardware.html["Die Controller und Storage Shelfs für das ASA r2 Storage-System verkabeln"]
+[role="quick-margin-para"]
+Um die Hardware zu verkabeln, verbinden Sie zuerst die Storage Controller mit dem Netzwerk und anschließend die Controller mit den Storage-Shelfs.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Vier"]link:power-on-hardware.html["Schalten Sie das ASA r2-Speichersystem ein"]
+[role="quick-margin-para"]
+Schalten Sie vor dem Einschalten der Controller jedes NS224-Shelf ein und weisen Sie eine eindeutige Shelf-ID zu, damit jedes Shelf im Setup eindeutig identifiziert wird.

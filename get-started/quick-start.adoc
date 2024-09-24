@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: get-started/quick-start.html 
+keywords: asa r2, asa a1k, asa a70, asa a90, get started, getting started, quick start, install, set up 
+summary: 'Um mit einem ASA r2-System (ASA A1K, ASA A70, ASA A90) zu beginnen, installieren Sie die Hardware, richten den Cluster ein, richten den Datenzugriff ein und stellen den Storage bereit.' 
+searchtitle: Installation und Einrichtung der Speichersysteme ASA A1K, ASA A70 und ASA A90 
+---
+= Schnellstart für ASA r2-Speichersysteme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um Ihr ASA r2 System in Betrieb zu nehmen, installieren Sie Ihre Hardwarekomponenten, richten Ihren Cluster ein, richten den Datenzugriff von Ihren Hosts auf das Storage-System ein und stellen den Storage bereit.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] Installieren und richten Sie Ihre Hardware ein
+[role="quick-margin-para"]
+link:../install-setup/install-setup-workflow.html["Installieren und einrichten"] Ihrem ASA r2 System weiter zu implementieren und es als HA-Paar in Ihrer ONTAP Umgebung zu implementieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Richten Sie den Cluster ein
+[role="quick-margin-para"]
+Verwenden Sie System Manager, um Sie durch einen schnellen und einfachen Prozess zu führenlink:../install-setup/initialize-ontap-cluster.html["Richten Sie Ihren ONTAP-Cluster ein"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Richten Sie den Datenzugriff ein
+[role="quick-margin-para"]
+link:../install-setup/set-up-data-access.html["Verbinden Sie das ASA r2-System mit Ihren SAN-Clients"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"] Bereitstellung von Storage
+[role="quick-margin-para"]
+link:../manage-data/provision-san-storage.html["Bereitstellung von Storage"] Um Ihren SAN-Clients Daten bereitzustellen.
+
+.Was kommt als Nächstes?
+Sie können jetzt den System Manager verwenden, um Ihre Daten durch link:../data-protection/create-snapshots.html["Erstellen von Snapshots"]zu schützen.

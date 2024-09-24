@@ -1,0 +1,40 @@
+---
+section: manage-data
+title: Nutzen Sie ONTAP für das Datenmanagement
+entries:
+- title: Videos für gängige Aufgaben
+  url: "/videos/videos-common-tasks.html"
+- title: Managen Sie Ihren Storage
+  entries:
+  - title: Bereitstellung von Storage
+    url: "/manage-data/provision-san-storage.html"
+  - title: Klonen von Daten
+    url: "/manage-data/data-cloning.html"
+  - title: Speichereinheiten ändern
+    url: "/manage-data/modify-storage-units.html"
+  - title: Speichereinheiten löschen
+    url: "/manage-data/delete-storage-units.html"
+  - title: Storage-Beschränkungen
+    url: "/manage-data/storage-limits.html"
+- title: Sichern Sie Ihre Daten
+  entries:
+  - title: Erstellen von Snapshots
+    url: "/data-protection/create-snapshots.html"
+  - title: Richten Sie die Snapshot-Replikation ein
+    url: "/data-protection/snapshot-replication.html"
+  - title: Schutz Von Kubernetes
+    url: "/data-protection/protect-kubernetes.html"
+  - title: Daten wiederherstellen
+    url: "/data-protection/restore-data.html"
+  - title: Verwalten von Konsistenzgruppen
+    url: "/data-protection/manage-consistency-groups.html"
+  - title: Management von Sicherheitsrichtlinien und -Zeitplänen
+    url: "/data-protection/policies-schedules.html"
+- title: Datensicherung
+  entries:
+  - title: Verschlüsselung von Daten im Ruhezustand
+    url: "/secure-data/encrypt-data-at-rest.html"
+  - title: Schutz vor Ransomware-Angriffen
+    url: "/secure-data/ransomware-protection.html"
+  - title: Sichere NVMe-Verbindungen
+    url: "/secure-data/nvme-tcp-connections.html"

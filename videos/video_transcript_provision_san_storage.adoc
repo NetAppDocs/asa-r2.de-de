@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: videos/video_transcript_provision_san_storage.html 
+keywords: frontmatter, front matter 
+summary: Sehen Sie sich kurze Videos an, die zeigen, wie Sie mit ONTAP System Manager häufige Aufgaben auf ASA r2 Storage-Systemen schnell und einfach ausführen. 
+---
+= Konfigurieren Sie den SAN-Speicher auf Ihrem ASA r2-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das folgende Transkript ist für das Video `Provision SAN storage on your ASA r2 storage system`zur Verfügung gestellt.
+
+link:videos-common-tasks.html#video_transcript_return_provision_san_storage["Zurück zur Seite"]
+
+Mit ONTAP System Manager lassen sich Storage-Einheiten schnell und einfach für Hosts auf dem ASA r2 Storage-System bereitstellen.
+
+In diesem Beispiel erstellen wir sechs neue Storage-Einheiten für einen VMware Host.
+
+Wählen Sie im System Manager-Menü *Speicher* und dann *Hinzufügen*.
+
+Geben Sie einen Namen für die Speichereinheiten, die Anzahl der Einheiten und die Kapazität für jede Einheit ein, und wählen Sie dann Ihr Host-Betriebssystem aus.
+
+Wenn Sie mehr als eine Einheit erstellen, wird standardmäßig jede Einheit mit derselben Kapazität erstellt.
+
+Wählen Sie *Weitere Optionen*, um Ihre Hostinformationen einzugeben. In diesem Beispiel wählen wir das SCSI-Protokoll aus und fügen einen neuen iSCSI-Host hinzu.
+
+Geben Sie den Hostnamen ein, und fügen Sie dann die Hostinitiatoren und eine Beschreibung hinzu.
+
+Wählen Sie *Schedule Snapshots* Schützen Sie Ihre Speichereinheiten mit regulären Snapshots.
+
+Wählen Sie Remote Protection, um Ihre Geräte an einen Remote-Standort zu replizieren*.
+
+Wählen Sie eine Speicher-VM und Replikationsrichtlinie aus; wählen Sie *Hinzufügen* aus.
+
+Die Speichereinheiten müssen sich für die Replikation in einer Konsistenzgruppe befinden. Geben Sie einen Namen für die Konsistenzgruppe ein, und wählen Sie *Create*.
+
+Sie haben schnell und einfach 6 Storage-Einheiten für VMware Hosts mit lokaler und Remote-Datensicherheit bereitgestellt.

@@ -1,0 +1,160 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: Verwenden Sie Consistency Groups, um verschiedene Aktionen für mehrere Speichereinheiten gleichzeitig durchzuführen, anstatt einzeln auf jeder Einheit Aktionen durchzuführen. 
+---
+= Management von ONTAP Consistency Groups auf ASA r2-Storage-Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Eine Konsistenzgruppe ist eine Sammlung von Speichereinheiten, die als eine Einheit gemanagt werden. Verwenden Sie Konsistenzgruppen für vereinfachtes Storage-Management. Angenommen, Sie haben eine Datenbank, die aus 10 Speichereinheiten in einer Konsistenzgruppe besteht, und Sie müssen die gesamte Datenbank sichern. Anstatt jede Storage-Einheit zu sichern, können Sie die gesamte Datenbank sichern, indem Sie der Konsistenzgruppe einfach Snapshot-Datenschutz hinzufügen. Das Backup der Storage-Einheiten als Konsistenzgruppe anstatt einzeln sorgt auch für ein konsistentes Backup aller Einheiten, während ein individueller Backup der Einheiten potenziell Inkonsistenzen verursachen kann.
+
+
+
+== Fügen Sie einer Konsistenzgruppe Snapshot Datensicherung hinzu
+
+Wenn Sie einer Konsistenzgruppe Snapshot-Datenschutz hinzufügen, werden lokale Snapshots der Konsistenzgruppe in regelmäßigen Abständen basierend auf einem vordefinierten Zeitplan erstellt.
+
+Sie können Snapshots verwendenlink:restore-data.html["Daten wiederherstellen"], die verloren gehen oder beschädigt sind.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Bewegen Sie den Mauszeiger über die Konsistenzgruppe, die Sie schützen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Bearbeiten*.
+. Wählen Sie unter *lokaler Schutz* *Snapshots planen*.
+. Wählen Sie eine Snapshot-Richtlinie aus.
++
+Akzeptieren Sie die standardmäßige Snapshot-Richtlinie, wählen Sie eine vorhandene Richtlinie aus, oder erstellen Sie eine neue Richtlinie.
+
++
+[cols="2,6a"]
+|===
+| Option | Schritte 
+
+
+| Wählen Sie eine vorhandene Snapshot-Richtlinie aus  a| 
+Wählen Sie image:icon_dropdown_arrow.gif["Nach unten zeigender blauer Pfeil"] neben der Standardrichtlinie aus, und wählen Sie dann die vorhandene Richtlinie aus, die Sie verwenden möchten.
+
+
+
+| Neue Snapshot-Richtlinie erstellen  a| 
+.. Wählen Sie image:icon_add.gif["Blaues Pluszeichen, gefolgt vom Wort Add"];, und geben Sie den neuen Richtliniennamen ein.
+.. Wählen Sie den Richtlinienumfang aus.
+.. Wählen Sie unter *Zeitpläne* image:icon_add.gif["Blaues Pluszeichen, gefolgt vom Wort Add"].
+.. Wählen Sie den Namen aus, der unter *Terminplanname* angezeigt wird;
++
+Wählen Sie anschließend image:icon_dropdown_arrow.gif["Blauer Pfeil, der nach unten zeigt"].
+
+.. Wählen Sie den Richtlinienzeitplan aus.
+.. Geben Sie unter *Maximum Snapshots* die maximale Anzahl der Snapshots ein, die Sie von der Konsistenzgruppe behalten möchten.
+.. Optional unter *SnapMirror Label* ein SnapMirror Label eingeben.
+.. Wählen Sie *Speichern*.
+
+
+|===
+. Wählen Sie *Bearbeiten*.
+
+
+.Wie es weiter geht
+Da Ihre Daten nun mit Snapshots gesichert werden, sollten Sie link:../secure-data/encrypt-data-at-rest.html["Richten Sie die Snapshot-Replikation ein"]Ihre Konsistenzgruppen für Backup und Disaster Recovery an einen geografisch Remote-Standort kopieren.
+
+
+
+== Entfernen Sie die Snapshot-Datensicherung aus einer Konsistenzgruppe
+
+Wenn Sie den Snapshot-Datenschutz aus einer Konsistenzgruppe entfernen, werden die Snapshots für alle Speichereinheiten in der Konsistenzgruppe deaktiviert.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie nicht mehr schützen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Bearbeiten*.
+. Deaktivieren Sie unter *lokaler Schutz* die Option Snapshots planen.
+. Wählen Sie *Bearbeiten*.
+
+
+.Ergebnis
+Snapshots werden für keine der Speichereinheiten in der Konsistenzgruppe erstellt.
+
+
+
+== Fügen Sie einer Konsistenzgruppe Speichereinheiten hinzu
+
+Erweitern Sie die von einer Konsistenzgruppe gemanagte Speichermenge, indem Sie der Konsistenzgruppe Speichereinheiten hinzufügen.
+
+Sie können der Konsistenzgruppe vorhandene Storage-Einheiten hinzufügen oder neue Storage-Einheiten erstellen, die der Konsistenzgruppe hinzugefügt werden sollen.
+
+[role="tabbed-block"]
+====
+.Vorhandene Speichereinheiten hinzufügen
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie erweitern möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Expand*.
+. Wählen Sie *mit vorhandenen Speichereinheiten*.
+. Wählen Sie die Speichereinheiten aus, die der Consistency Group hinzugefügt werden sollen, und wählen Sie dann *Expand* aus.
+
+
+--
+.Fügen Sie neue Speichereinheiten hinzu
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie erweitern möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Expand*.
+. Wählen Sie *mit neuen Speichereinheiten*.
+. Geben Sie die Anzahl der Einheiten, die Sie erstellen möchten, sowie die Kapazität pro Einheit ein.
++
+Wenn Sie mehrere Einheiten erstellen, wird jede Einheit mit derselben Kapazität und demselben Host-Betriebssystem erstellt. Um jeder Einheit eine andere Kapazität zuzuweisen, wählen Sie *eine andere Kapazität hinzufügen*, um jeder Einheit eine andere Kapazität zuzuweisen.
+
+. Wählen Sie *Erweitern*.
+
+
+.Was kommt als Nächstes
+Nachdem Sie eine neue Speichereinheit erstellt haben, sollten Sie link:../manage-data/provision-san-storage.html#add-host-initiators["Fügen Sie Host-Initiatoren hinzu"]und link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["Ordnen Sie die neu erstellte Speichereinheit einem Host zu"]. Durch das Hinzufügen von Hostinitiatoren können Hosts auf die Speichereinheiten zugreifen und Datenvorgänge durchführen. Durch das Zuordnen einer Speichereinheit zu einem Host kann die Speichereinheit mit der Bereitstellung von Daten für den Host beginnen, dem sie zugeordnet ist.
+
+--
+====
+.Was kommt als Nächstes?
+Vorhandene Snapshots der Konsistenzgruppe enthalten keine neu hinzugefügten Speichereinheiten. Sie sollten link:create-snapshots.html#step-2-create-a-snapshot["Erstellen Sie einen sofortigen Snapshot"]Ihrer Konsistenzgruppe angehören, um Ihre neu hinzugefügten Speichereinheiten zu schützen, bis der nächste geplante Snapshot automatisch erstellt wird.
+
+
+
+== Entfernen einer Speichereinheit aus einer Konsistenzgruppe
+
+Sie sollten eine Speichereinheit aus einer Konsistenzgruppe entfernen, wenn Sie die Speichereinheit löschen möchten, wenn Sie sie als Teil einer anderen Konsistenzgruppe verwalten möchten oder wenn Sie die darin enthaltenen Daten nicht mehr schützen müssen. Durch das Entfernen einer Speichereinheit aus einer Konsistenzgruppe wird die Beziehung zwischen der Speichereinheit und der Konsistenzgruppe unterbrochen, aber die Speichereinheit wird nicht gelöscht.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Doppelklicken Sie auf die Konsistenzgruppe, aus der Sie eine Speichereinheit entfernen möchten.
+. Wählen Sie im Abschnitt *Übersicht* unter *Speichereinheiten* die Speichereinheit aus, die Sie entfernen möchten, und wählen Sie dann *aus Konsistenzgruppe entfernen* aus.
+
+
+.Ergebnis
+Die Speichereinheit ist nicht mehr Mitglied der Konsistenzgruppe.
+
+.Wie es weiter geht
+Wenn Sie mit dem Datenschutz für die Speichereinheit fortfahren möchten, fügen Sie die Speichereinheit einer anderen Konsistenzgruppe hinzu.
+
+
+
+== Löschen einer Konsistenzgruppe
+
+Wenn Sie die Mitglieder einer Konsistenzgruppe nicht mehr als eine Einheit verwalten müssen, können Sie die Konsistenzgruppe löschen. Nach dem Löschen einer Konsistenzgruppe bleiben die zuvor in der Gruppe enthaltenen Speichereinheiten auf dem Cluster aktiv.
+
+.Bevor Sie beginnen
+Wenn die Konsistenzgruppe, die Sie löschen möchten, sich in einer Replizierungsbeziehung befindet, müssen Sie die Beziehung unterbrechen, bevor Sie die Konsistenzgruppe löschen. Nachdem Sie eine zuvor vorhandene Replikationskonsistenzgruppe gelöscht haben, bleiben die Speichereinheiten, die sich in der Konsistenzgruppe befanden, auf dem Cluster aktiv, und die replizierten Kopien bleiben im Remote-Cluster erhalten.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie löschen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Löschen*.
+. Akzeptieren Sie die Warnung, und wählen Sie dann *Löschen*.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie eine Konsistenzgruppe gelöscht haben, sind die Speichereinheiten, die zuvor in der Konsistenzgruppe vorhanden waren, nicht mehr durch Snapshots geschützt. Ziehen Sie in Betracht, diese Storage-Einheiten einer anderen Konsistenzgruppe hinzuzufügen, um sie vor Datenverlust zu schützen.

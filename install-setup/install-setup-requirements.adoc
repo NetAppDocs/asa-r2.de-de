@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: install-setup/install-setup-requirements.html 
+keywords: asa r2, install, setup, requirements, cautions 
+summary: Überprüfen Sie die erforderlichen Geräte und die Vorsichtsmaßnahmen zum Anheben des ASA r2-Storage-Systems und der Storage-Shelfs. 
+---
+= Installationsanforderungen für ASA r2-Speichersysteme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Überprüfen Sie die erforderlichen Geräte und die Vorsichtsmaßnahmen zum Anheben des ASA r2-Storage-Systems und der Storage-Shelfs.
+
+
+
+== Für die Installation erforderliche Ausrüstung
+
+Zur Installation des ASA r2-Speichersystems benötigen Sie die folgenden Geräte und Tools.
+
+* Zugriff auf einen Webbrowser zur Konfiguration des Speichersystems
+* Band für elektrostatische Entladung (ESD)
+* Taschenlampe
+* Laptop oder Konsole mit USB-/serieller Verbindung
+* Büroklammer oder Kugelschreiber mit schmaler Spitze zum Einstellen der NS224-Einschubnummern
+* Kreuzschlitzschraubendreher #2
+
+
+
+
+== Vorsichtsmaßnahmen beim Anheben
+
+ASA r2 Storage-Systeme und NS224 Storage-Shelfs sind schwer. Gehen Sie beim Anheben und Bewegen dieser Gegenstände vorsichtig vor.
+
+
+
+=== Gewichte des Storage-Systems
+
+Treffen Sie die erforderlichen Vorsichtsmaßnahmen, wenn Sie Ihr ASA r2-Speichersystem bewegen oder anheben.
+
+[role="tabbed-block"]
+====
+.ASA A1K
+--
+Ein ASA A1K Storage-System kann bis zu 28.5 kg (62.83 lbs) wiegen. Zum Anheben des Systems zwei Personen oder einen Hydraulikhub verwenden.
+
+image::../media/drw_a1k_weight_caution_ieops-1698.svg[AFF A1K Warnsymbol beim Anheben]
+
+--
+.ASA A70 und ASA A90
+--
+Ein ASA A70 Storage-System oder ein ASA A90 Storage-System kann bis zu 68.8 kg (151.68 lbs) wiegen. Zum Anheben des Systems vier Personen oder einen Hydraulikhub verwenden.
+
+image::../media/drw_a70-90_weight_icon_ieops-1730.svg[AFF A90]
+
+--
+====
+
+
+=== Gewicht des Lagerregals
+
+Ein NS224-Einlegeboden kann bis zu 30.29 kg (66.78 lbs) wiegen. Zum Anheben des Lagerregals zwei Personen oder einen Hydraulikhub verwenden. Halten Sie alle Komponenten im Lagerregal (vorne und hinten), um ein Ausbalancieren des Regalgewichts zu vermeiden.
+
+image::../media/drw_ns224_lifting_weight_ieops-1716.svg[NS224 Vorsicht beim Anheben]
+
+.Verwandte Informationen
+* https://library.netapp.com/ecm/ecm_download_file/ECMP12475945["Sicherheitsinformationen und gesetzliche Hinweise"^]
+
+
+.Was kommt als Nächstes?
+Nachdem Sie die Hardwareanforderungen überprüft haben, können Sie link:prepare-hardware.html["Bereiten Sie die Installation Ihres ASA r2-Speichersystems vor"].

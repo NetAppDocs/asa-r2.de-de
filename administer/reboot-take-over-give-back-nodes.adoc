@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: administer/reboot-take-over-give-back-nodes.html 
+keywords: reboot, take over, give back, nodes, asa r2, asa r2, asa a1k, asa 70, asa 90 
+summary: Möglicherweise müssen Sie einen Node aus Wartungsgründen, zur Fehlerbehebung, zu Softwareupdates oder aus anderen administrativen Gründen neu booten. 
+---
+= Starten Sie einen Node auf einem ASA r2-Speichersystem neu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie einen Node aus Wartungsgründen, zur Fehlerbehebung, zu Softwareupdates oder aus anderen administrativen Gründen neu booten. Beim Neustart eines Node führt der HA-Partner automatisch eine Übernahme aus. Der Partner-Node führt dann ein automatisches Giveback durch, nachdem der neu gebootete Node wieder online geschaltet wurde.
+
+.Schritte
+. Wählen Sie im System Manager *Cluster > Übersicht* aus.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"] neben dem Knoten, den Sie neu starten möchten, und wählen Sie dann *Neustart*.
+. Geben Sie den Grund für das Neustarten des Knotens ein, und wählen Sie dann *Neustart* aus.
++
+Der von Ihnen eingegebene Grund für das Neubooten wird im Systemauditprotokoll aufgezeichnet.
+
+
+
+.Was kommt als Nächstes?
+Während des Neubootens des Node führt der HA-Partner einen Takeover aus, sodass der Datenservice nicht unterbrochen wird. Nach Abschluss des Neubootens führt der HA-Partner ein Giveback durch.

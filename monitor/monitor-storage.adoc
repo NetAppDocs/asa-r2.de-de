@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: monitor/monitor-storage.html 
+keywords: monitor, storage, cluster, utilization, usage 
+summary: Überwachen Sie Ihre Storage-Auslastung, um sicherzustellen, dass Sie die Storage-Kapazität haben, die Sie für aktuelle und zukünftige Workloads benötigen. 
+searchtitle: Überwachen Sie die Speicherplatzauslastung mit ONTAP System Manager ASA r2 
+---
+= Überwachung der Auslastung von Clustern und Speichereinheiten auf ASA r2-Storage-Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit ONTAP System Manager überwachen Sie Ihre Storage-Auslastung, um sicherzustellen, dass Sie die Storage-Kapazität haben, die Sie für aktuelle und zukünftige Workloads benötigen.
+
+
+
+== Überwachen der Cluster-Auslastung
+
+Überwachen Sie regelmäßig den von Ihrem Cluster verbrauchten Storage, um sicherzustellen, dass Sie bei Bedarf bereit sind, die Cluster-Kapazität zu erweitern, bevor der Speicherplatz knapp wird.
+
+.Schritte
+. Wählen Sie in System Manager *Dashboard* aus.
+. Unter *Capacity* sehen Sie die Menge des physisch belegten Speicherplatzes und die Menge des verfügbaren Speicherplatzes auf Ihrem Cluster.
++
+Die Datenreduzierungsration gibt den durch Storage-Effizienz eingesparten Speicherplatz an.
+
+
+
+.Was kommt als Nächstes?
+Wenn der Speicherplatz des Clusters knapp link:../administer/increase-storage-capacity.html["Fügen Sie neue Laufwerke hinzu"]ist oder nicht über die Kapazität verfügt, um zukünftigen Anforderungen gerecht zu werden, sollten Sie Ihr ASA r2 System einplanen, um Ihre Storage-Kapazität zu erhöhen.
+
+
+
+== Überwachung der Auslastung der Speichereinheiten
+
+Überwachen Sie den Storage-Verbrauch einer Storage-Einheit, um proaktiv die Größe der Storage-Einheit ganz nach Ihren Bedürfnissen zu erweitern.
+
+.Schritte
+. Wählen Sie im System Manager *Storage* aus.
+. Wählen Sie die zu überwachende Speichereinheit aus, und wählen Sie dann *Übersicht*.
+. Sehen Sie sich unter *Speicher* Folgendes an:
++
+** Größe der Speichereinheit
+** Menge des belegten Speicherplatzes
+** Datenreduzierungsquote
++
+Das Datenreduzierungsverhältnis stellt den durch Storage-Effizienz eingesparten Speicherplatz dar
+
+** Verwendeter Snapshot
++
+Der von Snapshots verwendete Snapshot stellt die Größe des von Snapshots verwendeten Speichers dar.
+
+
+
+
+
+.Was kommt als Nächstes?
+Wenn sich die Speicherkapazität Ihrer Speichereinheit nähert, sollten Sie link:../manage-data/modify-storage-units.html["Ändern Sie die Speichereinheit"]sie vergrößern.

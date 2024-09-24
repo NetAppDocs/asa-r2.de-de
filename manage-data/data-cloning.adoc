@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: manage-data/data-cloning.html 
+keywords: data cloning, clone data, cloning data, luns, namespaces, clone storage units, clone, cloning, clone consistency groups 
+summary: Klonen von Storage-Einheiten und Konsistenzgruppen auf dem ASA r2, um Datenkopien für eine Vielzahl von Zwecken außerhalb der Produktionsumgebung zu erstellen. 
+searchtitle: Das Klonen von Daten mit ONTAP System Manager ASA r2 
+---
+= Klonen von Daten auf ASA r2 Storage-Systemen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Klonen von Daten erstellt mithilfe von ONTAP System Manager Kopien von Storage-Einheiten und Konsistenzgruppen auf dem ASA r2 System, die sich zur Entwicklung von Applikationen, für Tests, Backups, Datenmigration oder andere administrative Funktionen einsetzen lassen.
+
+
+
+== Storage-Einheiten klonen
+
+Wenn Sie eine Storage-Einheit klonen, erstellen Sie auf Ihrem ASA r2-System eine neue Storage-Einheit, die eine zeitpunktgenaue, beschreibbare Kopie der geklonten Storage-Einheit ist.
+
+.Schritte
+. Wählen Sie im System Manager *Storage* aus.
+. Bewegen Sie den Mauszeiger über den Namen der Speichereinheit, die Sie klonen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Clone*.
+. Übernehmen Sie den Standardnamen für die neue Speichereinheit, die als Klon erstellt werden soll, oder geben Sie einen neuen ein.
+. Wählen Sie das Host-Betriebssystem aus.
++
+Standardmäßig wird ein neuer Snapshot für den Klon erstellt.
+
+. Wenn Sie einen vorhandenen Snapshot verwenden, eine neue Host-Gruppe erstellen oder einen neuen Host hinzufügen möchten, wählen Sie *Weitere Optionen*.
++
+[cols="2"]
+|===
+| Option | Schritte 
+
+
+ a| 
+Verwenden Sie einen vorhandenen Snapshot
+ a| 
+.. Wählen Sie unter *Snapshot to Clone* *Use an existing snaphot* aus.
+.. Wählen Sie den Snapshot aus, den Sie für den Klon verwenden möchten.
+
+
+
+
+ a| 
+Erstellen Sie eine neue Hostgruppe
+ a| 
+.. Wählen Sie unter *Host Mapping* *New Host Group* aus.
+.. Geben Sie einen Namen für die neue Host-Gruppe ein, und wählen Sie dann die Host-Initiatoren aus, die in die Gruppe aufgenommen werden sollen.
+
+
+
+
+ a| 
+Fügen Sie einen neuen Host hinzu
+ a| 
+.. Wählen Sie unter *Host Mapping* *New Hosts* aus.
+.. Geben Sie den A-Namen für den neuen Host ein, und wählen Sie dann *FC* oder *iSCSI* aus.
+.. Wählen Sie die Host-Initiatoren aus der Liste der vorhandenen Initiatoren aus, oder wählen Sie *Add*, um neue Initiatoren für den Host hinzuzufügen.
+
+
+|===
+. Wählen Sie *Clone*.
+
+
+.Was kommt als Nächstes?
+Sie haben eine neue Storage-Einheit erstellt, die mit der von Ihnen geklonten Storage-Einheit identisch ist. Sie können die neue Speichereinheit jetzt nach Bedarf verwenden.
+
+
+
+== Klonen von Konsistenzgruppen
+
+Wenn Sie eine Konsistenzgruppe klonen, erstellen Sie eine neue Konsistenzgruppe, die in der Struktur, den Storage-Einheiten und den Daten der von Ihnen geklonten Konsistenzgruppe identisch ist. Verwenden Sie einen Konsistenzgruppenklon, um Applikationstests durchzuführen oder Daten zu migrieren. Angenommen, Sie müssen einen Produktions-Workload aus einer Konsistenzgruppe migrieren. Sie können die Konsistenzgruppe klonen, um eine Kopie Ihres Produktions-Workloads zu erstellen, die als Backup gewartet werden soll, bis die Migration abgeschlossen ist.
+
+Der Klon wird aus einem Snapshot der zu klonenden Konsistenzgruppe erstellt. Der für den Klon verwendete Snapshot wird zu dem Zeitpunkt erstellt, zu dem der Klonprozess standardmäßig initiiert wird. Sie können das Standardverhalten ändern, um einen vorhandenen Snapshot zu verwenden.
+
+Im Rahmen des Klonens werden Zuordnungen von Storage-Einheiten kopiert. Snapshot-Richtlinien werden im Rahmen des Klonprozesses nicht kopiert.
+
+Sie können Klone von Konsistenzgruppen erstellen, die lokal auf Ihrem ASA r2-System gespeichert sind, oder von Konsistenzgruppen, die an Remote-Standorte repliziert wurden.
+
+[role="tabbed-block"]
+====
+.Klonen mit lokalem Snapshot
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Bewegen Sie den Mauszeiger über die Konsistenzgruppe, die Sie klonen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"], und wählen Sie dann *Clone*.
+. Geben Sie einen Namen für einen Konsistenzgruppenklon ein, oder übernehmen Sie den Standardnamen.
+. Wählen Sie das Host-Betriebssystem aus.
+. Wenn Sie den Clone von der Quell-Consistency Group trennen und Speicherplatz zuweisen möchten, wählen Sie *Split Clone* aus.
+. Wenn Sie einen vorhandenen Snapshot verwenden möchten, erstellen Sie eine neue Host-Gruppe oder fügen Sie einen neuen Host für den Klon hinzu, wählen Sie *Weitere Optionen*.
++
+[cols="2"]
+|===
+| Option | Schritte 
+
+
+ a| 
+Verwenden Sie einen vorhandenen Snapshot
+ a| 
+.. Wählen Sie unter *Snapshot to Clone* die Option *Use an existing Snapshot* aus.
+.. Wählen Sie den Snapshot aus, den Sie für den Klon verwenden möchten.
+
+
+
+
+ a| 
+Erstellen Sie eine neue Hostgruppe
+ a| 
+.. Wählen Sie unter *Host Mapping* *New Host Group* aus.
+.. Geben Sie einen Namen für die neue Host-Gruppe ein, und wählen Sie dann die Host-Initiatoren aus, die in die Gruppe aufgenommen werden sollen.
+
+
+
+
+ a| 
+Fügen Sie einen neuen Host hinzu
+ a| 
+.. Wählen Sie unter *Host Mapping* *New Hosts* aus.
+.. Geben Sie den Namen des neuen Hostnamens ein, und wählen Sie dann *FC* oder *iSCSI*.
+.. Wählen Sie die Host-Initiatoren aus der Liste der vorhandenen Initiatoren aus, oder wählen Sie *Add Initiator*, um neue Initiatoren für den Host hinzuzufügen.
+
+
+|===
+. Wählen Sie *Clone*.
+
+
+--
+.Klonen mit Remote-Snapshot
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Replikation* aus.
+. Bewegen Sie den Mauszeiger über die *Quelle*, die Sie klonen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"], und wählen Sie dann *Clone*.
+. Wählen Sie das Quell-Cluster und die Storage-VM aus und geben Sie dann einen Namen für die neue Konsistenzgruppe ein, oder übernehmen Sie den Standardnamen.
+. Wählen Sie den zu klonenden Snapshot aus, und wählen Sie dann *Clone* aus.
+
+
+.Was kommt als Nächstes?
+Sie haben von Ihrem Remote-Standort aus eine Konsistenzgruppe geklont. Die neue Konsistenzgruppe ist lokal auf Ihrem ASA r2 System verfügbar und kann nach Bedarf verwendet werden.
+
+--
+====
+.Was kommt als Nächstes?
+Zum Schutz der Daten sollten Sie link:../data-protection/create-snapshots.html#step-2-create-a-snapshot["Erstellen von Snapshots"]die geklonte Konsistenzgruppe verwenden.

@@ -1,0 +1,103 @@
+---
+sidebar: sidebar 
+permalink: install-setup/initialize-ontap-cluster.html 
+keywords: asa r2, asa a1k, asa a70, asa a90, initialize cluster, set up cluster, ontap 
+summary: Erfahren Sie, wie Sie den ONTAP-Cluster auf einem ASA r2-System mit System Manager einrichten. 
+searchtitle: Richten Sie einen ONTAP-Cluster mit ONTAP System Manager ASA r2 ein 
+---
+= Richten Sie einen ONTAP-Cluster auf Ihrem ASA r2 Storage-System ein
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager führt Sie durch einen schnellen und einfachen Workflow zur Einrichtung eines ONTAP ASA r2 Clusters.
+
+Während der Cluster-Einrichtung wird Ihre standardmäßige Virtual Machine (VM) für den Datenspeicher erstellt. Optional können Sie das Domain Name System (DNS) zum Auflösen von Hostnamen aktivieren, das Cluster so einstellen, dass es das Network Time Protocol (NTP) für die Zeitsynchronisierung verwendet und die Verschlüsselung von Daten im Ruhezustand aktiviert.
+
+.Bevor Sie beginnen
+Stellen Sie die folgenden Informationen zusammen:
+
+* Cluster-Management-IP-Adresse
++
+Die Cluster-Management-IP-Adresse ist eine eindeutige IPv4-Adresse für die Cluster-Managementoberfläche, die vom Cluster-Administrator für den Zugriff auf die Admin-Storage-VM und das Management des Clusters verwendet wird. Sie können diese IP-Adresse vom Administrator beziehen, der für das Zuweisen von IP-Adressen in Ihrem Unternehmen verantwortlich ist.
+
+* Netzwerk-Subnetzmaske
++
+Während der Cluster-Einrichtung empfiehlt ONTAP eine Reihe von Netzwerkschnittstellen, die für die jeweilige Konfiguration geeignet sind. Sie können die Empfehlung bei Bedarf anpassen.
+
+* IP-Adresse des Netzwerk-Gateways
+* Partner-Node-IP-Adresse
+* DNS-Domain-Namen
+* IP-Adressen des DNS-Namensservers
+* IP-Adressen des NTP-Servers
+* Daten-Subnetzmaske
+
+
+.Schritte
+. Ermitteln Sie das Cluster-Netzwerk
++
+.. Verbinden Sie Ihren Laptop mit dem Management-Switch, und greifen Sie auf die Netzwerkcomputer und -Geräte zu.
+.. Öffnen Sie Den Datei-Explorer.
+.. Wählen Sie *Netzwerk* aus, klicken Sie mit der rechten Maustaste und wählen Sie *Aktualisieren* aus.
+.. Wählen Sie ein ONTAP-Symbol aus, und akzeptieren Sie alle auf dem Bildschirm angezeigten Zertifikate.
++
+System Manager wird geöffnet.
+
+
+
+. Erstellen Sie unter *Passwort* ein sicheres Passwort für das Admin-Konto.
++
+Das Passwort muss mindestens acht Zeichen lang sein und mindestens einen Buchstaben und eine Ziffer enthalten.
+
+. Geben Sie das Passwort zur Bestätigung erneut ein und wählen Sie dann *Weiter*.
+. Geben Sie unter *Netzwerkadressen* einen Namen für das Speichersystem ein oder übernehmen Sie den Standardnamen.
++
+Wenn Sie den Standardnamen des Speichersystems ändern, muss der neue Name mit einem Buchstaben beginnen und darf weniger als 44 Zeichen enthalten. Sie können einen Punkt (.), Bindestrich (-) oder Unterstrich (_) im Namen verwenden.
+
+. Geben Sie die Cluster-Management-IP-Adresse, Subnetzmaske, Gateway-IP-Adresse und die IP-Adresse des Partner-Knotens ein, und wählen Sie dann *Weiter* aus.
+. Wählen Sie unter *Network Services* die gewünschten Optionen aus, um *das Domain Name System (DNS) zum Auflösen von Hostnamen* zu verwenden und *das Network Time Protocol (NTP) zu verwenden, um die Uhrzeiten zu synchronisieren*.
++
+Wenn Sie den DNS verwenden möchten, geben Sie die DNS-Domain und die Namensserver ein. Wenn Sie NTP verwenden möchten, geben Sie die NTP-Server ein, und wählen Sie dann *Weiter*.
+
+. Geben Sie unter *Verschlüsselung* eine Passphrase für den Onboard Key Manager (OKM) ein.
++
+Standardmäßig ist die Verschlüsselung von Daten im Ruhezustand mit einem Onboard Key Manager (OKM) ausgewählt. Wenn Sie einen externen Schlüsselmanager verwenden möchten, aktualisieren Sie die Auswahl.
+
++
+Optional können Sie nach Abschluss der Cluster-Einrichtung Ihr Cluster für die Verschlüsselung konfigurieren.
+
+. Wählen Sie *Initialisieren*.
++
+Nach dem Setup werden Sie zur Management-IP-Adresse des Clusters umgeleitet.
+
+. Wählen Sie unter *Netzwerk* *Protokolle konfigurieren*.
++
+[cols="2"]
+|===
+| Um IP zu konfigurieren (iSCSI und NVMe/TCP), gehen Sie folgendermaßen vor: | So konfigurieren Sie FC und NVMe/FC: 
+
+
+ a| 
+.. Wählen Sie *IP*, und wählen Sie dann *IP-Schnittstellen konfigurieren*.
+.. Wählen Sie *Subnetz hinzufügen*.
+.. Geben Sie einen Namen für das Subnetz ein, und geben Sie dann die Subnetz-IP-Adressen ein.
+.. Geben Sie die Subnetzmaske ein, und geben Sie optional ein Gateway ein; wählen Sie dann *Add* aus.
+.. Wählen Sie das soeben erstellte Subnetz aus, und wählen Sie dann *Speichern*.
+.. Wählen Sie *Speichern*.
+
+ a| 
+.. Wählen Sie *FC*, und wählen Sie dann *Configure FC Interfaces* und/oder *Configure NVMe/FC Interfaces* aus.
+.. Wählen Sie die FC- und/oder NVMe/FC-Ports aus, und wählen Sie dann *Save*.
+
+
+|===
+. Optional können link:https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["Active IQ Config Advisor"]Sie die Konfiguration herunterladen und ausführen.
++
+ActiveIQ Config Advisor ist ein Tool für NetApp Systeme, das auf häufig auftretende Konfigurationsfehler prüft.
+
+
+
+.Was kommt als Nächstes?
+Sie können link:set-up-data-access.html["Richten Sie den Datenzugriff ein"]Ihre SAN-Clients auf Ihr ASA r2-System übertragen.

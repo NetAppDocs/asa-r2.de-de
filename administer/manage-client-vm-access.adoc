@@ -1,0 +1,110 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-client-vm-access.html 
+keywords: asa r2, client access, host access, virtual machines, storage virtual machines, create, ipspaces, subnets, lifs, network interface 
+summary: Erstellen Sie eine LIF für den Zugriff auf Daten in Speichereinheiten auf Ihrem ASA r2. Verwenden Sie Subnetze zur Vereinfachung der LIF-Erstellung und IPspaces für sichere Administration und Routing. 
+searchtitle: Managen Sie den Client-Zugriff auf den Storage mit ONTAP System Manager von ASA r2 
+---
+= Management des Client-Zugriffs auf Storage-VMs auf ASA r2 Storage-Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Storage-Einheiten eines ASA r2-Systems befinden sich in Storage Virtual Machines (VMs). Storage-VMs dienen der Bereitstellung von Daten für Ihre SAN-Clients. Erstellen Sie mit ONTAP System Manager eine LIF (Netzwerkschnittstelle) für Ihre SAN-Clients, um eine Storage-VM anzuschließen und auf Daten in den Storage-Einheiten zuzugreifen. Optional können Sie Subnetze zur Vereinfachung der LIF-Erstellung und IPspaces verwenden, um Ihren Storage VMs ihren eigenen sicheren Storage, die Administration und das Routing bereitzustellen.
+
+
+
+== Erstellen von IPspaces
+
+Ein IPspace ist ein eindeuiger IP-Adressbereich, in dem sich Storage-VMs befinden. Wenn Sie IPspaces erstellen, ermöglichen Sie Ihren Storage-VMs ihren eigenen sicheren Storage, ihre Administration und ihr eigenes sicheres Routing. Außerdem können Clients in administrativ getrennten Netzwerkdomänen überlappende IP-Adressen aus demselben IP-Adressensubnetz verwenden.
+
+Sie müssen einen IPspace erstellen, bevor Sie ein Subnetz erstellen können.
+
+.Schritte
+. Wählen Sie *Netzwerk > Übersicht*.
+. Wählen Sie unter *IPspaces* die Option image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"].
+. Geben Sie einen Namen für die IP-Adresse ein, oder übernehmen Sie den Standardnamen.
++
+Der IPspace-Name kann nicht „all“ sein, da „all“ ein systemreservierter Name ist.
+
+. Wählen Sie *Speichern*.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie nun einen IPspace erstellt haben, können Sie ihn zum Erstellen eines Subnetzes verwenden.
+
+
+
+== Subnetze erstellen
+
+Ein Subnetz ermöglicht es Ihnen, bestimmte Blöcke von IPv4- oder IPv6-Adressen zuzuweisen, die beim Erstellen einer LIF (Netzwerkschnittstelle) verwendet werden sollen. Ein Subnetz vereinfacht die LIF-Erstellung, da Sie in der Lage sind, den Subnetznamen anstelle einer bestimmten IP-Adresse und Netzwerkmaske für jede LIF anzugeben.
+
+.Bevor Sie beginnen
+* Sie müssen ein Cluster-Administrator sein, um diese Aufgabe auszuführen.
+* Der link:../administer/manage-cluster-networking.html#add-a-broadcast-domain["Broadcast-Domäne"] und IP-Bereich, in dem Sie das Subnetz hinzufügen möchten, muss bereits vorhanden sein.
+
+
+.Schritte
+. Wählen Sie *Netzwerk > Übersicht*.
+. Wählen Sie *Subnetze* aus, und wählen Sie dann image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"].
+. Geben Sie den Subnetznamen ein.
++
+Alle Subnetznamen müssen innerhalb eines IPspaces eindeutig sein.
+
+. Geben Sie die Subnetz-IP-Adresse und die Subnetzmaske ein.
+. Geben Sie den IP-Adressbereich für das Subnetz an.
++
+Wenn Sie den IP-Adressbereich für das Subnetz angeben, überlappen Sie IP-Adressen nicht mit anderen Subnetzen. Netzwerkprobleme können auftreten, wenn sich Subnetz-IP-Adressen überlappen und unterschiedliche Subnetze oder Hosts versuchen, dieselbe IP-Adresse zu verwenden.
+
+. Wählen Sie die Broadcast-Domäne für das Subnetz aus.
+. Wählen Sie *Hinzufügen*.
+
+
+.Was kommt als Nächstes?
+Sie haben ein Subnetz erstellt, mit dem Sie nun die Erstellung Ihrer LIFs vereinfachen können.
+
+
+
+== LIF erstellen (Netzwerkschnittstelle)
+
+Eine LIF (Netzwerkschnittstelle) ist eine IP-Adresse, die einem physischen oder logischen Port zugeordnet ist. Erstellen Sie LIFs an den Ports, die Sie für den Datenzugriff verwenden möchten. Storage-VMs stellen Daten über ein oder mehrere LIFs für Clients bereit. Bei einem Komponentenausfall kann eine LIF ein Failover durchführen oder zu einem anderen physischen Port migriert werden, sodass die Netzwerkkommunikation nicht unterbrochen wird.
+
+Wenn eine IP-Daten-LIF erstellt wird, kann sie standardmäßig sowohl iSCSI- als auch NVMe/TCP-Datenverkehr verarbeiten. Für den FC- und NVMe/FC-Datenverkehr müssen getrennte Daten-LIFs erstellt werden.
+
+.Bevor Sie beginnen
+* Sie müssen ein Cluster-Administrator sein, um diese Aufgabe auszuführen.
+* Der zugrunde liegende physische oder logische Netzwerkport muss im Administratorstatus konfiguriert worden `up` sein.
+* Wenn Sie planen, einen Subnetznamen zu verwenden, um die IP-Adresse und den Netzwerkmaskenwert für eine LIF zuzuweisen, muss das Subnetz bereits vorhanden sein.
+* Ein LIF, die Intracluster-Datenverkehr zwischen Nodes verarbeiten, sollte sich nicht im selben Subnetz wie ein LIF-Handling-Datenverkehr oder eine LIF mit Datenverkehr befinden.
+
+
+.Schritte
+. Wählen Sie *Netzwerk > Übersicht*.
+. Wählen Sie *Netzwerkschnittstellen* aus, und wählen Sie dann image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"].
+. Wählen Sie den Schnittstellentyp und das Protokoll aus und anschließend die Storage-VM aus.
+. Geben Sie einen Namen für das LIF ein, oder übernehmen Sie den Standardnamen.
+. Wählen Sie den Startknoten für die Netzwerkschnittstelle aus, und geben Sie dann die IP-Adresse und die Subnetzmaske ein.
+. Wählen Sie *Speichern*.
+
+
+.Ergebnis
+Sie haben eine LIF für den Datenzugriff erstellt.
+
+
+
+== Ändern einer LIF (Netzwerkschnittstellen)
+
+LIFs können bei Bedarf deaktiviert oder umbenannt werden. Sie können auch die LIF-IP-Adresse und die Subnetzmaske ändern.
+
+.Schritte
+. Wählen Sie *Netzwerk > Übersicht* und dann *Netzwerkschnittstellen*.
+. Bewegen Sie den Mauszeiger über die Netzwerkschnittstelle, die Sie bearbeiten möchten, und wählen Sie dann image:icon_kabob.gif["Drei vertikale blaue Punkte"].
+. Wählen Sie *Bearbeiten*.
+. Sie können die Netzwerkschnittstelle deaktivieren, die Netzwerkschnittstelle umbenennen, die IP-Adresse ändern oder die Subnetzmaske ändern.
+. Wählen Sie *Speichern*.
+
+
+.Ergebnis
+Ihr LIF wurde geändert.

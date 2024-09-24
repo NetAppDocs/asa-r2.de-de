@@ -1,0 +1,28 @@
+---
+section: get-started
+title: Los geht's
+entries:
+- title: Erfahren Sie mehr über Ihr ASA r2-System
+  url: "/get-started/learn-about.html"
+- title: Schnellstart
+  url: "/get-started/quick-start.html"
+- title: Installieren Sie Ihr ASA r2-System
+  entries:
+  - title: Installationsworkflow
+    url: "/install-setup/install-setup-workflow.html"
+  - title: Lesen Sie die Hardwareanforderungen
+    url: "/install-setup/install-setup-requirements.html"
+  - title: Installation vorbereiten
+    url: "/install-setup/prepare-hardware.html"
+  - title: Hardware installieren
+    url: "/install-setup/deploy-hardware.html"
+  - title: Verkabelung der Hardware
+    url: "/install-setup/cable-hardware.html"
+  - title: Schalten Sie das System ein
+    url: "/install-setup/power-on-hardware.html"
+- title: Richten Sie Ihr ASA r2-System ein
+  entries:
+  - title: Richten Sie das Cluster ein
+    url: "/install-setup/initialize-ontap-cluster.html"
+  - title: Richten Sie den Datenzugriff ein
+    url: "/install-setup/set-up-data-access.html"

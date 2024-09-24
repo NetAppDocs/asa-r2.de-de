@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: administer/verify-host-connectivity.html 
+keywords: host, connectivity, asa r2 
+summary: Wenn bei den Host-Datenvorgängen ein Problem auftritt, können Sie mithilfe von ONTAP System Manager überprüfen, ob die Verbindung zwischen dem Host und dem ASA r2 Storage-System aktiv ist. 
+---
+= Überprüfen Sie die Hostkonnektivität auf Ihrem ASA r2-Speichersystem
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn bei den Host-Datenvorgängen ein Problem auftritt, können Sie mithilfe von ONTAP System Manager überprüfen, ob die Verbindung zwischen dem Host und dem ASA r2 Storage-System aktiv ist.
+
+.Schritte
+. Wählen Sie im System Manager *Host* aus.
++
+Der Host-Konnektivitätsstatus wird neben dem Namen der Host-Gruppe wie folgt angezeigt: * *OK*: Zeigt an, dass alle Initiatoren mit beiden Nodes verbunden sind. * *Teilweise verbunden*: Zeigt an, dass einige der Initiatoren nicht mit beiden Knoten verbunden sind. * *Keine Verbindung*: Zeigt an, dass keine Initiatoren verbunden sind.
+
+
+
+.Was kommt als Nächstes?
+Aktualisieren Sie Ihren Host, um Verbindungsprobleme zu beheben. ONTAP überprüft den Verbindungsstatus alle 15 Minuten erneut.

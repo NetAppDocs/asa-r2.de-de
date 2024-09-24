@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: monitor/monitor-performance.html 
+keywords: monitor, cluster, performance, storage units, latency, iops, throughput 
+summary: Überwachen Sie die Performance des Clusters und der Storage-Einheiten, um zu ermitteln, wie Latenz, IOPS und Durchsatz sich auf Ihre geschäftskritischen Applikationen auswirken. 
+searchtitle: Überwachen Sie die Clusterleistung mit ONTAP ASA r2 
+---
+= Überwachung der Performance von Clustern und Speichereinheiten auf ASA r2-Storage-Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Überwachen Sie mit ONTAP System Manager die Gesamt-Performance Ihres Clusters und die Performance bestimmter Storage-Einheiten, um zu bestimmen, wie Latenz, IOPS und Durchsatz sich auf Ihre geschäftskritischen Applikationen auswirken. Die Performance kann über verschiedene Zeiträume von einer Stunde bis zu einem Jahr überwacht werden.
+
+Nehmen wir zum Beispiel an, eine geschäftskritische Applikation hat eine hohe Latenz und einen niedrigen Durchsatz. Wenn Sie die Cluster-Performance der letzten fünf Arbeitstage anzeigen, bemerken Sie jeden Tag einen Performance-Abfall zur gleichen Zeit. Anhand dieser Informationen können Sie ermitteln, ob die kritische Anwendung im Wettbewerb um Clusterressourcen steht, wenn im Hintergrund ein nicht kritischer Prozess ausgeführt wird. Anschließend können Sie Ihre QoS-Richtlinie ändern, um die Auswirkungen des nicht kritischen Workloads auf Systemressourcen zu begrenzen und sicherzustellen, dass Ihre kritische Workload die minimalen Durchsatzziele erfüllt.
+
+
+
+== Überwachen Sie die Cluster-Performance
+
+Mithilfe von Cluster-Performance-Kennzahlen können Sie bestimmen, ob Sie Workloads verlagern müssen, um die Latenz zu minimieren sowie die IOPS und den Durchsatz Ihrer kritischen Applikationen zu maximieren.
+
+.Schritte
+. Wählen Sie in System Manager *Dashboard* aus.
+. Unter *Performance* sehen Sie die Latenz, IOPS und den Durchsatz für den Cluster nach Stunde, Tag, Woche, Monat oder Jahr.
+. Wählen Sie image:icon_download.png["Blauer Pfeil nach unten"]diese Option,  um die Leistungsdaten herunterzuladen.
+
+
+.Was kommt als Nächstes?
+Analysieren Sie mithilfe Ihrer Cluster-Performance-Kennzahlen, ob Sie Ihre QoS-Richtlinien ändern oder andere Anpassungen an den Applikations-Workloads vornehmen müssen, um die Cluster-Performance insgesamt zu maximieren.
+
+
+
+== Überwachung der Leistung der Speichereinheit
+
+Verwenden Sie Performance-Kennzahlen der Storage-Einheit, um den Einfluss spezifischer Applikationen auf Latenz, IOPS und Durchsatz zu bestimmen.
+
+.Schritte
+. Wählen Sie im System Manager *Storage* aus.
+. Wählen Sie die zu überwachende Speichereinheit aus, und wählen Sie dann *Übersicht*.
+. Unter *Performance* sehen Sie die Latenz, IOPS und den Durchsatz für die Speichereinheit nach Stunde, Tag, Woche, Monat oder Jahr.
+. Wählen Sie image:icon_download.png["Blauer Pfeil nach unten"]diese Option,  um die Leistungsdaten herunterzuladen.
+
+
+.Was kommt als Nächstes?
+Analysieren Sie mithilfe Ihrer Performance-Kennzahlen der Storage-Einheiten, ob Sie die QoS-Richtlinien, die Ihren Storage-Einheiten zugewiesen sind, ändern müssen, um die Latenz zu verringern und die IOPS und den Durchsatz zu maximieren.

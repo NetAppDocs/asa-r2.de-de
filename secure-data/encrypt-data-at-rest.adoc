@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: secure-data/encrypt-data-at-rest.html 
+keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption 
+summary: Verschlüsseln Sie Daten im Ruhezustand, damit sie nicht gelesen werden können, wenn eine Festplatte zurückgegeben, verloren geht oder gestohlen wird. Verwenden Sie Hardware- und Softwareverschlüsselung, um Dual-Layer-Schutz zu ermöglichen. 
+searchtitle: Sichern von Daten im Ruhezustand durch Verschlüsselung mit ONTAP ASA r2 
+---
+= Verschlüsselung von Daten im Ruhezustand auf ASA r2 Storage-Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Daten im Ruhezustand verschlüsselt werden, sind sie auch dann nicht lesbar, wenn ein Storage-Medium einem anderen Zweck zugewiesen, zurückgegeben, verlegt oder gestohlen wird. Sie können ONTAP System Manager zur Verschlüsselung Ihrer Daten auf Hardware- und Softwareebene für einen Dual-Layer-Schutz verwenden.
+
+NetApp Storage Encryption (NSE) unterstützt Hardwareverschlüsselung über Self-Encrypting Drives (SEDs). SEDs verschlüsseln Daten beim Schreiben. Jede SED enthält einen eindeutigen Verschlüsselungsschlüssel. Verschlüsselte Daten, die auf der SED gespeichert sind, können ohne den SED-Verschlüsselungsschlüssel nicht gelesen werden. Knoten, die versuchen, von einer SED zu lesen, müssen authentifiziert werden, um auf den Verschlüsselungsschlüssel der SED zuzugreifen. Knoten werden authentifiziert, indem ein Authentifizierungsschlüssel von einem Schlüsselmanager abgerufen und dann der SED den Authentifizierungsschlüssel vorgelegt wird. Wenn der Authentifizierungsschlüssel gültig ist, gibt die SED dem Knoten seinen Verschlüsselungsschlüssel für den Zugriff auf die darin enthaltenen Daten.
+
+Verwenden Sie den integrierten Schlüsselmanager von ASA r2 oder einen externen Schlüsselmanager, um Ihren Nodes Authentifizierungsschlüssel bereitzustellen.
+
+Neben NSE können Sie auch Softwareverschlüsselung aktivieren, um Ihre Daten um eine weitere Sicherheitsebene zu erweitern.
+
+.Schritte
+. Wählen Sie im System Manager *Cluster > Einstellungen* aus.
+. Wählen Sie im Abschnitt *Sicherheit* unter *Verschlüsselung* *Konfigurieren* aus.
+. Konfigurieren Sie den Schlüsselmanager.
++
+[cols="2"]
+|===
+| Option | Schritte 
+
+
+| Konfigurieren Sie den Onboard Key Manager  a| 
+.. Wählen Sie *Onboard Key Manager*, um die Schlüsselserver hinzuzufügen.
+.. Geben Sie eine Passphrase ein.
+
+
+
+
+| Konfigurieren Sie einen externen Schlüsselmanager  a| 
+.. Wählen Sie *External Key Manager*, um die Schlüsselserver hinzuzufügen.
+.. Wählen Sie image:icon_add.gif["Ein blaues Pluszeichen gefolgt vom Wort add"]diese Option aus,  um die Schlüsselserver hinzuzufügen.
+.. Fügen Sie die CA-Zertifikate des KMIP-Servers hinzu.
+.. Fügen Sie die KMIP-Client-Zertifikate hinzu.
+
+
+|===
+. Wählen Sie *Dual-Layer-Verschlüsselung*, um die Softwareverschlüsselung zu aktivieren.
+. Wählen Sie *Speichern*.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie nun Ihre Daten im Ruhezustand verschlüsselt haben, können Sie jetzt mit dem link:nvme-tcp-connections.html["Verschlüsseln Sie alle über das Netzwerk gesendeten Daten"]NVMe-/TCP-Protokoll zwischen Ihrem NVMe-/TCP-Host und Ihrem ASA r2-System wechseln.

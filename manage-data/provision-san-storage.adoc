@@ -1,0 +1,264 @@
+---
+sidebar: sidebar 
+permalink: manage-data/provision-san-storage.html 
+keywords: provision storage,san, create storage units, luns, namespaces, nvme, add host, add host initiators, map host, host mapping, create, ontap 
+summary: 'Stellen Sie ONTAP Storage auf dem ASA r2 bereit, um SAN-Hosts (SCSI und NVMe) zu ermöglichen, Daten in angegebene Storage-Einheiten (LUNs und NVMe-Namespaces) zu lesen und zu schreiben.' 
+searchtitle: Stellen Sie SAN-Storage mit ONTAP System Manager ASA r2 bereit 
+---
+= Stellen Sie ONTAP SAN-Storage auf den ASA r2-Systemen bereit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie Storage bereitstellen, ermöglichen Sie Ihren SAN-Hosts, Daten von ASA r2 Storage-Systemen zu lesen und auf diese zu schreiben. Um Speicher bereitzustellen, erstellen Sie mit ONTAP System Manager Speichereinheiten, fügen Hostinitiatoren hinzu und ordnen den Host einer Speichereinheit zu. Außerdem müssen Sie Schritte auf dem Host durchführen, um Lese-/Schreibvorgänge zu ermöglichen.
+
+
+
+== Erstellen von Speichereinheiten
+
+Auf einem ASA r2-System stellt eine Storage-Einheit Ihren SAN-Hosts Speicherplatz für Datenoperationen zur Verfügung. Eine Storage-Einheit bezieht sich auf eine LUN für SCSI-Hosts oder einen NVMe-Namespace für NVMe-Hosts. Wenn Ihr Cluster zur Unterstützung von SCSI-Hosts konfiguriert ist, werden Sie aufgefordert, eine LUN zu erstellen. Wenn das Cluster zur Unterstützung von NVMe Hosts konfiguriert ist, werden Sie aufgefordert, einen NVMe Namespace zu erstellen. Eine ASA r2-Speichereinheit hat eine maximale Kapazität von 128 TB.
+
+Im link:https://hwu.netapp.com/["NetApp Hardware Universe"^] finden Sie die aktuellen Storage-Grenzwerte für ASA r2 Systeme.
+
+Host-Initiatoren werden der Speichereinheit als Teil der Erstellung der Speichereinheit hinzugefügt und zugeordnet. Sie können link:provision-san-storage.html#add-host-initiators["Fügen Sie Host-Initiatoren hinzu"] link:provision-san-storage.html#map-the-storage-unit-to-a-host["Karte"]sie auch an Ihre Speichereinheiten übertragen, nachdem die Speichereinheiten erstellt wurden.
+
+.Schritte
+. Wählen Sie im System Manager *Storage* und anschließend ausimage:icon_add_blue_bg.png["Rechteckiges Symbol mit blauem Hintergrund und das Wort hinzufügen zentriert in weißen Buchstaben"].
+. Geben Sie einen Namen für die neue Speichereinheit ein.
+. Geben Sie die Anzahl der Einheiten ein, die Sie erstellen möchten.
++
+Wenn Sie mehr als eine Speichereinheit erstellen, wird jede Einheit mit derselben Kapazität, demselben Host-Betriebssystem und derselben Host-Zuordnung erstellt.
+
+. Geben Sie die Kapazität der Speichereinheit ein, und wählen Sie dann das Host-Betriebssystem aus.
+. Akzeptieren Sie die automatisch ausgewählte *Host-Zuordnung*, oder wählen Sie eine andere Host-Gruppe für die zuzuordnende Speichereinheit aus.
++
+*Host Mapping* bezieht sich auf die Hostgruppe, der die neue Speichereinheit zugeordnet wird. Wenn für den Hosttyp, den Sie für Ihre neue Speichereinheit ausgewählt haben, eine bereits vorhandene Hostgruppe vorhanden ist, wird die vorhandene Hostgruppe automatisch für Ihre Hostzuordnung ausgewählt. Sie können die Host-Gruppe akzeptieren, die automatisch für Ihre Host-Zuordnung ausgewählt ist, oder Sie können eine andere Host-Gruppe auswählen.
+
++
+Wenn keine Host-Gruppe für Hosts vorhanden ist, die auf dem angegebenen Betriebssystem ausgeführt werden, wird automatisch eine neue Host-Gruppe von ONTAP erstellt.
+
+. Wenn Sie einen der folgenden Schritte ausführen möchten, wählen Sie *Weitere Optionen* und führen Sie die erforderlichen Schritte aus.
++
+[cols="2, 4a"]
+|===
+| Option | Schritte 
+
+
+ a| 
+Ändern Sie die standardmäßige QoS-Richtlinie (Quality of Service)
+
+Wenn die Standard-QoS-Richtlinie zuvor nicht auf der Storage Virtual Machine (VM) festgelegt wurde, auf der die Speichereinheit erstellt wird, ist diese Option nicht verfügbar.
+ a| 
+.. Wählen Sie unter *Speicher und Optimierung* neben *Quality of Service (QoS)* die Option image:icon_dropdown_arrow.gif["Symbol des blauen Pfeils, der nach unten zeigt"] .
+.. Wählen Sie eine vorhandene QoS-Richtlinie aus.
+
+
+
+
+ a| 
+Neue QoS-Richtlinie erstellen
+ a| 
+.. Wählen Sie unter *Speicher und Optimierung* neben *Quality of Service (QoS)* die Option image:icon_dropdown_arrow.gif["Symbol des blauen Pfeils, der nach unten zeigt"] .
+.. Wählen Sie *neue Richtlinie definieren*.
+.. Geben Sie einen Namen für die neue QoS-Richtlinie ein.
+.. Legen Sie eine QoS-Grenze, eine QoS-Garantie oder beides fest.
++
+... Geben Sie unter *Limit* optional eine maximale Durchsatzgrenze, eine maximale IOPS-Grenze oder beides ein.
++
+Die Festlegung eines maximalen Durchsatzes und IOPS für eine Speichereinheit schränkt ihre Auswirkungen auf die Systemressourcen ein, sodass sie die Performance kritischer Workloads nicht beeinträchtigt.
+
+... Geben Sie optional unter *Guarantee* einen minimalen Durchsatz, ein Minimum an IOPS oder beides ein.
++
+Durch die Festlegung eines minimalen Durchsatzes und IOPS für eine Storage-Einheit wird sichergestellt, dass unabhängig von der Nachfrage durch konkurrierende Workloads minimale Performance-Ziele erfüllt werden.
+
+
+
+.. Wählen Sie *Hinzufügen*.
+
+
+
+
+ a| 
+Fügen Sie einen neuen SCSI-Host hinzu
+ a| 
+.. Wählen Sie unter *Host Information* *SCSI* für das Verbindungsprotokoll aus.
+.. Wählen Sie das Host-Betriebssystem aus.
+.. Wählen Sie unter *Host Mapping* *New Hosts* aus.
+.. Wählen Sie *FC* oder *iSCSI*.
+.. Wählen Sie vorhandene Host-Initiatoren aus, oder wählen Sie *Add Initiator*, um einen neuen Host-Initiator hinzuzufügen.
++
+Ein Beispiel für einen gültigen FC-WWPN ist „01:02:03:04:0a:0b:0c:0d“. Beispiele für gültige iSCSI-Initiatornamen sind „iqn.1995-08.com.example:string"“ und „eui.0123456789abcdef“.
+
+
+
+
+
+ a| 
+Erstellen Sie eine neue SCSI-Host-Gruppe
+ a| 
+.. Wählen Sie unter *Host Information* *SCSI* für das Verbindungsprotokoll aus.
+.. Wählen Sie das Host-Betriebssystem aus.
+.. Wählen Sie unter *Host Mapping* *Neue Host-Gruppe* aus.
+.. Geben Sie einen Namen für die Host-Gruppe ein, und wählen Sie dann die Hosts aus, die der Gruppe hinzugefügt werden sollen.
+
+
+
+
+ a| 
+Hinzufügen eines neuen NVMe-Subsystems
+ a| 
+.. Wählen Sie unter *Host Information* *NVMe* für das Verbindungsprotokoll aus.
+.. Wählen Sie das Host-Betriebssystem aus.
+.. Wählen Sie unter *Host Mapping* *New NVMe Subsystem* aus.
+.. Geben Sie einen Namen für das Subsystem ein, oder übernehmen Sie den Standardnamen.
+.. Geben Sie einen Namen für den Initiator ein.
+.. Wenn Sie die bandinterne Authentifizierung oder Transport Layer Security (TLS) aktivieren möchten, wählen Sie image:icon_dropdown_arrow.gif["Symbol des blauen Pfeils, der nach unten zeigt"]; und dann Ihre Optionen aus.
++
+Die in-Band-Authentifizierung ermöglicht eine sichere bidirektionale und unidirektionale Authentifizierung zwischen den NVMe Hosts und dem ASA r2 System.
+
++
+TLS verschlüsselt alle Daten, die zwischen Ihren NVMe/TCP-Hosts und Ihrem ASA r2-System über das Netzwerk gesendet werden.
+
+.. Wählen Sie *Add Initiator*, um weitere Initiatoren hinzuzufügen.
++
+Die Host-NQN sollte als <nqn.yyyy-mm> formatiert werden, gefolgt von einem vollständig qualifizierten Domänennamen. Das Jahr muss mindestens 1970 Jahre entsprechen. Die maximale Gesamtlänge sollte 223 betragen. Ein Beispiel für einen gültigen NVMe-Initiator ist nqn.2014-08.com.example:string
+
+
+
+|===
+. Wählen Sie *Hinzufügen*.
+
+
+.Was kommt als Nächstes?
+Die Speichereinheiten werden erstellt und den Hosts zugeordnet. Sie können jetzt link:../data-protection/create-snapshots.html["Erstellen von Snapshots"]die Daten auf Ihrem ASA r2-System sichern.
+
+.Finden Sie weitere Informationen
+Erfahren Sie mehr über link:../administer/manage-client-vm-access.html["So verwenden ASA r2-Systeme Storage Virtual Machines"].
+
+
+
+== Fügen Sie Host-Initiatoren hinzu
+
+Sie können Ihrem ASA r2-System jederzeit neue Hostinitiatoren hinzufügen. Initiatoren stellen die Hosts für den Zugriff auf Speichereinheiten und die Durchführung von Datenoperationen zur Verfügung.
+
+.Bevor Sie beginnen
+Wenn Sie die Hostkonfiguration während des Hinzufügens der Hostinitiatoren auf ein Zielcluster replizieren möchten, muss sich Ihr Cluster in einer Replikationsbeziehung befinden. Optional können Sie link:../data-protection/snapshot-replication.html#step-3-create-a-replication-relationship["Erstellen Sie eine Replikationsbeziehung"]nach dem Hinzufügen Ihres Hosts.
+
+Fügen Sie Host-Initiatoren für SCSI- oder NVMe-Hosts hinzu.
+
+[role="tabbed-block"]
+====
+.SCSI-Hosts
+--
+.Schritte
+. Wählen Sie *Host*.
+. Wählen Sie *SCSI*, und wählen Sie dann image:icon_add_blue_bg.png["Symbol des blauen Rechtecks mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"].
+. Geben Sie den Hostnamen ein, wählen Sie das Host-Betriebssystem aus und geben Sie eine Hostbeschreibung ein.
+. Wenn Sie die Hostkonfiguration auf einen Zielcluster replizieren möchten, wählen Sie *Replicate Host Configuration* aus, und wählen Sie dann den Zielcluster aus.
++
+Ihr Cluster muss sich in einer Replikationsbeziehung befinden, um die Hostkonfiguration replizieren zu können.
+
+. Fügen Sie neue oder vorhandene Hosts hinzu.
++
+[cols="2"]
+|===
+| Fügen Sie neue Hosts hinzu | Fügen Sie vorhandene Hosts hinzu 
+
+
+ a| 
+.. Wählen Sie *Neue Hosts*.
+.. Wählen Sie *FC* oder *iSCSI* aus, und wählen Sie dann die Host-Initiatoren aus.
+.. Wählen Sie optional *Configure Host Proximity*.
++
+Durch das Konfigurieren der Host-Nähe kann ONTAP den Controller identifizieren, der dem Host am nächsten ist, um den Datenpfad zu optimieren und die Latenz zu verringern. Dies gilt nur, wenn Sie Daten an einem Remote-Standort repliziert haben. Wenn Sie keine Snapshot-Replikation eingerichtet haben, müssen Sie diese Option nicht auswählen.
+
+.. Wenn Sie neue Initiatoren hinzufügen müssen, wählen Sie *Initiatoren hinzufügen* aus.
+
+ a| 
+.. Wählen Sie *existing Hosts*.
+.. Wählen Sie den Host aus, den Sie hinzufügen möchten.
+.. Wählen Sie *Hinzufügen*.
+
+
+|===
+. Wählen Sie *Hinzufügen*.
+
+
+.Was kommt als Nächstes?
+Ihre SCSI-Hosts werden Ihrem ASA r2-System hinzugefügt, und Sie können Ihre Hosts Ihren Speichereinheiten zuordnen.
+
+--
+.NVMe-Hosts
+--
+.Schritte
+. Wählen Sie *Host*.
+. Wählen Sie *NVMe* aus, und wählen Sie dann image:icon_add_blue_bg.png["Rechteckiges Symbol mit blauem Hintergrund und das Wort hinzufügen zentriert in weißen Buchstaben"].
+. Geben Sie einen Namen für das NVMe-Subsystem ein, wählen Sie das Host-Betriebssystem aus und geben Sie eine Beschreibung ein.
+. Wählen Sie *Add Initiator*.
+
+
+.Was kommt als Nächstes?
+Ihre NVMe Hosts werden Ihrem ASA r2 System hinzugefügt, und Sie können Ihre Hosts Ihren Storage-Einheiten zuordnen.
+
+--
+====
+
+
+== Erstellen von Host-Gruppen
+
+Auf einem ASA r2-System ist eine _Host-Gruppe_ der Mechanismus, der verwendet wird, um Hosts Zugriff auf Speichereinheiten zu gewähren. Eine Host-Gruppe bezieht sich auf eine Initiatorgruppe für SCSI-Hosts oder auf ein NVMe-Subsystem für NVMe-Hosts. Ein Host kann nur die Speichereinheiten sehen, die den Host-Gruppen zugeordnet sind, zu denen er gehört. Wenn eine Hostgruppe einer Speichereinheit zugeordnet ist, können die Hosts, die Mitglieder der Gruppe sind, die Speichereinheit mounten (Verzeichnisse und Dateistrukturen erstellen).
+
+Hostgruppen werden automatisch oder manuell erstellt, wenn Sie Ihre Speichereinheiten erstellen. Sie können optional die folgenden Schritte ausführen, um Hostgruppen vor oder nach der Erstellung der Speichereinheit zu erstellen.
+
+.Schritte
+. Wählen Sie im System Manager *Host* aus.
+. Wählen Sie die Hosts aus, die Sie der Host-Gruppe hinzufügen möchten.
++
+Nachdem Sie den ersten Host ausgewählt haben, wird die Option zum Hinzufügen zu einer Host-Gruppe über der Liste der Hosts angezeigt.
+
+. Wählen Sie *zu Host-Gruppe hinzufügen*.
+. Suchen Sie nach der Hostgruppe, der Sie den Host hinzufügen möchten, und wählen Sie sie aus.
+
+
+.Was kommt als Nächstes?
+Sie haben eine Hostgruppe erstellt und können sie nun einer Speichereinheit zuordnen.
+
+
+
+== Ordnen Sie die Speichereinheit einem Host zu
+
+Nachdem Sie die ASA r2 Storage-Einheiten erstellt und Host-Initiatoren hinzugefügt haben, müssen Sie Ihre Hosts den Storage-Einheiten zuordnen, um mit der Datenbereitstellung zu beginnen. Speichereinheiten werden Hosts im Rahmen der Erstellung der Speichereinheit zugeordnet. Sie können vorhandene Storage-Einheiten jederzeit neuen oder bestehenden Hosts zuordnen.
+
+.Schritte
+. Wählen Sie *Speicher*.
+. Bewegen Sie den Mauszeiger über den Namen der zu zuordnungsenden Speichereinheit.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Zuordnung zu Hosts*.
+. Wählen Sie die Hosts aus, die der Speichereinheit zugeordnet werden sollen, und wählen Sie dann *Karte*.
+
+
+.Was kommt als Nächstes?
+Die Speichereinheit wird Ihren Hosts zugeordnet, und Sie können den Bereitstellungsprozess auf Ihren Hosts abschließen.
+
+
+
+== Vollständige Host-seitige Bereitstellung
+
+Nachdem Sie die Speichereinheiten erstellt, die Hostinitiatoren hinzugefügt und die Speichereinheiten zugeordnet haben, müssen Sie auf den Hosts Schritte ausführen, bevor sie Daten auf dem ASA r2-System lesen und schreiben können.
+
+.Schritte
+. Bei FC und FC/NVMe sollten Sie Ihre FC-Switches mit WWPN Zone.
++
+Verwenden Sie eine Zone pro Initiator und schließen Sie alle Ziel-Ports in jeder Zone an.
+
+. Entdecken Sie die neue Speichereinheit.
+. Initialisieren Sie die Speichereinheit und ein CREATE-Dateisystem.
+. Überprüfen Sie, ob Ihr Host Daten auf der Speichereinheit lesen und schreiben kann.
+
+
+.Was kommt als Nächstes?
+Sie haben den Bereitstellungsprozess abgeschlossen und können mit der Datenbereitstellung beginnen. Sie können jetzt link:../data-protection/create-snapshots.html["Erstellen von Snapshots"]die Daten auf Ihrem ASA r2-System sichern.
+
+.Finden Sie weitere Informationen
+Weitere Informationen zur Konfiguration auf Hostseite finden Sie im link:https://docs.netapp.com/us-en/ontap-sanhost/["ONTAP SAN-Host-Dokumentation"^] für Ihren spezifischen Host.

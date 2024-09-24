@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: secure-data/ransomware-protection.html 
+keywords: asa r2, secure data, data security, ransomware, ransomware attacks, protection 
+summary: Mit manipulationssicheren Snapshots sichern Sie Ihre Daten. Manipulationssichere Snapshots können nicht gelöscht oder für die Wiederherstellung von Daten genutzt werden, die durch einen Ransomware-Angriff kompromittiert wurden. 
+---
+= Schutz vor Ransomware-Angriffen auf ASA r2 Storage-Systeme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um besser gegen Ransomware-Angriffe zu schützen, replizieren Sie Snapshots in ein Remote-Cluster und sperren Sie dann die Ziel-Snapshots, damit sie manipulationssicher sind. Gesperrte Snapshots können nicht versehentlich oder böswillig gelöscht werden. Sie können gesperrte Snapshots verwenden, um Daten wiederherzustellen, wenn ein Storage-Gerät jemals durch einen Ransomware-Angriff kompromittiert wurde.
+
+
+
+== Initialisieren Sie die SnapLock Compliance-Uhr
+
+Bevor Sie manipulationssichere Snapshots erstellen können, müssen Sie die SnapLock Compliance Uhr auf Ihren lokalen und Ziel-Clustern initialisieren.
+
+.Schritte
+. Wählen Sie *Cluster > Übersicht*.
+. Wählen Sie im Abschnitt *Knoten* die Option *SnapLock Compliance-Uhr initialisieren* aus.
+. Wählen Sie *Initialisieren*.
+. Vergewissern Sie sich, dass die Compliance-Uhr initialisiert ist.
++
+.. Wählen Sie *Cluster > Übersicht*.
+.. Wählen Sie im Abschnitt *Knoten* image:icon_show_hide.png["Drei blaue Spalten auf weißem Hintergrund"]die Option ; und wählen Sie dann *SnapLock Compliance Uhr*.
+
+
+
+
+.Was kommt als Nächstes?
+Nachdem Sie die SnapLock Compliance-Uhr auf Ihren lokalen und Ziel-Clustern initialisiert haben, sind Sie bereit zu link:../data-protection/snapshot-replication.html#step-3-create-a-replication-relationship["Erstellen Sie eine Replikationsbeziehung mit gesperrten Snapshots"].

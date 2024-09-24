@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: data-protection/restore-data.html 
+keywords: restore data, asa r2, data restoration 
+summary: Wenn Daten in einer Konsistenzgruppe beschädigt sind oder verloren gehen, können Sie die gesamte Konsistenzgruppe aus einem Remote-Snapshot wiederherstellen. 
+---
+= Stellen Sie Daten auf ASA r2 Storage-Systemen wieder her
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Daten in einer durch Snapshots geschützten Konsistenzgruppe oder Storage-Einheit können bei Verlust oder Beschädigung wiederhergestellt werden.
+
+
+
+== Stellen Sie eine Konsistenzgruppe wieder her
+
+Durch das Wiederherstellen einer Konsistenzgruppe werden die Daten in allen Speichereinheiten der Konsistenzgruppe durch die Daten aus einem Snapshot ersetzt. Änderungen an den Speichereinheiten, die nach dem Erstellen des Snapshots vorgenommen wurden, werden nicht wiederhergestellt.
+
+Sie können eine Konsistenzgruppe aus einem lokalen oder Remote-Snapshot wiederherstellen.
+
+[role="tabbed-block"]
+====
+.Wiederherstellen von einem lokalen Snapshot
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Doppelklicken Sie auf die Konsistenzgruppe mit den wiederherzustellenden Daten.
++
+Die Seite mit den Details der Konsistenzgruppe wird geöffnet.
+
+. Wählen Sie *Snapshots*.
+. Wählen Sie den Snapshot aus, den Sie wiederherstellen möchten, und wählen Sie dann image:icon_kabob.gif["Drei vertikale blaue Punkte"].
+. Wählen Sie *Restore Consistency Group aus diesem Snapshot* aus und wählen Sie dann *Restore* aus.
+
+
+--
+.Wiederherstellen von einem Remote-Snapshot
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Replikation* aus.
+. Wählen Sie *Lokale Ziele*.
+. Wählen Sie die *Quelle* aus, die Sie wiederherstellen möchten, und wählen Sie dann image:icon_kabob.gif["Drei vertikale blaue Punkte"].
+. Wählen Sie *Wiederherstellen*.
+. Wählen Sie den Cluster, die Storage-VM und die Konsistenzgruppe aus, auf der Sie Daten wiederherstellen möchten.
+. Wählen Sie den Snapshot aus, aus dem Sie wiederherstellen möchten.
+. Wenn Sie dazu aufgefordert werden, geben Sie „Restore“ ein, und wählen Sie dann *Restore*.
+
+
+--
+====
+.Ergebnis
+Die Konsistenzgruppe wird auf den Zeitpunkt des für die Wiederherstellung verwendeten Snapshots zurückgesetzt.
+
+
+
+== Wiederherstellung einer Speichereinheit
+
+Durch das Wiederherstellen einer Speichereinheit werden alle Daten in der Speichereinheit durch die Daten aus einem Snapshot ersetzt. Änderungen an der Speichereinheit, die nach der Erstellung des Snapshots vorgenommen wurden, werden nicht wiederhergestellt.
+
+.Schritte
+. Wählen Sie im System Manager *Storage* aus.
+. Doppelklicken Sie auf die Speichereinheit, die die Daten enthält, die Sie wiederherstellen möchten.
++
+Die Seite mit den Details der Speichereinheit wird geöffnet.
+
+. Wählen Sie *Snapshots*.
+. Wählen Sie den Snapshot aus, den Sie wiederherstellen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Restore*.
+. Wählen Sie *Use this Snapshot to restore the Storage unit* aus, und wählen Sie dann *Restore* aus.
+
+
+.Ergebnis
+Die Speichereinheit wird bis zum Zeitpunkt des für die Wiederherstellung verwendeten Snapshots wiederhergestellt.
