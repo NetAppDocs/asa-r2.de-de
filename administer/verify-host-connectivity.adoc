@@ -16,7 +16,13 @@ Wenn bei den Host-Datenvorgängen ein Problem auftritt, können Sie mithilfe von
 .Schritte
 . Wählen Sie im System Manager *Host* aus.
 +
-Der Host-Konnektivitätsstatus wird neben dem Namen der Host-Gruppe wie folgt angezeigt: * *OK*: Zeigt an, dass alle Initiatoren mit beiden Nodes verbunden sind. * *Teilweise verbunden*: Zeigt an, dass einige der Initiatoren nicht mit beiden Knoten verbunden sind. * *Keine Verbindung*: Zeigt an, dass keine Initiatoren verbunden sind.
+Der Host-Konnektivitätsstatus wird neben dem Namen der Host-Gruppe wie folgt angezeigt:
+
++
+** *OK*: Zeigt an, dass alle Initiatoren mit beiden Knoten verbunden sind.
+** *Teilweise verbunden*: Zeigt an, dass einige der Initiatoren nicht mit beiden Knoten verbunden sind.
+** *Keine Verbindung*: Zeigt an, dass keine Initiatoren verbunden sind.
+
 
 
 

@@ -256,7 +256,6 @@
   <block id="cd5ce84f06573fa36efd7de37fc1e5ba" category="summary">Wenn bei den Host-Datenvorgängen ein Problem auftritt, können Sie mithilfe von ONTAP System Manager überprüfen, ob die Verbindung zwischen dem Host und dem ASA r2 Storage-System aktiv ist.</block>
   <block id="29aef3c4098e0c02a759b7ceeffd7bf5" category="doc">Überprüfen Sie die Hostkonnektivität auf Ihrem ASA r2-Speichersystem</block>
   <block id="2066e94a3e5e94a8e4ebdca7307614e8" category="list-text">Wählen Sie im System Manager *Host* aus.</block>
-  <block id="d6a0ea19a115b4b6c1b0c1db29d0f8c8" category="paragraph">Der Host-Konnektivitätsstatus wird neben dem Namen der Host-Gruppe wie folgt angezeigt: * *OK*: Zeigt an, dass alle Initiatoren mit beiden Nodes verbunden sind. * *Teilweise verbunden*: Zeigt an, dass einige der Initiatoren nicht mit beiden Knoten verbunden sind. * *Keine Verbindung*: Zeigt an, dass keine Initiatoren verbunden sind.</block>
   <block id="7d19a1e7e72002fdb422d749fd4507db" category="paragraph">Aktualisieren Sie Ihren Host, um Verbindungsprobleme zu beheben. ONTAP überprüft den Verbindungsstatus alle 15 Minuten erneut.</block>
   <block id="69cb7ab40e4d5787db8003ef13bf1939" category="summary">Erstellen Sie einen Snapshot, um Ihre Daten auf Ihrem ASA r2-System zu sichern. Sie können manuelle Snapshots erstellen oder eine Konsistenzgruppe verwenden, um automatische Snapshots zu planen.</block>
   <block id="a72d39c43f1da3c8e4c29dc1a6cf6185" category="searchtitle">Erstellen Sie mit ONTAP ASA r2 Snapshots für die Datensicherung</block>
@@ -1586,4 +1585,8 @@
   <block id="580170da57ca90dca0f62ce9faf29c6e" category="sidebar">Sichere NVMe-Verbindungen</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">Versionshinweise</block>
   <block id="4eae1c6da6a9edad5e5228cf8cfe3cdb" category="sidebar">Neues in ONTAP 9.16.0</block>
+  <block id="0a57cb4625de2148aa1f3fe6815e78eb" category="paragraph">Der Host-Konnektivitätsstatus wird neben dem Namen der Host-Gruppe wie folgt angezeigt:</block>
+  <block id="5b13dc2b1f3390e14daacb1f2f882717" category="list-text">*OK*: Zeigt an, dass alle Initiatoren mit beiden Knoten verbunden sind.</block>
+  <block id="c2520bb5c23501e13bc7e06dde3ae9fd" category="list-text">*Teilweise verbunden*: Zeigt an, dass einige der Initiatoren nicht mit beiden Knoten verbunden sind.</block>
+  <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">*Keine Verbindung*: Zeigt an, dass keine Initiatoren verbunden sind.</block>
 </blocks>
