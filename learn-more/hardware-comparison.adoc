@@ -81,3 +81,6 @@ Durch Erstellen einer Storage-Einheit (LUN oder Namespace) wird automatisch ein 
 
 .Änderungen an Thin Provisioning und Thick Provisioning
 Storage-Einheiten werden auf ASA r2-Storage-Systemen immer über Thin Provisioning bereitgestellt. Thick Provisioning wird nicht unterstützt.
+
+.Änderungen an der Datenkomprimierung
+Temperaturempfindliche Storage-Effizienz wird auf ASA r2-Systemen nicht angewendet. Auf ASA r2-Systemen basiert die Komprimierung nicht auf _Hot_-Daten (auf die häufig zugegriffen wird) oder _Cold_-Daten (auf die selten zugegriffen wird). Die Komprimierung beginnt, ohne auf Daten zu warten, die kalt werden.
