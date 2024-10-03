@@ -14,7 +14,7 @@ searchtitle: Überwachen Sie die Clusterleistung mit ONTAP ASA r2
 [role="lead"]
 Überwachen Sie mit ONTAP System Manager die Gesamt-Performance Ihres Clusters und die Performance bestimmter Storage-Einheiten, um zu bestimmen, wie Latenz, IOPS und Durchsatz sich auf Ihre geschäftskritischen Applikationen auswirken. Die Performance kann über verschiedene Zeiträume von einer Stunde bis zu einem Jahr überwacht werden.
 
-Nehmen wir zum Beispiel an, eine geschäftskritische Applikation hat eine hohe Latenz und einen niedrigen Durchsatz. Wenn Sie die Cluster-Performance der letzten fünf Arbeitstage anzeigen, bemerken Sie jeden Tag einen Performance-Abfall zur gleichen Zeit. Anhand dieser Informationen können Sie ermitteln, ob die kritische Anwendung im Wettbewerb um Clusterressourcen steht, wenn im Hintergrund ein nicht kritischer Prozess ausgeführt wird. Anschließend können Sie Ihre QoS-Richtlinie ändern, um die Auswirkungen des nicht kritischen Workloads auf Systemressourcen zu begrenzen und sicherzustellen, dass Ihre kritische Workload die minimalen Durchsatzziele erfüllt.
+Nehmen wir zum Beispiel an, eine geschäftskritische Applikation hat eine hohe Latenz und einen niedrigen Durchsatz. Wenn Sie die Cluster-Performance der letzten fünf Arbeitstage anzeigen, bemerken Sie einen Performance-Abfall zur gleichen Zeit am Tag. Anhand dieser Informationen können Sie ermitteln, ob die kritische Anwendung im Wettbewerb um Clusterressourcen steht, wenn im Hintergrund ein nicht kritischer Prozess ausgeführt wird. Anschließend können Sie Ihre QoS-Richtlinie ändern, um die Auswirkungen des nicht kritischen Workloads auf Systemressourcen zu begrenzen und sicherzustellen, dass Ihre kritische Workload die minimalen Durchsatzziele erfüllt.
 
 
 

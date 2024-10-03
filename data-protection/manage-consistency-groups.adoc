@@ -60,7 +60,7 @@ Wählen Sie anschließend image:icon_dropdown_arrow.gif["Blauer Pfeil, der nach 
 
 
 .Wie es weiter geht
-Da Ihre Daten nun mit Snapshots gesichert werden, sollten Sie link:../secure-data/encrypt-data-at-rest.html["Richten Sie die Snapshot-Replikation ein"]Ihre Konsistenzgruppen für Backup und Disaster Recovery an einen geografisch Remote-Standort kopieren.
+Nachdem Ihre Daten nun durch Snapshots geschützt sind, sollten Sie link:../secure-data/encrypt-data-at-rest.html["Richten Sie die Snapshot-Replikation ein"]Ihre Konsistenzgruppen für das Backup und Disaster Recovery an einen geografisch Remote Standort kopieren.
 
 
 
@@ -147,7 +147,7 @@ Wenn Sie mit dem Datenschutz für die Speichereinheit fortfahren möchten, füge
 Wenn Sie die Mitglieder einer Konsistenzgruppe nicht mehr als eine Einheit verwalten müssen, können Sie die Konsistenzgruppe löschen. Nach dem Löschen einer Konsistenzgruppe bleiben die zuvor in der Gruppe enthaltenen Speichereinheiten auf dem Cluster aktiv.
 
 .Bevor Sie beginnen
-Wenn die Konsistenzgruppe, die Sie löschen möchten, sich in einer Replizierungsbeziehung befindet, müssen Sie die Beziehung unterbrechen, bevor Sie die Konsistenzgruppe löschen. Nachdem Sie eine zuvor vorhandene Replikationskonsistenzgruppe gelöscht haben, bleiben die Speichereinheiten, die sich in der Konsistenzgruppe befanden, auf dem Cluster aktiv, und die replizierten Kopien bleiben im Remote-Cluster erhalten.
+Wenn die Konsistenzgruppe, die Sie löschen möchten, sich in einer Replizierungsbeziehung befindet, müssen Sie die Beziehung unterbrechen, bevor Sie die Konsistenzgruppe löschen. Nach dem Löschen einer Replikationskonsistenzgruppe bleiben die Speichereinheiten, die sich in der Konsistenzgruppe befanden, im Cluster aktiv und die replizierten Kopien bleiben im Remote-Cluster erhalten.
 
 .Schritte
 . Wählen Sie in System Manager *Schutz > Consistency Groups* aus.

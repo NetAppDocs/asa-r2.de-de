@@ -31,7 +31,7 @@ Nachdem Sie das Cluster eingerichtet haben, sollten Sie die AutoSupport-Konnekti
 
 
 .Was kommt als Nächstes?
-Sie haben überprüft, ob der technische Support AutoSupport Meldungen von Ihrem ASA r2 System erhalten kann und über die erforderlichen Daten verfügt, um Ihnen bei einem Problem zu helfen.
+Sie haben bestätigt, dass der technische Support AutoSupport-Nachrichten von Ihrem ASA r2-System erhalten kann, um sicherzustellen, dass diese über die erforderlichen Daten verfügen, um Ihnen bei Problemen behilflich zu sein.
 
 
 

@@ -11,4 +11,4 @@ summary: Erfahren Sie, wie Sie Wartungsverfahren für Ihr ASA r2-System durchfü
 
 
 [role="lead"]
-Unter https://docs.netapp.com/us-en/ontap-systems/asa-r2-landing-maintain/index.html["ASA r2 – Dokumentation verwalten"^] erfahren Sie, wie Sie Wartungsverfahren für Ihre ASA r2-Systemkomponenten durchführen.
+Unter https://docs.netapp.com/us-en/ontap-systems/asa-r2-landing-maintain/index.html["ASA r2 Wartungsdokumentation"^] erfahren Sie, wie Sie Wartungsverfahren für Ihre ASA r2-Systemkomponenten durchführen.

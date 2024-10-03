@@ -80,4 +80,4 @@ Neue Cluster enthalten automatisch eine Standard-Daten-SVM, bei der die SAN-Prot
 Durch Erstellen einer Storage-Einheit (LUN oder Namespace) wird automatisch ein Volume aus der Storage-Verfügbarkeitszone erstellt. Dies führt zu einem vereinfachten und gemeinsamen Namespace. Durch Löschen einer Speichereinheit wird das zugeordnete Volume automatisch gelöscht.
 
 .Änderungen an Thin Provisioning und Thick Provisioning
-Storage-Einheiten für werden auf ASA r2-Storage-Systemen immer über Thin Provisioning bereitgestellt. Thick Provisioning wird nicht unterstützt.
+Storage-Einheiten werden auf ASA r2-Storage-Systemen immer über Thin Provisioning bereitgestellt. Thick Provisioning wird nicht unterstützt.

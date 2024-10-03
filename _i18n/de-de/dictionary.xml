@@ -332,7 +332,6 @@
   <block id="a3d38335033dbc3e63c68f76b308e45c" category="list-text">Geben Sie unter *Maximum Snapshots* die maximale Anzahl der Snapshots ein, die Sie von der Konsistenzgruppe behalten möchten.</block>
   <block id="72c9cc57bd3acc347a45ea0b780c14ab" category="list-text">Optional unter *SnapMirror Label* ein SnapMirror Label eingeben.</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">Wie es weiter geht</block>
-  <block id="6b14136e2b75ff639f5ca263a5dd2a6a" category="paragraph">Da Ihre Daten nun mit Snapshots gesichert werden, sollten Sie <block ref="c9073dd826fc7721b98f9930c55d01b2" category="inline-link-macro-rx"></block>Ihre Konsistenzgruppen für Backup und Disaster Recovery an einen geografisch Remote-Standort kopieren.</block>
   <block id="cf8693d6af83f33c68a196b12cffa29d" category="section-title">Entfernen Sie die Snapshot-Datensicherung aus einer Konsistenzgruppe</block>
   <block id="0e79d9ba3e974f486c0f5945f4e9673a" category="paragraph">Wenn Sie den Snapshot-Datenschutz aus einer Konsistenzgruppe entfernen, werden die Snapshots für alle Speichereinheiten in der Konsistenzgruppe deaktiviert.</block>
   <block id="ddc789e2715034046ecb8d1c8ec50205" category="list-text">Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie nicht mehr schützen möchten.</block>
@@ -365,7 +364,6 @@
   <block id="9c09f709a9761f564907022b7331dbb1" category="paragraph">Wenn Sie mit dem Datenschutz für die Speichereinheit fortfahren möchten, fügen Sie die Speichereinheit einer anderen Konsistenzgruppe hinzu.</block>
   <block id="793fd1e28f15d34822702f9d70403404" category="section-title">Löschen einer Konsistenzgruppe</block>
   <block id="2cd894b6ee2553a527a03b1a9086238b" category="paragraph">Wenn Sie die Mitglieder einer Konsistenzgruppe nicht mehr als eine Einheit verwalten müssen, können Sie die Konsistenzgruppe löschen. Nach dem Löschen einer Konsistenzgruppe bleiben die zuvor in der Gruppe enthaltenen Speichereinheiten auf dem Cluster aktiv.</block>
-  <block id="8ca9256ffdf569f8b36fe638e605aa91" category="paragraph">Wenn die Konsistenzgruppe, die Sie löschen möchten, sich in einer Replizierungsbeziehung befindet, müssen Sie die Beziehung unterbrechen, bevor Sie die Konsistenzgruppe löschen. Nachdem Sie eine zuvor vorhandene Replikationskonsistenzgruppe gelöscht haben, bleiben die Speichereinheiten, die sich in der Konsistenzgruppe befanden, auf dem Cluster aktiv, und die replizierten Kopien bleiben im Remote-Cluster erhalten.</block>
   <block id="3e905f617938aef0b388912bce87f2e2" category="list-text">Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie löschen möchten.</block>
   <block id="b32275e0392f5cbab8806c7ce85e42f5" category="list-text">Akzeptieren Sie die Warnung, und wählen Sie dann *Löschen*.</block>
   <block id="dde86492e27a0d7b75963e7c4b928397" category="paragraph">Nachdem Sie eine Konsistenzgruppe gelöscht haben, sind die Speichereinheiten, die zuvor in der Konsistenzgruppe vorhanden waren, nicht mehr durch Snapshots geschützt. Ziehen Sie in Betracht, diese Storage-Einheiten einer anderen Konsistenzgruppe hinzuzufügen, um sie vor Datenverlust zu schützen.</block>
@@ -523,7 +521,6 @@
   <block id="71ba518a68888a9623c97c1553396f78" category="list-text">Wählen Sie im System Manager *Cluster &gt;Settings* aus.</block>
   <block id="ab7f391aba14be442463b48ba048fc7d" category="list-text">Wählen Sie neben *AutoSupport* <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>; dann *Verbindung testen*.</block>
   <block id="02b1e4285506fc0cffd29844e8121e1a" category="list-text">Geben Sie einen Betreff für die AutoSupport-Nachricht ein, und wählen Sie dann *Test-AutoSupport-Nachricht senden*.</block>
-  <block id="fcb35f0da100ee7cfd8c2c2acdcbb8c0" category="paragraph">Sie haben überprüft, ob der technische Support AutoSupport Meldungen von Ihrem ASA r2 System erhalten kann und über die erforderlichen Daten verfügt, um Ihnen bei einem Problem zu helfen.</block>
   <block id="825777dd1ed1433192f80c9ec3cc95ab" category="section-title">AutoSupport-Empfänger hinzufügen</block>
   <block id="4ceed55a3a8a0b3cd4cf3b3ad2f6c061" category="paragraph">Fügen Sie Mitglieder Ihrer internen Supportorganisation der Liste der E-Mail-Adressen hinzu, die AutoSupport-Nachrichten empfangen.</block>
   <block id="9b7d22da73a3e8a3cf955ff556c4bae7" category="list-text">Wählen Sie neben *AutoSupport* <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>; und wählen Sie dann *Weitere Optionen*.</block>
@@ -1070,7 +1067,6 @@
   <block id="363188350b1fe2b934c479c977a89ece" category="paragraph-title">Automatische Volume-Erstellung</block>
   <block id="eee98269dcd20c90abcc0a7bfb22f37c" category="paragraph">Durch Erstellen einer Storage-Einheit (LUN oder Namespace) wird automatisch ein Volume aus der Storage-Verfügbarkeitszone erstellt. Dies führt zu einem vereinfachten und gemeinsamen Namespace. Durch Löschen einer Speichereinheit wird das zugeordnete Volume automatisch gelöscht.</block>
   <block id="deb157545e882ae10d45f43fcb06f0df" category="paragraph-title">Änderungen an Thin Provisioning und Thick Provisioning</block>
-  <block id="0cc302b38ca94109fc2cffd503adb3d4" category="paragraph">Storage-Einheiten für werden auf ASA r2-Storage-Systemen immer über Thin Provisioning bereitgestellt. Thick Provisioning wird nicht unterstützt.</block>
   <block id="3abf1b035bc420caf188c022ea7d792d" category="summary">Die REST-API von ASA r2 basiert auf der REST-API, die mit der einheitlichen ONTAP-Persönlichkeit ausgestattet ist. Eine Reihe von Änderungen wird an die einzigartigen Merkmale und Funktionen der ASA r2-Persönlichkeit angepasst.</block>
   <block id="48c7d320d017a90d970e154c81d07dc1" category="doc">REST-API-Unterstützung für ASA r2</block>
   <block id="83e5ee07fc92447fe7a6ceed082d0c01" category="section-title">Typen von API-Änderungen</block>
@@ -1142,8 +1138,6 @@
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">In den Benachrichtigungsdateien finden Sie Informationen zu Urheberrechten und Lizenzen von Drittanbietern, die in der NetApp Software verwendet werden.</block>
   <block id="b46e4e89d5c6947e865dbb8abc5ed28c" category="summary">Erfahren Sie, wie Sie Wartungsverfahren für Ihr ASA r2-System durchführen.</block>
   <block id="c65b7989475d7b4b884961e0e5c53286" category="doc">Wartung Ihres ASA r2 Storage-Systems</block>
-  <block id="2cc42d8e162137e099ab248df06c4f19" category="inline-link">ASA r2 – Dokumentation verwalten</block>
-  <block id="a779dc7ba81016ed421e7c384c5d1e30" category="paragraph">Unter<block ref="54785b1ca9681752f04c4a927f80eaa1" category="inline-link-rx"></block> erfahren Sie, wie Sie Wartungsverfahren für Ihre ASA r2-Systemkomponenten durchführen.</block>
   <block id="637cdb5787a38a4d0da33ae01aa8fe4c" category="summary">Klonen von Storage-Einheiten und Konsistenzgruppen auf dem ASA r2, um Datenkopien für eine Vielzahl von Zwecken außerhalb der Produktionsumgebung zu erstellen.</block>
   <block id="5efa28b67f38b8acf6f260494435aeb9" category="searchtitle">Das Klonen von Daten mit ONTAP System Manager ASA r2</block>
   <block id="b672b3c3c67f9dc97cb7aa4016ffd8de" category="doc">Klonen von Daten auf ASA r2 Storage-Systemen</block>
@@ -1335,7 +1329,6 @@
   <block id="7210645d4515e7cb96d5b26a294a9f25" category="searchtitle">Überwachen Sie die Clusterleistung mit ONTAP ASA r2</block>
   <block id="064023636601914c7dfacc81fa4e3b57" category="doc">Überwachung der Performance von Clustern und Speichereinheiten auf ASA r2-Storage-Systemen</block>
   <block id="ac48862a6c885879fa8b73f630f8e98f" category="paragraph">Überwachen Sie mit ONTAP System Manager die Gesamt-Performance Ihres Clusters und die Performance bestimmter Storage-Einheiten, um zu bestimmen, wie Latenz, IOPS und Durchsatz sich auf Ihre geschäftskritischen Applikationen auswirken. Die Performance kann über verschiedene Zeiträume von einer Stunde bis zu einem Jahr überwacht werden.</block>
-  <block id="d2fee2bd5b0bc27aba9325efd2cf7765" category="paragraph">Nehmen wir zum Beispiel an, eine geschäftskritische Applikation hat eine hohe Latenz und einen niedrigen Durchsatz. Wenn Sie die Cluster-Performance der letzten fünf Arbeitstage anzeigen, bemerken Sie jeden Tag einen Performance-Abfall zur gleichen Zeit. Anhand dieser Informationen können Sie ermitteln, ob die kritische Anwendung im Wettbewerb um Clusterressourcen steht, wenn im Hintergrund ein nicht kritischer Prozess ausgeführt wird. Anschließend können Sie Ihre QoS-Richtlinie ändern, um die Auswirkungen des nicht kritischen Workloads auf Systemressourcen zu begrenzen und sicherzustellen, dass Ihre kritische Workload die minimalen Durchsatzziele erfüllt.</block>
   <block id="9ed62a90862b2040ffb0a91ecf532fff" category="section-title">Überwachen Sie die Cluster-Performance</block>
   <block id="4d46d963226f35fc56c0527f9740cc00" category="paragraph">Mithilfe von Cluster-Performance-Kennzahlen können Sie bestimmen, ob Sie Workloads verlagern müssen, um die Latenz zu minimieren sowie die IOPS und den Durchsatz Ihrer kritischen Applikationen zu maximieren.</block>
   <block id="1d1e5cd96b3e552f9fc410fb90447401" category="list-text">Wählen Sie in System Manager *Dashboard* aus.</block>
@@ -1587,4 +1580,10 @@
   <block id="c2520bb5c23501e13bc7e06dde3ae9fd" category="list-text">*Teilweise verbunden*: Zeigt an, dass einige der Initiatoren nicht mit beiden Knoten verbunden sind.</block>
   <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">*Keine Verbindung*: Zeigt an, dass keine Initiatoren verbunden sind.</block>
   <block id="d28f4031342956661d79f1274d2a395c" category="paragraph">Erfahren Sie mehr über die neuen Funktionen in ONTAP 9.16.0 für ASA r2 Systeme.</block>
+  <block id="6913e721908f172fd672e46e9459c4ad" category="paragraph">Wenn die Konsistenzgruppe, die Sie löschen möchten, sich in einer Replizierungsbeziehung befindet, müssen Sie die Beziehung unterbrechen, bevor Sie die Konsistenzgruppe löschen. Nach dem Löschen einer Replikationskonsistenzgruppe bleiben die Speichereinheiten, die sich in der Konsistenzgruppe befanden, im Cluster aktiv und die replizierten Kopien bleiben im Remote-Cluster erhalten.</block>
+  <block id="22a4c2b7564a7f7d551ab23d23fbcac8" category="paragraph">Sie haben bestätigt, dass der technische Support AutoSupport-Nachrichten von Ihrem ASA r2-System erhalten kann, um sicherzustellen, dass diese über die erforderlichen Daten verfügen, um Ihnen bei Problemen behilflich zu sein.</block>
+  <block id="3ae7feb5d9cb2335f10922aa1130319d" category="paragraph">Storage-Einheiten werden auf ASA r2-Storage-Systemen immer über Thin Provisioning bereitgestellt. Thick Provisioning wird nicht unterstützt.</block>
+  <block id="c43d68b5b8370d3423bfb0b13dfe0abe" category="inline-link">ASA r2 Wartungsdokumentation</block>
+  <block id="f2abf1f4083409f0d65b59ffbcd13341" category="paragraph">Unter<block ref="6805eee0c680715323289cabd48eb628" category="inline-link-rx"></block> erfahren Sie, wie Sie Wartungsverfahren für Ihre ASA r2-Systemkomponenten durchführen.</block>
+  <block id="77ae7cb145355765cca98cef84bef3eb" category="paragraph">Nehmen wir zum Beispiel an, eine geschäftskritische Applikation hat eine hohe Latenz und einen niedrigen Durchsatz. Wenn Sie die Cluster-Performance der letzten fünf Arbeitstage anzeigen, bemerken Sie einen Performance-Abfall zur gleichen Zeit am Tag. Anhand dieser Informationen können Sie ermitteln, ob die kritische Anwendung im Wettbewerb um Clusterressourcen steht, wenn im Hintergrund ein nicht kritischer Prozess ausgeführt wird. Anschließend können Sie Ihre QoS-Richtlinie ändern, um die Auswirkungen des nicht kritischen Workloads auf Systemressourcen zu begrenzen und sicherzustellen, dass Ihre kritische Workload die minimalen Durchsatzziele erfüllt.</block>
 </blocks>
