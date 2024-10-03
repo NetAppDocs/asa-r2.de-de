@@ -556,7 +556,6 @@
   <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">ASA r2 Systeme (ASA A1K, ASA A70 und ASA A90) bieten eine einheitliche Hardware- und Softwarelösung, die reine SAN-Kunden eine vereinfachte Benutzererfahrung ermöglicht.</block>
   <block id="0ef2f5aecf77f5521c5e2b69fdb889af" category="searchtitle">Erfahren Sie mehr über die Storage-Systeme ASA A1K, ASA A70 und ASA A90</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">Erfahren Sie mehr über ASA r2 Storage-Systeme</block>
-  <block id="0ab1a7883d0399cbaf77a2e38633a6ea" category="paragraph">Die neuen NetApp ASA r2 Systeme (ASA A1K, ASA A70 und ASA A90) bieten eine einheitliche Hardware- und Softwarelösung, mit der die Benutzerfreundlichkeit speziell auf die Anforderungen reiner SAN-Kunden abgestimmt wird.</block>
   <block id="4fdeef14779674f92738c7750c976920" category="paragraph">ASA r2 Systeme unterstützen alle SAN-Protokolle (iSCSI, FC, NVMe/FC, NVMe/TCP) in einer einzigen HA-Paar-Implementierung. SCSI-Protokolle (iSCSI und FC) verwenden für Multipathing eine symmetrische aktiv/aktiv-Architektur, sodass alle Pfade zwischen Hosts und Storage aktiv/optimiert sind. NVMe-Protokolle unterstützen direkte Pfade zwischen den Hosts und dem Storage.</block>
   <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">Auf einem ASA r2 System sind ONTAP Software und System Manager optimiert, um die grundlegenden SAN-Funktionen zu unterstützen und gleichzeitig Funktionen zu entfernen, die in SAN-Umgebungen nicht unterstützt werden.</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">Bei ASA r2-Systemen werden Storage-Einheiten mit Konsistenzgruppen eingesetzt:</block>
@@ -1402,8 +1401,6 @@
   <block id="ed49a36c4fd547e5e2ace11bef4f21cf" category="section-title">Plattformen</block>
   <block id="06933067aafd48425d67bcb01bba5cb6" category="cell">Aktualisieren</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Beschreibung</block>
-  <block id="2c84ef2816336594d59d5962b19f3047" category="cell">Neuen Plattformen entwickelt</block>
-  <block id="13d09074058b667f0fc1cfa7487fab45" category="paragraph">Die folgenden neuen NetApp ASA r2 Systeme sind verfügbar. Diese Plattformen bieten eine einheitliche Hardware- und Softwarelösung, die eine vereinfachte Benutzererfahrung bietet, speziell für die Anforderungen von reinen SAN-Kunden.</block>
   <block id="26ed02718973e705cd69ee6e109400e0" category="section-title">System Manager</block>
   <block id="43216e15c49bb3bc0da538a8d830f901" category="inline-link-macro">Optimierter Support für reine SAN-Kunden</block>
   <block id="60dc71f158c44e4e34a36dec8e3210a5" category="cell"><block ref="60dc71f158c44e4e34a36dec8e3210a5" category="inline-link-macro-rx"></block></block>
@@ -1586,4 +1583,6 @@
   <block id="c43d68b5b8370d3423bfb0b13dfe0abe" category="inline-link">ASA r2 Wartungsdokumentation</block>
   <block id="f2abf1f4083409f0d65b59ffbcd13341" category="paragraph">Unter<block ref="6805eee0c680715323289cabd48eb628" category="inline-link-rx"></block> erfahren Sie, wie Sie Wartungsverfahren für Ihre ASA r2-Systemkomponenten durchführen.</block>
   <block id="77ae7cb145355765cca98cef84bef3eb" category="paragraph">Nehmen wir zum Beispiel an, eine geschäftskritische Applikation hat eine hohe Latenz und einen niedrigen Durchsatz. Wenn Sie die Cluster-Performance der letzten fünf Arbeitstage anzeigen, bemerken Sie einen Performance-Abfall zur gleichen Zeit am Tag. Anhand dieser Informationen können Sie ermitteln, ob die kritische Anwendung im Wettbewerb um Clusterressourcen steht, wenn im Hintergrund ein nicht kritischer Prozess ausgeführt wird. Anschließend können Sie Ihre QoS-Richtlinie ändern, um die Auswirkungen des nicht kritischen Workloads auf Systemressourcen zu begrenzen und sicherzustellen, dass Ihre kritische Workload die minimalen Durchsatzziele erfüllt.</block>
+  <block id="9df0af6622b120b0338c4289d4d6b9e4" category="paragraph">Die NetApp ASA r2 Systeme (ASA A1K, ASA A70 und ASA A90) bieten eine einheitliche Hardware- und Softwarelösung, mit der die Benutzerfreundlichkeit speziell auf die Anforderungen reiner SAN-Kunden abgestimmt wird.</block>
+  <block id="02a5548e7c0c7ed0e4a93d5e2d37ebc2" category="paragraph">Die folgenden NetApp ASA r2-Systeme sind verfügbar. Diese Plattformen bieten eine einheitliche Hardware- und Softwarelösung, die eine vereinfachte Benutzererfahrung bietet, speziell für die Anforderungen von reinen SAN-Kunden.</block>
 </blocks>
