@@ -518,7 +518,6 @@
   <block id="8e3b3443f7322d7c7fc2e9b691e9b154" category="paragraph">Sie müssen Cluster-Administrator sein, um AutoSupport zu verwalten.</block>
   <block id="a1a978a0ef405a79f3b2c5f89d50b536" category="section-title">Testen Sie die AutoSupport Verbindung</block>
   <block id="d62c03a6357eefd7638471c82a6859be" category="paragraph">Nachdem Sie das Cluster eingerichtet haben, sollten Sie die AutoSupport-Konnektivität testen, um sicherzustellen, dass der technische Support von AutoSupport generierte Meldungen erhält.</block>
-  <block id="71ba518a68888a9623c97c1553396f78" category="list-text">Wählen Sie im System Manager *Cluster &gt;Settings* aus.</block>
   <block id="ab7f391aba14be442463b48ba048fc7d" category="list-text">Wählen Sie neben *AutoSupport* <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>; dann *Verbindung testen*.</block>
   <block id="02b1e4285506fc0cffd29844e8121e1a" category="list-text">Geben Sie einen Betreff für die AutoSupport-Nachricht ein, und wählen Sie dann *Test-AutoSupport-Nachricht senden*.</block>
   <block id="825777dd1ed1433192f80c9ec3cc95ab" category="section-title">AutoSupport-Empfänger hinzufügen</block>
@@ -1451,15 +1450,12 @@
   <block id="f82f9abf9d39b3ea7e9931fe0ec02989" category="summary">Mit manipulationssicheren Snapshots sichern Sie Ihre Daten. Manipulationssichere Snapshots können nicht gelöscht oder für die Wiederherstellung von Daten genutzt werden, die durch einen Ransomware-Angriff kompromittiert wurden.</block>
   <block id="17d54966a51825ee64011655de8e99f5" category="doc">Schutz vor Ransomware-Angriffen auf ASA r2 Storage-Systeme</block>
   <block id="bb09a1295cce99402c216baed3c2b937" category="paragraph">Um besser gegen Ransomware-Angriffe zu schützen, replizieren Sie Snapshots in ein Remote-Cluster und sperren Sie dann die Ziel-Snapshots, damit sie manipulationssicher sind. Gesperrte Snapshots können nicht versehentlich oder böswillig gelöscht werden. Sie können gesperrte Snapshots verwenden, um Daten wiederherzustellen, wenn ein Storage-Gerät jemals durch einen Ransomware-Angriff kompromittiert wurde.</block>
-  <block id="049905961ea2e1141d23d71eb662076b" category="section-title">Initialisieren Sie die SnapLock Compliance-Uhr</block>
-  <block id="045a584abdee8ddf49e1db3987711d93" category="paragraph">Bevor Sie manipulationssichere Snapshots erstellen können, müssen Sie die SnapLock Compliance Uhr auf Ihren lokalen und Ziel-Clustern initialisieren.</block>
   <block id="7e59070af3e4cd3a421461f7774f3c87" category="list-text">Wählen Sie *Cluster &gt; Übersicht*.</block>
   <block id="045e8ceb02be472a9bc3e54ba6f1d811" category="list-text">Wählen Sie im Abschnitt *Knoten* die Option *SnapLock Compliance-Uhr initialisieren* aus.</block>
   <block id="2012a4286c3a1864d4fa11ba1cb42b1c" category="list-text">Vergewissern Sie sich, dass die Compliance-Uhr initialisiert ist.</block>
   <block id="2bc6e7414d5cb75e3addfdeb234222a1" category="inline-image-macro">Drei blaue Spalten auf weißem Hintergrund</block>
   <block id="ff632b6925cddc0c770d38368ff3755e" category="list-text">Wählen Sie im Abschnitt *Knoten* <block ref="db89dee19aae8a41518f426597d8cb6e" category="inline-image-macro-rx" type="image"></block>die Option ; und wählen Sie dann *SnapLock Compliance Uhr*.</block>
   <block id="c19a0c09a1a9acec430b36accfdb5ac8" category="inline-link-macro">Erstellen Sie eine Replikationsbeziehung mit gesperrten Snapshots</block>
-  <block id="791bf7d3faa5342db177ff00f2bcca3f" category="paragraph">Nachdem Sie die SnapLock Compliance-Uhr auf Ihren lokalen und Ziel-Clustern initialisiert haben, sind Sie bereit zu <block ref="9e34609081a00054138ac6c8cbbd66f1" category="inline-link-macro-rx"></block>.</block>
   <block id="25abedf12d26e4bc8960557833ebe68d" category="summary">Sehen Sie sich kurze Videos an, die zeigen, wie Sie mit ONTAP System Manager häufige Aufgaben auf ASA r2 Storage-Systemen schnell und einfach ausführen.</block>
   <block id="9e9e90703a7077203260b19a3af9704a" category="doc">Konfigurieren Sie SAN-Protokolle auf Ihrem ASA r2-System</block>
   <block id="21d3b12a5a9f6ff0d25b8b5e5e00b7ff" category="paragraph">Das folgende Transkript ist für das Video<block ref="1ef61309a2d73f2fc4d83b527ce1790e" prefix=" " category="inline-code"></block>zur Verfügung gestellt.</block>
@@ -1587,4 +1583,8 @@
   <block id="02a5548e7c0c7ed0e4a93d5e2d37ebc2" category="paragraph">Die folgenden NetApp ASA r2-Systeme sind verfügbar. Diese Plattformen bieten eine einheitliche Hardware- und Softwarelösung, die eine vereinfachte Benutzererfahrung bietet, speziell für die Anforderungen von reinen SAN-Kunden.</block>
   <block id="514854c9f2116902eea3ece0f40e8154" category="paragraph-title">Änderungen an der Datenkomprimierung</block>
   <block id="097c1368589d519db55e5ac8f141a847" category="paragraph">Temperaturempfindliche Storage-Effizienz wird auf ASA r2-Systemen nicht angewendet. Auf ASA r2-Systemen basiert die Komprimierung nicht auf _Hot_-Daten (auf die häufig zugegriffen wird) oder _Cold_-Daten (auf die selten zugegriffen wird). Die Komprimierung beginnt, ohne auf Daten zu warten, die kalt werden.</block>
+  <block id="e9dac8f777563b18c14aec6d0406e876" category="list-text">Wählen Sie im System Manager *Cluster &gt;Settings* aus.</block>
+  <block id="b16351f807fbda6965666255eef268dd" category="section-title">Initialisieren Sie die SnapLock Compliance-Uhr</block>
+  <block id="6f7e58f2fc20167d69dc971955e6bb11" category="paragraph">Bevor Sie manipulationssichere Snapshots erstellen können, müssen Sie die SnapLock Compliance Uhr auf Ihren lokalen und Ziel-Clustern initialisieren.</block>
+  <block id="71c1cda56d6fad5ca8b28cabd1f98042" category="paragraph">Nachdem Sie die SnapLock Compliance-Uhr auf Ihren lokalen und Ziel-Clustern initialisiert haben, sind Sie bereit zu <block ref="9e34609081a00054138ac6c8cbbd66f1" category="inline-link-macro-rx"></block>.</block>
 </blocks>
