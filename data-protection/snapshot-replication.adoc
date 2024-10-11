@@ -15,7 +15,7 @@ searchtitle: Replizieren von Snapshots auf ein Remote-Cluster mithilfe von ONTAP
 Die Snapshot-Replizierung ist ein Prozess, bei dem Konsistenzgruppen auf Ihrem ASA r2-System an einen geografischen Standort kopiert werden. Nach der ersten Replikation werden Änderungen an Consistency Groups basierend auf einer Replikationsrichtlinie an den Remote-Standort kopiert. Replizierte Konsistenzgruppen können für Disaster Recovery oder Datenmigration verwendet werden.
 
 
-NOTE: Die Snapshot Replizierung von einem ASA r2 Storage-System wird nur auf einem anderen ASA r2 Storage-System unterstützt. Sie können Snapshots von einem ASA r2-System nicht auf ein aktuelles ASA-, AFF- oder FAS-System replizieren.
+NOTE: Die Snapshot Replizierung für ein ASA r2 Storage-System wird nur von einem anderen ASA r2 Storage-System unterstützt. Sie können keine Snapshots von einem ASA r2-System auf ein aktuelles ASA-, AFF- oder FAS-System oder von einem aktuellen ASA-, AFF- oder FAS-System auf ein ASA r2-System replizieren.
 
 Um die Snapshot-Replikation einzurichten, müssen Sie eine Replikationsbeziehung zwischen Ihrem ASA r2-System und dem Remote-Standort herstellen. Die Replikationsbeziehung wird durch eine Replikationsrichtlinie geregelt. Während der Cluster-Einrichtung wird eine Standardrichtlinie zur Replizierung aller Snapshots erstellt. Sie können die Standardrichtlinie verwenden oder optional eine neue Richtlinie erstellen.
 
