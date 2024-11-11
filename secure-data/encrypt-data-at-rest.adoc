@@ -51,3 +51,5 @@ Neben NSE können Sie auch Softwareverschlüsselung aktivieren, um Ihre Daten um
 
 .Was kommt als Nächstes?
 Nachdem Sie nun Ihre Daten im Ruhezustand verschlüsselt haben, können Sie jetzt mit dem link:nvme-tcp-connections.html["Verschlüsseln Sie alle über das Netzwerk gesendeten Daten"]NVMe-/TCP-Protokoll zwischen Ihrem NVMe-/TCP-Host und Ihrem ASA r2-System wechseln.
+
+Wenn Sie vom Onboard Key Manager zu einem externen Key Manager wechseln müssen oder umgekehrt, siehe link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/migrate-keys-between-key-managers["Migrieren Sie die ONTAP Datenverschlüsselung zwischen Schlüsselmanagern"^].

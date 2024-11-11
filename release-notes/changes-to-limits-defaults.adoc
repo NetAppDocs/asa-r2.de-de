@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: release-notes/changes-to-limits-defaults.html 
+keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa 70, asa 90 
+summary: Erfahren Sie mehr über die Änderungen an Grenzwerten und Standardwerten für ASA r2-Systeme. 
+---
+= Änderungen an ONTAP-Limits und -Standardeinstellungen wirken sich auf ASA r2-Systeme aus
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erfahren Sie mehr über die Änderungen an Grenzwerten und Standardwerten für ASA r2-Systeme. NetApp bemüht sich darum, seinen Kunden die wichtigsten Änderungen bei Standard- und Grenzwertänderungen jeder ONTAP Version zu erläutern.
+
+
+
+== Änderungen an den ONTAP-Limits
+
+[cols="2,4,4"]
+|===
+| Funktion | Begrenzungsänderung | In Freigabe geändert... 
+
+
+| Speichereinheiten | Die maximale Anzahl an Storage-Einheiten wird von 2500 pro HA-Paar auf 10,000 pro HA-Paar erhöht. | ONTAP 9.16.1 
+|===
