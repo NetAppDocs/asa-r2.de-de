@@ -1607,7 +1607,7 @@
   <block id="7ec849e005dbd9c153a3b9fc38bf47df" category="paragraph">Space deallocation (auch „Hole Punching“ und „unmap“ genannt) ist standardmäßig für NVMe-Namespaces aktiviert. Space deallocation ermöglicht einem Host, nicht verwendete Blöcke aus Namespaces zu Zuordnung zu machen, um Speicherplatz zurückzugewinnen.</block>
   <block id="9228b29536da5aa86ee6865642b7a754" category="paragraph">Dadurch wird die gesamte Storage-Effizienz erheblich verbessert, insbesondere bei File-Systemen mit hohem Datenfluktuationsgrad.</block>
   <block id="459e6c3f59570324cab3a799ce9f4d6f" category="inline-link-macro">Migrieren Sie die ONTAP Datenverschlüsselung zwischen Schlüsselmanagern</block>
-  <block id="ba905aa152bc67dfe7369966e1f7b161" category="paragraph">Wenn Sie vom Onboard Key Manager zu einem externen Key Manager wechseln müssen oder umgekehrt, siehe <block ref="ddc33c992daebda8b45882e4c40e07d4" category="inline-link-macro-rx"></block>.</block>
   <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">Neues in ONTAP 9.16.1</block>
   <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">Änderungen an ONTAP-Standardeinstellungen und -Grenzen</block>
+  <block id="ec7ed1b959417fb145bcf5bc5351a4e1" category="paragraph">Wenn Sie vom Onboard Key Manager zu einem externen Key Manager wechseln müssen oder umgekehrt, siehe <block ref="6c5d784251393a5f6fda5c1a058497d1" category="inline-link-macro-rx"></block>.</block>
 </blocks>
