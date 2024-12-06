@@ -20,8 +20,8 @@ ASA r2 Systeme bieten zwar eine breite Unterstützung für SAN-Lösungen, bestim
 * MetroCluster
 * Objektprotokolle
 * ONTAP S3 SnapMirror und S3-APIs
-* Von SnapMirror zur Cloud
-* SnapMirror auf Systeme mit nicht-ASA r2
+* SnapMirror (asynchron und synchron) zur Cloud
+* SnapMirror (asynchron und synchron) auf Systeme mit nicht-ASA r2
 * Selektive LUN-Zuordnung (SLM)
 
 

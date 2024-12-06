@@ -553,7 +553,6 @@
   <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">ASA r2 Systeme (ASA A1K, ASA A70 und ASA A90) bieten eine einheitliche Hardware- und Softwarelösung, die reine SAN-Kunden eine vereinfachte Benutzererfahrung ermöglicht.</block>
   <block id="0ef2f5aecf77f5521c5e2b69fdb889af" category="searchtitle">Erfahren Sie mehr über die Storage-Systeme ASA A1K, ASA A70 und ASA A90</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">Erfahren Sie mehr über ASA r2 Storage-Systeme</block>
-  <block id="4fdeef14779674f92738c7750c976920" category="paragraph">ASA r2 Systeme unterstützen alle SAN-Protokolle (iSCSI, FC, NVMe/FC, NVMe/TCP) in einer einzigen HA-Paar-Implementierung. SCSI-Protokolle (iSCSI und FC) verwenden für Multipathing eine symmetrische aktiv/aktiv-Architektur, sodass alle Pfade zwischen Hosts und Storage aktiv/optimiert sind. NVMe-Protokolle unterstützen direkte Pfade zwischen den Hosts und dem Storage.</block>
   <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">Auf einem ASA r2 System sind ONTAP Software und System Manager optimiert, um die grundlegenden SAN-Funktionen zu unterstützen und gleichzeitig Funktionen zu entfernen, die in SAN-Umgebungen nicht unterstützt werden.</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">Bei ASA r2-Systemen werden Storage-Einheiten mit Konsistenzgruppen eingesetzt:</block>
   <block id="db202dbb9a4a22e347c683ae7290b969" category="list-text">Eine _Storage unit_ stellt Ihren SAN-Hosts Speicherplatz für Datenoperationen zur Verfügung. Eine Storage-Einheit bezieht sich auf eine LUN für SCSI-Hosts oder einen NVMe-Namespace für NVMe-Hosts.</block>
@@ -1101,8 +1100,6 @@
   <block id="1749d12df3df2319d3eee218a277ff83" category="list-text">MetroCluster</block>
   <block id="f1345c9c1d33e2624cdc41782fec6885" category="list-text">Objektprotokolle</block>
   <block id="372f3c3be292ea7811b9c24f14765c78" category="list-text">ONTAP S3 SnapMirror und S3-APIs</block>
-  <block id="f161dc3326510eaa0a4043b0403c9d6a" category="list-text">Von SnapMirror zur Cloud</block>
-  <block id="22d5ef0e46679353c835a058a6447e5d" category="list-text">SnapMirror auf Systeme mit nicht-ASA r2</block>
   <block id="cbb51e0b1487ab3d93d6d940a1533133" category="list-text">Selektive LUN-Zuordnung (SLM)</block>
   <block id="fa445878b9d320833cecf582e9e36c4b" category="list-title">ASA r2-Systeme unterstützen Folgendes:</block>
   <block id="7c2e86b53f6831d08fa968613cefaa23" category="list-text">SnapLock</block>
@@ -1342,7 +1339,6 @@
   <block id="e41cfa628f1aae1b344d1fcccc79b676" category="section-title">Überwachen der Cluster-Auslastung</block>
   <block id="60522db54655ef0faaafdeb6e1dd2f6c" category="paragraph">Überwachen Sie regelmäßig den von Ihrem Cluster verbrauchten Storage, um sicherzustellen, dass Sie bei Bedarf bereit sind, die Cluster-Kapazität zu erweitern, bevor der Speicherplatz knapp wird.</block>
   <block id="5ba997683bb88c0bd7da49e5420cd3b9" category="list-text">Unter *Capacity* sehen Sie die Menge des physisch belegten Speicherplatzes und die Menge des verfügbaren Speicherplatzes auf Ihrem Cluster.</block>
-  <block id="3de31d3507312269ff6fd5ae8a31e0b7" category="paragraph">Die Datenreduzierungsration gibt den durch Storage-Effizienz eingesparten Speicherplatz an.</block>
   <block id="049df4c0a4a8d9829026cfcdd73b2fa6" category="inline-link-macro">Fügen Sie neue Laufwerke hinzu</block>
   <block id="70e4aa2a60c8c55fc487bdeaf9688dea" category="paragraph">Wenn der Speicherplatz des Clusters knapp <block ref="652f39ff07f6641e851e14e8190a6b59" category="inline-link-macro-rx"></block>ist oder nicht über die Kapazität verfügt, um zukünftigen Anforderungen gerecht zu werden, sollten Sie Ihr ASA r2 System einplanen, um Ihre Storage-Kapazität zu erhöhen.</block>
   <block id="b9de8a926e3bbf2f3ddad971b60d4639" category="section-title">Überwachung der Auslastung der Speichereinheiten</block>
@@ -1610,4 +1606,8 @@
   <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">Neues in ONTAP 9.16.1</block>
   <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">Änderungen an ONTAP-Standardeinstellungen und -Grenzen</block>
   <block id="ec7ed1b959417fb145bcf5bc5351a4e1" category="paragraph">Wenn Sie vom Onboard Key Manager zu einem externen Key Manager wechseln müssen oder umgekehrt, siehe <block ref="6c5d784251393a5f6fda5c1a058497d1" category="inline-link-macro-rx"></block>.</block>
+  <block id="741966f7a31d60fddc8857d2cb9fb674" category="paragraph">ASA r2 Systeme unterstützen alle SAN-Protokolle (iSCSI, FC, NVMe/FC, NVMe/TCP) in einer einzigen HA-Paar-Implementierung. SCSI-Protokolle (iSCSI und FC) verwenden für Multipathing eine symmetrische aktiv/aktiv-Architektur, sodass alle Pfade zwischen Hosts und Storage aktiv/optimiert sind. Die iSCSI- und NVMe/TCP-Protokolle unterstützen direkte Pfade zwischen den Hosts und dem Storage.</block>
+  <block id="d32b93d0cc0df3a57e074a2dd7f55bac" category="list-text">SnapMirror (asynchron und synchron) zur Cloud</block>
+  <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror (asynchron und synchron) auf Systeme mit nicht-ASA r2</block>
+  <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">Das Datenreduzierungsverhältnis stellt den durch Storage-Effizienz eingesparten Speicherplatz dar.</block>
 </blocks>

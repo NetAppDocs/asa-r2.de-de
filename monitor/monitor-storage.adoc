@@ -24,7 +24,7 @@ Mit ONTAP System Manager überwachen Sie Ihre Storage-Auslastung, um sicherzuste
 . Wählen Sie in System Manager *Dashboard* aus.
 . Unter *Capacity* sehen Sie die Menge des physisch belegten Speicherplatzes und die Menge des verfügbaren Speicherplatzes auf Ihrem Cluster.
 +
-Die Datenreduzierungsration gibt den durch Storage-Effizienz eingesparten Speicherplatz an.
+Das Datenreduzierungsverhältnis stellt den durch Storage-Effizienz eingesparten Speicherplatz dar.
 
 
 
