@@ -565,7 +565,6 @@
   <block id="b4e5592d9ac502884e059b5eb31d6bf6" category="list-text">Erfahren Sie mehr über die <block ref="7ca9eeacedc91cf0cb26acef9d99ecbd" category="inline-link-macro-rx"></block>.</block>
   <block id="05b76f77eda2923699bcc5fed0226549" category="summary">Um mit einem ASA r2-System (ASA A1K, ASA A70, ASA A90) zu beginnen, installieren Sie die Hardware, richten den Cluster ein, richten den Datenzugriff ein und stellen den Storage bereit.</block>
   <block id="726d7bea9295f2cedea11857011476c0" category="searchtitle">Installation und Einrichtung der Speichersysteme ASA A1K, ASA A70 und ASA A90</block>
-  <block id="ceb35ef309bc127d4f8d63986f004986" category="doc">Schnellstart für ASA r2-Speichersysteme</block>
   <block id="7277c9d417ac8a6d967bd0e7b323cd57" category="paragraph">Um Ihr ASA r2 System in Betrieb zu nehmen, installieren Sie Ihre Hardwarekomponenten, richten Ihren Cluster ein, richten den Datenzugriff von Ihren Hosts auf das Storage-System ein und stellen den Storage bereit.</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">Eins</block>
   <block id="40a0d9b63d17cd9ee40121b195ad7812" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Installieren und richten Sie Ihre Hardware ein</block>
@@ -1611,4 +1610,5 @@
   <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror (asynchron und synchron) auf Systeme mit nicht-ASA r2</block>
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">Das Datenreduzierungsverhältnis stellt den durch Storage-Effizienz eingesparten Speicherplatz dar.</block>
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">SnapMirror (asynchron und synchron) wird nur von ASA r2-Systemen bis zu ASA r2-Systemen unterstützt. SnapMirror wird von ASA r2-Systemen auf AFF- oder FAS-Systeme nicht unterstützt.</block>
+  <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">Schnellstart für ASA r2-Speichersysteme</block>
 </blocks>
