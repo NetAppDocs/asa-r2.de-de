@@ -13,5 +13,8 @@ summary: Mit Astra Control migrieren Sie Applikationen und Daten von einem Kuber
 [role="lead"]
 Schützen Sie Ihre Kubernetes-Applikationen mit Astra Control Center. Mit Astra Control Center können Sie Applikationen und Daten von einem Kubernetes-Cluster zu einem anderen migrieren, Applikationen mithilfe der NetApp SnapMirror Technologie auf ein Remote-System replizieren und Applikationen von Staging zu Produktion klonen.
 
+
+NOTE: SnapMirror (asynchron und synchron) wird nur von ASA r2-Systemen bis zu ASA r2-Systemen unterstützt. SnapMirror wird von ASA r2-Systemen auf AFF- oder FAS-Systeme nicht unterstützt.
+
 .Finden Sie weitere Informationen
 link:https://docs.netapp.com/us-en/astra-control-service/use/protect-apps.html["Weitere Informationen zum Schutz von Kubernetes-Applikationen mit Astra Control"^].
