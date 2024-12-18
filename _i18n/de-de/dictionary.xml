@@ -551,7 +551,6 @@
   <block id="18aec681e94562add9f015e57e17b8d0" category="list-text">Um einen Support-Fall zu senden, wählen Sie im System-Manager *Cluster &gt;Support* aus, und wählen Sie dann *Gehe zu NetApp-Unterstützung* aus.</block>
   <block id="ce3bbf8e2056eaff8c2c9a52eb4ce4dc" category="list-text">Um einen zuvor gesendeten Fall anzuzeigen, wählen Sie im System Manager *Cluster &gt;Support* aus, und wählen Sie dann *Meine Fälle anzeigen* aus.</block>
   <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">ASA r2 Systeme (ASA A1K, ASA A70 und ASA A90) bieten eine einheitliche Hardware- und Softwarelösung, die reine SAN-Kunden eine vereinfachte Benutzererfahrung ermöglicht.</block>
-  <block id="0ef2f5aecf77f5521c5e2b69fdb889af" category="searchtitle">Erfahren Sie mehr über die Storage-Systeme ASA A1K, ASA A70 und ASA A90</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">Erfahren Sie mehr über ASA r2 Storage-Systeme</block>
   <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">Auf einem ASA r2 System sind ONTAP Software und System Manager optimiert, um die grundlegenden SAN-Funktionen zu unterstützen und gleichzeitig Funktionen zu entfernen, die in SAN-Umgebungen nicht unterstützt werden.</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">Bei ASA r2-Systemen werden Storage-Einheiten mit Konsistenzgruppen eingesetzt:</block>
@@ -1611,4 +1610,5 @@
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">Das Datenreduzierungsverhältnis stellt den durch Storage-Effizienz eingesparten Speicherplatz dar.</block>
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">SnapMirror (asynchron und synchron) wird nur von ASA r2-Systemen bis zu ASA r2-Systemen unterstützt. SnapMirror wird von ASA r2-Systemen auf AFF- oder FAS-Systeme nicht unterstützt.</block>
   <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">Schnellstart für ASA r2-Speichersysteme</block>
+  <block id="426ed8a052d2d7277d60ee8001b9d37e" category="searchtitle">Erfahren Sie mehr über die ASA r2-Speichersysteme A1K, A90 und A70</block>
 </blocks>
