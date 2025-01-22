@@ -73,6 +73,8 @@ Eine LIF (Netzwerkschnittstelle) ist eine IP-Adresse, die einem physischen oder 
 
 Wenn eine IP-Daten-LIF erstellt wird, kann sie standardmäßig sowohl iSCSI- als auch NVMe/TCP-Datenverkehr verarbeiten. Für den FC- und NVMe/FC-Datenverkehr müssen getrennte Daten-LIFs erstellt werden.
 
+Wenn Sie den automatischen iSCSI-LIF-Failover aktivieren möchten, müssen Sie eine nur iSCSI logische Schnittstelle erstellen. Wenn automatisches iSCSI-LIF-Failover aktiviert ist, wird die iSCSI-LIF im Falle eines Storage-Failovers automatisch von dem Home Node oder Port des Node bzw. Ports des Home Ports zu dem Node bzw. Port des HA-Partners migriert und nach Abschluss des Failover wieder aufgenommen. Wenn der Port für eine iSCSI-LIF nicht mehr funktionstüchtiges ist, wird die LIF automatisch zu einem ordnungsgemäßen Port im aktuellen Home Node und anschließend zurück zu seinem ursprünglichen Port migriert, sobald der Port wieder funktionsfähig ist.
+
 .Bevor Sie beginnen
 * Sie müssen ein Cluster-Administrator sein, um diese Aufgabe auszuführen.
 * Der zugrunde liegende physische oder logische Netzwerkport muss im Administratorstatus konfiguriert worden `up` sein.
@@ -84,6 +86,9 @@ Wenn eine IP-Daten-LIF erstellt wird, kann sie standardmäßig sowohl iSCSI- als
 . Wählen Sie *Netzwerk > Übersicht*.
 . Wählen Sie *Netzwerkschnittstellen* aus, und wählen Sie dann image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"].
 . Wählen Sie den Schnittstellentyp und das Protokoll aus und anschließend die Storage-VM aus.
++
+Wählen Sie zum Erstellen einer einzelnen Protokoll-LIF nur ein Protokoll aus. Um beispielsweise eine nur iSCSI-logische Schnittstelle zu erstellen, wählen Sie *iSCSI* aus.
+
 . Geben Sie einen Namen für das LIF ein, oder übernehmen Sie den Standardnamen.
 . Wählen Sie den Startknoten für die Netzwerkschnittstelle aus, und geben Sie dann die IP-Adresse und die Subnetzmaske ein.
 . Wählen Sie *Speichern*.

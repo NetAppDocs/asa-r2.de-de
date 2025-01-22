@@ -14,7 +14,13 @@ summary: ASA r2 Systeme bieten zwar eine breite Unterstützung für SAN-Lösunge
 ASA r2 Systeme bieten zwar eine breite Unterstützung für SAN-Lösungen, bestimmte ONTAP Softwarefunktionen werden jedoch nicht unterstützt.
 
 .ASA r2-Systeme unterstützen Folgendes nicht:
-* ISCSI LIF-Failover
+* Standardmäßiger automatischer iSCSI-LIF-Failover
++
+Bei ASA r2 Systemen wird die Standard-Netzwerk-LIF von NVMe- und SCSI-Hosts gemeinsam genutzt, unterstützt also kein automatisches Failover. Um den automatischen iSCSI LIF Failover zu aktivieren, müssen Sie link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["Erstellen Sie eine nur iSCSI logische Schnittstelle"]. Automatischer Failover ist standardmäßig auf nur iSCSI LIFS aktiviert.
+
++
+Wenn automatisches iSCSI-LIF-Failover aktiviert ist, wird die iSCSI-LIF im Falle eines Storage-Failovers automatisch von dem Home Node oder Port des Node bzw. Ports des Home Ports zu dem Node bzw. Port des HA-Partners migriert und nach Abschluss des Failover wieder aufgenommen. Wenn der Port für eine iSCSI-LIF nicht mehr funktionstüchtiges ist, wird die LIF automatisch zu einem ordnungsgemäßen Port im aktuellen Home Node und anschließend zurück zu seinem ursprünglichen Port migriert, sobald der Port wieder funktionsfähig ist.
+
 * FabricPool
 * Thick Provisioning für LUNs
 * MetroCluster
@@ -27,11 +33,15 @@ ASA r2 Systeme bieten zwar eine breite Unterstützung für SAN-Lösungen, bestim
 
 .ASA r2-Systeme unterstützen Folgendes:
 * SnapLock
++
+link:../secure-data/ransomware-protection.html["Erfahren Sie, wie Sie Snapshots sperren"] Auf Ihrem ASA r2-System.
+
 * Dual-Layer-Verschlüsselung
++
+link:../secure-data/encrypt-data-at-rest.html["Erfahren Sie, wie Sie eine zweischichtige Verschlüsselung anwenden"] Auf Daten auf Ihrem ASA r2-System.
+
 
 
 .Finden Sie weitere Informationen
 * link:https://hwu.netapp.com/["NetApp Hardware Universe"^]Weitere Informationen zur Unterstützung und zu Einschränkungen der ASA r2-Hardware finden Sie im.
-* link:../secure-data/ransomware-protection.html["Erfahren Sie, wie Sie Snapshots sperren"] Auf Ihrem ASA r2-System.
-* link:../secure-data/encrypt-data-at-rest.html["Erfahren Sie, wie Sie eine zweischichtige Verschlüsselung anwenden"] Auf Daten auf Ihrem ASA r2-System.
 
