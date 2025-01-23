@@ -14,6 +14,8 @@ entries:
     url: "/monitor/monitor-storage.html"
   - title: Erhöhung der Storage-Kapazität
     url: "/administer/increase-storage-capacity.html"
+- title: Upgrade ONTAP
+  url: "/administer/upgrade-ontap.html"
 - title: Aktualisiert die Firmware
   url: "/administer/update-firmware.html"
 - title: Einblicke anzeigen
@@ -22,6 +24,8 @@ entries:
   url: "/monitor/view-events-jobs.html"
 - title: Managen von Nodes
   entries:
+  - title: Nodes hinzufügen
+    url: "/administer/add-nodes.html"
   - title: Neustart, Übernahme und Übergabe von Nodes
     url: "/administer/reboot-take-over-give-back-nodes.html"
   - title: Benennen Sie Nodes um

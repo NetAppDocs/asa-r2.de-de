@@ -22,6 +22,8 @@ Eine Konsistenzgruppe ist eine Sammlung von Speichereinheiten, die als eine Einh
 
 Erstellen Sie eine Konsistenzgruppe mit neuen Speichereinheiten oder erstellen Sie eine Konsistenzgruppe mit vorhandenen Speichereinheiten.
 
+Wenn Sie eine Konsistenzgruppe mit neuen Storage-Einheiten erstellen, können Sie jeder Storage-Einheit eine unterschiedliche Kapazität zuweisen, das Standard-Service-Level für die Performance ändern und bis zu fünf untergeordnete Konsistenzgruppen erstellen. Wenn Sie eine Konsistenzgruppe mit vorhandenen Speichereinheiten erstellen, können Sie bereits verwendete Speichereinheiten hinzufügen.
+
 [role="tabbed-block"]
 ====
 .Neue Speichereinheiten verwenden
@@ -31,14 +33,43 @@ Erstellen Sie eine Konsistenzgruppe mit neuen Speichereinheiten oder erstellen S
 . Wählen Sie image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"]; und dann *mit neuen Speichereinheiten*.
 . Geben Sie einen Namen für die neue Speichereinheit, die Anzahl der Einheiten und die Kapazität pro Einheit ein.
 +
-Wenn Sie mehr als eine Einheit erstellen, wird jede Einheit mit derselben Kapazität und demselben Host-Betriebssystem erstellt. Um jeder Einheit eine andere Kapazität zuzuweisen, wählen Sie *Weitere Optionen* und wählen Sie dann *eine andere Kapazität hinzufügen*.
+Wenn Sie mehr als eine Einheit erstellen, wird jede Einheit standardmäßig mit derselben Kapazität und demselben Host-Betriebssystem erstellt. Optional können Sie jeder Einheit eine andere Kapazität zuweisen.
 
-. Wählen Sie das Host-Betriebssystem und die Host-Zuordnung aus.
-. Wählen Sie *Hinzufügen*.
+. Wenn Sie einen der folgenden Schritte ausführen möchten, wählen Sie *Weitere Optionen* und führen Sie die erforderlichen Schritte aus.
++
+[cols="2, 4a"]
+|===
+| Option | Schritte 
+
+
+ a| 
+Weisen Sie jeder Speichereinheit eine andere Kapazität zu
+ a| 
+Wählen Sie *eine andere Kapazität hinzufügen*.
+
+
+
+ a| 
+Ändern Sie das Standard-Performance-Service-Level
+ a| 
+Wählen Sie unter *Performance Service Level* einen anderen Service Level aus.
+
+
+
+ a| 
+Erstellen einer untergeordneten Konsistenzgruppe
+ a| 
+Wählen Sie *untergeordnete Consistency Group hinzufügen*.
+
+.. Wählen Sie das Host-Betriebssystem und die Host-Zuordnung aus.
+.. Wählen Sie *Hinzufügen*.
 
 
 .Was kommt als Nächstes?
 Sie haben eine Konsistenzgruppe erstellt, die die Speichereinheiten enthält, die Sie schützen möchten. Sie können jetzt einen Snapshot erstellen.
+
+|===
+
 
 --
 .Nutzung vorhandener Storage-Einheiten

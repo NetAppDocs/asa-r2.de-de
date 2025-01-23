@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: manage-data/move-storage-units.html 
+keywords: move lun, lun move, move namespace, move storage unit, asa r2 
+summary: Löschen Sie die Speichereinheiten, um die benötigte Menge an physischem Speicher zu verringern oder Speicherplatz für andere Hostanwendungen freizugeben. 
+---
+= Verschieben Sie Speichereinheiten auf ASA r2-Speichersystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn in einer Storage-Verfügbarkeitszone der Speicherplatz knapp ist, können Sie Storage-Einheiten auf eine andere Storage-Verfügbarkeitszone verschieben, um die Storage-Auslastung im Cluster auszugleichen.
+
+Sie können eine Storage-Einheit verschieben, während die Storage-Einheit online ist und Daten bereitstellt. Der Verschiebungsvorgang ist unterbrechungsfrei.
+
+.Bevor Sie beginnen
+* Sie müssen ONTAP 9.16.1 oder höher ausführen.
+* Der Cluster muss aus vier oder mehr Nodes bestehen.
+
+
+.Schritte
+. Wählen Sie im System Manager *Storage* aus, und wählen Sie dann die zu verschiebende Speichereinheit aus.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *move*.
+. Wählen Sie die Speicherverfügbarkeitszone aus, in die die Speichereinheit verschoben werden soll, und wählen Sie dann *move*.
+

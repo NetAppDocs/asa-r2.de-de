@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: administer/add-nodes.html 
+keywords: rename, node, renaming, asa r2 
+summary: Möglicherweise müssen Sie einen Node umbenennen, um ihn an die Namenskonventionen Ihres Unternehmens oder aus anderen administrativen Gründen anzupassen. 
+---
+= Hinzufügen von ASA r2-Nodes zu einem ONTAP-Cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ab ONTAP 9.16.1 unterstützen ASA r2 Storage-Systeme bis zu 12 Nodes pro Cluster. Nachdem die neuen Nodes eines HA-Paars verkabelt und eingeschaltet wurden, müssen Sie sie mit dem Cluster verbinden.
+
+.Bevor Sie beginnen
+Stellen Sie die folgenden Informationen zusammen:
+
+* Die Node-IP-Adresse
+* Die IP-Adresse der Intercluster-Netzwerkschnittstelle
+* Die Subnetz-Maske des Intercluster-Netzwerks
+* Das Intercluster Netzwerk-Gateway
+* Wenn Sie den Onboard Key Manager (OKM) konfigurieren möchten, benötigen Sie die OKM-Passphrase.
+
+
+.Schritte
+. Wählen Sie im System Manager *Cluster > Übersicht* aus.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"] neben dem Knoten, dem Sie beitreten möchten, und wählen Sie dann *Knoten hinzufügen*
+. Geben Sie die IP-Adresse für jeden Node ein.
+. Geben Sie die IP-Adresse, die Subnetzmaske und das Gateway der Intercluster-Netzwerkschnittstelle ein.
+. Wenn Sie den Onboard Key Manager (OKM) konfigurieren möchten, geben Sie die OKM-Passphrase ein.
++
+*Konfigurieren des Onboard-Schlüsselmanagers für die Verschlüsselung* ist standardmäßig ausgewählt.
+
+. Wählen Sie *Hinzufügen*.
+
+
+.Ergebnis
+Das neue HA-Paar wird mit dem Cluster verbunden.
+
+.Was kommt als Nächstes?
+Nachdem Sie dem Cluster das neue HA-Paar hinzugefügt haben, können Sie link:../install-setup/set-up-data-access.html["Aktivieren Sie den Datenzugriff über Ihre SAN-Hosts"]sie den neuen Nodes hinzufügen.

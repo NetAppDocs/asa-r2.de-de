@@ -37,7 +37,7 @@ Wenn Sie mehr als eine Speichereinheit erstellen, wird jede Einheit mit derselbe
 *Host Mapping* bezieht sich auf die Hostgruppe, der die neue Speichereinheit zugeordnet wird. Wenn für den Hosttyp, den Sie für Ihre neue Speichereinheit ausgewählt haben, eine bereits vorhandene Hostgruppe vorhanden ist, wird die vorhandene Hostgruppe automatisch für Ihre Hostzuordnung ausgewählt. Sie können die Host-Gruppe akzeptieren, die automatisch für Ihre Host-Zuordnung ausgewählt ist, oder Sie können eine andere Host-Gruppe auswählen.
 
 +
-Wenn keine Host-Gruppe für Hosts vorhanden ist, die auf dem angegebenen Betriebssystem ausgeführt werden, wird automatisch eine neue Host-Gruppe von ONTAP erstellt.
+Wenn keine Host-Gruppe für Hosts vorhanden ist, die auf dem angegebenen Betriebssystem ausgeführt werden, erstellt ONTAP automatisch eine neue Host-Gruppe.
 
 . Wenn Sie einen der folgenden Schritte ausführen möchten, wählen Sie *Weitere Optionen* und führen Sie die erforderlichen Schritte aus.
 +
@@ -51,7 +51,7 @@ Wenn keine Host-Gruppe für Hosts vorhanden ist, die auf dem angegebenen Betrieb
 
 Wenn die Standard-QoS-Richtlinie zuvor nicht auf der Storage Virtual Machine (VM) festgelegt wurde, auf der die Speichereinheit erstellt wird, ist diese Option nicht verfügbar.
  a| 
-.. Wählen Sie unter *Speicher und Optimierung* neben *Quality of Service (QoS)* die Option image:icon_dropdown_arrow.gif["Symbol des blauen Pfeils, der nach unten zeigt"] .
+.. Wählen Sie unter *Speicher und Optimierung* neben *Quality of Service (QoS)* die Option image:icon_dropdown_arrow.gif["Symbol des blauen Pfeils, der nach unten zeigt"].
 .. Wählen Sie eine vorhandene QoS-Richtlinie aus.
 
 
@@ -76,6 +76,17 @@ Durch die Festlegung eines minimalen Durchsatzes und IOPS für eine Storage-Einh
 
 
 .. Wählen Sie *Hinzufügen*.
+
+
+
+
+ a| 
+Ändern Sie das Standard-Performance-Service-Level.
+
+ASA r2-Systeme bieten zwei Leistungsstufen. Der Standard-Performance-Level ist *Extreme*, das höchste verfügbare Level. Sie können das Leistungsniveau auf *Leistung* senken.
+ a| 
+.. Wählen Sie unter *Speicher und Optimierung* neben dem *Performance Service Level* die Option image:icon_dropdown_arrow.gif["Symbol des blauen Pfeils, der nach unten zeigt"].
+.. Wählen Sie * Leistung*.
 
 
 

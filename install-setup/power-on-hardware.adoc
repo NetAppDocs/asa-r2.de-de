@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/power-on-hardware.html 
-keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a70, asa a90, asa c80, power on 
+keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, power on 
 summary: Schalten Sie jedes NS224-Shelf ein, um eine eindeutige Shelf-ID zuzuweisen, die ASA r2-Controller einzuschalten und die Netzkabel zu sichern. 
 ---
 = Schalten Sie das ASA r2-Speichersystem ein

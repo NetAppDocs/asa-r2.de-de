@@ -13,6 +13,10 @@ summary: Verwenden Sie Consistency Groups, um verschiedene Aktionen für mehrere
 [role="lead"]
 Eine Konsistenzgruppe ist eine Sammlung von Speichereinheiten, die als eine Einheit gemanagt werden. Verwenden Sie Konsistenzgruppen für vereinfachtes Storage-Management. Angenommen, Sie haben eine Datenbank, die aus 10 Speichereinheiten in einer Konsistenzgruppe besteht, und Sie müssen die gesamte Datenbank sichern. Anstatt jede Storage-Einheit zu sichern, können Sie die gesamte Datenbank sichern, indem Sie der Konsistenzgruppe einfach Snapshot-Datenschutz hinzufügen. Das Backup der Storage-Einheiten als Konsistenzgruppe anstatt einzeln sorgt auch für ein konsistentes Backup aller Einheiten, während ein individueller Backup der Einheiten potenziell Inkonsistenzen verursachen kann.
 
+Ab ONTAP 9.16.1 können Sie mit System Manager hierarchische Konsistenzgruppen auf Ihrem ASA r2-System erstellen. In einer hierarchischen Struktur werden eine oder mehrere Konsistenzgruppen unter einer übergeordneten Konsistenzgruppe als untergeordnete Elemente konfiguriert.
+
+Hierarchische Konsistenzgruppen ermöglichen es Ihnen, individuelle Snapshot-Richtlinien auf jede untergeordnete Konsistenzgruppe anzuwenden und die Snapshots aller untergeordneten Konsistenzgruppen als eine Einheit auf ein Remote-Cluster zu replizieren, indem Sie das übergeordnete Objekt replizieren. Dadurch wird die Datensicherung und das Management komplexer Datenstrukturen vereinfacht. Beispiel: Angenommen, Sie erstellen eine übergeordnete Konsistenzgruppe mit dem Namen, `SVM1_app` die zwei untergeordnete Konsistenzgruppen enthält: `SVM1app_data` Für Applikationsdaten und `SVM1app_logs` Anwendungsprotokolle. Snapshots von `SVM1app_data` werden alle 15 Minuten erstellt und stündlich erstellt `SVM1app_logs`. Die übergeordnete Konsistenzgruppe `SVM1_app,` verfügt über eine SnapMirror-Richtlinie, die die Snapshots sowohl von als auch `SVM1app_logs` alle 24 Stunden in einem Remote Cluster repliziert `SVM1app_data`. Die übergeordnete Konsistenzgruppe `SVM1_app` wird als eine einzelne Einheit gemanagt, die untergeordneten Konsistenzgruppen werden als separate Einheiten gemanagt.
+
 
 
 == Fügen Sie einer Konsistenzgruppe Snapshot Datensicherung hinzu
@@ -139,6 +143,107 @@ Die Speichereinheit ist nicht mehr Mitglied der Konsistenzgruppe.
 
 .Wie es weiter geht
 Wenn Sie mit dem Datenschutz für die Speichereinheit fortfahren möchten, fügen Sie die Speichereinheit einer anderen Konsistenzgruppe hinzu.
+
+
+
+== Konvertieren einer vorhandenen Konsistenzgruppe in eine übergeordnete Konsistenzgruppe
+
+Speichereinheiten können keiner übergeordneten Konsistenzgruppe direkt zugeordnet werden. Wenn Sie eine vorhandene Konsistenzgruppe in ein übergeordnetes Objekt konvertieren, wird eine neue untergeordnete Konsistenzgruppe erstellt und die Speichereinheiten, die zur konvertierten Konsistenzgruppe gehören, werden in die neue untergeordnete Konsistenzgruppe verschoben.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie in eine übergeordnete Konsistenzgruppe konvertieren möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und wählen Sie dann *heraufstufen zur übergeordneten Konsistenzgruppe* aus.
+. Geben Sie einen Namen für die übergeordnete Konsistenzgruppe ein, oder übernehmen Sie den Standardnamen, und wählen Sie dann den Komponententyp der Konsistenzgruppe aus.
+. Wählen Sie *Hochstufen*.
+
+
+.Was kommt als Nächstes?
+Sie können zusätzliche untergeordnete Konsistenzgruppen unter der übergeordneten Konsistenzgruppe erstellen. Sie können auch link:../secure-data/encrypt-data-at-rest.html["Richten Sie die Snapshot-Replikation ein"]die übergeordnete Konsistenzgruppe für Backup und Disaster Recovery an einen geografisch Remote Standort kopieren.
+
+
+
+== Erstellen einer untergeordneten Konsistenzgruppe
+
+Durch das Erstellen von untergeordneten Konsistenzgruppen können Sie individuelle Snapshot-Richtlinien auf jedes untergeordnete Element anwenden, während Sie eine Replikationsrichtlinie auf alle untergeordneten Konsistenzgruppen auf der übergeordneten Ebene anwenden.
+
+Sie können eine untergeordnete Konsistenzgruppe aus einer neuen oder einer vorhandenen Konsistenzgruppe erstellen.
+
+[role="tabbed-block"]
+====
+.Aus einer neuen Konsistenzgruppe
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die übergeordnete Konsistenzgruppe, der Sie eine untergeordnete Konsistenzgruppe hinzufügen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Add a New child Consistency Group*.
+. Geben Sie einen Namen für die untergeordnete Konsistenzgruppe ein, oder übernehmen Sie den Standardnamen, und wählen Sie dann den Komponententyp der Konsistenzgruppe aus.
+. Wählen Sie diese Option aus, um der untergeordneten Konsistenzgruppe vorhandene Speichereinheiten hinzuzufügen oder neue Speichereinheiten zu erstellen.
++
+Wenn Sie neue Speichereinheiten erstellen, geben Sie die Anzahl der Einheiten, die Sie erstellen möchten, sowie die Kapazität pro Einheit ein, und geben Sie dann die Hostinformationen ein.
+
++
+Wenn Sie mehr als eine Speichereinheit erstellen, wird jede Einheit mit derselben Kapazität und demselben Host-Betriebssystem erstellt. Um jeder Einheit eine andere Kapazität zuzuweisen, wählen Sie *eine andere Kapazität hinzufügen*.
+
+. Wählen Sie *Hinzufügen*.
+
+
+--
+.Aus einer vorhandenen Konsistenzgruppe
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Wählen Sie die vorhandene Konsistenzgruppe aus, die Sie als untergeordnete Konsistenzgruppe erstellen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; dann *move unter different Consistency Group*.
++
+Wenn die Konsistenzgruppe, die Sie als bereits untergeordnetes Element einer anderen Konsistenzgruppe verwenden möchten, müssen Sie sie von der vorhandenen übergeordneten Konsistenzgruppe entfernen, bevor Sie sie in eine neue übergeordnete Konsistenzgruppe verschieben können.
+
+. Geben Sie einen neuen Namen für die untergeordnete Konsistenzgruppe ein, oder übernehmen Sie den Standardnamen, und wählen Sie dann den Komponententyp der Konsistenzgruppe aus.
+. Wählen Sie die vorhandene Konsistenzgruppe aus, die Sie als übergeordnete Konsistenzgruppe festlegen möchten, oder wählen Sie aus, um eine neue übergeordnete Konsistenzgruppe zu erstellen.
++
+Wenn Sie auswählen, eine neue übergeordnete Konsistenzgruppe zu erstellen, geben Sie einen Namen für die übergeordnete Konsistenzgruppe ein, oder übernehmen Sie den Standardnamen, und wählen Sie dann den Komponententyp der Konsistenzgruppe aus.
+
+. Wählen Sie *Verschieben*.
+
+
+--
+====
+.Wie es weiter geht
+Nachdem Sie eine untergeordnete Konsistenzgruppe erstellt haben, können Sie link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Anwenden einzelner Snapshot-Schutzrichtlinien"]jeder untergeordneten Konsistenzgruppe angehören. Sie können auch link:snapshot-replication.html["Richten Sie eine Replikationsrichtlinie ein"] auf der übergeordneten Konsistenzgruppe die Snapshots aller untergeordneten Konsistenzgruppen als eine Einheit auf ein Remote-Cluster replizieren.
+
+
+
+== Stufen Sie eine übergeordnete Konsistenzgruppe auf eine einzelne Konsistenzgruppe zurück
+
+Wenn Sie eine übergeordnete Konsistenzgruppe zu einer einzelnen Konsistenzgruppe _herunterstufen_, werden die Speichereinheiten der zugeordneten untergeordneten Konsistenzgruppen zur übergeordneten Konsistenzgruppe hinzugefügt. Die untergeordneten Konsistenzgruppen werden gelöscht, und das übergeordnete Objekt wird dann als einzelne Konsistenzgruppe gemanagt.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Bewegen Sie den Mauszeiger über die übergeordnete Konsistenzgruppe, die Sie herunterstufen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *auf eine einzige Consistency Group zurückstufen*.
+. Wählen Sie *Zurückstufen*
+
+
+.Was kommt als Nächstes?
+link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Fügen Sie eine Snapshot-Richtlinie hinzu"] In die heruntergestufte Konsistenzgruppe, um die Speichereinheiten zu schützen, die zuvor von den untergeordneten Konsistenzgruppen verwaltet wurden.
+
+
+
+== Trennen Sie eine untergeordnete Konsistenzgruppe von einer übergeordneten Konsistenzgruppe
+
+Wenn Sie eine untergeordnete Konsistenzgruppe von einer übergeordneten Konsistenzgruppe trennen, wird die untergeordnete Konsistenzgruppe aus der übergeordneten Konsistenzgruppe entfernt und als einzelne Konsistenzgruppe gemanagt. Die auf das übergeordnete Element angewendete Replikationsrichtlinie wird nicht mehr auf die getrennte untergeordnete Konsistenzgruppe angewendet.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Wählen Sie die übergeordnete Konsistenzgruppe aus.
+. Wählen Sie über der untergeordneten Konsistenzgruppe aus, die Sie entfernen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *von übergeordnetem Element trennen*.
+. Geben Sie einen neuen Namen für die Konsistenzgruppe ein, die Sie entfernen, oder akzeptieren Sie den Standardnamen, und wählen Sie dann den Applikationstyp für die Konsistenzgruppe aus.
+. Wählen Sie * Trennen*.
+
+
+.Was kommt als Nächstes?
+link:snapshot-replication.html["Richten Sie eine Replikationsrichtlinie ein"] So replizieren Sie die Snapshots der getrennten untergeordneten Konsistenzgruppe in ein Remote-Cluster als eine einzige Konsistenzgruppe.
 
 
 

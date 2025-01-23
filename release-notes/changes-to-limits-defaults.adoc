@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/changes-to-limits-defaults.html 
-keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa 70, asa 90 
+keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa a90, asa a70 
 summary: Erfahren Sie mehr über die Änderungen an Grenzwerten und Standardwerten für ASA r2-Systeme. 
 ---
 = Änderungen an ONTAP-Limits und -Standardeinstellungen wirken sich auf ASA r2-Systeme aus
@@ -23,6 +23,14 @@ Erfahren Sie mehr über die Änderungen an Grenzwerten und Standardwerten für A
 [cols="2,4,4"]
 |===
 | Funktion | Begrenzungsänderung | In Freigabe geändert... 
+
+
+| Nodes pro Cluster  a| 
+Die maximale Anzahl an Nodes pro Cluster wurde von 2 auf 12 erhöht.
+
+
+NOTE: Wenn Sie ONTAP 9.16.1 mit mehr als 2 Nodes in einem Cluster ausführen, können Sie nicht auf ONTAP 9.16.0 zurücksetzen.
+| ONTAP 9.16.1 
 
 
 | Speichereinheiten | Die maximale Anzahl an Storage-Einheiten wird von 2500 pro HA-Paar auf 10,000 pro HA-Paar erhöht. | ONTAP 9.16.1 

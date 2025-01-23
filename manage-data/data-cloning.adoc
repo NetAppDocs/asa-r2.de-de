@@ -150,3 +150,19 @@ Sie haben von Ihrem Remote-Standort aus eine Konsistenzgruppe geklont. Die neue 
 ====
 .Was kommt als Nächstes?
 Zum Schutz der Daten sollten Sie link:../data-protection/create-snapshots.html#step-2-create-a-snapshot["Erstellen von Snapshots"]die geklonte Konsistenzgruppe verwenden.
+
+
+
+== Teilen Sie den Klon der Konsistenzgruppe auf
+
+Wenn Sie einen Konsistenzgruppenklon aufteilen, trennen Sie den Klon von der Quell-Konsistenzgruppe und weisen dem Klon Speicherplatz zu. Der Klon wird zu einer eigenständigen Konsistenzgruppe, die unabhängig von der Konsistenzgruppe der Quelle verwendet werden kann.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Bewegen Sie den Mauszeiger über den zu teilenden Konsistenzgruppenklon.
+. Wählen Sie *Clone teilen*.
+. Wählen Sie *Split*.
+
+
+.Ergebnis
+Der Klon ist von der Quell-Konsistenzgruppe getrennt, und der Festplattenspeicher des Klons wird zugewiesen.

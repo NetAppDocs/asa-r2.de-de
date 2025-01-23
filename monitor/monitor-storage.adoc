@@ -33,6 +33,31 @@ Wenn der Speicherplatz des Clusters knapp link:../administer/increase-storage-ca
 
 
 
+== Überwachung der Storage-Verfügbarkeitszonen-Auslastung
+
+Jedes HA-Paar in einem ASA r2-System verwendet einen gemeinsamen Storage-Pool, der als „ Storage Availability Zone_“ bezeichnet wird. Die Storage-Verfügbarkeitszone hat Zugriff auf alle verfügbaren Festplatten im Storage-System und ist für beide Nodes im HA-Paar sichtbar.
+
+Wenn Ihr Cluster 4 oder mehr Nodes enthält, können Sie die Menge des Speicherplatzes anzeigen, der von der Storage-Verfügbarkeitszone für jedes HA-Paar verwendet wird. Diese Metrik ist für 2-Node-Cluster nicht verfügbar.
+
+.Schritte
+. Wählen Sie im System Manager *Cluster* aus, und wählen Sie dann *Übersicht* aus.
++
+Für jedes HA-Paar im Cluster wird eine Zusammenfassung der Storage-Verfügbarkeitszone-Auslastung angezeigt.
+
+. Wenn Sie detailliertere Metriken benötigen, wählen Sie eine bestimmte Storage-Verfügbarkeit aus.
++
+Unter *Übersicht* werden die Kapazität der Speicherverfügbarkeitszone, der genutzte Speicherplatz und das Datenreduzierungsverhältnis angezeigt.
+
++
+Unter *Speichereinheiten* wird eine Liste aller Speichereinheiten in der Lagerverfügbarkeitszone angezeigt.
+
+
+
+.Was kommt als Nächstes?
+Wenn die Storage-Verfügbarkeitszone knapp ist, sollten Sie eine andere Storage-Verfügbarkeitszone einplanenlink:../manage-data/move-storage-units.html["Speichereinheiten verschieben"], um die Storage-Auslastung im Cluster auszugleichen.
+
+
+
 == Überwachung der Auslastung der Speichereinheiten
 
 Überwachen Sie den Storage-Verbrauch einer Storage-Einheit, um proaktiv die Größe der Storage-Einheit ganz nach Ihren Bedürfnissen zu erweitern.

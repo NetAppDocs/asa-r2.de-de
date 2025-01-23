@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/whats-new-9161.html 
-keywords: 'what"s new, release notes, 9.16.1, asa r2, asa a1k, asa 70, asa 90' 
+keywords: 'what"s new, release notes, 9.16.1, asa r2, asa a1k, asa a90, asa a70' 
 summary: Erfahren Sie mehr über die neuen Funktionen in ONTAP 9.16.1 für ASA r2 Systeme. 
 ---
 = Neuerungen in ONTAP 9.16.1 für ASA r2-Systeme
@@ -18,11 +18,25 @@ Erfahren Sie mehr über die neuen Funktionen in ONTAP 9.16.1 für ASA r2 Systeme
 
 
 
+== Datensicherung
+
+[cols="2,4"]
+|===
+| Aktualisieren | Beschreibung 
+
+
+| link:data-protection/manage-consistency-groups.html["Unterstützung für hierarchische Consistency Groups"] | Mithilfe von hierarchischen Konsistenzgruppen können Sie eine übergeordnete Konsistenzgruppe erstellen, die mehrere untergeordnete Konsistenzgruppen enthält. Dadurch wird die Datensicherung und das Management komplexer Datenstrukturen vereinfacht. 
+|===
+
+
 == Storage-Effizienz
 
 [cols="2,4"]
 |===
 | Aktualisieren | Beschreibung 
+
+
+| Unterstützung für eine automatische Ausbalancierung von Storage-Einheiten | ONTAP balanciert die Storage-Einheiten automatisch über Ihre Storage-Verfügbarkeitszonen hinweg aus, um optimale Performance und Kapazitätsauslastung zu erzielen. 
 
 
 | Der NVMe-Leerraum ist standardmäßig aktiviert  a| 
