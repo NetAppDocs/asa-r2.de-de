@@ -61,15 +61,13 @@ Erstellen einer untergeordneten Konsistenzgruppe
  a| 
 Wählen Sie *untergeordnete Consistency Group hinzufügen*.
 
-.. Wählen Sie das Host-Betriebssystem und die Host-Zuordnung aus.
-.. Wählen Sie *Hinzufügen*.
+|===
+. Wählen Sie das Host-Betriebssystem und die Host-Zuordnung aus.
+. Wählen Sie *Hinzufügen*.
 
 
 .Was kommt als Nächstes?
 Sie haben eine Konsistenzgruppe erstellt, die die Speichereinheiten enthält, die Sie schützen möchten. Sie können jetzt einen Snapshot erstellen.
-
-|===
-
 
 --
 .Nutzung vorhandener Storage-Einheiten
