@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/deploy-hardware.html 
-keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70 
+keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50 
 summary: Erfahren Sie, wie Sie die Schienenkits für das ASA r2 Storage-System und die Storage-Shelfs installieren und die ASA r2 Hardware im Schrank oder Telco-Rack sichern. 
 ---
 = Installieren Sie Ihr ASA r2-Speichersystem
@@ -27,7 +27,12 @@ Nachdem Sie die Installation des ASA r2-Speichersystems vorbereitet haben, insta
 .. Befestigen Sie das Speichersystem mit den mitgelieferten Befestigungsschrauben am Schrank oder Telco-Rack.
 
 
-. Montieren Sie das Lagerregal:
+. Befestigen Sie die Blende an der Vorderseite des Speichersystems.
+. Wenn Ihr ASA r2-System mit einem Kabelverwaltungsgerät geliefert wurde, schließen Sie es an der Rückseite des Speichersystems an.
++
+image::../media/drw_affa1k_install_cable_mgmt_ieops-1697.svg[Installieren Sie das Kabelverwaltungsgerät]
+
+. Installieren und befestigen Sie das Lagerregal:
 +
 .. Positionieren Sie die Rückseite des Lagerregals auf den Schienen, und stützen Sie das Regal von unten ab, und schieben Sie es in den Schrank oder das Telco-Rack.
 +
@@ -36,11 +41,6 @@ Wenn Sie mehrere Storage-Shelfs installieren, platzieren Sie das erste Storage-S
 .. Befestigen Sie den Aufbewahrungs-Shelf mit den mitgelieferten Befestigungsschrauben am Schrank oder Telco-Rack.
 
 
-. Schließen Sie die Kabelverwaltungsgeräte an der Rückseite des Speichersystems an.
-+
-image::../media/drw_affa1k_install_cable_mgmt_ieops-1697.svg[Installieren Sie das Kabelverwaltungsgerät]
-
-. Befestigen Sie die Blende an der Vorderseite des Speichersystems.
 
 
 .Was kommt als Nächstes?

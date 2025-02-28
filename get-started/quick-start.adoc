@@ -1,9 +1,9 @@
 ---
 sidebar: sidebar 
 permalink: get-started/quick-start.html 
-keywords: asa r2, asa a1k, asa a90, asa a70, get started, getting started, quick start, install, set up 
-summary: 'Um mit einem ASA r2-System (ASA A1K, A90, A70) zu beginnen, installieren Sie die Hardware, richten den Cluster ein, richten den Datenzugriff ein und stellen den Storage bereit.' 
-searchtitle: Installation und Einrichtung der Speichersysteme ASA A1K, A90 und A70 
+keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, get started, getting started, quick start, install, set up 
+summary: 'Um mit einem ASA r2-System (ASA A1K, A90, A70, A50, A30, A20) zu beginnen, installieren Sie die Hardware, richten das Cluster ein, richten den Datenzugriff ein und stellen den Speicher bereit.' 
+searchtitle: Installation und Einrichtung der Speichersysteme ASA A1K, A90, A70, A50, A30 und A20 
 ---
 = Schnellstart für ASA r2-Speichersysteme
 :allow-uri-read: 

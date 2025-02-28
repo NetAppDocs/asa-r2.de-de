@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/power-on-hardware.html 
-keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, power on 
-summary: Schalten Sie jedes NS224-Shelf ein, um eine eindeutige Shelf-ID zuzuweisen, die ASA r2-Controller einzuschalten und die Netzkabel zu sichern. 
+keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50, power on 
+summary: Schalten Sie jedes Shelf ein, um eine eindeutige Shelf-ID zuzuweisen, schalten Sie die ASA r2-Controller ein und befestigen Sie die Netzkabel. 
 ---
 = Schalten Sie das ASA r2-Speichersystem ein
 :allow-uri-read: 
@@ -17,10 +17,13 @@ Nachdem Sie die Rack-Hardware für das ASA r2 Storage-System installiert und die
 
 == Schritt 1: Schalten Sie das Shelf ein und weisen Sie die Shelf-ID zu
 
-Jedes NS224-Shelf wird durch eine eindeutige Shelf-ID unterschieden. Diese ID stellt sicher, dass das Shelf innerhalb Ihrer Storage-System-Einrichtung unterscheidbar ist. Standardmäßig werden Shelf-IDs als ‘00’ und ‘01’ zugewiesen. Möglicherweise müssen Sie diese IDs jedoch anpassen, um die Eindeutigkeit in Ihrem Storage-System aufrechtzuerhalten.
+Jedes Shelf wird durch eine eindeutige Shelf-ID unterschieden. Diese ID stellt sicher, dass das Shelf innerhalb Ihrer Storage-System-Einrichtung unterscheidbar ist.
 
 .Über diese Aufgabe
-* Gültige Shelf-ID: 00 bis 99.
+* Gültige Shelf-ID: 01 bis 99.
++
+Bei internen, in die Controller integrierten Shelfs (Storage) wird Ihnen eine feste Shelf-ID mit der Nummer 00 zugewiesen.
+
 * Sie müssen ein Shelf aus- und wieder einschalten (trennen Sie beide Netzkabel, warten Sie die entsprechende Zeit und schließen Sie sie dann wieder an), damit die Shelf-ID wirksam wird.
 
 
@@ -31,7 +34,7 @@ Das Shelf wird eingeschaltet und startet automatisch, wenn es an die Stromversor
 
 . Entfernen Sie die linke Endkappe, um auf die Shelf-ID-Taste hinter der Frontplatte zuzugreifen.
 +
-image::../media/drw_a900_oie_change_ns224_shelf_id_ieops-836.svg[NS224 Shelf-ID ändern]
+image::../media/drw_change_ns224_shelf_id_ieops-836.svg[Die Shelf-ID ändern]
 
 +
 [cols="20%,80%"]
@@ -39,28 +42,28 @@ image::../media/drw_a900_oie_change_ns224_shelf_id_ieops-836.svg[NS224 Shelf-ID 
 
 
  a| 
-image::../media/legend_icon_01.svg[Legende Nummer 1]
+image::../media/icon_round_1.png[Legende Nummer 1]
  a| 
 Einlegeboden-Endkappe
 
 
 
  a| 
-image::../media/legend_icon_02.svg[[Legende Nummer 2]
+image::../media/icon_round_2.png[[Legende Nummer 2]
  a| 
 Ablagefaceplate
 
 
 
  a| 
-image::../media/legend_icon_03.svg[[Legende Nummer 3]
+image::../media/icon_round_3.png[[Legende Nummer 3]
  a| 
 Shelf-ID-Nummer
 
 
 
  a| 
-image::../media/legend_icon_04.svg[[Legende Nummer 4]
+image::../media/icon_round_4.png[[Legende Nummer 4]
  a| 
 Shelf-ID-Taste
 
@@ -127,32 +130,67 @@ Ein Netzteil wird eingeschaltet, sobald das Netzkabel angeschlossen ist. Seine z
 Nachdem Sie Ihre Storage Shelfs eingeschaltet und ihnen eindeutige IDs zugewiesen haben, schalten Sie die Storage Controller ein.
 
 .Schritte
-. Schließen Sie den Laptop an den seriellen Konsolenport an. Dadurch können Sie die Startsequenz überwachen, wenn die Controller eingeschaltet werden.
+. Schließen Sie den Laptop an den seriellen Konsolenport an. Auf diese Weise können Sie die Boot-Sequenz überwachen, wenn die Controller eingeschaltet werden.
 +
 .. Stellen Sie den seriellen Konsolenport am Laptop auf 115,200 Baud mit N-8-1 ein.
 +
-
-NOTE: Anweisungen zum Konfigurieren des seriellen Konsolenports finden Sie in der Online-Hilfe Ihres Laptops.
+Anweisungen zum Konfigurieren des seriellen Konsolenports finden Sie in der Online-Hilfe Ihres Laptops.
 
 .. Schließen Sie das Konsolenkabel an den Laptop an und verbinden Sie den seriellen Konsolenport am Controller mithilfe des Konsolenkabels, das mit dem Storage-System geliefert wurde.
 .. Schließen Sie den Laptop an den Switch im Management-Subnetz an.
 +
+[role="tabbed-block"]
+====
+.A1K
+--
 image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Konsolenverbindungen]
 
-.. Weisen Sie dem Laptop eine TCP/IP-Adresse zu, die sich im Management-Subnetz befindet.
+--
+.A70 und A90
+--
+image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Konsolenverbindungen]
+
+--
+.A20, A30 UND A50
+--
+image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[Konsolenverbindungen]
+
+--
+====
 
 
+
+
+. Weisen Sie dem Laptop eine TCP/IP-Adresse zu, die sich im Management-Subnetz befindet.
 . Schließen Sie die Stromkabel an die Controller-Netzteile an, und schließen Sie sie dann an Stromquellen auf verschiedenen Stromkreisen an.
 +
-image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Allgemeiner Netzanschlussplan]
+[role="tabbed-block"]
+====
+.A1K
+--
+image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[A1K-Speichersystem und A70- oder A90-Netzanschlussdiagramm]
 
+--
+.A70 und A90
+--
+image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[A1K-Speichersystem und A70- oder A90-Netzanschlussdiagramm]
+
+--
+.A20, A30 UND A50
+--
+image::../media/drw_psu_layout_1_ieops-1886.svg[Stromanschlussdiagramm für das Speichersystem A20, A30 oder A50]
+
+--
+====
 +
-** Das Speichersystem beginnt zu booten. Das erste Booten kann bis zu acht Minuten dauern.
+** Das System beginnt zu booten. Das erste Booten kann bis zu acht Minuten dauern.
 ** Die LEDs blinken auf, und die Lüfter starten, was darauf hinweist, dass die Controller eingeschaltet sind.
 ** Die Lüfter sind beim ersten Starten möglicherweise sehr laut. Das Lüftergeräusch während des Startvorgangs ist normal.
 
 
-. Befestigen Sie die Netzkabel mit dem Sicherungsgerät an jedem Netzteil.
+
+
+. Sichern Sie die Netzkabel mit dem Sicherungsgerät an jedem Netzteil.
 
 
 .Was kommt als Nächstes?
