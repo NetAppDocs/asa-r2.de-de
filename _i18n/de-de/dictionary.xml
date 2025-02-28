@@ -1901,4 +1901,7 @@
   <block id="556e0ee8174fe1dd298dfe165915e58f" category="summary">Bestimmte ONTAP-Befehle werden auf ASA r2-Systemen nicht unterstützt (ASA A1K, ASA 90, ASA 70, ASA A50, ASA A30, ASA A20).</block>
   <block id="d4b904a6ceddca0805b85998f1946d36" category="paragraph">Die folgenden NetApp ASA r2-Systeme werden ab ONTAP 9.16.1 unterstützt. Diese Plattformen bieten eine einheitliche Hardware- und Softwarelösung, die eine vereinfachte Benutzererfahrung bietet, speziell für die Anforderungen von reinen SAN-Kunden.</block>
   <block id="1afab26d25573baff41c4a297e2b15fb" category="sidebar">Die NetApp ASA r2 Systeme (ASA A1K, ASA A90, ASA A70, ASA A50, ASA A30, ASA A20) bieten eine einheitliche Hardware- und Softwarelösung, die eine vereinfachte Benutzererfahrung speziell für die Anforderungen von reinen SAN-Kunden schafft.</block>
+  <block id="9e607734cbe02d05fcbdf2a8bd579b3a" category="inline-link-macro">Unterstützung der Verschlüsselungsmigration zwischen Schlüsselmanagern</block>
+  <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
+  <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">Wenn Sie vom integrierten ONTAP Schlüsselmanager zu einem externen Schlüsselmanager auf Cluster-Ebene wechseln, können Sie die ONTAP Befehlszeilenschnittstelle (CLI) verwenden, um die Schlüssel problemlos von einem Schlüsselmanager auf den anderen zu migrieren.</block>
 </blocks>

@@ -43,6 +43,9 @@ Die folgenden NetApp ASA r2-Systeme werden ab ONTAP 9.16.1 unterstützt. Diese P
 | Aktualisieren | Beschreibung 
 
 
+| link:../secure-data/migrate-encryption-keys-between-key-managers.html["Unterstützung der Verschlüsselungsmigration zwischen Schlüsselmanagern"] | Wenn Sie vom integrierten ONTAP Schlüsselmanager zu einem externen Schlüsselmanager auf Cluster-Ebene wechseln, können Sie die ONTAP Befehlszeilenschnittstelle (CLI) verwenden, um die Schlüssel problemlos von einem Schlüsselmanager auf den anderen zu migrieren. 
+
+
 | link:../data-protection/manage-consistency-groups.html["Unterstützung für hierarchische Consistency Groups"] | Mithilfe von hierarchischen Konsistenzgruppen können Sie eine übergeordnete Konsistenzgruppe erstellen, die mehrere untergeordnete Konsistenzgruppen enthält. Dadurch wird die Datensicherung und das Management komplexer Datenstrukturen vereinfacht. 
 |===
 
