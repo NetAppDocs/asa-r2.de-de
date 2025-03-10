@@ -28,7 +28,6 @@ Wenn automatisches iSCSI-LIF-Failover aktiviert ist, wird die iSCSI-LIF im Falle
 * ONTAP S3 SnapMirror und S3-APIs
 * SnapMirror (asynchron und synchron) zur Cloud
 * SnapMirror (asynchron und synchron) auf Systeme mit nicht-ASA r2
-* Selektive LUN-Zuordnung (SLM)
 
 
 .ASA r2-Systeme unterstützen Folgendes:
