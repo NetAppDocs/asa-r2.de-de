@@ -1903,4 +1903,5 @@
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">Wenn Sie vom integrierten ONTAP Schlüsselmanager zu einem externen Schlüsselmanager auf Cluster-Ebene wechseln, können Sie die ONTAP Befehlszeilenschnittstelle (CLI) verwenden, um die Schlüssel problemlos von einem Schlüsselmanager auf den anderen zu migrieren.</block>
   <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">Ermitteln Sie das Cluster-Netzwerk</block>
+  <block id="54ece869b1ae7921e7f18bd670ac879c" category="list-text">Bei ASAr2 A20-, A30- oder A50-Speichersystemen leuchtet die Shelf-ID-Anzeige auf der Vorderseite des Systemgehäuses nicht auf. Die interne Shelf-ID des Systems ist fest mit 00 festgelegt.</block>
 </blocks>
