@@ -12,9 +12,9 @@ searchtitle: Vergleichen Sie ASA r2 Systeme mit anderen ONTAP Systemen
 
 
 [role="lead"]
-ASA r2 Systeme bieten eine einheitliche Hardware- und Softwarelösung für reine SAN-Umgebungen, die auf All-Flash-Plattformen basieren. ASA r2 Systeme unterscheiden sich bei der Implementierung ihrer Storage-Ebene, unterstützter Protokolle und ONTAP Persönlichkeit von anderen ONTAP Systemen (ASA, AFF und FAS).
+ASA r2 Systeme bieten eine Hardware- und Softwarelösung für reine SAN-Umgebungen mit All-Flash-Plattformen. ASA r2 Systeme unterscheiden sich bei der Implementierung ihrer Storage-Ebene, unterstützter Protokolle und ONTAP Persönlichkeit von anderen ONTAP Systemen (ASA, AFF und FAS).
 
-Auf einem ASA r2 System wird die ONTAP Software optimiert, um wichtige SAN-Funktionen zu unterstützen und gleichzeitig die Sichtbarkeit und Verfügbarkeit von nicht-SAN-bezogenen Funktionen zu beschränken. Beispielsweise zeigt System Manager, der auf einem ASA r2 System ausgeführt wird, keine Optionen zum Erstellen von Home Directorys für NAS-Clients an. Diese optimierte Version von ONTAP wird als _ASA r2 Personality_ bezeichnet. ONTAP, die auf allen anderen ONTAP Systemen (ASA, AFF, FAS) ausgeführt werden, wird als „_Unified ONTAP Personality_“ bezeichnet. Die Unterschiede zwischen den ONTAP-Persönlichkeiten werden in der ONTAP-Befehlsreferenz (man-Pages), in der REST-API-Spezifikation und ggf. in EMS-Meldungen erwähnt.
+Auf einem ASA r2 System wird die ONTAP Software optimiert, um wichtige SAN-Funktionen zu unterstützen und gleichzeitig die Sichtbarkeit und Verfügbarkeit von nicht-SAN-bezogenen Funktionen zu beschränken. Beispielsweise zeigt System Manager, der auf einem ASA r2 System ausgeführt wird, keine Optionen zum Erstellen von Home Directorys für NAS-Clients an. Diese optimierte Version von ONTAP wird als _ASA r2 Personality_ bezeichnet. ONTAP auf ASA Systemen wird als _ASA ONTAP Personality_ identifiziert. ONTAP auf AFF und FAS ONTAP Systemen wird als „_Unified ONTAP Personality_“ bezeichnet. Die Unterschiede zwischen den ONTAP-Persönlichkeiten werden in der ONTAP-Befehlsreferenz (man-Pages), in der REST-API-Spezifikation und ggf. in EMS-Meldungen erwähnt.
 
 Sie können die Persönlichkeit Ihres ONTAP-Speichers vom System Manager oder von der ONTAP-CLI überprüfen.
 
