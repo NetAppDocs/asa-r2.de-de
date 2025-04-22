@@ -71,9 +71,9 @@ Sie haben ein Subnetz erstellt, mit dem Sie nun die Erstellung Ihrer LIFs verein
 
 Eine LIF (Netzwerkschnittstelle) ist eine IP-Adresse, die einem physischen oder logischen Port zugeordnet ist. Erstellen Sie LIFs an den Ports, die Sie für den Datenzugriff verwenden möchten. Storage-VMs stellen Daten über ein oder mehrere LIFs für Clients bereit. Bei einem Komponentenausfall kann eine LIF ein Failover durchführen oder zu einem anderen physischen Port migriert werden, sodass die Netzwerkkommunikation nicht unterbrochen wird.
 
-Wenn eine IP-Daten-LIF erstellt wird, kann sie standardmäßig sowohl iSCSI- als auch NVMe/TCP-Datenverkehr verarbeiten. Für den FC- und NVMe/FC-Datenverkehr müssen getrennte Daten-LIFs erstellt werden.
+Auf einem ASA r2 System können Sie IP-, FC-, NVMe/FC-LIFs erstellen. Eine IP-Daten-LIF kann standardmäßig sowohl iSCSI- als auch NVMe/TCP-Datenverkehr verarbeiten. Für den FC- und NVMe/FC-Datenverkehr müssen getrennte Daten-LIFs erstellt werden.
 
-Wenn Sie den automatischen iSCSI-LIF-Failover aktivieren möchten, müssen Sie eine nur iSCSI logische Schnittstelle erstellen. Wenn automatisches iSCSI-LIF-Failover aktiviert ist, wird die iSCSI-LIF im Falle eines Storage-Failovers automatisch von dem Home Node oder Port des Node bzw. Ports des Home Ports zu dem Node bzw. Port des HA-Partners migriert und nach Abschluss des Failover wieder aufgenommen. Wenn der Port für eine iSCSI-LIF nicht mehr funktionstüchtiges ist, wird die LIF automatisch zu einem ordnungsgemäßen Port im aktuellen Home Node und anschließend zurück zu seinem ursprünglichen Port migriert, sobald der Port wieder funktionsfähig ist.
+Wenn Sie den automatischen iSCSI-LIF-Failover aktivieren möchten, müssen Sie eine IP LIF für reinen iSCSI-Datenverkehr erstellen. Wenn automatisches iSCSI-LIF-Failover aktiviert ist, wird im Falle eines Storage-Failovers die IP-iSCSI-LIF automatisch vom Home Node oder Port des Node bzw. Ports des Home Ports zu seinem HA-Partnerknoten bzw. -Port migriert und nach Abschluss des Failovers wieder aufgenommen. Wenn der Port für eine IP-iSCSI-LIF nicht mehr funktionsfähig ist, wird die LIF automatisch zu einem ordnungsgemäßen Port im aktuellen Home Node und anschließend zurück zu seinem ursprünglichen Port migriert, sobald der Port wieder funktionsfähig ist.
 
 .Bevor Sie beginnen
 * Sie müssen ein Cluster-Administrator sein, um diese Aufgabe auszuführen.
@@ -87,7 +87,7 @@ Wenn Sie den automatischen iSCSI-LIF-Failover aktivieren möchten, müssen Sie e
 . Wählen Sie *Netzwerkschnittstellen* aus, und wählen Sie dann image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"].
 . Wählen Sie den Schnittstellentyp und das Protokoll aus und anschließend die Storage-VM aus.
 +
-Wählen Sie zum Erstellen einer einzelnen Protokoll-LIF nur ein Protokoll aus. Um beispielsweise eine nur iSCSI-logische Schnittstelle zu erstellen, wählen Sie *iSCSI* aus.
+Um iSCSI LIF Failover zu aktivieren, wählen Sie nur das IP-Protokoll aus.
 
 . Geben Sie einen Namen für das LIF ein, oder übernehmen Sie den Standardnamen.
 . Wählen Sie den Startknoten für die Netzwerkschnittstelle aus, und geben Sie dann die IP-Adresse und die Subnetzmaske ein.
