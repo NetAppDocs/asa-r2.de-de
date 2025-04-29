@@ -71,7 +71,7 @@ Sie haben ein Subnetz erstellt, mit dem Sie nun die Erstellung Ihrer LIFs verein
 
 Eine LIF (Netzwerkschnittstelle) ist eine IP-Adresse, die einem physischen oder logischen Port zugeordnet ist. Erstellen Sie LIFs an den Ports, die Sie für den Datenzugriff verwenden möchten. Storage-VMs stellen Daten über ein oder mehrere LIFs für Clients bereit. Bei einem Komponentenausfall kann eine LIF ein Failover durchführen oder zu einem anderen physischen Port migriert werden, sodass die Netzwerkkommunikation nicht unterbrochen wird.
 
-Auf einem ASA r2 System können Sie IP-, FC-, NVMe/FC-LIFs erstellen. Eine IP-Daten-LIF kann standardmäßig sowohl iSCSI- als auch NVMe/TCP-Datenverkehr verarbeiten. Für den FC- und NVMe/FC-Datenverkehr müssen getrennte Daten-LIFs erstellt werden.
+Auf einem ASA r2 System können Sie IP-, FC- und NVMe/FC-LIFs erstellen. Eine IP-Daten-LIF kann standardmäßig sowohl iSCSI- als auch NVMe/TCP-Datenverkehr verarbeiten. Für den FC- und NVMe/FC-Datenverkehr müssen getrennte Daten-LIFs erstellt werden.
 
 Wenn Sie den automatischen iSCSI-LIF-Failover aktivieren möchten, müssen Sie eine IP LIF für reinen iSCSI-Datenverkehr erstellen. Wenn automatisches iSCSI-LIF-Failover aktiviert ist, wird im Falle eines Storage-Failovers die IP-iSCSI-LIF automatisch vom Home Node oder Port des Node bzw. Ports des Home Ports zu seinem HA-Partnerknoten bzw. -Port migriert und nach Abschluss des Failovers wieder aufgenommen. Wenn der Port für eine IP-iSCSI-LIF nicht mehr funktionsfähig ist, wird die LIF automatisch zu einem ordnungsgemäßen Port im aktuellen Home Node und anschließend zurück zu seinem ursprünglichen Port migriert, sobald der Port wieder funktionsfähig ist.
 
