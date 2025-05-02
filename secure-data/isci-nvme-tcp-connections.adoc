@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: secure-data/iscsi-nvme-tcp-connections.html 
+keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption, iscsi, nvme/tcp, ipsec, data-in-flight, ip security, secure connections, secure data connections, hardware offload 
+summary: 'Wenn Sie das IP-Protokoll auf Ihrem ASA r2-System verwenden, können Sie die IP-Sicherheit (IPsec) konfigurieren, um Ihre Datensicherheit zu erhöhen.' 
+---
+= Sichere IP-Verbindungen auf Ihren ASA r2-Storage-Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie das IP-Protokoll auf Ihrem ASA r2-System verwenden, können Sie die IP-Sicherheit (IPsec) konfigurieren, um Ihre Datensicherheit zu erhöhen. IPsec ist ein Internetstandard, der Verschlüsselung von Daten während der Übertragung, Authentifizierung für den Datenverkehr zwischen den Netzwerkendpunkten auf IP-Ebene und Schutz vor Replay- und böswilligen man-in-the-Middle-Angriffen auf Ihre Daten bietet.
+
+Für ASA r2-Systeme ist IPsec für iSCSI- und NVMe/TCP-Hosts verfügbar.
+
+Auf bestimmten ASA r2-Systemen können mehrere kryptografische Vorgänge, wie z. B. Verschlüsselungs- und Integritätsprüfungen, auf eine unterstützte NIC-Karte (Network Interface Controller) ausgelagert werden. Der Durchsatz für auf die NIC-Karte ausgelagerte Vorgänge beträgt etwa 5 % oder weniger. Dies kann die Leistung und den Durchsatz des durch IPsec geschützten Netzwerkverkehrs erheblich verbessern.
+
+Die folgenden NIC-Karten werden für die Hardwareauslagerung auf den folgenden ASA r2-Systemen unterstützt:
+
+[cols="2"]
+|===
+| Unterstützte NIC-Karte | ASA r2-Systeme 
+
+
+ a| 
+X50131A – (2P, 40 G/100 G/200 G/400 G Ethernet-Controller)
+ a| 
+* ASA A1K
+* ASA A90
+* ASA A70
+
+
+
+
+ a| 
+X60132A – (4p, 10G/25G Ethernet-Controller)
+ a| 
+* ASA A50
+* ASA A30
+* ASA A20
+
+
+|===
+Verwandte Informationen
+
+link:https://docs.netapp.com/us-en/ontap/networking/ipsec-configure.html["Konfigurieren Sie die IP-Sicherheit für das ONTAP-Netzwerk"]
