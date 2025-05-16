@@ -16,6 +16,28 @@ Storage-Einheiten eines ASA r2-Systems befinden sich in Storage Virtual Machines
 
 
 
+== Erstellen einer Storage-VM
+
+Während der Cluster-Einrichtung wird Ihre standardmäßige Virtual Machine (VM) für den Datenspeicher erstellt. Alle neuen Storage-Einheiten werden innerhalb Ihrer Standard-Storage-VM erstellt, es sei denn, Sie erstellen und wählen eine andere Storage-VM aus. Vielleicht möchten Sie eine zusätzliche Storage-VM erstellen, um Ihre Storage-Einheiten für verschiedene Applikationen, Abteilungen oder Clients zu trennen. Vielleicht möchten Sie beispielsweise eine Storage-VM für Ihre Entwicklungsumgebung und eine andere Storage-VM für die Produktionsumgebung erstellen oder eine Storage-VM für die Finanzabteilung und eine andere Storage-VM für die Marketingabteilung erstellen.
+
+.Schritte
+. Wählen Sie *Cluster > Storage VMs*.
+. Wählen Sie image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"].
+. Geben Sie einen Namen für die Storage-VM ein, oder übernehmen Sie den Standardnamen.
+. Wählen Sie unter *Configure protocols* die Protokolle für die Storage VM aus.
++
+Wählen Sie *IP* für iSCSI und NVMe/TCP aus. Wählen Sie *FC* für Fibre Channel oder NVMe/FC.
+
+. Wählen Sie unter *Storage VM Administration* *Manage Administrator Account* aus, und geben Sie anschließend den Benutzernamen und das Passwort für das Administratorkonto ein.
+. Fügen Sie eine Netzwerkschnittstelle für die Storage-VM hinzu.
+. Wählen Sie *Speichern*.
+
+
+.Was kommt als Nächstes?
+Sie haben eine Storage-VM erstellt. Sie können nun die Storage-VM für link:../manage-data/provision-san-storage.html["Bereitstellung von Storage"]verwenden.
+
+
+
 == Erstellen von IPspaces
 
 Ein IPspace ist ein eindeuiger IP-Adressbereich, in dem sich Storage-VMs befinden. Wenn Sie IPspaces erstellen, ermöglichen Sie Ihren Storage-VMs ihren eigenen sicheren Storage, ihre Administration und ihr eigenes sicheres Routing. Außerdem können Clients in administrativ getrennten Netzwerkdomänen überlappende IP-Adressen aus demselben IP-Adressensubnetz verwenden.
@@ -96,6 +118,26 @@ Um iSCSI LIF Failover zu aktivieren, wählen Sie nur das IP-Protokoll aus.
 
 .Ergebnis
 Sie haben eine LIF für den Datenzugriff erstellt.
+
+.Was kommt als Nächstes?
+Wenn Sie eine IP LIF für iSCSI erstellt haben, können Sie die ONTAP Befehlszeilenschnittstelle (CLI) verwenden, um automatisches iSCSI LIF Failover zu aktivieren.
+
+
+
+=== Aktivieren Sie automatisches iSCSI LIF Failover
+
+Wenn auf der SVM iSCSI-LIFs vorhanden sind, die nicht für automatischen LIF-Failover aktiviert sind, werden die neu erstellten LIFs auch nicht für automatischen LIF-Failover aktiviert. Wenn der automatische LIF-Failover nicht aktiviert ist und ein Failover-Ereignis tritt, werden die iSCSI LIFs nicht migriert.
+
+Sie müssen die ONTAP Befehlszeilenschnittstelle (CLI) verwenden, um den automatischen iSCSI LIF Failover zu aktivieren.
+
+.Schritt
+. Aktivieren Sie automatisches iSCSI LIF Failover:
++
+[source, cli]
+----
+network interface modify -vserver <SVM_name> -lif <iscsi_lif> -failover-policy sfo-partner-only -auto-revert true
+----
+
 
 
 
