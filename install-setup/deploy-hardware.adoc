@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/deploy-hardware.html 
-keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50 
+keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50, asa c30 
 summary: Erfahren Sie, wie Sie die Schienenkits für das ASA r2 Storage-System und die Storage-Shelfs installieren und die ASA r2 Hardware im Schrank oder Telco-Rack sichern. 
 ---
 = Installieren Sie Ihr ASA r2-Speichersystem
@@ -24,6 +24,7 @@ Nachdem Sie die Installation des ASA r2-Speichersystems vorbereitet haben, insta
 . Installieren und sichern Sie Ihr Speichersystem im Schrank oder im Telco-Rack:
 +
 .. Positionieren Sie das Speichersystem auf den Schienen in der Mitte des Schranks oder des Telco-Racks, und stützen Sie das Speichersystem von unten ab, und schieben Sie es hinein.
+.. Stellen Sie sicher, dass die Führungsstifte am Schrank oder Telco-Rack sicher in die Führungsschlitze des Speichersystems passen.
 .. Befestigen Sie das Speichersystem mit den mitgelieferten Befestigungsschrauben am Schrank oder Telco-Rack.
 
 

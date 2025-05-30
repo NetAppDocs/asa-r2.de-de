@@ -614,8 +614,6 @@
   <block id="ab7ef1e990b02e4f310f950e86665f24" category="list-text">Verbinden Sie an Controller B die folgenden Ports:</block>
   <block id="a34418430d19dabd71e89f00a9e8e782" category="list-text">Verbinden Sie Port e11a mit NSM B Port e0a.</block>
   <block id="3a95f3cf99705bbbd01d1dd74336e9fd" category="list-text">Verbinden Sie Port e11b mit NSM A Port e0b.</block>
-  <block id="182824a7bd82a321df1a100637995a19" category="inline-image-macro">Verkabeln Sie die Controller B-Ports e11a und e11b mit einem NS224-Shelf</block>
-  <block id="86ab7b5fab8b30fc8e3619226fb66002" category="paragraph"><block ref="86ab7b5fab8b30fc8e3619226fb66002" category="inline-image-macro-rx" type="image"></block></block>
   <block id="348bd528033e13e79fcfb366a5cd5af4" category="paragraph">Verbinden Sie jeden Controller mit den NSM-Modulen beider NS224-Shelfs. Die Grafik zeigt die Verkabelung von den einzelnen Controllern: Die Verkabelung von Controller A wird blau und die Verkabelung von Controller B gelb dargestellt.</block>
   <block id="4b079ba797f88f932136bdbd1aa314a0" category="list-text">Verbinden Sie Port e11a mit Shelf 1 NSM A Port e0a.</block>
   <block id="486d7e107c3f396974308ba4cc20a5f9" category="list-text">Verbinden Sie den Port e11b mit dem Shelf 2 NSM B-Port e0b.</block>
@@ -1735,7 +1733,6 @@
   <block id="eb020f30ead1b473ff4a75c9863c0d1a" category="summary">Um mit einem ASA r2-System (ASA A1K, A90, A70, A50, A30, A20) zu beginnen, installieren Sie die Hardware, richten das Cluster ein, richten den Datenzugriff ein und stellen den Speicher bereit.</block>
   <block id="e25344cc16f12d622f2af42aea8ed7a8" category="searchtitle">Installation und Einrichtung der Speichersysteme ASA A1K, A90, A70, A50, A30 und A20</block>
   <block id="b3a1e3cfc607694cb423d46b8b23fa54" category="paragraph">Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über das Anschließen des Speichersystems an die Netzwerk-Switches zu erhalten.</block>
-  <block id="cdd3776ed8f948030728899ab7f94b8e" category="list-text">Diese Verfahren zeigen gängige Konfigurationen. Die jeweilige Verkabelung hängt von den für das Speichersystem bestellten Komponenten ab. Umfassende Konfigurationsdetails finden Sie unter <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
   <block id="28c4b42113d6ebd3c5e6ca40929d04a6" category="list-text">Die Verkabelungsgrafiken haben Pfeilsymbole, die die richtige Ausrichtung (nach oben oder unten) des Kabelsteckers zeigen, wenn ein Anschluss in einen Anschluss eingesetzt wird.</block>
   <block id="fd2cb99acafb4f0144bfb5e0e4c31373" category="paragraph">Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.</block>
   <block id="416f5908ffc86e7abf276c4f75904ee7" category="inline-image-macro">Richtung der Zuglasche des Kabels</block>
@@ -1781,40 +1778,27 @@
   <block id="7e04550968face4eb31df851171941f8" category="image-alt">a20-Clusterverkabelungsdiagramm ohne Switch mit einem 25-gbe-io-Modul</block>
   <block id="151c289f37f59079c337dd0b4878c201" category="paragraph">*Switch-Cluster-Verkabelung*</block>
   <block id="fa02cdb8515e1cd51b4eadba9fd50080" category="paragraph">Verbinden Sie die Controller mit den Cluster-Netzwerk-Switches, um die ONTAP-Cluster-Verbindungen zu erstellen.</block>
-  <block id="ee68cf12a16ca46d58bedd8cf9051f32" category="example-title">AFF A30 oder AFF A50 mit zwei 40/100-GbE-I/O-Modulen mit 2 Ports</block>
   <block id="a8d16746fb80901317600cba36862a10" category="list-text">Verkabeln der Cluster/HA Interconnect-Verbindungen:</block>
-  <block id="3a343cf67a3c616a35a00f3a82358fe3" category="list-text">Verbinden Sie Controller A-Port e4a mit Cluster-Netzwerk-Switch A.</block>
-  <block id="627172884756ce9f3fccfd51a4559c59" category="list-text">Verbinden Sie den Controller A-Port e2a mit dem Cluster-Netzwerk-Switch B.</block>
-  <block id="9c7f10ca7cef7791dc302ef4b9fc6cff" category="list-text">Verbinden Sie Controller B-Port e4a mit Cluster-Netzwerk-Switch A.</block>
-  <block id="e7a7b98be669245e46e9b8f7bbe98b71" category="list-text">Verbinden Sie Controller B-Port e2a mit Cluster-Netzwerk-Switch B.</block>
   <block id="b53a4effb80334f95a8d3a106ebd8d78" category="paragraph">*40/100 GbE Cluster/HA Interconnect-Kabel*</block>
   <block id="b0f68808f5130fe93780d063d5a249ef" category="image-alt">Cluster HA 40/100-GbE-Kabel</block>
   <block id="fdf9561d280feaca372af24a497c913c" category="image-alt">Diagramm der Switch-Cluster-Verkabelung bei a30 und a50 mit zwei 100-gbe-io-Modulen</block>
-  <block id="0876d414989c1fb53595c5b00b028242" category="example-title">AFF A30 oder AFF A50 mit einem 40/100-GbE-I/O-Modul mit 2 Anschlüssen</block>
   <block id="03b14fd60bbaa553460ca8bf5858ac71" category="list-text">Verkabeln Sie die Controller mit den Cluster-Netzwerk-Switches:</block>
-  <block id="2cfaddf7a4d44f5351fdb0ee36c9c36b" category="list-text">Verbinden Sie den Controller A-Port e4b mit dem Cluster-Netzwerk-Switch B.</block>
-  <block id="04fca3f1f2d55aeb84370ab3e66d9214" category="list-text">Verbinden Sie Controller B-Port e4b mit Cluster-Netzwerk-Switch B.</block>
-  <block id="b7b6d611e5d7c5c0d87c70245fb7d396" category="example-title">AFF A20 mit einem 10/25-GbE-I/O-Modul mit 2 Ports</block>
   <block id="9d14c26ccbbb0d65a3b5d05e2013404b" category="paragraph">*10/25 GbE Cluster/HA Interconnect-Kabel*</block>
   <block id="3488ff918c31f4a57e74bbab6ef9bcc9" category="inline-image-macro">Verkabelungsdiagramm für a20-Switch-Cluster mit einem 25-gbe-io-Modul</block>
-  <block id="ae3bd4fc66b4084d0dc856b5f0230d72" category="paragraph"><block ref="ae3bd4fc66b4084d0dc856b5f0230d72" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7f99cbc2aa28ab9fed6e99fa94242b4a" category="section-title">Schritt 2: Verkabeln Sie die Host-Netzwerkverbindungen</block>
   <block id="11b5e1f572906bdd8b96e6f22d885cd4" category="paragraph">Verbinden Sie die Controller mit Ihrem Host-Netzwerk.</block>
   <block id="40a36b0ffd7a648bae61167d750303ae" category="paragraph">Dieses Verfahren hängt von Ihrem Speichersystemmodell und Ihrer I/O-Modulkonfiguration ab.</block>
   <block id="3b29102e499249644dff327644d96081" category="list-text">Verbinden Sie die Ports e9a und e9b mit dem Ethernet-Datennetzwerk-Switch.</block>
   <block id="4f3114ccf1048d4ddc64a6a3b00212c0" category="paragraph">Verbinden Sie die Ethernet-Modulports oder die Fibre-Channel-Modulports (FC) mit Ihrem Hostnetzwerk.</block>
   <block id="fa60bebf26c9f26f466d33f766281ef9" category="paragraph">*Ethernet-Host-Verkabelung*</block>
-  <block id="e754a652dbb952ac31751366c3c21c14" category="example-title">ASA A30 und ASA A50: Zwei 40/100-GbE-I/O-Module mit 2 Ports</block>
   <block id="3202c4ba4b5ac6113c606ef9bb3c50cf" category="paragraph">Verbinden Sie an jedem Controller die Ports e2b und e4b mit den Ethernet-Host-Netzwerk-Switches.</block>
   <block id="e827a0600a7ebd00f36ea855012f66a1" category="admonition">Die Ports an E/A-Modulen in Steckplatz 2 und 4 sind 40/100 GbE (Host-Konnektivität ist 40/100 GbE).</block>
   <block id="7329bfa51dec924de206ced093bea600" category="paragraph">*40/100-GbE-Kabel*</block>
   <block id="8f31147c7cfeb7520dc9739e31dedc90" category="image-alt">40/100-GB-Kabel</block>
   <block id="ec83c89c1bfd1fa2fe72db4df75b0e43" category="image-alt">Verkabelung zu 40/100-gbe-ethernet-Host-Netzwerk-Switches</block>
-  <block id="e542a7b563f91e8435b64ab751642f56" category="example-title">ASA A20, A30 und A50: Ein 10/25-GbE-I/O-Modul mit 4 Ports</block>
   <block id="3e42ab3fbc066a1e09943ca314bf3205" category="paragraph">Verbinden Sie auf jedem Controller die Ports e2a, e2b, e2c und e2d mit den Ethernet-Host-Netzwerk-Switches.</block>
   <block id="c053ea984f8ec26545ef5a0f8e3c516b" category="paragraph">*10/25-GbE-Kabel*</block>
   <block id="b8382f91ab365521fe8568f720b6ddd4" category="paragraph">*FC-Hostverkabelung*</block>
-  <block id="54f820ebbd8d18dec75e23b076eb9340" category="example-title">ASA A20, A30 und A50: Ein 64-Gbit/s-FC-I/O-Modul mit 4 Ports</block>
   <block id="945fde23e0c7ac9dc52f131c48ef5861" category="paragraph">Verbinden Sie auf jedem Controller die Ports 1a, 1b, 1c und 1d mit den FC-Host-Netzwerk-Switches.</block>
   <block id="241c17a1be2cc4feae5c8c6007f8aed3" category="paragraph">*64 Gbit/s FC-Kabel*</block>
   <block id="176084e0e3d1d8b98919ade28704bd7b" category="inline-image-macro">64-GB-fc-Kabel, Breite=100 px</block>
@@ -1827,10 +1811,8 @@
   <block id="827e1151fb167c880355e4177a701fcc" category="paragraph">Verbinden Sie die Management-Ports (Schraubenschlüssel) an den einzelnen Controllern mit den Managementnetzwerk-Switches.</block>
   <block id="cc9dc8ff5d926a2f202e16be7619d147" category="section-title">Schritt 4: Verkabeln Sie die Shelf-Verbindungen</block>
   <block id="0d76e0793ffa0c020fcde5112f3ab0ac" category="paragraph">Die folgenden Verkabelungsverfahren zeigen, wie Sie Ihre Controller mit einem Storage Shelf verbinden.</block>
-  <block id="5a684badbec5242d1800f819ca49559e" category="paragraph">Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und alle Verkabelungsoptionen finden Sie unter <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
   <block id="11f69ba457c92cc85e478b022d6fe27d" category="example-title">Option 1: Ein NS224 Storage-Shelf</block>
   <block id="dbc80d316683c8c8fbd51c4f53c57169" category="example-title">Option 2: Zwei NS224 Storage-Shelfs</block>
-  <block id="d0102d843a83876d4bd560d55dc295dd" category="paragraph">Schließen Sie jeden Controller mithilfe der Storage-Kabel des Storage-Systems an sein entsprechendes NSM100B-Modul im NS224-Shelf an. Folgende Kabeltypen sind unter Umständen möglich:</block>
   <block id="302158186d4e933e7fd1df5cef7e5e27" category="paragraph">Die Grafik zeigt die Verkabelung von Controller A blau und Controller B gelb.</block>
   <block id="43f628d39f94658277cbd1d5e2ec5913" category="list-text">Controller A mit dem Shelf verbinden:</block>
   <block id="6c7c671b8bb322ab01af1c161215e3d7" category="list-text">Verbinden Sie den Controller A-Port e3a mit dem NSM A-Port e1a.</block>
@@ -1896,7 +1878,6 @@
   <block id="bca36b0a086865a5988c326bd3a3c6ef" category="list-text">Das System startet den Startvorgang. Die Startsequenz kann bis zu acht Minuten dauern.</block>
   <block id="f3e09817ba15a4f8685cb156fe2ade6f" category="list-text">Während des Startvorgangs beobachten Sie, wie die LEDs blinken und die Lüfter sich einschalten und damit signalisieren, dass die Controller hochfahren.</block>
   <block id="86450f6a6524d00aefa9dda44e7aee80" category="list-text">Beachten Sie, dass die Lüfter beim ersten Start möglicherweise ein hohes Geräusch erzeugen. Das Lüftergeräusch während des Startvorgangs ist normal.</block>
-  <block id="43dd17b3ea5146830157251c7508ca20" category="list-text">Bei ASA Storage-Systemen A20, ASA A30 und ASA A50 leuchtet die Shelf-ID-Anzeige auf der Vorderseite des Systemgehäuses nicht auf.</block>
   <block id="c8aaa99aa53241360c3c889fc0ceba93" category="paragraph">Auf einem ASA r2 System können Sie IP-, FC- und NVMe/FC-LIFs erstellen. Eine IP-Daten-LIF kann standardmäßig sowohl iSCSI- als auch NVMe/TCP-Datenverkehr verarbeiten. Für den FC- und NVMe/FC-Datenverkehr müssen getrennte Daten-LIFs erstellt werden.</block>
   <block id="f137f93169cc0e3caf4322bfd35b3f03" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="90572de4b12061d10d3adbe91dd02ace" category="inline-link-macro-rx"></block></block>
   <block id="9938ec4aaa5e9affe1e87bdd3406a54f" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> <block ref="364d625567d09103e7911f1934bc8d24" category="inline-link-macro-rx"></block></block>
@@ -1933,4 +1914,50 @@
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">Schritt</block>
   <block id="e44a90b30c1dfbb968cf631463193afc" category="list-text">Aktivieren Sie automatisches iSCSI LIF Failover:</block>
   <block id="0ce336b8cb4b71d1f6d61b47075052a1" category="paragraph">Die Storage-Ebene in ASA r2 Systemen verwendet anstelle von Aggregaten eine Storage-Verfügbarkeitszone. Eine Storage-Verfügbarkeitszone ist ein gemeinsamer Speicherpool, der Zugriff auf alle verfügbaren Festplatten im Speichersystem hat. Die Storage-Verfügbarkeitszone ist für beide Nodes in einem ASA r2 HA-Paar sichtbar. Bei der Erstellung einer Storage-Einheit (entweder auf Basis einer LUN oder eines NVMe Namespace) erstellt ONTAP automatisch ein Volume innerhalb der ausgewählten Storage Virtual Machine (VM) in der Storage-Verfügbarkeitszone, um die Storage-Einheit zu beherbergen. Aufgrund dieses automatisierten und vereinfachten Ansatzes für das Storage-Management sind bestimmte System Manager Optionen, ONTAP Befehle und REST-API-Endpunkte nicht verfügbar oder werden von einem ASA r2 System nur eingeschränkt genutzt. Da beispielsweise<block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix=" " category="inline-code"></block> die Erstellung und Verwaltung von Volumes für ASA r2-Systeme automatisiert ist, wird das Menü *Volumes* im System-Manager nicht angezeigt und der Befehl wird nicht unterstützt.</block>
+  <block id="a5e51e5f50ca83720f1d0d8b17c1e93b" category="list-text">Diese Verfahren zeigen gängige Konfigurationen. Die jeweilige Verkabelung hängt von den für das Speichersystem bestellten Komponenten ab. Ausführliche Informationen zur Konfiguration und zur Steckplatzpriorität finden Sie unter <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
+  <block id="ce48b5f9c255c35e0431b311322885fc" category="list-text">Die Verfahren zur Verkabelung von Cluster/HA und Host-Netzwerk zeigen gemeinsame Konfigurationen.</block>
+  <block id="ce72f54a68f16b1880e22ca0324ba2d3" category="paragraph">Wenn Ihre Konfiguration in den Verkabelungsverfahren nicht angezeigt wird, gehen Sie zu <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> für umfassende Konfigurations- und Steckplatzprioritätsinformationen, um Ihr Speichersystem richtig zu verkabeln.</block>
+  <block id="b3f5957e8d13865a2baa9be1f21f2f26" category="list-text">Wenn Sie ein ASA A1K-, ASA A70- oder ASA A90-Speichersystem haben, sind die E/A-Steckplätze von 1 bis 11 nummeriert.</block>
+  <block id="280b4844865d828381a08cf7c5fa9403" category="image-alt">Steckplatznummerierung auf einem ASA A1K ASA A70 und ASA A90 Controller</block>
+  <block id="f6380d621a082c0c194a242b5559335c" category="example-title">ASA A30 oder ASA A50 mit zwei 40/100-GbE-I/O-Modulen mit 2 Ports</block>
+  <block id="9408328695e123555b17c0ac4d57eecd" category="list-text">Verbinden Sie Port e4a des Controllers A mit dem Cluster-Netzwerk-Switch A.</block>
+  <block id="815f2582bceacb80e5133f54d18837f2" category="list-text">Verbinden Sie Port e2a von Controller A mit Cluster-Netzwerk-Switch B.</block>
+  <block id="4ea5630e167a49a93949fae0a08c0a1f" category="list-text">Verbinden Sie Port e4a des Controllers B mit dem Cluster-Netzwerk-Switch A.</block>
+  <block id="fea6452a713f117f84ac40f4c5c8a9c5" category="list-text">Verbinden Sie Port e2a des Controllers B mit dem Cluster-Netzwerk-Switch B.</block>
+  <block id="b7b804ab265402ae61787c636c38a6a3" category="example-title">ASA A30 oder ASA A50 mit einem 40/100-GbE-I/O-Modul mit 2 Anschlüssen</block>
+  <block id="02ba76a663b439c597a1649b7a552dbb" category="list-text">Verbinden Sie Port e4b von Controller A mit Cluster-Netzwerk-Switch B.</block>
+  <block id="876067e7a24fe79036654eba558e2c1b" category="list-text">Verbinden Sie Port e4b des Controllers B mit dem Cluster-Netzwerk-Switch B.</block>
+  <block id="e7d617cd83ffff85b1716e3bdf236b13" category="image-alt">GbE SFP Kupfer Connector</block>
+  <block id="9c5fd388a2ee6ceb65d30336d2fec257" category="open-title">C30</block>
+  <block id="bc136eeedee4f222909ef4dc89936e65" category="example-title">ASA C30 mit zwei 2-Port 40/100 GbE I/O-Modulen</block>
+  <block id="d10c45e8f7beef65a96450aa447c2f06" category="example-title">ASA C30 mit einem 40/100-GbE-I/O-Modul mit 2 Ports</block>
+  <block id="34976d581bae1d7b284bd3eaaebbf5da" category="image-alt">C30 Switchless-Cluster-Verkabelungsdiagramm mit einem 100-GBit/s-E/A-Modul</block>
+  <block id="756127cf1c5d9fc6c88b92bfd2c43c60" category="image-alt">C30 Switched Cluster-Verkabelungsdiagramm mit zwei 100-GBit-E/A-Modulen</block>
+  <block id="5c1af8c9ab8e0295670deef7823e8b23" category="list-text">Verbinden Sie die Controller mit den Cluster-Netzwerk-Switches:</block>
+  <block id="2a95db36543b0ed49d140f26d5c68cde" category="example-title">ASA A20, A30 und A50 mit einem 4-Port 10/25 GbE I/O-Modul</block>
+  <block id="41b996c4b4ae97eb30c867757090ffc8" category="example-title">ASA A20, A30 und A50 mit einem 4-Port 64 Gb/s FC I/O-Modul</block>
+  <block id="8246042d23ca859d83185957ac9c4044" category="list-text">Verbinden Sie an jedem Controller die Ports e2b und e4b mit den Ethernet-Host-Netzwerk-Switches.</block>
+  <block id="7358d22f4186a5e126b0fada0a666115" category="example-title">ASA C30 mit einem 10/25-GbE-I/O-Modul mit 4 Ports</block>
+  <block id="baae66b5065d8c53c84d82ba2175779d" category="list-text">Verkabeln Sie bei jedem Controller die Ports e2a, e2b, e2c und e2d mit den Ethernet-Host-Netzwerk-Switches.</block>
+  <block id="84f30e54db618597e0548b01a8f9bb23" category="example-title">ASA C30 mit einem 4-Port 64 Gb/s FC I/O-Modul</block>
+  <block id="8f03269dbdbab70bab244893051fb6ec" category="list-text">Verkabeln Sie an jedem Controller die Ports 1a, 1b, 1c und 1d mit den FC-Host-Netzwerk-Switches.</block>
+  <block id="02b0ddc9c51a6fd3d072763fb5b859f3" category="paragraph">Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und alle Verkabelungsoptionen, wie <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>z. B. optische und Switch-Attached, finden Sie unter .</block>
+  <block id="ed57089257c5bf0e9855c2abce5e2f2c" category="paragraph">Die AFF A1K Speichersysteme unterstützen NS224-Shelves mit dem Modul NSM100 oder NSM100B. Die Hauptunterschiede zwischen den Modulen sind:</block>
+  <block id="bee9bdef55e93399a97d85b3925cfca2" category="list-text">NSM100-Regalmodule verwenden die integrierten Ports e0a und e0b.</block>
+  <block id="1d18f8f4fb2168d48bce60e13139f7da" category="list-text">NSM100B-Shelf-Module verwenden die Ports e1a und e1b in Steckplatz 1.</block>
+  <block id="cc71e1eb20bbf56ae364562c6769007c" category="paragraph">Das folgende Verkabelungsbeispiel zeigt NSM100-Module in den NS224-Schränken, wenn auf die Anschlüsse der Regalmodule verwiesen wird.</block>
+  <block id="bf3082f44633e623761fac0a042bfa3f" category="inline-image-macro">Verbinden Sie die Controller B-Ports e11a und e11b mit einem einzelnen NS224-Regal</block>
+  <block id="68b3b4b28307463a871642d9f01ab048" category="paragraph"><block ref="68b3b4b28307463a871642d9f01ab048" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="01bd09c5271f772a108914f35e7efcd3" category="paragraph">Die Speichersysteme AFF A70 und 90 unterstützen NS224-Shelves mit dem Modul NSM100 oder NSM100B. Die Hauptunterschiede zwischen den Modulen sind:</block>
+  <block id="2486a91e78743df4d0cc635c5b8b51c8" category="list-text">NSM100-Regalmodule verwenden die integrierten Ports e0a und e0b.</block>
+  <block id="a93a7a45b049b849ed9c03ad1c596615" category="paragraph">Die Verkabelung des NS224-Regals zeigt NSM100B-Module anstelle von NSM100-Modulen. Die Verkabelung ist unabhängig vom Typ der verwendeten NSM-Module gleich, lediglich die Portnamen unterscheiden sich:</block>
+  <block id="30898d03a4ca37450e8ab2be81f38dd5" category="list-text">NSM100B-Module verwenden die Ports e1a und e1b auf einem E/A-Modul in Steckplatz 1.</block>
+  <block id="e6c68585977f6b3e8b2b4ced88ca3d4d" category="list-text">NSM100-Module verwenden integrierte (Onboard-)Ports e0a und e0b.</block>
+  <block id="215caa644827ccfb864125e557ed29f2" category="paragraph">Sie verkabeln jeden Controller mit jedem NSM-Modul im NS224-Regal mithilfe der Speicherkabel, die mit Ihrem Speichersystem geliefert wurden. Dabei kann es sich um den folgenden Kabeltyp handeln:</block>
+  <block id="6c69c43899171bbdeff48b0407169a1e" category="list-text">Stellen Sie sicher, dass die Führungsstifte am Schrank oder Telco-Rack sicher in die Führungsschlitze des Speichersystems passen.</block>
+  <block id="260e26066a84ba8b3722b386796dd177" category="image-alt">Symbol für ASA A90 ASA A70-Gewichtwarnung</block>
+  <block id="430f612bc8e82ffd0dfe48278467d55e" category="image-alt">ASA A20 A30 A50 Gewicht Vorsicht Symbol</block>
+  <block id="d7c72b30313c5745f0e330939a9ac031" category="paragraph">Ein ASA C30 Storage-System kann bis zu 27.9 kg (61.5 lbs) wiegen. Zum Anheben des Lagersystems zwei Personen oder einen Hydraulikhub verwenden.</block>
+  <block id="7dcb9af2c1167cd0c65ac5b5a874a41d" category="image-alt">ASA A20 A30 oder ein A50 Gewicht Vorsicht Symbol</block>
+  <block id="48931ca8df47e809f96404b5fc332cc1" category="list-text">Bei den Speichersystemen ASA A20, A30, A50 und ASA C30 leuchtet die Shelf-ID-Anzeige an der Vorderseite des Systemgehäuses nicht.</block>
 </blocks>
