@@ -21,9 +21,9 @@ Empfohlene Updates für Speicher-Firmware, SP/BMC-Firmware und Systemdateien wer
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.
-. Wählen Sie neben *Automatic Update* image:icon_kabob.gif["Drei vertikale blaue Punkte"], und wählen Sie dann *enable*.
-. Lesen und akzeptieren Sie die EULA.
-. Akzeptieren Sie die Standardeinstellungen, um Ihre Firmware und Systemdateien automatisch zu aktualisieren. Wählen Sie optional aus, um Benachrichtigungen anzuzeigen oder empfohlene Updates automatisch zu verwerfen.
+. Wählen Sie unter *Softwareupdates* die Option *Aktivieren* aus.
+. Lesen Sie die EULA.
+. Akzeptieren Sie die Standardeinstellung „Benachrichtigung über empfohlene Updates anzeigen“. Wählen Sie optional „Automatisch aktualisieren“ oder „Automatisch verwerfen“ für empfohlene Updates aus.
 . Wählen Sie diese Option, um zu bestätigen, dass Ihre Aktualisierungsänderungen auf alle aktuellen und zukünftigen Aktualisierungen angewendet werden.
 . Wählen Sie *Speichern*.
 
@@ -39,7 +39,7 @@ Deaktivieren Sie automatische Updates, wenn Sie die Möglichkeit haben möchten,
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.
-. Wählen Sie neben *Automatic Update* image:icon_kabob.gif["Drei vertikale blaue Punkte"], und wählen Sie dann *Disable*.
+. Wählen Sie unter *Softwareupdates* die Option *Deaktivieren* aus.
 
 
 .Ergebnis
@@ -53,7 +53,7 @@ Zeigen Sie eine Liste der Firmware- und Systemdatei-Updates an, die auf das Clus
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.
-. Wählen Sie neben *Automatisches Update* image:icon_kabob.gif["Drei vertikale blaue Punkte"], und wählen Sie dann *Alle automatischen Updates anzeigen*.
+. Wählen Sie neben *Software-Updates* image:icon_arrow.gif["Blauer Pfeil, der nach rechts zeigt"] und wählen Sie dann *Alle automatischen Updates anzeigen*.
 
 
 
@@ -64,7 +64,7 @@ Sie können festlegen, dass empfohlene Updates für Storage-Firmware, SP/BMC Fir
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.
-. Wählen Sie neben *Automatisches Update* image:icon_kabob.gif["Drei vertikale blaue Punkte"], und wählen Sie dann *Automatische Updates bearbeiten*.
+. Wählen Sie neben *Software-Updates* image:icon_arrow.gif["Blauer Pfeil, der nach rechts zeigt"] und wählen Sie dann *Alle anderen Updates* aus.
 . Aktualisieren Sie die Auswahl für automatische Aktualisierungen.
 . Wählen Sie *Speichern*.
 
@@ -80,8 +80,9 @@ Wenn Sie die Möglichkeit haben möchten, empfohlene Updates vor dem Herunterlad
 
 .Schritte
 . Laden Sie die Firmware-Aktualisierungsdatei auf einen Server oder lokalen Client herunter.
-. Wählen Sie im System Manager *Cluster > Übersicht*, und wählen Sie dann *Update*.
-. Wählen Sie *Firmware-Update*; die Option image:icon_update_firmware.png["Blaues Rechteck mit einem Pluszeichen, gefolgt von den Wörtern Firmware aktualisieren in weißen Buchstaben"].
+. Wählen Sie im System Manager *Cluster > Übersicht* und dann *Alle anderen Updates*.
+. Wählen Sie unter *Manuelle Updates* die Option *Firmware-Dateien hinzufügen* und anschließend *Vom Server herunterladen* oder *Vom lokalen Client hochladen*.
+. Installieren Sie die Firmware-Update-Datei.
 
 
 .Ergebnis

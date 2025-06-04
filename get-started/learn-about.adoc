@@ -1,9 +1,9 @@
 ---
 sidebar: sidebar 
 permalink: get-started/learn-about.html 
-keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, learn more, learn about, get started 
-summary: 'ASA r2 Systeme (ASA A1K, A90, A70, A50, A30, A20) bieten eine einheitliche Hardware- und Softwarelösung zur Vereinfachung der Benutzerfreundlichkeit für reine SAN-Kunden.' 
-searchtitle: Erfahren Sie mehr über die Systeme ASA A1K, A90, A70, A50, A30 und A20 
+keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, learn more, learn about, get started 
+summary: 'ASA r2-Systeme (ASA A1K, A90, A70, A50, A30, A20, C30) bieten eine einheitliche Hardware- und Softwarelösung für ein vereinfachtes Erlebnis für reine SAN-Kunden.' 
+searchtitle: Erfahren Sie mehr über die Systeme ASA A1K, A90, A70, A50, A30, A20 und C30 
 ---
 = Erfahren Sie mehr über ASA r2 Storage-Systeme
 :allow-uri-read: 
@@ -22,6 +22,7 @@ Die folgenden ASA-Plattformen werden als ASA r2-Systeme klassifiziert:
 * ASA A50
 * ASA A30
 * ASA A20
+* ASA C30
 
 
 ASA r2 Systeme unterstützen alle SAN-Protokolle (iSCSI, FC, NVMe/FC, NVMe/TCP). Die Protokolle iSCSI, FC, NVMe/FC und NVMe/TCP unterstützen die symmetrische aktiv/aktiv-Architektur für Multipathing, sodass alle Pfade zwischen Hosts und Storage aktiv/optimiert sind. Die iSCSI- und NVMe/TCP-Protokolle unterstützen direkte Pfade zwischen den Hosts und dem Storage.

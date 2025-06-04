@@ -31,6 +31,7 @@ Die folgenden NetApp ASA r2-Systeme werden ab ONTAP 9.16.1 unterstützt. Diese P
 * ASA A50
 * ASA A30
 * ASA A20
+* ASA C30
 
 
 |===

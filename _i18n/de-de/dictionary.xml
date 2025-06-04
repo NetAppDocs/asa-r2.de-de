@@ -184,29 +184,20 @@
   <block id="b1fa95bfdd87d26ef5f8aca8df282454" category="paragraph">ONTAP lädt automatisch Firmware- und Systemdateien auf Ihrem ASA r2-System herunter und aktualisiert diese standardmäßig. Wenn Sie die Möglichkeit haben möchten, empfohlene Updates vor dem Herunterladen und Installieren anzuzeigen, können Sie ONTAP System Manager verwenden, um automatisierte Updates zu deaktivieren oder Aktualisierungsparameter zu bearbeiten, um Ihnen Benachrichtigungen über verfügbare Updates anzuzeigen, bevor eine Aktion durchgeführt wird.</block>
   <block id="9543e3c5ee671be608b8d7358d2905b4" category="section-title">Aktivieren Sie automatische Updates</block>
   <block id="16dd8aa4e8a61c5fff4660292af260d6" category="paragraph">Empfohlene Updates für Speicher-Firmware, SP/BMC-Firmware und Systemdateien werden automatisch heruntergeladen und standardmäßig auf Ihrem ASA r2-System installiert. Wenn automatische Updates deaktiviert wurden, können Sie sie aktivieren, um das Standardverhalten wiederherzustellen.</block>
-  <block id="61afff9f522bbf671738bb412c8fe956" category="list-text">Wählen Sie neben *Automatic Update* <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>, und wählen Sie dann *enable*.</block>
-  <block id="a05df79f4b35e5abaa3bdc88c372d245" category="list-text">Lesen und akzeptieren Sie die EULA.</block>
-  <block id="e96b4d3ae2048d6e0ab6b5175cdc67ba" category="list-text">Akzeptieren Sie die Standardeinstellungen, um Ihre Firmware und Systemdateien automatisch zu aktualisieren. Wählen Sie optional aus, um Benachrichtigungen anzuzeigen oder empfohlene Updates automatisch zu verwerfen.</block>
   <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">Wählen Sie diese Option, um zu bestätigen, dass Ihre Aktualisierungsänderungen auf alle aktuellen und zukünftigen Aktualisierungen angewendet werden.</block>
   <block id="7ae6e72fcf95f7e0b8f4dbe1153d8398" category="paragraph">Empfohlene Aktualisierungen werden automatisch heruntergeladen und auf Ihrem ASA r2-System installiert, basierend auf Ihrer Auswahl für das Update.</block>
   <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">Deaktivieren Sie automatische Updates</block>
   <block id="6141cdc0ba26479d87d6b8c24af9fc18" category="paragraph">Deaktivieren Sie automatische Updates, wenn Sie die Möglichkeit haben möchten, empfohlene Updates vor der Installation anzuzeigen. Wenn Sie automatische Updates deaktivieren, müssen Sie Firmware- und Systemdateiaktualisierungen manuell durchführen.</block>
-  <block id="292eff21b210f8e769ea67e93af60cc2" category="list-text">Wählen Sie neben *Automatic Update* <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>, und wählen Sie dann *Disable*.</block>
   <block id="3a73131e5e1a3a498c8e055e84a30f60" category="paragraph">Automatische Updates sind deaktiviert. Sie sollten regelmäßig nach empfohlenen Updates suchen und entscheiden, ob Sie eine manuelle Installation durchführen möchten.</block>
   <block id="e8b8aa5f70e0a4459ca2284f8da3b813" category="section-title">Automatische Updates anzeigen</block>
   <block id="6edf33a55c81d08e5aac13aae918832c" category="paragraph">Zeigen Sie eine Liste der Firmware- und Systemdatei-Updates an, die auf das Cluster heruntergeladen wurden und für die automatische Installation geplant sind. Zeigen Sie auch Updates an, die zuvor automatisch installiert wurden.</block>
-  <block id="abd4e9614ca55c29d3b65381570676f5" category="list-text">Wählen Sie neben *Automatisches Update* <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>, und wählen Sie dann *Alle automatischen Updates anzeigen*.</block>
   <block id="c5f5044ff24461ba8a4e4a6bc2887bd0" category="section-title">Automatische Aktualisierungen bearbeiten</block>
   <block id="aa32761812c5105416e1c8de6901bbf8" category="paragraph">Sie können festlegen, dass empfohlene Updates für Storage-Firmware, SP/BMC Firmware und Ihre Systemdateien automatisch heruntergeladen und auf dem Cluster installiert werden. Alternativ können Sie festlegen, dass empfohlene Updates automatisch verworfen werden. Wenn Sie die Installation oder das Entlassen von Updates manuell steuern möchten, wählen Sie die Option, um benachrichtigt zu werden, wenn eine empfohlene Aktualisierung verfügbar ist. Sie können dann manuell auswählen, um sie zu installieren oder zu schließen.</block>
-  <block id="72c17efc027d7f0c3f48d02c16886905" category="list-text">Wählen Sie neben *Automatisches Update* <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>, und wählen Sie dann *Automatische Updates bearbeiten*.</block>
   <block id="820669251a6d9aa8a265e4aa20459cdf" category="list-text">Aktualisieren Sie die Auswahl für automatische Aktualisierungen.</block>
   <block id="aed3f23a5ce94e81514a2da9dce9b2ef" category="paragraph">Automatische Aktualisierungen werden basierend auf Ihrer Auswahl geändert.</block>
   <block id="d51f54f2a9182b10cea278ae35000b46" category="section-title">Aktualisieren Sie die Firmware manuell</block>
   <block id="bc1104446ea3d0b83abd00c11e939335" category="paragraph">Wenn Sie die Möglichkeit haben möchten, empfohlene Updates vor dem Herunterladen und Installieren anzuzeigen, können Sie automatische Updates deaktivieren und Ihre Firmware manuell aktualisieren.</block>
   <block id="bf48a37237272ddc300e21b45b8971dc" category="list-text">Laden Sie die Firmware-Aktualisierungsdatei auf einen Server oder lokalen Client herunter.</block>
-  <block id="484bee1f3996418a874aa526da0b5753" category="list-text">Wählen Sie im System Manager *Cluster &gt; Übersicht*, und wählen Sie dann *Update*.</block>
-  <block id="e5f510366eded3b692a9273af6f6bd62" category="inline-image-macro">Blaues Rechteck mit einem Pluszeichen, gefolgt von den Wörtern Firmware aktualisieren in weißen Buchstaben</block>
-  <block id="1c6248c9b917dc357a68441deb105f78" category="list-text">Wählen Sie *Firmware-Update*; die Option <block ref="86ace020e2f51d5cc4db2b665d9f2405" category="inline-image-macro-rx" type="image"></block>.</block>
   <block id="70bd8d7d7e01ac7ceebd8e8ba2be8da6" category="paragraph">Ihre Firmware wird aktualisiert.</block>
   <block id="a8d696bbc3e0da20e552c1bb59ce8581" category="doc">Managen von Benutzerkonten und Rollen auf ASA r2 Storage-Systemen</block>
   <block id="26c63dfee3232ccec05fbebd34b103b5" category="paragraph">Mit System Manager können Sie den Active Directory-Domänencontroller-Zugriff sowie die LDAP- und SAML-Authentifizierung für Ihre Benutzerkonten konfigurieren. Erstellen Sie Benutzerkontorollen, um bestimmte Funktionen zu definieren, die Benutzer, die den Rollen zugewiesen sind, auf dem Cluster ausführen können.</block>
@@ -1724,14 +1715,10 @@
   <block id="cc1a9524f9ddd8574a5553ccd90ee9c3" category="paragraph">Mithilfe der ONTAP Befehlszeilenschnittstelle (CLI) können Sie Schlüssel zwischen dem Schlüsselmanager auf Cluster-Ebene und einem Schlüsselmanager auf Storage-VM-Ebene migrieren.</block>
   <block id="5efbf2392161773688bf42568dd2c8c6" category="list-text">Migrieren der Schlüssel:</block>
   <block id="f7d82610ce1c76769575f4a95bb11e80" category="sidebar">Migrieren Sie die Datenverschlüsselung zwischen Schlüsselmanagern</block>
-  <block id="77a58a8f042eca52cbae63333451e567" category="summary">ASA r2 Systeme (ASA A1K, A90, A70, A50, A30, A20) bieten eine einheitliche Hardware- und Softwarelösung zur Vereinfachung der Benutzerfreundlichkeit für reine SAN-Kunden.</block>
-  <block id="16b2362ce213edbe317b5df3169d035c" category="searchtitle">Erfahren Sie mehr über die Systeme ASA A1K, A90, A70, A50, A30 und A20</block>
   <block id="feb8007866385642b73ef1e6524ba327" category="paragraph">Die NetApp ASA r2 Systeme bieten eine einheitliche Hardware- und Softwarelösung, mit der eine vereinfachte Erfahrung speziell für die Anforderungen reiner SAN-Kunden erzielt wird.</block>
   <block id="3ee9bc9a210bd85fa921ca63bdeef612" category="list-text">ASA A50</block>
   <block id="e21bdbd552261278be0a5ad02fbc6fa7" category="list-text">ASA A30</block>
   <block id="3c609b480f1311eaec9774146ac50e79" category="list-text">ASA A20</block>
-  <block id="eb020f30ead1b473ff4a75c9863c0d1a" category="summary">Um mit einem ASA r2-System (ASA A1K, A90, A70, A50, A30, A20) zu beginnen, installieren Sie die Hardware, richten das Cluster ein, richten den Datenzugriff ein und stellen den Speicher bereit.</block>
-  <block id="e25344cc16f12d622f2af42aea8ed7a8" category="searchtitle">Installation und Einrichtung der Speichersysteme ASA A1K, A90, A70, A50, A30 und A20</block>
   <block id="b3a1e3cfc607694cb423d46b8b23fa54" category="paragraph">Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über das Anschließen des Speichersystems an die Netzwerk-Switches zu erhalten.</block>
   <block id="28c4b42113d6ebd3c5e6ca40929d04a6" category="list-text">Die Verkabelungsgrafiken haben Pfeilsymbole, die die richtige Ausrichtung (nach oben oder unten) des Kabelsteckers zeigen, wenn ein Anschluss in einen Anschluss eingesetzt wird.</block>
   <block id="fd2cb99acafb4f0144bfb5e0e4c31373" category="paragraph">Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.</block>
@@ -1864,9 +1851,7 @@
   <block id="676b7066692787a119854c062d5f6c05" category="list-text">Auf jedem Controller oder bei einigen Systemen auf dem Systemmanagementmodul jedes Controllers</block>
   <block id="3b2136486adac3ad66275a45c07c6ebf" category="image-alt">Beispiel für die Seriennummer des Systems</block>
   <block id="6b127ae60215df1a5f77bc62deb0fa41" category="list-text">Wenn die Seriennummer nicht aufgeführt ist, folgen Sie den Anweisungen für neue NetApp Kunden.</block>
-  <block id="556e0ee8174fe1dd298dfe165915e58f" category="summary">Bestimmte ONTAP-Befehle werden auf ASA r2-Systemen nicht unterstützt (ASA A1K, ASA 90, ASA 70, ASA A50, ASA A30, ASA A20).</block>
   <block id="d4b904a6ceddca0805b85998f1946d36" category="paragraph">Die folgenden NetApp ASA r2-Systeme werden ab ONTAP 9.16.1 unterstützt. Diese Plattformen bieten eine einheitliche Hardware- und Softwarelösung, die eine vereinfachte Benutzererfahrung bietet, speziell für die Anforderungen von reinen SAN-Kunden.</block>
-  <block id="1afab26d25573baff41c4a297e2b15fb" category="sidebar">Die NetApp ASA r2 Systeme (ASA A1K, ASA A90, ASA A70, ASA A50, ASA A30, ASA A20) bieten eine einheitliche Hardware- und Softwarelösung, die eine vereinfachte Benutzererfahrung speziell für die Anforderungen von reinen SAN-Kunden schafft.</block>
   <block id="9e607734cbe02d05fcbdf2a8bd579b3a" category="inline-link-macro">Unterstützung der Verschlüsselungsmigration zwischen Schlüsselmanagern</block>
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">Wenn Sie vom integrierten ONTAP Schlüsselmanager zu einem externen Schlüsselmanager auf Cluster-Ebene wechseln, können Sie die ONTAP Befehlszeilenschnittstelle (CLI) verwenden, um die Schlüssel problemlos von einem Schlüsselmanager auf den anderen zu migrieren.</block>
@@ -1960,4 +1945,20 @@
   <block id="d7c72b30313c5745f0e330939a9ac031" category="paragraph">Ein ASA C30 Storage-System kann bis zu 27.9 kg (61.5 lbs) wiegen. Zum Anheben des Lagersystems zwei Personen oder einen Hydraulikhub verwenden.</block>
   <block id="7dcb9af2c1167cd0c65ac5b5a874a41d" category="image-alt">ASA A20 A30 oder ein A50 Gewicht Vorsicht Symbol</block>
   <block id="48931ca8df47e809f96404b5fc332cc1" category="list-text">Bei den Speichersystemen ASA A20, A30, A50 und ASA C30 leuchtet die Shelf-ID-Anzeige an der Vorderseite des Systemgehäuses nicht.</block>
+  <block id="39256e8b85463e186dc7bbc4daac9a22" category="list-text">Wählen Sie unter *Softwareupdates* die Option *Aktivieren* aus.</block>
+  <block id="c06b2149bbe3e94f6eac8a64039cc025" category="list-text">Lesen Sie die EULA.</block>
+  <block id="d6aeb9cf91111f522e0f1901518a3836" category="list-text">Akzeptieren Sie die Standardeinstellung „Benachrichtigung über empfohlene Updates anzeigen“. Wählen Sie optional „Automatisch aktualisieren“ oder „Automatisch verwerfen“ für empfohlene Updates aus.</block>
+  <block id="03e58722e5fd35b95b0154a42ee279d7" category="list-text">Wählen Sie unter *Softwareupdates* die Option *Deaktivieren* aus.</block>
+  <block id="e087c576f536a1cc1b027d2338ddf55d" category="list-text">Wählen Sie neben *Software-Updates* <block ref="5f3155aaa1f70c7a47a7d47ad66cef2b" category="inline-image-macro-rx" type="image"></block> und wählen Sie dann *Alle automatischen Updates anzeigen*.</block>
+  <block id="e3cdf65f6a174657c946f8da21d91054" category="list-text">Wählen Sie neben *Software-Updates* <block ref="5f3155aaa1f70c7a47a7d47ad66cef2b" category="inline-image-macro-rx" type="image"></block> und wählen Sie dann *Alle anderen Updates* aus.</block>
+  <block id="97edade986fff30cbc58d1915b7fc92b" category="list-text">Wählen Sie im System Manager *Cluster &gt; Übersicht* und dann *Alle anderen Updates*.</block>
+  <block id="7d089e6b0cd0c4c6a9cc9f51d3933449" category="list-text">Wählen Sie unter *Manuelle Updates* die Option *Firmware-Dateien hinzufügen* und anschließend *Vom Server herunterladen* oder *Vom lokalen Client hochladen*.</block>
+  <block id="a8e89726f0704bd34a60f163989365a7" category="list-text">Installieren Sie die Firmware-Update-Datei.</block>
+  <block id="7c0a9ac67bcf9f088200f570d11de5cb" category="summary">ASA r2-Systeme (ASA A1K, A90, A70, A50, A30, A20, C30) bieten eine einheitliche Hardware- und Softwarelösung für ein vereinfachtes Erlebnis für reine SAN-Kunden.</block>
+  <block id="9e6435d0d0e7d0459a63bf9be064a900" category="searchtitle">Erfahren Sie mehr über die Systeme ASA A1K, A90, A70, A50, A30, A20 und C30</block>
+  <block id="14a1b02d9ac34f22a362671d392a3852" category="list-text">ASA C30</block>
+  <block id="e2c77d4bd35cfd8d81e8af62db4c144b" category="summary">Um mit einem ASA r2-System (ASA A1K, A90, A70, A50, A30, A20, C30) zu beginnen, installieren Sie die Hardware, richten Sie den Cluster ein, richten Sie den Datenzugriff ein und stellen Sie den Speicher bereit.</block>
+  <block id="434872b119bd955476c150025f7da4b2" category="searchtitle">Installieren und Einrichten der Speichersysteme ASA A1K, A90, A70, A50, A30, A20 und C30</block>
+  <block id="c3993bfac3ec8dac794fe31c3a3f3195" category="summary">Bestimmte ONTAP-Befehle werden auf ASA r2-Systemen (ASA A1K, ASA 90, ASA 70, ASA A50, ASA A30, ASA A20, ASA C30) nicht unterstützt.</block>
+  <block id="13af08b425d55aad64c53d60ae2a530a" category="sidebar">Die NetApp ASA r2-Systeme (ASA A1K, ASA A90, ASA A70, ASA A50, ASA A30, ASA A20, ASA C30) bieten eine einheitliche Hardware- und Softwarelösung, die ein vereinfachtes Erlebnis bietet, das speziell auf die Anforderungen von Nur-SAN-Kunden zugeschnitten ist.</block>
 </blocks>

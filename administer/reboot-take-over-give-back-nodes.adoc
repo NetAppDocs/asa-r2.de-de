@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: administer/reboot-take-over-give-back-nodes.html 
-keywords: reboot, take over, give back, nodes, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20 
+keywords: reboot, take over, give back, nodes, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30 
 summary: Möglicherweise müssen Sie einen Node aus Wartungsgründen, zur Fehlerbehebung, zu Softwareupdates oder aus anderen administrativen Gründen neu booten. 
 ---
 = Starten Sie einen Node auf einem ASA r2-Speichersystem neu

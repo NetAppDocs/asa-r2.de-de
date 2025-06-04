@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: learn-more/hardware-comparison.html 
-keywords: compare asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, hardware comparison, asa r2 
+keywords: compare asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, hardware comparison, asa r2 
 summary: ASA Systeme bieten Hardware-Support, der für reine SAN-Lösungen optimiert ist. ASA r2 Systeme ermöglichen die Optimierung von Hardware und Software. 
 searchtitle: Vergleichen Sie ASA r2 Systeme mit anderen ONTAP Systemen 
 ---
@@ -62,6 +62,7 @@ Die folgenden ASA-Plattformen werden als ASA r2-Systeme klassifiziert:
 * ASA A50
 * ASA A30
 * ASA A20
+* ASA C30
 
 
 .Finden Sie weitere Informationen
