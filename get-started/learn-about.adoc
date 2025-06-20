@@ -37,7 +37,7 @@ Bei ASA r2-Systemen werden Storage-Einheiten mit Konsistenzgruppen eingesetzt:
 
 ASA r2 Systeme verwenden Storage-Einheiten und Konsistenzgruppen, um das Storage-Management und die Datensicherung zu vereinfachen. Angenommen, Sie haben eine Datenbank, die aus 10 Speichereinheiten in einer Konsistenzgruppe besteht, und Sie müssen die gesamte Datenbank sichern. Anstatt jede Storage-Einheit einzeln zu sichern, können Sie die gesamte Datenbank schützen, indem Sie die Konsistenzgruppe sichern.
 
-ASA r2 Systeme unterstützen einen integrierten Schlüsselmanager, eine zweischichtige Verschlüsselung, manipulationssichere Snapshots, Multi-Faktor-Authentifizierung und die Verifizierung durch mehrere Administratoren, um Daten vor schädlichen Angriffen wie Diebstahl oder Ransomware zu schützen.
+Um Ihre Daten vor böswilligen Angriffen wie Diebstahl oder Ransomware zu schützen, unterstützen ASA r2-Systeme einen integrierten Schlüsselmanager, Dual-Layer-Verschlüsselung, Multi-Faktor-Authentifizierung und Multi-Admin-Verifizierung. Manipulationssichere Snapshots werden auch auf sekundären ASA r2-Systemen unterstützt.
 
 ASA r2-Systeme unterstützen keine gemeinsame Verwendung von Clustern mit aktuellen ASA-, AFF- oder FAS-Systemen.
 
