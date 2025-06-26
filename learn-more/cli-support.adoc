@@ -22,9 +22,6 @@ Die folgenden Befehle und Befehlssets werden auf ASA unter r2 nicht unterstützt
 ====
 * `lun copy`
 * `lun geometry`
-* `lun import`
-* `lun mapping add-reportng-nodes`
-* `lun mapping-remove-reporting-nodes`
 * `lun maxsize`
 * `lun move`
 * `lun move-in-volume`
