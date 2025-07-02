@@ -26,9 +26,42 @@ Die folgenden Befehle und Befehlssets werden auf ASA unter r2 nicht unterstützt
 * `lun move`
 * `lun move-in-volume`
 +
-Dieser Befehl wurde durch lun-Umbenennung/vserver nvme-Namespace-Umbenennung ersetzt.
+
+NOTE: Der  `lun move-in-volume` Befehl wird ersetzt durch den  `lun rename` und die  `vserver nvme namespace rename` Befehle.
 
 * `lun transition`
+
+
+====
+.Nicht unterstützte <code>-</code>-Befehle
+[%collapsible]
+====
+* `storage failover show-takeover`
+* `storage failover show-giveback`
+* `storage aggregate relocation`
+* `storage disk assign`
+* `storage disk partition`
+* `storage disk reassign`
+
+
+====
+.Nicht unterstützte <code>-</code>-Befehlssätze
+[%collapsible]
+====
+* `volume activity-tracking`
+* `volume analytics`
+* `volume conversion`
+* `volume file`
+* `volume flexcache`
+* `volume flexgroup`
+* `volume inode-upgrade`
+* `volume object-store`
+* `volume qtree`
+* `volume quota`
+* `volume reallocation`
+* `volume rebalance`
+* `volume recovery-queue`
+* `volume schedule-style`
 
 
 ====
@@ -41,7 +74,7 @@ Dieser Befehl wurde durch lun-Umbenennung/vserver nvme-Namespace-Umbenennung ers
 * `volume expand`
 * `volume modify`
 +
-Dieser Befehl ist nicht verfügbar, wenn er in Verbindung mit den folgenden Parametern verwendet wird:
+Der  `volume modify` Der Befehl ist nicht verfügbar, wenn er in Verbindung mit den folgenden Parametern verwendet wird:
 
 +
 ** `-anti-ransomware-state`
@@ -103,38 +136,6 @@ Dieser Befehl ist nicht verfügbar, wenn er in Verbindung mit den folgenden Para
 * `volume snapshot`
 * `volume snapshot autodelete modify`
 * `volume snapshot policy modify`
-
-
-====
-.Nicht unterstützte <code>-</code>-Befehlssätze
-[%collapsible]
-====
-* `volume activity-tracking`
-* `volume analytics`
-* `volume conversion`
-* `volume file`
-* `volume flexcache`
-* `volume flexgroup`
-* `volume inode-upgrade`
-* `volume object-store`
-* `volume qtree`
-* `volume quota`
-* `volume reallocation`
-* `volume rebalance`
-* `volume recovery-queue`
-* `volume schedule-style`
-
-
-====
-.Nicht unterstützte <code>-</code>-Befehle
-[%collapsible]
-====
-* `storage failover show-takeover`
-* `storage failover show-giveback`
-* `storage aggregate relocation`
-* `storage disk assign`
-* `storage disk partition`
-* `storage disk reassign`
 
 
 ====
