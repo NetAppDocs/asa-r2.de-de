@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-confirm-cluster-configuration.html 
 keywords: asa r2, data protection, business continuity, snapmirror active sync, cluster configuration 
-summary: Zeigen Sie Warnungen vor potenziellen Ransomware-Angriffen an und ergreifen Sie Maßnahmen im System Manager. 
+summary: Bevor Sie SnapMirror Active Sync konfigurieren, sollten Sie sicherstellen, dass Ihre ASA R2-Cluster in einer unterstützten Peering-Beziehung stehen und weitere Konfigurationsanforderungen erfüllen. 
 ---
 = Bestätigen Sie Ihre ASA R2-Clusterkonfiguration, bevor Sie SnapMirror Active Sync konfigurieren
 :allow-uri-read: 
@@ -24,7 +24,7 @@ link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Erstel
 
 . Bestätigen Sie, dass zwischen den virtuellen Speichermaschinen (VMs) auf jedem Cluster eine Peer-Beziehung besteht.
 +
-link:create-svm-peer-relationship.html["Erstellen einer Intercluster-Speicher-VM-Peer-Beziehung"^] .
+link:create-svm-peer-relationship.html["Erstellen einer Intercluster-Speicher-VM-Peer-Beziehung"] .
 
 . Bestätigen Sie, dass auf jedem Knoten im Cluster mindestens ein LIF erstellt wird.
 +
