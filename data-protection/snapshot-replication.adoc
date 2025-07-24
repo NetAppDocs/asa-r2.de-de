@@ -25,6 +25,9 @@ Um die Snapshot-Replikation einzurichten, müssen Sie eine Replikationsbeziehung
 
 Bevor Sie Ihre Daten schützen können, indem Sie sie auf ein Remote-Cluster replizieren, müssen Sie eine Cluster-Peer-Beziehung zwischen dem lokalen und dem Remote-Cluster erstellen.
 
+.Bevor Sie beginnen
+Die Voraussetzungen für Cluster-Peering sind für ASA R2-Systeme dieselben wie für andere ONTAP Systeme. link:https://docs.netapp.com/us-en/ontap/peering/prerequisites-cluster-peering-reference.html["Überprüfen der Voraussetzungen für Cluster-Peering"] .
+
 .Schritte
 . Wählen Sie im lokalen Cluster im System Manager *Cluster > Einstellungen* aus.
 . Wählen Sie unter *Intercluster Settings* neben *Cluster Peers* image:icon_kabob.gif["Drei vertikale blaue Punkte"]die Option , und wählen Sie dann *Cluster Peer hinzufügen* aus.

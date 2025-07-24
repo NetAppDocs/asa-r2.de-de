@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync.html 
+keywords: asa r2, data protection, business continuity, snapmirror active sync, zero rpo, zero rto, disaster recovery, symmetric active/active, workflow 
+summary: 'Verwenden Sie SnapMirror Active Sync, um Hostanwendungen, die ein Recovery Point Objective (RPO) und ein Recovery Time Objective (RTO) von null erfordern, vor Ausfällen aufgrund unerwarteter Störungen oder Site-Katastrophen zu schützen.' 
+---
+= SnapMirror Active Sync-Setup-Workflow
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Datenschutz von ONTAP SnapMirror Active Sync ermöglicht die Weiterführung von Geschäftsdiensten auch bei einem vollständigen Standortausfall und unterstützt Anwendungen beim transparenten Failover mithilfe einer sekundären Kopie. Mit SnapMirror Active Sync sind keine manuellen Eingriffe oder benutzerdefinierten Skripts erforderlich, um ein Failover auszulösen.
+
+Während sich die Verfahren des System Managers zum Konfigurieren von SnapMirror Active Sync auf ASA R2-Systemen von denen auf NetApp FAS, AFF und ASA -Systemen mit der einheitlichen ONTAP Persönlichkeit unterscheiden, sind die Anforderungen, die Architektur und der Betrieb von SnapMirror Active Sync dieselben.
+
+link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["Erfahren Sie mehr über SnapMirror Active Sync"^] .
+
+Auf ASA R2-Systemen unterstützt SnapMirror Active Sync symmetrische Aktiv/Aktiv-Konfigurationen. In einer symmetrischen Aktiv/Aktiv-Konfiguration können beide Standorte für aktive E/A auf den lokalen Speicher zugreifen.
+
+Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["symmetrische Aktiv/Aktiv-Konfigurationen"^] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] Bereiten Sie die Konfiguration der aktiven SnapMirror -Synchronisierung vor.
+[role="quick-margin-para"]
+Zu link:snapmirror-active-sync-prepare.html["Bereiten Sie die Konfiguration von SnapMirror Active Sync vor"] Sie sollten auf Ihrem ASA R2-System die Konfigurationsvoraussetzungen überprüfen, die Unterstützung für Ihre Host-Betriebssysteme bestätigen und sich über Objektbeschränkungen im Klaren sein, die sich auf bestimmte Konfigurationen auswirken könnten.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Bestätigen Sie Ihre Clusterkonfiguration.
+[role="quick-margin-para"]
+Bevor Sie SnapMirror Active Sync konfigurieren, sollten Sie link:snapmirror-active-sync-confirm-cluster-configuration.html["Bestätigen Sie, dass Ihre ASA R2-Cluster in den richtigen Peering-Beziehungen stehen und andere Konfigurationsanforderungen erfüllen"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Installieren Sie ONTAP Mediator.
+[role="quick-margin-para"]
+Mit ONTAP Mediator oder ONTAP Cloud Mediator können Sie den Zustand Ihres Clusters überwachen und die Geschäftskontinuität sicherstellen. Wenn Sie ONTAP Mediator verwenden, müssen Sie link:install-ontap-mediator.html["Installieren Sie es"] auf Ihrem Host. Wenn Sie ONTAP Cloud Mediator verwenden, können Sie diesen Schritt überspringen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"] Konfigurieren Sie ONTAP Mediator oder ONTAP Cloud Mediator mit selbstsignierten Zertifikaten.
+[role="quick-margin-para"]
+Sie müssen link:configure-ontap-mediator.html["ONTAP Mediator oder ONTAP Cloud Mediator konfigurieren"] bevor Sie es mit SnapMirror Active Sync zur Clusterüberwachung verwenden können.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"] Konfigurieren Sie die aktive Synchronisierung von SnapMirror .
+[role="quick-margin-para"]
+link:configure-snapmirror-active-sync.html["Konfigurieren Sie SnapMirror Active Sync"] um eine Kopie Ihrer Daten an einem sekundären Standort zu erstellen und Ihren Hostanwendungen im Katastrophenfall ein automatisches und transparentes Failover zu ermöglichen.

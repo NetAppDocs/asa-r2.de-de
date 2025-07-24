@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: data-protection/configure-snapmirror-active-sync.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: Erfahren Sie, wie Sie SnapMirror Active Sync konfigurieren, um die Geschäftskontinuität sicherzustellen, indem Sie eine sekundäre Datenkopie erstellen und im Katastrophenfall ein automatisches Failover aktivieren. 
+---
+= Konfigurieren Sie SnapMirror Active Sync auf ASA R2-Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Konfigurieren Sie SnapMirror Active Sync, um eine Kopie Ihrer Daten an einem sekundären Standort zu erstellen und Ihren Hostanwendungen im Katastrophenfall ein automatisches und transparentes Failover zu ermöglichen.
+
+Auf ASA R2-Systemen unterstützt SnapMirror Active Sync symmetrische Aktiv/Aktiv-Konfigurationen. In einer symmetrischen Aktiv/Aktiv-Konfiguration können beide Standorte für aktive E/A auf den lokalen Speicher zugreifen.
+
+
+NOTE: Wenn Sie das iSCSI- oder FC-Protokoll verwenden und ONTAP Tools für VMware Sphere nutzen, können Sie optional link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["Verwenden Sie ONTAP Tools für VM Ware, um SnapMirror Active Sync zu konfigurieren"^] .
+
+.Bevor Sie beginnen
+link:create-snapshots.html#step-1-optionally-create-a-consistency-group["Erstellen einer Konsistenzgruppe"] am primären Standort mit neuen Speichereinheiten. Wenn Sie eine nicht einheitliche symmetrische Aktiv/Aktiv-Konfiguration erstellen möchten, erstellen Sie auch am sekundären Standort eine Konsistenzgruppe mit neuen Speichereinheiten.
+
+Erfahren Sie mehr über  https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/#key-concepts["ungleichmäßig"] symmetrische Aktiv/Aktiv-Konfigurationen.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Bewegen Sie den Mauszeiger über den Namen der Konsistenzgruppe, die Sie mit SnapMirror Active Sync schützen möchten.
+. Wählen image:icon_kabob.gif["Drei vertikale blaue Punkte"] und wählen Sie dann *Schützen*.
+. Wählen Sie unter *Remote Protection* *Replicate to a Remote Cluster* aus.
+. Wählen Sie einen vorhandenen Cluster-Peer aus oder wählen Sie „Einen neuen hinzufügen“ aus.
+. Wählen Sie die Speicher-VM aus.
+. Wählen Sie als Replikationsrichtlinie *AutomatedFailOverDuplex* aus.
+. Wenn Sie eine nicht einheitliche symmetrische Aktiv/Aktiv-Konfiguration erstellen, wählen Sie *Zieleinstellungen* aus und geben Sie dann den Namen der neuen Zielkonsistenzgruppe ein, die Sie erstellen, bevor Sie mit diesem Verfahren beginnen.
+. Wählen Sie *Speichern*.
+
+
+.Ergebnis
+SnapMirror Active Sync ist zum Schutz Ihrer Daten konfiguriert, sodass Sie im Katastrophenfall den Betrieb mit einem Recovery Point Objective (RPO) und einer Recovery Time Objective (RTO) von Null fortsetzen können.

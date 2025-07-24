@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: secure-data/pause-resume-anti-ransomware-protection.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, pause, resume, suspend 
+summary: Wenn Sie ein ungewöhnliches Workload-Ereignis planen, können Sie die ARP/AI-Analyse vorübergehend aussetzen, um falsch positive Erkennungen von Ransomware-Angriffen zu verhindern. 
+---
+= Autonomen Ransomware-Schutz mit KI auf Ihren ASA R2-Speichersystemen pausieren oder fortsetzen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ab ONTAP 9.17.1 können Sie Autonomous Ransomware Protection mit künstlicher Intelligenz (ARP/AI) nutzen, um die Daten auf Ihrem ASA r2-System zu schützen. Bei einem ungewöhnlichen Workload-Ereignis können Sie die ARP/AI-Analyse vorübergehend aussetzen, um Fehlalarme bei Ransomware-Angriffen zu verhindern. Nach Abschluss des Workload-Ereignisses können Sie die ARP/AI-Analyse fortsetzen.
+
+
+
+== ARP/AI pausieren
+
+Bevor Sie mit einem ungewöhnlichen Workload-Ereignis beginnen, müssen Sie die ARP/AI-Analyse möglicherweise vorübergehend aussetzen, um falsch positive Erkennungen von Ransomware-Angriffen zu verhindern.
+
+.Schritte
+. Wählen Sie im System Manager *Storage* aus.
+. Wählen Sie die Speichereinheiten aus, für die Sie ARP/AI pausieren möchten.
+. Wählen Sie *Anti-Ransomware pausieren*.
+
+
+.Ergebnis
+Die ARP/AI-Analyse wird für die ausgewählten Speichereinheiten angehalten und Ihnen werden im System Manager keine verdächtigen Aktivitäten gemeldet, bis Sie ARP/AI wieder aufnehmen.
+
+
+
+== ARP/AI fortsetzen
+
+Wenn Sie ARP/AI während einer ungewöhnlichen Arbeitslast anhalten, sollten Sie es nach Abschluss der Arbeitslast fortsetzen, um Ihre Daten vor Ransomware-Angriffen zu schützen.
+
+.Schritte
+. Wählen Sie im System Manager *Storage* aus.
+. Wählen Sie die Speichereinheiten aus, für die Sie ARP/AI fortsetzen möchten.
+. Wählen Sie *Anti-Ransomware fortsetzen*.
+
+
+.Ergebnis
+Die Analyse potenzieller Ransomware-Angriffe wird fortgesetzt und verdächtige Aktivitäten werden Ihnen im System Manager gemeldet.

@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: data-protection/create-svm-peer-relationship.html 
+keywords: restore data, asa r2, data restoration 
+summary: Wenn Daten in einer Konsistenzgruppe beschädigt sind oder verloren gehen, können Sie die gesamte Konsistenzgruppe aus einem Remote-Snapshot wiederherstellen. 
+---
+= Erstellen Sie eine Intercluster-Speicher-VM-Peer-Beziehung auf ASA R2-Speichersystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Eine Peer-Beziehung definiert Netzwerkverbindungen, die Clustern und virtuellen Speichermaschinen (VMs) den sicheren Datenaustausch ermöglichen. Erstellen Sie Peer-Beziehungen zwischen Speicher-VMs auf verschiedenen Clustern, um Datenschutz und Notfallwiederherstellung mit SnapMirror zu ermöglichen.
+
+link:https://docs.netapp.com/us-en/ontap/peering/peering-basics-concept.html["Erfahren Sie mehr über Peer-Beziehungen"^] .
+
+.Bevor Sie beginnen
+Sie müssen eine Cluster-Peer-Beziehung zwischen dem lokalen und dem Remote-Cluster hergestellt haben, bevor Sie eine Speicher-VM-Peer-Beziehung erstellen können. link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Erstellen einer Cluster-Peer-Beziehung"] falls Sie dies nicht bereits getan haben.
+
+.Schritte
+. Wählen Sie im System Manager *Schutz > Übersicht*.
+. Wählen Sie unter *Storage-VM-Peers* die Option *Einen Storage-VM-Peer hinzufügen* aus.
+. Wählen Sie die Speicher-VM auf dem lokalen Cluster und dann die Speicher-VM auf dem Remote-Cluster aus.
+. Wählen Sie *Einen Speicher-VM-Peer hinzufügen*.
+

@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: secure-data/modify-arp-snapshot-retention-period.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: Erfahren Sie, wie Sie die Aufbewahrungszeiträume von ARP-Snapshots an Ihre Speicher- und Geschäftsanforderungen anpassen. 
+---
+= Ändern Sie die Aufbewahrungsfristen für ARP/AI-Snapshots auf ASA R2-Speichersystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Autonomous Ransomware Protection mit Künstlicher Intelligenz (ARP/AI) ungewöhnliche Aktivitäten auf einer oder mehreren Ihrer ASA r2-Systemspeichereinheiten erkennt, erstellt es automatisch einen ARP-Snapshot, um die Daten der Speichereinheit zu schützen. Abhängig von Ihrer Speicherkapazität und den geschäftlichen Anforderungen an Ihre Daten können Sie die standardmäßige Aufbewahrungsdauer für ARP-Snapshots verlängern oder verkürzen. Beispielsweise können Sie die Aufbewahrungsdauer für geschäftskritische Anwendungen verlängern, um bei Bedarf längere Aufbewahrungsfristen für die Datenwiederherstellung zu haben, oder die Aufbewahrungsdauer für nicht-kritische Anwendungen verkürzen, um Speicherplatz zu sparen.
+
+Die standardmäßige Aufbewahrungsdauer für den ARP-Snapshot variiert je nach der Aktion, die Sie als Reaktion auf die abnormale Aktivität ergreifen.
+
+[cols="2,2"]
+|===
+| Wenn Sie diese Aktion ausführen ... | ARP-Snapshots werden standardmäßig aufbewahrt für... 
+
+
+| Als falsch positiv markieren | 12 Stunden 
+
+
+| Als potenziellen Ransomware-Angriff markieren | 7 Tage 
+
+
+| Ergreifen Sie keine sofortigen Maßnahmen | 10 Tage 
+|===
+Die Standardaufbewahrungsfristen können über die ONTAP Befehlszeilenschnittstelle (CLI) geändert werden. Siehe  https://docs.netapp.com/us-en/ontap/anti-ransomware/modify-automatic-snapshot-options-task.html["Optionen für automatische ONTAP -Snapshots ändern"] für Schritte zum Ändern der Standardaufbewahrungsdauer.

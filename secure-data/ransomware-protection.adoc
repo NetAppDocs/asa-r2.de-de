@@ -4,7 +4,7 @@ permalink: secure-data/ransomware-protection.html
 keywords: asa r2, secure data, data security, ransomware, ransomware attacks, protection 
 summary: Mit manipulationssicheren Snapshots sichern Sie Ihre Daten. Manipulationssichere Snapshots können nicht gelöscht oder für die Wiederherstellung von Daten genutzt werden, die durch einen Ransomware-Angriff kompromittiert wurden. 
 ---
-= Schutz vor Ransomware-Angriffen auf ASA r2 Storage-Systeme
+= Erstellen Sie manipulationssichere Snapshots zum Schutz vor Ransomware-Angriffen auf ASA R2-Speichersysteme
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -12,7 +12,22 @@ searchtitle: Vergleichen Sie ASA r2 Systeme mit anderen ONTAP Systemen
 
 
 [role="lead"]
-ASA r2 Systeme bieten eine Hardware- und Softwarelösung für reine SAN-Umgebungen mit All-Flash-Plattformen. ASA r2 Systeme unterscheiden sich bei der Implementierung ihrer Storage-Ebene, unterstützter Protokolle und ONTAP Persönlichkeit von anderen ONTAP Systemen (ASA, AFF und FAS).
+ASA R2-Systeme bieten eine Hardware- und Softwarelösung für reine SAN-Umgebungen auf Basis von All-Flash-Plattformen. ASA R2-Systeme unterscheiden sich von anderen ONTAP Systemen (ASA, AFF und FAS) in der Implementierung der ONTAP Persönlichkeit, der Speicherschicht und der unterstützten Protokolle.
+
+Die folgenden ASA-Plattformen werden als ASA r2-Systeme klassifiziert:
+
+* ASA A1K
+* ASA A90
+* ASA A70
+* ASA A50
+* ASA A30
+* ASA A20
+* ASA C30
+
+
+
+
+== Persönlichkeitsunterschiede
 
 Auf einem ASA r2 System wird die ONTAP Software optimiert, um wichtige SAN-Funktionen zu unterstützen und gleichzeitig die Sichtbarkeit und Verfügbarkeit von nicht-SAN-bezogenen Funktionen zu beschränken. Beispielsweise zeigt System Manager, der auf einem ASA r2 System ausgeführt wird, keine Optionen zum Erstellen von Home Directorys für NAS-Clients an. Diese optimierte Version von ONTAP wird als _ASA r2 Personality_ bezeichnet. ONTAP auf ASA Systemen wird als _ASA ONTAP Personality_ identifiziert. ONTAP auf AFF und FAS ONTAP Systemen wird als „_Unified ONTAP Personality_“ bezeichnet. Die Unterschiede zwischen den ONTAP-Persönlichkeiten werden in der ONTAP-Befehlsreferenz (man-Pages), in der REST-API-Spezifikation und ggf. in EMS-Meldungen erwähnt.
 
@@ -24,11 +39,35 @@ Sie können die Persönlichkeit Ihres ONTAP-Speichers vom System Manager oder vo
 
 Die Persönlichkeit Ihres ONTAP Storage-Systems kann nicht geändert werden.
 
-Die Storage-Ebene für ONTAP Systeme, auf denen die Unified ONTAP Personality ausgeführt wird, verwendet Aggregate als Storage-Basiseinheit. Ein Aggregat besitzt einen bestimmten Satz der in einem Storage-System verfügbaren Festplatten. Das Aggregat weist den Speicherplatz auf den Festplatten zu, denen es Volumes für LUNs und Namespaces besitzt. Ein einheitlicher ONTAP-Benutzer kann über die Befehlszeilenschnittstelle (CLI) Aggregate, Volumes, LUNs und Namespaces erstellen und ändern.
 
-Die Storage-Ebene in ASA r2 Systemen verwendet anstelle von Aggregaten eine Storage-Verfügbarkeitszone. Eine Storage-Verfügbarkeitszone ist ein gemeinsamer Speicherpool, der Zugriff auf alle verfügbaren Festplatten im Speichersystem hat. Die Storage-Verfügbarkeitszone ist für beide Nodes in einem ASA r2 HA-Paar sichtbar. Bei der Erstellung einer Storage-Einheit (entweder auf Basis einer LUN oder eines NVMe Namespace) erstellt ONTAP automatisch ein Volume innerhalb der ausgewählten Storage Virtual Machine (VM) in der Storage-Verfügbarkeitszone, um die Storage-Einheit zu beherbergen. Aufgrund dieses automatisierten und vereinfachten Ansatzes für das Storage-Management sind bestimmte System Manager Optionen, ONTAP Befehle und REST-API-Endpunkte nicht verfügbar oder werden von einem ASA r2 System nur eingeschränkt genutzt. Da beispielsweise `volume create` die Erstellung und Verwaltung von Volumes für ASA r2-Systeme automatisiert ist, wird das Menü *Volumes* im System-Manager nicht angezeigt und der Befehl wird nicht unterstützt.
 
-ASA r2 Storage wird wie folgt mit anderen ONTAP Storage-Systemen verglichen:
+== Unterschiede der Speicherebenen
+
+ASA r2-Systeme verwenden eine vereinfachte Speicherschicht, die sich von der Speicherschicht unterscheidet, die von FAS, AFF und ASA Systemen verwendet wird.
+
+.FAS, AFF und ASA -Systeme
+Die Speicherschicht für FAS -, AFF- und ASA -Systeme verwendet Aggregate als Basisspeichereinheit. Ein Aggregat besitzt einen bestimmten Satz der im Speichersystem verfügbaren Festplatten. Das Aggregat weist den Speicherplatz auf den zugehörigen Festplatten Volumes für LUNs und Namespaces zu. Mit diesen Systemen können ONTAP Benutzer Aggregate, Volumes, LUNs und Namespaces erstellen und ändern.
+
+.ASA r2-Systeme
+Anstelle von Aggregaten verwendet die Speicherebene in ASA r2-Systemen Speicherverfügbarkeitszonen. Eine Speicherverfügbarkeitszone ist ein gemeinsamer Speicherpool, der beiden Knoten eines HA-Paares zur Verfügung steht. Beide Knoten im HA-Paar haben Zugriff auf alle verfügbaren Festplatten in ihrer gemeinsamen Speicherverfügbarkeitszone. Beispielsweise gibt es in einem ASA r2-System- ONTAP Cluster mit zwei Knoten eine Speicherverfügbarkeitszone, auf die beide Knoten im Cluster zugreifen können. In einem ASA r2-System- ONTAP Cluster mit vier Knoten gibt es zwei Speicherverfügbarkeitszonen. Jedes HA-Paar im Cluster hat Zugriff auf eine der Speicherverfügbarkeitszonen.
+
+Beim Erstellen einer Speichereinheit (basierend auf einem LUN- oder NVMe-Namespace) erstellt ONTAP automatisch ein Volume in der entsprechenden Storage Availability Zone, um die Speichereinheit unterzubringen. Das neu erstellte Volume wird automatisch in der Storage Availability Zone platziert, um optimale Leistung und eine ausgewogene Kapazitätsauslastung zu gewährleisten. Abhängig von Ihrer ONTAP-Version unterstützen ASA r2-Systeme auch die automatische Neuverteilung von Speichereinheiten in der Storage Availability Zone und die automatische Neuverteilung von Workloads zwischen den Knoten in einem HA-Paar.
+
+* Automatische Neugewichtung der Speichereinheiten
++
+Ab ONTAP 9.16.1 verschiebt ONTAP Speichereinheiten automatisch nach Bedarf, um die Auslastung auszugleichen und die Leistung zu optimieren, wenn eine Speichereinheit so zunimmt oder abnimmt, dass ein Ungleichgewicht in der Speicherauslastung in der gesamten Speicherverfügbarkeitszone entsteht.
+
+* Automatischer Workload-Ausgleich
++
+Ab ONTAP 9.17.1 gleicht ONTAP die Workloads automatisch zwischen den Knoten eines ASA r2-System-HA-Paares aus, um optimale Leistung zu erzielen. Steigt beispielsweise die Auslastung eines Knotens auf 70 %, während die Auslastung des HA-Partners nur 30 % beträgt, verschiebt ONTAP die Workloads automatisch, sodass die Auslastung der einzelnen Knoten besser ausgeglichen wird. Da die Knoten des HA-Paares dieselbe Storage Availability Zone nutzen, erfolgt die Workload-Neuverteilung kopierfrei und ohne Auswirkungen auf die Leistung. Die automatische Workload-Neuverteilung wird standardmäßig 14 Tage nach dem Upgrade auf ONTAP 9.17.1 oder der Initialisierung eines neuen ONTAP 9.17.1 ASA r2-Clusters aktiviert. Sie können link:../administer/rebalance-workloads.html["Ändern Sie die Standardeinstellung"] um die automatische Neuverteilung der Arbeitslast zu aktivieren oder zu deaktivieren oder um sie in einen beratenden Zustand zu versetzen, um unausgeglichene Arbeitslasten zu kennzeichnen, ohne sie automatisch zu verschieben.
+
+
+
+
+
+== Zusammenfassung der ASA r2-Systemunterschiede
+
+ASA r2-Systeme unterscheiden sich von FAS, AFF und ASA -Systemen in folgenden Punkten:
 
 [cols="1h,2,2,2,2"]
 |===
@@ -54,26 +93,7 @@ ASA r2 Storage wird wie folgt mit anderen ONTAP Storage-Systemen verglichen:
 *Unterstützung der Speicherschicht*
 | Zone der Storage-Verfügbarkeit | Aggregate | Aggregate | Aggregate 
 |===
-Die folgenden ASA-Plattformen werden als ASA r2-Systeme klassifiziert:
-
-* ASA A1K
-* ASA A90
-* ASA A70
-* ASA A50
-* ASA A30
-* ASA A20
-* ASA C30
-
-
-.Finden Sie weitere Informationen
-* Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap-systems-family/intro-family.html["ONTAP Hardwaresysteme"^].
-* Siehe vollständige Konfigurationsunterstützung und -Einschränkungen für ASA- und ASA r2-Systeme in link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
-* Erfahren Sie mehr über die link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^].
-
-
-
-
-== Zusammenfassung der ASA r2-Systemunterschiede
+Aufgrund dieses automatisierten und vereinfachten Ansatzes zur Speicherverwaltung sind bestimmte System Manager-Optionen, ONTAP -Befehle und REST-API-Endpunkte auf einem ASA r2-System nicht verfügbar oder nur eingeschränkt nutzbar. Da beispielsweise die Volume-Erstellung und -Verwaltung für ASA r2-Systeme automatisiert ist, wird das Menü *Volumes* im System Manager nicht angezeigt und die  `volume create` Befehl wird nicht unterstützt. link:cli-support.html["Erfahren Sie mehr über nicht unterstützte ASA R2-Befehle"] .
 
 Die Hauptunterschiede zwischen ASA r2 Systemen und FAS, AFF und ASA Systemen, die für die ONTAP Befehlszeilenschnittstelle (CLI) und REST API relevant sind, werden im Folgenden beschrieben.
 
@@ -88,3 +108,9 @@ Storage-Einheiten werden auf ASA r2-Storage-Systemen immer über Thin Provisioni
 
 .Änderungen an der Datenkomprimierung
 Temperaturempfindliche Storage-Effizienz wird auf ASA r2-Systemen nicht angewendet. Auf ASA r2-Systemen basiert die Komprimierung nicht auf _Hot_-Daten (auf die häufig zugegriffen wird) oder _Cold_-Daten (auf die selten zugegriffen wird). Die Komprimierung beginnt, ohne auf Daten zu warten, die kalt werden.
+
+.Finden Sie weitere Informationen
+* Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap-systems-family/intro-family.html["ONTAP Hardwaresysteme"^].
+* Siehe vollständige Konfigurationsunterstützung und -Einschränkungen für ASA- und ASA r2-Systeme in link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
+* Erfahren Sie mehr über die link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^].
+

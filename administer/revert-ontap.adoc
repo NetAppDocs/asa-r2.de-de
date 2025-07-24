@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: administer/revert-ontap.html 
+keywords: update, revert, ontap, asa r2 
+summary: ONTAP aktualisiert automatisch die Firmware auf ASA r2-Systemen. Sie können System Manager verwenden, um automatische Updates zu deaktivieren und Updates anzuzeigen, bevor sie installiert werden. 
+---
+= ONTAP auf ASA R2-Speichersystemen zurücksetzen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP -Software-Reverts für ASA R2-Systeme folgen demselben Prozess wie Reverts für andere ONTAP Systeme.
+
+Das Zurücksetzen eines ONTAP -Clusters ist störend. Sie müssen den Cluster für die Dauer des Zurücksetzens offline nehmen. Sie sollten einen Produktionscluster nicht ohne Unterstützung durch den technischen Support zurücksetzen. Sie können einen neuen oder Testcluster ohne Unterstützung zurücksetzen. Wenn das Zurücksetzen eines neuen oder Testsystems fehlschlägt oder erfolgreich abgeschlossen wird, Sie aber mit der Cluster-Leistung in Ihrer Produktionsumgebung nicht zufrieden sind, wenden Sie sich an den technischen Support.
+
+link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["Einen ONTAP Cluster zurücksetzen"] .
+
+
+
+== Rückgängigmachen der Anforderungen für ASA R2-Systeme
+
+Bei bestimmten ASA R2-Clusterkonfigurationen müssen Sie bestimmte Maßnahmen ergreifen, bevor Sie mit der Wiederherstellung der ONTAP -Software beginnen.
+
+
+
+=== Zurücksetzen von ONTAP 9.17.1
+
+Wenn Sie von ONTAP 9.17.1 auf einem ASA R2-System zurückkehren, sollten Sie vor Beginn der Rücksetzung die folgenden Aktionen ausführen:
+
+[cols="2"]
+|===
+| Wenn Sie... | Bevor Sie zurückkehren, sollten Sie ... 
+
+
+| Hierarchische Konsistenzgruppen in einer SnapMirror Active Sync-Beziehung | Entfernen Sie die SnapMirror Active Sync-Beziehung 
+
+
+| Aktive Importbeziehungen | Löschen der aktiven Importbeziehungen 
+
+
+| Anti-Ransomware-Schutz aktiviert | Deaktivieren Sie den Anti-Ransomware-Schutz 
+|===

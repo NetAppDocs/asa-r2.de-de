@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: manage-data/create-host-groups.html 
+keywords: create host group, map storage units, host access, asa r2 
+summary: Erstellen Sie Hostgruppen, um Hosts Zugriff auf Speichereinheiten zu gewähren und Speicherzuordnungen effektiv zu verwalten. 
+---
+= Erstellen Sie Hostgruppen auf Ihrem ASA R2-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf einem ASA r2-System ist eine _Host-Gruppe_ der Mechanismus, der verwendet wird, um Hosts Zugriff auf Speichereinheiten zu gewähren. Eine Host-Gruppe bezieht sich auf eine Initiatorgruppe für SCSI-Hosts oder auf ein NVMe-Subsystem für NVMe-Hosts. Ein Host kann nur die Speichereinheiten sehen, die den Host-Gruppen zugeordnet sind, zu denen er gehört. Wenn eine Hostgruppe einer Speichereinheit zugeordnet ist, können die Hosts, die Mitglieder der Gruppe sind, die Speichereinheit mounten (Verzeichnisse und Dateistrukturen erstellen).
+
+Hostgruppen werden automatisch oder manuell erstellt, wenn Sie Ihre Speichereinheiten erstellen. Sie können optional die folgenden Schritte ausführen, um Hostgruppen vor oder nach der Erstellung der Speichereinheit zu erstellen.
+
+.Schritte
+. Wählen Sie im System Manager *Host* aus.
+. Wählen Sie die Hosts aus, die Sie der Host-Gruppe hinzufügen möchten.
++
+Nachdem Sie den ersten Host ausgewählt haben, wird die Option zum Hinzufügen zu einer Host-Gruppe über der Liste der Hosts angezeigt.
+
+. Wählen Sie *zu Host-Gruppe hinzufügen*.
+. Suchen Sie nach der Hostgruppe, der Sie den Host hinzufügen möchten, und wählen Sie sie aus.
+
+
+.Was kommt als Nächstes?
+Sie haben eine Hostgruppe erstellt und können nun link:provision-san-storage.html#map-the-storage-unit-to-a-host["ordnen Sie es einer Speichereinheit zu"] .

@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-unplanned-failover.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: Erfahren Sie, wie Sie SnapMirror Active Sync-Beziehungen nach einem ungeplanten Failover Ihrer ASA R2-Cluster wiederherstellen. 
+---
+= Stellen Sie die SnapMirror Active Sync-Beziehung nach einem ungeplanten Failover Ihrer ASA R2-Cluster wieder her
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein automatisches ungeplantes Failover (AUFO) erfolgt, wenn der primäre Cluster ausfällt oder isoliert ist. Der Mediator erkennt das Failover und führt ein automatisches ungeplantes Failover zum sekundären Cluster aus. Der sekundäre Cluster wird zum primären Cluster konvertiert und beginnt mit der Bereitstellung von Clients.
+
+.Bevor Sie beginnen
+* Die aktive Synchronisierungsbeziehung von SnapMirror muss synchronisiert sein.
+* Sie können kein geplantes Failover einleiten, wenn gerade ein unterbrechungsfreier Vorgang, beispielsweise das Verschieben einer Speichereinheit, ausgeführt wird.
+* Der ONTAP Mediator muss konfiguriert, verbunden und im Quorum sein.
+
+
+.Schritte
+. Wählen Sie *Schutz > Replikation*.
+. Wählen Sie die SnapMirror Active Sync-Beziehung aus, die Sie wiederherstellen möchten.
+. Warten Sie, bis der Beziehungsstatus *InSync* anzeigt.
+. Wählen image:icon_kabob.gif["Drei vertikale blaue Punkte"] ; wählen Sie dann *Failover*, um den Betrieb auf dem ursprünglichen primären Cluster fortzusetzen.
+
+
+.Was kommt als Nächstes
+Um den Verlust von E/A-Pfaden zu Ihren Hosts zu verhindern, müssen Sie die Hostpfade nach der Wiederaufnahme des Betriebs auf dem primären Cluster erneut scannen.

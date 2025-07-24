@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: secure-data/respond-anti-ransomware-protection-alerts.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: Zeigen Sie Warnungen vor potenziellen Ransomware-Angriffen an und ergreifen Sie Maßnahmen im System Manager. 
+---
+= Reagieren Sie auf autonomen Ransomware-Schutz mit KI-Warnungen auf ASA R2-Speichersystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn der autonome Ransomware-Schutz mit künstlicher Intelligenz (ARP/AI) ungewöhnliche Aktivitäten auf einer oder mehreren Ihrer ASA r2-Systemspeichereinheiten erkennt, wird eine Warnung im System Manager-Dashboard angezeigt. Sie sollten die Warnung anzeigen, die Aktivität überprüfen und gegebenenfalls Maßnahmen ergreifen, um eine potenzielle Bedrohung Ihrer Daten zu verhindern.
+
+Wenn eine ARP/AI-Warnmeldung angezeigt wird, sollten Sie vor dem Ergreifen von Maßnahmen die Integrität der Daten auf dem Speichergerät mit einem entsprechenden Anwendungsintegritätsprüfer überprüfen. Durch die Überprüfung der Datenintegrität des Speichergeräts können Sie feststellen, ob die Aktivität akzeptabel ist oder ob es sich um einen potenziellen Ransomware-Angriff handelt.
+
+[cols="2,2"]
+|===
+| Wenn die abnormale Aktivität ... ist. | Dann tun Sie Folgendes ... 
+
+
+| Akzeptabel | Markieren Sie die Aktivität als falsch-positiv. 
+
+
+| Ein potenzieller Ransomware-Angriff | Markieren Sie die Aktivität als potenziellen Ransomware-Angriff. 
+
+
+| Unbestimmt | Ergreifen Sie keine sofortigen Maßnahmen. Überwachen Sie den Speicher bis zu 7 Tage lang. Wenn der Speicher weiterhin normal funktioniert, markieren Sie die Aktivität als falsch positiv. Wenn der Speicher weiterhin ungewöhnliche Aktivitäten aufweist, markieren Sie die Aktivität als potenziellen Ransomware-Angriff. 
+|===
+.Schritte
+. Wählen Sie in System Manager *Dashboard* aus.
++
+Wenn ARP auf einer oder mehreren Speichereinheiten eine ungewöhnliche Aktivität festgestellt hat, wird unter *Warnungen* eine Meldung angezeigt.
+
+. Wählen Sie die Warnmeldung aus.
+. Wählen Sie unter *Ereignisübersicht* die Meldung *Warnungen* aus, die die Anzahl der Speichereinheiten mit abnormaler Aktivität angibt.
+. Wählen Sie unter *Speichereinheiten mit ungewöhnlicher Aktivität* die Speichereinheit aus.
+. Wählen Sie *Sicherheit*.
++
+Bei ungewöhnlichen Aktivitäten auf dem Speichergerät wird unter *Anti-Ransomware* eine Meldung angezeigt.
+
+. Wählen Sie *Aktion auswählen*.
+. Wählen Sie *Als falsch-positiv markieren* oder *Als potenziellen Ransomware-Angriff markieren*.
+

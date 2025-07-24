@@ -11,9 +11,9 @@ summary: 'Bestimmte ONTAP-Befehle werden auf ASA r2-Systemen (ASA A1K, ASA 90, A
 
 
 [role="lead"]
-Anstelle von herkömmlichen Aggregaten, die einen bestimmten Satz der in einem Storage-System verfügbaren Festplatten besitzen, verwenden ASA r2 Systeme eine Storage-Verfügbarkeitszone_. Eine Storage-Verfügbarkeitszone ist ein gemeinsamer Speicherpool, der Zugriff auf alle verfügbaren Festplatten im Speichersystem hat. Die Storage-Verfügbarkeitszone ist für beide Nodes in einem ASA r2 HA-Paar sichtbar. Bei der Erstellung einer Storage-Einheit (LUN oder NVMe Namespace) erstellt ONTAP automatisch ein Volume mit einer Storage Virtual Machine (VM) in der Storage-Verfügbarkeitszone, um die Storage-Einheit zu beherbergen.
+Anstelle von Aggregaten verwendet die Speicherebene in ASA r2-Systemen Speicherverfügbarkeitszonen. Eine Speicherverfügbarkeitszone ist ein gemeinsamer Speicherpool, der einem einzelnen HA-Paar zur Verfügung steht. Beide Knoten im HA-Paar haben Zugriff auf alle verfügbaren Festplatten in ihrer gemeinsamen Speicherverfügbarkeitszone. Beim Erstellen einer Speichereinheit (LUN oder NVMe-Namespace) erstellt ONTAP automatisch ein Volume in der entsprechenden Speicherverfügbarkeitszone, um die Speichereinheit aufzunehmen.
 
-Aufgrund dieses vereinfachten Ansatzes `storage aggregate` für das Storage-Management werden Befehle auf ASA r2 Systemen nicht unterstützt.  `lun` `volume`Auch die Unterstützung bestimmter Befehle und Parameter und ist begrenzt.
+Aufgrund dieses vereinfachten Ansatzes zur Speicherverwaltung  `storage aggregate` Befehle werden auf ASA r2-Systemen nicht unterstützt. Unterstützung für bestimmte  `lun` ,  `storage` Und  `volume` Befehle und Parameter sind ebenfalls begrenzt.
 
 Die folgenden Befehle und Befehlssets werden auf ASA unter r2 nicht unterstützt:
 

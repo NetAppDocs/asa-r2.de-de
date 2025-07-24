@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: data-protection/configure-ontap-mediator.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: Erfahren Sie, wie Sie den ONTAP Mediator mit selbstsignierten Zertifikaten für ASA R2-Systeme konfigurieren. 
+---
+= Konfigurieren Sie Mediator mit selbstsignierten Zertifikaten auf ASA R2-Systemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen ONTAP Mediator oder ONTAP Cloud Mediator konfigurieren, bevor Sie SnapMirror Active Sync zur Clusterüberwachung nutzen können. ONTAP Mediator und ONTAP Cloud Mediator bieten beide einen persistenten und abgeschirmten Speicher für Hochverfügbarkeits-Metadaten (HA), die von den ONTAP Clustern in einer SnapMirror Active Sync-Beziehung verwendet werden. Darüber hinaus bieten beide Mediatoren eine synchrone Knotenzustandsabfragefunktion zur Unterstützung der Quorumbestimmung und dienen als Ping-Proxy zur Controller-Aktivitätserkennung.
+
+.Bevor Sie beginnen
+* Wenn Sie ONTAP Cloud Mediator verwenden, überprüfen Sie, ob Ihr ASA r2-System die erforderlichen link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_mediator_requirements.html["Voraussetzungen"^] .
+
+
+.Schritte
+. Wählen Sie im System Manager *Schutz > Übersicht*.
+. Wählen Sie im rechten Bereich neben *Mediatoren* image:icon_kabob.gif["Drei vertikale blaue Punkte"] ; wählen Sie dann *Mediator hinzufügen*.
+. Wählen Sie den *Mediatortyp* aus.
+. Geben Sie für einen *Cloud*-Mediator die Organisations-ID, die Client-ID und das Client-Geheimnis ein. Geben Sie für einen *On-Premises*-Mediator die IP-Adresse, den Port, den Mediator-Benutzernamen und das Mediator-Passwort ein.
+. Wählen Sie den Cluster-Peer aus der Liste der berechtigten Cluster-Peers aus oder wählen Sie *Cluster-Peer hinzufügen*, um einen neuen hinzuzufügen.
+. Kopieren Sie den Inhalt der  `intermediate.crt` Datei und fügen Sie sie in das Feld *Zertifikat* ein, oder wählen Sie *Importieren*, um zum  `intermediate.crt` Datei und importieren Sie die Zertifikatsinformationen.
+. Wählen Sie *Hinzufügen*.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie den Mediator initialisiert haben, können Sie link:configure-snapmirror-active-sync.html["Konfigurieren Sie SnapMirror Active Sync"] um eine Kopie Ihrer Daten an einem sekundären Standort zu erstellen und Ihren Hostanwendungen im Katastrophenfall ein automatisches und transparentes Failover zu ermöglichen.

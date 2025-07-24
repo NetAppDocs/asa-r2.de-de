@@ -69,7 +69,7 @@ Die folgenden NetApp ASA r2-Systeme werden ab ONTAP 9.16.1 unterstützt. Diese P
 | Aktualisieren | Beschreibung 
 
 
-| Unterstützung für eine automatische Ausbalancierung von Storage-Einheiten | ONTAP balanciert die Storage-Einheiten automatisch über Ihre Storage-Verfügbarkeitszonen hinweg aus, um optimale Performance und Kapazitätsauslastung zu erzielen. 
+| link:../learn-more/hardware-comparison.html["Unterstützung für eine automatische Ausbalancierung von Storage-Einheiten"] | ONTAP balanciert die Storage-Einheiten automatisch über Ihre Storage-Verfügbarkeitszonen hinweg aus, um optimale Performance und Kapazitätsauslastung zu erzielen. 
 
 
 | Der NVMe-Leerraum ist standardmäßig aktiviert  a| 

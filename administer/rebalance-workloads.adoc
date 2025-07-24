@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: administer/rebalance-workloads.html 
+keywords: rename, node, renaming, asa r2 
+summary: Ab ONTAP 9.17.1 gleicht ONTAP die Arbeitslasten zwischen den Knoten in einem ASA R2-System-HA-Paar automatisch aus, um eine optimale Leistung zu erzielen. 
+---
+= Neuverteilung der Arbeitslasten zwischen Knoten auf ASA R2-Speichersystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ab ONTAP 9.17.1 gleicht ONTAP die Workloads automatisch zwischen den Knoten eines ASA R2-System-HA-Paares aus, um optimale Leistung zu erzielen. Steigt beispielsweise die Auslastung eines Knotens auf 70 %, während die des HA-Partners nur 30 % beträgt, verschiebt ONTAP die Workloads automatisch, sodass die Auslastung der einzelnen Knoten besser ausgeglichen wird. Da die Knoten des HA-Paares dieselbe Storage Availability Zone nutzen, erfolgt die Workload-Neuverteilung kopierfrei und ohne Auswirkungen auf die Leistung.
+
+
+
+== Ändern des Standardauswertungszeitraums für die automatische Neuverteilung der Arbeitslast
+
+Die automatische Lastverteilung wird standardmäßig 14 Tage nach dem Upgrade auf ONTAP 9.17.1 oder der Initialisierung eines neuen ONTAP 9.17.1 ASA r2-Clusters aktiviert. Über die ONTAP -Befehlszeilenschnittstelle (CLI) können Sie den Standard-Evaluierungszeitraum Ihren betrieblichen Anforderungen entsprechend verlängern oder verkürzen.
+
+.Schritte
+. Überprüfen Sie die Anzahl der verbleibenden Tage des Evaluierungszeitraums:
++
+[source, cli]
+----
+placement rebalance config show -fields evaluation-window
+----
+. Ändern Sie den Bewertungszeitraum für die Neugewichtung:
++
+[source, cli]
+----
+placement rebalance config modify -evaluation-window <number_of_evaluation_days>
+----
++
+Im folgenden Beispiel wird der verbleibende Auswertungszeitraum auf 10 Tage festgelegt.
+
++
+[listing]
+----
+placement rebalance config modify -evaluation-window 10
+----
+
+
+
+
+== Ändern der Einstellung für die automatische Neuverteilung der Arbeitslast
+
+Die automatische Neuverteilung der Workloads wird standardmäßig 14 Tage nach dem Upgrade auf ONTAP 9.17.1 oder der Initialisierung eines neuen ONTAP 9.17.1 ASA r2-Clusters aktiviert. Sie können die Standardeinstellung ändern, um die automatische Neuverteilung der Workloads zu deaktivieren oder sie auf einen empfohlenen Status zu setzen, um unausgeglichene Workloads zu kennzeichnen, ohne sie automatisch zu verschieben.
+
+.Schritt
+. Überprüfen Sie den aktuell auf Ihren Knoten eingestellten Neuausgleichsmodus:
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+. Ändern Sie die Einstellung für die automatische Neuverteilung der Arbeitslast:
++
+[source, cli]
+----
+placement rebalance config modify -mode <disabled|advisory|automated>
+----
+. Überprüfen Sie, ob der Neuausgleichsmodus geändert wurde:
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+
+
+
+
+== Manuelles Auslösen einer Neuverteilung der Arbeitslast
+
+Wenn Sie die automatische Neuverteilung der Arbeitslast deaktiviert haben, können Sie sie dennoch manuell auslösen. Dies ist nützlich, wenn Sie die Arbeitslasten nach einer Phase manueller Anpassungen neu verteilen möchten oder wenn Sie den Neuverteilungsmodus auf „Beratend“ gesetzt haben und basierend auf den Arbeitslast-Flags Maßnahmen ergreifen möchten.
+
+.Schritte
+. Überprüfen Sie den aktuell auf Ihren Knoten eingestellten Neuausgleichsmodus:
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+. Wenn der Rebalancing-Modus nicht auf *beratend* eingestellt ist, stellen Sie ihn auf *beratend* ein:
++
+[source, cli]
+----
+placement rebalance config modify -mode advisory
+----
+. Lösen Sie manuell eine Neuverteilung der Arbeitslast aus:
++
+[source, cli]
+----
+balanced-placement rebalance execute
+----
+. Zeigen Sie den Status des Neuausgleichsvorgangs an:
++
+[source, cli]
+----
+placement rebalance config show-evaluation
+----
+
+
+.Was kommt als Nächstes?
+Wenn Sie den Rebalancing-Modus auf *automatisch* oder *deaktiviert* einstellen möchten, können Sie dies tun, indem Sie die  `placement rebalance config modify` Befehl.

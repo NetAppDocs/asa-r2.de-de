@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: manage-data/delete-host-groups.html 
+keywords: delete host groups, remove host groups, igroup, nvme subsystem, asa r2 
+summary: Löschen Sie Hostgruppen, um den Hostzugriff auf Speichereinheiten auf Ihrem ASA R2-System zu entfernen. 
+---
+= Löschen einer Hostgruppe auf Ihrem ASA R2-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf einem ASA R2-System dient eine Hostgruppe dazu, Hosts Zugriff auf Speichereinheiten zu gewähren. Eine Hostgruppe bezeichnet eine igroup für SCSI-Hosts oder ein NVMe-Subsystem für NVMe-Hosts. Ein Host kann nur die Speichereinheiten sehen, die den zugehörigen Hostgruppen zugeordnet sind. Sie können eine Hostgruppe löschen, wenn die Hosts in der Gruppe keinen Zugriff mehr auf die zugeordneten Speichereinheiten haben sollen.
+
+.Schritte
+. Wählen Sie im System Manager *Storage* aus.
+. Wählen Sie unter *Host-Zuordnung* die Host-Gruppe aus, die Sie löschen möchten.
+. Wählen Sie *Zugeordneter Speicher*.
+. Wählen Sie *Mehr* und dann *Löschen*.
+. Wählen Sie zur Bestätigung, dass Sie fortfahren möchten, und wählen Sie dann *Löschen*.
+
+
+.Was kommt als Nächstes?
+Die Hostgruppe wird gelöscht. Die Hosts in der Gruppe haben keinen Zugriff mehr auf die Speichereinheiten, die der Hostgruppe zugeordnet waren.

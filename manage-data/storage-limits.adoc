@@ -19,10 +19,16 @@ ASA r2-Systeme unterstützen Folgendes:
 |===
 
 
-| Max. Nodes pro Cluster | 12 
+| Maximale Anzahl von Knoten pro Cluster | 12 
 
 
-| Maximale Größe der Speichereinheit | 128 TB 
+| Maximale Anzahl von Speichereinheiten pro Cluster | 30.000 
+
+
+| Maximale Speichereinheitsgröße | 128 TB 
+
+
+| Maximale Größe der Speicherverfügbarkeitszone | 2 PB 
 |===
 .Finden Sie weitere Informationen
 Eine vollständige Liste der aktuellen ASA r2-Speicherlimits finden Sie unter link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
