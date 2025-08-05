@@ -27,6 +27,12 @@ link:https://docs.netapp.com/us-en/ontap-sanhost/hu_vsphere_8.html["VMware vSphe
 
 Wenn Sie Ihren VM-Workload von einem ASA Storage-System auf ein ASA r2 Storage-System migrieren müssen, empfiehlt NetApp die Verwendung link:https://www.vmware.com/products/cloud-infrastructure/vsphere/vmotion["VMware vSphere vMotion"^] für eine Live-Migration Ihrer Daten ohne Unterbrechungen.
 
+.Verwandte Informationen
+* Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html["die Vorteile der Verwendung von ONTAP für vSphere"^] .
+* Erfahren Sie mehr überlink:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["VMware Live Site Recovery mit ONTAP"^] .
+* Erfahren Sie mehr überlink:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_overview.html#continuous-availability-solutions-for-vsphere-environments["Kontinuierliche Verfügbarkeitslösungen für vSphere-Umgebungen"^] .
+
+
 
 
 == Migrieren Sie Daten aus einem Speichersystem eines Drittanbieters

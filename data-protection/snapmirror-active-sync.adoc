@@ -17,6 +17,8 @@ Während sich die Verfahren des System Managers zum Konfigurieren von SnapMirror
 
 link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["Erfahren Sie mehr über SnapMirror Active Sync"^] .
 
+link:https://www.netapp.com/pdf.html?item=/media/138366-sb-3457-san-disaster-recovery-netapp-asa.pdf["Erfahren Sie mehr über Disaster Recovery mit SnapMirror Active Sync auf Ihrem ASA R2-System"^]
+
 Auf ASA R2-Systemen unterstützt SnapMirror Active Sync symmetrische Aktiv/Aktiv-Konfigurationen. In einer symmetrischen Aktiv/Aktiv-Konfiguration können beide Standorte für aktive E/A auf den lokalen Speicher zugreifen.
 
 Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["symmetrische Aktiv/Aktiv-Konfigurationen"^] .
