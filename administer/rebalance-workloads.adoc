@@ -19,6 +19,9 @@ Ab ONTAP 9.17.1 gleicht ONTAP die Workloads automatisch zwischen den Knoten eine
 
 Die automatische Lastverteilung wird standardmäßig 14 Tage nach dem Upgrade auf ONTAP 9.17.1 oder der Initialisierung eines neuen ONTAP 9.17.1 ASA r2-Clusters aktiviert. Über die ONTAP -Befehlszeilenschnittstelle (CLI) können Sie den Standard-Evaluierungszeitraum Ihren betrieblichen Anforderungen entsprechend verlängern oder verkürzen.
 
+
+NOTE: Sie können auf Ihrem ASA R2-System nicht von ONTAP 9.17.1 zurückkehren, nachdem die automatische Neuverteilung der Arbeitslast aktiviert wurde.
+
 .Schritte
 . Überprüfen Sie die Anzahl der verbleibenden Tage des Evaluierungszeitraums:
 +
