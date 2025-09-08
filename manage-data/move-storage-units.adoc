@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/move-storage-units.html 
 keywords: move lun, lun move, move namespace, move storage unit, asa r2 
-summary: Löschen Sie die Speichereinheiten, um die benötigte Menge an physischem Speicher zu verringern oder Speicherplatz für andere Hostanwendungen freizugeben. 
+summary: Wenn in einer Storage-Verfügbarkeitszone der Speicherplatz knapp ist, können Sie Storage-Einheiten auf eine andere Storage-Verfügbarkeitszone verschieben, um die Storage-Auslastung im Cluster auszugleichen. 
 ---
 = Verschieben Sie Speichereinheiten auf ASA r2-Speichersystemen
 :allow-uri-read: 

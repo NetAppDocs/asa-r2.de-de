@@ -40,6 +40,12 @@ Informieren Sie sich über die neuen Funktionen in ONTAP 9.17.1 für ASA r2-Syst
 
 
 | link:../data-protection/snapmirror-active-sync.html["SnapMirror Active Sync-Unterstützung für NVMe-Protokolle"] | SnapMirror Active Sync unterstützt VMware-Workloads mit NVMe/TCP- und NVMe/FC-Hostzugriff für ONTAP Cluster mit zwei Knoten. Die Unterstützung von VMware-Workloads für NVMe/TCP hängt von der Behebung der VMware-Fehler-ID TR1049746 ab. 
+
+
+| link:../data-protection/manage-consistency-groups.html["Unterstützung für Geometrieänderungen an Konsistenzgruppen in Replikationsbeziehungen"] | ASA R2-Systeme unterstützen Geometrieänderungen an Konsistenzgruppen in einer SnapMirror Active Sync- oder einer asynchronen Replikationsbeziehung, ohne die SnapMirror Active Sync-Beziehung zu löschen oder die asynchrone Beziehung zu unterbrechen.  Wenn in der primären Konsistenzgruppe eine Geometrieänderung auftritt, wird die Änderung in die sekundäre Konsistenzgruppe repliziert. 
+
+
+| link:../data-protection/snapshot-replication.html["Unterstützung für die asynchrone Replikation untergeordneter Konsistenzgruppen"] | Asynchrone Replikationsrichtlinien können auf Konsistenzgruppen in hierarchischen Beziehungen angewendet werden. 
 |===
 
 

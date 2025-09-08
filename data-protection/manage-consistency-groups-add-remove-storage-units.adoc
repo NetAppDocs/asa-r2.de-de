@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-add-remove-storage-units.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity, shrink 
+summary: Erhöhen oder verringern Sie die Größe einer Konsistenzgruppe, indem Sie die Anzahl der Speichereinheiten in der Konsistenzgruppe ändern. 
+---
+= Ändern Sie die Größe der Konsistenzgruppen auf Ihrem ASA R2-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erhöhen oder verringern Sie die Größe einer Konsistenzgruppe, indem Sie die Anzahl der Speichereinheiten in der Konsistenzgruppe ändern.
+
+
+
+== Fügen Sie einer Konsistenzgruppe Speichereinheiten hinzu
+
+Erweitern Sie die von einer Konsistenzgruppe gemanagte Speichermenge, indem Sie der Konsistenzgruppe Speichereinheiten hinzufügen.
+
+Sie können der Konsistenzgruppe vorhandene Storage-Einheiten hinzufügen oder neue Storage-Einheiten erstellen, die der Konsistenzgruppe hinzugefügt werden sollen.
+
+.Bevor Sie beginnen
+Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie erweitern möchten, in einer SnapMirror Active Sync-Beziehung ist, müssen Sielink:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] bevor Sie Speichereinheiten hinzufügen können.  Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe in einer asynchronen Replikationsbeziehung steht, müssen Sielink:snapmirror-active-sync-break-relationship.html["die Beziehung abbrechen"] bevor Sie die Konsistenzgruppe erweitern können.  Das Löschen der SnapMirror Active-Sync-Beziehung oder das Aufbrechen der asynchronen Beziehung vor dem Erweitern einer Konsistenzgruppe ist in ONTAP 9.17.1 und späteren Versionen nicht erforderlich.
+
+[role="tabbed-block"]
+====
+.Vorhandene Speichereinheiten hinzufügen
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie erweitern möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Expand*.
+. Wählen Sie *mit vorhandenen Speichereinheiten*.
+. Wählen Sie die Speichereinheiten aus, die der Consistency Group hinzugefügt werden sollen, und wählen Sie dann *Expand* aus.
+
+
+--
+.Fügen Sie neue Speichereinheiten hinzu
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie erweitern möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Expand*.
+. Wählen Sie *mit neuen Speichereinheiten*.
+. Geben Sie die Anzahl der Einheiten, die Sie erstellen möchten, sowie die Kapazität pro Einheit ein.
++
+Wenn Sie mehrere Einheiten erstellen, wird jede Einheit mit derselben Kapazität und demselben Host-Betriebssystem erstellt. Um jeder Einheit eine andere Kapazität zuzuweisen, wählen Sie *eine andere Kapazität hinzufügen*, um jeder Einheit eine andere Kapazität zuzuweisen.
+
+. Wählen Sie *Erweitern*.
+
+
+.Was kommt als Nächstes
+Nachdem Sie eine neue Speichereinheit erstellt haben, sollten Sie link:../manage-data/provision-san-storage.html#add-host-initiators["Fügen Sie Host-Initiatoren hinzu"]und link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["Ordnen Sie die neu erstellte Speichereinheit einem Host zu"]. Durch das Hinzufügen von Hostinitiatoren können Hosts auf die Speichereinheiten zugreifen und Datenvorgänge durchführen. Durch das Zuordnen einer Speichereinheit zu einem Host kann die Speichereinheit mit der Bereitstellung von Daten für den Host beginnen, dem sie zugeordnet ist.
+
+--
+====
+.Was kommt als Nächstes?
+Vorhandene Snapshots der Konsistenzgruppe enthalten keine neu hinzugefügten Speichereinheiten. Sie sollten link:create-snapshots.html#step-2-create-a-snapshot["Erstellen Sie einen sofortigen Snapshot"]Ihrer Konsistenzgruppe angehören, um Ihre neu hinzugefügten Speichereinheiten zu schützen, bis der nächste geplante Snapshot automatisch erstellt wird.
+
+
+
+== Entfernen einer Speichereinheit aus einer Konsistenzgruppe
+
+Sie sollten eine Speichereinheit aus einer Konsistenzgruppe entfernen, wenn Sie die Speichereinheit löschen möchten, wenn Sie sie als Teil einer anderen Konsistenzgruppe verwalten möchten oder wenn Sie die darin enthaltenen Daten nicht mehr schützen müssen. Durch das Entfernen einer Speichereinheit aus einer Konsistenzgruppe wird die Beziehung zwischen der Speichereinheit und der Konsistenzgruppe unterbrochen, aber die Speichereinheit wird nicht gelöscht.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Doppelklicken Sie auf die Konsistenzgruppe, aus der Sie eine Speichereinheit entfernen möchten.
+. Wählen Sie im Abschnitt *Übersicht* unter *Speichereinheiten* die Speichereinheit aus, die Sie entfernen möchten, und wählen Sie dann *aus Konsistenzgruppe entfernen* aus.
+
+
+.Ergebnis
+Die Speichereinheit ist nicht mehr Mitglied der Konsistenzgruppe.
+
+.Wie es weiter geht
+Wenn Sie mit dem Datenschutz für die Speichereinheit fortfahren möchten, fügen Sie die Speichereinheit einer anderen Konsistenzgruppe hinzu.

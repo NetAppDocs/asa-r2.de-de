@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: administer/revert-ontap.html 
 keywords: update, revert, ontap, asa r2 
-summary: ONTAP aktualisiert automatisch die Firmware auf ASA r2-Systemen. Sie können System Manager verwenden, um automatische Updates zu deaktivieren und Updates anzuzeigen, bevor sie installiert werden. 
+summary: ONTAP -Software-Reverts für ASA R2-Systeme folgen demselben Prozess wie Reverts für andere ONTAP Systeme. Das Zurücksetzen eines ONTAP -Clusters ist störend. 
 ---
 = ONTAP auf ASA R2-Speichersystemen zurücksetzen
 :allow-uri-read: 
@@ -30,14 +30,14 @@ Bei bestimmten ASA R2-Clusterkonfigurationen müssen Sie bestimmte Maßnahmen er
 Wenn Sie von ONTAP 9.17.1 auf einem ASA R2-System zurückkehren, sollten Sie vor Beginn der Rücksetzung die folgenden Aktionen ausführen:
 
 
-NOTE: link:../administer/rebalance-workloads.html["Automatischer Workload-Ausgleich"]wird standardmäßig 14 Tage nach dem Upgrade auf ONTAP 9.17.1 oder der Initialisierung eines neuen ONTAP 9.17.1 ASA r2-Clusters aktiviert. Sie können auf Ihrem ASA R2-System nicht von ONTAP 9.17.1 zurückkehren, nachdem die automatische Neuverteilung der Arbeitslast aktiviert wurde.
+NOTE: link:rebalance-workloads.html["Automatischer Workload-Ausgleich"]wird standardmäßig 14 Tage nach dem Upgrade auf ONTAP 9.17.1 oder der Initialisierung eines neuen ONTAP 9.17.1 ASA r2-Clusters aktiviert. Sie können auf Ihrem ASA R2-System nicht von ONTAP 9.17.1 zurückkehren, nachdem die automatische Neuverteilung der Arbeitslast aktiviert wurde.
 
 [cols="2"]
 |===
 | Wenn Sie... | Bevor Sie zurückkehren, sollten Sie ... 
 
 
-| Hierarchische Konsistenzgruppen in einer SnapMirror Active Sync-Beziehung | Entfernen Sie die SnapMirror Active Sync-Beziehung 
+| Hierarchische Konsistenzgruppen in einer SnapMirror Active Sync-Beziehung | link:../data-protection/snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] 
 
 
 | Aktive Importbeziehungen | Löschen der aktiven Importbeziehungen 

@@ -39,7 +39,7 @@ ASA r2-Systeme verwenden Speichereinheiten mit Konsistenzgruppen, um die Speiche
 
 Um Ihre Daten vor böswilligen Angriffen wie Diebstahl oder Ransomware zu schützen, unterstützen ASA r2-Systeme einen integrierten Schlüsselmanager, Dual-Layer-Verschlüsselung, Multi-Faktor-Authentifizierung und Multi-Admin-Verifizierung. Manipulationssichere Snapshots werden auch auf sekundären ASA r2-Systemen unterstützt.
 
-ASA r2-Systeme unterstützen keine gemeinsame Verwendung von Clustern mit aktuellen ASA-, AFF- oder FAS-Systemen.
+ASA r2-Systeme unterstützen kein Cluster-Mixing mit ASA, AFF oder FAS Systemen.
 
 .Finden Sie weitere Informationen
 * Weitere Informationen zur Unterstützung und Einschränkungen von ASA r2-Systemen finden Sie im link:https://hwu.netapp.com/["NetApp Hardware Universe"^].

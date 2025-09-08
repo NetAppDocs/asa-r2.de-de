@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-add-remove-snapshots.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: Erstellen Sie Snapshots der Konsistenzgruppen, um die Daten in den Speichereinheiten zu schützen, die Teil der Konsistenzgruppe sind.  Wenn Sie die Daten in keiner der Speichereinheiten in der Konsistenzgruppe mehr schützen müssen, können Sie den Snapshot-Schutz entfernen. 
+---
+= Schützen Sie Konsistenzgruppen auf Ihrem ASA R2-System mit Snapshots
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erstellen Sie Snapshots der Konsistenzgruppen in Ihrem ASA R2-Speichersystem, um die Daten in den Speichereinheiten zu schützen, die Teil der Konsistenzgruppe sind.  Wenn Sie die Daten in keiner der Speichereinheiten der Konsistenzgruppe mehr schützen müssen, können Sie den Snapshot-Schutz aus der Konsistenzgruppe entfernen.
+
+Wenn Sie die Daten bestimmter Speichereinheiten in der Konsistenzgruppe nicht mehr schützen müssen, können Sie diese Speichereinheiten aus der Konsistenzgruppe entfernen.
+
+
+
+== Fügen Sie einer Konsistenzgruppe Snapshot Datensicherung hinzu
+
+Wenn Sie einer Konsistenzgruppe Snapshot-Datenschutz hinzufügen, werden lokale Snapshots der Konsistenzgruppe in regelmäßigen Abständen basierend auf einem vordefinierten Zeitplan erstellt.
+
+Sie können Snapshots verwendenlink:restore-data.html["Daten wiederherstellen"], die verloren gehen oder beschädigt sind.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Bewegen Sie den Mauszeiger über die Konsistenzgruppe, die Sie schützen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Bearbeiten*.
+. Wählen Sie unter *lokaler Schutz* *Snapshots planen*.
+. Wählen Sie eine Snapshot-Richtlinie aus.
++
+Akzeptieren Sie die standardmäßige Snapshot-Richtlinie, wählen Sie eine vorhandene Richtlinie aus, oder erstellen Sie eine neue Richtlinie.
+
++
+[cols="2,6a"]
+|===
+| Option | Schritte 
+
+
+| Wählen Sie eine vorhandene Snapshot-Richtlinie aus  a| 
+Wählen Sie image:icon_dropdown_arrow.gif["Nach unten zeigender blauer Pfeil"] neben der Standardrichtlinie aus, und wählen Sie dann die vorhandene Richtlinie aus, die Sie verwenden möchten.
+
+
+
+| Neue Snapshot-Richtlinie erstellen  a| 
+.. Wählen Sie image:icon_add.gif["Blaues Pluszeichen, gefolgt vom Wort Add"];, und geben Sie den neuen Richtliniennamen ein.
+.. Wählen Sie den Richtlinienumfang aus.
+.. Wählen Sie unter *Zeitpläne* image:icon_add.gif["Blaues Pluszeichen, gefolgt vom Wort Add"].
+.. Wählen Sie den Namen aus, der unter *Terminplanname* angezeigt wird;
++
+Wählen Sie anschließend image:icon_dropdown_arrow.gif["Blauer Pfeil, der nach unten zeigt"].
+
+.. Wählen Sie den Richtlinienzeitplan aus.
+.. Geben Sie unter *Maximum Snapshots* die maximale Anzahl der Snapshots ein, die Sie von der Konsistenzgruppe behalten möchten.
+.. Optional unter *SnapMirror Label* ein SnapMirror Label eingeben.
+.. Wählen Sie *Speichern*.
+
+
+|===
+. Wählen Sie *Speichern*.
+
+
+.Wie es weiter geht
+Nachdem Ihre Daten nun durch Snapshots geschützt sind, sollten Sie link:../secure-data/encrypt-data-at-rest.html["Richten Sie die Snapshot-Replikation ein"]Ihre Konsistenzgruppen für das Backup und Disaster Recovery an einen geografisch Remote Standort kopieren.
+
+
+
+== Entfernen Sie die Snapshot-Datensicherung aus einer Konsistenzgruppe
+
+Wenn Sie den Snapshot-Datenschutz aus einer Konsistenzgruppe entfernen, werden die Snapshots für alle Speichereinheiten in der Konsistenzgruppe deaktiviert.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie nicht mehr schützen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Bearbeiten*.
+. Deaktivieren Sie unter *lokaler Schutz* die Option Snapshots planen.
+. Wählen Sie *Bearbeiten*.
+
+
+.Ergebnis
+Snapshots werden für keine der Speichereinheiten in der Konsistenzgruppe erstellt.

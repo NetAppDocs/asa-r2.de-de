@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-delete.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace 
+summary: Wenn Sie die Mitglieder einer Konsistenzgruppe nicht mehr als einzelne Einheit verwalten müssen, können Sie die Konsistenzgruppe löschen. 
+---
+= Löschen Sie Konsistenzgruppen auf Ihrem ASA R2-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie die Mitglieder einer Konsistenzgruppe nicht mehr als einzelne Einheit verwalten müssen, können Sie die Konsistenzgruppe löschen.  Nachdem eine Konsistenzgruppe gelöscht wurde, bleiben die zuvor in der Gruppe enthaltenen Speichereinheiten auf dem Cluster aktiv.  Wenn sich die Konsistenzgruppe in einer Replikationsbeziehung befand, verbleiben die replizierten Kopien auf dem Remote-Cluster.
+
+.Bevor Sie beginnen
+Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie löschen möchten, in einer SnapMirror Active Sync-Beziehung ist, müssen Sielink:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] bevor Sie die Konsistenzgruppe löschen.  Das Löschen dieser Beziehung vor dem Ändern einer Konsistenzgruppe ist in ONTAP 9.17.1 und späteren Versionen nicht erforderlich.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie löschen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Löschen*.
+. Akzeptieren Sie die Warnung, und wählen Sie dann *Löschen*.
+
+
+.Was kommt als Nächstes?
+Nachdem Sie eine Konsistenzgruppe gelöscht haben, sind die Speichereinheiten, die zuvor in der Konsistenzgruppe vorhanden waren, nicht mehr durch Snapshots geschützt. Ziehen Sie in Betracht, diese Storage-Einheiten einer anderen Konsistenzgruppe hinzuzufügen, um sie vor Datenverlust zu schützen.

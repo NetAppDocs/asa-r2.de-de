@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-delete-relationship.html 
+keywords: asa r2, data protection, business continuity, delete, snapmirror active sync, disaster recovery 
+summary: Wenn Sie für eine Geschäftsanwendung kein RPO und RTO nahe Null mehr benötigen, entfernen Sie den SnapMirror Active Sync-Schutz, indem Sie die zugehörige SnapMirror Active Sync-Beziehung löschen. 
+---
+= Löschen Sie eine SnapMirror Active Sync-Beziehung auf Ihrem ASA R2-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie für eine Geschäftsanwendung kein RPO und RTO nahe Null mehr benötigen, sollten Sie den SnapMirror Active Sync-Schutz entfernen, indem Sie die zugehörige SnapMirror Active Sync-Beziehung löschen.  Wenn Sie ONTAP 9.16.1 auf einem ASA r2-System ausführen, müssen Sie möglicherweise auch die SnapMirror Active Sync-Beziehung löschen, bevor Sie bestimmte Geometrieänderungen an Konsistenzgruppen in einer SnapMirror Active Sync-Beziehung vornehmen können.
+
+
+
+== Schritt 1: Hostreplikation beenden
+
+Wenn die Hostgruppe vom Quellcluster auf den Zielcluster repliziert wird und Zielkonsistenzgruppen der replizierten Hostgruppe zugeordnet werden, müssen Sie die Hostreplikation auf dem Quellcluster beenden, bevor Sie die SnapMirror Active Sync-Beziehung löschen können.
+
+.Schritte
+. Wählen Sie im System Manager *Host* aus.
+. Wählen Sie neben einem Host, der die Hostgruppe enthält, deren Replikation Sie beenden möchten,image:icon_kabob.gif["Drei vertikale blaue Punkte"] und wählen Sie dann *Bearbeiten* aus.
+. Deaktivieren Sie *Hostkonfiguration replizieren* und wählen Sie dann *Aktualisieren*.
+
+
+
+
+== Schritt 2: Löschen Sie die SnapMirror Active Sync-Beziehung
+
+Um den SnapMirror Active Sync-Schutz aus einer Konsistenzgruppe zu entfernen, müssen Sie die SnapMirror Active Sync-Beziehung löschen.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Replikation* aus.
+. Wählen Sie *Lokale Ziele* oder *Lokale Quellen*.
+. Wählen Sie neben der SnapMirror Active Sync-Beziehung, die Sie entfernen möchten,image:icon_kabob.gif["Drei vertikale blaue Punkte"] ; wählen Sie dann *Löschen*.
+. Wählen Sie *Basis-Snapshots der Quellkonsistenzgruppe freigeben*.
+. Wählen Sie *Löschen*.
+
+
+.Ergebnis
+Die SnapMirror Active-Sync-Beziehung wird entfernt und die Basis-Snapshots der Quellkonsistenzgruppe werden freigegeben.  Die Speichereinheiten in der Konsistenzgruppe werden nicht mehr durch SnapMirror Active Sync geschützt.
+
+.Was kommt als Nächstes?
+link:snapshot-replication.html["Richten Sie die Snapshot-Replikation ein"]um die Konsistenzgruppe zur Sicherung und Notfallwiederherstellung an einen geografisch entfernten Standort zu kopieren.

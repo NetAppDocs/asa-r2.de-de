@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: data-protection/pre-defined-protection-policies.html 
+keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication, policy, pre-defined, default, custom, policies 
+summary: Die Replikationsrichtlinie definiert, wann auf dem ASA R2-Cluster durchgeführte Updates auf den Remote-Standort repliziert werden.  ONTAP umfasst verschiedene vordefinierte Datenschutzrichtlinien, die Sie für Ihre Replikationsbeziehungen verwenden können. 
+---
+= Erfahren Sie mehr über vordefinierte ONTAP Datenschutzrichtlinien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Replikationsrichtlinie definiert, wann auf dem ASA R2-Cluster durchgeführte Updates auf den Remote-Standort repliziert werden.  ONTAP umfasst verschiedene vordefinierte Datenschutzrichtlinien, die Sie für Ihre Replikationsbeziehungen verwenden können.
+
+Wenn die vordefinierten Richtlinien Ihren Anforderungen nicht entsprechen, können Sielink:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["Erstellen einer benutzerdefinierten Replikationsrichtlinie"] .
+
+ASA R2-Systeme unterstützen die folgenden vordefinierten Schutzrichtlinien.
+
+[cols="3,4,1"]
+|===
+| Politik | Beschreibung | Richtlinientyp 
+
+
+| Asynchron | Eine einheitliche asynchrone SnapMirror und Vault-Richtlinie zum Spiegeln des neuesten aktiven Dateisystems und täglicher und wöchentlicher Snapshots mit einem stündlichen Übertragungsplan. | Asynchron 
+
+
+| AutomatisiertesFailOverDuplex | Richtlinie für SnapMirror synchron mit Null-RTO-Garantie und bidirektionaler Synchronisierungsreplikation. | SnapMirror aktive Synchronisierung 
+
+
+| CloudBackupDefault | Tresorrichtlinie mit Tagesregel. | Asynchron 
+
+
+| Tägliches Backup | Tresorrichtlinie mit einer täglichen Regel und einem täglichen Übertragungsplan. | Asynchron 
+
+
+| DPDefault | Asynchrone SnapMirror -Richtlinie zum Spiegeln aller Snapshots und des neuesten aktiven Dateisystems. | Asynchron 
+
+
+| MirrorAllSnapshots | Asynchrone SnapMirror -Richtlinie zum Spiegeln aller Snapshots und des neuesten aktiven Dateisystems. | Asynchron 
+
+
+| MirrorAllSnapshotsDiscardNetwork | Asynchrone SnapMirror -Richtlinie zum Spiegeln aller Snapshots und des neuesten aktiven Dateisystems mit Ausnahme der Netzwerkkonfigurationen. | Asynchron 
+
+
+| Spiegel und Tresor | Eine einheitliche asynchrone SnapMirror und Vault-Richtlinie zum Spiegeln des neuesten aktiven Dateisystems sowie täglicher und wöchentlicher Snapshots. | Asynchron 
+
+
+| MirrorAndVaultDiscardNetwork | Eine einheitliche asynchrone SnapMirror und Vault-Richtlinie zum Spiegeln des neuesten aktiven Dateisystems und täglicher und wöchentlicher Snapshots ohne die Netzwerkkonfigurationen. | Asynchron 
+
+
+| MirrorLatest | Asynchrone SnapMirror -Richtlinie zum Spiegeln des neuesten aktiven Dateisystems. | Asynchron 
+
+
+| Unified7year | Einheitliche SnapMirror -Richtlinie mit 7-jähriger Aufbewahrung. | Asynchron 
+
+
+| XDPDefault | Tresorrichtlinie mit täglichen und wöchentlichen Regeln. | Asynchron 
+|===

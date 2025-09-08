@@ -11,7 +11,7 @@ summary: Möglicherweise müssen Sie einen Node umbenennen, um ihn an die Namens
 
 
 [role="lead"]
-Ab ONTAP 9.16.1 unterstützen ASA r2 Storage-Systeme bis zu 12 Nodes pro Cluster. Nachdem die neuen Nodes eines HA-Paars verkabelt und eingeschaltet wurden, müssen Sie sie mit dem Cluster verbinden.
+Ab ONTAP 9.16.1 unterstützen ASA r2-Speichersysteme bis zu 12 Knoten pro Cluster.  Nachdem die neuen Knoten eines HA-Paares verkabelt und eingeschaltet wurden, müssen Sie sie dem Cluster hinzufügen.
 
 .Bevor Sie beginnen
 Stellen Sie die folgenden Informationen zusammen:

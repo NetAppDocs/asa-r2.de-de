@@ -15,9 +15,13 @@ searchtitle: Replizieren von Snapshots auf ein Remote-Cluster mithilfe von ONTAP
 Die Snapshot-Replizierung ist ein Prozess, bei dem Konsistenzgruppen auf Ihrem ASA r2-System an einen geografischen Standort kopiert werden. Nach der ersten Replikation werden Änderungen an Consistency Groups basierend auf einer Replikationsrichtlinie an den Remote-Standort kopiert. Replizierte Konsistenzgruppen können für Disaster Recovery oder Datenmigration verwendet werden.
 
 
-NOTE: Die Snapshot Replizierung für ein ASA r2 Storage-System wird nur von einem anderen ASA r2 Storage-System unterstützt. Sie können keine Snapshots von einem ASA r2-System auf ein aktuelles ASA-, AFF- oder FAS-System oder von einem aktuellen ASA-, AFF- oder FAS-System auf ein ASA r2-System replizieren.
+NOTE: Die Snapshot-Replikation für ein ASA R2-Speichersystem wird nur von und zu einem anderen ASA R2-Speichersystem unterstützt.  Sie können keine Snapshots von einem ASA r2-System auf ein ASA -, AFF oder FAS System oder von einem ASA -, AFF oder FAS System auf ein ASA r2-System replizieren.
 
 Um die Snapshot-Replikation einzurichten, müssen Sie eine Replikationsbeziehung zwischen Ihrem ASA r2-System und dem Remote-Standort herstellen. Die Replikationsbeziehung wird durch eine Replikationsrichtlinie geregelt. Während der Cluster-Einrichtung wird eine Standardrichtlinie zur Replizierung aller Snapshots erstellt. Sie können die Standardrichtlinie verwenden oder optional eine neue Richtlinie erstellen.
+
+Ab ONTAP 9.17.1 können Sie asynchrone Replikationsrichtlinien auf Konsistenzgruppen in einer hierarchischen Beziehung anwenden.  Asynchrone Replikation wird für Konsistenzgruppen in hierarchischen Beziehungen in ONTAP 9.16.1 nicht unterstützt.
+
+link:manage-hierarchical-consistency-groups.html["Erfahren Sie mehr über hierarchische (übergeordnete/untergeordnete) Konsistenzgruppen"] .
 
 
 
@@ -42,9 +46,11 @@ Sie haben einen lokalen ASA r2-Cluster mit einem Remote-Cluster erreicht. Sie k�
 
 
 
-== Schritt 2: Erstellen Sie optional eine Replikationsrichtlinie
+== Schritt 2: Optional: Erstellen einer benutzerdefinierten Replikationsrichtlinie
 
-Die Snapshot-Replikationsrichtlinie legt fest, wann Aktualisierungen am ASA r2-Cluster am Remote-Standort repliziert werden.
+Die Replikationsrichtlinie definiert, wann auf dem ASA R2-Cluster durchgeführte Updates auf den Remote-Standort repliziert werden.  ONTAP umfasst verschiedene vordefinierte Datenschutzrichtlinien, die Sie für Ihre Replikationsbeziehungen verwenden können.  Wenn die vordefinierten Richtlinien Ihren Anforderungen nicht entsprechen, können Sie eine benutzerdefinierte Replikationsrichtlinie erstellen.
+
+Erfahren Sie mehr überlink:pre-defined-protection-policies.html["vordefinierte ONTAP Datenschutzrichtlinien"] .
 
 .Schritte
 . Wählen Sie in System Manager *Schutz > Richtlinien* aus, und wählen Sie dann *Replikationsrichtlinien* aus.
@@ -93,7 +99,12 @@ Eine Snapshot-Replikationsbeziehung stellt eine Verbindung zwischen Ihrem ASA r2
 Wenn Sie Ihre Replizierungsbeziehung einrichten, können Sie zum Schutz vor Ransomware-Angriffen auswählen, um Ziel-Snapshots zu sperren. Gesperrte Snapshots können nicht versehentlich oder böswillig gelöscht werden. Sie können gesperrte Snapshots verwenden, um Daten wiederherzustellen, wenn eine Storage-Einheit durch einen Ransomware-Angriff kompromittiert wird.
 
 .Bevor Sie beginnen
-Wenn Sie Ihre Ziel-Snapshots sperren möchten, müssen Sie dies link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["Initialisieren Sie die Snapshot-Compliance-Uhr"] vor dem Erstellen der Replikationsbeziehung tun.
+* link:pre-defined-protection-policies.html["Informationen zu Replikationsrichtlinien"] .
++
+Wenn Sie eine Replikationsbeziehung erstellen, müssen Sie die entsprechende Replikationsrichtlinie für Ihre Replikationsbeziehung auswählen.  Sie können eine vordefinierte Richtlinie verwenden oder eine benutzerdefinierte Richtlinie erstellen.
+
+* Wenn Sie Ihre Ziel-Snapshots sperren möchten, müssen Sie dies link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["Initialisieren Sie die Snapshot-Compliance-Uhr"] vor dem Erstellen der Replikationsbeziehung tun.
+
 
 Erstellen Sie eine Replikationsbeziehung mit oder ohne gesperrte Ziel-Snapshots.
 
@@ -149,9 +160,6 @@ Die Konsistenzgruppe „_Source_“ bezieht sich auf die Konsistenzgruppe in Ihr
 | Lokale Quellen  a| 
 .. Wählen Sie *Lokale Quellen*, und wählen Sie dann image:icon_replicate_blue_bg.png["Rechteck mit blauem Hintergrund und das Wort replizieren in weißen Buchstaben"].
 .. Suchen Sie die Quell-Konsistenzgruppe, und wählen Sie sie aus.
-+
-Die Konsistenzgruppe „_Source_“ bezieht sich auf die Konsistenzgruppe in Ihrem lokalen Cluster, die Sie replizieren möchten.
-
 .. Wählen Sie unter *Replikationsziel* den zu replizierenden Cluster aus, und wählen Sie dann die Speicher-VM aus.
 
 

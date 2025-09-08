@@ -25,7 +25,7 @@ link:https://docs.netapp.com/us-en/ontap-sanhost/hu_vsphere_8.html["VMware vSphe
 
 == Migrieren Sie virtuelle VMware-Maschinen
 
-Wenn Sie Ihren VM-Workload von einem ASA Storage-System auf ein ASA r2 Storage-System migrieren müssen, empfiehlt NetApp die Verwendung link:https://www.vmware.com/products/cloud-infrastructure/vsphere/vmotion["VMware vSphere vMotion"^] für eine Live-Migration Ihrer Daten ohne Unterbrechungen.
+Wenn Sie Ihre VM-Workload von einem ASA -Speichersystem auf ein ASA r2-Speichersystem migrieren müssen, empfiehlt NetApp die Verwendung vonlink:https://www.vmware.com/products/cloud-infrastructure/vsphere-foundation["VMware vSphere vMotion"^] um eine Live-Migration Ihrer Daten ohne Unterbrechung durchzuführen.
 
 .Verwandte Informationen
 * Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html["die Vorteile der Verwendung von ONTAP für vSphere"^] .

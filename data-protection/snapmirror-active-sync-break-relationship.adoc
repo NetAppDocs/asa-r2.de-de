@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-break-relationship.html 
+keywords: asa r2, data protection, business continuity, remove, delete, break, relationship, snapmirror active sync, disaster recovery 
+summary: In bestimmten Situationen müssen Sie möglicherweise eine asynchrone Replikationsbeziehung unterbrechen. 
+---
+= Unterbrechen Sie eine asynchrone Replikationsbeziehung auf Ihrem ASA R2-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In bestimmten Situationen müssen Sie möglicherweise eine asynchrone Replikationsbeziehung unterbrechen.  Wenn Sie beispielsweise ONTAP 9.16.1 ausführen und die Größe einer Konsistenzgruppe erhöhen möchten, die sich in einer asynchronen Replikationsbeziehung befindet, müssen Sie die Beziehung aufheben, bevor Sie die Größe der Konsistenzgruppe ändern können.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Replikation* aus.
+. Wählen Sie *Lokale Ziele* oder *Lokale Quellen*.
+. Wählen Sie neben der Beziehung, die Sie auflösen möchten,image:icon_kabob.gif["Drei vertikale blaue Punkte"] ; wählen Sie dann *Unterbrechen*.
+. Wählen Sie *Unterbrechen*.
+
+
+.Ergebnis
+Die asynchrone Beziehung zwischen der primären und sekundären Konsistenzgruppe ist unterbrochen.

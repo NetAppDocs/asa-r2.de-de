@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-hierarchical-consistency-groups.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: Verwenden Sie Konsistenzgruppen, um verschiedene Aktionen gleichzeitig auf mehreren Speichereinheiten auszuführen, anstatt Aktionen einzeln auf jeder Einheit auszuführen.  In einer hierarchischen Struktur werden eine oder mehrere Konsistenzgruppen als untergeordnete Elemente unter einer übergeordneten Konsistenzgruppe konfiguriert. 
+---
+= Verwalten Sie hierarchische Konsistenzgruppen auf Ihrem ASA R2-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ab ONTAP 9.16.1 können Sie mit System Manager hierarchische Konsistenzgruppen auf Ihrem ASA r2-System erstellen.  In einer hierarchischen Struktur werden eine oder mehrere Konsistenzgruppen als untergeordnete Elemente unter einer übergeordneten Konsistenzgruppe konfiguriert.  Sie können auf jede untergeordnete Konsistenzgruppe individuelle Snapshot-Richtlinien anwenden und die Snapshots aller untergeordneten Konsistenzgruppen als einzelne Einheit auf einem Remote-Cluster replizieren, indem Sie das übergeordnete Element replizieren.  Dies vereinfacht den Datenschutz und die Verwaltung komplexer Datenstrukturen.
+
+
+
+== Eine vorhandene Konsistenzgruppe in eine übergeordnete Konsistenzgruppe umwandeln
+
+Wenn Sie eine vorhandene Konsistenzgruppe zu einer übergeordneten Gruppe hochstufen, wird eine neue untergeordnete Konsistenzgruppe erstellt und die Speichereinheiten, die zur hochgestuften Konsistenzgruppe gehören, werden in die neue untergeordnete Konsistenzgruppe verschoben.  Speichereinheiten können nicht direkt einer übergeordneten Konsistenzgruppe zugeordnet werden.
+
+.Bevor Sie beginnen
+Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie hochstufen möchten, in einer SnapMirror Active Sync-Beziehung steht, müssen Sielink:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] bevor die Konsistenzgruppe heraufgestuft werden kann.  Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe in einer asynchronen Replikationsbeziehung steht, müssen Sielink:snapmirror-active-sync-break-relationship.html["die Beziehung abbrechen"] bevor Sie die Konsistenzgruppe hochstufen können.  Das Löschen der SnapMirror Active-Sync-Beziehung oder das Aufbrechen der asynchronen Beziehung vor dem Hochstufen einer Konsistenzgruppe ist in ONTAP 9.17.1 und späteren Versionen nicht erforderlich.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie in eine übergeordnete Konsistenzgruppe konvertieren möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und wählen Sie dann *heraufstufen zur übergeordneten Konsistenzgruppe* aus.
+. Geben Sie einen Namen für die neue untergeordnete Konsistenzgruppe ein oder akzeptieren Sie den Standardnamen. Wählen Sie dann den Komponententyp der Konsistenzgruppe aus.
+. Wählen Sie *Hochstufen*.
+
+
+.Was kommt als Nächstes?
+Sie können unter der übergeordneten Konsistenzgruppe weitere untergeordnete Konsistenzgruppen erstellen.  Sie können auchlink:../secure-data/encrypt-data-at-rest.html["Richten Sie die Snapshot-Replikation ein"] um die übergeordneten und untergeordneten Konsistenzgruppen zur Sicherung und Notfallwiederherstellung an einen geografisch entfernten Standort zu kopieren.
+
+
+
+== Stufen Sie eine übergeordnete Konsistenzgruppe auf eine einzelne Konsistenzgruppe zurück
+
+Wenn Sie eine übergeordnete Konsistenzgruppe zu einer einzelnen Konsistenzgruppe herabstufen, werden die Speichereinheiten der zugehörigen untergeordneten Konsistenzgruppen der übergeordneten Konsistenzgruppe hinzugefügt.  Die untergeordneten Konsistenzgruppen werden gelöscht und die übergeordnete Gruppe wird dann als einzelne Konsistenzgruppe verwaltet.
+
+.Bevor Sie beginnen
+Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie herabstufen möchten, in einer SnapMirror Active Sync-Beziehung steht, müssen Sielink:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] bevor die Konsistenzgruppe herabgestuft werden kann.  Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe in einer asynchronen Replikationsbeziehung steht, müssen Sielink:snapmirror-active-sync-break-relationship.html["die Beziehung abbrechen"] bevor Sie die Konsistenzgruppe herabstufen können.  Das Löschen der SnapMirror Active-Sync-Beziehung oder das Aufbrechen der asynchronen Beziehung vor dem Erweitern einer Konsistenzgruppe ist in ONTAP 9.17.1 und späteren Versionen nicht erforderlich.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Bewegen Sie den Mauszeiger über die übergeordnete Konsistenzgruppe, die Sie herunterstufen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *auf eine einzige Consistency Group zurückstufen*.
+. Wählen Sie *Zurückstufen*
+
+
+.Was kommt als Nächstes?
+link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Fügen Sie eine Snapshot-Richtlinie hinzu"] In die heruntergestufte Konsistenzgruppe, um die Speichereinheiten zu schützen, die zuvor von den untergeordneten Konsistenzgruppen verwaltet wurden.
+
+
+
+== Erstellen einer untergeordneten Konsistenzgruppe
+
+Durch das Erstellen von untergeordneten Konsistenzgruppen können Sie auf jedes untergeordnete Element individuelle Snapshot-Richtlinien anwenden.  Ab ONTAP 9.17.1 können Sie individuelle Replikationsrichtlinien auch direkt auf jedes untergeordnete Element anwenden.  In ONTAP 9.16.1 können Replikationsrichtlinien nur auf der übergeordneten Ebene angewendet werden.
+
+Sie können eine untergeordnete Konsistenzgruppe aus einer neuen oder einer vorhandenen Konsistenzgruppe erstellen.
+
+[role="tabbed-block"]
+====
+.Aus einer neuen Konsistenzgruppe
+--
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Halten Sie den Mauszeiger über die übergeordnete Konsistenzgruppe, der Sie eine untergeordnete Konsistenzgruppe hinzufügen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *Add a New child Consistency Group*.
+. Geben Sie einen Namen für die untergeordnete Konsistenzgruppe ein, oder übernehmen Sie den Standardnamen, und wählen Sie dann den Komponententyp der Konsistenzgruppe aus.
+. Wählen Sie diese Option aus, um der untergeordneten Konsistenzgruppe vorhandene Speichereinheiten hinzuzufügen oder neue Speichereinheiten zu erstellen.
++
+Wenn Sie neue Speichereinheiten erstellen, geben Sie die Anzahl der Einheiten, die Sie erstellen möchten, sowie die Kapazität pro Einheit ein, und geben Sie dann die Hostinformationen ein.
+
++
+Wenn Sie mehr als eine Speichereinheit erstellen, wird jede Einheit mit derselben Kapazität und demselben Host-Betriebssystem erstellt. Um jeder Einheit eine andere Kapazität zuzuweisen, wählen Sie *eine andere Kapazität hinzufügen*.
+
+. Wählen Sie *Hinzufügen*.
+
+
+--
+.Aus einer vorhandenen Konsistenzgruppe
+--
+.Bevor Sie beginnen
+Wenn die Konsistenzgruppe, die Sie verwenden möchten, bereits das Kind einer anderen Konsistenzgruppe ist, müssen Sielink:manage-hierarchical-consistency-groups.html#detach-a-child-consistency-group-from-a-parent-consistency-group["Trennen Sie es von der vorhandenen übergeordneten Konsistenzgruppe"] bevor Sie es in eine neue übergeordnete Konsistenzgruppe verschieben können.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Wählen Sie die vorhandene Konsistenzgruppe aus, die Sie als untergeordnete Konsistenzgruppe erstellen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; dann *move unter different Consistency Group*.
+. Geben Sie einen neuen Namen für die untergeordnete Konsistenzgruppe ein, oder übernehmen Sie den Standardnamen, und wählen Sie dann den Komponententyp der Konsistenzgruppe aus.
+. Wählen Sie die vorhandene Konsistenzgruppe aus, die Sie als übergeordnete Konsistenzgruppe festlegen möchten, oder wählen Sie aus, um eine neue übergeordnete Konsistenzgruppe zu erstellen.
++
+Wenn Sie auswählen, eine neue übergeordnete Konsistenzgruppe zu erstellen, geben Sie einen Namen für die übergeordnete Konsistenzgruppe ein, oder übernehmen Sie den Standardnamen, und wählen Sie dann den Komponententyp der Konsistenzgruppe aus.
+
+. Wählen Sie *Verschieben*.
+
+
+--
+====
+.Wie es weiter geht
+Nachdem Sie eine untergeordnete Konsistenzgruppe erstellt haben, können Sielink:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Anwenden einzelner Snapshot-Schutzrichtlinien"] zu jeder untergeordneten Konsistenzgruppe.  Sie können auchlink:snapshot-replication.html["Einrichten von Replikationsrichtlinien"] auf den übergeordneten und untergeordneten Konsistenzgruppen, um die Konsistenzgruppen an einen Remotestandort zu replizieren.
+
+
+
+== Trennen Sie eine untergeordnete Konsistenzgruppe von einer übergeordneten Konsistenzgruppe
+
+Wenn Sie eine untergeordnete Konsistenzgruppe von einer übergeordneten Konsistenzgruppe trennen, wird die untergeordnete Konsistenzgruppe aus der übergeordneten Konsistenzgruppe entfernt und als einzelne Konsistenzgruppe verwaltet.  Die auf das übergeordnete Element angewendete Replikationsrichtlinie wird nicht mehr auf die getrennte untergeordnete Konsistenzgruppe angewendet.
+
+.Bevor Sie beginnen
+Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie trennen möchten, in einer SnapMirror Active Sync-Beziehung ist, müssen Sielink:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] bevor die Konsistenzgruppe getrennt werden kann.  Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe in einer asynchronen Replikationsbeziehung steht, müssen Sielink:snapmirror-active-sync-break-relationship.html["die Beziehung abbrechen"] bevor Sie die Konsistenzgruppe trennen können.  Das Löschen der SnapMirror Active-Sync-Beziehung oder das Aufbrechen der asynchronen Beziehung vor dem Erweitern einer Konsistenzgruppe ist in ONTAP 9.17.1 und späteren Versionen nicht erforderlich.
+
+.Schritte
+. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
+. Wählen Sie die übergeordnete Konsistenzgruppe aus.
+. Wählen Sie über der untergeordneten Konsistenzgruppe aus, die Sie entfernen möchten.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *von übergeordnetem Element trennen*.
+. Geben Sie einen neuen Namen für die Konsistenzgruppe ein, die Sie entfernen, oder akzeptieren Sie den Standardnamen, und wählen Sie dann den Applikationstyp für die Konsistenzgruppe aus.
+. Wählen Sie * Trennen*.
+
+
+.Was kommt als Nächstes?
+link:snapshot-replication.html["Richten Sie eine Replikationsrichtlinie ein"]um die Snapshots der getrennten untergeordneten Konsistenzgruppe auf einen Remote-Cluster zu replizieren.
