@@ -201,6 +201,9 @@ network interface show -lif iscsi*
 
 LIFs können bei Bedarf deaktiviert oder umbenannt werden. Sie können auch die LIF-IP-Adresse und die Subnetzmaske ändern.
 
+.Über diese Aufgabe
+ONTAP verwendet das Network Time Protocol (NTP), um die Zeit im gesamten Cluster zu synchronisieren. Nach dem Ändern der LIF-IP-Adressen müssen Sie möglicherweise die NTP-Konfiguration aktualisieren, um Synchronisierungsfehler zu vermeiden. Weitere Informationen finden Sie im Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-Issues/CONTAP-500629["NTP-Synchronisierung schlägt nach LIF-IP-Änderung fehl"] .
+
 .Schritte
 . Wählen Sie *Netzwerk > Übersicht* und dann *Netzwerkschnittstellen*.
 . Bewegen Sie den Mauszeiger über die Netzwerkschnittstelle, die Sie bearbeiten möchten, und wählen Sie dann image:icon_kabob.gif["Drei vertikale blaue Punkte"].

@@ -2506,4 +2506,6 @@
   <block id="f9e11d9c895b9f2de1a25a03e810d34d" category="sidebar">Hinzufügen oder Entfernen von Speichereinheiten zu Konsistenzgruppen</block>
   <block id="5a0dfc6f986e17a79c038bc9a2aeec2d" category="sidebar">Konsistenzgruppen löschen</block>
   <block id="36bed646725e085252916c3131fbf1b2" category="sidebar">Verwalten hierarchischer Konsistenzgruppen</block>
+  <block id="e130096a0ace158c7893eedbd19e7115" category="inline-link-macro">NTP-Synchronisierung schlägt nach LIF-IP-Änderung fehl</block>
+  <block id="31fea35e33141cfa7edd94a1254d7007" category="paragraph">ONTAP verwendet das Network Time Protocol (NTP), um die Zeit im gesamten Cluster zu synchronisieren. Nach dem Ändern der LIF-IP-Adressen müssen Sie möglicherweise die NTP-Konfiguration aktualisieren, um Synchronisierungsfehler zu vermeiden. Weitere Informationen finden Sie im Knowledge Base-Artikel<block ref="eb416b4e77f6226862164baac134c11c" category="inline-link-macro-rx"></block> .</block>
 </blocks>
