@@ -41,7 +41,7 @@ ASA R2-Systeme unterstützen die folgenden Speichergrenzen:
 | Größe der Lagereinheit | 128 TB | 128 TB 
 
 
-| Speichereinheiten pro Konsistenzgruppe | 80 | 80 
+| Speichereinheiten pro Konsistenzgruppe | 256 | 256 
 
 
 | Virtuelle Maschinen | 800 | 1200 
