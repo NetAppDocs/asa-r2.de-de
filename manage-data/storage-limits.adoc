@@ -68,12 +68,15 @@ Die folgenden Beschränkungen gelten für Speichereinheiten und Konsistenzgruppe
 
 Die folgenden Beschränkungen gelten für Speichereinheiten und Konsistenzgruppen in einer SnapMirror Active Sync-Replikationsbeziehung.  SnapMirror Active Sync wird ab ONTAP 9.17.1 nur auf 2-Knoten-Clustern unterstützt.
 
-[cols="3"]
+[cols="2"]
 |===
-| Maximales Limit | Pro HA-Paar | Konsistenzgruppen 
+| Maximales Limit | Pro HA-Paar 
 
 
-| 50 | Speichereinheiten | 400 
+| Konsistenzgruppen | 50 
+
+
+| Speichereinheiten | 400 
 |===
 .Finden Sie weitere Informationen
 Eine vollständige Liste der aktuellen ASA r2-Speicherlimits finden Sie unter link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
