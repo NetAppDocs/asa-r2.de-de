@@ -11,7 +11,7 @@ summary: Ab ONTAP 9.17.1 gleicht ONTAP die Arbeitslasten zwischen den Knoten in 
 
 
 [role="lead"]
-Ab ONTAP 9.17.1 gleicht ONTAP die Workloads automatisch zwischen den Knoten eines ASA R2-System-HA-Paares aus, um optimale Leistung zu erzielen. Steigt beispielsweise die Auslastung eines Knotens auf 70 %, während die des HA-Partners nur 30 % beträgt, verschiebt ONTAP die Workloads automatisch, sodass die Auslastung der einzelnen Knoten besser ausgeglichen wird. Da die Knoten des HA-Paares dieselbe Storage Availability Zone nutzen, erfolgt die Workload-Neuverteilung kopierfrei und ohne Auswirkungen auf die Leistung.
+Ab ONTAP 9.17.1 gleicht ONTAP die Workloads automatisch zwischen den Knoten eines ASA r2-System-HA-Paares aus, um optimale Leistung zu erzielen. Wenn beispielsweise die Speicherplatzauslastung auf einem Knoten auf 70 % steigt, während die Auslastung auf seinem HA-Partner nur 30 % beträgt, verlagert ONTAP die Arbeitslasten automatisch, sodass die Speicherplatzauslastung der einzelnen Knoten besser angepasst wird. Da die Knoten des HA-Paares dieselbe Storage Availability Zone nutzen, erfolgt die Workload-Neuverteilung kopierfrei und ohne Auswirkungen auf die Leistung.
 
 
 
