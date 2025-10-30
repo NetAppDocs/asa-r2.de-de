@@ -60,27 +60,14 @@ Erfahren Sie mehr überlink:pre-defined-protection-policies.html["vordefinierte 
 +
 Wenn Sie die Replikationsrichtlinie auf den gesamten Cluster anwenden möchten, wählen Sie *Cluster* aus. Wenn die Replikationsrichtlinie nur auf die Speichereinheiten in einer bestimmten Speicher-VM angewendet werden soll, wählen Sie *Speicher-VM* aus.
 
-. Wählen Sie die Option *Policy type* aus.
+. Wählen Sie für den *Richtlinientyp* die Option *Asynchron*.
 +
-[cols="2,6a"]
-|===
-| Option | Schritte 
 
+NOTE: Bei der asynchronen Vorgehensweise werden die Daten erst dann auf den Remote-Standort kopiert, wenn sie auf dem Quellsystem gespeichert wurden. Die synchrone Replikation wird für ASA r2-Systeme nicht unterstützt.
 
-| Kopieren Sie die Daten nach dem Schreiben auf die Quelle an den Remote-Standort.  a| 
-.. Wählen Sie *Asynchron*.
-.. Akzeptieren Sie unter *Transfer Snapshots from source* den Standard-Übertragungszeitplan oder wählen Sie einen anderen aus.
-.. Wählen Sie diese Option aus, um alle Snapshots zu übertragen oder Regeln zu erstellen, um festzulegen, welche Snapshots übertragen werden sollen.
-.. Aktivieren Sie optional die Netzwerkkomprimierung.
-
-
-
-
-| Schreiben Sie Daten gleichzeitig an die Quell- und Remote-Standorte.  a| 
-.. Wählen Sie * Synchron*.
-
-
-|===
+. Akzeptieren Sie unter *Transfer Snapshots from source* den Standard-Übertragungszeitplan oder wählen Sie einen anderen aus.
+. Wählen Sie diese Option aus, um alle Snapshots zu übertragen oder Regeln zu erstellen, um festzulegen, welche Snapshots übertragen werden sollen.
+. Aktivieren Sie optional die Netzwerkkomprimierung.
 . Wählen Sie *Speichern*.
 
 

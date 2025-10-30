@@ -26,8 +26,6 @@ Wenn automatisches iSCSI-LIF-Failover aktiviert ist, wird die iSCSI-LIF im Falle
 * MetroCluster
 * Objektprotokolle
 * ONTAP S3 SnapMirror und S3-APIs
-* SnapMirror (asynchron und synchron) zur Cloud
-* SnapMirror (asynchron und synchron) auf Systeme mit nicht-ASA r2
 
 
 .ASA r2-Systeme unterstützen Folgendes:
@@ -38,6 +36,20 @@ link:../secure-data/ransomware-protection.html["Erfahren Sie, wie Sie Snapshots 
 * Dual-Layer-Verschlüsselung
 +
 link:../secure-data/encrypt-data-at-rest.html["Erfahren Sie, wie Sie eine zweischichtige Verschlüsselung anwenden"] Auf Daten auf Ihrem ASA r2-System.
+
+
+
+
+
+== Unterstützung für SnapMirror Replikation
+
+Die SnapMirror Replikation wird auf ASA r2-Systemen mit folgenden Einschränkungen unterstützt:
+
+* Die synchrone Replikation von SnapMirror wird nicht unterstützt.
+* SnapMirror Active Sync wird nur zwischen zwei ASA r2-Systemen unterstützt.
+* SnapMirror unterstützt die asynchrone Replikation nur zwischen zwei ASA r2-Systemen. Die asynchrone Replikation von SnapMirror wird zwischen einem ASA r2-System und einem ASA, AFF oder FAS System oder der Cloud nicht unterstützt.
++
+Erfahren Sie mehr überlink:data-protection/pre-defined-protection-policies.html["SnapMirror Replikationsrichtlinien werden auf ASA r2-Systemen unterstützt"] .
 
 
 

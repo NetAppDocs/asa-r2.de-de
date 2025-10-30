@@ -15,6 +15,9 @@ Die Replikationsrichtlinie definiert, wann auf dem ASA R2-Cluster durchgeführte
 
 Wenn die vordefinierten Richtlinien Ihren Anforderungen nicht entsprechen, können Sielink:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["Erstellen einer benutzerdefinierten Replikationsrichtlinie"] .
 
+
+NOTE: ASA r2-Systeme unterstützen keine synchrone Replikation.
+
 ASA R2-Systeme unterstützen die folgenden vordefinierten Schutzrichtlinien.
 
 [cols="3,4,1"]
