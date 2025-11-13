@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
 keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20,asa c30 
-summary: Für optimale Performance, Konfiguration und Support sollten Sie die ASA r2 Storage-Grenzwerte kennen. 
+summary: Für optimale Leistung, Konfiguration und Unterstützung sollten Sie die Speichergrenzen von ASA r2 beachten. 
 ---
 = ASA r2 Storage-Grenzwerte
 :allow-uri-read: 
@@ -11,16 +11,18 @@ summary: Für optimale Performance, Konfiguration und Support sollten Sie die AS
 
 
 [role="lead"]
-Für optimale Performance, Konfiguration und Support sollten Sie die ASA r2 Storage-Grenzwerte kennen.
+Für optimale Leistung, Konfiguration und Unterstützung sollten Sie die Speichergrenzen von ASA r2 beachten.
+
+Eine vollständige Liste der aktuellen ASA r2-Speicherlimits finden Sie unter link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
 
 ASA R2-Systeme unterstützen die folgenden Speichergrenzen:
 
 [cols="3"]
 |===
-| Maximales Limit | Pro HA-Paar | Pro Cluster 
+|  | Maximal pro HA-Paar | Maximal pro Cluster 
 
 
-| Konsistenzgruppe | 256 | 256 
+| Konsistenzgruppen | 256 | 256 
 
 
 | Unternehmensanwendungen | 100 | 350 
@@ -32,7 +34,7 @@ ASA R2-Systeme unterstützen die folgenden Speichergrenzen:
 | Replikationsgruppen | 50 | 50 
 
 
-| Größe der Speicherverfügbarkeitszone | 2PB | 2 PB 
+| Größe der Speicherverfügbarkeitszone | 2 PB | 2 PB 
 
 
 | Speichereinheiten | 10.000 | 30.000 
@@ -44,13 +46,24 @@ ASA R2-Systeme unterstützen die folgenden Speichergrenzen:
 | Speichereinheiten pro Konsistenzgruppe | 256 | 256 
 
 
+| Speicher-Virtualmaschinen  a| 
+* 256 (ONTAP 9.18.1 und höher)
+* 32 (ONTAP 9.17.1 und früher)
+
+ a| 
+* 256 (ONTAP 9.18.1 und höher)
+* 32 (ONTAP 9.17.1 und früher)
+
+
+
+
 | Virtuelle Maschinen | 800 | 1200 
 |===
 
 
 == Grenzwerte für asynchrone SnapMirror -Beziehungen
 
-Die folgenden Beschränkungen gelten für Speichereinheiten und Konsistenzgruppen in einer asynchronen SnapMirror -Replikationsbeziehung.
+Die folgenden Beschränkungen gelten für Speichereinheiten und Konsistenzgruppen in einer asynchronen SnapMirror -Replikationsbeziehung. Eine vollständige Liste der aktuellsten Speichergrenzen von ASA r2 finden Sie hier:link:https://hwu.netapp.com/["NetApp Hardware Universe"^] Die
 
 [cols="3"]
 |===
@@ -66,7 +79,9 @@ Die folgenden Beschränkungen gelten für Speichereinheiten und Konsistenzgruppe
 
 == Grenzen für die aktive Synchronisierungsbeziehung von SnapMirror
 
-Die folgenden Beschränkungen gelten für Speichereinheiten und Konsistenzgruppen in einer SnapMirror Active Sync-Replikationsbeziehung.  SnapMirror Active Sync wird ab ONTAP 9.17.1 nur auf 2-Knoten-Clustern unterstützt.
+Die folgenden Beschränkungen gelten für Speichereinheiten und Konsistenzgruppen in einer SnapMirror Active Sync-Replikationsbeziehung. SnapMirror Active Sync wird ab ONTAP 9.17.1 nur auf Zwei-Knoten-Clustern unterstützt.  Ab ONTAP 9.18.1 wird SnapMirror Active Sync auf Vier-Knoten-Clustern unterstützt.
+
+Eine vollständige Liste der aktuellsten Speichergrenzen von ASA r2 finden Sie hier:link:https://hwu.netapp.com/["NetApp Hardware Universe"^] Die
 
 [cols="2"]
 |===
@@ -78,5 +93,3 @@ Die folgenden Beschränkungen gelten für Speichereinheiten und Konsistenzgruppe
 
 | Speichereinheiten | 400 
 |===
-.Finden Sie weitere Informationen
-Eine vollständige Liste der aktuellen ASA r2-Speicherlimits finden Sie unter link:https://hwu.netapp.com/["NetApp Hardware Universe"^].

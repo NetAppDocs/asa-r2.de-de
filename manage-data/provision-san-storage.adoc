@@ -18,11 +18,15 @@ Wenn Sie Storage bereitstellen, ermöglichen Sie Ihren SAN-Hosts, Daten von ASA 
 
 == Erstellen von Speichereinheiten
 
-Auf einem ASA r2-System stellt eine Storage-Einheit Ihren SAN-Hosts Speicherplatz für Datenoperationen zur Verfügung. Eine Storage-Einheit bezieht sich auf eine LUN für SCSI-Hosts oder einen NVMe-Namespace für NVMe-Hosts. Wenn Ihr Cluster zur Unterstützung von SCSI-Hosts konfiguriert ist, werden Sie aufgefordert, eine LUN zu erstellen. Wenn das Cluster zur Unterstützung von NVMe Hosts konfiguriert ist, werden Sie aufgefordert, einen NVMe Namespace zu erstellen. Eine ASA r2-Speichereinheit hat eine maximale Kapazität von 128 TB.
+Auf einem ASA r2-System stellt eine Speichereinheit den SAN-Hosts Speicherplatz für Datenoperationen zur Verfügung.  Eine Speichereinheit bezeichnet eine LUN für SCSI-Hosts oder einen NVMe-Namensraum für NVMe-Hosts.  Wenn Ihr Cluster für die Unterstützung von SCSI-Hosts konfiguriert ist, werden Sie aufgefordert, eine LUN zu erstellen.  Wenn Ihr Cluster für die Unterstützung von NVMe-Hosts konfiguriert ist, werden Sie aufgefordert, einen NVMe-Namespace zu erstellen.  Eine ASA r2-Speichereinheit hat eine maximale Kapazität von 128 TB.
 
 Im link:https://hwu.netapp.com/["NetApp Hardware Universe"^] finden Sie die aktuellen Storage-Grenzwerte für ASA r2 Systeme.
 
 Host-Initiatoren werden der Speichereinheit als Teil der Erstellung der Speichereinheit hinzugefügt und zugeordnet. Sie können link:provision-san-storage.html#add-host-initiators["Fügen Sie Host-Initiatoren hinzu"] link:provision-san-storage.html#map-the-storage-unit-to-a-host["Karte"]sie auch an Ihre Speichereinheiten übertragen, nachdem die Speichereinheiten erstellt wurden.
+
+Ab ONTAP 9.18.1 können Sie die Snapshot-Reserve ändern und die automatische Snapshot-Löschung beim Erstellen einer Speichereinheit aktivieren.  Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet.
+
+link:../data-protection/snapshot-reserve.html["Erfahren Sie mehr über Snapshot-Reservierung auf ASA r2-Systemen."].
 
 .Schritte
 . Wählen Sie im System Manager *Storage* und anschließend ausimage:icon_add_blue_bg.png["Rechteckiges Symbol mit blauem Hintergrund und das Wort hinzufügen zentriert in weißen Buchstaben"].
@@ -63,7 +67,7 @@ Neue QoS-Richtlinie erstellen
 .. Wählen Sie unter *Speicher und Optimierung* neben *Quality of Service (QoS)* die Option image:icon_dropdown_arrow.gif["Symbol des blauen Pfeils, der nach unten zeigt"] .
 .. Wählen Sie *neue Richtlinie definieren*.
 .. Geben Sie einen Namen für die neue QoS-Richtlinie ein.
-.. Legen Sie eine QoS-Grenze, eine QoS-Garantie oder beides fest.
+.. Legen Sie ein QoS-Limit, eine QoS-Garantie oder beides fest.
 +
 ... Geben Sie unter *Limit* optional eine maximale Durchsatzgrenze, eine maximale IOPS-Grenze oder beides ein.
 +
@@ -88,6 +92,15 @@ Durch die Festlegung eines minimalen Durchsatzes und IOPS für eine Storage-Einh
 +
 ASA r2-Systeme bieten zwei Leistungsstufen.  Die Standardleistungsstufe ist *Extrem*, die höchste verfügbare Stufe.  Sie können die Stufe auf *Leistung* senken.
 
+
+
+
+
+ a| 
+Ändern Sie die Standard-Snapshot-Reservierung und aktivieren Sie die automatische Snapshot-Löschung.
+ a| 
+.. Unter *Snapshot-Reserve %* geben Sie den numerischen Wert für den Prozentsatz des Speicherplatzes ein, den Sie für Snapshots reservieren möchten.
+.. Wählen Sie *Ältere Snapshots automatisch löschen*.
 
 
 

@@ -1,0 +1,239 @@
+---
+sidebar: sidebar 
+permalink: manage-data/migrate-svm.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
+summary: Wenn in einer Storage-Verfügbarkeitszone der Speicherplatz knapp ist, können Sie Storage-Einheiten auf eine andere Storage-Verfügbarkeitszone verschieben, um die Storage-Auslastung im Cluster auszugleichen. 
+---
+= Migrieren einer Speicher-VM von einem ASA -Cluster zu einem ASA r2-Cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ab ONTAP 9.18.1 können Sie eine Storage Virtual Machine (VM) unterbrechungsfrei von einem beliebigen ASA Cluster zu einem beliebigen ASA r2-Cluster migrieren.  Die Migration von einem ASA Cluster zu einem ASA r2-Cluster ermöglicht die Übernahme der vereinfachten und optimierten Architektur von ASA r2-Systemen für reine SAN-Umgebungen.
+
+Die Migration von Storage-VMs zwischen ASA und ASA r2-Speichersystemen wird wie folgt unterstützt:
+
+[cols="2"]
+|===
+| Von jedem der folgenden ASA Systeme: | Für jedes der folgenden ASA r2-Systeme: 
+
+
+ a| 
+* ASA C800
+* ASA C400
+* ASA C250
+* ASA A900
+* ASA A800
+* ASA A400
+* ASA A250
+* ASA A150
+* ASA AFF A800
+* ASA AFF A700
+* ASA AFF A400
+* ASA AFF A250
+* ASA AFF A220
+
+ a| 
+* ASA A1K
+* ASA C30
+* ASA A90
+* ASA A70
+* ASA A50
+* ASA A30
+* ASA A20
+
+
+|===
+
+NOTE: Die aktuellste Liste der ASA und ASA r2-Systeme finden Sie hier:link:https://hwu.netapp.com/["NetApp Hardware Universe"^] Die  ASA r2-Systeme werden im NetApp Hardware Universe als „ASA A-Serie/C-Serie (Neu)“ aufgeführt.
+
+Eine Storage-VM kann nur von einem ASA Cluster zu einem ASA r2-Cluster migriert werden.  Eine Migration von einem anderen ONTAP System wird nicht unterstützt.
+
+.Bevor Sie beginnen
+Alle Knoten im ASA r2-Cluster und im ASA Cluster müssen mit ONTAP 9.18.1 oder höher laufen.  Die ONTAP 9.18.1 Patch-Versionen auf den Clusterknoten können variieren.
+
+
+
+== Schritt 1: Überprüfen Sie den Status der ASA -Speicher-VM
+
+Bevor Sie eine Storage-VM von einem ASA -System migrieren, dürfen keine NVMe-Namespaces oder vVols vorhanden sein und jedes Volume in der Storage-VM sollte nur eine LUN enthalten.  Die Migration von NVMe-Namespaces und vVols wird nicht unterstützt.  Die Architektur von ASA r2-Systemen erfordert, dass Volumes jeweils eine einzelne LUN enthalten.
+
+.Schritte
+. Überprüfen Sie, ob in der Speicher-VM keine NVMe-Namespaces vorhanden sind:
++
+[source, cli]
+----
+vserver nvme namespace show -vserver <storage_VM>
+----
++
+Wenn Einträge angezeigt werden, müssen die NVMe-Objekte vorhanden sein.link:https://docs.netapp.com/us-en/ontap/nvme/convert-namespace-to-lun-task.html["konvertiert"^] zu LUNs oder entfernt.  Siehe die `vserver nvme namespace delete` und die `vserver nvme subsystem delete` Befehle in derlink:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["ONTAP-Befehlsreferenz"^] für weitere Informationen.
+
+. Überprüfen Sie, ob in der Speicher-VM keine vVols vorhanden sind:
++
+[source, cli]
+----
+lun show -verser <storage_VM> -class protocol-endpoint,vvol
+----
++
+Falls vVols vorhanden sind, sollten diese auf eine andere Storage-VM kopiert und anschließend von der zu migrierenden Storage-VM gelöscht werden.  Siehe die `lun copy` Und `lun delete` Befehle in derlink:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["ONTAP-Befehlsreferenz"^] für weitere Informationen.
+
+. Überprüfen Sie, ob jedes Volume in der Speicher-VM eine einzelne LUN enthält:
++
+[source, cli]
+----
+lun show -verser <storage_VM>
+----
++
+Wenn ein Volume mehr als eine LUN enthält, verwenden Sie die `volume create` Und `lun move` Befehle zum Erstellen eines 1:1-Volume-zu-LUN-Verhältnisses. Siehe dielink:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["ONTAP-Befehlsreferenz"^] für weitere Informationen.
+
+
+
+.Was kommt als Nächstes?
+Sie sind nun bereit, eine Cluster-Peer-Beziehung zwischen Ihren ASA und ASA r2-Clustern herzustellen.
+
+
+
+== Schritt 2: Erstellen Sie eine Cluster-Peer-Beziehung zwischen Ihren ASA und ASA r2-Clustern.
+
+Bevor Sie eine Storage-VM von einem ASA Cluster zu einem ASA r2-Cluster migrieren können, müssen Sie eine Peer-Beziehung erstellen.  Eine Peer-Beziehung definiert Netzwerkverbindungen, die es ONTAP Clustern und Speicher-VMs ermöglichen, Daten sicher auszutauschen.
+
+.Bevor Sie beginnen
+Sie müssen auf jedem Knoten in den Clustern, die miteinander verbunden sind, Intercluster-LIFs mit einer der folgenden Methoden erstellt haben.
+
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-share-data-ports-task.html["Konfigurieren Sie Intercluster-LIFs auf gemeinsam genutzten Datenports"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-dedicated-ports-task.html["Intercluster-LIFs auf dedizierten Datenports konfigurieren"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-ports-own-networks-task.html["Intercluster-LIFs in benutzerdefinierten IPspaces konfigurieren"^]
+
+
+.Schritte
+. Erstellen Sie auf dem ASA r2-Cluster eine Peer-Beziehung zum ASA Cluster und generieren Sie eine Passphrase:
++
+[source, cli]
+----
+cluster peer create -peer-addrs <ASA_cluster_LIF_IPs> -generate-passphrase
+----
++
+Das folgende Beispiel erstellt eine Cluster-Peer-Beziehung zwischen Cluster 1 und Cluster 2 und generiert eine systemgenerierte Passphrase:
+
++
+[listing]
+----
+cluster1::> cluster peer create -peer-addrs 10.98.191.193 -generate-passphrase
+Passphrase: UCa+6lRVICXeL/gq1WrK7ShR
+            Peer Cluster Name: cluster2
+            Initial Allowed Vserver Peers: -
+            Expiration Time: 6/7/2017 09:16:10 +5:30
+            Intercluster LIF IP: 10.140.106.185
+Warning: make a note of the passphrase - it cannot be displayed again.
+
+----
+. Kopieren Sie die generierte Passphrase.
+. Erstellen Sie auf dem ASA Cluster eine Peer-Beziehung zum ASA r2-Cluster:
++
+[source, cli]
+----
+cluster peer create -peer-addrs <ASA_r2_LIF_IPs>
+----
+. Geben Sie die auf dem ASA r2-Cluster generierte Passphrase ein.
+. Überprüfen Sie, ob die Cluster-Peer-Beziehung erstellt wurde:
++
+[source, cli]
+----
+cluster peer show
+----
++
+Das folgende Beispiel zeigt die erwartete Ausgabe für erfolgreich verbundene Cluster.
+
++
+[listing]
+----
+cluster1::> cluster peer show
+
+Peer Cluster Name   Cluster Serial Number   Availability   Authentication
+-----------------   ---------------------   -------------- --------------
+cluster2             1-80-123456             Available      ok
+----
+
+
+.Ergebnis
+Die ASA und ASA r2-Cluster sind per Peering verbunden, sodass Speicher-VM-Daten sicher übertragen werden können.
+
+.Was kommt als Nächstes?
+Sie sind nun bereit, Ihre ASA -Speicher-VM für die Migration vorzubereiten.
+
+
+
+== Schritt 3: Vorbereitung der Migration der Speicher-VMs von einem ASA zu einem ASA r2-Cluster
+
+Bevor Sie eine Storage Virtual Machine (VM) von einem ASA Cluster zu einem ASA r2-Cluster migrieren, müssen Sie einen Migrations-Pre-Check durchführen und alle erforderlichen Probleme beheben.  Die Migration kann erst durchgeführt werden, wenn die Vorprüfung erfolgreich bestanden wurde.
+
+.Schritt
+. Führen Sie auf Ihrem ASA r2-Cluster die Migrationsvorprüfung durch:
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM> -source-cluster <asa_cluster> -check-only true
+----
++
+Falls Sie Probleme beheben müssen, um Ihren ASA Cluster für die Migration vorzubereiten, werden das Problem und die Korrekturmaßnahme angezeigt.  Beheben Sie das Problem und wiederholen Sie die Vorabprüfung, bis sie erfolgreich abgeschlossen ist.
+
+
+
+.Was kommt als Nächstes?
+Sie sind nun bereit, Ihre Storage-VM von Ihrem ASA Cluster zu einem ASA r2-Cluster zu migrieren.
+
+
+
+== Schritt 4: Migrieren einer ASA -Speicher-VM zu einem ASA r2-Cluster
+
+Nachdem Sie Ihren ASA Cluster vorbereitet und die notwendige Cluster-Peer-Beziehung mit dem ASA r2-Cluster hergestellt haben, können Sie mit der Migration der Storage-VMs beginnen.
+
+Bei der Migration von Speicher-VMs empfiehlt es sich, sowohl auf dem ASA -Cluster als auch auf dem ASA r2-Cluster 30 % CPU-Reserve einzuplanen, damit die CPU-Workload ausgeführt werden kann.
+
+.Über diese Aufgabe
+Nach der Migration der Speicher-VMs werden die Clients automatisch auf den ASA r2-Cluster umgeschaltet und die Speicher-VM auf dem ASA Cluster wird automatisch entfernt.  Die automatische Umstellung und die automatische Entfernung der Speicher-VMs sind standardmäßig aktiviert.  Sie können optional beide deaktivieren und die Umstellung sowie die Entfernung der Speicher-VM manuell durchführen.
+
+.Bevor Sie beginnen
+* Der ASA r2-Cluster muss über ausreichend freien Speicherplatz verfügen, um die migrierte Speicher-VM aufzunehmen.
+* Wenn die ASA -Speicher-VM verschlüsselte Volumes enthält, muss der Onboard-Key-Manager oder der externe Key-Manager auf dem ASA r2-System auf Clusterebene konfiguriert werden.
+* Die folgenden Operationen können auf dem Quell- ASA Cluster nicht ausgeführt werden:
++
+** Failover-Operationen
+** WAFLIRON
+** Fingerabdruck
+** Volumen verschieben, neu hosten, klonen, erstellen, konvertieren oder Analysen
+
+
+
+
+.Schritte
+. Starten Sie die Migration der Speicher-VMs vom ASA r2-Cluster aus:
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM_name> -source-cluster <ASA_cluster>
+----
++
+Um die automatische Umschaltung zu deaktivieren, verwenden Sie die `-auto-cutover false` Parameter.  Um die automatische Entfernung der ASA -Speicher-VM zu deaktivieren, verwenden Sie die `-auto-source-cleanup false` Parameter.
+
+. Überwachen Sie den Status der Migration
++
+[source, cli]
+----
+vserver migrate show -vserver <storage_VM_name>
+----
++
+Wenn die Migration abgeschlossen ist, wird der *Status* als *migration-complete* angezeigt.
+
+
+
+
+NOTE: Falls Sie die Migration vor dem automatischen Umstieg pausieren oder abbrechen müssen, verwenden Sie die `vserver migrate pause` und die `vserver migrate abort` Befehle.  Sie müssen die Migration pausieren, bevor Sie sie abbrechen können.  Die Migration kann nach dem Start der Umstellung nicht mehr abgebrochen werden.
+
+.Ergebnis
+Die Speicher-VM wird vom ASA Cluster zum ASA r2-Cluster migriert.  Der Name und die UUID der Speicher-VM, der Daten-LIF-Name, die IP-Adresse und Objektnamen, wie z. B. der Volumenname, bleiben unverändert.  Die UUIDs der migrierten Objekte in der Speicher-VM werden aktualisiert.
+
+.Was kommt als Nächstes?
+Wenn Sie die automatische Umstellung und die automatische Entfernung von Speicher-VMs deaktiviert haben,link:svm-post-migrate-cutover-cleanup.html["Stellen Sie Ihre ASA Clients manuell auf Ihren ASA r2-Cluster um und entfernen Sie die Speicher-VM aus dem ASA Cluster."] Die

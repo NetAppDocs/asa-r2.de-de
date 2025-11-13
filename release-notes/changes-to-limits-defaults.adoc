@@ -25,6 +25,12 @@ Erfahren Sie mehr über die Änderungen an Grenzwerten und Standardwerten für A
 | Funktion | Begrenzungsänderung | In Freigabe geändert... 
 
 
+| Speicher-VMs pro Cluster | Die maximale Anzahl unterstützter virtueller Speichermaschinen (VMs) pro HA-Paar wurde von 32 auf 256 erhöht. | ONTAP 9.18.1 
+
+
+| SnapMirror activ sync | Die Unterstützung für SnapMirror Active Sync wurde von Zwei-Knoten-Clustern auf Vier-Knoten-Cluster erweitert. | ONTAP 9.18.1 
+
+
 | Nodes pro Cluster  a| 
 Die maximale Anzahl an Nodes pro Cluster wurde von 2 auf 12 erhöht.
 

@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: manage-data/svm-post-migrate-cutover-cleanup.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine, manual cutover, manual cleanup, remove source svm 
+summary: Wenn in einer Storage-Verfügbarkeitszone der Speicherplatz knapp ist, können Sie Storage-Einheiten auf eine andere Storage-Verfügbarkeitszone verschieben, um die Storage-Auslastung im Cluster auszugleichen. 
+---
+= Umstellung der Clients und Bereinigung der Quellspeicher-VM nach der Migration auf ein ASA r2-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach der Migration einer Storage Virtual Machine (VM) von einem ASA Cluster zu einem ASA r2-Cluster werden die Clients standardmäßig automatisch auf den ASA r2-Cluster umgeschaltet und die Storage VM auf dem ASA Cluster automatisch entfernt.  Wenn Sie die automatische Umstellung und Entfernung der ASA -Speicher-VM während der Migration deaktiviert haben, müssen Sie diese Schritte nach Abschluss der Migration manuell durchführen.
+
+
+
+== Manuelle Umstellung der Clients auf ein ASA r2-System nach einer Speicher-VM-Migration
+
+Wenn Sie die automatische Clientumschaltung während der Migration einer Storage-VM von einem ASA Cluster zu einem ASA r2-Cluster deaktivieren, führen Sie die Umschaltung nach erfolgreichem Abschluss der Migration manuell durch, damit die ASA r2 Storage-VM Daten an Clients liefern kann.
+
+.Schritte
+. Führen Sie auf dem ASA r2-Cluster die Client-Umstellung manuell durch:
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. Vergewissern Sie sich, dass der Umstellungsvorgang abgeschlossen ist:
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.Ergebnis
+Die Daten werden Ihren Clients von der Speicher-VM auf Ihrem ASA r2-Cluster bereitgestellt.
+
+.Was kommt als Nächstes?
+Sie können nun die Speicher-VM aus dem Quell- ASA Cluster entfernen.
+
+
+
+== Manuelles Entfernen einer ASA -Speicher-VM nach der Migration zu einem ASA r2-Cluster
+
+Wenn Sie die automatische Quellbereinigung während der Migration einer Storage-VM von einem ASA Cluster zu einem ASA r2-Cluster deaktivieren, müssen Sie nach Abschluss der Migration die Storage-VM aus dem ASA Cluster entfernen, um Speicherplatz freizugeben.
+
+.Bevor Sie beginnen
+Ihre Clients sollten Daten vom ASA r2-Cluster beziehen.
+
+.Schritte
+. Überprüfen Sie im ASA Cluster, ob der Status der ASA -Speicher-VM *Bereit für die Quellbereinigung* lautet:
++
+[source, cli]
+----
+vserver migrate show
+----
+. Entfernen Sie die ASA -Speicher-VM:
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.Ergebnis
+Die Speicher-VM auf Ihrem ASA Cluster wurde entfernt.

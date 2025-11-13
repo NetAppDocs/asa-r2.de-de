@@ -12,7 +12,7 @@ searchtitle: Erstellen Sie mit ONTAP ASA r2 Snapshots für die Datensicherung
 
 
 [role="lead"]
-Um Daten auf Ihrem ASA r2-System zu sichern, müssen Sie einen Snapshot erstellen. Mit ONTAP System Manager können Sie einen manuellen Snapshot einer einzelnen Storage-Einheit erstellen oder eine Konsistenzgruppe erstellen und automatische Snapshots mehrerer Storage-Einheiten gleichzeitig planen.
+Erstellen Sie einen Snapshot, um die Daten auf Ihrem ASA r2-System zu sichern.  Mit dem ONTAP System Manager können Sie einen manuellen Snapshot einer einzelnen Speichereinheit erstellen oder eine Konsistenzgruppe erstellen und gleichzeitig automatische Snapshots mehrerer Speichereinheiten planen.
 
 
 
@@ -22,7 +22,11 @@ Eine Konsistenzgruppe ist eine Sammlung von Speichereinheiten, die als eine Einh
 
 Erstellen Sie eine Konsistenzgruppe mit neuen Speichereinheiten oder erstellen Sie eine Konsistenzgruppe mit vorhandenen Speichereinheiten.
 
-Wenn Sie eine Konsistenzgruppe mit neuen Storage-Einheiten erstellen, können Sie jeder Storage-Einheit eine unterschiedliche Kapazität zuweisen, das Standard-Service-Level für die Performance ändern und bis zu fünf untergeordnete Konsistenzgruppen erstellen. Wenn Sie eine Konsistenzgruppe mit vorhandenen Speichereinheiten erstellen, können Sie bereits verwendete Speichereinheiten hinzufügen.
+Ab ONTAP 9.18.1 können Sie den Snapshot-Reservierungsprozentsatz festlegen und die automatische Snapshot-Löschung aktivieren, wenn Sie eine Konsistenzgruppe mit neuen Speichereinheiten erstellen.  Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet.  Wenn die Snapshot-Reservierung und die automatische Snapshot-Löschung für eine übergeordnete Konsistenzgruppe aktiviert sind, werden sie auch für alle vorhandenen untergeordneten Konsistenzgruppen aktiviert.  Werden neue untergeordnete Konsistenzgruppen hinzugefügt, erben diese nicht die Snapshot-Reservierungs- und Snapshot-Löscheinstellungen der übergeordneten Gruppe.
+
+link:snapshot-reserve.html["Erfahren Sie mehr über Snapshot-Reservierung auf ASA r2-Speichersystemen."].
+
+Ab ONTAP 9.16.1 können Sie beim Erstellen von Konsistenzgruppen mit neuen Speichereinheiten bis zu fünf untergeordnete Konsistenzgruppen konfigurieren. link:manage-hierarchical-consistency-groups.html["Erfahren Sie mehr über Kinderkonsistenzgruppen auf ASA r2-Systemen."].
 
 [role="tabbed-block"]
 ====
@@ -54,6 +58,17 @@ Wählen Sie *eine andere Kapazität hinzufügen*.
  a| 
 Wählen Sie unter *Performance Service Level* einen anderen Service Level aus.
 
+ASA r2-Systeme bieten zwei Leistungsstufen.  Die Standard-Leistungsstufe ist *Extrem*, die höchste verfügbare Stufe.  Sie können die Leistungsstufe auf *Leistung* herabsetzen.
+
+
+
+ a| 
+Ändern Sie die Standard-Snapshot-Reservierung und aktivieren Sie die automatische Snapshot-Löschung.
+ a| 
+.. Unter *Snapshot-Reserve %* geben Sie den numerischen Wert für den Prozentsatz des Speicherplatzes der Speichereinheit ein, der für Snapshots reserviert werden soll.
+.. Wählen Sie *Ältere Snapshots automatisch löschen*.
+
+
 
 
  a| 
@@ -67,7 +82,7 @@ Wählen Sie *untergeordnete Consistency Group hinzufügen*.
 
 
 .Was kommt als Nächstes?
-Sie haben eine Konsistenzgruppe erstellt, die die Speichereinheiten enthält, die Sie schützen möchten. Sie können jetzt einen Snapshot erstellen.
+Sie haben eine Konsistenzgruppe erstellt, die die zu schützenden Speichereinheiten enthält.  Jetzt können Sie einen Snapshot erstellen.
 
 --
 .Nutzung vorhandener Storage-Einheiten
@@ -80,7 +95,7 @@ Sie haben eine Konsistenzgruppe erstellt, die die Speichereinheiten enthält, di
 
 
 .Was kommt als Nächstes?
-Sie haben eine Konsistenzgruppe erstellt, die die Speichereinheiten enthält, die Sie schützen möchten. Sie können jetzt einen Snapshot erstellen.
+Sie haben eine Konsistenzgruppe erstellt, die die zu schützenden Speichereinheiten enthält.  Jetzt können Sie einen Snapshot erstellen.
 
 --
 ====
@@ -97,7 +112,7 @@ Sie können einen On-Demand-Snapshot einer einzelnen Speichereinheit oder einer 
 
 * On-Demand-Snapshots
 +
-Ein On-Demand-Snapshot einer Speichereinheit kann jederzeit erstellt werden. Die Speichereinheit muss kein Mitglied einer Consistency Group sein, die durch einen On-Demand-Snapshot geschützt werden soll. Wenn Sie einen On-Demand-Snapshot einer Speichereinheit erstellen, die Mitglied einer Konsistenzgruppe ist, werden die anderen Speichereinheiten der Konsistenzgruppe nicht in den On-Demand-Snapshot aufgenommen. Wenn Sie einen On-Demand-Snapshot einer Konsistenzgruppe erstellen, werden alle Speichereinheiten in der Konsistenzgruppe in den Snapshot aufgenommen.
+Sie können jederzeit eine Momentaufnahme einer Speichereinheit erstellen.  Die Speichereinheit muss nicht Mitglied einer Konsistenzgruppe sein, um durch einen On-Demand-Snapshot geschützt zu werden.  Wenn Sie einen On-Demand-Snapshot einer Speichereinheit erstellen, die Mitglied einer Konsistenzgruppe ist, werden die anderen Speichereinheiten in der Konsistenzgruppe nicht in den On-Demand-Snapshot einbezogen.  Wenn Sie einen On-Demand-Snapshot einer Konsistenzgruppe erstellen, werden alle Speichereinheiten der Konsistenzgruppe in den Snapshot aufgenommen.
 
 * Automatisierte Snapshots
 +

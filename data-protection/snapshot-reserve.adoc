@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapshot-reserve.html 
+keywords: asa r2, snapshot reserve, percentage 
+summary: Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet. 
+---
+= Erfahren Sie mehr über ONTAP Snapshot-Reservierung auf ASA r2-Speicher.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet.  Dadurch wird verhindert, dass Snapshots Speicherplatz belegen, der für Benutzerdaten vorgesehen ist.
+
+Die Snapshot-Reserve wird als Prozentsatz der gesamten Speichereinheitsgröße festgelegt.  Wenn die Speichereinheit beispielsweise 50 GB groß ist und Sie die Snapshot-Reserve auf 10 % einstellen, beträgt der für Snapshots reservierte Speicherplatz 5 GB.  Wenn der von Snapshots belegte Speicherplatz 5 GB erreicht, werden ältere Snapshots automatisch gelöscht, um Platz für neue Snapshots zu schaffen.  Wenn die Speichereinheitsgröße auf 100 GB erhöht wird, erhöht sich die Snapshot-Reserve auf 10 GB.  Die maximal einstellbare Snapshot-Reserve beträgt 200 %.  Wenn Ihre Speichereinheit auf die maximale Größe von 128 TB anwächst, ermöglicht Ihnen eine 200%ige Snapshot-Reserve die Erstellung von 2 vollständigen Snapshots.
+
+Standardmäßig ist die Snapshot-Reservierung auf 0 % eingestellt und die automatische Snapshot-Löschung ist nicht aktiviert.
+
+Ab ONTAP 9.18.1 können Sie die Standard-Snapshot-Reserve während oder nach der Erstellung von Speichereinheiten und während der Erstellung von Konsistenzgruppen ändern.  Sie können auch die Standard-Snapshot-Reservierung auf bestehenden virtuellen Speichermaschinen (VMs) ändern.  In ONTAP 9.17.1 und früheren Versionen können diese Einstellungen nicht geändert werden.
+
+Die Snapshot-Reserve wird für alle Speichereinheiten einer Konsistenzgruppe zum Zeitpunkt der Erstellung der Konsistenzgruppe auf denselben Prozentsatz festgelegt.  Die Snapshot-Reserve muss für jede später hinzugefügte Speichereinheit einzeln festgelegt werden.

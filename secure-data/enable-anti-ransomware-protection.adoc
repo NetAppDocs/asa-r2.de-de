@@ -25,9 +25,9 @@ Nachdem Sie ARP/AI aktiviert haben, sollten Sie link:../administer/update-firmwa
 
 
 
-== Aktivieren Sie ARP/AI auf allen Speichereinheiten in einer SVM
+== Aktivieren Sie ARP/AI auf allen Speichereinheiten in einer Speicher-VM.
 
-Sie können ARP/AI standardmäßig auf allen in einer Storage Virtual Machine (SVM) erstellten Speichereinheiten aktivieren. Das bedeutet, dass ARP/AI für alle neuen Speichereinheiten in der SVM automatisch aktiviert ist. Sie können ARP/AI auch auf vorhandene Speichereinheiten in der SVM anwenden.
+Sie können ARP/AI standardmäßig auf allen in einer Storage Virtual Machine (VM) erstellten Speichereinheiten aktivieren. Dies bedeutet, dass bei allen neu in der Speicher-VM erstellten Speichereinheiten ARP/AI automatisch aktiviert wird.  Sie können ARP/AI auch auf bestehende Speichereinheiten in der Speicher-VM anwenden.
 
 .Schritte
 . Wählen Sie im System Manager *Cluster > Storage-VMs* aus.
@@ -42,13 +42,13 @@ Dadurch wird ARP/AI standardmäßig auf allen zukünftigen Speichereinheiten akt
 
 
 .Ergebnis
-Alle neuen Speichereinheiten, die Sie auf der SVM erstellen, sind standardmäßig vor Ransomware-Angriffen geschützt und verdächtige Aktivitäten werden Ihnen im System Manager gemeldet.
+Alle neu erstellten Speichereinheiten auf der Speicher-VM sind standardmäßig vor Ransomware-Angriffen geschützt, und verdächtige Aktivitäten werden Ihnen im System Manager gemeldet.
 
 
 
-== Aktivieren Sie ARP/AI auf bestimmten Speichereinheiten in einer SVM
+== Aktivieren Sie ARP/AI auf bestimmten Speichereinheiten in einer Speicher-VM.
 
-Wenn Sie ARP/AI nicht auf allen Speichereinheiten in einer SVM aktivieren möchten, können Sie die spezifischen Einheiten auswählen, die aktiviert werden sollen.
+Wenn Sie ARP/AI nicht auf allen Speichereinheiten einer Speicher-VM aktivieren möchten, können Sie die spezifischen Einheiten auswählen, für die die Aktivierung gewünscht ist.
 
 .Schritte
 . Wählen Sie im System Manager *Storage* aus.

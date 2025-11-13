@@ -24,13 +24,25 @@ entries:
       url: "/manage-data/move-storage-units.html"
     - title: Speichereinheiten löschen
       url: "/manage-data/delete-storage-units.html"
+  - title: Speicher-VMs migrieren
+    entries:
+    - title: Migrieren einer Speicher-VM von einem ASA Cluster
+      url: "/manage-data/migrate-svm.html"
+    - title: Clients umstellen und Quellspeicher-VM bereinigen
+      url: "/manage-data/svm-post-migrate-cutover-cleanup.html"
   - title: Storage-Beschränkungen
     url: "/manage-data/storage-limits.html"
 - title: Sichern Sie Ihre Daten
   entries:
   - title: Erstellen von Snapshots
     url: "/data-protection/create-snapshots.html"
-  - title: Erstellen einer SVM-Peer-Beziehung
+  - title: Snapshot-Reservierung verwalten
+    entries:
+    - title: Erfahren Sie mehr über Snapshot-Reservierung
+      url: "/data-protection/snapshot-reserve.html"
+    - title: Snapshot-Reservierung ändern
+      url: "/data-protection/snapshot-reserve-modify.html"
+  - title: Erstellen einer Peer-Beziehung für Speicher-VMs
     url: "/data-protection/create-svm-peer-relationship.html"
   - title: Richten Sie die Snapshot-Replikation ein
     entries:

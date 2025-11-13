@@ -138,7 +138,7 @@ set -privilege advanced
 +
 [source, cli]
 ----
-network interface service-policy create -vserver <SVM_name> -policy <service_policy_name> -services data-core,data-iscsi
+network interface service-policy create -vserver <storage_VM_name> -policy <service_policy_name> -services data-core,data-iscsi
 ----
 . Überprüfen Sie, ob die Servicerichtlinie erstellt wurde:
 +
@@ -158,7 +158,7 @@ set -privilege admin
 
 === Erstellen Sie nur iSCSI-LIFs mit automatischem LIF-Failover
 
-Wenn auf der SVM iSCSI-LIFs vorhanden sind, die nicht für automatischen LIF-Failover aktiviert sind, werden die neu erstellten LIFs auch nicht für automatischen LIF-Failover aktiviert. Wenn der automatische LIF-Failover nicht aktiviert ist und ein Failover-Ereignis tritt, werden die iSCSI LIFs nicht migriert.
+Wenn auf der Speicher-VM iSCSI-LIFs vorhanden sind, die nicht für automatisches LIF-Failover aktiviert sind, werden Ihre neu erstellten LIFs ebenfalls nicht für automatisches LIF-Failover aktiviert.  Wenn die automatische LIF-Failover-Funktion nicht aktiviert ist und ein Failover-Ereignis eintritt, werden Ihre iSCSI-LIFs nicht migriert.
 
 .Bevor Sie beginnen
 Sie müssen eine benutzerdefinierte iSCSI-only-LIF-Dienstrichtlinie erstellt haben.
@@ -168,7 +168,7 @@ Sie müssen eine benutzerdefinierte iSCSI-only-LIF-Dienstrichtlinie erstellt hab
 +
 [source, cli]
 ----
-network interface create -vserver <SVM_name> -lif <iscsi_lif_name> -service-policy <service_policy_name> -home-node <home_node> -home-port <port_name> -address <ip_address> -netmask <netmask> -failover-policy sfo-partner-only -status-admin up
+network interface create -vserver <storage_VM_name> -lif <iscsi_lif_name> -service-policy <service_policy_name> -home-node <home_node> -home-port <port_name> -address <ip_address> -netmask <netmask> -failover-policy sfo-partner-only -status-admin up
 ----
 +
 ** Es wird empfohlen, auf jedem Knoten zwei iSCSI-LIFs zu erstellen, eines für Fabric A und eines für Fabric B. Dies sorgt für Redundanz und Lastausgleich für Ihren iSCSI-Verkehr. Im folgenden Beispiel werden insgesamt vier iSCSI-LIFs erstellt, zwei auf jedem Knoten und eines für jedes Fabric.

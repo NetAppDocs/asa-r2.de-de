@@ -37,11 +37,11 @@ NOTE: link:rebalance-workloads.html["Automatischer Workload-Ausgleich"]wird stan
 | Wenn Sie... | Bevor Sie zurückkehren, sollten Sie ... 
 
 
-| Hierarchische Konsistenzgruppen in einer SnapMirror Active Sync-Beziehung | link:../data-protection/snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] 
+| Hierarchische Konsistenzgruppen in einer SnapMirror Active Sync-Beziehung | link:../data-protection/snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"]. 
 
 
-| Aktive Importbeziehungen | Löschen der aktiven Importbeziehungen 
+| Aktive Importbeziehungen | Die aktiven Importbeziehungen löschen. link:../install-setup/set-up-data-access.html#migrate-data-from-a-third-party-storage-system["Erfahren Sie mehr über Importbeziehungen"]. 
 
 
-| Anti-Ransomware-Schutz aktiviert | Deaktivieren Sie den Anti-Ransomware-Schutz 
+| Anti-Ransomware-Schutz aktiviert | link:../secure-data/pause-resume-anti-ransomware-protection.html["Anti-Ransomware-Schutz pausieren"]. 
 |===

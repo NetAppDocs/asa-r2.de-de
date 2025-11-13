@@ -17,9 +17,23 @@ Erhöhen oder verringern Sie die Größe einer Konsistenzgruppe, indem Sie die A
 
 == Fügen Sie einer Konsistenzgruppe Speichereinheiten hinzu
 
-Erweitern Sie die von einer Konsistenzgruppe gemanagte Speichermenge, indem Sie der Konsistenzgruppe Speichereinheiten hinzufügen.
+Erweitern Sie den von einer Konsistenzgruppe verwalteten Speicherplatz, indem Sie der Konsistenzgruppe neue oder bereits vorhandene Speichereinheiten hinzufügen.
 
-Sie können der Konsistenzgruppe vorhandene Storage-Einheiten hinzufügen oder neue Storage-Einheiten erstellen, die der Konsistenzgruppe hinzugefügt werden sollen.
+Ab ONTAP 9.18.1 können Sie Snapshot-Reservierung und automatische Snapshot-Löschung einstellen, um den von Snapshots in Ihren Speichereinheiten belegten Speicherplatz zu begrenzen.  Wenn Sie einer bestehenden Konsistenzgruppe eine Speichereinheit hinzufügen, werden Snapshot-Reservierung und automatische Snapshot-Löschung standardmäßig wie folgt eingestellt.
+
+[cols="3"]
+|===
+| Wenn Sie hinzufügen... | Der Snapshot-Reserveprozentsatz ist auf ... eingestellt. | Die automatische Snapshot-Löschung ist... 
+
+
+| Neue Lagereinheiten | 0 | Deaktiviert 
+
+
+| Vorhandene Lagereinheiten | Unverändert | Unverändert 
+|===
+Sie können die Standardeinstellungen für neue Speichereinheiten beim Erstellen der Speichereinheiten ändern.  Sie können auchlink:snapshot-reserve-modify.html["bestehende Lagereinheiten modifizieren"] um ihre aktuellen Einstellungen zu aktualisieren.
+
+link:snapshot-reserve.html["Erfahren Sie mehr über Snapshot-Reservierung auf ASA r2-Speichersystemen."].
 
 .Bevor Sie beginnen
 Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie erweitern möchten, in einer SnapMirror Active Sync-Beziehung ist, müssen Sielink:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] bevor Sie Speichereinheiten hinzufügen können.  Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe in einer asynchronen Replikationsbeziehung steht, müssen Sielink:snapmirror-active-sync-break-relationship.html["die Beziehung abbrechen"] bevor Sie die Konsistenzgruppe erweitern können.  Das Löschen der SnapMirror Active-Sync-Beziehung oder das Aufbrechen der asynchronen Beziehung vor dem Erweitern einer Konsistenzgruppe ist in ONTAP 9.17.1 und späteren Versionen nicht erforderlich.
@@ -46,7 +60,7 @@ Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie erweitern möc
 . Wählen Sie *mit neuen Speichereinheiten*.
 . Geben Sie die Anzahl der Einheiten, die Sie erstellen möchten, sowie die Kapazität pro Einheit ein.
 +
-Wenn Sie mehrere Einheiten erstellen, wird jede Einheit mit derselben Kapazität und demselben Host-Betriebssystem erstellt. Um jeder Einheit eine andere Kapazität zuzuweisen, wählen Sie *eine andere Kapazität hinzufügen*, um jeder Einheit eine andere Kapazität zuzuweisen.
+Wenn Sie mehr als eine Einheit erstellen, wird jede Einheit mit der gleichen Kapazität und dem gleichen Host-Betriebssystem erstellt.  Um jeder Einheit eine andere Kapazität zuzuweisen, wählen Sie *Andere Kapazität hinzufügen*.
 
 . Wählen Sie *Erweitern*.
 
@@ -63,7 +77,7 @@ Vorhandene Snapshots der Konsistenzgruppe enthalten keine neu hinzugefügten Spe
 
 == Entfernen einer Speichereinheit aus einer Konsistenzgruppe
 
-Sie sollten eine Speichereinheit aus einer Konsistenzgruppe entfernen, wenn Sie die Speichereinheit löschen möchten, wenn Sie sie als Teil einer anderen Konsistenzgruppe verwalten möchten oder wenn Sie die darin enthaltenen Daten nicht mehr schützen müssen. Durch das Entfernen einer Speichereinheit aus einer Konsistenzgruppe wird die Beziehung zwischen der Speichereinheit und der Konsistenzgruppe unterbrochen, aber die Speichereinheit wird nicht gelöscht.
+Um eine Speichereinheit aus einer Konsistenzgruppe zu entfernen, kann sie gelöscht, als Teil einer anderen Konsistenzgruppe verwaltet oder der Schutz ihrer Daten aufgehoben werden.  Das Entfernen einer Speichereinheit aus einer Konsistenzgruppe unterbricht die Beziehung zwischen der Speichereinheit und der Konsistenzgruppe, löscht aber nicht die Speichereinheit.
 
 .Schritte
 . Wählen Sie in System Manager *Schutz > Consistency Groups* aus.

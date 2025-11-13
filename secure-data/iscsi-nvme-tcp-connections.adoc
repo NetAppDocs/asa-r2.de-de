@@ -17,11 +17,37 @@ Für ASA r2-Systeme ist IPsec für iSCSI- und NVMe/TCP-Hosts verfügbar.
 
 Auf bestimmten ASA r2-Systemen können mehrere kryptografische Vorgänge, wie z. B. Verschlüsselungs- und Integritätsprüfungen, auf eine unterstützte NIC-Karte (Network Interface Controller) ausgelagert werden. Der Durchsatz für auf die NIC-Karte ausgelagerte Vorgänge beträgt etwa 5 % oder weniger. Dies kann die Leistung und den Durchsatz des durch IPsec geschützten Netzwerkverkehrs erheblich verbessern.
 
-Die folgenden NIC-Karten werden für die Hardwareauslagerung auf den folgenden ASA r2-Systemen unterstützt:
+Ab ONTAP 9.18.1 wird die Unterstützung für IPsec-Hardware-Offloading auf IPv6-Datenverkehr erweitert.
 
-[cols="2"]
+Die folgenden Netzwerkkarten werden für die Hardware-Auslagerung auf den folgenden ASA r2-Systemen und ONTAP Versionen unterstützt:
+
+[cols="3"]
 |===
-| Unterstützte NIC-Karte | ASA r2-Systeme 
+| Unterstützte NIC-Karte | ASA r2-Systeme | ONTAP -Version 
+
+
+ a| 
+X50135A (2p, 40G/100G Ethernet-Controller)
+ a| 
+* ASA A1K
+* ASA A90
+* ASA A70
+
+ a| 
+ONTAP 9.17.1 und höher
+
+
+
+ a| 
+X60135A (2p, 40G/100G Ethernet-Controller)
+ a| 
+* ASA A50
+* ASA A30
+* ASA A20
+
+ a| 
+ONTAP 9.17.1 und höher
+
 
 
  a| 
@@ -31,6 +57,8 @@ X50131A – (2P, 40 G/100 G/200 G/400 G Ethernet-Controller)
 * ASA A90
 * ASA A70
 
+ a| 
+ONTAP 9.16.1 und höher
 
 
 
@@ -41,7 +69,11 @@ X60132A – (4p, 10G/25G Ethernet-Controller)
 * ASA A30
 * ASA A20
 
+ a| 
+ONTAP 9.16.1 und höher
 
 |===
+Siehe dielink:https://hwu.netapp.com/["NetApp Hardware Universe"^] Weitere Informationen zu den unterstützten Systemen und Karten finden Sie hier.
+
 .Was kommt als Nächstes?
-link:https://docs.netapp.com/us-en/ontap/networking/ipsec-configure.html["Konfigurieren Sie die IP-Sicherheit für das ONTAP-Netzwerk"]
+IPsec wird auf Ihrem ASA r2-System auf die gleiche Weise konfiguriert wie auf anderen ONTAP -Systemen. Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html["Bereiten Sie die Konfiguration der IP-Sicherheit für das ONTAP Netzwerk vor."^].

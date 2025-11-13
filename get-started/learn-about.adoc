@@ -14,7 +14,7 @@ searchtitle: Erfahren Sie mehr über die Systeme ASA A1K, A90, A70, A50, A30, A2
 [role="lead"]
 Die NetApp ASA r2 Systeme bieten eine einheitliche Hardware- und Softwarelösung, mit der eine vereinfachte Erfahrung speziell für die Anforderungen reiner SAN-Kunden erzielt wird.
 
-Die folgenden ASA-Plattformen werden als ASA r2-Systeme klassifiziert:
+Folgende Systeme werden als ASA r2-Systeme klassifiziert:
 
 * ASA A1K
 * ASA A90
@@ -44,5 +44,5 @@ ASA r2-Systeme unterstützen kein Cluster-Mixing mit ASA, AFF oder FAS Systemen.
 .Finden Sie weitere Informationen
 * Weitere Informationen zur Unterstützung und Einschränkungen von ASA r2-Systemen finden Sie im link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
 * Erfahren Sie mehr über link:../learn-more/hardware-comparison.html["Den ASA r2 Systemen im Vergleich zu den ASA Systemen"].
-* Erfahren Sie mehr über die link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"].
+* Erfahren Sie mehr über die link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^].
 

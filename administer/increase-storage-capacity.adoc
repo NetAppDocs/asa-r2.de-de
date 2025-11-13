@@ -17,12 +17,12 @@ Fügen Sie zu einem Node oder Shelf Laufwerke hinzu, um die Storage-Kapazität I
 
 == Verwenden Sie NetApp Hardware Universe, um die Installation eines neuen Laufwerks vorzubereiten
 
-Bevor Sie ein neues Laufwerk an einem Node oder Shelf installieren, verwenden Sie den NetApp Hardware Universe, um sicherzustellen, dass das hinzuzufügende Laufwerk von Ihrer ASA r2-Plattform unterstützt wird, und um den richtigen Steckplatz für das neue Laufwerk zu ermitteln. Die richtigen Steckplätze zum Hinzufügen von Laufwerken variieren je nach Plattformmodell und ONTAP-Version. In einigen Fällen müssen Sie in der Folge Laufwerke zu bestimmten Steckplätzen hinzufügen.
+Bevor Sie ein neues Laufwerk in einen Knoten oder ein Shelf einbauen, verwenden Sie das NetApp Hardware Universe, um zu bestätigen, dass das Laufwerk, das Sie hinzufügen möchten, von Ihrem ASA r2-System unterstützt wird, und um den richtigen Steckplatz für das neue Laufwerk zu identifizieren.  Die korrekten Steckplätze zum Hinzufügen von Laufwerken variieren je nach Systemmodell und ONTAP Version.  In einigen Fällen müssen Sie die Laufwerke nacheinander in bestimmte Steckplätze einbauen.
 
 .Schritte
 . Gehen Sie zum link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
 . Wählen Sie unter *Produkte* Ihre Hardwarekonfigurationen aus.
-. Wählen Sie Ihre ASA r2-Plattform aus.
+. Wählen Sie Ihr ASA r2-System aus.
 . Wählen Sie Ihre ONTAP-Version aus, und wählen Sie dann *Ergebnisse anzeigen*.
 . Wählen Sie unter der Grafik *Klicken Sie hier, um alternative Ansichten zu sehen*; wählen Sie dann die Ansicht, die Ihrer Konfiguration entspricht.
 . Überprüfen Sie anhand der Konfigurationsansicht, ob das neue Laufwerk unterstützt wird und ob der richtige Steckplatz für die Installation vorhanden ist.
@@ -42,7 +42,7 @@ Wiederholen Sie die Schritte in diesem Verfahren für jedes Laufwerk.
 
 .Schritte
 . Richtig gemahlen.
-. Entfernen Sie vorsichtig die Blende von der Vorderseite der Plattform.
+. Entfernen Sie vorsichtig die Blende von der Vorderseite des Systems.
 . Setzen Sie das neue Laufwerk in den richtigen Steckplatz ein.
 +
 .. Setzen Sie den neuen Antrieb mit beiden Händen ein, indem Sie den Nockengriff in die offene Position bringen.

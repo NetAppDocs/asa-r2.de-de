@@ -23,11 +23,11 @@ Entweder dem Onboard-Schlüsselmanager oder einem externen Schlüsselmanager
 
 
 
-| Nur SVM-Ebene | Nur ein externer Schlüsselmanager 
+| Nur auf Speicher-VM-Ebene | Nur ein externer Schlüsselmanager 
 
 
  a| 
-Auf Cluster- und SVM-Ebene
+Sowohl auf Cluster- als auch auf Speicher-VM-Ebene
  a| 
 Eine der folgenden Kombinationen von Schlüsselmanagern:
 
@@ -36,14 +36,14 @@ Eine der folgenden Kombinationen von Schlüsselmanagern:
 Cluster-Ebene: Onboard-Schlüsselmanager
 
 +
-SVM-Ebene: Externer Schlüsselmanager
+Speicher-VM-Ebene: Externer Schlüsselmanager
 
 * Option 2
 +
 Cluster-Ebene: Externer Schlüsselmanager
 
 +
-SVM-Ebene: Externer Schlüsselmanager
+Speicher-VM-Ebene: Externer Schlüsselmanager
 
 
 
@@ -75,13 +75,13 @@ security key-manager external create-config
 +
 [source, cli]
 ----
-security key-manager keystore enable -vserver <svm_name> -type KMIP
+security key-manager keystore enable -vserver <storage_vm_name> -type KMIP
 ----
 . Löschen Sie die Onboard-Schlüsselmanager-Konfiguration:
 +
 [source, cli]
 ----
-security key-manager keystore delete-config -vserver <svm_name> -type OKM
+security key-manager keystore delete-config -vserver <storage_vm_name> -type OKM
 ----
 . Legen Sie die Berechtigungsebene auf admin fest:
 +
@@ -111,13 +111,13 @@ security key-manager onboard create-config
 +
 [source, cli]
 ----
-security key-manager keystore enable -vserver <svm_name> -type OKM
+security key-manager keystore enable -vserver <storage_vm_name> -type OKM
 ----
 . Löschen Sie die externe Schlüsselmanager-Konfiguration
 +
 [source, cli]
 ----
-security key-manager keystore delete-config -vserver <svm_name> -type KMIP
+security key-manager keystore delete-config -vserver <storage_vm_name> -type KMIP
 ----
 . Legen Sie die Berechtigungsebene auf admin fest:
 +
@@ -146,7 +146,7 @@ set -privilege advanced
 +
 [source, cli]
 ----
-security key-manager key migrate -from-vserver <svm_name> -to-vserver <svm_name>
+security key-manager key migrate -from-vserver <storage_vm_name> -to-vserver <storage_vm_name>
 ----
 . Legen Sie die Berechtigungsebene auf admin fest:
 +

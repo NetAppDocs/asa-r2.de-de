@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapshot-reserve-modify.html 
+keywords: asa r2, snapshot reserve, percentage 
+summary: Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet. 
+---
+= Ändern der Snapshot-Reserve auf einem ASA r2-Speichersystem
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Standardmäßig ist die Snapshot-Reserve auf 0 % eingestellt.  Ab ONTAP 9.18.1 können Sie die Standard-Snapshot-Reservierung der Speichereinheit ändern und die automatische Snapshot-Löschung aktivieren.  Die automatische Löschung von Snapshots ist standardmäßig deaktiviert.  Wenn ein Snapshot-Reservewert festgelegt und die automatische Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, wenn der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet.  Dadurch wird verhindert, dass Snapshots Speicherplatz belegen, der für Benutzerdaten vorgesehen ist.
+
+link:snapshot-reserve.html["Erfahren Sie mehr über Snapshot-Reservierung auf ASA r2-Speichersystemen."].
+
+
+
+== Snapshot-Reservierung auf Speichereinheiten ändern
+
+Um unterschiedliche Snapshot-Reservewerte festzulegen, konfigurieren Sie jede Speichereinheit einzeln.  Um für alle Speichereinheiten denselben Wert zu verwenden, ändern Sie die Snapshot-Reserve auf der Speicher-VM.
+
+.Schritte
+. Wählen Sie im System Manager *Storage* aus.
+. Bewegen Sie den Mauszeiger über den Namen der Speichereinheit, für die Sie die Snapshot-Reserve festlegen möchten.
+. Wählenimage:icon_kabob.gif["drei vertikale Punkte"] Wählen Sie anschließend *Bearbeiten*.
+. Unter *Snapshot-Reserve %* geben Sie den numerischen Wert für den Prozentsatz des Speicherplatzes der Speichereinheit ein, der für Snapshots reserviert werden soll.
+. Vergewissern Sie sich, dass die Option *Ältere Snapshots automatisch löschen* ausgewählt ist.
+. Wählen Sie *Speichern*.
+
+
+.Ergebnis
+Die Snapshot-Reserve ist auf den von Ihnen angegebenen Prozentsatz eingestellt.  Wenn der von Snapshots belegte Speicherplatz die Reserve erreicht, werden ältere Snapshots automatisch gelöscht.
+
+
+
+== Snapshot-Reservierung auf einer Speicher-VM ändern
+
+Um für alle Speichereinheiten einer Speicher-VM die gleiche Snapshot-Reserve festzulegen, wenden Sie den gewünschten Prozentsatz auf die Speicher-VM an. .  Wenn die Snapshot-Reservierung auf die Speicher-VM angewendet wird, wird sie auf alle neu erstellten Speichereinheiten innerhalb der Speicher-VM angewendet.  Diese Einstellung gilt nicht für Speichereinheiten, die vor der Änderung der Einstellung erstellt wurden.
+
+.Schritte
+. Im System Manager wählen Sie *Cluster > Storage VMs* und anschließend *Einstellungen*.
+. Unter *Richtlinien*, neben *Schnappschüssen*, wählen Sie Folgendes aus:image:icon_kabob.gif["drei vertikale Punkte"] Wählen Sie anschließend *Standardeinstellungen für Snapshot-Reservierung festlegen/bearbeiten*.
+. Unter *Snapshot-Reserve %* geben Sie den numerischen Wert für den Prozentsatz des Speicherplatzes der Speichereinheit ein, der für Snapshots reserviert werden soll.
+. Vergewissern Sie sich, dass die Option *Ältere Snapshots automatisch löschen* ausgewählt ist.
+. Wählen Sie *Speichern*.
+
+
+.Ergebnis
+Die Snapshot-Reserve für neu erstellte Speichereinheiten ist auf den von Ihnen angegebenen Prozentsatz festgelegt.  Wenn der von Snapshots in diesen Speichereinheiten belegte Speicherplatz die Reserve erreicht, werden ältere Snapshots automatisch gelöscht.

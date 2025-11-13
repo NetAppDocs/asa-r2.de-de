@@ -18,15 +18,15 @@ Erfahren Sie mehr über die neuen Funktionen in ONTAP 9.16.1 für ASA r2 Systeme
 
 
 
-== Plattformen
+== Systeme
 
 [cols="2,4"]
 |===
 | Aktualisieren | Beschreibung 
 
 
-| Plattformen  a| 
-Die folgenden NetApp ASA r2-Systeme werden ab ONTAP 9.16.1 unterstützt.  Diese Plattformen bieten eine einheitliche Hardware- und Softwarelösung, die ein vereinfachtes Erlebnis schafft, das speziell auf die Anforderungen von SAN-Only-Kunden zugeschnitten ist.
+| Systeme  a| 
+Die folgenden NetApp ASA r2-Systeme werden ab ONTAP 9.16.1 unterstützt. Diese Systeme bieten eine einheitliche Hardware- und Softwarelösung, die ein vereinfachtes Benutzererlebnis schafft, das speziell auf die Bedürfnisse von SAN-only-Kunden zugeschnitten ist.
 
 * ASA A50
 * ASA A30
@@ -72,7 +72,7 @@ Die folgenden NetApp ASA r2-Systeme werden ab ONTAP 9.16.1 unterstützt.  Diese 
 | link:../learn-more/hardware-comparison.html["Unterstützung für eine automatische Ausbalancierung von Storage-Einheiten"] | ONTAP balanciert die Storage-Einheiten automatisch über Ihre Storage-Verfügbarkeitszonen hinweg aus, um optimale Performance und Kapazitätsauslastung zu erzielen. 
 
 
-| Der NVMe-Leerraum ist standardmäßig aktiviert  a| 
+| link:../learn-more/additional-supported-ontap-features.html#san-protocols["Der NVMe-Leerraum ist standardmäßig aktiviert"]  a| 
 Space deallocation (auch „Hole Punching“ und „unmap“ genannt) ist standardmäßig für NVMe-Namespaces aktiviert. Space deallocation ermöglicht einem Host, nicht verwendete Blöcke aus Namespaces zu Zuordnung zu machen, um Speicherplatz zurückzugewinnen.
 
 Dadurch wird die gesamte Storage-Effizienz erheblich verbessert, insbesondere bei File-Systemen mit hohem Datenfluktuationsgrad.

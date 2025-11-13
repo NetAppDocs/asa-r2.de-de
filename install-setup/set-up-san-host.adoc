@@ -17,7 +17,7 @@ Es wird empfohlen, zwei oder mehr Switches zu verwenden, um das Speichersystem m
 
 Es werden mehrere Netzwerk- oder Multi-Fabric-Konfigurationen (Konfigurationen mit zwei oder mehr Switches) empfohlen, da diese für Redundanz auf Switch- und Storage-Ebene sorgen. Diese Redundanz macht Ihr Storage-System fehlertoleranter und unterstützt einen unterbrechungsfreien Betrieb.
 
-Die folgende Abbildung zeigt ein Beispiel einer FC-Konfiguration mit mehreren Hosts, die zwei Fabrics für den Zugriff auf ein einzelnes HA-Paar verwenden. Die FC-Ziel-Port-Nummern (0c, 0d, 1a, 1b) sind ebenfalls Beispiele. Die tatsächlichen Port-Nummern variieren je nach Plattformmodell und ob Sie Erweiterungsadapter verwenden.
+Die folgende Abbildung zeigt ein Beispiel für eine FC-Konfiguration mit mehreren Hosts, die zwei Fabrics verwenden, um auf ein einzelnes HA-Paar zuzugreifen.  Die FC-Zielportnummern (0c, 0d, 1a, 1b) sind ebenfalls Beispiele.  Die tatsächlichen Portnummern variieren je nach Systemmodell und der Verwendung von Erweiterungsadaptern.
 
 image::multi-fabric-san-configuration.png[Zwei FC Fabrics, die mehrere Hosts mit einem einzelnen HA-Paar verbinden]
 

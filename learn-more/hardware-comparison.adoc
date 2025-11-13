@@ -12,9 +12,9 @@ searchtitle: Vergleichen Sie ASA r2 Systeme mit anderen ONTAP Systemen
 
 
 [role="lead"]
-ASA R2-Systeme bieten eine Hardware- und Softwarelösung für reine SAN-Umgebungen auf Basis von All-Flash-Plattformen. ASA R2-Systeme unterscheiden sich von anderen ONTAP Systemen (ASA, AFF und FAS) in der Implementierung der ONTAP Persönlichkeit, der Speicherschicht und der unterstützten Protokolle.
+ASA r2-Systeme bieten eine Hardware- und Softwarelösung für reine SAN-Umgebungen, die auf All-Flash-Lösungen basieren. ASA R2-Systeme unterscheiden sich von anderen ONTAP Systemen (ASA, AFF und FAS) in der Implementierung der ONTAP Persönlichkeit, der Speicherschicht und der unterstützten Protokolle.
 
-Die folgenden ASA-Plattformen werden als ASA r2-Systeme klassifiziert:
+Folgende Systeme werden als ASA r2-Systeme klassifiziert:
 
 * ASA A1K
 * ASA A90
@@ -99,8 +99,8 @@ Aufgrund dieses automatisierten und vereinfachten Ansatzes zur Speicherverwaltun
 
 Die Hauptunterschiede zwischen ASA r2 Systemen und FAS, AFF und ASA Systemen, die für die ONTAP Befehlszeilenschnittstelle (CLI) und REST API relevant sind, werden im Folgenden beschrieben.
 
-.Standardmäßige SVM-Erstellung mit Protokolldiensten
-Neue Cluster enthalten automatisch eine Standard-Daten-SVM, bei der die SAN-Protokolle aktiviert sind. IP-Daten-LIFs unterstützen iSCSI- und NVMe/TCP-Protokolle und verwenden `default-data-blocks` standardmäßig die Servicerichtlinie.
+.Standardmäßige Erstellung von Speicher-VMs mit Protokolldiensten
+Neue Cluster enthalten automatisch eine virtuelle Standard-Datenspeichermaschine (VM) mit aktivierten SAN-Protokollen.  IP-Daten-LIFs unterstützen die iSCSI- und NVMe/TCP-Protokolle und verwenden die `default-data-blocks` Standardmäßig gilt die Servicerichtlinie.
 
 .Automatische Volume-Erstellung
 Durch Erstellen einer Storage-Einheit (LUN oder Namespace) wird automatisch ein Volume aus der Storage-Verfügbarkeitszone erstellt. Dies führt zu einem vereinfachten und gemeinsamen Namespace. Durch Löschen einer Speichereinheit wird das zugeordnete Volume automatisch gelöscht.

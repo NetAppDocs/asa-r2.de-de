@@ -18,7 +18,7 @@ Während sich die Verfahren des System Managers zum Konfigurieren von SnapMirror
 link:../learn-more/hardware-comparison.html#personality-differences["Erfahren Sie mehr über die Persönlichkeiten von ONTAP"] .
 
 
-NOTE: Bei ASA R2-Systemen wird SnapMirror Active Sync nur in Clusterkonfigurationen mit zwei Knoten unterstützt.
+NOTE: Ab ONTAP 9.18.1 wird SnapMirror Active Sync auch in Vier-Knoten-Konfigurationen unterstützt.  In ONTAP 9.17.1 wird SnapMirror Active Sync nur bei Zwei-Knoten-Konfigurationen unterstützt.
 
 link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["Erfahren Sie mehr über SnapMirror Active Sync"^] .
 
