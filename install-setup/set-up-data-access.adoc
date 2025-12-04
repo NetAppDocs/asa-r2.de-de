@@ -27,10 +27,13 @@ link:https://docs.netapp.com/us-en/ontap-sanhost/hu_vsphere_8.html["VMware vSphe
 
 Wenn Sie Ihre VM-Workload von einem ASA -Speichersystem auf ein ASA r2-Speichersystem migrieren müssen, empfiehlt NetApp die Verwendung vonlink:https://www.vmware.com/products/cloud-infrastructure/vsphere-foundation["VMware vSphere vMotion"^] um eine Live-Migration Ihrer Daten ohne Unterbrechung durchzuführen.
 
+ASA r2-Speichereinheiten sind standardmäßig Thin Provisioning-fähig.  Bei der Migration Ihrer VM-Workload sollten auch virtuelle Festplatten (VMDKs) Thin Provisioning verwenden.
+
 .Verwandte Informationen
 * Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html["die Vorteile der Verwendung von ONTAP für vSphere"^] .
 * Erfahren Sie mehr überlink:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["VMware Live Site Recovery mit ONTAP"^] .
 * Erfahren Sie mehr überlink:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_overview.html#continuous-availability-solutions-for-vsphere-environments["Kontinuierliche Verfügbarkeitslösungen für vSphere-Umgebungen"^] .
+* Erfahren Sie mehr überlink:https://kb.netapp.com/on-prem/ontap/da/SAN/SAN-KBs/How_to_setup_Broadcom_VMware_ESXi_iSCSI_MPIO_with_ONTAP_SAN_ASA["Wie richtet man Broadcom VMware ESXi iSCSI MPIO mit ONTAP SAN ASA -Speichersystemen ein?"^] .
 
 
 

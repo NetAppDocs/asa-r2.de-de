@@ -18,15 +18,17 @@ Wenn Sie Storage bereitstellen, ermöglichen Sie Ihren SAN-Hosts, Daten von ASA 
 
 == Erstellen von Speichereinheiten
 
-Auf einem ASA r2-System stellt eine Speichereinheit den SAN-Hosts Speicherplatz für Datenoperationen zur Verfügung.  Eine Speichereinheit bezeichnet eine LUN für SCSI-Hosts oder einen NVMe-Namensraum für NVMe-Hosts.  Wenn Ihr Cluster für die Unterstützung von SCSI-Hosts konfiguriert ist, werden Sie aufgefordert, eine LUN zu erstellen.  Wenn Ihr Cluster für die Unterstützung von NVMe-Hosts konfiguriert ist, werden Sie aufgefordert, einen NVMe-Namespace zu erstellen.  Eine ASA r2-Speichereinheit hat eine maximale Kapazität von 128 TB.
+Auf einem ASA r2-System stellt eine Speichereinheit den SAN-Hosts Speicherplatz für Datenoperationen zur Verfügung. Eine Speichereinheit bezeichnet eine LUN für SCSI-Hosts oder einen NVMe-Namensraum für NVMe-Hosts. Wenn Ihr Cluster für die Unterstützung von SCSI-Hosts konfiguriert ist, werden Sie aufgefordert, eine LUN zu erstellen. Wenn Ihr Cluster für die Unterstützung von NVMe-Hosts konfiguriert ist, werden Sie aufgefordert, einen NVMe-Namespace zu erstellen.
 
-Im link:https://hwu.netapp.com/["NetApp Hardware Universe"^] finden Sie die aktuellen Storage-Grenzwerte für ASA r2 Systeme.
+Eine ASA r2-Speichereinheit hat eine maximale Kapazität von 128 TB. Siehe dielink:https://hwu.netapp.com/["NetApp Hardware Universe"^] Die aktuellsten Speichergrenzen für ASA r2-Systeme finden Sie hier.
 
-Host-Initiatoren werden der Speichereinheit als Teil der Erstellung der Speichereinheit hinzugefügt und zugeordnet. Sie können link:provision-san-storage.html#add-host-initiators["Fügen Sie Host-Initiatoren hinzu"] link:provision-san-storage.html#map-the-storage-unit-to-a-host["Karte"]sie auch an Ihre Speichereinheiten übertragen, nachdem die Speichereinheiten erstellt wurden.
+Sie fügen Host-Initiatoren hinzu und ordnen sie der Speichereinheit im Rahmen des Speichereinheitserstellungsprozesses zu.  Sie können auchlink:provision-san-storage.html#add-host-initiators["hinzufügen"] Undlink:provision-san-storage.html#map-the-storage-unit-to-a-host["Karte"] Host-Initiatoren, nachdem Sie die Speichereinheiten erstellt haben.
 
-Ab ONTAP 9.18.1 können Sie die Snapshot-Reserve ändern und die automatische Snapshot-Löschung beim Erstellen einer Speichereinheit aktivieren.  Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet.
+Ab ONTAP 9.18.1 können Sie die Snapshot-Reserve ändern und die automatische Snapshot-Löschung beim Erstellen einer Speichereinheit aktivieren. Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist. Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet.
 
 link:../data-protection/snapshot-reserve.html["Erfahren Sie mehr über Snapshot-Reservierung auf ASA r2-Systemen."].
+
+Speichereinheiten werden standardmäßig mit Thin Provisioning bereitgestellt.  Thin Provisioning ermöglicht es der Speichereinheit, bis zur zugewiesenen Größe zu wachsen, reserviert den Speicherplatz aber nicht im Voraus.  Der Speicherplatz wird dynamisch aus dem verfügbaren freien Speicherplatz nach Bedarf zugewiesen.  Dies ermöglicht Ihnen eine höhere Speichereffizienz durch _überdimensionierte_ Bereitstellung Ihres verfügbaren Speicherplatzes.  Nehmen wir beispielsweise an, Sie haben 1 TB freien Speicherplatz und müssen vier 1-TB-Speichereinheiten erstellen.  Anstatt Ihrem System sofort 3 TB zusätzliche Speicherkapazität hinzuzufügen, können Sie die Speichereinheiten erstellen, die Speichernutzung überwachen und Ihre Speicherkapazität erhöhen, sobald die Speichereinheiten tatsächlich Speicherplatz belegen. Erfahren Sie mehr überlink:https://docs.netapp.com/us-en/ontap/concepts/thin-provisioning-concept.html["Thin Provisioning"^] .
 
 .Schritte
 . Wählen Sie im System Manager *Storage* und anschließend ausimage:icon_add_blue_bg.png["Rechteckiges Symbol mit blauem Hintergrund und das Wort hinzufügen zentriert in weißen Buchstaben"].
@@ -35,13 +37,20 @@ link:../data-protection/snapshot-reserve.html["Erfahren Sie mehr über Snapshot-
 +
 Wenn Sie mehr als eine Speichereinheit erstellen, wird jede Einheit mit derselben Kapazität, demselben Host-Betriebssystem und derselben Host-Zuordnung erstellt.
 
++
+Um die Arbeitslastverteilung innerhalb der Speicherverfügbarkeitszone zu optimieren, erstellen Sie eine gerade Anzahl von Speichereinheiten.
+
 . Geben Sie die Kapazität der Speichereinheit ein, und wählen Sie dann das Host-Betriebssystem aus.
++
+
+CAUTION: Wenn Sie mehr als eine Speichereinheit erstellen, wird jede Einheit mit der gleichen Kapazität erstellt.  Multiplizieren Sie die Anzahl der zu erstellenden Speichereinheiten mit der gewünschten Kapazität, um sicherzustellen, dass Sie über genügend nutzbaren Platz verfügen.  Wenn Sie nicht über genügend freien Speicherplatz verfügen und sich für eine Überdimensionierung entschieden haben, überwachen Sie die Auslastung genau, um zu vermeiden, dass der Speicherplatz ausgeht und Daten verloren gehen.
+
 . Akzeptieren Sie die automatisch ausgewählte *Host-Zuordnung*, oder wählen Sie eine andere Host-Gruppe für die zuzuordnende Speichereinheit aus.
 +
 *Host-Mapping* bezieht sich auf die Host-Gruppe, der die neue Speichereinheit zugeordnet wird.  Wenn für den Hosttyp, den Sie für Ihre neue Speichereinheit ausgewählt haben, bereits eine Hostgruppe vorhanden ist, wird die bereits vorhandene Hostgruppe automatisch für Ihre Hostzuordnung ausgewählt.  Sie können die automatisch ausgewählte Hostgruppe akzeptieren oder eine andere Hostgruppe auswählen.
 
 +
-Wenn für Hosts, die auf dem von Ihnen angegebenen Betriebssystem ausgeführt werden, keine bereits vorhandene Hostgruppe vorhanden ist, erstellt ONTAP automatisch eine neue Hostgruppe.
+Falls für Hosts, die unter dem von Ihnen angegebenen Betriebssystem laufen, keine Hostgruppe existiert, erstellt ONTAP automatisch eine neue Hostgruppe.
 
 . Wenn Sie einen der folgenden Schritte ausführen möchten, wählen Sie *Weitere Optionen* und führen Sie die erforderlichen Schritte aus.
 +
@@ -148,7 +157,7 @@ TLS verschlüsselt alle Daten, die zwischen Ihren NVMe/TCP-Hosts und Ihrem ASA r
 
 .. Wählen Sie *Add Initiator*, um weitere Initiatoren hinzuzufügen.
 +
-Die Host-NQN sollte als <nqn.yyyy-mm> formatiert werden, gefolgt von einem vollständig qualifizierten Domänennamen. Das Jahr muss mindestens 1970 Jahre entsprechen. Die maximale Gesamtlänge sollte 223 betragen. Ein Beispiel für einen gültigen NVMe-Initiator ist nqn.2014-08.com.example:string
+Formatieren Sie den Host-NQN wie folgt: <nqn.yyyy-mm> gefolgt von einem vollständig qualifizierten Domänennamen.  Das Jahr sollte 1970 oder später sein.  Die maximale Gesamtlänge sollte 223 betragen.  Ein Beispiel für einen gültigen NVMe-Initiator ist nqn.2014-08.com.example:string
 
 
 
@@ -233,7 +242,7 @@ Ihre NVMe Hosts werden Ihrem ASA r2 System hinzugefügt, und Sie können Ihre Ho
 
 == Ordnen Sie die Speichereinheit einem Host zu
 
-Nachdem Sie die ASA r2 Storage-Einheiten erstellt und Host-Initiatoren hinzugefügt haben, müssen Sie Ihre Hosts den Storage-Einheiten zuordnen, um mit der Datenbereitstellung zu beginnen. Speichereinheiten werden Hosts im Rahmen der Erstellung der Speichereinheit zugeordnet. Sie können vorhandene Storage-Einheiten jederzeit neuen oder bestehenden Hosts zuordnen.
+Nachdem ASA r2-Speichereinheiten erstellt und Host-Initiatoren hinzugefügt wurden, müssen Hosts den Speichereinheiten zugeordnet werden, um mit der Datenbereitstellung zu beginnen.  Speichereinheiten werden im Rahmen des Speichereinheitenerstellungsprozesses Hosts zugeordnet.  Sie können auch jederzeit bestehende Speichereinheiten neuen oder bestehenden Hosts zuordnen.
 
 .Schritte
 . Wählen Sie *Speicher*.
