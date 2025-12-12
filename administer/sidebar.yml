@@ -34,8 +34,6 @@ entries:
     url: "/administer/reboot-take-over-give-back-nodes.html"
   - title: Benennen Sie Nodes um
     url: "/administer/rename-nodes.html"
-  - title: Neuverteilung der Arbeitslasten zwischen Knoten
-    url: "/administer/rebalance-workloads.html"
 - title: Verwalten von Benutzerkonten und Rollen
   url: "/administer/user-accounts-roles.html"
 - title: Verwalten von Sicherheitszertifikaten
