@@ -53,21 +53,7 @@ Die Speicherschicht für FAS -, AFF- und ASA -Systeme verwendet Aggregate als Ba
 .ASA r2-Systeme
 Anstelle von Aggregaten verwendet die Speicherebene in ASA r2-Systemen Speicherverfügbarkeitszonen. Eine Speicherverfügbarkeitszone ist ein gemeinsamer Speicherpool, der beiden Knoten eines HA-Paares zur Verfügung steht. Beide Knoten im HA-Paar haben Zugriff auf alle verfügbaren Festplatten in ihrer gemeinsamen Speicherverfügbarkeitszone. Beispielsweise gibt es in einem ASA r2-System- ONTAP Cluster mit zwei Knoten eine Speicherverfügbarkeitszone, auf die beide Knoten im Cluster zugreifen können. In einem ASA r2-System- ONTAP Cluster mit vier Knoten gibt es zwei Speicherverfügbarkeitszonen. Jedes HA-Paar im Cluster hat Zugriff auf eine der Speicherverfügbarkeitszonen.
 
-Beim Erstellen einer Speichereinheit (basierend auf einem LUN- oder NVMe-Namespace) erstellt ONTAP automatisch ein Volume in der entsprechenden Storage Availability Zone, um die Speichereinheit unterzubringen. Das neu erstellte Volume wird automatisch in der Storage Availability Zone platziert, um optimale Leistung und eine ausgewogene Kapazitätsauslastung zu gewährleisten. Abhängig von Ihrer ONTAP-Version unterstützen ASA r2-Systeme auch die automatische Neuverteilung von Speichereinheiten in der Storage Availability Zone und die automatische Neuverteilung von Workloads zwischen den Knoten in einem HA-Paar.
-
-* Automatische Neugewichtung der Speichereinheiten
-+
-Ab ONTAP 9.16.1 verschiebt ONTAP Speichereinheiten automatisch nach Bedarf, um die Auslastung auszugleichen und die Leistung zu optimieren, wenn eine Speichereinheit so zunimmt oder abnimmt, dass ein Ungleichgewicht in der Speicherauslastung in der gesamten Speicherverfügbarkeitszone entsteht.
-
-* Automatischer Workload-Ausgleich
-+
-Ab ONTAP 9.17.1 gleicht ONTAP die Workloads automatisch zwischen den Knoten eines ASA r2-System-HA-Paares aus, um optimale Leistung zu erzielen. Steigt beispielsweise die Auslastung eines Knotens auf 70 %, während die Auslastung des HA-Partners nur 30 % beträgt, verschiebt ONTAP die Workloads automatisch, sodass die Auslastung der einzelnen Knoten besser ausgeglichen wird. Da die Knoten des HA-Paares dieselbe Storage Availability Zone nutzen, erfolgt die Workload-Neuverteilung kopierfrei und ohne Auswirkungen auf die Leistung. Die automatische Workload-Neuverteilung wird standardmäßig 14 Tage nach dem Upgrade auf ONTAP 9.17.1 oder der Initialisierung eines neuen ONTAP 9.17.1 ASA r2-Clusters aktiviert. Sie können link:../administer/rebalance-workloads.html["Ändern Sie die Standardeinstellung"] um die automatische Neuverteilung der Arbeitslast zu aktivieren oder zu deaktivieren oder um sie in einen beratenden Zustand zu versetzen, um unausgeglichene Arbeitslasten zu kennzeichnen, ohne sie automatisch zu verschieben.
-
-
-
-
-
-== Zusammenfassung der ASA r2-Systemunterschiede
+Beim Erstellen einer Speichereinheit (basierend auf einem LUN- oder NVMe-Namespace) erstellt ONTAP automatisch ein Volume in der entsprechenden Storage Availability Zone, um die Speichereinheit unterzubringen. Das neu erstellte Volume wird automatisch in der Storage Availability Zone platziert, um optimale Leistung und eine ausgewogene Kapazitätsauslastung zu gewährleisten. == Zusammenfassung der Unterschiede im ASA r2-System
 
 ASA r2-Systeme unterscheiden sich von FAS, AFF und ASA -Systemen in folgenden Punkten:
 
