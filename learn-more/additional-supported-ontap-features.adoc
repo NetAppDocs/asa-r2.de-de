@@ -25,7 +25,7 @@ Erfahren Sie mehr über die gängigen Datenschutzfunktionen, die auf ASA r2-Syst
 
 === Clustered externe Schlüsselserver
 
-Sie können die Konnektivität zu gruppierten externen Schlüsselverwaltungsservern auf einer Speicher-VM konfigurieren.  Mit geclusterten Schlüsselservern können Sie primäre und sekundäre Schlüsselserver auf einer Speicher-VM festlegen.  Bei der Registrierung von Schlüsseln versucht ONTAP zunächst, auf einen primären Schlüsselserver zuzugreifen, bevor es nacheinander versucht, auf sekundäre Server zuzugreifen, bis der Vorgang erfolgreich abgeschlossen ist. Dadurch wird eine Duplizierung der Schlüssel verhindert.
+Sie können die Konnektivität zu geclusterten externen Schlüsselverwaltungsservern auf einer Speicher-VM konfigurieren. Mit geclusterten Schlüsselservern können Sie primäre und sekundäre Schlüsselserver auf einer Speicher-VM festlegen. Bei der Registrierung von Schlüsseln versucht ONTAP zunächst, auf einen primären Schlüsselserver zuzugreifen, bevor es nacheinander versucht, auf sekundäre Server zuzugreifen, bis der Vorgang erfolgreich abgeschlossen ist. Dadurch wird eine Duplizierung der Schlüssel verhindert.
 
 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["Lernen Sie, wie Sie gruppierte externe Schlüsselserver konfigurieren."^].
 

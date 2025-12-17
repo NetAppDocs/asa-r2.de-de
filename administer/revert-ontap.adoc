@@ -30,7 +30,7 @@ Bei bestimmten ASA R2-Clusterkonfigurationen müssen Sie bestimmte Maßnahmen er
 Wenn Sie von ONTAP 9.17.1 auf einem ASA R2-System zurückkehren, sollten Sie vor Beginn der Rücksetzung die folgenden Aktionen ausführen:
 
 
-NOTE: link:rebalance-workloads.html["Automatischer Workload-Ausgleich"]wird standardmäßig 14 Tage nach dem Upgrade auf ONTAP 9.17.1 oder der Initialisierung eines neuen ONTAP 9.17.1 ASA r2-Clusters aktiviert. Sie können auf Ihrem ASA R2-System nicht von ONTAP 9.17.1 zurückkehren, nachdem die automatische Neuverteilung der Arbeitslast aktiviert wurde.
+NOTE: link:space-balancing.html["Dynamischer Raumausgleich"]wird standardmäßig 14 Tage nach dem Upgrade auf ONTAP 9.17.1 oder der Initialisierung eines neuen ONTAP 9.17.1 ASA r2-Clusters aktiviert.  Nach der Aktivierung des dynamischen Speicherplatzausgleichs ist ein Downgrade von ONTAP 9.17.1 auf Ihrem ASA r2-System nicht mehr möglich.
 
 [cols="2"]
 |===

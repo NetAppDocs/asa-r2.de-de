@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: administer/space-balancing.html 
+keywords: capacity, space, rebalancing, balanced, placement, balance, asa r2 
+summary: Möglicherweise müssen Sie einen Node umbenennen, um ihn an die Namenskonventionen Ihres Unternehmens oder aus anderen administrativen Gründen anzupassen. 
+---
+= Erfahren Sie mehr über den ONTAP Kapazitätsausgleich in einem ASA r2-Cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei ASA r2-Systemen verwendet ONTAP die _ausgewogene Platzierung_, um neu erstellte Speichereinheiten automatisch in der besten Speicherverfügbarkeitszone zu platzieren und so eine optimale Leistung und eine ausgewogene Speichernutzung zu gewährleisten.  Wenn Sie ONTAP 9.17.1 oder höher verwenden, wird der von vorhandenen Speichereinheiten belegte Speicherplatz mithilfe der _dynamischen Speicherplatzverteilung_ ausgeglichen.  Wenn Sie ONTAP 9.16.1 verwenden, wird der von vorhandenen Speichereinheiten belegte Speicherplatz mittels _kopierbasierter Arbeitslastumverteilung_ ausgeglichen.
+
+[cols="2"]
+|===
+| Funktion | Unterstützt in... 
+
+
+| Ausgewogene Platzierung | ONTAP 9.16.1 und höher 
+
+
+| Dynamischer Raumausgleich | ONTAP 9.17.1 und höher 
+
+
+| Workload-Rebalancing basierend auf Kopien | ONTAP 9.16.1 
+|===
+.Ausgewogene Platzierung
+Bei der _ausgewogenen Platzierung_ werden neu erstellte Speichereinheiten automatisch in der besten Speicherverfügbarkeitszone platziert, um eine optimale Leistung und eine ausgewogene Speichernutzung zu gewährleisten.  Die ausgewogene Platzierung ist in ONTAP 9.16.1 und späteren Versionen standardmäßig aktiviert.
+
+.Dynamischer Raumausgleich
+Mit _dynamischem Speicherplatzausgleich_ überwacht ONTAP aktiv die Menge an freiem Speicherplatz im Cluster und verschiebt Speichereinheiten automatisch innerhalb der Speicherverfügbarkeitszonen, um eine ausgewogene Speicherplatznutzung zu gewährleisten.  Eine EMS-Warnung wird automatisch ausgegeben, wenn die clusterweite Kapazitätsauslastung 80 % erreicht, und eine EMS-Alarmierung wird automatisch ausgegeben, wenn sie 90 % erreicht.
+
+Die dynamische Speicherplatzverteilung wird standardmäßig 14 Tage nach dem Upgrade auf oder der Installation von ONTAP 9.17.1 oder höher aktiviert.  Wenn Sie die standardmäßige Aktivierungsfrist von 14 Tagen ändern müssen, wenden Sie sich bitte an den NetApp Support.  Nach der Aktivierung des dynamischen Speicherplatzausgleichs ist ein Downgrade von ONTAP 9.17.1 nicht mehr möglich.
+
+Die dynamische Speicherplatzverteilung erfolgt entweder im _Normalmodus_ oder im _Modus mit geringem Speicherplatzbedarf_, basierend auf dem Gesamtdurchschnitt des freien Speicherplatzes auf allen Knoten im Cluster (globaler Durchschnitt).
+
+* *Normalmodus*
++
+Im Normalmodus prüft ONTAP alle drei Minuten, ob ein dynamischer Speicherplatzausgleich erforderlich ist.  Die dynamische Raumausgleichsfunktion arbeitet im Normalmodus, wenn folgende Bedingungen erfüllt sind:
+
++
+** Der weltweite Durchschnitt für freien Raum liegt bei 10 % oder mehr.
+** Mindestens ein Knoten im Cluster verfügt über mehr freien Speicherplatz als der globale Durchschnitt.
+** Mindestens ein Knoten im Cluster verfügt über 20 % weniger freien Speicherplatz als der globale Durchschnitt.
+
+
+* *Speichersparmodus*
++
+Im Modus „Weniger Speicherplatz“ prüft ONTAP jede Minute, ob ein dynamischer Speicherplatzausgleich erforderlich ist.  Die dynamische Platzverteilung arbeitet im Modus „Geringer Platzbedarf“, wenn folgende Bedingungen erfüllt sind:
+
++
+** Der weltweite Durchschnitt für freien Raum liegt bei unter 10 %.
+** Mindestens ein Knoten im Cluster verfügt über mehr freien Speicherplatz als der globale Durchschnitt.
+** Mindestens ein Knoten im Cluster verfügt über weniger freien Speicherplatz als der globale Durchschnitt.
+
+
+
+
+.Workload-Rebalancing basierend auf Kopien
+Bei der _kopierbasierten Arbeitslastneuverteilung_ kopiert ONTAP automatisch die Speichereinheit, die das Ungleichgewicht verursacht, in eine Speicherverfügbarkeitszone mit mehr freiem Speicherplatz, wenn es innerhalb der Speicherverfügbarkeitszonen zu einem Ungleichgewicht in der Speichernutzung kommt.  Wenn im Zielspeicherbereich nicht genügend freier Speicherplatz vorhanden ist, führt ONTAP keine Ausgleichsmaßnahmen durch.  Die kopiebasierte Arbeitslastumverteilung gilt nur für ASA r2-Systeme mit ONTAP 9.16.1 und ist auf diesen Systemen standardmäßig aktiviert.  In ONTAP 9.17.1 und späteren Versionen wird es durch dynamische Speicherauslastung ersetzt.
+
+Wenn Sie die Standardeinstellungen für die kopiebasierte Workload-Neuverteilung ändern müssen, wenden Sie sich an den NetApp Support.

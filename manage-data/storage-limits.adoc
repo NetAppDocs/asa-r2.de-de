@@ -46,6 +46,9 @@ ASA R2-Systeme unterstützen die folgenden Speichergrenzen:
 | Speichereinheiten pro Konsistenzgruppe | 256 | 256 
 
 
+| Kindliche Konsistenzgruppen pro Elternkonsistenzgruppe | 64 | 64 
+
+
 | Speicher-Virtualmaschinen  a| 
 * 256 (ONTAP 9.18.1 und höher)
 * 32 (ONTAP 9.17.1 und früher)
