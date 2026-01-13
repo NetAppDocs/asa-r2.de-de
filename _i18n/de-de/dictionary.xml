@@ -2085,7 +2085,6 @@
   <block id="ab3721eb6cf69168eba216763f76f9d8" category="cell">ARP/AI kann auf ASA R2-Speichereinheiten aktiviert werden. ARP/AI bietet zusätzlichen Datenschutz, indem es potenzielle Ransomware-Angriffe ohne Lernphase erkennt und meldet.</block>
   <block id="f231c7e641e6d267354740a6c9850600" category="cell">SnapMirror Active Sync unterstützt VMware-Workloads mit NVMe/TCP- und NVMe/FC-Hostzugriff für ONTAP Cluster mit zwei Knoten. Die Unterstützung von VMware-Workloads für NVMe/TCP hängt von der Behebung der VMware-Fehler-ID TR1049746 ab.</block>
   <block id="2595874d578967634d23bb05c5c7197c" category="inline-link-macro">Unterstützung für automatischen Workload-Ausgleich</block>
-  <block id="c33e823e9a93260b53fe781334bf0f34" category="cell"><block ref="c33e823e9a93260b53fe781334bf0f34" category="inline-link-macro-rx"></block></block>
   <block id="f5f208592c87b0ba3e87b3ad6fad7fa6" category="cell">Um Leistung und Ressourcennutzung zu optimieren, werden Arbeitslasten automatisch zwischen den Knoten eines HA-Paares ausgeglichen.</block>
   <block id="cc9afe53172875d5c9c85e52f0ecbf07" category="summary">Aktivieren Sie ARP/AI, um potenzielle Ransomware-Bedrohungen zu erkennen, automatisch Maßnahmen zum Schutz Ihrer Daten zu ergreifen und im System Manager eine Warnmeldung anzuzeigen, um Sie auf verdächtige Aktivitäten aufmerksam zu machen.</block>
   <block id="7cd792910eb45c6b7d750838a44c4fe3" category="doc">Aktivieren Sie autonomen Ransomware-Schutz mit KI auf Ihren ASA R2-Speichersystemen</block>
@@ -2735,4 +2734,5 @@
   <block id="354d3bc6178c825e83ed9c7eb99644cb" category="paragraph">Wenn Sie ARP/AI nicht auf allen Speichereinheiten einer Speicher-VM aktivieren möchten, können Sie die spezifischen Einheiten auswählen, für die die Aktivierung gewünscht ist.</block>
   <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">Lerne mehr über Raumbalance.</block>
   <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">Erstellen einer Peer-Beziehung für Speicher-VMs</block>
+  <block id="bbaf1d1dee5098cd15496cd4ba1a66da" category="cell"><block ref="bbaf1d1dee5098cd15496cd4ba1a66da" category="inline-link-macro-rx"></block></block>
 </blocks>
