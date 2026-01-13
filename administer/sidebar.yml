@@ -17,7 +17,7 @@ entries:
 - title: Überwachung der Nutzung und Erhöhung der Kapazität
   entries:
   - title: Lerne mehr über Raumbalance.
-    url: administer/space-balancing.html
+    url: "/administer/space-balancing.html"
   - title: Monitoring der Storage-Performance
     url: "/monitor/monitor-performance.html"
   - title: Überwachen der Storage-Auslastung
