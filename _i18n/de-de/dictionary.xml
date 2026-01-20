@@ -2004,7 +2004,6 @@
   <block id="5d356c397f5a143daadc1597a8fd7a34" category="list-text">Wählen Sie die SnapMirror Active Sync-Beziehung aus, die Sie wiederherstellen möchten.</block>
   <block id="9f4215830573390fcfe4dab1715a643e" category="list-text">Warten Sie, bis der Beziehungsstatus *InSync* anzeigt.</block>
   <block id="a1f13cb349233b9c7d0b9e95fdff569e" category="list-text">Wählen <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block> ; wählen Sie dann *Failover*, um den Betrieb auf dem ursprünglichen primären Cluster fortzusetzen.</block>
-  <block id="b69b57f7782b4b37cff72f353a59ac84" category="paragraph">Um den Verlust von E/A-Pfaden zu Ihren Hosts zu verhindern, müssen Sie die Hostpfade nach der Wiederaufnahme des Betriebs auf dem primären Cluster erneut scannen.</block>
   <block id="4e815228ca61a1f75181e7efe619c495" category="summary">Verwenden Sie SnapMirror Active Sync, um Hostanwendungen, die ein Recovery Point Objective (RPO) und ein Recovery Time Objective (RTO) von null erfordern, vor Ausfällen aufgrund unerwarteter Störungen oder Site-Katastrophen zu schützen.</block>
   <block id="497c72a2f611a19c23299b5daea37215" category="doc">SnapMirror Active Sync-Setup-Workflow</block>
   <block id="c0da5a4756d4ac1721f7418cfa0145da" category="paragraph">Der Datenschutz von ONTAP SnapMirror Active Sync ermöglicht die Weiterführung von Geschäftsdiensten auch bei einem vollständigen Standortausfall und unterstützt Anwendungen beim transparenten Failover mithilfe einer sekundären Kopie. Mit SnapMirror Active Sync sind keine manuellen Eingriffe oder benutzerdefinierten Skripts erforderlich, um ein Failover auszulösen.</block>
@@ -2735,4 +2734,7 @@
   <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">Lerne mehr über Raumbalance.</block>
   <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">Erstellen einer Peer-Beziehung für Speicher-VMs</block>
   <block id="bbaf1d1dee5098cd15496cd4ba1a66da" category="cell"><block ref="bbaf1d1dee5098cd15496cd4ba1a66da" category="inline-link-macro-rx"></block></block>
+  <block id="91d54d0d46ef33d2bbd727e59b537fee" category="list-text">Um verlorene E/A-Pfade wiederherzustellen oder E/A-Pfadzustände auf Ihren Hosts zu aktualisieren, müssen Sie nach Wiederaufnahme des Betriebs des primären Speicherclusters einen Speicher-/Adapter-Rescan auf den Hosts durchführen.</block>
+  <block id="682aa2cee69ce16837ee717d9beba117" category="inline-link-macro">Verwenden Sie die ONTAP -Befehlszeilenschnittstelle (CLI), um Ihren Cluster einzurichten.</block>
+  <block id="ac1a39b823c12e10449f448872a387b1" category="paragraph">In bestimmten Fällen müssen Sie möglicherweise <block ref="b88ab746f7be66e2ab53ecac4b9fd72e" category="inline-link-macro-rx"></block>Die Sie sollten die CLI beispielsweise dann verwenden, wenn Ihre Sicherheitsprotokolle es Ihnen nicht erlauben, einen Laptop an Ihre Management-Switches anzuschließen, oder wenn Sie ein Nicht-Windows-Betriebssystem verwenden.</block>
 </blocks>

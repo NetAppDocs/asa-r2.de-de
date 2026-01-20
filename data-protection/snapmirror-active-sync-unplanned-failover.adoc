@@ -17,6 +17,7 @@ Ein automatisches ungeplantes Failover (AUFO) erfolgt, wenn der primäre Cluster
 * Die aktive Synchronisierungsbeziehung von SnapMirror muss synchronisiert sein.
 * Sie können kein geplantes Failover einleiten, wenn gerade ein unterbrechungsfreier Vorgang, beispielsweise das Verschieben einer Speichereinheit, ausgeführt wird.
 * Der ONTAP Mediator muss konfiguriert, verbunden und im Quorum sein.
+* Um verlorene E/A-Pfade wiederherzustellen oder E/A-Pfadzustände auf Ihren Hosts zu aktualisieren, müssen Sie nach Wiederaufnahme des Betriebs des primären Speicherclusters einen Speicher-/Adapter-Rescan auf den Hosts durchführen.
 
 
 .Schritte
@@ -25,6 +26,3 @@ Ein automatisches ungeplantes Failover (AUFO) erfolgt, wenn der primäre Cluster
 . Warten Sie, bis der Beziehungsstatus *InSync* anzeigt.
 . Wählen image:icon_kabob.gif["Drei vertikale blaue Punkte"] ; wählen Sie dann *Failover*, um den Betrieb auf dem ursprünglichen primären Cluster fortzusetzen.
 
-
-.Was kommt als Nächstes
-Um den Verlust von E/A-Pfaden zu Ihren Hosts zu verhindern, müssen Sie die Hostpfade nach der Wiederaufnahme des Betriebs auf dem primären Cluster erneut scannen.

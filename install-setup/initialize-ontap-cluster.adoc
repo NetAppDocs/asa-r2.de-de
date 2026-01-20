@@ -16,6 +16,8 @@ ONTAP System Manager führt Sie durch einen schnellen und einfachen Workflow zur
 
 Während der Cluster-Einrichtung wird Ihre standardmäßige Virtual Machine (VM) für den Datenspeicher erstellt. Optional können Sie das Domain Name System (DNS) zum Auflösen von Hostnamen aktivieren, das Cluster so einstellen, dass es das Network Time Protocol (NTP) für die Zeitsynchronisierung verwendet und die Verschlüsselung von Daten im Ruhezustand aktiviert.
 
+In bestimmten Fällen müssen Sie möglicherweise link:../learn-more/cli-support.html#set-up-an-ontap-asa-r2-cluster-using-the-cli["Verwenden Sie die ONTAP -Befehlszeilenschnittstelle (CLI), um Ihren Cluster einzurichten."]Die Sie sollten die CLI beispielsweise dann verwenden, wenn Ihre Sicherheitsprotokolle es Ihnen nicht erlauben, einen Laptop an Ihre Management-Switches anzuschließen, oder wenn Sie ein Nicht-Windows-Betriebssystem verwenden.
+
 .Bevor Sie beginnen
 Stellen Sie die folgenden Informationen zusammen:
 
