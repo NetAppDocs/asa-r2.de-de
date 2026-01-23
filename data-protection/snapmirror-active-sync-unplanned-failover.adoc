@@ -11,7 +11,9 @@ summary: Erfahren Sie, wie Sie SnapMirror Active Sync-Beziehungen nach einem ung
 
 
 [role="lead"]
-Ein automatisches ungeplantes Failover (AUFO) erfolgt, wenn der primäre Cluster ausfällt oder isoliert ist. Der Mediator erkennt das Failover und führt ein automatisches ungeplantes Failover zum sekundären Cluster aus. Der sekundäre Cluster wird zum primären Cluster konvertiert und beginnt mit der Bereitstellung von Clients.
+Auf ASA r2-Systemen unterstützt SnapMirror Active Sync symmetrische Aktiv/Aktiv-Konfigurationen. In einer symmetrischen Aktiv/Aktiv-Konfiguration können beide Standorte für aktive E/A auf den lokalen Speicher zugreifen. Fällt der Quell-Cluster aus oder ist er isoliert, löst der Mediator ein automatisches ungeplantes Failover (AUFO) aus und übernimmt die gesamte E/A vom Ziel-Cluster, bis der Quell-Cluster wiederhergestellt ist.
+
+Wenn Sie einen AUFO Ihrer SnapMirror Aktiv-Sync-Beziehung erleben, sollten Sie die Beziehung wiederherstellen und den Betrieb auf dem ursprünglichen Quell-Cluster fortsetzen, nachdem dieser wieder online ist.
 
 .Bevor Sie beginnen
 * Die aktive Synchronisierungsbeziehung von SnapMirror muss synchronisiert sein.
