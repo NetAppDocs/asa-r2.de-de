@@ -108,6 +108,8 @@ entries:
       url: "/secure-data/ransomware-protection.html"
     - title: ARP/AI aktivieren
       url: "/secure-data/enable-anti-ransomware-protection.html"
+    - title: Standardmäßige ARP/AI-Aktivierung deaktivieren
+      url: "/secure-data/disable-default-anti-ransomware-protection.html"
     - title: Ändern der Aufbewahrungsfristen für ARP/AI-Snapshots
       url: "/secure-data/modify-arp-snapshot-retention-period.html"
     - title: Reagieren Sie auf ARP/AI-Warnungen

@@ -43,3 +43,6 @@ Bei ungewöhnlichen Aktivitäten auf dem Speichergerät wird unter *Anti-Ransomw
 . Wählen Sie *Aktion auswählen*.
 . Wählen Sie *Als falsch-positiv markieren* oder *Als potenziellen Ransomware-Angriff markieren*.
 
+
+.Was kommt als Nächstes?
+Wenn Sie in Ihrer Speichereinheit Aktivitätsspitzen feststellen, entweder einmalige Spitzen oder eine Spitze, die für eine neue Normalität charakteristisch ist, sollten Sie diese als unbedenklich melden. Das manuelle Melden dieser Spitzen als unbedenklich trägt dazu bei, die Genauigkeit der Bedrohungsbewertungen von ARP zu verbessern. Erfahren Sie, wie Sie link:https://docs.netapp.com/us-en/ontap/anti-ransomware/manage-parameters-task.html#report-known-surges["Bekannte ARP/AI-Spitzen melden"^].

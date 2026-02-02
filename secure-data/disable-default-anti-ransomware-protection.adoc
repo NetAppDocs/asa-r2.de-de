@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: secure-data/disable-default-anti-ransomware-protection.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, disable 
+summary: 'Wenn Sie eine Autonomous Ransomware Protection (ARP) Lizenz auf Ihrem ASA r2 Cluster installiert haben, wird ARP standardmäßig auf allen vorhandenen und neu erstellten Speichereinheiten 12 Stunden nach dem Upgrade auf ONTAP 9.18.1 oder der Initialisierung eines neuen ONTAP 9.18.1 ASA r2 Clusters aktiviert.' 
+---
+= Deaktivieren Sie den standardmäßigen autonomen Ransomware-Schutz auf Ihren ASA r2-Speichersystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei der Initialisierung eines neuen ONTAP 9.18.1 ASA r2-Clusters oder beim Upgrade Ihres Clusters auf ONTAP 9.18.1 wird ARP/AI nach einer 12-stündigen Testphase standardmäßig auf allen neuen Speichereinheiten aktiviert. Wenn Sie ARP/AI während der Testphase nicht deaktivieren, wird es nach Ablauf der Testphase clusterweit für neue Speichereinheiten aktiviert.
+
+In ONTAP 9.17.1 erstellte Speichereinheiten müssen link:enable-anti-ransomware-protection.html["manuell aktiviert"] für ARP/AI sein.
+
+.Schritte
+Sie können die standardmäßige Aktivierung während oder nach der anfänglichen 12-stündigen Kulanzzeit deaktivieren.
+
+[role="tabbed-block"]
+====
+.System Manager
+--
+. Wählen Sie *Cluster > Einstellungen*.
+. ARP deaktivieren:
++
+** So deaktivieren Sie während der 12-stündigen Kulanzfrist:
++
+... Unter *Anti-ransomware* wählen Sie *Don't enable* und anschließend *Disable*.
+
+
+** So deaktivieren Sie nach Ablauf der 12-stündigen Kulanzfrist:
++
+... Unter *Anti-Ransomware* wählen Sie image:icon_pencil.gif["Bearbeiten"] und deaktivieren anschließend *Für neue Speichereinheiten aktivieren*.
+... *Speichern* auswählen
+
+
+
+
+
+
+--
+.CLI
+--
+. Überprüfen Sie den standardmäßigen Aktivierungsstatus:
++
+[source, cli]
+----
+security anti-ransomware auto-enable show
+----
+. Standardmäßige Aktivierung für bestehende und neue Volumes deaktivieren:
++
+[source, cli]
+----
+security anti-ransomware auto-enable modify -default-existing-volume-state false -default-new-volume-state false
+----
+
+
+--
+====

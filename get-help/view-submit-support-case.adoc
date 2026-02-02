@@ -13,7 +13,7 @@ summary:
 [role="lead"]
 Wenn bei einem Problem Unterstützung erforderlich ist, können Sie den ONTAP System Manager verwenden, um einen Case an den technischen Support zu übermitteln. Sie können ONTAP System Manager auch verwenden, um abgeschlossene oder laufende Fälle anzuzeigen.
 
-Sie müssen link:https://activeiq-link.netapp.com/["Bei Active IQ registriert"]Support-Fälle für Ihr ASA r2-System anzeigen.
+Sie müssen link:https://docs.netapp.com/us-en/active-iq/task_login_activeiq.html["Bei Active IQ registriert"^] sein, um Supportfälle für Ihr ASA r2-System einzusehen.
 
 .Schritte
 . Um einen Support-Fall zu senden, wählen Sie im System-Manager *Cluster >Support* aus, und wählen Sie dann *Gehe zu NetApp-Unterstützung* aus.
