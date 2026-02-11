@@ -28,7 +28,7 @@ link:create-svm-peer-relationship.html["Erstellen einer Intercluster-Speicher-VM
 
 . Bestätigen Sie, dass auf jedem Knoten im Cluster mindestens ein LIF erstellt wird.
 +
-link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["Erstellen eines LIF"]
+link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["Erstellen eines LIF"].
 
 . Bestätigen Sie, dass die erforderlichen Speichereinheiten erstellt und Hostgruppen zugeordnet wurden.
 +

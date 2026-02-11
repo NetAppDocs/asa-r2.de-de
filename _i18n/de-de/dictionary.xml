@@ -184,7 +184,6 @@
   <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">Wählen Sie diese Option, um zu bestätigen, dass Ihre Aktualisierungsänderungen auf alle aktuellen und zukünftigen Aktualisierungen angewendet werden.</block>
   <block id="7ae6e72fcf95f7e0b8f4dbe1153d8398" category="paragraph">Empfohlene Aktualisierungen werden automatisch heruntergeladen und auf Ihrem ASA r2-System installiert, basierend auf Ihrer Auswahl für das Update.</block>
   <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">Deaktivieren Sie automatische Updates</block>
-  <block id="6141cdc0ba26479d87d6b8c24af9fc18" category="paragraph">Deaktivieren Sie automatische Updates, wenn Sie die Möglichkeit haben möchten, empfohlene Updates vor der Installation anzuzeigen. Wenn Sie automatische Updates deaktivieren, müssen Sie Firmware- und Systemdateiaktualisierungen manuell durchführen.</block>
   <block id="3a73131e5e1a3a498c8e055e84a30f60" category="paragraph">Automatische Updates sind deaktiviert. Sie sollten regelmäßig nach empfohlenen Updates suchen und entscheiden, ob Sie eine manuelle Installation durchführen möchten.</block>
   <block id="e8b8aa5f70e0a4459ca2284f8da3b813" category="section-title">Automatische Updates anzeigen</block>
   <block id="6edf33a55c81d08e5aac13aae918832c" category="paragraph">Zeigen Sie eine Liste der Firmware- und Systemdatei-Updates an, die auf das Cluster heruntergeladen wurden und für die automatische Installation geplant sind. Zeigen Sie auch Updates an, die zuvor automatisch installiert wurden.</block>
@@ -1943,7 +1942,6 @@
   <block id="63f65589705e420ce3e3c84f5a73edea" category="inline-link-macro">Erstellen einer Intercluster-Speicher-VM-Peer-Beziehung</block>
   <block id="0a1048623dcc4bf6a07e4f070c75b99a" category="list-text">Bestätigen Sie, dass auf jedem Knoten im Cluster mindestens ein LIF erstellt wird.</block>
   <block id="f0a8f8a4710c7aff45926e4c429a8cc0" category="inline-link-macro">Erstellen eines LIF</block>
-  <block id="d57b4f0ac425b878d2f45da8c8c89d8d" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block></block>
   <block id="b04d1fe353930783cf68fb978624b212" category="list-text">Bestätigen Sie, dass die erforderlichen Speichereinheiten erstellt und Hostgruppen zugeordnet wurden.</block>
   <block id="12aa04a968692be25285a9fc7234d0d5" category="inline-link-macro">Erstellen Sie eine Speichereinheit</block>
   <block id="0dcd2c45a0db6a5c91ed22efb559bd29" category="inline-link-macro">Ordnen Sie die Speichereinheit einer Hostgruppe zu</block>
@@ -2769,4 +2767,6 @@
   <block id="114bbec71af5be00be6f74b75bcf02d1" category="paragraph">Wenn Sie in Ihrer Speichereinheit Aktivitätsspitzen feststellen, entweder einmalige Spitzen oder eine Spitze, die für eine neue Normalität charakteristisch ist, sollten Sie diese als unbedenklich melden. Das manuelle Melden dieser Spitzen als unbedenklich trägt dazu bei, die Genauigkeit der Bedrohungsbewertungen von ARP zu verbessern. Erfahren Sie, wie Sie <block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>.</block>
   <block id="b27281dcf866cc70bd075c0d39310671" category="sidebar">Standardmäßige ARP/AI-Aktivierung deaktivieren</block>
   <block id="74c34cd79314b0b0543df58dce891912" category="cell">Die Unterstützung für SnapMirror active sync wurde von Zwei-Knoten-Clustern auf Vier-Knoten-Cluster erweitert.</block>
+  <block id="b930776d8572e5f3c1d7294d9809974c" category="paragraph">Deaktivieren Sie automatische Updates nur, wenn Sie die Updates vollständig selbst verwalten möchten. Bei deaktivierten automatischen Updates benachrichtigt das System Sie nicht, lädt keine Updates herunter und installiert keine Updates. Sie sind dafür verantwortlich, alle Updates manuell zu überwachen, herunterzuladen, zu planen und zu installieren.</block>
+  <block id="26f7abc505f53b85cb219303544259d3" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block>.</block>
 </blocks>

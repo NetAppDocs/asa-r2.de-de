@@ -35,7 +35,7 @@ Empfohlene Aktualisierungen werden automatisch heruntergeladen und auf Ihrem ASA
 
 == Deaktivieren Sie automatische Updates
 
-Deaktivieren Sie automatische Updates, wenn Sie die Möglichkeit haben möchten, empfohlene Updates vor der Installation anzuzeigen. Wenn Sie automatische Updates deaktivieren, müssen Sie Firmware- und Systemdateiaktualisierungen manuell durchführen.
+Deaktivieren Sie automatische Updates nur, wenn Sie die Updates vollständig selbst verwalten möchten. Bei deaktivierten automatischen Updates benachrichtigt das System Sie nicht, lädt keine Updates herunter und installiert keine Updates. Sie sind dafür verantwortlich, alle Updates manuell zu überwachen, herunterzuladen, zu planen und zu installieren.
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.
