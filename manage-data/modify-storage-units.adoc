@@ -11,7 +11,7 @@ summary: 'Reagieren Sie auf Änderungen an der Performance und den Daten Ihres S
 
 
 [role="lead"]
-Zum Optimieren der Performance auf Ihrem ASA r2 System müssen Sie möglicherweise Ihre Storage-Einheiten anpassen, um deren Kapazität zu erhöhen, QoS-Richtlinien zu aktualisieren oder die Hosts zu ändern, die den Einheiten zugeordnet sind. Wenn beispielsweise ein neuer, kritischer Applikations-Workload zu einer vorhandenen Storage-Einheit hinzugefügt wird, müssen Sie möglicherweise die Richtlinie zur Quality of Service (QoS), die auf die Storage-Einheit angewendet wird, ändern, um das Performance-Level zu unterstützen, das für die neue Applikation erforderlich ist.
+Um die Leistung Ihres ASA r2-Systems zu optimieren, müssen Sie möglicherweise Ihre Speichereinheiten anpassen, um deren Kapazität zu erhöhen, QoS-Richtlinien zu aktualisieren oder die Hosts zu ändern, die den Einheiten zugeordnet sind. Wenn beispielsweise eine neue, kritische Anwendungs-Workload zu einer bestehenden Speichereinheit hinzugefügt wird, müssen Sie möglicherweise die auf die Speichereinheit angewendete Quality of Service (QoS)-Richtlinie ändern, um das für die neue Anwendung erforderliche Leistungsniveau zu unterstützen.
 
 .Erhöhte Kapazität
 Vergrößern Sie eine Speichereinheit, bevor sie die volle Kapazität erreicht, um einen Verlust des Datenzugriffs zu verhindern, der auftreten kann, wenn der beschreibbare Speicherplatz der Speichereinheit nicht mehr verfügbar ist. Die Kapazität einer Speichereinheit kann auf 128 TB erhöht werden, was der von ONTAP maximal zulässigen Größe entspricht.
