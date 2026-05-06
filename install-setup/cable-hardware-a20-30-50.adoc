@@ -1,0 +1,306 @@
+---
+sidebar: sidebar 
+permalink: install-setup/cable-hardware-a20-30-50.html 
+keywords: asa r2, asa a20, asa a30, asa a50, cable controllers, cabling, cluster cabling, management cabling, host network cabling, shelf cabling 
+summary: Verbinden Sie das ASA A20, ASA A30 oder ASA A50 Speichersystem mit Ihrem Netzwerk und Ihren Speicherschränken, um die Clusterkommunikation, den Managementzugriff und die SAN-Host-Konnektivität zu ermöglichen. 
+---
+= Verkabeln Sie die Hardware für die ASA A20, ASA A30 und ASA A50 Speichersysteme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verbinden Sie das ASA A20-, ASA A30- oder ASA A50-Speichersystem mit Ihrem Netzwerk und den Storage Shelves, um die Clusterkommunikation, den Managementzugriff und die SAN-Host-Konnektivität zu ermöglichen. Diese Vorgehensweise umfasst die Verkabelung für Cluster-/HA-Interconnect, Managementnetzwerk, Hostnetzwerk und Storage Shelf-Verbindungen.
+
+.Bevor Sie beginnen
+Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über das Anschließen des Speichersystems an die Netzwerk-Switches zu erhalten.
+
+.Über diese Aufgabe
+* Diese Verfahren zeigen gängige Konfigurationen. Die jeweilige Verkabelung hängt von den für das Speichersystem bestellten Komponenten ab. Ausführliche Informationen zur Konfiguration und zur Steckplatzpriorität finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^].
+* Die Verkabelungsgrafiken haben Pfeilsymbole, die die richtige Ausrichtung (nach oben oder unten) des Kabelsteckers zeigen, wenn ein Anschluss in einen Anschluss eingesetzt wird.
++
+Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
++
+image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Richtung der Zuglasche des Kabels"]
+
+* Wenn Sie eine Verkabelung zu einem optischen Switch vornehmen, stecken Sie den optischen Transceiver in den Controller-Port, bevor Sie ihn mit dem Switch-Port verbinden.
+
+
+
+
+== Schritt 1: Cluster/HA-Verbindungen verkabeln
+
+Verbinden Sie die Controller per Kabel, um die ONTAP Clusterverbindungen herzustellen. Bei Clustern ohne Switches verbinden Sie die Controller untereinander. Bei Clustern mit Switches verbinden Sie die Controller mit den Netzwerk-Switches des Clusters.
+
+
+NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports.
+
+[role="tabbed-block"]
+====
+.Cluster-Verkabelung ohne Switch
+--
+Verwenden Sie diese Verkabelungsoption, wenn die beiden Controller direkt miteinander verbunden sind, ohne Netzwerk-Switches für das Cluster zu verwenden.
+
+.ASA A30 oder ASA A50 mit zwei 40/100-GbE-I/O-Modulen mit 2 Ports
+Verbinden Sie die Cluster/HA-Verbindungsports an den E/A-Modulen in den Steckplätzen 2 und 4.
+
+.Schritte
+. Verbinden Sie die Cluster/HA Interconnect-Verbindungen:
++
+
+NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports (auf den I/O-Modulen in den Steckplätzen 2 und 4). Die Ports sind 40/100 GbE.
+
++
+.. Controller A-Port e2a an Controller B-Port e2a anschließen.
+.. Verbinden Sie den Controller A-Port e4a mit dem Controller B-Port e4a.
++
+
+NOTE: Die I/O-Modulports e2b und e4b sind nicht verwendet und stehen für die Host-Netzwerk-Konnektivität zur Verfügung.
+
++
+*100 GbE Cluster/HA Interconnect-Kabel*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 100-GbE-Kabel]
+
++
+image::../media/drw_isi_a30-50_switchless_2p_100gbe_2card_cabling_ieops-2011.svg[Schaltplan für die Clusterverkabelung ohne Switches unter Verwendung von zwei 100-GbE-I/O-Modulen]
+
+
+
+
+
+.ASA A30 oder ASA A50 mit einem 40/100-GbE-I/O-Modul mit 2 Anschlüssen
+Verkabeln Sie die Cluster/HA-Interconnect-Ports am I/O-Modul in Steckplatz 4.
+
+
+NOTE: Der Cluster-Interconnect-Verkehr und der HA-Verkehr teilen sich dieselben physischen Ports (auf dem I/O-Modul in Steckplatz 4). Die Ports sind 40/100 GbE.
+
+.Schritte
+. Verbinden Sie den Controller A-Port e4a mit dem Controller B-Port e4a.
+. Verbinden Sie den Controller A-Port e4b mit dem Controller B-Port e4b.
++
+*100 GbE Cluster/HA Interconnect-Kabel*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 100-GbE-Kabel]
+
++
+image::../media/drw_isi_a30-50_switchless_2p_100gbe_1card_cabling_ieops-1925.svg[Verkabelungsdiagramm für Cluster ohne Switches mit einem 100-GbE-I/O-Modul]
+
+
+
+.ASA A20 mit einem 10/25-GbE-I/O-Modul mit 2 Ports
+Verkabeln Sie die Cluster/HA-Interconnect-Ports am I/O-Modul in Steckplatz 4.
+
+
+NOTE: Der Cluster-Interconnect-Verkehr und der HA-Verkehr teilen sich dieselben physischen Ports (auf dem I/O-Modul in Steckplatz 4). Die Ports sind 10/25 GbE.
+
+.Schritte
+. Verbinden Sie den Controller A-Port e4a mit dem Controller B-Port e4a.
+. Verbinden Sie den Controller A-Port e4b mit dem Controller B-Port e4b.
++
+*25 GbE Cluster/HA Interconnect-Kabel*
+
++
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupferanschluss, Breite=100px"]
+
++
+image::../media/drw_isi_a20_switchless_2p_25gbe_cabling_ieops-2018.svg[ASA A20 Cluster ohne Switches Verkabelungsdiagramm mit einem 25-GbE-I/O-Modul]
+
+
+
+--
+.Switch-Cluster-Verkabelung
+--
+Verwenden Sie diese Verkabelungsoption, wenn die Controller an Cluster-Netzwerk-Switches angeschlossen sind, anstatt direkt miteinander verbunden zu sein.
+
+.ASA A30 oder ASA A50 mit zwei 40/100-GbE-I/O-Modulen mit 2 Ports
+Verbinden Sie die Cluster/HA-Verbindungsports an den E/A-Modulen in den Steckplätzen 2 und 4 mit den Cluster-Netzwerk-Switches.
+
+
+NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports (auf den I/O-Modulen in den Steckplätzen 2 und 4). Die Ports sind 40/100 GbE.
+
+.Schritte
+. Verbinden Sie Port e4a des Controllers A mit dem Cluster-Netzwerk-Switch A.
+. Verbinden Sie Port e2a von Controller A mit Cluster-Netzwerk-Switch B.
+. Verbinden Sie Port e4a des Controllers B mit dem Cluster-Netzwerk-Switch A.
+. Verbinden Sie Port e2a des Controllers B mit dem Cluster-Netzwerk-Switch B.
++
+
+NOTE: Die I/O-Modulports e2b und e4b sind nicht verwendet und stehen für die Host-Netzwerk-Konnektivität zur Verfügung.
+
++
+*40/100 GbE Cluster/HA Interconnect-Kabel*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 40/100-GbE-Kabel]
+
++
+image::../media/drw_isi_a30-50_switched_2p_100gbe_2card_cabling_ieops-2013.svg[Schaltplan für die Clusterverkabelung mit zwei 100-GbE-I/O-Modulen]
+
+
+
+.ASA A30 oder ASA A50 mit einem 40/100-GbE-I/O-Modul mit 2 Anschlüssen
+Verbinden Sie die Cluster/HA-Verbindungsports am E/A-Modul in Steckplatz 4 mit den Cluster-Netzwerk-Switches.
+
+
+NOTE: Der Cluster-Interconnect-Verkehr und der HA-Verkehr teilen sich dieselben physischen Ports (auf dem I/O-Modul in Steckplatz 4). Die Ports sind 40/100 GbE.
+
+.Schritte
+. Verbinden Sie Port e4a des Controllers A mit dem Cluster-Netzwerk-Switch A.
+. Verbinden Sie Port e4b von Controller A mit Cluster-Netzwerk-Switch B.
+. Verbinden Sie Port e4a des Controllers B mit dem Cluster-Netzwerk-Switch A.
+. Verbinden Sie Port e4b des Controllers B mit dem Cluster-Netzwerk-Switch B.
++
+*40/100 GbE Cluster/HA Interconnect-Kabel*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cluster HA 40/100-GbE-Kabel]
+
++
+image::../media/drw_isi_a30-50_2p_100gbe_1card_switched_cabling_ieops-1926.svg[Verkabeln Sie Cluster-Verbindungen mit dem Cluster-Netzwerk]
+
+
+
+.ASA A20 mit einem 10/25-GbE-I/O-Modul mit 2 Ports
+Verbinden Sie die Cluster/HA-Verbindungsports am E/A-Modul in Steckplatz 4 mit den Cluster-Netzwerk-Switches.
+
+
+NOTE: Der Cluster-Interconnect-Verkehr und der HA-Verkehr teilen sich dieselben physischen Ports (auf dem I/O-Modul in Steckplatz 4). Die Ports sind 10/25 GbE.
+
+.Schritte
+. Verbinden Sie Port e4a des Controllers A mit dem Cluster-Netzwerk-Switch A.
+. Verbinden Sie Port e4b von Controller A mit Cluster-Netzwerk-Switch B.
+. Verbinden Sie Port e4a des Controllers B mit dem Cluster-Netzwerk-Switch A.
+. Verbinden Sie Port e4b des Controllers B mit dem Cluster-Netzwerk-Switch B.
++
+*10/25 GbE Cluster/HA Interconnect-Kabel*
+
++
+image::../media/oie_cable_sfp_gbe_copper.png[GbE SFP Kupfer Connector]
+
++
+image::../media/drw_isi_a20_switched_2p_25gbe_cabling_ieops-2019.svg[ASA A20 Verkabelungsdiagramm für ein Switched Cluster mit einem 25-GbE-I/O-Modul]
+
+
+
+--
+====
+
+
+== Schritt 2: Verkabeln Sie die Host-Netzwerkverbindungen
+
+Verbinden Sie die Ethernet-Modulports oder die Fibre-Channel-Modulports (FC) mit Ihrem Hostnetzwerk.
+
+[role="tabbed-block"]
+====
+.Ethernet-Hostverkabelung
+--
+Verbinden Sie die Controller über die entsprechenden Ports gemäß Ihrer I/O-Modulkonfiguration mit Ihrem Ethernet-Hostnetzwerk.
+
+.ASA A30 oder ASA A50 mit zwei 40/100-GbE-I/O-Modulen mit 2 Ports
+Verwenden Sie die Ports e2b und e4b an jedem Controller, um eine Verbindung zu den Ethernet-Host-Netzwerk-Switches herzustellen.
+
+Verbinden Sie an jedem Controller die Ports e2b und e4b mit den Ethernet-Host-Netzwerk-Switches.
+
+
+NOTE: Die Ports an E/A-Modulen in Steckplatz 2 und 4 sind 40/100 GbE (Host-Konnektivität ist 40/100 GbE).
+
+*40/100-GbE-Kabel*
+
+image::../media/oie_cable_sfp_gbe_copper.png[40/100-GbE-Kabel]
+
+image::../media/drw_isi_a30-50_host_2p_40-100gbe_2card_cabling_ieops-2014.svg[Kabel zu 40/100-GbE-Ethernet-Host-Netzwerk-Switches]
+
+.ASA A20, A30 oder A50 mit einem 4-Port 10/25 GbE I/O-Modul
+Verwenden Sie alle vier Ports des E/A-Moduls in Steckplatz 2, um eine Verbindung zu den Ethernet-Host-Netzwerk-Switches herzustellen.
+
+Verbinden Sie an jedem Controller die Ports e2a, e2b, e2c und e2d mit den Ethernet-Host-Netzwerk-Switches.
+
+*10/25-GbE-Kabel*
+
+image:../media/oie_cable_sfp_gbe_copper.png["GbE SFP Kupferanschluss, Breite=100px"]
+
+image::../media/drw_isi_a30-50_host_2p_40-100gbe_1card_cabling_ieops-1923.svg[Kabel zu 10/25-GbE-Ethernet-Host-Netzwerk-Switches]
+
+--
+.FC-Hostverkabelung
+--
+Verbinden Sie die Controller über das FC I/O-Modul Ihres Systems mit Ihrem Fibre Channel-Hostnetzwerk.
+
+.ASA A20, A30 oder A50 mit einem 4-Port 64 Gb/s FC I/O-Modul
+Nutzen Sie alle vier Ports des FC-E/A-Moduls in Steckplatz 2, um eine Verbindung zu den FC-Host-Netzwerk-Switches herzustellen.
+
+Verbinden Sie an jedem Controller die Ports 2a, 2b, 2c und 2d mit den FC-Host-Netzwerk-Switches.
+
+*64 Gbit/s FC-Kabel*
+
+image:../media/oie_cable_sfp_gbe_copper.png["64 Gbit/s FC-Kabel, width=100px"]
+
+image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[Kabel zu 64-Gb/s-FC-Host-Netzwerk-Switches]
+
+--
+====
+
+
+== Schritt 3: Verkabelung der Management-Netzwerkverbindungen
+
+Verbinden Sie die Controller mit dem Managementnetzwerk.
+
+Verbinden Sie die Management-Ports (Schraubenschlüssel) an den einzelnen Controllern mit den Managementnetzwerk-Switches.
+
+* 1000BASE-T RJ-45 KABEL*
+
+image::../media/oie_cable_rj45.png[RJ-45-Kabel]
+
+image::../media/drw_isi_g_wrench_cabling_ieops-1928.svg[Stellen Sie eine Verbindung mit dem Managementnetzwerk her]
+
+
+IMPORTANT: Stecken Sie die Netzkabel noch nicht ein.
+
+
+
+== Schritt 4: Verkabeln Sie die Shelf-Verbindungen
+
+Die Verkabelung des NS224-Regals zeigt NSM100B-Module anstelle von NSM100-Modulen. Die Verkabelung ist unabhängig vom Typ der verwendeten NSM-Module gleich, lediglich die Portnamen unterscheiden sich:
+
+* NSM100B-Module verwenden die Ports e1a und e1b auf einem E/A-Modul in Steckplatz 1.
+* NSM100-Module verwenden integrierte (Onboard-)Ports e0a und e0b.
+
+
+Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und alle Verkabelungsoptionen, wie link:https://hwu.netapp.com["NetApp Hardware Universe"^]z. B. optische und Switch-Attached, finden Sie unter .
+
+Verbinden Sie jeden Controller mit jedem NSM-Modul auf dem NS224-Regal mithilfe der Speicherkabel, die mit Ihrem Speichersystem geliefert wurden.
+
+*100 GbE QSFP28 Kupferkabel*
+
+image::../media/oie_cable100_gbe_qsfp28.png[100-GbE-QSFP28-Kupferkabel]
+
+Die Grafik zeigt die Verkabelung von Controller A blau und Controller B gelb.
+
+.Schritte
+. Controller A mit dem Shelf verbinden:
++
+.. Verbinden Sie den Controller A-Port e3a mit dem NSM A-Port e1a.
+.. Den Controller A-Port e3b mit dem NSM B-Port e1b verbinden.
++
+image:../media/drw_isi_g_1_ns224_controller_a_cabling_ieops-1945.svg["Controller A-Ports e3a und e3b sind mit einem NS224-Shelf verbunden"]
+
+
+
+. Controller B mit dem Shelf verbinden:
++
+.. Verbinden Sie den Port e3a von Controller B mit dem Port e1a von NSM B.
+.. Verbinden Sie den Port e3b des Controllers B mit dem Port e1b des NSM A.
++
+image:../media/drw_isi_g_1_ns224_controller_b_cabling_ieops-1946.svg["Controller B-Ports e3a und e3b, verkabelt mit einem NS224-Shelf"]
+
+
+
+
+
+.Was kommt als Nächstes?
+Nachdem Sie die Speicher-Controller mit Ihrem Netzwerk verbunden und dann die Controller mit Ihren Speicher-Shelfs verbunden haben, Sie link:power-on-hardware.html["Schalten Sie das ASA r2-Speichersystem ein"].

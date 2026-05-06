@@ -1,0 +1,239 @@
+---
+sidebar: sidebar 
+permalink: install-setup/cable-hardware-a1k.html 
+keywords: asa r2, asa a1k, cable controllers, cabling, cluster cabling, management cabling, host network cabling, shelf cabling 
+summary: Verbinden Sie das ASA A1K-Speichersystem mit Ihrem Netzwerk und Ihren Storage-Shelfs, um die Clusterkommunikation, den Managementzugriff und die SAN-Host-Konnektivität zu ermöglichen. 
+---
+= Verkabeln Sie die Hardware für das ASA A1K-Speichersystem
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verbinden Sie das ASA A1K-Speichersystem mit Ihrem Netzwerk und den Storage Shelves, um die Clusterkommunikation, den Managementzugriff und die SAN-Host-Konnektivität zu ermöglichen. Diese Vorgehensweise umfasst die Verkabelung für Cluster-/HA-Interconnect, Managementnetzwerk, Hostnetzwerk und Storage Shelf-Verbindungen.
+
+.Bevor Sie beginnen
+Wenden Sie sich an Ihren Netzwerkadministrator, um Informationen über das Anschließen des Speichersystems an die Netzwerk-Switches zu erhalten.
+
+.Über diese Aufgabe
+* Diese Verfahren zeigen gängige Konfigurationen. Die jeweilige Verkabelung hängt von den für das Speichersystem bestellten Komponenten ab. Ausführliche Informationen zur Konfiguration und zur Steckplatzpriorität finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^].
+* Die I/O-Steckplätze der ASA A1K sind von 1 bis 11 nummeriert.
++
+image::../media/drw_a1K_back_slots_labeled_ieops-2162.svg[Steckplatznummerierung auf einem ASA A1K-Controller]
+
+* Die Verkabelungsgrafiken haben Pfeilsymbole, die die richtige Ausrichtung (nach oben oder unten) des Kabelsteckers zeigen, wenn ein Anschluss in einen Anschluss eingesetzt wird.
++
+Wenn Sie den Anschluss einsetzen, sollten Sie das Gefühl haben, dass er einrasten kann. Wenn Sie nicht das Gefühl haben, dass er klickt, entfernen Sie ihn, drehen Sie ihn um und versuchen Sie es erneut.
+
++
+image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Richtung der Zuglasche des Kabels"]
+
+* Wenn Sie eine Verkabelung zu einem optischen Switch vornehmen, stecken Sie den optischen Transceiver in den Controller-Port, bevor Sie ihn mit dem Switch-Port verbinden.
+
+
+
+
+== Schritt 1: Cluster/HA-Verbindungen verkabeln
+
+Verbinden Sie die Controller per Kabel, um die ONTAP Clusterverbindungen herzustellen. Bei Clustern ohne Switches verbinden Sie die Controller untereinander. Bei Clustern mit Switches verbinden Sie die Controller mit den Netzwerk-Switches des Clusters.
+
+
+NOTE: Der Cluster-Interconnect-Verkehr und der HA Traffic nutzen dieselben physischen Ports.
+
+[role="tabbed-block"]
+====
+.Cluster-Verkabelung ohne Switch
+--
+Verwenden Sie diese Verkabelungsoption, wenn die beiden Controller direkt miteinander verbunden sind, ohne Netzwerk-Switches für das Cluster zu verwenden.
+
+Verwenden Sie das Cluster/HA-Verbindungskabel, um die Ports e1a mit e1a und die Ports e7a mit e7a zu verbinden.
+
+.Schritte
+. Schließen Sie den Port e1a an Controller A an den Port e1a an Controller B. an
+. Verbinden Sie Port e7a auf Controller A mit Port e7a auf Controller B.
++
+*Cluster/HA Verbindungskabel*
+
++
+image::../media/oie_cable_25Gb_Ethernet_SFP28_IEOPS-1069.svg[Cluster HA-Kabel]
+
++
+image::../media/drw_a1k_tnsc_cluster_cabling_ieops-1648.svg[Verkabelungsdiagramm für Cluster mit zwei Nodes ohne Switches]
+
+
+
+--
+.Switch-Cluster-Verkabelung
+--
+Verwenden Sie diese Verkabelungsoption, wenn die Controller an Cluster-Netzwerk-Switches angeschlossen sind, anstatt direkt miteinander verbunden zu sein.
+
+Verwenden Sie das 100-GbE-Kabel, um die Ports e1a und e7a mit den Cluster-Netzwerk-Switches zu verbinden.
+
+
+NOTE: Switched-Cluster-Konfigurationen werden in ONTAP 9.16.1 und später unterstützt.
+
+.Schritte
+. Verbinden Sie Port e1a an Controller A und Port e1a an Controller B mit Cluster-Netzwerk-Switch A.
+. Verbinden Sie Port e7a an Controller A und Port e7a an Controller B mit Cluster-Netzwerk-Switch B.
++
+*100-GbE-Kabel*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[100-GbE-Kabel]
+
++
+image::../media/drw_a1k_switched_cluster_cabling_ieops-1652.svg[Verkabeln Sie Cluster-Verbindungen mit dem Cluster-Netzwerk]
+
+
+
+--
+====
+
+
+== Schritt 2: Verkabeln Sie die Host-Netzwerkverbindungen
+
+Verbinden Sie die Ethernet-Modulports mit Ihrem Hostnetzwerk.
+
+Nachfolgend finden Sie einige typische Beispiele für die Verkabelung des Host-Netzwerks. Siehe link:https://hwu.netapp.com["NetApp Hardware Universe"^] für Ihre spezifische Systemkonfiguration.
+
+[role="tabbed-block"]
+====
+.100-GbE-Hostnetzwerk
+--
+Verbinden Sie die Ports e9a und e9b mit Ihrem 100-GbE-Ethernet-Netzwerk-Switch.
+
+
+NOTE: Um die maximale Systemleistung für Cluster- und HA-Datenverkehr zu gewährleisten, sollten die Ports e1b und e7b nicht für Host-Netzwerkverbindungen verwendet werden. Verwenden Sie eine separate Host-Karte, um die Leistung zu maximieren.
+
+.Schritte
+. Verbinden Sie den Port e9a von Controller A und den Port e9a von Controller B mit dem Ethernet-Datennetzwerk-Switch.
+. Verbinden Sie den Port e9b von Controller A und den Port e9b von Controller B mit dem Ethernet-Datennetzwerk-Switch.
++
+*100-GbE-Kabel*
+
++
+image::../media/oie_cable_sfp_gbe_copper.svg[100-GbE-Ethernetkabel]
+
++
+image::../media/drw_a1k_network_cabling1_ieops-1649.svg[Kabel zu 100-GbE-Ethernet-Netzwerk]
+
+
+
+--
+.10/25-GbE-Hostnetzwerk
+--
+Verbinden Sie die 10/25 GbE I/O-Modulports an jedem Controller mit den Host-Netzwerk-Switches.
+
+*10/25-GbE-Kabel*
+
+image::../media/oie_cable_sfp_gbe_copper.svg[10/25-GbE-Ethernetkabel]
+
+image::../media/drw_a1k_network_cabling2_ieops-1650.svg[Kabelverbindung zu 10/25-GbE-Ethernet-Netzwerk]
+
+--
+====
+
+
+== Schritt 3: Verkabelung der Management-Netzwerkverbindungen
+
+Verbinden Sie die Controller mit dem Managementnetzwerk.
+
+Verwenden Sie die 1000BASE-T RJ-45-Kabel, um die Management-Ports (Schraubenschlüssel) an den einzelnen Controllern mit den Managementnetzwerk-Switches zu verbinden.
+
+.Schritte
+. Verbinden Sie den Management-Anschluss (Schraubenschlüssel) an Controller A mit dem Management-Netzwerk-Switch.
+. Verbinden Sie den Management-Anschluss (Schraubenschlüssel-Anschluss) an Controller B mit dem Management-Netzwerk-Switch.
++
+* 1000BASE-T RJ-45 KABEL*
+
++
+image::../media/oie_cable_rj45.svg[RJ-45-Kabel]
+
++
+image::../media/drw_a1k_management_connection_ieops-1651.svg[Stellen Sie eine Verbindung mit dem Managementnetzwerk her]
+
+
+
+
+IMPORTANT: Stecken Sie die Netzkabel noch nicht ein.
+
+
+
+== Schritt 4: Verkabeln Sie die Shelf-Verbindungen
+
+Die ASA A1K-Speichersysteme unterstützen NS224-Einschübe mit entweder dem NSM100- oder dem NSM100B-Modul. Die wichtigsten Unterschiede zwischen den Modulen sind:
+
+* NSM100-Regalmodule verwenden die integrierten Ports e0a und e0b.
+* NSM100B-Shelf-Module verwenden die Ports e1a und e1b in Steckplatz 1.
+
+
+Die folgenden Verkabelungsbeispiele zeigen NSM100-Module in den NS224-Shelfs, wenn von Shelf-Modul-Ports die Rede ist.
+
+Die maximale Anzahl der unterstützten Einschübe für Ihr Speichersystem und alle Verkabelungsoptionen, wie link:https://hwu.netapp.com["NetApp Hardware Universe"^]z. B. optische und Switch-Attached, finden Sie unter .
+
+[role="tabbed-block"]
+====
+.Ein NS224 Storage Shelf
+--
+Verwenden Sie diese Verkabelungsoption, wenn Sie ein einzelnes NS224 shelf haben.
+
+Verbinden Sie jeden Controller mit den NSM-Modulen im NS224-Shelf. Die Grafik zeigt die Verkabelung von den einzelnen Controllern: Die Verkabelung von Controller A wird blau und die Verkabelung von Controller B gelb dargestellt.
+
+.Schritte
+. Verbinden Sie auf Controller A die folgenden Ports:
++
+.. Verbinden Sie Port e11a mit NSM A Port e0a.
+.. Verbinden Sie Port e11b mit NSM B Port e0b.
++
+image:../media/drw_a1k_1shelf_cabling_a_ieops-1703.svg["Controller A e11a und e11b zu einem einzelnen NS224 Shelf"]
+
+
+
+. Verbinden Sie an Controller B die folgenden Ports:
++
+.. Verbinden Sie Port e11a mit NSM B Port e0a.
+.. Verbinden Sie Port e11b mit NSM A Port e0b.
++
+image:../media/drw_a1k_1shelf_cabling_b_ieops-1704.svg["Verbinden Sie die Controller B-Ports e11a und e11b mit einem einzelnen NS224-Regal"]
+
+
+
+
+
+--
+.Zwei NS224 Storage Shelves
+--
+Verwenden Sie diese Verkabelungsoption, wenn Sie zwei NS224 shelves haben.
+
+Verbinden Sie jeden Controller mit den NSM-Modulen beider NS224-Shelfs. Die Grafik zeigt die Verkabelung von den einzelnen Controllern: Die Verkabelung von Controller A wird blau und die Verkabelung von Controller B gelb dargestellt.
+
+.Schritte
+. Verbinden Sie auf Controller A die folgenden Ports:
++
+.. Verbinden Sie Port e11a mit Shelf 1 NSM A Port e0a.
+.. Verbinden Sie den Port e11b mit dem Shelf 2 NSM B-Port e0b.
+.. Verbinden Sie Port e10a mit Shelf 2 NSM A Port E0a.
+.. Verbinden Sie Port e10b mit Port e0b von Shelf 1 NSM B.
++
+image:../media/drw_a1k_2shelf_cabling_a_ieops-1705.svg["Controller-zu-Shelf-Verbindungen für Controller A"]
+
+
+
+. Verbinden Sie an Controller B die folgenden Ports:
++
+.. Verbinden Sie Port e11a mit Shelf 1 NSM B Port e0a.
+.. Verbinden Sie Port e11b mit Shelf 2 NSM A Port e0b.
+.. Verbinden Sie Port e10a mit Shelf 2 NSM B Port e0a.
+.. Verbinden Sie Port e10b mit Shelf 1 NSM A Port e0b.
++
+image:../media/drw_a1k_2shelf_cabling_b_ieops-1706.svg["Controller-zu-Shelf-Verbindungen für Controller B"]
+
+
+
+
+
+--
+====
+.Was kommt als Nächstes?
+Nachdem Sie die Speicher-Controller mit Ihrem Netzwerk verbunden und dann die Controller mit Ihren Speicher-Shelfs verbunden haben, Sie link:power-on-hardware.html["Schalten Sie das ASA r2-Speichersystem ein"].
