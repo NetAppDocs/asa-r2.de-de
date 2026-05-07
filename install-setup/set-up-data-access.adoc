@@ -44,8 +44,9 @@ Ab ONTAP 9.17.1 können Sie mit Foreign LUN Import (FLI) Daten von einer LUN auf
 
 FLI unterstützt sowohl Online- als auch Offline-Migrationen. Bei einer Online-Migration bleibt das Client-System online, während Daten vom Drittanbieter-Speichersystem auf das ONTAP -Speichersystem kopiert werden. Online-Migrationen werden von Windows-, Linux- und ESXi-Hostbetriebssystemen unterstützt. Bei einer Offline-Migration wird das Client-System offline genommen, die LUN-Daten werden vom Drittanbieter-Speichersystem auf das ONTAP -Speichersystem kopiert und anschließend wieder online geschaltet.
 
-* Erfahren Sie, wie Sie eine link:https://docs.netapp.com/us-en/ontap-fli/san-migration//concept_fli_offline_workflow.html["FLI Offline-Migration"^] .
-* Erfahren Sie, wie Sie eine link:https://docs.netapp.com/us-en/ontap-fli/san-migration//concept_fli_online_workflow.html["FLI Online-Migrationen"^] .
+Ab ONTAP 9.19.1 unterstützt FLI das iSCSI-Protokoll für die Backend-Konnektivität.
+
+* Erfahren Sie mehr über den Link: https://docs.netapp.com/us-en/ontap-fli/get-started/learn-about-data-migration.html[ONTAP FLI migrations^].
 
 
 

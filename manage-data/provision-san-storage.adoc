@@ -45,6 +45,9 @@ Um die Arbeitslastverteilung innerhalb der Speicherverfügbarkeitszone zu optimi
 
 CAUTION: Wenn Sie mehr als eine Speichereinheit erstellen, wird jede Einheit mit der gleichen Kapazität erstellt. Multiplizieren Sie die Anzahl der Speichereinheiten, die Sie erstellen, mit der gewünschten Kapazität, um sicherzustellen, dass Sie genügend nutzbaren Speicherplatz haben. Wenn Sie nicht genügend freien Speicherplatz haben und sich für eine Überbelegung entscheiden, überwachen Sie die Auslastung genau, um Speicherplatzmangel und Datenverlust zu vermeiden.
 
++
+Ab ONTAP 9.19.1 müssen Sie beim Erstellen einer AIX-LUN, die Sie für SnapMirror active sync-Schutz aktivieren möchten, unter *Hostinformationen* die Option *lokal* für den *Zugriffsmodus* auswählen. Dies ist erforderlich, um ein transparentes Anwendungs-Failover zu ermöglichen.
+
 . Akzeptieren Sie die automatisch ausgewählte *Host-Zuordnung*, oder wählen Sie eine andere Host-Gruppe für die zuzuordnende Speichereinheit aus.
 +
 *Host-Mapping* bezieht sich auf die Host-Gruppe, der die neue Speichereinheit zugeordnet wird.  Wenn für den Hosttyp, den Sie für Ihre neue Speichereinheit ausgewählt haben, bereits eine Hostgruppe vorhanden ist, wird die bereits vorhandene Hostgruppe automatisch für Ihre Hostzuordnung ausgewählt.  Sie können die automatisch ausgewählte Hostgruppe akzeptieren oder eine andere Hostgruppe auswählen.

@@ -35,9 +35,11 @@ Wenn der Speicherplatz des Clusters knapp link:../administer/increase-storage-ca
 
 == Überwachung der Storage-Verfügbarkeitszonen-Auslastung
 
-Jedes HA-Paar in einem ASA r2-System verwendet einen gemeinsamen Storage-Pool, der als „ Storage Availability Zone_“ bezeichnet wird. Die Storage-Verfügbarkeitszone hat Zugriff auf alle verfügbaren Festplatten im Storage-System und ist für beide Nodes im HA-Paar sichtbar.
+Jedes HA-Paar in einem ASA r2-System nutzt einen gemeinsamen Speicherpool, die sogenannte . Die storage availability zone hat Zugriff auf alle verfügbaren Festplatten im Speichersystem und ist für beide Knoten im HA-Paar sichtbar. Die Überwachung des verfügbaren Speicherplatzes Ihrer storage availability zones ermöglicht es Ihnen, die Nutzung bei Bedarf zu verringern oder die Kapazität zu erhöhen, sodass Sie keine fehlgeschlagenen Workloads aufgrund unzureichenden Speicherplatzes erleben.
 
 Wenn Ihr Cluster 4 oder mehr Nodes enthält, können Sie die Menge des Speicherplatzes anzeigen, der von der Storage-Verfügbarkeitszone für jedes HA-Paar verwendet wird. Diese Metrik ist für 2-Node-Cluster nicht verfügbar.
+
+Ab ONTAP 9.19.1 wird in System Manager *Insights* eine Warnung angezeigt, wenn eine Speicherverfügbarkeitszone in einem Ihrer ASA r2-System-HA-Paare ihre Kapazitätsgrenze erreicht. Weitere Informationen zu System Manager link:view-insights.html["Einblicke"].
 
 .Schritte
 . Wählen Sie im System Manager *Cluster* aus, und wählen Sie dann *Übersicht* aus.
@@ -49,12 +51,12 @@ Für jedes HA-Paar im Cluster wird eine Zusammenfassung der Storage-Verfügbarke
 Unter *Übersicht* werden die Kapazität der Speicherverfügbarkeitszone, der genutzte Speicherplatz und das Datenreduzierungsverhältnis angezeigt.
 
 +
-Unter *Speichereinheiten* wird eine Liste aller Speichereinheiten in der Lagerverfügbarkeitszone angezeigt.
+Unter *Speichereinheiten* wird eine Liste aller Speichereinheiten in der Speicherverfügbarkeitszone angezeigt.
 
 
 
 .Was kommt als Nächstes?
-Wenn die Storage-Verfügbarkeitszone knapp ist, sollten Sie eine andere Storage-Verfügbarkeitszone einplanenlink:../manage-data/move-storage-units.html["Speichereinheiten verschieben"], um die Storage-Auslastung im Cluster auszugleichen.
+Wenn der Speicherplatz in Ihrer Speicherverfügbarkeitszone knapp wird, sollten Sie planen, link:../manage-data/move-storage-units.html["Speichereinheiten verschieben"] auf eine andere Speicherverfügbarkeitszone umzusteigen, um die Speicherauslastung im gesamten Cluster auszugleichen, Snapshots zu löschen, um Speicherplatz freizugeben, oder Ihren Knoten zusätzliche Festplatten hinzuzufügen, um die Kapazität zu erhöhen.
 
 
 

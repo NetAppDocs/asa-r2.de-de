@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: secure-data/modify-arp-snapshot-retention-period.html 
-keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, ai, alerts, respond, warnings, security 
 summary: Erfahren Sie, wie Sie die Aufbewahrungszeiträume von ARP-Snapshots an Ihre Speicher- und Geschäftsanforderungen anpassen. 
 ---
 = Ändern Sie die Aufbewahrungsfristen für ARP/AI-Snapshots auf ASA R2-Speichersystemen

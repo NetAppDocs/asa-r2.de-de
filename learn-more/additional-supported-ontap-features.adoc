@@ -80,6 +80,14 @@ link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authenticat
 
 
 
+=== TLS-Hardware-Offload
+
+Sie können die Transport Layer Security (TLS)-Verschlüsselung und -Entschlüsselung für Ihren gesamten Cluster auf unterstützte Ethernet-Karten auslagern. Dies reduziert die CPU-Auslastung und verbessert die Leistung von Systemen, die TLS verwenden.
+
+link:https://docs.netapp.com/us-en/ontap/networking/configure_tls_hardware_offload.html["Lernen Sie, die Hardware-Offload-Funktion für TLS zu konfigurieren."^].
+
+
+
 == Vernetzung
 
 Erfahren Sie mehr über die gängigen Netzwerkfunktionen, die auf ASA r2-Systemen unterstützt werden.
@@ -105,6 +113,35 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 
 
 
+== Performance
+
+Erfahren Sie mehr über die gängigen Leistungsmerkmale, die auf ASA r2-Systemen unterstützt werden.
+
+
+
+=== Ändern Sie die Standardeinstellungen, die die automatische Erhöhung des QoS-Durchsatzlimits steuern
+
+Adaptive und nicht-adaptive QoS-Richtliniengruppen werden standardmäßig automatisch aktiviert, um die Durchsatzobergrenze einer Arbeitslast für eine Dauer von 1 Sekunde um 50 % zu erhöhen, um kurzfristigen Anforderungen an eine höhere Leistung zu entsprechen. Ab ONTAP 9.19.1 können Sie diese Standardeinstellungen ändern. In ONTAP 9.18.1 und früher können diese Einstellungen nicht geändert werden.
+
+link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html["Erfahren Sie mehr über QoS-Durchsatzgrenzen"^].
+
+
+
+== SAN-Konfiguration
+
+Ein storage area network (SAN) besteht aus einer Speicherlösung, die über ein SAN-Transportprotokoll wie iSCSI oder FC mit Hosts verbunden ist. Sie können Ihr SAN so konfigurieren, dass Ihre Speicherlösung über einen oder mehrere Switches mit Ihren Hosts verbunden wird. Wenn Sie iSCSI verwenden, können Sie Ihr SAN auch so konfigurieren, dass Ihre Speicherlösung direkt mit Ihrem Host verbunden wird, ohne einen Switch zu verwenden.
+
+
+
+=== SAN-Direktanbindung
+
+Ab ONTAP 9.19.1 ist kein FC-Switch mehr erforderlich, um Verbindungen zwischen FC- und FC-NVMe-Hosts und ONTAP Storage herzustellen. Hosts können direkt an die FC-Adapterports von ASA r2-Systemen angeschlossen werden. Diese Direktanschlussmöglichkeit ist besonders in Remote-Sites und hybriden Umgebungen von Vorteil, wo Einfachheit im Vordergrund steht.
+
+* link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html#direct-attach-fc-and-fc-nvme-configurations["Erfahren Sie mehr über die direkte SAN-Anbindung"^].
+
+
+
+
 == SAN-Protokolle
 
 ASA r2-Systeme unterstützen alle SAN-Protokolle (iSCSI, FC, NVMe/FC, NVMe/TCP).
@@ -124,6 +161,22 @@ Ab ONTAP 9.16.1 ist die Speicherplatzfreigabe (auch „Hole Punching“ und „U
 
 
 
+
+
+
+== Storage-Effizienz
+
+Die Speichereffizienz ist das Maß dafür, wie effektiv ein Speichersystem den verfügbaren Platz nutzt, indem es die Speicherressourcen optimiert, verschwendeten Platz minimiert und den physischen Platzbedarf der geschriebenen Daten reduziert.
+
+ONTAP bietet verschiedene Speichereffizienztechnologien, die Ihnen helfen können, die Speichernutzung zu optimieren und Kosten zu senken.
+
+link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.html["Erfahren Sie mehr über ONTAP-Speichereffizienztechnologien"].
+
+
+
+=== Globale Deduplizierung
+
+Ab ONTAP 9.19.1 erweitert die link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["bestehende ONTAP Deduplizierungsspeichereinsparungen"^] globale Deduplizierung die Speichereinheitsebene auf die gesamte Storage Availability Zone (SAZ). Durch die Eliminierung doppelter Datenblöcke über alle Speichereinheiten der SAZ hinweg lässt sich die Speichereffizienz deutlich steigern und die Gesamtbetriebskosten senken. Die globale Deduplizierung benötigt keine Funktionslizenz, ist standardmäßig aktiviert, integriert sich nahtlos in bestehende Technologien zur Speichereffizienz und arbeitet transparent mit minimalen Leistungseinbußen und ohne administrative Konfiguration.
 
 
 

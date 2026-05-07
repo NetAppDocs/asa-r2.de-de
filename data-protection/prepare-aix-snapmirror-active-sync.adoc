@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: data-protection/prepare-aix-snapmirror-active-sync.html 
+keywords: asa r2, data protection, protect data, configure, snapmirror active sync, ,disaster recovery, symmetric active active, prepare, aix 
+summary: Bevor Sie SnapMirror active sync für Ihre AIX-Hosts mit ONTAP 9.19.1 oder höher aktivieren können, muss der Host-Zugriffsmodus auf lokal eingestellt werden. 
+---
+= Bereiten Sie AIX-Hosts für den SnapMirror Active Sync-Schutz auf ASA r2-Systemen vor
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ab ONTAP 9.19.1 wird Transparent Application Failover für AIX mit SnapMirror active sync in symmetrischen Aktiv/Aktiv-Konfigurationen unterstützt. SnapMirror active sync Datensicherung ermöglicht den Weiterbetrieb von Geschäftsdiensten auch bei einem vollständigen Standortausfall und unterstützt Anwendungen dabei, mithilfe einer sekundären Kopie transparent auf ein Failover umzuschalten.
+
+Bevor Sie SnapMirror active sync für Ihre AIX-Hosts mit ONTAP 9.19.1 oder höher aktivieren können, muss der Host-Zugriffsmodus auf lokal eingestellt sein. Die Auswahl des Zugriffsmodus ist für andere Hosttypen nicht erforderlich. Weitere Informationen zu link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/interoperability-reference.html["Interoperabilität für SnapMirror active sync"^].
+
+.Bevor Sie beginnen
+Sie müssen ONTAP 9.19.1 oder höher ausführen. Wenn Sie ONTAP 9.18.1 oder älter ausführen, ist eine Feature Policy Variance Request (FPVR) erforderlich, um die AIX-Host-Unterstützung für SnapMirror active sync zu erhalten.
+
+.Schritte
+. Wählen Sie im System Manager *Storage* aus.
+. Bewegen Sie den Mauszeiger über den Namen der AIX-Speichereinheit, die Sie für den SnapMirror Aktiv-Sync-Schutz vorbereiten möchten.
+. Wählen Sie image:icon_kabob.gif["Menüauswahlsymbol"] und dann *Bearbeiten*.
+. Wählen Sie unter *Hostinformationen* für den *Zugriffsmodus* die Option *lokal* und anschließend *Bearbeiten*.
+
+
+.Was kommt als Nächstes?
+Die Speichereinheit für den AIX-Host ist bereit für SnapMirror Active Sync-Schutz.
