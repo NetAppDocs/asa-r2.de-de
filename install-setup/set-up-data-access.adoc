@@ -46,7 +46,7 @@ FLI unterstützt sowohl Online- als auch Offline-Migrationen. Bei einer Online-M
 
 Ab ONTAP 9.19.1 unterstützt FLI das iSCSI-Protokoll für die Backend-Konnektivität.
 
-* Erfahren Sie mehr über den Link: https://docs.netapp.com/us-en/ontap-fli/get-started/learn-about-data-migration.html[ONTAP FLI migrations^].
+* Weitere Informationen zu link:https://docs.netapp.com/us-en/ontap-fli/get-started/learn-about-data-migration.html["ONTAP FLI-Migrationen"^].
 
 
 

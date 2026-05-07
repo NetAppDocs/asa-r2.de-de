@@ -84,7 +84,7 @@ link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authenticat
 
 Sie können die Transport Layer Security (TLS)-Verschlüsselung und -Entschlüsselung für Ihren gesamten Cluster auf unterstützte Ethernet-Karten auslagern. Dies reduziert die CPU-Auslastung und verbessert die Leistung von Systemen, die TLS verwenden.
 
-link:https://docs.netapp.com/us-en/ontap/networking/configure_tls_hardware_offload.html["Lernen Sie, die Hardware-Offload-Funktion für TLS zu konfigurieren."^].
+link:https://docs.netapp.com/us-en/ontap/networking/configure-tls-offload.html["Lernen Sie, die Hardware-Offload-Funktion für TLS zu konfigurieren."^].
 
 
 
