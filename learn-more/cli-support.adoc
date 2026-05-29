@@ -15,6 +15,8 @@ Anstelle von Aggregaten verwendet die Speicherebene in ASA r2-Systemen Speicherv
 
 Aufgrund dieses vereinfachten Ansatzes zur Speicherverwaltung  `storage aggregate` Befehle werden auf ASA r2-Systemen nicht unterstützt. Unterstützung für bestimmte  `lun` ,  `storage` Und  `volume` Befehle und Parameter sind ebenfalls begrenzt.
 
+Sofern nicht als nicht unterstützt aufgeführt, sind alle anderen Befehle in der link:https://docs.netapp.com/us-en/ontap-cli/["ONTAP-Befehlsreferenz"] für ASA r2-Systeme unterstützt.
+
 Die folgenden Befehle und Befehlssets werden auf ASA unter r2 nicht unterstützt:
 
 .Nicht unterstützte <code>-</code>-Befehle
@@ -139,9 +141,6 @@ Der  `volume modify` Der Befehl ist nicht verfügbar, wenn er in Verbindung mit 
 
 
 ====
-.Finden Sie weitere Informationen
-link:https://docs.netapp.com/us-en/ontap-cli/["ONTAP-Befehlsreferenz"]Eine vollständige Liste der unterstützten Befehle finden Sie im
-
 
 
 == Richten Sie einen ONTAP ASA r2-Cluster mithilfe der CLI ein
