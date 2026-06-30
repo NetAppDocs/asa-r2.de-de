@@ -24,6 +24,7 @@ Wenn automatisches iSCSI-LIF-Failover aktiviert ist, wird die iSCSI-LIF im Falle
 * FabricPool
 * Thick Provisioning für LUNs
 * MetroCluster
+* NetApp Aggregate Encryption (NAE)
 * Objektprotokolle
 * ONTAP S3 SnapMirror und S3-APIs
 
@@ -35,7 +36,7 @@ link:../secure-data/ransomware-protection.html["Erfahren Sie, wie Sie Snapshots 
 
 * Dual-Layer-Verschlüsselung
 +
-link:../secure-data/encrypt-data-at-rest.html["Erfahren Sie, wie Sie eine zweischichtige Verschlüsselung anwenden"] Auf Daten auf Ihrem ASA r2-System.
+ASA r2-Systeme unterstützen Hardwareverschlüsselung mittels selbstverschlüsselnder Laufwerke (SEDs) und Softwareverschlüsselung mittels NetApp Volume Encryption (NVE) Technologie. link:../secure-data/encrypt-data-at-rest.html["Erfahren Sie, wie Sie eine zweischichtige Verschlüsselung anwenden"] für Daten auf Ihrem ASA r2-System.
 
 
 

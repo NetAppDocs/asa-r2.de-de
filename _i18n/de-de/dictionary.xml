@@ -852,7 +852,6 @@
   <block id="a75bf2b9e1da63b60510e670e13280f5" category="example-title">Nicht unterstützte &lt;code&gt;-&lt;/code&gt;-Befehle</block>
   <block id="96e3e25ced73cbc3087692d33e698dfc" category="list-text"><block ref="c1391c72a0f399cab63e0f906219eba1" prefix="" category="inline-code"></block></block>
   <block id="db03a3b1b5e9221c407a3226384456b7" category="list-text"><block ref="852ce55a153bc728405ba8a2c95bcdf1" prefix="" category="inline-code"></block></block>
-  <block id="cb493146003b5096fb9dbce0cf86abad" category="list-text"><block ref="f0f37fae9d089110c4fb0245013845fb" prefix="" category="inline-code"></block></block>
   <block id="2134111bb81c1ada4be502decedecb30" category="list-text"><block ref="3c698d76925a2f101122edd72990fc94" prefix="" category="inline-code"></block></block>
   <block id="c3c96ea806ac83498c365d5180661ba3" category="list-text"><block ref="9b82d4f814395730025ab1c7b269e56e" prefix="" category="inline-code"></block></block>
   <block id="4dae76cd6e28c01554edf8f2fb2ff842" category="list-text"><block ref="ec9655721b41e06c690354a032042fc1" prefix="" category="inline-code"></block></block>
@@ -950,7 +949,6 @@
   <block id="4428c7556a1eea23721f907d8d23eb21" category="inline-link-macro">Erfahren Sie, wie Sie Snapshots sperren</block>
   <block id="19deecdd8b763ce6f48eadb0070d24cd" category="list-text"><block ref="f5c7881d0f64c83ae31bbc947dffd4c1" category="inline-link-macro-rx"></block> Auf Ihrem ASA r2-System.</block>
   <block id="a45dbe7c067a9974c8fca40e2b212fd6" category="inline-link-macro">Erfahren Sie, wie Sie eine zweischichtige Verschlüsselung anwenden</block>
-  <block id="bcdcf9cfaaa690edc9d618403dd65057" category="list-text"><block ref="285ab21de69619aa33a3697c0850e834" category="inline-link-macro-rx"></block> Auf Daten auf Ihrem ASA r2-System.</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Rechtliche Hinweise</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">Rechtliche Hinweise ermöglichen den Zugriff auf Copyright-Erklärungen, Marken, Patente und mehr.</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Urheberrecht</block>
@@ -1235,7 +1233,6 @@
   <block id="2906636dbf4e4249f5399e9553d745b9" category="paragraph">Wenn Daten im Ruhezustand verschlüsselt werden, sind sie auch dann nicht lesbar, wenn ein Storage-Medium einem anderen Zweck zugewiesen, zurückgegeben, verlegt oder gestohlen wird. Sie können ONTAP System Manager zur Verschlüsselung Ihrer Daten auf Hardware- und Softwareebene für einen Dual-Layer-Schutz verwenden.</block>
   <block id="7b51e981529660667d1414c7a37e2172" category="paragraph">NetApp Storage Encryption (NSE) unterstützt Hardwareverschlüsselung über Self-Encrypting Drives (SEDs). SEDs verschlüsseln Daten beim Schreiben. Jede SED enthält einen eindeutigen Verschlüsselungsschlüssel. Verschlüsselte Daten, die auf der SED gespeichert sind, können ohne den SED-Verschlüsselungsschlüssel nicht gelesen werden. Knoten, die versuchen, von einer SED zu lesen, müssen authentifiziert werden, um auf den Verschlüsselungsschlüssel der SED zuzugreifen. Knoten werden authentifiziert, indem ein Authentifizierungsschlüssel von einem Schlüsselmanager abgerufen und dann der SED den Authentifizierungsschlüssel vorgelegt wird. Wenn der Authentifizierungsschlüssel gültig ist, gibt die SED dem Knoten seinen Verschlüsselungsschlüssel für den Zugriff auf die darin enthaltenen Daten.</block>
   <block id="97453174e9fea59b5b73518b257f2785" category="paragraph">Verwenden Sie den integrierten Schlüsselmanager von ASA r2 oder einen externen Schlüsselmanager, um Ihren Nodes Authentifizierungsschlüssel bereitzustellen.</block>
-  <block id="2a1bd1bede081db0130e4d43abfae163" category="paragraph">Neben NSE können Sie auch Softwareverschlüsselung aktivieren, um Ihre Daten um eine weitere Sicherheitsebene zu erweitern.</block>
   <block id="c3895fd1cc061addf95194af9659baa6" category="list-text">Wählen Sie im System Manager *Cluster &gt; Einstellungen* aus.</block>
   <block id="b59449d4094d1449f93a0de73791997c" category="list-text">Wählen Sie im Abschnitt *Sicherheit* unter *Verschlüsselung* *Konfigurieren* aus.</block>
   <block id="9bd21eab9d09006d0846084b0f1b970d" category="list-text">Konfigurieren Sie den Schlüsselmanager.</block>
@@ -2868,4 +2865,11 @@
   <block id="6be3407e36219b0795158b00b3dff0ca" category="list-text">Weitere Informationen zu <block ref="ca933b90c89fa23c09167e20b9cccb24" category="inline-link-macro-rx"></block>.</block>
   <block id="8b046b3216eeb1b646506eacab8f767f" category="paragraph"><block ref="ca9cf0fa026ed1f702f811d5351a5f40" category="inline-link-macro-rx"></block>.</block>
   <block id="44fb59de1e9bca7d7d33dee185838ea7" category="paragraph">Sofern nicht als nicht unterstützt aufgeführt, sind alle anderen Befehle in der <block ref="585532baa3876b6b8281302459d86312" category="inline-link-macro-rx"></block> für ASA r2-Systeme unterstützt.</block>
+  <block id="a809a3f67f68e189b93c920155d8f362" category="list-text">NetApp Aggregate Encryption (NAE)</block>
+  <block id="2b115325b25b8f67f05803e840eb1b7c" category="paragraph">ASA r2-Systeme unterstützen Hardwareverschlüsselung mittels selbstverschlüsselnder Laufwerke (SEDs) und Softwareverschlüsselung mittels NetApp Volume Encryption (NVE) Technologie. <block ref="285ab21de69619aa33a3697c0850e834" category="inline-link-macro-rx"></block> für Daten auf Ihrem ASA r2-System.</block>
+  <block id="f5c9d4c28f92d0b49036a87f3b949ecc" category="paragraph">Zusätzlich zu NSE kann auch die Softwareverschlüsselung aktiviert werden, um eine weitere Sicherheitsebene für Ihre Daten hinzuzufügen. ASA r2 Systeme verwenden die NetApp Volume Encryption (NVE) Technologie zur Verschlüsselung von Daten auf Softwareebene. NetApp Aggregate Encryption (NAE) wird auf ASA r2 Systemen nicht unterstützt, da die Speicherschicht in ASA r2 Systemen Speicherverfügbarkeitszonen anstelle von Aggregaten verwendet.</block>
+  <block id="c4b8c29f448328e82ce27062b5fd9c28" category="inline-link-macro">NetApp Volume Encryption</block>
+  <block id="3b02d77db56f5837a4003247043c2394" category="paragraph">Weitere Informationen zu <block ref="31c33696bbbaa92dffde7abe3995709d" category="inline-link-macro-rx"></block>.</block>
+  <block id="a77592aaf5c220b3ff9f169a775bd853" category="inline-link-macro">die Unterschiede zwischen ASA r2 Systemen und anderen ONTAP Systemen</block>
+  <block id="a3516695dad8c94bdcdc3a67a8d5dd34" category="paragraph">Weitere Informationen zu <block ref="539f35f6411ebaaeab190de38a065f4e" category="inline-link-macro-rx"></block>.</block>
 </blocks>
