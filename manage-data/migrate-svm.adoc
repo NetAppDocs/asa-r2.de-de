@@ -11,7 +11,10 @@ summary: Wenn in einer Storage-Verfügbarkeitszone der Speicherplatz knapp ist, 
 
 
 [role="lead"]
-Ab ONTAP 9.18.1 können Sie eine Storage Virtual Machine (VM) unterbrechungsfrei von einem beliebigen ASA Cluster zu einem beliebigen ASA r2-Cluster migrieren.  Die Migration von einem ASA Cluster zu einem ASA r2-Cluster ermöglicht die Übernahme der vereinfachten und optimierten Architektur von ASA r2-Systemen für reine SAN-Umgebungen.
+Ab ONTAP 9.18.1 können Sie eine Storage Virtual Machine (VM) unterbrechungsfrei von einem beliebigen Standard ASA Cluster zu einem beliebigen ASA r2 Cluster migrieren. Die Migration von einem Standard ASA Cluster zu einem ASA r2 Cluster ermöglicht die Nutzung der vereinfachten und optimierten Architektur von ASA r2 Systemen für reine SAN-Umgebungen.
+
+
+NOTE: Eine Storage-VM kann nicht von einer ASA MetroCluster auf einen ASA r2 Cluster migriert werden. ASA r2 Systeme unterstützen MetroCluster Konfigurationen nicht.
 
 Die Migration von Storage-VMs zwischen ASA und ASA r2-Speichersystemen wird wie folgt unterstützt:
 
@@ -46,8 +49,7 @@ Die Migration von Storage-VMs zwischen ASA und ASA r2-Speichersystemen wird wie 
 
 
 |===
-
-NOTE: Die aktuellste Liste der ASA und ASA r2-Systeme finden Sie hier:link:https://hwu.netapp.com/["NetApp Hardware Universe"^] Die  ASA r2-Systeme werden im NetApp Hardware Universe als „ASA A-Serie/C-Serie (Neu)“ aufgeführt.
+Die aktuellste Liste der ASA und ASA r2-Systeme finden Sie hier:link:https://hwu.netapp.com/["NetApp Hardware Universe"^] Die  ASA r2-Systeme werden im NetApp Hardware Universe als „ASA A-Serie/C-Serie (Neu)“ aufgeführt.
 
 Eine Storage-VM kann nur von einem ASA Cluster zu einem ASA r2-Cluster migriert werden.  Eine Migration von einem anderen ONTAP System wird nicht unterstützt.
 
@@ -56,6 +58,7 @@ Alle Knoten im ASA r2-Cluster und im ASA Cluster müssen mit ONTAP 9.18.1 oder h
 
 
 
+[[step-1-verify-the-status-of-the-asa-storage-vm]]
 == Schritt 1: Überprüfen Sie den Status der ASA -Speicher-VM
 
 Bevor Sie eine Storage-VM von einem ASA -System migrieren, dürfen keine NVMe-Namespaces oder vVols vorhanden sein und jedes Volume in der Storage-VM sollte nur eine LUN enthalten.  Die Migration von NVMe-Namespaces und vVols wird nicht unterstützt.  Die Architektur von ASA r2-Systemen erfordert, dass Volumes jeweils eine einzelne LUN enthalten.
@@ -95,6 +98,7 @@ Sie sind nun bereit, eine Cluster-Peer-Beziehung zwischen Ihren ASA und ASA r2-C
 
 
 
+[[step-2-create-a-cluster-peer-relationship-between-your-asa-and-asa-r2-clusters]]
 == Schritt 2: Erstellen Sie eine Cluster-Peer-Beziehung zwischen Ihren ASA und ASA r2-Clustern.
 
 Bevor Sie eine Storage-VM von einem ASA Cluster zu einem ASA r2-Cluster migrieren können, müssen Sie eine Peer-Beziehung erstellen.  Eine Peer-Beziehung definiert Netzwerkverbindungen, die es ONTAP Clustern und Speicher-VMs ermöglichen, Daten sicher auszutauschen.
@@ -165,6 +169,7 @@ Sie sind nun bereit, Ihre ASA -Speicher-VM für die Migration vorzubereiten.
 
 
 
+[[step-3-prepare-for-storage-vm-migration-from-an-asa-to-an-asa-r2-cluster]]
 == Schritt 3: Vorbereitung der Migration der Speicher-VMs von einem ASA zu einem ASA r2-Cluster
 
 Bevor Sie eine Storage Virtual Machine (VM) von einem ASA Cluster zu einem ASA r2-Cluster migrieren, müssen Sie einen Migrations-Pre-Check durchführen und alle erforderlichen Probleme beheben.  Die Migration kann erst durchgeführt werden, wenn die Vorprüfung erfolgreich bestanden wurde.
@@ -186,6 +191,7 @@ Sie sind nun bereit, Ihre Storage-VM von Ihrem ASA Cluster zu einem ASA r2-Clust
 
 
 
+[[step-4-migrate-an-asa-storage-vm-to-an-asa-r2-cluster]]
 == Schritt 4: Migrieren einer ASA -Speicher-VM zu einem ASA r2-Cluster
 
 Nachdem Sie Ihren ASA Cluster vorbereitet und die notwendige Cluster-Peer-Beziehung mit dem ASA r2-Cluster hergestellt haben, können Sie mit der Migration der Storage-VMs beginnen.

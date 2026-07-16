@@ -15,6 +15,7 @@ Nach der Migration einer Storage Virtual Machine (VM) von einem ASA Cluster zu e
 
 
 
+[[manually-cut-over-clients-to-an-asa-r2-system-after-a-storage-vm-migration]]
 == Manuelle Umstellung der Clients auf ein ASA r2-System nach einer Speicher-VM-Migration
 
 Wenn Sie die automatische Clientumschaltung während der Migration einer Storage-VM von einem ASA Cluster zu einem ASA r2-Cluster deaktivieren, führen Sie die Umschaltung nach erfolgreichem Abschluss der Migration manuell durch, damit die ASA r2 Storage-VM Daten an Clients liefern kann.
@@ -42,6 +43,7 @@ Sie können nun die Speicher-VM aus dem Quell- ASA Cluster entfernen.
 
 
 
+[[manually-remove-an-asa-storage-vm-after-migration-to-an-asa-r2-cluster]]
 == Manuelles Entfernen einer ASA -Speicher-VM nach der Migration zu einem ASA r2-Cluster
 
 Wenn Sie die automatische Quellbereinigung während der Migration einer Storage-VM von einem ASA Cluster zu einem ASA r2-Cluster deaktivieren, müssen Sie nach Abschluss der Migration die Storage-VM aus dem ASA Cluster entfernen, um Speicherplatz freizugeben.

@@ -21,6 +21,7 @@ Hierarchische Konsistenzgruppen ermöglichen es Ihnen, individuelle Snapshot-Ric
 
 
 
+[[consistency-groups-in-replication-relationships]]
 == Konsistenzgruppen in Replikationsbeziehungen
 
 Ab ONTAP 9.17.1 können Sie die folgenden Geometrieänderungen an Konsistenzgruppen in einer asynchronen Replikationsbeziehung oder in einer SnapMirror -Active-Sync-Beziehung vornehmen, ohne die Beziehung zu unterbrechen oder zu löschen.  Wenn in der primären Konsistenzgruppe eine Geometrieänderung auftritt, wird die Änderung in die sekundäre Konsistenzgruppe repliziert.

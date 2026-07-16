@@ -16,6 +16,7 @@ Erstellen Sie einen Snapshot, um die Daten auf Ihrem ASA r2-System zu sichern.  
 
 
 
+[[step-1-optionally-create-a-consistency-group]]
 == Schritt 1: Optional: Erstellen Sie eine Konsistenzgruppe
 
 Eine Konsistenzgruppe ist eine Sammlung von Speichereinheiten, die als eine Einheit gemanagt werden. Erstellen von Konsistenzgruppen zur Vereinfachung des Storage-Managements und der Datensicherung bei Applikations-Workloads über mehrere Storage-Einheiten hinweg Angenommen, Sie haben eine Datenbank, die aus 10 Speichereinheiten in einer Konsistenzgruppe besteht, und Sie müssen die gesamte Datenbank sichern. Anstatt jede Storage-Einheit zu sichern, können Sie die gesamte Datenbank sichern, indem Sie der Konsistenzgruppe einfach Snapshot-Datenschutz hinzufügen.
@@ -101,6 +102,7 @@ Sie haben eine Konsistenzgruppe erstellt, die die zu schützenden Speichereinhei
 ====
 
 
+[[step-2-create-a-snapshot]]
 == Schritt 2: Erstellen Sie einen Snapshot
 
 Ein Snapshot ist eine lokale, schreibgeschützte Kopie Ihrer Daten, mit der Sie Storage-Einheiten zu einem bestimmten Zeitpunkt wiederherstellen können.

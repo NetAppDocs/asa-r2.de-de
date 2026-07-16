@@ -20,6 +20,7 @@ Sie müssen Cluster-Administrator sein, um AutoSupport zu verwalten.
 
 
 
+[[test-autosupport-connectivity]]
 == Testen Sie die AutoSupport Verbindung
 
 Nachdem Sie das Cluster eingerichtet haben, sollten Sie die AutoSupport-Konnektivität testen, um sicherzustellen, dass der technische Support von AutoSupport generierte Meldungen erhält.
@@ -35,6 +36,7 @@ Sie haben bestätigt, dass der technische Support AutoSupport-Nachrichten von Ih
 
 
 
+[[add-autosupport-recipients]]
 == AutoSupport-Empfänger hinzufügen
 
 Fügen Sie Mitglieder Ihrer internen Supportorganisation der Liste der E-Mail-Adressen hinzu, die AutoSupport-Nachrichten empfangen.
@@ -55,6 +57,7 @@ Die von Ihnen hinzugefügten E-Mail-Adressen erhalten neue AutoSupport Nachricht
 
 
 
+[[send-autosupport-data]]
 == AutoSupport-Daten senden
 
 Sollte auf Ihrem ASA r2-System ein Problem auftreten, können AutoSupport-Daten die Zeit zur Erkennung und Behebung von Problemen erheblich verkürzen.
@@ -70,6 +73,7 @@ Ihre AutoSupport-Daten werden an den technischen Support gesendet.
 
 
 
+[[suppress-support-case-generation]]
 == Unterdrücken Sie die Generierung von Support-Cases
 
 Wenn Sie ein Upgrade oder eine Wartung auf Ihrem ASA r2-System durchführen, sollten Sie die AutoSupport-Generierung von Support-Fällen bis zum Abschluss des Upgrades oder der Wartung unterdrücken.
@@ -86,6 +90,7 @@ AutoSupport-Fälle werden nicht während der von Ihnen angegebenen Zeit generier
 
 
 
+[[resume-support-case-generation]]
 == Setzen Sie die Generierung von Support-Cases fort
 
 Wenn Sie die Generierung von Support-Cases während eines Upgrade- oder Wartungsfensters unterdrückt haben, sollten Sie die Erstellung von Support-Cases sofort nach Abschluss des Upgrades oder der Wartung fortsetzen.

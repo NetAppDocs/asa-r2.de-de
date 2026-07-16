@@ -13,7 +13,7 @@ summary: Sehen Sie sich kurze Videos an, die zeigen, wie Sie mit ONTAP System Ma
 [role="lead"]
 Das folgende Transkript ist für das Video `Configure SAN protocols on your ASA r2 storage system`zur Verfügung gestellt.
 
-link:videos-common-tasks.html#video_transcript_return_configure_san_protocols["Zurück zur Seite"]
+link:videos-common-tasks.html["Zurück zur Seite"]
 
 Mit ONTAP System Manager lassen sich SAN-Protokolle schnell und einfach konfigurieren. In diesem Beispiel konfigurieren wir IP-Adressen für iSCSI-Netzwerkschnittstellen.
 

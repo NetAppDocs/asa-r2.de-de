@@ -13,7 +13,7 @@ summary: Sehen Sie sich kurze Videos an, die zeigen, wie Sie mit ONTAP System Ma
 [role="lead"]
 Das folgende Transkript ist für das Video `Provision SAN storage on your ASA r2 storage system`zur Verfügung gestellt.
 
-link:videos-common-tasks.html#video_transcript_return_provision_san_storage["Zurück zur Seite"]
+link:videos-common-tasks.html["Zurück zur Seite"]
 
 Mit ONTAP System Manager lassen sich Storage-Einheiten schnell und einfach für Hosts auf dem ASA r2 Storage-System bereitstellen.
 

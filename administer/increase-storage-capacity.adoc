@@ -15,6 +15,7 @@ Fügen Sie zu einem Node oder Shelf Laufwerke hinzu, um die Storage-Kapazität I
 
 
 
+[[use-netapp-hardware-universe-to-prepare-for-installation-of-a-new-drive]]
 == Verwenden Sie NetApp Hardware Universe, um die Installation eines neuen Laufwerks vorzubereiten
 
 Bevor Sie ein neues Laufwerk in einen Knoten oder ein Shelf einbauen, verwenden Sie das NetApp Hardware Universe, um zu bestätigen, dass das Laufwerk, das Sie hinzufügen möchten, von Ihrem ASA r2-System unterstützt wird, und um den richtigen Steckplatz für das neue Laufwerk zu identifizieren.  Die korrekten Steckplätze zum Hinzufügen von Laufwerken variieren je nach Systemmodell und ONTAP Version.  In einigen Fällen müssen Sie die Laufwerke nacheinander in bestimmte Steckplätze einbauen.
@@ -33,6 +34,7 @@ Sie haben bestätigt, dass Ihr neues Laufwerk unterstützt wird, und Sie kennen 
 
 
 
+[[install-a-new-drive-on-the-asa-r2]]
 == Installieren Sie ein neues Laufwerk auf dem ASA r2
 
 Die Mindestanzahl der Laufwerke, die Sie in einem einzigen Verfahren hinzufügen sollten, beträgt sechs. Das Hinzufügen eines einzigen Laufwerks kann zu einer Performance-Verringerung führen.

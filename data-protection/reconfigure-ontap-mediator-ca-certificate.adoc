@@ -15,6 +15,7 @@ Wenn Sie ONTAP Mediator oder ONTAP Cloud Mediator mit einem selbstsignierten Zer
 
 
 
+[[step-1-remove-the-mediator-configuration]]
 == Schritt 1: Entfernen der Mediator-Konfiguration
 
 Um den Mediator neu zu konfigurieren, müssen Sie zunächst seine aktuelle Konfiguration aus dem Cluster entfernen.
@@ -30,6 +31,7 @@ Wenn Sie mehrere Mediatoren installiert haben und alle Konfigurationen entfernen
 
 
 
+[[step-2-remove-the-self-signed-certificate]]
 == Schritt 2: Entfernen des selbstsignierten Zertifikats
 
 Nachdem die Mediatorkonfiguration entfernt wurde, sollten Sie das zugehörige selbstsignierte Zertifikat aus dem Cluster entfernen.
@@ -43,6 +45,7 @@ Nachdem die Mediatorkonfiguration entfernt wurde, sollten Sie das zugehörige se
 
 
 
+[[step-3-reinstall-the-mediator-with-a-third-party-certificate]]
 == Schritt 3: Installieren Sie den Mediator mit einem Drittanbieterzertifikat neu
 
 Nachdem Sie das zugehörige selbstsignierte Zertifikat entfernt haben, können Sie den Mediator mit dem Drittanbieterzertifikat neu konfigurieren.

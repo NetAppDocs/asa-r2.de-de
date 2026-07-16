@@ -15,6 +15,7 @@ Wenn Sie für eine Geschäftsanwendung kein RPO und RTO nahe Null mehr benötige
 
 
 
+[[step-1-terminate-host-replication]]
 == Schritt 1: Hostreplikation beenden
 
 Wenn die Hostgruppe vom Quellcluster auf den Zielcluster repliziert wird und Zielkonsistenzgruppen der replizierten Hostgruppe zugeordnet werden, müssen Sie die Hostreplikation auf dem Quellcluster beenden, bevor Sie die SnapMirror Active Sync-Beziehung löschen können.
@@ -27,6 +28,7 @@ Wenn die Hostgruppe vom Quellcluster auf den Zielcluster repliziert wird und Zie
 
 
 
+[[step-2-delete-the-snapmirror-active-sync-relationship]]
 == Schritt 2: Löschen Sie die SnapMirror Active Sync-Beziehung
 
 Um den SnapMirror Active Sync-Schutz aus einer Konsistenzgruppe zu entfernen, müssen Sie die SnapMirror Active Sync-Beziehung löschen.

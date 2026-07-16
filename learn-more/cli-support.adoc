@@ -142,6 +142,7 @@ Der  `volume modify` Der Befehl ist nicht verfügbar, wenn er in Verbindung mit 
 ====
 
 
+[[set-up-an-ontap-asa-r2-cluster-using-the-cli]]
 == Richten Sie einen ONTAP ASA r2-Cluster mithilfe der CLI ein
 
 Es wird empfohlen, dass Sie link:../install-setup/initialize-ontap-cluster.html["Richten Sie den ONTAP ASA r2-Cluster mit System Manager ein"]. System Manager bietet einen schnellen und einfachen geleiteten Workflow zur Inbetriebnahme des Clusters. Wenn Sie jedoch bisher mit ONTAP-Befehlen arbeiten, kann die ONTAP-Befehlszeilenschnittstelle (CLI) optional für das Cluster-Setup verwendet werden. Die Cluster-Einrichtung über die CLI bietet keine weiteren Optionen oder Vorteile als die Einrichtung von Clustern mit System Manager.

@@ -15,6 +15,7 @@ Ab ONTAP 9.17.1 können Sie Autonomous Ransomware Protection mit künstlicher In
 
 
 
+[[pause-arpai]]
 == ARP/AI pausieren
 
 Bevor Sie mit einem ungewöhnlichen Workload-Ereignis beginnen, müssen Sie die ARP/AI-Analyse möglicherweise vorübergehend aussetzen, um falsch positive Erkennungen von Ransomware-Angriffen zu verhindern.
@@ -30,6 +31,7 @@ Die ARP/AI-Analyse wird für die ausgewählten Speichereinheiten angehalten und 
 
 
 
+[[resume-arpai]]
 == ARP/AI fortsetzen
 
 Wenn Sie ARP/AI während einer ungewöhnlichen Arbeitslast anhalten, sollten Sie es nach Abschluss der Arbeitslast fortsetzen, um Ihre Daten vor Ransomware-Angriffen zu schützen.

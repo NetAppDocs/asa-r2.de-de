@@ -19,12 +19,14 @@ link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.
 
 
 
+[[revert-requirements-for-asa-r2-systems]]
 == Rückgängigmachen der Anforderungen für ASA R2-Systeme
 
 Bei bestimmten ASA R2-Clusterkonfigurationen müssen Sie bestimmte Maßnahmen ergreifen, bevor Sie mit der Wiederherstellung der ONTAP -Software beginnen.
 
 
 
+[[reverting-from-ontap-9-17-1]]
 === Zurücksetzen von ONTAP 9.17.1
 
 Wenn Sie von ONTAP 9.17.1 auf einem ASA R2-System zurückkehren, sollten Sie vor Beginn der Rücksetzung die folgenden Aktionen ausführen:

@@ -15,6 +15,7 @@ Mit ONTAP System Manager können Sie eine grundlegende Storage-Netzwerkadministr
 
 
 
+[[add-a-broadcast-domain]]
 == Fügen Sie eine Broadcast-Domäne hinzu
 
 Verwenden Sie Broadcast-Domänen, um das Management Ihres Cluster-Netzwerks zu vereinfachen, indem Sie Netzwerkports gruppieren, die zum gleichen Layer-2-Netzwerk gehören. Storage Virtual Machines (VMs) können dann die Ports in der Gruppe für Daten- oder Managementdatenverkehr verwenden.
@@ -49,6 +50,7 @@ Sie haben eine neue Broadcast-Domäne hinzugefügt.
 
 
 
+[[reassign-ports-to-a-different-broadcast-domain]]
 == Weisen Sie Ports einer anderen Broadcast-Domäne neu zu
 
 Ports können nur zu einer Broadcast-Domäne gehören. Wenn Sie die Broadcast-Domäne ändern möchten, zu der ein Port gehört, müssen Sie den Port seiner vorhandenen Broadcast-Domäne einer neuen Broadcast-Domäne zuweisen.
@@ -66,6 +68,7 @@ Sie haben Ports einer anderen Broadcast-Domäne neu zugewiesen.
 
 
 
+[[create-a-vlan]]
 == Erstellen Sie eine VLAN
 
 Ein VLAN besteht aus Switch-Ports, die zu einer Broadcast-Domäne zusammengefasst sind. Mithilfe von VLANs können Sie die Sicherheit erhöhen, Probleme isolieren und verfügbare Pfade innerhalb Ihrer IP-Netzwerkinfrastruktur einschränken.

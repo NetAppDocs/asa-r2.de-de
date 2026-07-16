@@ -25,6 +25,7 @@ link:manage-hierarchical-consistency-groups.html["Erfahren Sie mehr über hierar
 
 
 
+[[step-1-create-a-cluster-peer-relationship]]
 == Schritt: Erstellen einer Cluster-Peer-Beziehung
 
 Bevor Sie Ihre Daten schützen können, indem Sie sie auf ein Remote-Cluster replizieren, müssen Sie eine Cluster-Peer-Beziehung zwischen dem lokalen und dem Remote-Cluster erstellen.
@@ -46,6 +47,7 @@ Sie haben einen lokalen ASA r2-Cluster mit einem Remote-Cluster erreicht. Sie k�
 
 
 
+[[step-2-optionally-create-a-custom-replication-policy]]
 == Schritt 2: Optional: Erstellen einer benutzerdefinierten Replikationsrichtlinie
 
 Die Replikationsrichtlinie definiert, wann auf dem ASA R2-Cluster durchgeführte Updates auf den Remote-Standort repliziert werden.  ONTAP umfasst verschiedene vordefinierte Datenschutzrichtlinien, die Sie für Ihre Replikationsbeziehungen verwenden können.  Wenn die vordefinierten Richtlinien Ihren Anforderungen nicht entsprechen, können Sie eine benutzerdefinierte Replikationsrichtlinie erstellen.
@@ -79,6 +81,7 @@ Erfahren Sie mehr über link:../administer/manage-client-vm-access.html["Storage
 
 
 
+[[step-3-create-a-replication-relationship]]
 == Schritt 3: Erstellen einer Replikationsbeziehung
 
 Eine Snapshot-Replikationsbeziehung stellt eine Verbindung zwischen Ihrem ASA r2-System und einem Remote-Standort her, sodass Sie Consistency Groups auf ein Remote-Cluster replizieren können. Replizierte Konsistenzgruppen können für Disaster Recovery oder Datenmigration verwendet werden.
@@ -170,6 +173,7 @@ Nachdem Sie nun eine Replikationsrichtlinie und -Beziehung erstellt haben, begin
 
 
 
+[[step-4-test-replication-failover]]
 == Schritt 4: Testen des Replikations-Failovers
 
 Überprüfen Sie optional, ob Sie Daten von replizierten Speichereinheiten auf einem Remote-Cluster erfolgreich bereitstellen können, wenn das Quell-Cluster offline ist.

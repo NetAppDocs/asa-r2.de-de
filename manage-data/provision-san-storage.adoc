@@ -16,6 +16,7 @@ Wenn Sie Storage bereitstellen, ermöglichen Sie Ihren SAN-Hosts, Daten von ASA 
 
 
 
+[[create-storage-units]]
 == Erstellen von Speichereinheiten
 
 Auf einem ASA r2-System stellt eine Speichereinheit den SAN-Hosts Speicherplatz für Datenoperationen zur Verfügung. Eine Speichereinheit bezeichnet eine LUN für SCSI-Hosts oder einen NVMe-Namensraum für NVMe-Hosts. Wenn Ihr Cluster für die Unterstützung von SCSI-Hosts konfiguriert ist, werden Sie aufgefordert, eine LUN zu erstellen. Wenn Ihr Cluster für die Unterstützung von NVMe-Hosts konfiguriert ist, werden Sie aufgefordert, einen NVMe-Namespace zu erstellen.
@@ -176,6 +177,7 @@ Erfahren Sie mehr über link:../administer/manage-client-vm-access.html["So verw
 
 
 
+[[add-host-initiators]]
 == Fügen Sie Host-Initiatoren hinzu
 
 Sie können Ihrem ASA r2-System jederzeit neue Hostinitiatoren hinzufügen. Initiatoren stellen die Hosts für den Zugriff auf Speichereinheiten und die Durchführung von Datenoperationen zur Verfügung.
@@ -243,6 +245,7 @@ Ihre NVMe Hosts werden Ihrem ASA r2 System hinzugefügt, und Sie können Ihre Ho
 ====
 
 
+[[map-the-storage-unit-to-a-host]]
 == Ordnen Sie die Speichereinheit einem Host zu
 
 Nachdem ASA r2-Speichereinheiten erstellt und Host-Initiatoren hinzugefügt wurden, müssen Hosts den Speichereinheiten zugeordnet werden, um mit der Datenbereitstellung zu beginnen.  Speichereinheiten werden im Rahmen des Speichereinheitenerstellungsprozesses Hosts zugeordnet.  Sie können auch jederzeit bestehende Speichereinheiten neuen oder bestehenden Hosts zuordnen.
@@ -259,6 +262,7 @@ Die Speichereinheit wird Ihren Hosts zugeordnet, und Sie können den Bereitstell
 
 
 
+[[complete-host-side-provisioning]]
 == Vollständige Host-seitige Bereitstellung
 
 Nachdem Sie die Speichereinheiten erstellt, die Hostinitiatoren hinzugefügt und die Speichereinheiten zugeordnet haben, müssen Sie auf den Hosts Schritte ausführen, bevor sie Daten auf dem ASA r2-System lesen und schreiben können.

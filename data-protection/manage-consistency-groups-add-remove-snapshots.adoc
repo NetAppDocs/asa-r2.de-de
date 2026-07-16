@@ -17,6 +17,7 @@ Wenn Sie die Daten bestimmter Speichereinheiten in der Konsistenzgruppe nicht me
 
 
 
+[[add-snapshot-data-protection-to-a-consistency-group]]
 == Fügen Sie einer Konsistenzgruppe Snapshot Datensicherung hinzu
 
 Wenn Sie einer Konsistenzgruppe Snapshot-Datenschutz hinzufügen, werden lokale Snapshots der Konsistenzgruppe in regelmäßigen Abständen basierend auf einem vordefinierten Zeitplan erstellt.
@@ -66,6 +67,7 @@ Nachdem Ihre Daten nun durch Snapshots geschützt sind, sollten Sie link:../secu
 
 
 
+[[remove-snapshot-data-protection-from-a-consistency-group]]
 == Entfernen Sie die Snapshot-Datensicherung aus einer Konsistenzgruppe
 
 Wenn Sie den Snapshot-Datenschutz aus einer Konsistenzgruppe entfernen, werden die Snapshots für alle Speichereinheiten in der Konsistenzgruppe deaktiviert.

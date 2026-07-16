@@ -15,6 +15,7 @@ Verkabeln Sie Ihr ASA r2-Speichersystem, um die Clusterkommunikation, den Host-N
 
 
 
+[[overview-of-hardware-cabling]]
 == Übersicht der Hardwareverkabelung
 
 Die Verkabelung unterscheidet sich je nach Plattformmodell, da jedes ASA r2 Modell über einzigartige Steckplatzpositionen, Portzuordnungen und E/A-Modulkonfigurationen verfügt. Wählen Sie die Vorgehensweise für Ihr ASA r2 Modell:
@@ -47,6 +48,7 @@ Verbinden Sie die Controller mit NS224-Speicherregalen, um Speicherkapazität f�
 
 
 
+[[additional-resources]]
 == Zusätzliche Ressourcen
 
 Die Verkabelungsanleitungen zeigen gängige Konfigurationen. Die konkrete Verkabelung hängt von den für Ihr Speichersystem bestellten Komponenten ab. Ausführliche Informationen zur Konfiguration und Steckplatzpriorität finden Sie unter link:https://hwu.netapp.com["NetApp Hardware Universe"^].

@@ -53,6 +53,7 @@ Wählen Sie *Audit-Protokolle*.
 
 
 
+[[send-email-notifications-for-cluster-events-and-audit-logs]]
 == Senden von E-Mail-Benachrichtigungen für Cluster-Ereignisse und Prüfprotokolle
 
 Konfigurieren Sie das System so, dass eine Benachrichtigung an bestimmte E-Mail-Adressen gesendet wird, wenn ein Clusterereignis- oder Überwachungsprotokolleintrag vorhanden ist.

@@ -13,7 +13,7 @@ summary: Sehen Sie sich kurze Videos an, die zeigen, wie Sie mit ONTAP System Ma
 [role="lead"]
 Das folgende Transkript ist für das Video `Replicate data to a remote cluster from an ASA r2 storage system`zur Verfügung gestellt.
 
-link:videos-common-tasks.html#video_transcript_return_replicate_data["Zurück zur Seite"]
+link:videos-common-tasks.html["Zurück zur Seite"]
 
 Mit ONTAP System Manager können Sie Ihre Daten schützen, indem Sie Snapshots Ihrer Storage-Einheiten oder Konsistenzgruppen planen und an einen Remote-Standort replizieren.
 

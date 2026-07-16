@@ -18,6 +18,7 @@ Nehmen wir zum Beispiel an, eine geschäftskritische Applikation hat eine hohe L
 
 
 
+[[monitor-cluster-performance]]
 == Überwachen Sie die Cluster-Performance
 
 Mithilfe von Cluster-Performance-Kennzahlen können Sie bestimmen, ob Sie Workloads verlagern müssen, um die Latenz zu minimieren sowie die IOPS und den Durchsatz Ihrer kritischen Applikationen zu maximieren.
@@ -33,6 +34,7 @@ Analysieren Sie mithilfe Ihrer Cluster-Performance-Kennzahlen, ob Sie Ihre QoS-R
 
 
 
+[[monitor-storage-unit-performance]]
 == Überwachung der Leistung der Speichereinheit
 
 Verwenden Sie Performance-Kennzahlen der Storage-Einheit, um den Einfluss spezifischer Applikationen auf Latenz, IOPS und Durchsatz zu bestimmen.

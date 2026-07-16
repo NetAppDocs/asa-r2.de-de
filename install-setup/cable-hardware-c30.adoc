@@ -30,6 +30,7 @@ image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Richtung der Zuglasc
 
 
 
+[[step-1-cable-the-clusterha-connections]]
 == Schritt 1: Cluster/HA-Verbindungen verkabeln
 
 Verbinden Sie die Controller per Kabel, um die ONTAP Clusterverbindungen herzustellen. Bei Clustern ohne Switches verbinden Sie die Controller untereinander. Bei Clustern mit Switches verbinden Sie die Controller mit den Netzwerk-Switches des Clusters.
@@ -144,6 +145,7 @@ image::../media/drw_isi_a30-50_2p_100gbe_1card_switched_cabling_ieops-1926.svg[V
 ====
 
 
+[[step-2-cable-the-host-network-connections]]
 == Schritt 2: Verkabeln Sie die Host-Netzwerkverbindungen
 
 Verbinden Sie die Ethernet-Modulports oder die Fibre-Channel-Modulports (FC) mit Ihrem Hostnetzwerk.
@@ -193,6 +195,7 @@ image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[Kabel zu 
 ====
 
 
+[[step-3-cable-the-management-network-connections]]
 == Schritt 3: Verkabelung der Management-Netzwerkverbindungen
 
 Verbinden Sie die Controller mit dem Managementnetzwerk.
@@ -210,6 +213,7 @@ IMPORTANT: Stecken Sie die Netzkabel noch nicht ein.
 
 
 
+[[step-4-cable-the-shelf-connections]]
 == Schritt 4: Verkabeln Sie die Shelf-Verbindungen
 
 Die Verkabelung des NS224-Regals zeigt NSM100B-Module anstelle von NSM100-Modulen. Die Verkabelung ist unabhängig vom Typ der verwendeten NSM-Module gleich, lediglich die Portnamen unterscheiden sich:

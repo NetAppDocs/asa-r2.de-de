@@ -15,6 +15,7 @@ Mit System Manager können Sie den Active Directory-Domänencontroller-Zugriff s
 
 
 
+[[configure-active-directory-domain-controller-access]]
 == Konfigurieren Sie den Zugriff auf den Active Directory-Domänencontroller
 
 Konfigurieren Sie den Active Directory (AD) Domain Controller-Zugriff auf das Cluster oder die Storage-VM, damit Sie den Zugriff auf das AD-Konto aktivieren können.
@@ -29,6 +30,7 @@ Sie können nun den AD-Kontozugriff auf Ihrem ASA r2-System aktivieren.
 
 
 
+[[configure-ldap]]
 == LDAP konfigurieren
 
 Konfigurieren Sie einen LDAP-Server (Lightweight Directory Access Protocol) zur zentralen Verwaltung von Benutzerinformationen für die Authentifizierung.
@@ -47,6 +49,7 @@ Sie können jetzt LDAP für Benutzerinformationen und Authentifizierung verwende
 
 
 
+[[configure-saml-authentication]]
 == Konfigurieren Sie die SAML-Authentifizierung
 
 Die SAML-Authentifizierung (Security Assertion Markup Language) ermöglicht die Authentifizierung von Benutzern durch einen sicheren Identitätsanbieter (Secure Identity Provider, IdP) anstelle von direkten Dienstanbietern wie Active Directory und LDAP.
@@ -80,6 +83,7 @@ Sie können jetzt die SAML-Authentifizierung für Ihre Benutzerkonten verwenden.
 
 
 
+[[create-user-account-roles]]
 == Erstellen von Benutzerkontorollen
 
 Rollen für Cluster-Administratoren und Storage-VM-Administratoren werden automatisch erstellt, wenn das Cluster initialisiert wird. Erstellen Sie zusätzliche Benutzerkontorollen, um bestimmte Funktionen zu definieren, die Benutzer, die den Rollen zugewiesen sind, auf Ihrem Cluster ausführen können.
@@ -100,6 +104,7 @@ Ein neues Benutzerkonto wird erstellt und steht für die Verwendung auf Ihrem AS
 
 
 
+[[create-an-administrator-account]]
 == Erstellen Sie ein Administratorkonto
 
 Erstellen Sie ein Administrator-Benutzerkonto, mit dem der Account-Benutzer basierend auf der dem Konto zugewiesenen Rolle bestimmte Aktionen für den Cluster ausführen kann. Um die Kontosicherheit zu verbessern, richten Sie bei der Erstellung des Kontos eine Multi-Faktor-Authentifizierung (MFA) ein.

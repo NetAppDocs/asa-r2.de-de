@@ -42,6 +42,7 @@ ASA r2-Systeme unterstützen Hardwareverschlüsselung mittels selbstverschlüsse
 
 
 
+[[support-for-snapmirror-replication]]
 == Unterstützung für SnapMirror Replikation
 
 Die SnapMirror Replikation wird auf ASA r2-Systemen mit folgenden Einschränkungen unterstützt:

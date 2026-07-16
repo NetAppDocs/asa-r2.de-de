@@ -18,6 +18,7 @@ Erfahren Sie mehr über die neuen Funktionen, die in ONTAP 9.18.1 für ASA r2-Sy
 
 
 
+[[data-protection]]
 == Datensicherung
 
 [cols="2,4"]
@@ -29,6 +30,7 @@ Erfahren Sie mehr über die neuen Funktionen, die in ONTAP 9.18.1 für ASA r2-Sy
 |===
 
 
+[[networking]]
 == Vernetzung
 
 [cols="2,4"]
@@ -43,6 +45,7 @@ Erfahren Sie mehr über die neuen Funktionen, die in ONTAP 9.18.1 für ASA r2-Sy
 |===
 
 
+[[san-data-migration]]
 == SAN-Datenmigration
 
 [cols="2,4"]
@@ -54,6 +57,7 @@ Erfahren Sie mehr über die neuen Funktionen, die in ONTAP 9.18.1 für ASA r2-Sy
 |===
 
 
+[[security]]
 == Sicherheit
 
 [cols="2,4"]
@@ -65,6 +69,7 @@ Erfahren Sie mehr über die neuen Funktionen, die in ONTAP 9.18.1 für ASA r2-Sy
 |===
 
 
+[[storage-efficiency]]
 == Storage-Effizienz
 
 [cols="2,4"]

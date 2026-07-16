@@ -17,12 +17,14 @@ Weitere Informationen zu allgemeinen Features und Funktionen finden Sie in der f
 
 
 
+[[data-protection]]
 == Datensicherung
 
 Erfahren Sie mehr über die gängigen Datenschutzfunktionen, die auf ASA r2-Systemen unterstützt werden.
 
 
 
+[[clustered-external-key-servers]]
 === Clustered externe Schlüsselserver
 
 Sie können die Konnektivität zu geclusterten externen Schlüsselverwaltungsservern auf einer Speicher-VM konfigurieren. Mit geclusterten Schlüsselservern können Sie primäre und sekundäre Schlüsselserver auf einer Speicher-VM festlegen. Bei der Registrierung von Schlüsseln versucht ONTAP zunächst, auf einen primären Schlüsselserver zuzugreifen, bevor es nacheinander versucht, auf sekundäre Server zuzugreifen, bis der Vorgang erfolgreich abgeschlossen ist. Dadurch wird eine Duplizierung der Schlüssel verhindert.
@@ -31,6 +33,7 @@ link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-ke
 
 
 
+[[external-key-management-for-encryption-at-rest]]
 === Externes Schlüsselmanagement für die Verschlüsselung ruhender Daten
 
 Sie können einen oder mehrere KMIP-Server verwenden, um die Schlüssel zu sichern, die der Cluster für den Zugriff auf verschlüsselte Daten verwendet.
@@ -41,12 +44,14 @@ Sie können einen oder mehrere KMIP-Server verwenden, um die Schlüssel zu siche
 
 
 
+[[data-security]]
 == Datensicherheit
 
 Erfahren Sie mehr über gängige Datensicherheitsfunktionen, die auf ASA r2-Systemen unterstützt werden.
 
 
 
+[[administrator-access-management]]
 === Administratorzugriffsverwaltung
 
 Die einem Administrator zugewiesene Rolle bestimmt, welche Funktionen der Administrator ausführen kann.  System Manager stellt vordefinierte Rollen für Cluster-Administratoren und Storage-VM-Administratoren bereit.  Sie weisen die Rolle bei der Erstellung des Administratorkontos zu, oder Sie können später eine andere Rolle zuweisen.
@@ -56,6 +61,7 @@ Die einem Administrator zugewiesene Rolle bestimmt, welche Funktionen der Admini
 
 
 
+[[client-authentication-and-authorization]]
 === Client-Authentifizierung und -Autorisierung
 
 ONTAP verwendet Standardmethoden, um den Zugriff von Clients und Administratoren auf den Speicher zu sichern und vor Viren zu schützen.  Für die Verschlüsselung ruhender Daten und für die WORM-Speicherung stehen fortschrittliche Technologien zur Verfügung.  ONTAP authentifiziert einen Clientrechner und einen Benutzer, indem es deren Identität mit einer vertrauenswürdigen Quelle verifiziert.  ONTAP autorisiert einen Benutzer zum Zugriff auf eine Datei oder ein Verzeichnis, indem es die Anmeldeinformationen des Benutzers mit den für die Datei oder das Verzeichnis konfigurierten Berechtigungen vergleicht.
@@ -64,6 +70,7 @@ link:https://docs.netapp.com/us-en/ontap/concepts/client-access-storage-concept.
 
 
 
+[[oauth-2-0-authentication]]
 === OAuth 2.0-Authentifizierung
 
 Sie können das Open Authorization (OAuth 2.0) Framework verwenden, um den Zugriff auf Ihre ONTAP Cluster zu steuern.  OAuth 2.0 beschränkt und kontrolliert den Zugriff auf geschützte Ressourcen mithilfe signierter Zugriffstoken.
@@ -72,6 +79,7 @@ link:https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["Er
 
 
 
+[[saml-authentication-and-administrator-access]]
 === SAML-Authentifizierung und Administratorzugriff
 
 Sie können die Security Assertion Markup Language (SAML)-Authentifizierung für Webdienste konfigurieren und aktivieren.  SAML authentifiziert Benutzer über einen externen Identitätsanbieter (IdP) anstelle von Verzeichnisdienstanbietern wie Active Directory und LDAP.
@@ -80,6 +88,7 @@ link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authenticat
 
 
 
+[[tls-hardware-offload]]
 === TLS-Hardware-Offload
 
 Sie können die Transport Layer Security (TLS)-Verschlüsselung und -Entschlüsselung für Ihren gesamten Cluster auf unterstützte Ethernet-Karten auslagern. Dies reduziert die CPU-Auslastung und verbessert die Leistung von Systemen, die TLS verwenden.
@@ -88,12 +97,14 @@ link:https://docs.netapp.com/us-en/ontap/networking/configure-tls-offload.html["
 
 
 
+[[networking]]
 == Vernetzung
 
 Erfahren Sie mehr über die gängigen Netzwerkfunktionen, die auf ASA r2-Systemen unterstützt werden.
 
 
 
+[[fips-compliance]]
 === FIPS-Konformität
 
 ONTAP erfüllt die Anforderungen des Federal Information Processing Standards (FIPS) 140-2 für alle SSL-Verbindungen.  Sie können den SSL-FIPS-Modus ein- und ausschalten, SSL-Protokolle global festlegen und schwache Verschlüsselungsverfahren wie RC4 innerhalb von ONTAP deaktivieren.
@@ -105,6 +116,7 @@ Ab ONTAP 9.18.1 werden Postquanten-Computing-Kryptographiealgorithmen für SSL u
 
 
 
+[[link-aggregation-groups-lags]]
 === Link-Aggregationsgruppen (LAGs)
 
 Eine Schnittstellengruppe, auch Link Aggregation Group (LAG) genannt, entsteht durch die Kombination von zwei oder mehr physischen Ports auf demselben Knoten zu einem einzigen logischen Port.  Der logische Port bietet erhöhte Ausfallsicherheit, erhöhte Verfügbarkeit und Lastverteilung.
@@ -113,12 +125,14 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 
 
 
+[[performance]]
 == Performance
 
 Erfahren Sie mehr über die gängigen Leistungsmerkmale, die auf ASA r2-Systemen unterstützt werden.
 
 
 
+[[modify-default-settings-that-control-automatic-qos-throughput-ceiling-increases]]
 === Ändern Sie die Standardeinstellungen, die die automatische Erhöhung des QoS-Durchsatzlimits steuern
 
 Adaptive und nicht-adaptive QoS-Richtliniengruppen werden standardmäßig automatisch aktiviert, um die Durchsatzobergrenze einer Arbeitslast für eine Dauer von 1 Sekunde um 50 % zu erhöhen, um kurzfristigen Anforderungen an eine höhere Leistung zu entsprechen. Ab ONTAP 9.19.1 können Sie diese Standardeinstellungen ändern. In ONTAP 9.18.1 und früher können diese Einstellungen nicht geändert werden.
@@ -127,12 +141,14 @@ link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-
 
 
 
+[[san-configuration]]
 == SAN-Konfiguration
 
 Ein storage area network (SAN) besteht aus einer Speicherlösung, die über ein SAN-Transportprotokoll wie iSCSI oder FC mit Hosts verbunden ist. Sie können Ihr SAN so konfigurieren, dass Ihre Speicherlösung über einen oder mehrere Switches mit Ihren Hosts verbunden wird. Wenn Sie iSCSI verwenden, können Sie Ihr SAN auch so konfigurieren, dass Ihre Speicherlösung direkt mit Ihrem Host verbunden wird, ohne einen Switch zu verwenden.
 
 
 
+[[san-direct-attachment]]
 === SAN-Direktanbindung
 
 Ab ONTAP 9.19.1 ist kein FC-Switch mehr erforderlich, um Verbindungen zwischen FC- und FC-NVMe-Hosts und ONTAP Storage herzustellen. Hosts können direkt an die FC-Adapterports von ASA r2-Systemen angeschlossen werden. Diese Direktanschlussmöglichkeit ist besonders in Remote-Sites und hybriden Umgebungen von Vorteil, wo Einfachheit im Vordergrund steht.
@@ -142,6 +158,7 @@ Ab ONTAP 9.19.1 ist kein FC-Switch mehr erforderlich, um Verbindungen zwischen F
 
 
 
+[[san-protocols]]
 == SAN-Protokolle
 
 ASA r2-Systeme unterstützen alle SAN-Protokolle (iSCSI, FC, NVMe/FC, NVMe/TCP).
@@ -164,6 +181,7 @@ Ab ONTAP 9.16.1 ist die Speicherplatzfreigabe (auch „Hole Punching“ und „U
 
 
 
+[[storage-efficiency]]
 == Storage-Effizienz
 
 Die Speichereffizienz ist das Maß dafür, wie effektiv ein Speichersystem den verfügbaren Platz nutzt, indem es die Speicherressourcen optimiert, verschwendeten Platz minimiert und den physischen Platzbedarf der geschriebenen Daten reduziert.
@@ -174,12 +192,14 @@ link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.ht
 
 
 
+[[global-deduplication]]
 === Globale Deduplizierung
 
 Ab ONTAP 9.19.1 erweitert die link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["bestehende ONTAP Deduplizierungsspeichereinsparungen"^] globale Deduplizierung die Speichereinheitsebene auf die gesamte Storage Availability Zone (SAZ). Durch die Eliminierung doppelter Datenblöcke über alle Speichereinheiten der SAZ hinweg lässt sich die Speichereffizienz deutlich steigern und die Gesamtbetriebskosten senken. Die globale Deduplizierung benötigt keine Funktionslizenz, ist standardmäßig aktiviert, integriert sich nahtlos in bestehende Technologien zur Speichereffizienz und arbeitet transparent mit minimalen Leistungseinbußen und ohne administrative Konfiguration.
 
 
 
+[[system-manager]]
 == System Manager
 
 Im System Manager können Sie nach verschiedenen Aktionen, Objekten und Informationsthemen suchen.  Sie können auch in den Tabellendaten nach bestimmten Einträgen suchen.

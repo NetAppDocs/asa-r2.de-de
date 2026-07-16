@@ -50,6 +50,7 @@ Speicher-VM-Ebene: Externer Schlüsselmanager
 |===
 
 
+[[migrate-keys-between-key-managers-at-the-ontap-cluster-level]]
 == Migrieren Sie Schlüssel zwischen Schlüsselmanagern auf ONTAP-Cluster-Ebene
 
 Ab ONTAP 9.16.1 können Sie die ONTAP Befehlszeilenschnittstelle (CLI) verwenden, um Schlüssel zwischen Schlüsselmanagern auf Cluster-Ebene zu migrieren.
@@ -131,6 +132,7 @@ set -privilege admin
 ====
 
 
+[[migrate-keys-between-key-managers-across-ontap-cluster-and-storage-vm-levels]]
 == Schlüsselmanagement auf ONTAP-Cluster- und Storage-VM-Ebene migrieren
 
 Mithilfe der ONTAP Befehlszeilenschnittstelle (CLI) können Sie Schlüssel zwischen dem Schlüsselmanager auf Cluster-Ebene und einem Schlüsselmanager auf Storage-VM-Ebene migrieren.

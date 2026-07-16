@@ -17,6 +17,7 @@ link:snapshot-reserve.html["Erfahren Sie mehr über Snapshot-Reservierung auf AS
 
 
 
+[[modify-snapshot-reserve-on-storage-units]]
 == Snapshot-Reservierung auf Speichereinheiten ändern
 
 Um unterschiedliche Snapshot-Reservewerte festzulegen, konfigurieren Sie jede Speichereinheit einzeln.  Um für alle Speichereinheiten denselben Wert zu verwenden, ändern Sie die Snapshot-Reserve auf der Speicher-VM.
@@ -35,6 +36,7 @@ Die Snapshot-Reserve ist auf den von Ihnen angegebenen Prozentsatz eingestellt. 
 
 
 
+[[modify-snapshot-reserve-on-a-storage-vm]]
 == Snapshot-Reservierung auf einer Speicher-VM ändern
 
 Um für alle Speichereinheiten einer Speicher-VM die gleiche Snapshot-Reserve festzulegen, wenden Sie den gewünschten Prozentsatz auf die Speicher-VM an. .  Wenn die Snapshot-Reservierung auf die Speicher-VM angewendet wird, wird sie auf alle neu erstellten Speichereinheiten innerhalb der Speicher-VM angewendet.  Diese Einstellung gilt nicht für Speichereinheiten, die vor der Änderung der Einstellung erstellt wurden.

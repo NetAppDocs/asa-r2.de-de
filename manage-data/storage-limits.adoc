@@ -64,6 +64,7 @@ ASA R2-Systeme unterstützen die folgenden Speichergrenzen:
 |===
 
 
+[[limits-for-snapmirror-asynchronous-relationships]]
 == Grenzwerte für asynchrone SnapMirror -Beziehungen
 
 Die folgenden Beschränkungen gelten für Speichereinheiten und Konsistenzgruppen in einer asynchronen SnapMirror -Replikationsbeziehung. Eine vollständige Liste der aktuellsten Speichergrenzen von ASA r2 finden Sie hier:link:https://hwu.netapp.com/["NetApp Hardware Universe"^] Die
@@ -80,6 +81,7 @@ Die folgenden Beschränkungen gelten für Speichereinheiten und Konsistenzgruppe
 |===
 
 
+[[limits-for-snapmirror-active-sync-relationship]]
 == Grenzen für die aktive Synchronisierungsbeziehung von SnapMirror
 
 Die folgenden Beschränkungen gelten für Speichereinheiten und Konsistenzgruppen in einer SnapMirror Active Sync-Replikationsbeziehung. SnapMirror Active Sync wird ab ONTAP 9.17.1 nur auf Zwei-Knoten-Clustern unterstützt.  Ab ONTAP 9.18.1 wird SnapMirror Active Sync auf Vier-Knoten-Clustern unterstützt.

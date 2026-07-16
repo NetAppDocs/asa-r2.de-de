@@ -28,6 +28,7 @@ NOTE: Kein System zur Erkennung oder Abwehr von Ransomware kann absolute Sicherh
 
 
 
+[[enable-arpai-on-all-storage-units-in-the-cluster]]
 == Aktivieren Sie ARP/AI auf allen Speichereinheiten im Cluster
 
 Wenn Sie ONTAP 9.17.1 verwenden, können Sie ARP/AI auf allen im Cluster erstellten Speichereinheiten standardmäßig aktivieren.
@@ -42,6 +43,7 @@ In ONTAP 9.18.1 und höher ist ARP/AI standardmäßig auf allen neuen Speicherei
 
 
 
+[[enable-arpai-on-all-storage-units-in-a-storage-vm]]
 == Aktivieren Sie ARP/AI auf allen Speichereinheiten in einer Speicher-VM.
 
 Wenn Sie ONTAP 9.17.1 verwenden, können Sie ARP/AI standardmäßig für alle in einer Storage-VM erstellten Speichereinheiten aktivieren. Das bedeutet, dass jede neue in der Storage-VM erstellte Speichereinheit ARP/AI automatisch aktiviert hat. Sie können ARP/AI auch auf bereits vorhandene Speichereinheiten in der Storage-VM anwenden.
@@ -65,6 +67,7 @@ Alle neu erstellten Speichereinheiten auf der Speicher-VM sind standardmäßig v
 
 
 
+[[enable-arpai-on-specific-storage-units-in-a-storage-vm]]
 == Aktivieren Sie ARP/AI auf bestimmten Speichereinheiten in einer Speicher-VM.
 
 Wenn Sie ONTAP 9.17.1 verwenden und ARP/AI nicht auf allen Speichereinheiten in einer Storage-VM aktivieren möchten, können Sie die spezifischen Einheiten auswählen, die Sie aktivieren möchten.

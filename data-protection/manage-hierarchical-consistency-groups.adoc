@@ -15,6 +15,7 @@ Ab ONTAP 9.16.1 können Sie mit System Manager hierarchische Konsistenzgruppen a
 
 
 
+[[promote-an-existing-consistency-group-into-a-parent-consistency-group]]
 == Eine vorhandene Konsistenzgruppe in eine übergeordnete Konsistenzgruppe umwandeln
 
 Wenn Sie eine vorhandene Konsistenzgruppe zu einer übergeordneten Gruppe hochstufen, wird eine neue untergeordnete Konsistenzgruppe erstellt und die Speichereinheiten, die zur hochgestuften Konsistenzgruppe gehören, werden in die neue untergeordnete Konsistenzgruppe verschoben.  Speichereinheiten können nicht direkt einer übergeordneten Konsistenzgruppe zugeordnet werden.
@@ -35,6 +36,7 @@ Sie können unter der übergeordneten Konsistenzgruppe weitere untergeordnete Ko
 
 
 
+[[demote-a-parent-consistency-group-to-a-single-consistency-group]]
 == Stufen Sie eine übergeordnete Konsistenzgruppe auf eine einzelne Konsistenzgruppe zurück
 
 Wenn Sie eine übergeordnete Konsistenzgruppe zu einer einzelnen Konsistenzgruppe herabstufen, werden die Speichereinheiten der zugehörigen untergeordneten Konsistenzgruppen der übergeordneten Konsistenzgruppe hinzugefügt.  Die untergeordneten Konsistenzgruppen werden gelöscht und die übergeordnete Gruppe wird dann als einzelne Konsistenzgruppe verwaltet.
@@ -54,6 +56,7 @@ link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Fü
 
 
 
+[[create-a-child-consistency-group]]
 == Erstellen einer untergeordneten Konsistenzgruppe
 
 Durch das Erstellen von untergeordneten Konsistenzgruppen können Sie auf jedes untergeordnete Element individuelle Snapshot-Richtlinien anwenden.  Ab ONTAP 9.17.1 können Sie individuelle Replikationsrichtlinien auch direkt auf jedes untergeordnete Element anwenden.  In ONTAP 9.16.1 können Replikationsrichtlinien nur auf der übergeordneten Ebene angewendet werden.
@@ -104,6 +107,7 @@ Nachdem Sie eine untergeordnete Konsistenzgruppe erstellt haben, können Sielink
 
 
 
+[[detach-a-child-consistency-group-from-a-parent-consistency-group]]
 == Trennen Sie eine untergeordnete Konsistenzgruppe von einer übergeordneten Konsistenzgruppe
 
 Wenn Sie eine untergeordnete Konsistenzgruppe von einer übergeordneten Konsistenzgruppe trennen, wird die untergeordnete Konsistenzgruppe aus der übergeordneten Konsistenzgruppe entfernt und als einzelne Konsistenzgruppe verwaltet.  Die auf das übergeordnete Element angewendete Replikationsrichtlinie wird nicht mehr auf die getrennte untergeordnete Konsistenzgruppe angewendet.

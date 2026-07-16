@@ -16,6 +16,7 @@ Storage-Einheiten eines ASA r2-Systems befinden sich in Storage Virtual Machines
 
 
 
+[[create-a-storage-vm]]
 == Erstellen einer Storage-VM
 
 Während der Cluster-Einrichtung wird Ihre standardmäßige Virtual Machine (VM) für den Datenspeicher erstellt. Alle neuen Storage-Einheiten werden innerhalb Ihrer Standard-Storage-VM erstellt, es sei denn, Sie erstellen und wählen eine andere Storage-VM aus. Vielleicht möchten Sie eine zusätzliche Storage-VM erstellen, um Ihre Storage-Einheiten für verschiedene Applikationen, Abteilungen oder Clients zu trennen. Vielleicht möchten Sie beispielsweise eine Storage-VM für Ihre Entwicklungsumgebung und eine andere Storage-VM für die Produktionsumgebung erstellen oder eine Storage-VM für die Finanzabteilung und eine andere Storage-VM für die Marketingabteilung erstellen.
@@ -38,6 +39,7 @@ Sie haben eine Storage-VM erstellt. Sie können nun die Storage-VM für link:../
 
 
 
+[[create-ipspaces]]
 == Erstellen von IPspaces
 
 Ein IPspace ist ein eindeuiger IP-Adressbereich, in dem sich Storage-VMs befinden. Wenn Sie IPspaces erstellen, ermöglichen Sie Ihren Storage-VMs ihren eigenen sicheren Storage, ihre Administration und ihr eigenes sicheres Routing. Außerdem können Clients in administrativ getrennten Netzwerkdomänen überlappende IP-Adressen aus demselben IP-Adressensubnetz verwenden.
@@ -59,6 +61,7 @@ Nachdem Sie nun einen IPspace erstellt haben, können Sie ihn zum Erstellen eine
 
 
 
+[[create-subnets]]
 == Subnetze erstellen
 
 Ein Subnetz ermöglicht es Ihnen, bestimmte Blöcke von IPv4- oder IPv6-Adressen zuzuweisen, die beim Erstellen einer LIF (Netzwerkschnittstelle) verwendet werden sollen. Ein Subnetz vereinfacht die LIF-Erstellung, da Sie in der Lage sind, den Subnetznamen anstelle einer bestimmten IP-Adresse und Netzwerkmaske für jede LIF anzugeben.
@@ -89,6 +92,7 @@ Sie haben ein Subnetz erstellt, mit dem Sie nun die Erstellung Ihrer LIFs verein
 
 
 
+[[create-a-lif-network-interface]]
 == LIF erstellen (Netzwerkschnittstelle)
 
 Eine LIF (Netzwerkschnittstelle) ist eine IP-Adresse, die einem physischen oder logischen Port zugeordnet ist. Erstellen Sie LIFs an den Ports, die Sie für den Datenzugriff verwenden möchten. Storage-VMs stellen Daten über ein oder mehrere LIFs für Clients bereit. Bei einem Komponentenausfall kann eine LIF ein Failover durchführen oder zu einem anderen physischen Port migriert werden, sodass die Netzwerkkommunikation nicht unterbrochen wird.
@@ -121,6 +125,7 @@ Sie können die ONTAP -Befehlszeilenschnittstelle (CLI) verwenden, um ein reines
 
 
 
+[[create-a-custom-iscsi-only-lif-service-policy]]
 === Erstellen einer benutzerdefinierten iSCSI-only-LIF-Dienstrichtlinie
 
 Wenn Sie nur iSCSI-LIFs mit automatischem LIF-Failover erstellen möchten, müssen Sie zuerst eine benutzerdefinierte nur iSCSI-LIF-Dienstrichtlinie erstellen.
@@ -156,6 +161,7 @@ set -privilege admin
 
 
 
+[[create-iscsi-only-lifs-with-automatic-lif-failover]]
 === Erstellen Sie nur iSCSI-LIFs mit automatischem LIF-Failover
 
 Wenn auf der Speicher-VM iSCSI-LIFs vorhanden sind, die nicht für automatisches LIF-Failover aktiviert sind, werden Ihre neu erstellten LIFs ebenfalls nicht für automatisches LIF-Failover aktiviert.  Wenn die automatische LIF-Failover-Funktion nicht aktiviert ist und ein Failover-Ereignis eintritt, werden Ihre iSCSI-LIFs nicht migriert.
@@ -197,6 +203,7 @@ network interface show -lif iscsi*
 
 
 
+[[modify-a-lif-network-interfaces]]
 == Ändern einer LIF (Netzwerkschnittstellen)
 
 LIFs können bei Bedarf deaktiviert oder umbenannt werden. Sie können auch die LIF-IP-Adresse und die Subnetzmaske ändern.

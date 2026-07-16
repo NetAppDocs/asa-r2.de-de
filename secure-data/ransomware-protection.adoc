@@ -15,6 +15,7 @@ Um besser gegen Ransomware-Angriffe zu schützen, replizieren Sie Snapshots in e
 
 
 
+[[initialize-the-snaplock-compliance-clock]]
 == Initialisieren Sie die SnapLock Compliance-Uhr
 
 Bevor Sie manipulationssichere Snapshots erstellen können, müssen Sie die SnapLock Compliance Uhr auf Ihren lokalen und Ziel-Clustern initialisieren.

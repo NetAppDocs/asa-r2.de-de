@@ -19,6 +19,7 @@ Das Klonen von Daten erstellt mithilfe von ONTAP System Manager Kopien von Stora
 
 
 
+[[clone-storage-units]]
 == Storage-Einheiten klonen
 
 Wenn Sie eine Storage-Einheit klonen, erstellen Sie auf Ihrem ASA r2-System eine neue Storage-Einheit, die eine zeitpunktgenaue, beschreibbare Kopie der geklonten Storage-Einheit ist.
@@ -74,6 +75,7 @@ Sie haben eine neue Storage-Einheit erstellt, die mit der von Ihnen geklonten St
 
 
 
+[[clone-consistency-groups]]
 == Klonen von Konsistenzgruppen
 
 Wenn Sie eine Konsistenzgruppe klonen, erstellen Sie eine neue Konsistenzgruppe, die in der Struktur, den Storage-Einheiten und den Daten der von Ihnen geklonten Konsistenzgruppe identisch ist. Verwenden Sie einen Konsistenzgruppenklon, um Applikationstests durchzuführen oder Daten zu migrieren. Angenommen, Sie müssen einen Produktions-Workload aus einer Konsistenzgruppe migrieren. Sie können die Konsistenzgruppe klonen, um eine Kopie Ihres Produktions-Workloads zu erstellen, die als Backup gewartet werden soll, bis die Migration abgeschlossen ist.
@@ -153,6 +155,7 @@ Zum Schutz der Daten sollten Sie link:../data-protection/create-snapshots.html#s
 
 
 
+[[split-consistency-group-clone]]
 == Teilen Sie den Klon der Konsistenzgruppe auf
 
 Wenn Sie einen Konsistenzgruppenklon aufteilen, trennen Sie den Klon von der Quell-Konsistenzgruppe und weisen dem Klon Speicherplatz zu. Der Klon wird zu einer eigenständigen Konsistenzgruppe, die unabhängig von der Konsistenzgruppe der Quelle verwendet werden kann.

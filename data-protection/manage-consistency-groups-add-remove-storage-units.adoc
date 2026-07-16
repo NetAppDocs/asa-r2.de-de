@@ -15,6 +15,7 @@ Erhöhen oder verringern Sie die Größe einer Konsistenzgruppe, indem Sie die A
 
 
 
+[[add-storage-units-to-a-consistency-group]]
 == Fügen Sie einer Konsistenzgruppe Speichereinheiten hinzu
 
 Erweitern Sie den von einer Konsistenzgruppe verwalteten Speicherplatz, indem Sie der Konsistenzgruppe neue oder bereits vorhandene Speichereinheiten hinzufügen.
@@ -75,6 +76,7 @@ Vorhandene Snapshots der Konsistenzgruppe enthalten keine neu hinzugefügten Spe
 
 
 
+[[remove-a-storage-unit-from-a-consistency-group]]
 == Entfernen einer Speichereinheit aus einer Konsistenzgruppe
 
 Um eine Speichereinheit aus einer Konsistenzgruppe zu entfernen, kann sie gelöscht, als Teil einer anderen Konsistenzgruppe verwaltet oder der Schutz ihrer Daten aufgehoben werden.  Das Entfernen einer Speichereinheit aus einer Konsistenzgruppe unterbricht die Beziehung zwischen der Speichereinheit und der Konsistenzgruppe, löscht aber nicht die Speichereinheit.
