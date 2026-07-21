@@ -19,7 +19,7 @@ Auf ASA r2-Systemen unterstützt SnapMirror Active Sync symmetrische Aktiv/Aktiv
 
 .Über diese Aufgabe
 * Ab ONTAP 9.18.1 wird SnapMirror Active Sync auch in Vier-Knoten-Konfigurationen unterstützt.  In ONTAP 9.17.1 wird SnapMirror Active Sync nur bei Zwei-Knoten-Konfigurationen unterstützt.
-* Ab ONTAP 9.19.1 RC unterstützt der autonome Ransomware-Schutz mit künstlicher Intelligenz (ARP/AI) primäre Lese-/Schreibspeichereinheiten in SnapMirror Aktiv/Aktiv-SAN-Beziehungen auf ASA r2-Systemen. ARP/AI läuft auf den aktiven primären Speichereinheiten, erstellt ausschließlich primäre ARP-Snapshots und bietet maschinelles Lernen zur Ransomware-Erkennung für diese Speichereinheiten. Informationen zu den Schritten zur Aktivierung von ARP/AI finden Sie unter link:../secure-data/enable-anti-ransomware-protection.html["Autonomen Ransomware-Schutz mit KI aktivieren"].
+* Ab ONTAP 9.19.1 unterstützt der autonome Ransomware-Schutz mit künstlicher Intelligenz (ARP/AI) primäre Lese-/Schreibspeichereinheiten in SnapMirror active sync SAN-Beziehungen auf ASA r2 Systemen. ARP/AI läuft auf den aktiven primären Speichereinheiten, erstellt ausschließlich primäre ARP-Snapshots und bietet auf maschinellem Lernen basierende Ransomware-Erkennung für diese Speichereinheiten. Die Schritte zur Aktivierung von ARP/AI sind unter link:../secure-data/enable-anti-ransomware-protection.html["Autonomen Ransomware-Schutz mit KI aktivieren"] zu finden.
 
 
 .Bevor Sie beginnen
