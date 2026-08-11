@@ -86,53 +86,27 @@ Erfahren Sie mehr über link:../administer/manage-client-vm-access.html["Storage
 
 Eine Snapshot-Replikationsbeziehung stellt eine Verbindung zwischen Ihrem ASA r2-System und einem Remote-Standort her, sodass Sie Consistency Groups auf ein Remote-Cluster replizieren können. Replizierte Konsistenzgruppen können für Disaster Recovery oder Datenmigration verwendet werden.
 
-Wenn Sie Ihre Replizierungsbeziehung einrichten, können Sie zum Schutz vor Ransomware-Angriffen auswählen, um Ziel-Snapshots zu sperren. Gesperrte Snapshots können nicht versehentlich oder böswillig gelöscht werden. Sie können gesperrte Snapshots verwenden, um Daten wiederherzustellen, wenn eine Storage-Einheit durch einen Ransomware-Angriff kompromittiert wird.
+Für zusätzliche Sicherheit vor Ransomware-Angriffen kann eine SnapLock für SnapVault Replikationsbeziehung erstellt werden.
 
 .Bevor Sie beginnen
 * link:pre-defined-protection-policies.html["Informationen zu Replikationsrichtlinien"] .
 +
 Wenn Sie eine Replikationsbeziehung erstellen, müssen Sie die entsprechende Replikationsrichtlinie für Ihre Replikationsbeziehung auswählen.  Sie können eine vordefinierte Richtlinie verwenden oder eine benutzerdefinierte Richtlinie erstellen.
 
-* Wenn Sie Ihre Ziel-Snapshots sperren möchten, müssen Sie dies link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["Initialisieren Sie die Snapshot-Compliance-Uhr"] vor dem Erstellen der Replikationsbeziehung tun.
 
 
-Erstellen Sie eine Replikationsbeziehung mit oder ohne gesperrte Ziel-Snapshots.
-
-[role="tabbed-block"]
-====
-.Mit gesperrten Snapshots
---
-.Schritte
-. Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
-. Wählen Sie eine Konsistenzgruppe aus.
-. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *protect*.
-. Wählen Sie unter *Remote Protection* *Replicate to a Remote Cluster* aus.
-. Wählen Sie die *Replikationsrichtlinie* aus.
-+
-Sie müssen eine _Vault_ Replikationsrichtlinie auswählen.
-
-. Wählen Sie *Zieleinstellungen*.
-. Wählen Sie *Ziel-Snapshots sperren, um das Löschen zu verhindern*
-. Geben Sie den maximalen und minimalen Aufbewahrungszeitraum für Daten ein.
-. Um den Start der Datenübertragung zu verzögern, deaktivieren Sie *Transfer sofort starten*.
-+
-Die erste Datenübertragung beginnt standardmäßig sofort.
-
-. Um den Standard-Übertragungszeitplan zu überschreiben, wählen Sie optional *Zieleinstellungen* und dann *Übertragungszeitplan überschreiben*.
-+
-Ihr Transferplan muss mindestens 30 Minuten betragen, um unterstützt zu werden.
-
-. Wählen Sie *Speichern*.
 
 
---
-.Ohne gesperrte Snapshots
---
+[[create-a-relationship-to-replicate-snapshots-to-a-remote-cluster]]
+=== Eine Beziehung zum Replizieren von Snapshots auf einen Remote-Cluster erstellen
+
+Schützen Sie Ihre Daten, indem Sie Snapshots auf einen Remote-Cluster replizieren. Replizierte Snapshots Ihrer Konsistenzgruppen können für die Notfallwiederherstellung oder für die Datenmigration verwendet werden.
+
 .Schritte
 . Wählen Sie in System Manager *Schutz > Replikation* aus.
 . Wählen Sie diese Option aus, um die Replikationsbeziehung mit dem lokalen Ziel oder der lokalen Quelle zu erstellen.
 +
-[cols="2,2"]
+[cols="1,2"]
 |===
 | Option | Schritte 
 
@@ -150,24 +124,59 @@ Die Konsistenzgruppe „_Source_“ bezieht sich auf die Konsistenzgruppe in Ihr
 | Lokale Quellen  a| 
 .. Wählen Sie *Lokale Quellen*, und wählen Sie dann image:icon_replicate_blue_bg.png["Rechteck mit blauem Hintergrund und das Wort replizieren in weißen Buchstaben"].
 .. Suchen Sie die Quell-Konsistenzgruppe, und wählen Sie sie aus.
-.. Wählen Sie unter *Replikationsziel* den zu replizierenden Cluster aus, und wählen Sie dann die Speicher-VM aus.
+.. Unter *Replikationsziel* den Cluster auswählen, zu dem repliziert werden soll, und anschließend die Storage-VM auswählen.
 
 
 |===
 . Wählen Sie eine Replikationsrichtlinie aus.
-. Um den Start der Datenübertragung zu verzögern, wählen Sie *Zieleinstellungen* und deaktivieren Sie dann *Transfer sofort starten*.
+. Um den Start des Datentransfers zu verzögern, *Zieleinstellungen* auswählen und dann *Übertragung sofort starten* deaktivieren.
 +
 Die erste Datenübertragung beginnt standardmäßig sofort.
 
-. Um den Standard-Übertragungszeitplan zu überschreiben, wählen Sie optional *Zieleinstellungen* und dann *Übertragungszeitplan überschreiben*.
+. Optional kann der Standard-Übertragungsplan überschrieben werden, indem *Zieleinstellungen* und anschließend *Übertragungsplan überschreiben* ausgewählt wird.
 +
 Ihr Transferplan muss mindestens 30 Minuten betragen, um unterstützt zu werden.
 
 . Wählen Sie *Speichern*.
 
 
---
-====
+.Was kommt als Nächstes?
+Nachdem Sie eine Replikationsrichtlinie und eine Beziehung erstellt haben, beginnt Ihre erste Datenübertragung wie in Ihrer Replikationsrichtlinie definiert. Optional kann das Replikations-Failover getestet werden, um zu überprüfen, ob ein erfolgreiches Failover möglich ist, falls Ihr ASA r2 System offline geht.
+
+
+
+[[create-a-relationship-to-replicate-snapshots-with-snaplock-for-snapvault]]
+=== Eine Beziehung zur Replizierung von Snapshots mit SnapLock für SnapVault erstellen
+
+Zum Schutz vor Ransomware-Angriffen kann bei der Einrichtung der Replikationsbeziehung SnapLock für SnapVault aktiviert werden, indem eine Vault-Replikationsrichtlinie ausgewählt und anschließend das Sperren der Ziel-Snapshots gewählt wird. Snapshots, die durch SnapLock für SnapVault geschützt sind, können weder versehentlich noch böswillig gelöscht werden.
+
+
+NOTE: ASA r2 Systeme unterstützen weder SnapLock Compliance Mode noch SnapLock Enterprise Mode. Das Erstellen einer SnapLock für SnapVault Replikationsbeziehung ermöglicht lediglich die Sperrung von Ziel-Snapshots. Dadurch werden weder SnapLock Compliance noch Enterprise Mode aktiviert.
+
+.Bevor Sie beginnen
+Sie müssen link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["die SnapLock Compliance-Uhr initialisieren"].
+
+.Schritte
+. Im System Manager *Schutz > Konsistenzgruppen* auswählen und anschließend eine Konsistenzgruppe auswählen.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"] und anschließend *Schützen*.
+. Wählen Sie unter *Remote Protection* *Replicate to a Remote Cluster* aus.
+. Wählen Sie die *Replikationsrichtlinie* aus.
++
+Sie müssen eine _Vault_ Replikationsrichtlinie auswählen.
+
+. Wählen Sie *Zieleinstellungen* und dann *Ziel-Snapshots sperren, um Löschung zu verhindern* aus.
+. Geben Sie den maximalen und minimalen Aufbewahrungszeitraum für Daten ein.
+. Um den Start der Datenübertragung zu verzögern, deaktivieren Sie *Transfer sofort starten*.
++
+Die erste Datenübertragung beginnt standardmäßig sofort.
+
+. Optional kann der Standard-Übertragungsplan überschrieben werden, indem *Zieleinstellungen* und anschließend *Übertragungsplan überschreiben* ausgewählt wird.
++
+Ihr Transferplan muss mindestens 30 Minuten betragen, um unterstützt zu werden.
+
+. Wählen Sie *Speichern*.
+
+
 .Was kommt als Nächstes?
 Nachdem Sie nun eine Replikationsrichtlinie und -Beziehung erstellt haben, beginnt Ihr erster Datentransfer wie in Ihrer Replikationsrichtlinie definiert. Sie können optional Ihren Replikations-Failover testen, um sicherzustellen, dass ein erfolgreicher Failover auftreten kann, wenn Ihr ASA r2-System offline geht.
 

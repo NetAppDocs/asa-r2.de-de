@@ -37,7 +37,7 @@ Sie haben bestätigt, dass Ihr neues Laufwerk unterstützt wird, und Sie kennen 
 [[install-a-new-drive-on-the-asa-r2]]
 == Installieren Sie ein neues Laufwerk auf dem ASA r2
 
-Die Mindestanzahl der Laufwerke, die Sie in einem einzigen Verfahren hinzufügen sollten, beträgt sechs. Das Hinzufügen eines einzigen Laufwerks kann zu einer Performance-Verringerung führen.
+Die Mindestanzahl an Laufwerken, die in einem einzigen Vorgang hinzugefügt werden sollte, beträgt drei. Das Hinzufügen eines Einzellaufwerks kann die Leistung beeinträchtigen.
 
 .Über diese Aufgabe
 Wiederholen Sie die Schritte in diesem Verfahren für jedes Laufwerk.

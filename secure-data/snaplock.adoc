@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: secure-data/snaplock.html 
+keywords: asa r2, secure data, data security, ransomware, ransomware attacks, protection, snaplock, snaplock compliance, snaplock enterprise, snaplock compliance clock 
+summary: Mit manipulationssicheren Snapshots sichern Sie Ihre Daten. Manipulationssichere Snapshots können nicht gelöscht oder für die Wiederherstellung von Daten genutzt werden, die durch einen Ransomware-Angriff kompromittiert wurden. 
+---
+= Informationen zum SnapLock Datenschutz für ASA r2 Speicher­systeme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP SnapLock ist eine leistungsstarke Compliance-Lösung für Organisationen, die WORM-Speicher zur unveränderten Aufbewahrung von Dateien für regulatorische und Governance-Zwecke nutzen. Es ist möglich, SnapLock im Compliance- oder Enterprise-Modus zu betreiben, die unterschiedliche Stufen des WORM-Datenschutzes bieten. Die SnapLock Compliance- und Enterprise-Modi werden auf primären Clustern in SAN-Umgebungen nicht unterstützt, jedoch kann SnapLock für SnapVault auf sekundären Systemen aktiviert werden, um sekundäre Snapshots vor versehentlichem oder böswilligem Löschen zu schützen.
+
+Die SnapLock Compliance Clock muss initialisiert werden, um Snapshots auf Ihren sekundären Systemen mit SnapLock für SnapVault zu schützen.
+
+.Verwandte Informationen
+* Weitere Informationen zu link:https://docs.netapp.com/us-en/ontap/san-admin/configure-backup-vaults-san-environment-concept.html["SnapLock für SnapVault in SAN-Umgebungen"^].
+* Weitere Informationen zu link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock"^].
+
+
+
+
+[[initialize-the-snaplock-compliance-clock]]
+== Initialisieren Sie die SnapLock Compliance-Uhr
+
+Wenn Sie Ziel-Snapshots auf einem sekundären System mit SnapLock für SnapVault schützen möchten, müssen Sie zuerst die SnapLock Compliance Clock auf Ihren lokalen und Ziel-Clustern initialisieren.
+
+.Schritte
+. Wählen Sie *Cluster > Übersicht*.
+. Wählen Sie im Abschnitt *Knoten* die Option *SnapLock Compliance-Uhr initialisieren* aus.
+. Wählen Sie *Initialisieren*.
+. Es sollte überprüft werden, ob die Compliance-Uhr initialisiert ist.
++
+.. Wählen Sie *Cluster > Übersicht*.
+.. Wählen Sie im Abschnitt *Knoten* image:icon_show_hide.png["Drei blaue Spalten auf weißem Hintergrund"]die Option ; und wählen Sie dann *SnapLock Compliance Uhr*.
+
+
+
+
+.Was kommt als Nächstes?
+Nachdem Sie die SnapLock Compliance Clock auf Ihren lokalen und Ziel-Clustern initialisiert haben, sind Sie bereit, link:../data-protection/snapshot-replication.html["Eine Replikationsbeziehung mit SnapLock für SnapVault erstellen"].

@@ -27,7 +27,7 @@ Sie können die standardmäßige Aktivierung während oder nach der anfängliche
 +
 ** So deaktivieren Sie während der 12-stündigen Kulanzfrist:
 +
-... Unter *Anti-ransomware* wählen Sie *Don't enable* und anschließend *Disable*.
+... Unter *Anti-ransomware* *Nicht aktivieren* auswählen und anschließend *Deaktivieren* auswählen.
 
 
 ** So deaktivieren Sie nach Ablauf der 12-stündigen Kulanzfrist:

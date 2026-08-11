@@ -21,7 +21,7 @@ Sie müssen ONTAP 9.19.1 oder höher ausführen. Wenn Sie ONTAP 9.18.1 oder ält
 .Schritte
 . Wählen Sie im System Manager *Storage* aus.
 . Bewegen Sie den Mauszeiger über den Namen der AIX-Speichereinheit, die Sie für den SnapMirror Aktiv-Sync-Schutz vorbereiten möchten.
-. Wählen Sie image:icon_kabob.gif["Menüauswahlsymbol"] und dann *Bearbeiten*.
+. Wählen Sie image:icon_kabob.gif["Menüauswahlsymbol"] und anschließend *Bearbeiten*.
 . Wählen Sie unter *Hostinformationen* für den *Zugriffsmodus* die Option *lokal* und anschließend *Bearbeiten*.
 
 

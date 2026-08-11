@@ -106,8 +106,8 @@ entries:
     url: "/secure-data/migrate-encryption-keys-between-key-managers.html"
   - title: Schutz vor Ransomware-Angriffen
     entries:
-    - title: Erstellen Sie manipulationssichere Snapshots
-      url: "/secure-data/ransomware-protection.html"
+    - title: Informationen zu SnapLock
+      url: "/secure-data/snaplock.html"
     - title: ARP/AI aktivieren
       url: "/secure-data/enable-anti-ransomware-protection.html"
     - title: Standardmäßige ARP/AI-Aktivierung deaktivieren
