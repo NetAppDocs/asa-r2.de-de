@@ -178,7 +178,7 @@ Ihr Transferplan muss mindestens 30 Minuten betragen, um unterstützt zu werden.
 
 
 .Was kommt als Nächstes?
-Nachdem Sie nun eine Replikationsrichtlinie und -Beziehung erstellt haben, beginnt Ihr erster Datentransfer wie in Ihrer Replikationsrichtlinie definiert. Sie können optional Ihren Replikations-Failover testen, um sicherzustellen, dass ein erfolgreicher Failover auftreten kann, wenn Ihr ASA r2-System offline geht.
+Nachdem Sie eine Replikationsbeziehung erstellt haben, beginnt Ihr initialer Datentransfer wie in Ihrer Replikationsrichtlinie definiert. Optional kann das Replikations-Failover getestet werden, um zu überprüfen, ob ein erfolgreiches Failover möglich ist, falls Ihr ASA r2 System offline geht.
 
 
 

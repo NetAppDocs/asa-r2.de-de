@@ -34,19 +34,18 @@ Bei ASA r2-Systemen werden Storage-Einheiten mit Konsistenzgruppen eingesetzt:
 
 ASA r2-Systeme verwenden Speichereinheiten mit Konsistenzgruppen, um die Speicherverwaltung und den Datenschutz zu vereinfachen.  Angenommen, Sie haben eine Datenbank, die aus 10 Speichereinheiten in einer Konsistenzgruppe besteht, und Sie müssen die gesamte Datenbank sichern.  Anstatt jede Speichereinheit einzeln zu sichern, können Sie die gesamte Datenbank schützen, indem Sie die Konsistenzgruppe sichern.
 
+.Datenschutz und Sicherheit
 Um Ihre Daten vor böswilligen Angriffen wie Diebstahl oder Ransomware zu schützen, unterstützen ASA r2 Systeme einen integrierten Schlüsselmanager, zweischichtige Verschlüsselung, Multi-Faktor-Authentifizierung und Multi-Admin-Verifizierung. Snapshots können auch an einen sekundären Standort repliziert und SnapLock für SnapVault verwendet werden, um die Ziel-Snapshots vor versehentlichem oder böswilligem Löschen zu schützen.
 
 .Unterstützte Protokolle, Multipathing und Konfigurationen
-ASA r2-Systeme unterstützen alle SAN-Protokolle (iSCSI, FC, NVMe/FC, NVMe/TCP). Alle Protokolle unterstützen eine symmetrische Aktiv/Aktiv-Architektur für Multipathing, sodass alle Pfade zwischen den Hosts und dem Speicher aktiv und optimiert sind. Die Protokolle iSCSI und NVMe/TCP unterstützen Netzwerk- und Direktanschlusskonfigurationen für alle unterstützten ONTAP Versionen. Die Protokolle FC und NVMe/FC unterstützen Netzwerkkonfigurationen für alle unterstützten ONTAP Versionen und ab ONTAP 9.19.1 auch Direktanschlusskonfigurationen.
+ASA r2 Systeme unterstützen alle SAN-Protokolle (iSCSI, FC, NVMe/FC, NVMe/TCP). Alle Protokolle unterstützen eine symmetrische Aktiv/Aktiv-Architektur für Multipathing, sodass alle Pfade zwischen den Hosts und dem Speicher aktiv/optimiert sind. Die Protokolle iSCSI und NVMe/TCP unterstützen Netzwerk- und Direktanschlusskonfigurationen für alle unterstützten ONTAP Versionen. Die Protokolle FC und NVMe/FC unterstützen Netzwerkkonfigurationen für alle unterstützten ONTAP Versionen und ab ONTAP 9.19.1 auch Direktanschlusskonfigurationen. ASA r2 Systeme unterstützen keine Cluster-Mischung mit ASA, AFF oder FAS Systemen.
 
 * Weitere Informationen zu link:https://docs.netapp.com/us-en/ontap/san-admin/multipath-automatic-lif-failover-support.html["SAN Multipath-Unterstützung"^].
 * Weitere Informationen zu link:https://docs.netapp.com/us-en/ontap/san-config/configure-iscsi-san-hosts-ha-pairs-reference.html["Konfigurationen für iSCSI und NVMe/TCP Protokolle"^].
 * Weitere Informationen zu link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html["Konfigurationen für FC und NVMe/FC-Protokolle"^].
 
 
-ASA r2-Systeme unterstützen kein Cluster-Mixing mit ASA, AFF oder FAS Systemen.
-
-.Finden Sie weitere Informationen
+.Verwandte Informationen
 * Weitere Informationen zur Unterstützung und Einschränkungen von ASA r2-Systemen finden Sie im link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
 * Erfahren Sie mehr über link:../learn-more/hardware-comparison.html["Den ASA r2 Systemen im Vergleich zu den ASA Systemen"].
 * Erfahren Sie mehr über die link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^].
