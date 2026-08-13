@@ -5,7 +5,7 @@ keywords: provision storage,san, create storage units, luns, namespaces, nvme, a
 summary: 'Stellen Sie ONTAP Storage auf dem ASA r2 bereit, um SAN-Hosts (SCSI und NVMe) zu ermöglichen, Daten in angegebene Storage-Einheiten (LUNs und NVMe-Namespaces) zu lesen und zu schreiben.' 
 searchtitle: Stellen Sie SAN-Storage mit ONTAP System Manager ASA r2 bereit 
 ---
-= Stellen Sie ONTAP SAN-Storage auf den ASA r2-Systemen bereit
+= ONTAP SAN Storage auf ASA r2 Systemen bereitstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

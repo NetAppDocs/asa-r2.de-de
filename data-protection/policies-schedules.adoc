@@ -4,7 +4,7 @@ permalink: data-protection/policies-schedules.html
 keywords: data protection, polices, schedules, protect data, snapshot policies, snapshot schedules, replication policies 
 summary: Nutzen Sie Datensicherungsrichtlinien und -Zeitpläne, um Daten anhand eines automatisierten Zeitplans zu sichern. 
 ---
-= Management von ONTAP Datensicherungsrichtlinien und Zeitplänen auf ASA r2 Storage-Systemen
+= Datenschutzrichtlinien und Zeitpläne auf ASA r2 Systemen verwalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

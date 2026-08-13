@@ -4,7 +4,7 @@ permalink: data-protection/pre-defined-protection-policies.html
 keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication, policy, pre-defined, default, custom, policies 
 summary: Die Replikationsrichtlinie definiert, wann auf dem ASA R2-Cluster durchgeführte Updates auf den Remote-Standort repliziert werden.  ONTAP umfasst verschiedene vordefinierte Datenschutzrichtlinien, die Sie für Ihre Replikationsbeziehungen verwenden können. 
 ---
-= Erfahren Sie mehr über vordefinierte ONTAP Datenschutzrichtlinien
+= Informationen zu vordefinierten Datenschutzrichtlinien für ASA r2 Systeme
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

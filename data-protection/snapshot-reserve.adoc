@@ -4,7 +4,7 @@ permalink: data-protection/snapshot-reserve.html
 keywords: asa r2, snapshot reserve, percentage 
 summary: Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet. 
 ---
-= Erfahren Sie mehr über ONTAP Snapshot-Reservierung auf ASA r2-Speicher.
+= Informationen zur ONTAP Snapshot Reserve auf ASA r2 Speichersystemen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
