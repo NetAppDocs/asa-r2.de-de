@@ -18,7 +18,7 @@ Auf einem ASA R2-System dient eine Hostgruppe dazu, Hosts Zugriff auf Speicherei
 . Wählen Sie unter *Host-Zuordnung* die Host-Gruppe aus, die Sie löschen möchten.
 . Wählen Sie *Zugeordneter Speicher*.
 . Wählen Sie *Mehr* und dann *Löschen*.
-. Wählen Sie zur Bestätigung, dass Sie fortfahren möchten, und wählen Sie dann *Löschen*.
+. Wählen Sie die Bestätigungsoption, um zu bestätigen, dass Sie fortfahren möchten; wählen Sie anschließend *Delete*.
 
 
 .Was kommt als Nächstes?

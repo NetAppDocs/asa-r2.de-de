@@ -11,10 +11,10 @@ summary: 'Reagieren Sie auf Änderungen an der Performance und den Daten Ihres S
 
 
 [role="lead"]
-Um die Leistung Ihres ASA r2-Systems zu optimieren, müssen Sie möglicherweise Ihre Speichereinheiten anpassen, um deren Kapazität zu erhöhen, QoS-Richtlinien zu aktualisieren oder die Hosts zu ändern, die den Einheiten zugeordnet sind. Wenn beispielsweise eine neue, kritische Anwendungs-Workload zu einer bestehenden Speichereinheit hinzugefügt wird, müssen Sie möglicherweise die auf die Speichereinheit angewendete Quality of Service (QoS)-Richtlinie ändern, um das für die neue Anwendung erforderliche Leistungsniveau zu unterstützen.
+Um die Leistung Ihres ASA r2 Systems zu optimieren, kann es erforderlich sein, Ihre Speichereinheiten zu modifizieren, um deren Kapazität zu erhöhen, QoS-Richtlinien zu aktualisieren oder die den Einheiten zugeordneten Hosts zu ändern. Wenn beispielsweise eine neue, kritische Anwendungs-Workload zu einer bestehenden Speichereinheit hinzugefügt wird, kann es notwendig sein, die auf die Speichereinheit angewendete Quality of Service (QoS)-Richtlinie zu ändern, um das für die neue Anwendung erforderliche Leistungsniveau zu unterstützen.
 
 .Erhöhte Kapazität
-Vergrößern Sie eine Speichereinheit, bevor sie die volle Kapazität erreicht, um einen Verlust des Datenzugriffs zu verhindern, der auftreten kann, wenn der beschreibbare Speicherplatz der Speichereinheit nicht mehr verfügbar ist. Die Kapazität einer Speichereinheit kann auf 128 TB erhöht werden, was der von ONTAP maximal zulässigen Größe entspricht.
+Die Größe einer Speichereinheit sollte erhöht werden, bevor sie ihre volle Kapazität erreicht, um einen Verlust des Datenzugriffs zu verhindern, der auftreten kann, wenn der beschreibbare Speicherplatz erschöpft ist. Die Kapazität einer Speichereinheit kann auf bis zu 128 TB erhöht werden, was die von ONTAP erlaubte maximale Größe ist.
 
 .Ändern von Host-Zuordnungen
 Ändern Sie die Hosts, die einer Speichereinheit zugeordnet sind, um den Workload-Ausgleich oder die Neukonfiguration der Systemressourcen zu unterstützen.

@@ -15,7 +15,7 @@ Bei Verwendung des NVMe-Protokolls können Sie die in-Band-Authentifizierung kon
 
 .Schritte
 . Wählen Sie *Hosts* aus, und wählen Sie dann *NVMe* aus.
-. Wählen Sie image:icon_add_blue_bg.png["Blaues Quadrat mit einem Pluszeichen, gefolgt von dem Wort Add in weißen Buchstaben"] .
+. Wählen Sie image:icon_add_blue_bg.png["Blaues Quadrat mit einem Pluszeichen, gefolgt von dem Wort Add in weißen Buchstaben"].
 . Geben Sie den Hostnamen ein, und wählen Sie dann das Host-Betriebssystem aus.
 . Geben Sie eine Hostbeschreibung ein, und wählen Sie dann die Speicher-VM aus, die mit dem Host verbunden werden soll.
 . Wählen Sie image:icon_dropdown_arrow.gif["Blauer Pfeil nach unten"] neben dem Hostnamen aus.

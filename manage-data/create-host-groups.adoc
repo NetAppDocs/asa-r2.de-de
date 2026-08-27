@@ -11,9 +11,9 @@ summary: Erstellen Sie Hostgruppen, um Hosts Zugriff auf Speichereinheiten zu ge
 
 
 [role="lead"]
-Auf einem ASA r2-System ist eine _Host-Gruppe_ der Mechanismus, der verwendet wird, um Hosts Zugriff auf Speichereinheiten zu gewähren. Eine Host-Gruppe bezieht sich auf eine Initiatorgruppe für SCSI-Hosts oder auf ein NVMe-Subsystem für NVMe-Hosts. Ein Host kann nur die Speichereinheiten sehen, die den Host-Gruppen zugeordnet sind, zu denen er gehört. Wenn eine Hostgruppe einer Speichereinheit zugeordnet ist, können die Hosts, die Mitglieder der Gruppe sind, die Speichereinheit mounten (Verzeichnisse und Dateistrukturen erstellen).
+Auf einem ASA r2 System dient eine Hostgruppe als Mechanismus, um Hosts Zugriff auf Speichereinheiten zu gewähren. Eine Hostgruppe entspricht einer Initiatorgruppe für SCSI Hosts oder einem NVMe Subsystem für NVMe Hosts. Ein Host kann nur die Speichereinheiten sehen, die den Hostgruppen zugeordnet sind, denen er angehört. Wenn eine Hostgruppe einer Speichereinheit zugeordnet ist, können die Hosts, die Mitglieder dieser Gruppe sind, die Speichereinheit einbinden (Verzeichnisse und Dateistrukturen darauf erstellen).
 
-Hostgruppen werden automatisch oder manuell erstellt, wenn Sie Ihre Speichereinheiten erstellen. Sie können optional die folgenden Schritte ausführen, um Hostgruppen vor oder nach der Erstellung der Speichereinheit zu erstellen.
+Hostgruppen werden beim Erstellen Ihrer Speichereinheiten automatisch oder manuell erstellt. Es besteht die Möglichkeit, die folgenden Schritte zu nutzen, um Hostgruppen vor oder nach der Erstellung der Speichereinheiten zu erstellen.
 
 .Schritte
 . Wählen Sie im System Manager *Host* aus.

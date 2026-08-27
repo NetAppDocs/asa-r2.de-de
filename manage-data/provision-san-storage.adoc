@@ -77,7 +77,7 @@ Wenn die Standard-QoS-Richtlinie zuvor nicht auf der Storage Virtual Machine (VM
  a| 
 Neue QoS-Richtlinie erstellen
  a| 
-.. Wählen Sie unter *Speicher und Optimierung* neben *Quality of Service (QoS)* die Option image:icon_dropdown_arrow.gif["Symbol des blauen Pfeils, der nach unten zeigt"] .
+.. Wählen Sie unter *Speicher und Optimierung* neben *Quality of Service (QoS)* die Option image:icon_dropdown_arrow.gif["Symbol des blauen Pfeils, der nach unten zeigt"].
 .. Wählen Sie *neue Richtlinie definieren*.
 .. Geben Sie einen Namen für die neue QoS-Richtlinie ein.
 .. Legen Sie ein QoS-Limit, eine QoS-Garantie oder beides fest.
@@ -161,7 +161,7 @@ TLS verschlüsselt alle Daten, die zwischen Ihren NVMe/TCP-Hosts und Ihrem ASA r
 
 .. Wählen Sie *Add Initiator*, um weitere Initiatoren hinzuzufügen.
 +
-Formatieren Sie den Host-NQN wie folgt: <nqn.yyyy-mm> gefolgt von einem vollständig qualifizierten Domänennamen.  Das Jahr sollte 1970 oder später sein.  Die maximale Gesamtlänge sollte 223 betragen.  Ein Beispiel für einen gültigen NVMe-Initiator ist nqn.2014-08.com.example:string
+Der Host-NQN wird als <nqn.yyyy-mm> gefolgt von einer vollqualifizierten Domain formatiert. Das Jahr sollte gleich 1970 oder später sein. Die maximale Gesamtlänge sollte 223 betragen. Ein Beispiel für einen gültigen NVMe-Initiator ist nqn.2014-08.com.example:string.
 
 
 

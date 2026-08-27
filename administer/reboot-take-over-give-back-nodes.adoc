@@ -11,7 +11,7 @@ summary: Möglicherweise müssen Sie einen Node aus Wartungsgründen, zur Fehler
 
 
 [role="lead"]
-Möglicherweise müssen Sie einen Node aus Wartungsgründen, zur Fehlerbehebung, zu Softwareupdates oder aus anderen administrativen Gründen neu booten. Beim Neustart eines Node führt der HA-Partner automatisch eine Übernahme aus. Der Partner-Node führt dann ein automatisches Giveback durch, nachdem der neu gebootete Node wieder online geschaltet wurde.
+Ein Neustart eines Knotens kann aus Wartungsgründen, zur Fehlerbehebung, für Softwareaktualisierungen oder aus anderen administrativen Gründen erforderlich sein. Wenn ein Knoten neu gestartet wird, führt der HA-Partner automatisch eine Übernahme durch. Der Partnerknoten führt dann eine automatische Rückgabe durch, nachdem der neu gestartete Knoten wieder online ist.
 
 .Schritte
 . Wählen Sie im System Manager *Cluster > Übersicht* aus.
@@ -23,4 +23,4 @@ Der von Ihnen eingegebene Grund für das Neubooten wird im Systemauditprotokoll 
 
 
 .Was kommt als Nächstes?
-Während des Neubootens des Node führt der HA-Partner einen Takeover aus, sodass der Datenservice nicht unterbrochen wird. Nach Abschluss des Neubootens führt der HA-Partner ein Giveback durch.
+Während der Knoten neu gestartet wird, übernimmt sein HA-Partner die Kontrolle, sodass es zu keiner Unterbrechung des Datendienstes kommt. Nach Abschluss des Neustarts führt der HA-Partner eine Rückgabe durch.

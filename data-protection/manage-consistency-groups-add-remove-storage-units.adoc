@@ -37,7 +37,7 @@ Sie können die Standardeinstellungen für neue Speichereinheiten beim Erstellen
 link:snapshot-reserve.html["Erfahren Sie mehr über Snapshot-Reservierung auf ASA r2-Speichersystemen."].
 
 .Bevor Sie beginnen
-Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie erweitern möchten, in einer SnapMirror Active Sync-Beziehung ist, müssen Sielink:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] bevor Sie Speichereinheiten hinzufügen können.  Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe in einer asynchronen Replikationsbeziehung steht, müssen Sielink:snapmirror-active-sync-break-relationship.html["die Beziehung abbrechen"] bevor Sie die Konsistenzgruppe erweitern können.  Das Löschen der SnapMirror Active-Sync-Beziehung oder das Aufbrechen der asynchronen Beziehung vor dem Erweitern einer Konsistenzgruppe ist in ONTAP 9.17.1 und späteren Versionen nicht erforderlich.
+Wenn ONTAP 9.16.1 verwendet wird und die Konsistenzgruppe, die erweitert werden soll, sich in einer SnapMirror Active Sync-Beziehung befindet, muss link:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] erfolgen, bevor Speichereinheiten hinzugefügt werden können. Wenn ONTAP 9.16.1 verwendet wird und sich die Konsistenzgruppe in einer asynchronen Replizierungsbeziehung befindet, muss link:snapmirror-active-sync-break-relationship.html["die Beziehung abbrechen"] erfolgen, bevor die Konsistenzgruppe erweitert werden kann. Das Löschen der SnapMirror Active Sync-Beziehung oder das Aufheben der asynchronen Beziehung vor der Erweiterung einer Konsistenzgruppe ist in ONTAP 9.17.1 und späteren Versionen nicht erforderlich.
 
 [role="tabbed-block"]
 ====
@@ -66,8 +66,8 @@ Wenn Sie mehr als eine Einheit erstellen, wird jede Einheit mit der gleichen Kap
 . Wählen Sie *Erweitern*.
 
 
-.Was kommt als Nächstes
-Nachdem Sie eine neue Speichereinheit erstellt haben, sollten Sie link:../manage-data/provision-san-storage.html#add-host-initiators["Fügen Sie Host-Initiatoren hinzu"]und link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["Ordnen Sie die neu erstellte Speichereinheit einem Host zu"]. Durch das Hinzufügen von Hostinitiatoren können Hosts auf die Speichereinheiten zugreifen und Datenvorgänge durchführen. Durch das Zuordnen einer Speichereinheit zu einem Host kann die Speichereinheit mit der Bereitstellung von Daten für den Host beginnen, dem sie zugeordnet ist.
+.Was kommt als Nächstes?
+Nachdem eine neue Speichereinheit erstellt wurde, empfiehlt es sich, link:../manage-data/provision-san-storage.html#add-host-initiators["Fügen Sie Host-Initiatoren hinzu"] und link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["Ordnen Sie die neu erstellte Speichereinheit einem Host zu"]. Das Hinzufügen von Host-Initiatoren berechtigt Hosts, auf die Speichereinheiten zuzugreifen und Datenoperationen durchzuführen. Durch die Zuordnung einer Speichereinheit zu einem Host kann die Speichereinheit beginnen, Daten an den zugeordneten Host bereitzustellen.
 
 --
 ====
@@ -90,5 +90,5 @@ Um eine Speichereinheit aus einer Konsistenzgruppe zu entfernen, kann sie gelös
 .Ergebnis
 Die Speichereinheit ist nicht mehr Mitglied der Konsistenzgruppe.
 
-.Wie es weiter geht
+.Was kommt als Nächstes?
 Wenn Sie mit dem Datenschutz für die Speichereinheit fortfahren möchten, fügen Sie die Speichereinheit einer anderen Konsistenzgruppe hinzu.

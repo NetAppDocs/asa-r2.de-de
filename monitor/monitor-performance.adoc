@@ -12,7 +12,7 @@ searchtitle: Überwachen Sie die Clusterleistung mit ONTAP ASA r2
 
 
 [role="lead"]
-Überwachen Sie mit ONTAP System Manager die Gesamt-Performance Ihres Clusters und die Performance bestimmter Storage-Einheiten, um zu bestimmen, wie Latenz, IOPS und Durchsatz sich auf Ihre geschäftskritischen Applikationen auswirken. Die Performance kann über verschiedene Zeiträume von einer Stunde bis zu einem Jahr überwacht werden.
+ONTAP System Manager ermöglicht die Überwachung der Gesamtleistung Ihres Clusters und bestimmter Speichereinheiten, einschließlich Latenz, IOPS und Durchsatz, über Zeiträume von einer Stunde bis zu einem Jahr.
 
 Nehmen wir zum Beispiel an, eine geschäftskritische Applikation hat eine hohe Latenz und einen niedrigen Durchsatz. Wenn Sie die Cluster-Performance der letzten fünf Arbeitstage anzeigen, bemerken Sie einen Performance-Abfall zur gleichen Zeit am Tag. Anhand dieser Informationen können Sie ermitteln, ob die kritische Anwendung im Wettbewerb um Clusterressourcen steht, wenn im Hintergrund ein nicht kritischer Prozess ausgeführt wird. Anschließend können Sie Ihre QoS-Richtlinie ändern, um die Auswirkungen des nicht kritischen Workloads auf Systemressourcen zu begrenzen und sicherzustellen, dass Ihre kritische Workload die minimalen Durchsatzziele erfüllt.
 
@@ -37,7 +37,7 @@ Analysieren Sie mithilfe Ihrer Cluster-Performance-Kennzahlen, ob Sie Ihre QoS-R
 [[monitor-storage-unit-performance]]
 == Überwachung der Leistung der Speichereinheit
 
-Verwenden Sie Performance-Kennzahlen der Storage-Einheit, um den Einfluss spezifischer Applikationen auf Latenz, IOPS und Durchsatz zu bestimmen.
+Anhand von Leistungskennzahlen der Speichereinheiten lässt sich der Einfluss spezifischer Anwendungen auf Latenz, IOPS und Durchsatz ermitteln.
 
 .Schritte
 . Wählen Sie im System Manager *Storage* aus.
@@ -47,4 +47,4 @@ Verwenden Sie Performance-Kennzahlen der Storage-Einheit, um den Einfluss spezif
 
 
 .Was kommt als Nächstes?
-Analysieren Sie mithilfe Ihrer Performance-Kennzahlen der Storage-Einheiten, ob Sie die QoS-Richtlinien, die Ihren Storage-Einheiten zugewiesen sind, ändern müssen, um die Latenz zu verringern und die IOPS und den Durchsatz zu maximieren.
+Anhand der Leistungskennzahlen Ihrer Speichereinheiten lässt sich analysieren, ob die den Speichereinheiten zugewiesenen QoS-Richtlinien angepasst werden sollten, um die Latenz zu verringern und IOPS sowie Durchsatz zu maximieren.

@@ -12,7 +12,7 @@ searchtitle: Installieren und Einrichten der Speichersysteme ASA A1K, A90, A70, 
 
 
 [role="lead"]
-Um Ihr ASA r2 System in Betrieb zu nehmen, installieren Sie Ihre Hardwarekomponenten, richten Ihren Cluster ein, richten den Datenzugriff von Ihren Hosts auf das Storage-System ein und stellen den Storage bereit.
+Um mit Ihrem ASA r2 System zu starten, werden die Hardwarekomponenten installiert, der Cluster eingerichtet, der Datenzugriff von Ihren SAN-Clients auf das Speichersystem konfiguriert und der Speicher bereitgestellt.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] Installieren und richten Sie Ihre Hardware ein
 [role="quick-margin-para"]

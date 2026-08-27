@@ -11,7 +11,7 @@ summary: ASA r2 Systeme bieten zwar eine breite Unterstützung für SAN-Lösunge
 
 
 [role="lead"]
-ASA r2 Systeme bieten zwar eine breite Unterstützung für SAN-Lösungen, bestimmte ONTAP Softwarefunktionen werden jedoch nicht unterstützt.
+ASA r2 Systeme unterstützen eine breite Palette von SAN-Funktionen, aber einige ONTAP Softwarefunktionen werden nicht unterstützt.
 
 .ASA r2-Systeme unterstützen Folgendes nicht:
 * FabricPool
@@ -27,7 +27,7 @@ SnapLock Compliance- und Enterprise-Modus werden auf primären Clustern in SAN-U
 * Die SnapMirror Replikation wird auf ASA r2-Systemen mit folgenden Einschränkungen unterstützt:
 +
 ** Die synchrone Replikation von SnapMirror wird nicht unterstützt.
-** SnapMirror unterstützt die asynchrone Replikation nur zwischen zwei ASA r2-Systemen. Die asynchrone Replikation von SnapMirror wird zwischen einem ASA r2-System und einem ASA, AFF oder FAS System oder der Cloud nicht unterstützt.
+** SnapMirror asynchrone Replizierung wird nur zwischen zwei ASA r2 Systemen unterstützt. SnapMirror asynchrone Replizierung wird nicht zwischen einem ASA r2 System und einem ASA, AFF oder FAS System oder der Cloud unterstützt.
 +
 Erfahren Sie mehr überlink:../data-protection/pre-defined-protection-policies.html["SnapMirror Replikationsrichtlinien werden auf ASA r2-Systemen unterstützt"] .
 

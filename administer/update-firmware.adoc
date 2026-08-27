@@ -11,14 +11,14 @@ summary: ONTAP aktualisiert automatisch die Firmware auf ASA r2-Systemen. Sie k�
 
 
 [role="lead"]
-ONTAP lädt automatisch Firmware- und Systemdateien auf Ihrem ASA r2-System herunter und aktualisiert diese standardmäßig. Wenn Sie die Möglichkeit haben möchten, empfohlene Updates vor dem Herunterladen und Installieren anzuzeigen, können Sie ONTAP System Manager verwenden, um automatisierte Updates zu deaktivieren oder Aktualisierungsparameter zu bearbeiten, um Ihnen Benachrichtigungen über verfügbare Updates anzuzeigen, bevor eine Aktion durchgeführt wird.
+ONTAP lädt Firmware und Systemdateien auf Ihrem ASA r2 System standardmäßig automatisch herunter und aktualisiert sie. Wenn die Flexibilität gewünscht ist, empfohlene Updates vor dem Herunterladen und Installieren einzusehen, kann im System Manager die automatisierte Aktualisierung deaktiviert oder die Update-Parameter so bearbeitet werden, dass eine Benachrichtigung über verfügbare Updates erfolgt, bevor Maßnahmen durchgeführt werden.
 
 
 
 [[enable-automatic-updates]]
 == Aktivieren Sie automatische Updates
 
-Empfohlene Updates für Speicher-Firmware, SP/BMC-Firmware und Systemdateien werden automatisch heruntergeladen und standardmäßig auf Ihrem ASA r2-System installiert. Wenn automatische Updates deaktiviert wurden, können Sie sie aktivieren, um das Standardverhalten wiederherzustellen.
+Empfohlene Updates für Speicher-Firmware, Service Processor/Baseboard Management Controller (SP/BMC)-Firmware und Systemdateien werden auf Ihrem ASA r2-System standardmäßig automatisch heruntergeladen und installiert. Wenn automatische Updates deaktiviert wurden, besteht die Möglichkeit, diese zu aktivieren, um das Standardverhalten wiederherzustellen.
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.
@@ -45,7 +45,7 @@ Deaktivieren Sie automatische Updates nur, wenn Sie die Updates vollständig sel
 
 
 .Ergebnis
-Automatische Updates sind deaktiviert. Sie sollten regelmäßig nach empfohlenen Updates suchen und entscheiden, ob Sie eine manuelle Installation durchführen möchten.
+Automatische Updates sind deaktiviert. Es wird empfohlen, regelmäßig nach empfohlenen Updates zu suchen und zu entscheiden, ob eine manuelle Installation durchgeführt werden soll.
 
 
 
@@ -64,7 +64,7 @@ Zeigen Sie eine Liste der Firmware- und Systemdatei-Updates an, die auf das Clus
 [[edit-automatic-updates]]
 == Automatische Aktualisierungen bearbeiten
 
-Sie können festlegen, dass empfohlene Updates für Storage-Firmware, SP/BMC Firmware und Ihre Systemdateien automatisch heruntergeladen und auf dem Cluster installiert werden. Alternativ können Sie festlegen, dass empfohlene Updates automatisch verworfen werden. Wenn Sie die Installation oder das Entlassen von Updates manuell steuern möchten, wählen Sie die Option, um benachrichtigt zu werden, wenn eine empfohlene Aktualisierung verfügbar ist. Sie können dann manuell auswählen, um sie zu installieren oder zu schließen.
+Sie können festlegen, ob empfohlene Updates für Ihre Storage-Firmware, SP/BMC-Firmware und Ihre Systemdateien automatisch auf Ihrem Cluster heruntergeladen und installiert werden oder ob empfohlene Updates automatisch verworfen werden. Wenn die Installation oder das Verwerfen von Updates manuell gesteuert werden soll, kann eine Benachrichtigung ausgewählt werden, sobald ein empfohlenes Update verfügbar ist; anschließend kann die Installation oder das Verwerfen manuell ausgewählt werden.
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.

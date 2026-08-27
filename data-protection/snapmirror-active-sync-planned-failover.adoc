@@ -25,5 +25,5 @@ SnapMirror Active Sync bietet kontinuierliche Verfügbarkeit für geschäftskrit
 . Wählen image:icon_kabob.gif["Drei vertikale blaue Punkte"] ; wählen Sie dann *Failover*.
 
 
-.Was kommt als Nächstes
+.Was kommt als Nächstes?
 Verwenden Sie die  `snapmirror failover show` Befehl in der ONTAP -Befehlszeilenschnittstelle (CLI), um den Status des Failovers zu überwachen.

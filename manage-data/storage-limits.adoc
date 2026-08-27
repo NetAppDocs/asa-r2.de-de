@@ -11,12 +11,12 @@ summary: Für optimale Leistung, Konfiguration und Unterstützung sollten Sie di
 
 
 [role="lead"]
-Für optimale Leistung, Konfiguration und Unterstützung sollten Sie die Speichergrenzen von ASA r2 beachten.
+Für optimale Leistung, Konfiguration und Support ist es wichtig, die Speichergrenzen von ASA r2 zu kennen.
 
 Die Grenzwerte können je nach Ihrem ASA r2 System und Ihrer ONTAP Version variieren. Eine vollständige Liste der aktuellsten Grenzwerte für Ihr spezifisches System ist unter link:https://hwu.netapp.com/["NetApp Hardware Universe"^] verfügbar.
 
 
-NOTE: Die Beschränkungen für virtuelle Maschinen (VMs) sind in Hardware Universe nicht aufgeführt. Die empfohlene maximale Anzahl an VMs pro HA-Paar beträgt 800 und pro Cluster 1200, basierend auf den Systemvolumenbeschränkungen von ASA r2. Diese Beschränkung gilt nicht für VMs, die sich in VMFS-Datenspeichern befinden. Für VMFS-Datenspeicher gibt es keine maximale Anzahl an VMs.
+NOTE: Die Beschränkungen für virtuelle Maschinen (VMs) sind in Hardware Universe nicht aufgeführt. Die empfohlene maximale Anzahl an VMs pro HA-Paar beträgt 800 und pro Cluster 1.200, basierend auf den Systemvolumenbeschränkungen von ASA r2. Diese Beschränkung gilt nicht für VMs, die sich in VMFS-Datenspeichern befinden. Für VMFS-Datenspeicher gibt es keine maximale Anzahl an VMs.
 
 .Über diese Aufgabe
 ASA r2-Systeme sind im NetApp Hardware Universe unter *Produkte* als "ASA" Plattformen aufgeführt.

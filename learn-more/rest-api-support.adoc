@@ -21,7 +21,7 @@ Die REST-API von ASA r2 basiert auf der REST-API, die mit der einheitlichen ONTA
 [[types-of-api-changes]]
 == Typen von API-Änderungen
 
-Es gibt verschiedene Arten von Unterschieden zwischen der REST API für ASA r2 Systeme und der einheitlichen ONTAP REST API für FAS, AFF und ASA Systeme. Wenn Sie die Arten von Änderungen verstehen, können Sie die Online-API-Referenzdokumentation besser nutzen.
+Zwischen der ASA r2 REST API und der einheitlichen ONTAP REST API, die mit FAS, AFF und ASA Systemen verfügbar ist, bestehen einige Unterschiede. Das Verständnis dieser Änderungen ermöglicht eine effektivere Nutzung der Online API Referenzdokumentation.
 
 .Neue ASA r2 Endpunkte werden in Unified ONTAP nicht unterstützt
 Die REST-API von ASA r2 wurde um mehrere Endpunkte erweitert, die mit Unified ONTAP nicht verfügbar sind.
@@ -34,7 +34,7 @@ Ein weiteres Beispiel: Die Endpunkte *Storage-units* bieten eine aggregierte Ans
 Mehrere mit ASA r2 verfügbare Endpunkte haben im Vergleich zu Unified ONTAP Einschränkungen, welche HTTP-Methoden verwendet werden können. Beispielsweise sind POST und DELETE nicht zulässig, wenn der Endpunkt `/api/protocols/nvme/services` mit ASA r2-Systemen verwendet wird.
 
 .Eigenschaftsänderungen für einen Endpunkt und eine HTTP-Methode
-Einige ASA r2-Systemendpunkt- und Methodenkombinationen unterstützen nicht alle definierten Eigenschaften, die in der einheitlichen ONTAP-Persönlichkeit verfügbar sind. Wenn Sie beispielsweise PATCH mit dem Endpunkt verwenden `/api/storage/volumes/{uuid}`, werden mehrere Eigenschaften von ASA r2 nicht unterstützt, darunter:
+Einige ASA r2 Endpunkt- und Methodenkombinationen unterstützen nicht alle für die einheitliche ONTAP Persönlichkeit definierten Eigenschaften. Beispielsweise werden bei Verwendung von PATCH mit dem Endpunkt `/api/storage/volumes/{uuid}` mehrere Eigenschaften von ASA r2 nicht unterstützt, darunter:
 
 * `autosize.maximum`
 * `autosize.minimum`
@@ -49,7 +49,7 @@ Es gibt mehrere Änderungen, wie ASA r2 bestimmte REST-API-Anforderungen verarbe
 [[enhanced-security-with-oauth-2-0]]
 == Erhöhte Sicherheit mit OAuth 2.0
 
-OAuth 2.0 ist das Standard-Autorisierungsframework der Branche. Er wird verwendet, um den Zugriff auf geschützte Ressourcen basierend auf signierten Zugriffstoken zu beschränken und zu steuern. Sie können OAuth 2.0 mit System Manager konfigurieren, um ASA r2-Systemressourcen zu schützen.
+OAuth 2.0 ist das Branchenstandard-Autorisierungs-Framework. Es wird verwendet, um den Zugriff auf geschützte Ressourcen basierend auf signierten Zugriffstoken einzuschränken und zu kontrollieren. OAuth 2.0 kann mit System Manager konfiguriert werden, um die Systemressourcen von ASA r2 zu schützen.
 
 Nachdem OAuth 2.0 mit System Manager eingerichtet wurde, kann der Zugriff durch die REST-API-Clients gesteuert werden. Sie müssen zuerst ein Zugriffstoken von einem Autorisierungsserver beziehen. Der REST-Client leitet das Token dann als Inhabertoken über den Header der HTTP-Autorisierungsanforderung an das ASA r2-Cluster weiter. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["Authentifizierung und Autorisierung mit OAuth 2.0"^] .
 

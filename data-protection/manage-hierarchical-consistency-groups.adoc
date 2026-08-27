@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-hierarchical-consistency-groups.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: Verwenden Sie Konsistenzgruppen, um verschiedene Aktionen gleichzeitig auf mehreren Speichereinheiten auszuführen, anstatt Aktionen einzeln auf jeder Einheit auszuführen.  In einer hierarchischen Struktur werden eine oder mehrere Konsistenzgruppen als untergeordnete Elemente unter einer übergeordneten Konsistenzgruppe konfiguriert. 
+summary: Konsistenzgruppen ermöglichen das gleichzeitige Ausführen verschiedener Aktionen auf mehreren Speichereinheiten, anstatt Aktionen einzeln auf jeder Einheit durchzuführen. In einer hierarchischen Struktur sind eine oder mehrere Konsistenzgruppen als untergeordnete Konsistenzgruppen einer übergeordneten Konsistenzgruppe konfiguriert. 
 ---
 = Verwalten Sie hierarchische Konsistenzgruppen auf Ihrem ASA R2-System
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Verwenden Sie Konsistenzgruppen, um verschiedene Aktionen gleichzeitig 
 
 
 [role="lead"]
-Ab ONTAP 9.16.1 können Sie mit System Manager hierarchische Konsistenzgruppen auf Ihrem ASA r2-System erstellen.  In einer hierarchischen Struktur werden eine oder mehrere Konsistenzgruppen als untergeordnete Elemente unter einer übergeordneten Konsistenzgruppe konfiguriert.  Sie können auf jede untergeordnete Konsistenzgruppe individuelle Snapshot-Richtlinien anwenden und die Snapshots aller untergeordneten Konsistenzgruppen als einzelne Einheit auf einem Remote-Cluster replizieren, indem Sie das übergeordnete Element replizieren.  Dies vereinfacht den Datenschutz und die Verwaltung komplexer Datenstrukturen.
+Ab ONTAP 9.16.1 kann der System Manager verwendet werden, um hierarchische Konsistenzgruppen auf Ihrem ASA r2 System zu erstellen. In einer hierarchischen Struktur werden eine oder mehrere Konsistenzgruppen als untergeordnete Gruppen unter einer übergeordneten Konsistenzgruppe konfiguriert. Für jede untergeordnete Konsistenzgruppe kann eine individuelle Snapshot-Richtlinie angewendet werden, und die Snapshots aller untergeordneten Konsistenzgruppen können als eine Einheit auf einen Remote-Cluster repliziert werden, indem die übergeordnete Konsistenzgruppe repliziert wird. Dadurch werden Datenschutz und Verwaltung für komplexe Datenstrukturen vereinfacht.
 
 
 
@@ -25,14 +25,14 @@ Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie hochstufen mö
 
 .Schritte
 . Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
-. Halten Sie den Mauszeiger über die Konsistenzgruppe, die Sie in eine übergeordnete Konsistenzgruppe konvertieren möchten.
+. Fahren Sie mit dem Mauszeiger über die Konsistenzgruppe, die in eine übergeordnete Konsistenzgruppe umgewandelt werden soll.
 . Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und wählen Sie dann *heraufstufen zur übergeordneten Konsistenzgruppe* aus.
 . Geben Sie einen Namen für die neue untergeordnete Konsistenzgruppe ein oder akzeptieren Sie den Standardnamen. Wählen Sie dann den Komponententyp der Konsistenzgruppe aus.
 . Wählen Sie *Hochstufen*.
 
 
 .Was kommt als Nächstes?
-Sie können unter der übergeordneten Konsistenzgruppe weitere untergeordnete Konsistenzgruppen erstellen.  Sie können auchlink:../secure-data/encrypt-data-at-rest.html["Richten Sie die Snapshot-Replikation ein"] um die übergeordneten und untergeordneten Konsistenzgruppen zur Sicherung und Notfallwiederherstellung an einen geografisch entfernten Standort zu kopieren.
+Sie können zusätzliche untergeordnete Konsistenzgruppen unter der übergeordneten Konsistenzgruppe erstellen. Es besteht außerdem die Möglichkeit, link:snapshot-replication.html["Richten Sie die Snapshot-Replikation ein"] die übergeordnete und die untergeordneten Konsistenzgruppen zur Datensicherung und Notfallwiederherstellung an einen geografisch entfernten Standort zu kopieren.
 
 
 
@@ -102,7 +102,7 @@ Wenn Sie auswählen, eine neue übergeordnete Konsistenzgruppe zu erstellen, geb
 
 --
 ====
-.Wie es weiter geht
+.Was kommt als Nächstes?
 Nachdem Sie eine untergeordnete Konsistenzgruppe erstellt haben, können Sielink:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Anwenden einzelner Snapshot-Schutzrichtlinien"] zu jeder untergeordneten Konsistenzgruppe.  Sie können auchlink:snapshot-replication.html["Einrichten von Replikationsrichtlinien"] auf den übergeordneten und untergeordneten Konsistenzgruppen, um die Konsistenzgruppen an einen Remotestandort zu replizieren.
 
 
@@ -118,7 +118,7 @@ Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie trennen möcht
 .Schritte
 . Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
 . Wählen Sie die übergeordnete Konsistenzgruppe aus.
-. Wählen Sie über der untergeordneten Konsistenzgruppe aus, die Sie entfernen möchten.
+. Fahren Sie mit dem Mauszeiger über die untergeordnete Konsistenzgruppe, die abgetrennt werden soll.
 . Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *von übergeordnetem Element trennen*.
 . Geben Sie einen neuen Namen für die Konsistenzgruppe ein, die Sie entfernen, oder akzeptieren Sie den Standardnamen, und wählen Sie dann den Applikationstyp für die Konsistenzgruppe aus.
 . Wählen Sie * Trennen*.

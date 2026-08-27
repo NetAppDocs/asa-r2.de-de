@@ -62,8 +62,8 @@ Wählen Sie anschließend image:icon_dropdown_arrow.gif["Blauer Pfeil, der nach 
 . Wählen Sie *Speichern*.
 
 
-.Wie es weiter geht
-Nachdem Ihre Daten nun durch Snapshots geschützt sind, sollten Sie link:../secure-data/encrypt-data-at-rest.html["Richten Sie die Snapshot-Replikation ein"]Ihre Konsistenzgruppen für das Backup und Disaster Recovery an einen geografisch Remote Standort kopieren.
+.Was kommt als Nächstes?
+Nachdem Ihre Daten nun durch Snapshots geschützt sind, empfiehlt es sich, link:snapshot-replication.html["Richten Sie die Snapshot-Replikation ein"] Ihre Konsistenzgruppen zur Datensicherung und Notfallwiederherstellung an einen geografisch entfernten Ort zu kopieren.
 
 
 

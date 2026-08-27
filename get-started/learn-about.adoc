@@ -12,7 +12,7 @@ searchtitle: Erfahren Sie mehr über die Systeme ASA A1K, A90, A70, A50, A30, A2
 
 
 [role="lead"]
-Die NetApp ASA r2 Systeme bieten eine einheitliche Hardware- und Softwarelösung, die eine vereinfachte Benutzererfahrung schafft, die speziell auf die Bedürfnisse von ausschließlich SAN-Kunden zugeschnitten ist. Auf einem ASA r2 System sind die ONTAP Software und der System Manager optimiert, um die Unterstützung für grundlegende SAN-Funktionalität bereitzustellen, während Funktionen entfernt werden, die in SAN-Umgebungen nicht unterstützt werden.
+Die NetApp ASA r2 Systeme bieten eine einheitliche Hardware- und Softwarelösung, die das Erlebnis für reine SAN-Kunden vereinfacht. Auf einem ASA r2 System sind ONTAP Software und System Manager so optimiert, dass sie die wesentlichen SAN-Funktionen unterstützen, während Funktionen entfernt werden, die in SAN-Umgebungen nicht benötigt werden.
 
 Folgende Systeme werden als ASA r2-Systeme klassifiziert:
 
@@ -32,10 +32,10 @@ Bei ASA r2-Systemen werden Storage-Einheiten mit Konsistenzgruppen eingesetzt:
 * _Eine Consistency Group_ ist eine Sammlung von Speichereinheiten, die als eine Einheit verwaltet werden.
 
 
-ASA r2-Systeme verwenden Speichereinheiten mit Konsistenzgruppen, um die Speicherverwaltung und den Datenschutz zu vereinfachen.  Angenommen, Sie haben eine Datenbank, die aus 10 Speichereinheiten in einer Konsistenzgruppe besteht, und Sie müssen die gesamte Datenbank sichern.  Anstatt jede Speichereinheit einzeln zu sichern, können Sie die gesamte Datenbank schützen, indem Sie die Konsistenzgruppe sichern.
+ASA r2-Systeme verwenden Speichereinheiten mit Konsistenzgruppen, um die Speicherverwaltung und den Datenschutz zu vereinfachen. Beispielsweise kann eine Datenbank aus 10 Speichereinheiten in einer Konsistenzgruppe bestehen, wenn die gesamte Datenbank gesichert werden muss. Statt jede Speichereinheit einzeln zu sichern, lässt sich die gesamte Datenbank schützen, indem die Konsistenzgruppe gesichert wird.
 
 .Datenschutz und Sicherheit
-Um Ihre Daten vor böswilligen Angriffen wie Diebstahl oder Ransomware zu schützen, unterstützen ASA r2 Systeme einen integrierten Schlüsselmanager, zweischichtige Verschlüsselung, Multi-Faktor-Authentifizierung und Multi-Admin-Verifizierung. Snapshots können auch an einen sekundären Standort repliziert und SnapLock für SnapVault verwendet werden, um die Ziel-Snapshots vor versehentlichem oder böswilligem Löschen zu schützen.
+Um Ihre Daten vor böswilligen Angriffen wie Diebstahl oder Ransomware zu schützen, unterstützen ASA r2 Systeme einen Onboard Key Manager, eine zweischichtige Verschlüsselung, eine Multi-Faktor-Authentifizierung und eine Multi-Admin-Verifizierung. Sie können Snapshots auch an einen sekundären Speicherort replizieren und SnapLock für SnapVault verwenden, um die Ziel-Snapshots vor versehentlichem oder böswilligem Löschen zu schützen.
 
 .Unterstützte Protokolle, Multipathing und Konfigurationen
 ASA r2 Systeme unterstützen alle SAN-Protokolle (iSCSI, FC, NVMe/FC, NVMe/TCP). Alle Protokolle unterstützen eine symmetrische Aktiv/Aktiv-Architektur für Multipathing, sodass alle Pfade zwischen den Hosts und dem Speicher aktiv/optimiert sind. Die Protokolle iSCSI und NVMe/TCP unterstützen Netzwerk- und Direktanschlusskonfigurationen für alle unterstützten ONTAP Versionen. Die Protokolle FC und NVMe/FC unterstützen Netzwerkkonfigurationen für alle unterstützten ONTAP Versionen und ab ONTAP 9.19.1 auch Direktanschlusskonfigurationen. ASA r2 Systeme unterstützen keine Cluster-Mischung mit ASA, AFF oder FAS Systemen.

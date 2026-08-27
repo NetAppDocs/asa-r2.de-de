@@ -4,17 +4,17 @@ permalink: manage-data/delete-storage-units.html
 keywords: delete lun, delete namespace, delete storage unit, asa r2 
 summary: Löschen Sie die Speichereinheiten, um die benötigte Menge an physischem Speicher zu verringern oder Speicherplatz für andere Hostanwendungen freizugeben. 
 ---
-= Löschen Sie Speichereinheiten auf ASA r2-Speichersystemen
+= Speichereinheiten auf Ihrem ASA r2 System löschen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Löschen Sie eine Speichereinheit, wenn Sie die in der Einheit enthaltenen Daten nicht mehr verwalten müssen. Durch Löschen von nicht mehr benötigten Speichereinheiten können Sie Speicherplatz für andere Hostanwendungen freigeben.
+Eine Speichereinheit kann gelöscht werden, wenn die darin enthaltenen Daten nicht mehr aufbewahrt werden müssen. Das Löschen von nicht mehr benötigten Speichereinheiten kann dazu beitragen, Speicherplatz für andere Hostanwendungen freizugeben.
 
 .Bevor Sie beginnen
-Wenn sich die zu löschende Speichereinheit in einer Konsistenzgruppe befindet, die in einer Replikationsbeziehung steht, müssen Sielink:../data-protection/manage-consistency-groups-add-remove-storage-units.html#remove-a-storage-unit-from-a-consistency-group["Entfernen Sie die Speichereinheit aus der Konsistenzgruppe"] bevor Sie es löschen.
+Wenn sich die zu löschende Speichereinheit in einer Konsistenzgruppe befindet, die in einer Replikationsbeziehung steht, muss link:../data-protection/manage-consistency-groups-add-remove-storage-units.html#remove-a-storage-unit-from-a-consistency-group["Entfernen Sie die Speichereinheit aus der Konsistenzgruppe"] dies vor dem Löschen erfolgen.
 
 .Schritte
 . Wählen Sie im System Manager *Storage* aus.

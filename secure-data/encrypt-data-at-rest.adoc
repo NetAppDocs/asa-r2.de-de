@@ -12,7 +12,7 @@ searchtitle: Sichern von Daten im Ruhezustand durch Verschlüsselung mit ONTAP A
 
 
 [role="lead"]
-Wenn Daten im Ruhezustand verschlüsselt werden, sind sie auch dann nicht lesbar, wenn ein Storage-Medium einem anderen Zweck zugewiesen, zurückgegeben, verlegt oder gestohlen wird. Sie können ONTAP System Manager zur Verschlüsselung Ihrer Daten auf Hardware- und Softwareebene für einen Dual-Layer-Schutz verwenden.
+Wenn Daten im Ruhezustand verschlüsselt sind, können sie nicht gelesen werden, wenn ein Speichermedium anderweitig verwendet, zurückgegeben, verlegt oder gestohlen wird. Mit ONTAP System Manager lässt sich Hardware- und Softwareverschlüsselung für einen zweistufigen Schutz anwenden.
 
 NetApp Storage Encryption (NSE) unterstützt Hardwareverschlüsselung über Self-Encrypting Drives (SEDs). SEDs verschlüsseln Daten beim Schreiben. Jede SED enthält einen eindeutigen Verschlüsselungsschlüssel. Verschlüsselte Daten, die auf der SED gespeichert sind, können ohne den SED-Verschlüsselungsschlüssel nicht gelesen werden. Knoten, die versuchen, von einer SED zu lesen, müssen authentifiziert werden, um auf den Verschlüsselungsschlüssel der SED zuzugreifen. Knoten werden authentifiziert, indem ein Authentifizierungsschlüssel von einem Schlüsselmanager abgerufen und dann der SED den Authentifizierungsschlüssel vorgelegt wird. Wenn der Authentifizierungsschlüssel gültig ist, gibt die SED dem Knoten seinen Verschlüsselungsschlüssel für den Zugriff auf die darin enthaltenen Daten.
 
@@ -28,7 +28,7 @@ Weitere Informationen zu link:https://docs.netapp.com/us-en/ontap/encryption-at-
 Weitere Informationen zu link:https://docs.netapp.com/us-en/asa-r2/learn-more/hardware-comparison.html["die Unterschiede zwischen ASA r2 Systemen und anderen ONTAP Systemen"].
 
 .Schritte
-. Wählen Sie im System Manager *Cluster > Einstellungen* aus.
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
 . Wählen Sie im Abschnitt *Sicherheit* unter *Verschlüsselung* *Konfigurieren* aus.
 . Konfigurieren Sie den Schlüsselmanager.
 +
@@ -37,7 +37,7 @@ Weitere Informationen zu link:https://docs.netapp.com/us-en/asa-r2/learn-more/ha
 | Option | Schritte 
 
 
-| Konfigurieren Sie den Onboard Key Manager  a| 
+| Den Onboard Key Manager konfigurieren  a| 
 .. Wählen Sie *Onboard Key Manager*, um die Schlüsselserver hinzuzufügen.
 .. Geben Sie eine Passphrase ein.
 

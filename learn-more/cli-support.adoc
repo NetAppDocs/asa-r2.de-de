@@ -11,13 +11,13 @@ summary: 'Bestimmte ONTAP-Befehle werden auf ASA r2-Systemen (ASA A1K, ASA 90, A
 
 
 [role="lead"]
-Anstelle von Aggregaten verwendet die Speicherebene in ASA r2-Systemen Speicherverfügbarkeitszonen. Eine Speicherverfügbarkeitszone ist ein gemeinsamer Speicherpool, der einem einzelnen HA-Paar zur Verfügung steht. Beide Knoten im HA-Paar haben Zugriff auf alle verfügbaren Festplatten in ihrer gemeinsamen Speicherverfügbarkeitszone. Beim Erstellen einer Speichereinheit (LUN oder NVMe-Namespace) erstellt ONTAP automatisch ein Volume in der entsprechenden Speicherverfügbarkeitszone, um die Speichereinheit aufzunehmen.
+ASA r2 Systeme verwenden Speicherverfügbarkeitszonen anstelle von Aggregaten, daher werden einige ONTAP CLI-Befehle und Parameter nicht unterstützt. Die CLI kann ebenfalls zur Einrichtung eines Clusters genutzt werden, wenn dies dem System Manager vorgezogen wird.
 
 Aufgrund dieses vereinfachten Ansatzes zur Speicherverwaltung  `storage aggregate` Befehle werden auf ASA r2-Systemen nicht unterstützt. Unterstützung für bestimmte  `lun` ,  `storage` Und  `volume` Befehle und Parameter sind ebenfalls begrenzt.
 
 Sofern nicht als nicht unterstützt aufgeführt, sind alle anderen Befehle in der link:https://docs.netapp.com/us-en/ontap-cli/["ONTAP-Befehlsreferenz"] für ASA r2-Systeme unterstützt.
 
-Die folgenden Befehle und Befehlssets werden auf ASA unter r2 nicht unterstützt:
+Die folgenden Befehle und Befehlssätze sind auf ASA r2 nicht unterstützt:
 
 .Nicht unterstützte <code>-</code>-Befehle
 [%collapsible]
@@ -145,9 +145,9 @@ Der  `volume modify` Der Befehl ist nicht verfügbar, wenn er in Verbindung mit 
 [[set-up-an-ontap-asa-r2-cluster-using-the-cli]]
 == Richten Sie einen ONTAP ASA r2-Cluster mithilfe der CLI ein
 
-Es wird empfohlen, dass Sie link:../install-setup/initialize-ontap-cluster.html["Richten Sie den ONTAP ASA r2-Cluster mit System Manager ein"]. System Manager bietet einen schnellen und einfachen geleiteten Workflow zur Inbetriebnahme des Clusters. Wenn Sie jedoch bisher mit ONTAP-Befehlen arbeiten, kann die ONTAP-Befehlszeilenschnittstelle (CLI) optional für das Cluster-Setup verwendet werden. Die Cluster-Einrichtung über die CLI bietet keine weiteren Optionen oder Vorteile als die Einrichtung von Clustern mit System Manager.
+Es wird empfohlen, dass Sie link:../install-setup/initialize-ontap-cluster.html["Richten Sie den ONTAP ASA r2-Cluster mit System Manager ein"]. System Manager bietet einen schnellen und einfachen geführten Workflow, um Ihr Cluster in Betrieb zu nehmen. Wenn Sie jedoch daran gewöhnt sind, mit ONTAP Befehlen zu arbeiten, kann optional die ONTAP Befehlszeilenschnittstelle (CLI) für die Cluster-Einrichtung verwendet werden. Die Einrichtung des Clusters mit der CLI bietet keine zusätzlichen Optionen oder Vorteile gegenüber System Manager.
 
-Während der Cluster-Einrichtung wird Ihre standardmäßige Storage Virtual Machine (VM) erstellt, eine erste Storage-Einheit erstellt und Ihre Daten-LIFs werden automatisch erkannt. Optional können Sie das Domain Name System (DNS) aktivieren, um Hostnamen aufzulösen, Ihr Cluster so einstellen, dass es das Network Time Protocol (NTS) für die Zeitsynchronisierung verwendet und die Verschlüsselung von Daten im Ruhezustand aktiviert.
+Während der Cluster-Einrichtung erstellt ONTAP Ihre standardmäßige Datenspeicher-VM, erstellt eine erste Speichereinheit und erkennt automatisch Ihre Daten-LIFs. Optional kann das Domain Name System (DNS) zur Auflösung von Hostnamen aktiviert werden, der Cluster für die Verwendung des Network Time Protocol (NTP) zur Zeitsynchronisierung konfiguriert werden und die Verschlüsselung von Daten im Ruhezustand aktiviert werden.
 
 .Bevor Sie beginnen
 Stellen Sie die folgenden Informationen zusammen:

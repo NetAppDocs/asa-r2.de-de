@@ -19,7 +19,7 @@ Storage-Einheiten eines ASA r2-Systems befinden sich in Storage Virtual Machines
 [[create-a-storage-vm]]
 == Erstellen einer Storage-VM
 
-Während der Cluster-Einrichtung wird Ihre standardmäßige Virtual Machine (VM) für den Datenspeicher erstellt. Alle neuen Storage-Einheiten werden innerhalb Ihrer Standard-Storage-VM erstellt, es sei denn, Sie erstellen und wählen eine andere Storage-VM aus. Vielleicht möchten Sie eine zusätzliche Storage-VM erstellen, um Ihre Storage-Einheiten für verschiedene Applikationen, Abteilungen oder Clients zu trennen. Vielleicht möchten Sie beispielsweise eine Storage-VM für Ihre Entwicklungsumgebung und eine andere Storage-VM für die Produktionsumgebung erstellen oder eine Storage-VM für die Finanzabteilung und eine andere Storage-VM für die Marketingabteilung erstellen.
+Während der Cluster-Einrichtung wird Ihre standardmäßige virtuelle Maschine (VM) für die Datenspeicherung erstellt. Alle neuen Speichereinheiten werden innerhalb Ihrer standardmäßigen virtuellen Maschine für die Datenspeicherung erstellt, sofern Sie nicht eine andere Speicher-VM erstellen und auswählen. Es kann sinnvoll sein, eine zusätzliche Speicher-VM zu erstellen, um Ihre Speichereinheiten für verschiedene Anwendungen, Abteilungen oder Kunden zu trennen. Beispielsweise kann eine Speicher-VM für Ihre Entwicklungsumgebung und eine weitere Speicher-VM für Ihre Produktionsumgebung erstellt werden, oder eine Speicher-VM für Ihre Finanzabteilung und eine weitere Speicher-VM für Ihre Marketingabteilung.
 
 .Schritte
 . Wählen Sie *Cluster > Storage VMs*.

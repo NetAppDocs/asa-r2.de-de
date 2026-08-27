@@ -11,7 +11,7 @@ summary: Erfahren Sie, wie Sie die Aufbewahrungszeiträume von ARP-Snapshots an 
 
 
 [role="lead"]
-Wenn Autonomous Ransomware Protection mit Künstlicher Intelligenz (ARP/AI) ungewöhnliche Aktivitäten auf einer oder mehreren Ihrer ASA r2-Systemspeichereinheiten erkennt, erstellt es automatisch einen ARP-Snapshot, um die Daten der Speichereinheit zu schützen. Abhängig von Ihrer Speicherkapazität und den geschäftlichen Anforderungen an Ihre Daten können Sie die standardmäßige Aufbewahrungsdauer für ARP-Snapshots verlängern oder verkürzen. Beispielsweise können Sie die Aufbewahrungsdauer für geschäftskritische Anwendungen verlängern, um bei Bedarf längere Aufbewahrungsfristen für die Datenwiederherstellung zu haben, oder die Aufbewahrungsdauer für nicht-kritische Anwendungen verkürzen, um Speicherplatz zu sparen.
+Wenn der autonome Ransomware-Schutz mit künstlicher Intelligenz (ARP/KI) ungewöhnliche Aktivitäten auf einem oder mehreren Speichereinheiten Ihres ASA r2 Systems erkennt, wird automatisch ein ARP Snapshot zum Schutz der Daten erstellt. Abhängig von Ihrer Speicherkapazität und Ihren geschäftlichen Anforderungen kann es sinnvoll sein, die standardmäßige ARP Snapshot-Aufbewahrungsdauer zu erhöhen oder zu verringern. So kann beispielsweise die Aufbewahrungsdauer für geschäftskritische Anwendungen verlängert werden, um längere Datenwiederherstellungsfenster zu unterstützen, oder für nicht kritische Anwendungen verkürzt werden, um Speicherplatz zu sparen.
 
 Die standardmäßige Aufbewahrungsdauer für den ARP-Snapshot variiert je nach der Aktion, die Sie als Reaktion auf die abnormale Aktivität ergreifen.
 
@@ -28,4 +28,4 @@ Die standardmäßige Aufbewahrungsdauer für den ARP-Snapshot variiert je nach d
 
 | Ergreifen Sie keine sofortigen Maßnahmen | 10 Tage 
 |===
-Die Standardaufbewahrungsfristen können über die ONTAP Befehlszeilenschnittstelle (CLI) geändert werden. Siehe  https://docs.netapp.com/us-en/ontap/anti-ransomware/modify-automatic-snapshot-options-task.html["Optionen für automatische ONTAP -Snapshots ändern"] für Schritte zum Ändern der Standardaufbewahrungsdauer.
+Die Standardaufbewahrungsfristen lassen sich mit der ONTAP Befehlszeilenschnittstelle (CLI) anpassen. Siehe  https://docs.netapp.com/us-en/ontap/anti-ransomware/modify-automatic-snapshot-options-task.html["Optionen für automatische ONTAP -Snapshots ändern"] für die Schritte zur Änderung der Standardaufbewahrungsfrist.

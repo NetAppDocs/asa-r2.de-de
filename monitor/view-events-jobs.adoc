@@ -11,7 +11,7 @@ summary: Verwenden Sie ONTAP System Manager, um eine Liste der Fehler oder Warnm
 
 
 [role="lead"]
-Verwenden Sie ONTAP System Manager, um eine Liste der Fehler oder Warnmeldungen anzuzeigen, die in Ihrem System aufgetreten sind, sowie empfohlene Korrekturmaßnahmen. Sie können auch Systemauditprotokolle und eine Liste von Jobs anzeigen, die aktiv, abgeschlossen oder fehlgeschlagen sind.
+ONTAP System Manager ermöglicht die Anzeige einer Liste von Fehlern oder Warnmeldungen, empfohlenen Korrekturmaßnahmen, Systemüberwachungsprotokollen sowie aktiven, abgeschlossenen oder fehlgeschlagenen Aufträgen.
 
 .Schritte
 . Wählen Sie im System Manager *Ereignisse & Jobs* aus.
@@ -67,4 +67,4 @@ Konfigurieren Sie das System so, dass eine Benachrichtigung an bestimmte E-Mail-
 
 
 .Ergebnis
-Die von Ihnen hinzugefügte E-Mail-Adresse erhält nun die angegebenen E-Mail-Benachrichtigungen für Clusterereignisse und Prüfprotokolle.
+Die hinzugefügte E-Mail-Adresse erhält die angegebenen E-Mail-Benachrichtigungen für Cluster-Ereignisse und Audit-Logs.

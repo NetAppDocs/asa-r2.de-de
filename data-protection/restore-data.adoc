@@ -18,7 +18,7 @@ Daten in einer durch Snapshots geschützten Konsistenzgruppe oder Storage-Einhei
 [[restore-a-consistency-group]]
 == Stellen Sie eine Konsistenzgruppe wieder her
 
-Durch das Wiederherstellen einer Konsistenzgruppe werden die Daten in allen Speichereinheiten der Konsistenzgruppe durch die Daten aus einem Snapshot ersetzt. Änderungen an den Speichereinheiten, die nach dem Erstellen des Snapshots vorgenommen wurden, werden nicht wiederhergestellt.
+Durch das Wiederherstellen einer Konsistenzgruppe werden die Daten in allen Speichereinheiten der Konsistenzgruppe durch die Daten eines Snapshots ersetzt. Änderungen, die nach der Erstellung des Snapshots an den Speichereinheiten vorgenommen wurden, werden nicht wiederhergestellt.
 
 Sie können eine Konsistenzgruppe aus einem lokalen oder Remote-Snapshot wiederherstellen.
 

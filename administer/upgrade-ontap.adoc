@@ -15,7 +15,7 @@ Wenn Sie Ihre ONTAP Software auf Ihrem ASA r2 System aktualisieren, können Sie 
 
 ONTAP-Software-Upgrades für ASA r2-Systeme folgen dem gleichen Prozess wie Upgrades für andere ONTAP Systeme. Es wird empfohlen, mit link:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["Vorbereitung Ihres Upgrades mit dem Upgrade Advisor in Active IQ Digital Advisor oder dem Upgrade Health Checker"^] zu beginnen.
 
-Nachdem Sie die Aktualisierung vorbereitet haben, wird empfohlen, diese mit link:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["Automatisierte unterbrechungsfreie Upgrades (ANDU) von System Manager"^] ANDU durchzuführen. ANDU nutzt die Hochverfügbarkeits-Failover-Technologie (HA) von ONTAP, um sicherzustellen, dass die Cluster während der Aktualisierung weiterhin Daten ohne Unterbrechung bereitstellen.
+Nachdem Sie die Aktualisierung vorbereitet haben, wird empfohlen, das Upgrade mit link:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["Automatisierte unterbrechungsfreie Upgrades (ANDU) von System Manager"^] durchzuführen. ANDU nutzt die Hochverfügbarkeits-Failover-Technologie (HA) von ONTAP, um sicherzustellen, dass die Cluster während des Upgrades weiterhin Daten ohne Unterbrechung bereitstellen.
 
 Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Upgrades für die ONTAP Software"^].
 
@@ -26,6 +26,6 @@ Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap/upgrade/index.h
 
 Sie müssen sich nicht im Prozess der Aktualisierung Ihrer ONTAP-Software befinden, um die automatisierten ONTAP-Vorabprüfungen auszuführen. Das Ausführen der Vorabprüfungen unabhängig vom automatisierten ONTAP-Upgrade-Prozess ermöglicht es Ihnen zu sehen, welche Prüfungen an Ihrem Cluster durchgeführt werden, und gibt Ihnen eine Liste aller Fehler oder Warnungen, die vor dem eigentlichen Upgrade behoben werden sollten.
 
-Ab ONTAP 9.19.1 werden Fehler und Warnungen separat angezeigt, damit Sie Probleme, die vor dem Upgrade behoben werden müssen, leichter erkennen können.
+Ab ONTAP 9.19.1 werden Fehler und Warnungen separat angezeigt, um Probleme, die vor dem Upgrade behoben werden müssen, leichter identifizieren zu können.
 
 Erfahren Sie, wie Sie link:https://docs.netapp.com/us-en/ontap/upgrade/automated-pre-checks.html["Führe automatisierte Vorabprüfungen von ONTAP durch"^].

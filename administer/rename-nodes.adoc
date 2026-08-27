@@ -11,7 +11,7 @@ summary: Möglicherweise müssen Sie einen Node umbenennen, um ihn an die Namens
 
 
 [role="lead"]
-Sie können ONTAP System Manager verwenden, um einen Knoten auf dem ASA r2-System umzubenennen. Möglicherweise müssen Sie einen Node umbenennen, um ihn an die Namenskonventionen Ihres Unternehmens oder aus anderen administrativen Gründen anzupassen.
+Mit System Manager kann ein Knoten auf dem ASA r2 System umbenannt werden, um ihn an die Namenskonventionen Ihrer Organisation anzupassen oder aus anderen administrativen Gründen.
 
 .Schritte
 . Wählen Sie im System Manager *Cluster > Übersicht* aus.

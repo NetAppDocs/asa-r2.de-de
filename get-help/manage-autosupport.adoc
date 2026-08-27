@@ -11,9 +11,9 @@ summary:
 
 
 [role="lead"]
-AutoSupport ist ein Mechanismus, der proaktiv den Zustand Ihres Systems überwacht und automatisch Meldungen an den technischen Support von NetApp, Ihre interne Support-Abteilung und einen Support-Partner sendet.
+AutoSupport überwacht proaktiv den Zustand Ihres Systems und sendet automatisch Meldungen an NetApp technischen Support, Ihre interne Supportorganisation und einen Supportpartner.
 
-AutoSupport Meldungen für den technischen Support sind standardmäßig aktiviert, wenn Sie das Cluster einrichten. Sie müssen die richtigen Optionen festlegen und einen gültigen Mail-Host haben, um Nachrichten an Ihre interne Support-Organisation senden zu lassen. ONTAP beginnt 24 Stunden nach der Aktivierung mit dem Senden von AutoSupport Nachrichten.
+AutoSupport-Nachrichten an den technischen Support sind bei der Einrichtung Ihres Clusters standardmäßig aktiviert. Die korrekten Optionen müssen festgelegt werden und ein gültiger Mail-Host muss vorhanden sein, damit Nachrichten an Ihre interne Supportorganisation gesendet werden können. ONTAP beginnt 24 Stunden nach der Aktivierung mit dem Versenden von AutoSupport-Nachrichten.
 
 .Bevor Sie beginnen
 Sie müssen Cluster-Administrator sein, um AutoSupport zu verwalten.
@@ -26,7 +26,7 @@ Sie müssen Cluster-Administrator sein, um AutoSupport zu verwalten.
 Nachdem Sie das Cluster eingerichtet haben, sollten Sie die AutoSupport-Konnektivität testen, um sicherzustellen, dass der technische Support von AutoSupport generierte Meldungen erhält.
 
 .Schritte
-. Wählen Sie im System Manager *Cluster >Settings* aus.
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
 . Wählen Sie neben *AutoSupport* image:icon_kabob.gif["Drei vertikale blaue Punkte"]; dann *Verbindung testen*.
 . Geben Sie einen Betreff für die AutoSupport-Nachricht ein, und wählen Sie dann *Test-AutoSupport-Nachricht senden*.
 
@@ -42,14 +42,14 @@ Sie haben bestätigt, dass der technische Support AutoSupport-Nachrichten von Ih
 Fügen Sie Mitglieder Ihrer internen Supportorganisation der Liste der E-Mail-Adressen hinzu, die AutoSupport-Nachrichten empfangen.
 
 .Schritte
-. Wählen Sie im System Manager *Cluster >Settings* aus.
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
 . Wählen Sie neben *AutoSupport* image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und wählen Sie dann *Weitere Optionen*.
 . Wählen Sie neben *Email* image:icon_edit_pencil_blue_outline.png["Bleistiftsymbol"]; und dann image:icon_add.gif["Blaues Pluszeichen, gefolgt vom Wort Add"].
-. Geben Sie die E-Mail-Adresse des Empfängers ein, dann die Empfängerkategorie.
+. Die E-Mail-Adresse des Empfängers eingeben und anschließend die Empfängerkategorie auswählen.
 +
-Wählen Sie für Partner *Partner* für die Empfängerkategorie aus. Wählen Sie *Allgemein* für Mitglieder Ihrer internen Support-Organisation.
+Für Partner ist die Empfängerkategorie *Partner* auszuwählen. Für Mitglieder der internen Supportorganisation ist *Allgemein* auszuwählen.
 
-. Wählen Sie Speichern.
+. Wählen Sie *Speichern*.
 
 
 .Was kommt als Nächstes?
@@ -63,7 +63,7 @@ Die von Ihnen hinzugefügten E-Mail-Adressen erhalten neue AutoSupport Nachricht
 Sollte auf Ihrem ASA r2-System ein Problem auftreten, können AutoSupport-Daten die Zeit zur Erkennung und Behebung von Problemen erheblich verkürzen.
 
 .Schritte
-. Wählen Sie im System Manager *Cluster >Settings* aus.
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
 . Wählen Sie neben *AutoSupport* image:icon_kabob.gif["Drei vertikale blaue Punkte"]; dann *Generieren und senden*.
 . Geben Sie einen Betreff für die AutoSupport-Nachricht ein, und wählen Sie dann *Senden*.
 
@@ -79,14 +79,14 @@ Ihre AutoSupport-Daten werden an den technischen Support gesendet.
 Wenn Sie ein Upgrade oder eine Wartung auf Ihrem ASA r2-System durchführen, sollten Sie die AutoSupport-Generierung von Support-Fällen bis zum Abschluss des Upgrades oder der Wartung unterdrücken.
 
 .Schritte
-. Wählen Sie im System Manager *Cluster >Settings* aus.
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
 . Wählen Sie neben *AutoSupport* image:icon_kabob.gif["Drei vertikale blaue Punkte"]; dann *Support Case Generierung unterdrücken*.
 . Geben Sie die Anzahl der Stunden an, die die Generierung von Support-Fällen unterdrücken sollen, und wählen Sie dann die Nodes aus, für die keine Cases generiert werden sollen.
 . Wählen Sie *Senden*.
 
 
 .Was kommt als Nächstes?
-AutoSupport-Fälle werden nicht während der von Ihnen angegebenen Zeit generiert. Wenn Sie das Upgrade oder die Wartung vor Ablauf der angegebenen Zeit abgeschlossen haben, sollten Sie die Generierung des Support-Cases sofort fortsetzen.
+AutoSupport-Fälle werden während des von Ihnen angegebenen Zeitraums nicht generiert. Wenn das Upgrade oder die Wartungsarbeiten vor Ablauf des angegebenen Zeitraums abgeschlossen werden, wird die Generierung von Supportfällen umgehend wieder aufgenommen.
 
 
 
@@ -96,7 +96,7 @@ AutoSupport-Fälle werden nicht während der von Ihnen angegebenen Zeit generier
 Wenn Sie die Generierung von Support-Cases während eines Upgrade- oder Wartungsfensters unterdrückt haben, sollten Sie die Erstellung von Support-Cases sofort nach Abschluss des Upgrades oder der Wartung fortsetzen.
 
 .Schritte
-. Wählen Sie im System Manager *Cluster >Settings* aus.
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
 . Wählen Sie neben *AutoSupport* image:icon_kabob.gif["Drei vertikale blaue Punkte"]; dann *Support Case Generation fortsetzen*.
 . Wählen Sie die Knoten aus, für die Sie die erstellten AutoSupport-Fälle fortsetzen möchten.
 . Wählen Sie *Senden*.

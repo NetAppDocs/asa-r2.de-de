@@ -11,13 +11,13 @@ summary: Wenn Sie auf Ihrem ASA r2-System das IP-Protokoll verwenden, können Si
 
 
 [role="lead"]
-Wenn Sie das IP-Protokoll auf Ihrem ASA r2-System verwenden, können Sie die IP-Sicherheit (IPsec) konfigurieren, um Ihre Datensicherheit zu erhöhen. IPsec ist ein Internetstandard, der Verschlüsselung von Daten während der Übertragung, Authentifizierung für den Datenverkehr zwischen den Netzwerkendpunkten auf IP-Ebene und Schutz vor Replay- und böswilligen man-in-the-Middle-Angriffen auf Ihre Daten bietet.
+Wenn Sie auf Ihrem ASA r2-System das IP-Protokoll verwenden, kann IP-Sicherheit (IPsec) konfiguriert werden, um die Datensicherheit zu erhöhen. IPsec ist ein Internetstandard, der Verschlüsselung von Daten während der Übertragung, Authentifizierung auf IP-Ebene für Endpunkte sowie Schutz vor Replay- und Man-in-the-Middle-Angriffen bietet.
 
 Für ASA r2-Systeme ist IPsec für iSCSI- und NVMe/TCP-Hosts verfügbar.
 
 Auf bestimmten ASA r2-Systemen können mehrere kryptografische Vorgänge, wie z. B. Verschlüsselungs- und Integritätsprüfungen, auf eine unterstützte NIC-Karte (Network Interface Controller) ausgelagert werden. Der Durchsatz für auf die NIC-Karte ausgelagerte Vorgänge beträgt etwa 5 % oder weniger. Dies kann die Leistung und den Durchsatz des durch IPsec geschützten Netzwerkverkehrs erheblich verbessern.
 
-Ab ONTAP 9.18.1 wird die Unterstützung für IPsec-Hardware-Offloading auf IPv6-Datenverkehr erweitert.
+Ab ONTAP 9.18.1 wird die Unterstützung für IPsec Hardware-Offload auf IPv6-Datenverkehr ausgeweitet.
 
 Die folgenden Netzwerkkarten werden für die Hardware-Auslagerung auf den folgenden ASA r2-Systemen und ONTAP Versionen unterstützt:
 

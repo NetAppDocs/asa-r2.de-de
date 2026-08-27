@@ -57,7 +57,7 @@ Schließen Sie den Nockengriff langsam, damit er korrekt an der Antriebsfläche 
 
 . Vergewissern Sie sich, dass die Aktivitäts-LED (grün) des Laufwerks leuchtet.
 +
-** WENN die LED konstant leuchtet, wird das Laufwerk mit Strom versorgt.
+** Leuchtet die LED dauerhaft, ist das Laufwerk mit Strom versorgt.
 ** Wenn die LED blinkt, wird das Laufwerk mit Strom versorgt und E/A wird ausgeführt. Die LED blinkt auch, wenn die Laufwerksfirmware aktualisiert wird.
 +
 Die Laufwerk-Firmware wird automatisch (unterbrechungsfrei) auf neuen Laufwerken aktualisiert, die keine aktuellen Firmware-Versionen aufweisen.

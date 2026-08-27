@@ -11,14 +11,14 @@ summary: Mit System Manager können Sie den Active Directory-Domänencontroller-
 
 
 [role="lead"]
-Mit System Manager können Sie den Active Directory-Domänencontroller-Zugriff sowie die LDAP- und SAML-Authentifizierung für Ihre Benutzerkonten konfigurieren. Erstellen Sie Benutzerkontorollen, um bestimmte Funktionen zu definieren, die Benutzer, die den Rollen zugewiesen sind, auf dem Cluster ausführen können.
+Mit System Manager lässt sich der Zugriff auf Active Directory Domain Controller sowie die LDAP- und SAML-Authentifizierung für Ihre Benutzerkonten konfigurieren. Benutzerkontenrollen definieren spezifische Funktionen, die Benutzern mit diesen Rollen in Ihrem Cluster zur Verfügung stehen.
 
 
 
 [[configure-active-directory-domain-controller-access]]
-== Konfigurieren Sie den Zugriff auf den Active Directory-Domänencontroller
+== Konfiguration des Zugriffs auf den Active Directory Domänencontroller
 
-Konfigurieren Sie den Active Directory (AD) Domain Controller-Zugriff auf das Cluster oder die Storage-VM, damit Sie den Zugriff auf das AD-Konto aktivieren können.
+Der Zugriff des Active Directory (AD) Domänencontrollers auf Ihr Cluster oder Ihre Storage-VM wird konfiguriert, sodass der Zugriff auf AD-Konten ermöglicht wird.
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.
@@ -64,7 +64,7 @@ Informationen zur Konfiguration finden Sie in der IdP-Dokumentation.
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.
-. Wählen Sie unter *Sicherheit* neben *SAML-Authentifizierung* die Option image:icon_gear_white_bg.png["Blaue Umrandung eines mechanischen Getriebes"] .
+. Unter *Sicherheit*, neben *SAML-Authentifizierung*, image:icon_gear_white_bg.png["Blaue Umrandung eines mechanischen Getriebes"] auswählen.
 . Wählen Sie *SAML-Authentifizierung aktivieren*.
 . Geben Sie die IdP-URL und die IP-Adresse des Hostsystems ein, und wählen Sie dann *Speichern*.
 +
@@ -115,7 +115,7 @@ Erstellen Sie ein Administrator-Benutzerkonto, mit dem der Account-Benutzer basi
 . Wählen Sie unter *Benutzer* die Option image:icon_add_blue_bg.png["Blaues Rechteck mit einem Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"].
 . Geben Sie einen Benutzernamen ein, und wählen Sie dann eine Rolle aus, die dem Benutzer zugewiesen werden soll.
 . Wählen Sie die Benutzeranmeldemethode und die Authentifizierungsmethode aus.
-. Um MFA zu aktivieren, wählen Sie image:icon_add.gif["Pluszeichen gefolgt von dem Wort addieren in blauen Buchstaben"]; und wählen Sie dann eine sekundäre Anmeldemethode und Authentifizierungsmethode aus
+. Um MFA zu aktivieren, image:icon_add.gif["Pluszeichen gefolgt von dem Wort addieren in blauen Buchstaben"] dann eine sekundäre Anmeldemethode und ein Authentifizierungsverfahren auswählen.
 . Geben Sie ein Kennwort für den Benutzer ein.
 . Wählen Sie *Speichern*.
 

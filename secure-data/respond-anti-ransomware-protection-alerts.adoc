@@ -11,9 +11,9 @@ summary: Zeigen Sie Warnungen vor potenziellen Ransomware-Angriffen an und ergre
 
 
 [role="lead"]
-Wenn der autonome Ransomware-Schutz mit künstlicher Intelligenz (ARP/AI) ungewöhnliche Aktivitäten auf einer oder mehreren Ihrer ASA r2-Systemspeichereinheiten erkennt, wird eine Warnung im System Manager-Dashboard angezeigt. Sie sollten die Warnung anzeigen, die Aktivität überprüfen und gegebenenfalls Maßnahmen ergreifen, um eine potenzielle Bedrohung Ihrer Daten zu verhindern.
+Wenn der autonome Ransomware-Schutz mit künstlicher Intelligenz (ARP/KI) ungewöhnliche Aktivitäten auf einem oder mehreren Speichereinheiten Ihres ASA r2 Systems erkennt, zeigt System Manager eine Warnung im Dashboard an. Die Warnung sollte überprüft, die Aktivität verifiziert und bei Bedarf Maßnahmen zum Schutz der Daten ergriffen werden.
 
-Wenn eine ARP/AI-Warnmeldung angezeigt wird, sollten Sie vor dem Ergreifen von Maßnahmen die Integrität der Daten auf dem Speichergerät mit einem entsprechenden Anwendungsintegritätsprüfer überprüfen. Durch die Überprüfung der Datenintegrität des Speichergeräts können Sie feststellen, ob die Aktivität akzeptabel ist oder ob es sich um einen potenziellen Ransomware-Angriff handelt.
+Wenn eine ARP/AI-Warnmeldung angezeigt wird, sollte mithilfe eines geeigneten Application Integrity Checkers die Daten auf dem Speichermedium überprüft werden, bevor Maßnahmen ergriffen werden. Die Überprüfung der Datenintegrität des Speichermediums ermöglicht die Feststellung, ob die Aktivität akzeptabel ist oder ob es sich um einen potenziellen Ransomware-Angriff handelt.
 
 [cols="2,2"]
 |===
@@ -26,12 +26,12 @@ Wenn eine ARP/AI-Warnmeldung angezeigt wird, sollten Sie vor dem Ergreifen von M
 | Ein potenzieller Ransomware-Angriff | Markieren Sie die Aktivität als potenziellen Ransomware-Angriff. 
 
 
-| Unbestimmt | Ergreifen Sie keine sofortigen Maßnahmen. Überwachen Sie den Speicher bis zu 7 Tage lang. Wenn der Speicher weiterhin normal funktioniert, markieren Sie die Aktivität als falsch positiv. Wenn der Speicher weiterhin ungewöhnliche Aktivitäten aufweist, markieren Sie die Aktivität als potenziellen Ransomware-Angriff. 
+| Unbestimmt | Es sind keine sofortigen Maßnahmen erforderlich. Das Speichermedium sollte bis zu 7 Tage lang überwacht werden. Wenn das Speichermedium weiterhin normal funktioniert, ist die Aktivität als Fehlalarm zu kennzeichnen. Wenn das Speichermedium weiterhin ungewöhnliche Aktivitäten zeigt, ist die Aktivität als potenzieller Ransomware-Angriff zu kennzeichnen. 
 |===
 .Schritte
 . Wählen Sie in System Manager *Dashboard* aus.
 +
-Wenn ARP auf einer oder mehreren Speichereinheiten eine ungewöhnliche Aktivität festgestellt hat, wird unter *Warnungen* eine Meldung angezeigt.
+Wenn ARP/AI eine anormale Aktivität auf einer oder mehreren Speichereinheiten festgestellt hat, erscheint eine Meldung unter *Warnungen*.
 
 . Wählen Sie die Warnmeldung aus.
 . Wählen Sie unter *Ereignisübersicht* die Meldung *Warnungen* aus, die die Anzahl der Speichereinheiten mit abnormaler Aktivität angibt.
@@ -45,4 +45,4 @@ Bei ungewöhnlichen Aktivitäten auf dem Speichergerät wird unter *Anti-Ransomw
 
 
 .Was kommt als Nächstes?
-Wenn Sie in Ihrer Speichereinheit Aktivitätsspitzen feststellen, entweder einmalige Spitzen oder eine Spitze, die für eine neue Normalität charakteristisch ist, sollten Sie diese als unbedenklich melden. Das manuelle Melden dieser Spitzen als unbedenklich trägt dazu bei, die Genauigkeit der Bedrohungsbewertungen von ARP zu verbessern. Erfahren Sie, wie Sie link:https://docs.netapp.com/us-en/ontap/anti-ransomware/manage-parameters-task.html#report-known-surges["Bekannte ARP/AI-Spitzen melden"^].
+Wenn Sie in Ihrer Speichereinheit Aktivitätsspitzen feststellen, entweder einmalige Spitzen oder eine Spitze, die für eine neue Normalität charakteristisch ist, sollten Sie diese als unbedenklich melden. Das manuelle Melden dieser Anstiege als unbedenklich trägt dazu bei, die Genauigkeit der Bedrohungsbewertungen von ARP zu verbessern. Weitere Informationen link:https://docs.netapp.com/us-en/ontap/anti-ransomware/manage-parameters-task.html#report-known-surges["Bekannte ARP/AI-Spitzen melden"^].

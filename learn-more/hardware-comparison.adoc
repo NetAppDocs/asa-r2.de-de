@@ -12,7 +12,7 @@ searchtitle: Unterschiede zwischen ASA r2 und anderen ONTAP Systemen
 
 
 [role="lead"]
-ASA r2-Systeme bieten eine Hardware- und Softwarelösung für reine SAN-Umgebungen, die auf All-Flash-Lösungen basieren. ASA R2-Systeme unterscheiden sich von anderen ONTAP Systemen (ASA, AFF und FAS) in der Implementierung der ONTAP Persönlichkeit, der Speicherschicht und der unterstützten Protokolle.
+ASA r2-Systeme sind Hardware- und Softwarelösungen für reine SAN-Umgebungen, die auf All-Flash-Systemen basieren. Sie unterscheiden sich von anderen ONTAP Systemen (ASA, AFF und FAS) in ONTAP-Persönlichkeit, Speicherschicht und unterstützten Protokollen.
 
 Folgende Systeme werden als ASA r2-Systeme klassifiziert:
 
@@ -30,7 +30,7 @@ Folgende Systeme werden als ASA r2-Systeme klassifiziert:
 [[personality-differences]]
 == Persönlichkeitsunterschiede
 
-Auf einem ASA r2 System wird die ONTAP Software optimiert, um wichtige SAN-Funktionen zu unterstützen und gleichzeitig die Sichtbarkeit und Verfügbarkeit von nicht-SAN-bezogenen Funktionen zu beschränken. Beispielsweise zeigt System Manager, der auf einem ASA r2 System ausgeführt wird, keine Optionen zum Erstellen von Home Directorys für NAS-Clients an. Diese optimierte Version von ONTAP wird als _ASA r2 Personality_ bezeichnet. ONTAP auf ASA Systemen wird als _ASA ONTAP Personality_ identifiziert. ONTAP auf AFF und FAS ONTAP Systemen wird als „_Unified ONTAP Personality_“ bezeichnet. Die Unterschiede zwischen den ONTAP-Persönlichkeiten werden in der ONTAP-Befehlsreferenz (man-Pages), in der REST-API-Spezifikation und ggf. in EMS-Meldungen erwähnt.
+Auf einem ASA r2 System ist die ONTAP Software optimiert, um die wichtigsten SAN-Funktionen zu unterstützen, während die Sichtbarkeit und Verfügbarkeit von nicht SAN-bezogenen Funktionen eingeschränkt wird. Beispielsweise zeigt System Manager auf einem ASA r2 System keine Optionen zum Erstellen von Home-Verzeichnissen für NAS-Clients an. Diese optimierte Version von ONTAP wird als die _ASA r2 personality_ bezeichnet. ONTAP, das auf ASA Systemen läuft, wird als die _ASA ONTAP personality_ bezeichnet. ONTAP, das auf AFF und FAS ONTAP Systemen läuft, wird als die _unified ONTAP personality_ bezeichnet. Die Unterschiede zwischen ONTAP personalities werden in der ONTAP Befehlsreferenz (man pages), der REST API Spezifikation und den EMS-Meldungen, sofern zutreffend, aufgeführt.
 
 Sie können die Persönlichkeit Ihres ONTAP-Speichers vom System Manager oder von der ONTAP-CLI überprüfen.
 
@@ -50,7 +50,7 @@ Die Persönlichkeit Ihres ONTAP Storage-Systems kann nicht geändert werden.
 ASA r2-Systeme verwenden eine vereinfachte Speicherschicht, die sich von der Speicherschicht unterscheidet, die von FAS, AFF und ASA Systemen verwendet wird.
 
 .FAS, AFF und ASA -Systeme
-Die Speicherschicht für FAS -, AFF- und ASA -Systeme verwendet Aggregate als Basisspeichereinheit. Ein Aggregat besitzt einen bestimmten Satz der im Speichersystem verfügbaren Festplatten. Das Aggregat weist den Speicherplatz auf den zugehörigen Festplatten Volumes für LUNs und Namespaces zu. Mit diesen Systemen können ONTAP Benutzer Aggregate, Volumes, LUNs und Namespaces erstellen und ändern.
+Die Speicherschicht von FAS, AFF und ASA Systemen verwendet Aggregate als Basiseinheit der Speicherung. Ein Aggregat besitzt einen bestimmten Satz der im Speichersystem verfügbaren Festplatten. Das Aggregat weist Volumes für LUNs und Namensräume Speicherplatz auf den von ihm besessenen Festplatten zu. Mit diesen Systemen können ONTAP Benutzer Aggregate, Volumes, LUNs und Namensräume erstellen und ändern.
 
 .ASA r2-Systeme
 Anstelle von Aggregaten verwendet die Speicherebene in ASA r2-Systemen Speicherverfügbarkeitszonen. Eine Speicherverfügbarkeitszone ist ein gemeinsamer Speicherpool, der beiden Knoten eines HA-Paares zur Verfügung steht. Beide Knoten im HA-Paar haben Zugriff auf alle verfügbaren Festplatten in ihrer gemeinsamen Speicherverfügbarkeitszone. Beispielsweise gibt es in einem ASA r2-System- ONTAP Cluster mit zwei Knoten eine Speicherverfügbarkeitszone, auf die beide Knoten im Cluster zugreifen können. In einem ASA r2-System- ONTAP Cluster mit vier Knoten gibt es zwei Speicherverfügbarkeitszonen. Jedes HA-Paar im Cluster hat Zugriff auf eine der Speicherverfügbarkeitszonen.
@@ -93,7 +93,7 @@ Aufgrund dieses automatisierten und vereinfachten Ansatzes zur Speicherverwaltun
 Die Hauptunterschiede zwischen ASA r2 Systemen und FAS, AFF und ASA Systemen, die für die ONTAP Befehlszeilenschnittstelle (CLI) und REST API relevant sind, werden im Folgenden beschrieben.
 
 .Standardmäßige Erstellung von Speicher-VMs mit Protokolldiensten
-Neue Cluster enthalten automatisch eine virtuelle Standard-Datenspeichermaschine (VM) mit aktivierten SAN-Protokollen.  IP-Daten-LIFs unterstützen die iSCSI- und NVMe/TCP-Protokolle und verwenden die `default-data-blocks` Standardmäßig gilt die Servicerichtlinie.
+Neue Cluster enthalten automatisch eine Standard-Datenspeicher-VM mit aktivierten SAN-Protokollen. IP-Daten-LIFs unterstützen iSCSI- und NVMe/TCP-Protokolle und verwenden standardmäßig die  `default-data-blocks` Dienstrichtlinie.
 
 .Automatische Volume-Erstellung
 Durch Erstellen einer Storage-Einheit (LUN oder Namespace) wird automatisch ein Volume aus der Storage-Verfügbarkeitszone erstellt. Dies führt zu einem vereinfachten und gemeinsamen Namespace. Durch Löschen einer Speichereinheit wird das zugeordnete Volume automatisch gelöscht.

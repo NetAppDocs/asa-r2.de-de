@@ -23,11 +23,11 @@ Eine Konsistenzgruppe ist eine Sammlung von Speichereinheiten, die als eine Einh
 
 Erstellen Sie eine Konsistenzgruppe mit neuen Speichereinheiten oder erstellen Sie eine Konsistenzgruppe mit vorhandenen Speichereinheiten.
 
-Ab ONTAP 9.18.1 können Sie den Snapshot-Reservierungsprozentsatz festlegen und die automatische Snapshot-Löschung aktivieren, wenn Sie eine Konsistenzgruppe mit neuen Speichereinheiten erstellen.  Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet.  Wenn die Snapshot-Reservierung und die automatische Snapshot-Löschung für eine übergeordnete Konsistenzgruppe aktiviert sind, werden sie auch für alle vorhandenen untergeordneten Konsistenzgruppen aktiviert.  Werden neue untergeordnete Konsistenzgruppen hinzugefügt, erben diese nicht die Snapshot-Reservierungs- und Snapshot-Löscheinstellungen der übergeordneten Gruppe.
+Ab ONTAP 9.18.1 kann der Snapshot-Reservierungsprozentsatz festgelegt und die automatische Snapshot-Löschung aktiviert werden, wenn eine Konsistenzgruppe mit neuen Speichereinheiten erstellt wird. Die Snapshot-Reserve ist der Speicherplatz in der Speichereinheit, der speziell für Snapshots reserviert ist. Wenn die Snapshot-Reserve zusammen mit der automatischen Snapshot-Löschung konfiguriert ist, werden ältere Snapshots automatisch gelöscht, sobald der von Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet. Wenn Snapshot-Reserve und automatische Snapshot-Löschung für eine übergeordnete Konsistenzgruppe aktiviert sind, sind sie auch für alle vorhandenen untergeordneten Konsistenzgruppen aktiviert. Wenn neue untergeordnete Konsistenzgruppen hinzugefügt werden, übernehmen sie die Einstellungen für Snapshot-Reserve und Snapshot-Löschung der übergeordneten Gruppe nicht.
 
 link:snapshot-reserve.html["Erfahren Sie mehr über Snapshot-Reservierung auf ASA r2-Speichersystemen."].
 
-Ab ONTAP 9.16.1 können Sie beim Erstellen von Konsistenzgruppen mit neuen Speichereinheiten bis zu fünf untergeordnete Konsistenzgruppen konfigurieren. link:manage-hierarchical-consistency-groups.html["Erfahren Sie mehr über Kinderkonsistenzgruppen auf ASA r2-Systemen."].
+Ab ONTAP 9.16.1 ist es möglich, beim Erstellen von Konsistenzgruppen mit neuen Speichereinheiten bis zu fünf untergeordnete Konsistenzgruppen zu konfigurieren. link:manage-hierarchical-consistency-groups.html["Erfahren Sie mehr über Kinderkonsistenzgruppen auf ASA r2-Systemen."].
 
 [role="tabbed-block"]
 ====
@@ -185,7 +185,8 @@ Die erste Datenübertragung für die Replikation wird standardmäßig sofort ges
 .Schritte
 . Wählen Sie im System Manager *Storage* aus.
 . Bewegen Sie den Mauszeiger über den Namen der Speichereinheit, die Sie schützen möchten.
-. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"] ; und dann *protect*. Wenn Sie einen sofortigen Snapshot nach Bedarf erstellen möchten, wählen Sie unter *lokaler Schutz* *Jetzt Snapshot hinzufügen* aus.
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"] ; und dann *protect*.
+. Wenn Sie einen sofortigen Snapshot nach Bedarf erstellen möchten, wählen Sie unter *lokaler Schutz* *Jetzt Snapshot hinzufügen* aus.
 +
 Der lokale Schutz erstellt den Snapshot auf demselben Cluster, das die Speichereinheit enthält.
 
@@ -232,4 +233,4 @@ Die erste Datenübertragung für die Replikation wird standardmäßig sofort ges
 --
 ====
 .Was kommt als Nächstes?
-Nachdem Ihre Daten nun durch Snapshots geschützt sind, sollten Sie link:../secure-data/encrypt-data-at-rest.html["Richten Sie die Snapshot-Replikation ein"]Ihre Konsistenzgruppen für das Backup und Disaster Recovery an einen geografisch Remote Standort kopieren.
+Nachdem Ihre Daten nun durch Snapshots geschützt sind, empfiehlt es sich, link:snapshot-replication.html["Richten Sie die Snapshot-Replikation ein"] Ihre Konsistenzgruppen zur Datensicherung und Notfallwiederherstellung an einen geografisch entfernten Ort zu kopieren.

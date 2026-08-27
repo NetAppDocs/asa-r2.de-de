@@ -25,7 +25,7 @@ Stellen Sie die folgenden Informationen zusammen:
 
 .Schritte
 . Wählen Sie im System Manager *Cluster > Übersicht* aus.
-. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"] neben dem Knoten, dem Sie beitreten möchten, und wählen Sie dann *Knoten hinzufügen*
+. Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"] neben dem Knoten, den Sie dem Cluster hinzufügen möchten, und dann *Knoten hinzufügen* aus.
 . Geben Sie die IP-Adresse für jeden Node ein.
 . Geben Sie die IP-Adresse, die Subnetzmaske und das Gateway der Intercluster-Netzwerkschnittstelle ein.
 . Wenn Sie den Onboard Key Manager (OKM) konfigurieren möchten, geben Sie die OKM-Passphrase ein.

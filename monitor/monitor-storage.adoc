@@ -30,7 +30,7 @@ Das Datenreduzierungsverhältnis stellt den durch Storage-Effizienz eingesparten
 
 
 .Was kommt als Nächstes?
-Wenn der Speicherplatz des Clusters knapp link:../administer/increase-storage-capacity.html["Fügen Sie neue Laufwerke hinzu"]ist oder nicht über die Kapazität verfügt, um zukünftigen Anforderungen gerecht zu werden, sollten Sie Ihr ASA r2 System einplanen, um Ihre Storage-Kapazität zu erhöhen.
+Wenn in Ihrem Cluster der Speicherplatz knapp wird oder er nicht über die Kapazität verfügt, den zukünftigen Bedarf zu decken, link:../administer/increase-storage-capacity.html["Fügen Sie neue Laufwerke hinzu"] zu Ihrem ASA r2 System, um Ihre Speicherkapazität zu erhöhen.
 
 
 
@@ -50,7 +50,7 @@ Für jedes HA-Paar im Cluster wird eine Zusammenfassung der Storage-Verfügbarke
 
 . Wenn Sie detailliertere Metriken benötigen, wählen Sie eine bestimmte Storage-Verfügbarkeit aus.
 +
-Unter *Übersicht* werden die Kapazität der Speicherverfügbarkeitszone, der genutzte Speicherplatz und das Datenreduzierungsverhältnis angezeigt.
+Unter *Übersicht* werden die Kapazität der Storage Availability Zone, der belegte Speicherplatz und das Datenreduktionsverhältnis angezeigt.
 
 +
 Unter *Speichereinheiten* wird eine Liste aller Speichereinheiten in der Speicherverfügbarkeitszone angezeigt.
@@ -58,7 +58,7 @@ Unter *Speichereinheiten* wird eine Liste aller Speichereinheiten in der Speiche
 
 
 .Was kommt als Nächstes?
-Wenn der Speicherplatz in Ihrer Speicherverfügbarkeitszone knapp wird, sollten Sie planen, link:../manage-data/move-storage-units.html["Speichereinheiten verschieben"] auf eine andere Speicherverfügbarkeitszone umzusteigen, um die Speicherauslastung im gesamten Cluster auszugleichen, Snapshots zu löschen, um Speicherplatz freizugeben, oder Ihren Knoten zusätzliche Festplatten hinzuzufügen, um die Kapazität zu erhöhen.
+Wenn der Speicherplatz in Ihrer Speicherverfügbarkeitszone knapp wird, link:../manage-data/move-storage-units.html["Speichereinheiten verschieben"] zu einer anderen Speicherverfügbarkeitszone wechseln, um die Speicherauslastung im Cluster auszugleichen, Snapshots löschen, um Speicherplatz freizugeben, oder zusätzliche Festplatten zu Ihren Knoten hinzufügen, um die Kapazität zu erhöhen.
 
 
 
@@ -76,7 +76,7 @@ Wenn der Speicherplatz in Ihrer Speicherverfügbarkeitszone knapp wird, sollten 
 ** Menge des belegten Speicherplatzes
 ** Datenreduzierungsquote
 +
-Das Datenreduzierungsverhältnis stellt den durch Storage-Effizienz eingesparten Speicherplatz dar
+Das Datenreduzierungsverhältnis stellt den durch Storage-Effizienz eingesparten Speicherplatz dar.
 
 ** Verwendeter Snapshot
 +

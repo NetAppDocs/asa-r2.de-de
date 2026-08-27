@@ -31,7 +31,7 @@ Erstellen Sie eine Zertifikatsignierungsanforderung (CSR), um einen privaten Sch
 
 
 .Ergebnis
-Sie haben eine CSR erstellt, mit der Sie ein öffentliches Zertifikat erstellen können.
+Sie haben eine CSR generiert, die zur Erstellung eines öffentlichen Zertifikats verwendet werden kann.
 
 
 

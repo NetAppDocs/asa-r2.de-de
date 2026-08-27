@@ -36,21 +36,21 @@ Die Voraussetzungen für Cluster-Peering sind für ASA R2-Systeme dieselben wie 
 .Schritte
 . Wählen Sie im lokalen Cluster im System Manager *Cluster > Einstellungen* aus.
 . Wählen Sie unter *Intercluster Settings* neben *Cluster Peers* image:icon_kabob.gif["Drei vertikale blaue Punkte"]die Option , und wählen Sie dann *Cluster Peer hinzufügen* aus.
-. Wählen Sie *Lauch Remote-Cluster* aus; dadurch wird eine Passphrase generiert, die Sie zur Authentifizierung beim Remote-Cluster verwenden werden.
+. *Remote-Cluster starten* auswählen; dadurch wird eine Passphrase generiert, die zur Authentifizierung beim Remote-Cluster verwendet wird.
 . Nachdem die Passphrase für den Remote-Cluster generiert wurde, fügen Sie sie unter *Passphrase* auf dem lokalen Cluster ein.
 . Wählen Sie image:icon_add.gif["Blaues Pluszeichen, gefolgt vom Wort Add in blauen Buchstaben"]; und geben Sie dann die IP-Adresse der Intercluster-Netzwerkschnittstelle ein.
 . Wählen Sie *Initiate Cluster Peering* aus.
 
 
 .Was kommt als Nächstes?
-Sie haben einen lokalen ASA r2-Cluster mit einem Remote-Cluster erreicht. Sie können jetzt eine Replikationsbeziehung erstellen.
+Sie haben Ihren lokalen ASA r2 Cluster mit einem Remote Cluster verbunden. Nun kann eine Replikationsbeziehung erstellt werden.
 
 
 
 [[step-2-optionally-create-a-custom-replication-policy]]
 == Schritt 2: Optional: Erstellen einer benutzerdefinierten Replikationsrichtlinie
 
-Die Replikationsrichtlinie definiert, wann auf dem ASA R2-Cluster durchgeführte Updates auf den Remote-Standort repliziert werden.  ONTAP umfasst verschiedene vordefinierte Datenschutzrichtlinien, die Sie für Ihre Replikationsbeziehungen verwenden können.  Wenn die vordefinierten Richtlinien Ihren Anforderungen nicht entsprechen, können Sie eine benutzerdefinierte Replikationsrichtlinie erstellen.
+Die Replikationsrichtlinie legt fest, wann Aktualisierungen am ASA r2 Cluster an den Remote-Standort repliziert werden. ONTAP umfasst verschiedene vordefinierte Datenschutzrichtlinien, die für Ihre Replikationsbeziehungen verwendet werden können. Wenn die vordefinierten Richtlinien nicht Ihren Anforderungen entsprechen, kann eine benutzerdefinierte Replikationsrichtlinie erstellt werden.
 
 Erfahren Sie mehr überlink:pre-defined-protection-policies.html["vordefinierte ONTAP Datenschutzrichtlinien"] .
 

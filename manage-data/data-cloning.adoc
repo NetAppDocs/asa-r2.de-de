@@ -15,7 +15,7 @@ searchtitle: Das Klonen von Daten mit ONTAP System Manager ASA r2
 
 
 [role="lead"]
-Das Klonen von Daten erstellt mithilfe von ONTAP System Manager Kopien von Storage-Einheiten und Konsistenzgruppen auf dem ASA r2 System, die sich zur Entwicklung von Applikationen, für Tests, Backups, Datenmigration oder andere administrative Funktionen einsetzen lassen.
+Durch das Klonen von Daten werden Kopien von Speichereinheiten und Konsistenzgruppen auf Ihrem ASA r2 System erstellt. Die Kopien können für Anwendungsentwicklung, Tests, Backups, Datenmigration und andere administrative Funktionen genutzt werden.
 
 
 
@@ -43,7 +43,7 @@ Standardmäßig wird ein neuer Snapshot für den Klon erstellt.
  a| 
 Verwenden Sie einen vorhandenen Snapshot
  a| 
-.. Wählen Sie unter *Snapshot to Clone* *Use an existing snaphot* aus.
+.. Wählen Sie unter *Snapshot to Clone* die Option *Use an existing Snapshot* aus.
 .. Wählen Sie den Snapshot aus, den Sie für den Klon verwenden möchten.
 
 
@@ -62,7 +62,7 @@ Erstellen Sie eine neue Hostgruppe
 Fügen Sie einen neuen Host hinzu
  a| 
 .. Wählen Sie unter *Host Mapping* *New Hosts* aus.
-.. Geben Sie den A-Namen für den neuen Host ein, und wählen Sie dann *FC* oder *iSCSI* aus.
+.. Geben Sie einen Namen für den neuen Host ein; wählen Sie anschließend *FC* oder *iSCSI* aus.
 .. Wählen Sie die Host-Initiatoren aus der Liste der vorhandenen Initiatoren aus, oder wählen Sie *Add*, um neue Initiatoren für den Host hinzuzufügen.
 
 
@@ -126,7 +126,7 @@ Erstellen Sie eine neue Hostgruppe
 Fügen Sie einen neuen Host hinzu
  a| 
 .. Wählen Sie unter *Host Mapping* *New Hosts* aus.
-.. Geben Sie den Namen des neuen Hostnamens ein, und wählen Sie dann *FC* oder *iSCSI*.
+.. Geben Sie einen Namen für den neuen Host ein; wählen Sie anschließend *FC* oder *iSCSI* aus.
 .. Wählen Sie die Host-Initiatoren aus der Liste der vorhandenen Initiatoren aus, oder wählen Sie *Add Initiator*, um neue Initiatoren für den Host hinzuzufügen.
 
 
@@ -162,7 +162,7 @@ Wenn Sie einen Konsistenzgruppenklon aufteilen, trennen Sie den Klon von der Que
 
 .Schritte
 . Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
-. Bewegen Sie den Mauszeiger über den zu teilenden Konsistenzgruppenklon.
+. Fahren Sie mit dem Mauszeiger über die Konsistenzgruppe-Kopie, die Sie aufteilen möchten.
 . Wählen Sie *Clone teilen*.
 . Wählen Sie *Split*.
 
