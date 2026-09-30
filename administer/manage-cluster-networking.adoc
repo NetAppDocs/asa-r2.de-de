@@ -11,7 +11,7 @@ summary: Verwenden Sie ONTAP System Manager für die grundlegende Storage-Netzwe
 
 
 [role="lead"]
-Mit ONTAP System Manager können Sie eine grundlegende Storage-Netzwerkadministration auf Ihrem ASA r2 System durchführen. Sie können beispielsweise eine Broadcast-Domäne hinzufügen oder Ports einer anderen Broadcast-Domäne neu zuweisen.
+Mit ONTAP System Manager können Sie grundlegende Verwaltungsaufgaben für das Speichernetzwerk auf Ihrem ASA r2 System durchführen, z. B. das Hinzufügen einer Broadcast-Domäne oder das Neuzuweisen von Ports zwischen Broadcast-Domänen, sodass Sie den Netzwerkverkehr an Ihre Infrastrukturanforderungen anpassen können.
 
 
 
@@ -22,10 +22,10 @@ Verwenden Sie Broadcast-Domänen, um das Management Ihres Cluster-Netzwerks zu v
 
 Während des Cluster-Setups werden die „Standard“-Broadcast-Domäne und die „Cluster“ Broadcast-Domäne erstellt. Die „Standard“-Broadcast-Domäne enthält Ports, die sich im „Standard“-IPspace befinden. Diese Ports werden hauptsächlich zum Bereitstellen von Daten genutzt. Auch Cluster-Management- und Node-Management-Ports befinden sich in dieser Broadcast-Domäne. Die Broadcast-Domain „Cluster“ enthält Ports die sich im „Cluster“ IPspace befinden. Diese Ports werden für die Cluster-Kommunikation verwendet und umfassen alle Cluster-Ports aus allen Nodes im Cluster.
 
-Sie können zusätzliche Broadcast-Domänen erstellen, nachdem das Cluster initialisiert wurde. Wenn Sie eine Broadcast-Domäne erstellen, wird automatisch eine Failover-Gruppe erstellt, die dieselben Ports enthält.
+Nach der Initialisierung Ihres Clusters können zusätzliche Broadcast-Domänen erstellt werden. Beim Erstellen einer Broadcast-Domäne wird automatisch eine Failover-Gruppe mit denselben Ports erstellt.
 
 .Über diese Aufgabe
-Die maximale Übertragungseinheit (MTU) der Ports, die einer Broadcast-Domäne hinzugefügt wurden, wird auf den in der Broadcast-Domäne eingestellten MTU-Wert aktualisiert.
+Die maximale Übertragungseinheit (MTU) der Ports, die einer Broadcast-Domäne hinzugefügt werden, wird auf den in der Broadcast-Domäne festgelegten MTU-Wert aktualisiert.
 
 .Schritte
 . Wählen Sie im System Manager *Netzwerk > Übersicht* aus.
@@ -95,3 +95,54 @@ Das VLAN kann nicht mit einem Port verbunden werden, der eine Cluster-LIF hostet
 
 .Ergebnis
 Sie haben ein VLAN erstellt, um die Sicherheit zu erhöhen, Probleme zu isolieren und die verfügbaren Pfade innerhalb Ihrer IP-Netzwerkinfrastruktur einzuschränken.
+
+
+
+[[delete-a-vlan]]
+== Löschen eines VLAN
+
+Möglicherweise ist es erforderlich, ein VLAN zu löschen, bevor eine NIC aus ihrem Steckplatz entfernt oder ein Node aus einem Cluster entfernt wird. Wenn ein VLAN gelöscht wird, wird es automatisch aus allen Failover-Regeln und Failover-Gruppen entfernt, die es verwenden.
+
+.Bevor Sie beginnen
+Stellen Sie sicher, dass dem VLAN keine LIFs zugeordnet sind.
+
+.Über diese Aufgabe
+Das Entfernen des letzten VLANs von einem Port kann zu einer vorübergehenden Trennung des Netzwerks vom Port führen.
+
+.Schritte
+Zum Löschen eines VLAN können System Manager oder die CLI verwendet werden.
+
+[role="tabbed-block"]
+====
+.System Manager
+--
+. In System Manager ist *Netzwerk > Ethernet-Port > VLAN* auszuwählen.
+. Wählen Sie das VLAN aus, das entfernt werden soll.
+. Wählen Sie *Löschen*.
+
+
+--
+.CLI
+--
+. VLANs werden angezeigt:
++
+[source, cli]
+----
+network port vlan show
+----
+. Löschen eines VLAN:
++
+[source, cli]
+----
+network port vlan delete -node <node> -vlan-name <vlan-name>
+----
+. Stellen Sie fest, ob das VLAN gelöscht wurde:
++
+[source, cli]
+----
+network port vlan show
+----
+
+
+--
+====

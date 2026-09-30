@@ -32,6 +32,8 @@ entries:
   entries:
   - title: Nodes hinzufügen
     url: "/administer/add-nodes.html"
+  - title: Knoten entfernen
+    url: "/administer/remove-nodes.html"
   - title: Neustart, Übernahme und Übergabe von Nodes
     url: "/administer/reboot-take-over-give-back-nodes.html"
   - title: Benennen Sie Nodes um

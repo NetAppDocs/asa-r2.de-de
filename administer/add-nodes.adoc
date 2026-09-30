@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: administer/add-nodes.html 
-keywords: rename, node, renaming, asa r2 
-summary: Möglicherweise müssen Sie einen Node umbenennen, um ihn an die Namenskonventionen Ihres Unternehmens oder aus anderen administrativen Gründen anzupassen. 
+keywords: add, node, adding, asa r2, expand cluster 
+summary: ASA r2 Speichersysteme unterstützen bis zu 12 Knoten pro Cluster. Nachdem die neuen Knoten eines HA-Paares verkabelt und eingeschaltet wurden, müssen sie dem Cluster hinzugefügt werden. 
 ---
 = Hinzufügen von ASA r2-Nodes zu einem ONTAP-Cluster
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Möglicherweise müssen Sie einen Node umbenennen, um ihn an die Namens
 
 
 [role="lead"]
-Ab ONTAP 9.16.1 unterstützen ASA r2-Speichersysteme bis zu 12 Knoten pro Cluster.  Nachdem die neuen Knoten eines HA-Paares verkabelt und eingeschaltet wurden, müssen Sie sie dem Cluster hinzufügen.
+ASA r2 Speichersysteme unterstützen bis zu 12 Knoten pro Cluster. Nachdem die neuen Knoten eines HA-Paares verkabelt und eingeschaltet wurden, müssen sie dem Cluster hinzugefügt werden.
 
 .Bevor Sie beginnen
 Stellen Sie die folgenden Informationen zusammen:

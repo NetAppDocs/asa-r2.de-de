@@ -1,0 +1,197 @@
+---
+sidebar: sidebar 
+permalink: administer/remove-nodes.html 
+keywords: remove, node, removing, asa r2 
+summary: Möglicherweise müssen Sie einen Node umbenennen, um ihn an die Namenskonventionen Ihres Unternehmens oder aus anderen administrativen Gründen anzupassen. 
+---
+= ASA r2 Knoten aus einem ONTAP Cluster entfernen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für Wartungs-, Austausch- oder Stilllegungszwecke kann es erforderlich sein, einen Node aus dem Cluster zu entfernen. Nodes müssen einzeln entfernt werden. Wenn Sie einen Node entfernen, muss auch dessen HA-Partner entfernt werden.
+
+
+
+[[step-1-prepare-to-remove-nodes-from-an-asa-r2-cluster]]
+== Schritt 1: Vorbereiten der Entfernung von Knoten aus einem ASA r2 Cluster
+
+Bevor Sie einen Node aus einem ASA r2 Cluster entfernen, sollten Sie sicherstellen, dass der Cluster fehlerfrei funktioniert. Anschließend sollten Sie Speichereinheiten, VLANs und LIFs vom Node migrieren oder löschen und das Storage Failover deaktivieren.
+
+.Schritte
+. Es ist zu überprüfen, ob der Cluster fehlerfrei funktioniert:
++
+[source, cli]
+----
+cluster show
+----
+. link:../manage-data/move-storage-units.html["Bewegen"] oder link:../manage-data/delete-storage-units.html["löschen"] alle Speichereinheiten des Knotens.
+. Wenn sich auf dem zu entfernenden Knoten SCSI-Speichereinheiten (LUNs) befinden, link:https://docs.netapp.com/us-en/ontap/san-admin/modify-slm-reporting-nodes-task.html["den Knoten und seinen HA-Partner aus der Liste der Reporting-Nodes der Selective LUN Map (SLM) entfernen"^].
++
+Wenn Sie den Knoten und seinen HA-Partner nicht aus der SLM-Berichtsknotenliste entfernen, kann der Zugriff auf die zuvor auf dem Knoten befindlichen LUNs verloren gehen, selbst wenn die LUNs auf einen anderen Knoten verschoben wurden.
+
+. link:https://docs.netapp.com/us-en/ontap/networking/delete_a_lif.html["Löschen"^] oder link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["migrieren"^] alle Netzwerkschnittstellen (LIFs) des Knotens.
++
+** Data LIFs sollten auf einen anderen Node verschoben oder gelöscht werden.
++
+Die iSCSI LIF-Migration ist nur auf Ports auf dem Home-Node oder dem HA-Partner beschränkt, daher müssen sie entfernt werden.
+
+** Intercluster LIFs sollten gelöscht werden.
++
+Wenn Sie Intercluster-LIFs löschen, wird eine Warnung angezeigt, die ignoriert werden kann.
+
+** Die Cluster Management LIF sollte auf einen anderen Node verschoben werden.
+
+
+. link:../administer/manage-cluster-networking.html#delete-a-vlan["Alle VLANs löschen"] auf dem Knoten.
+. Storage-Failover für den Node deaktivieren:
++
+[source, cli]
+----
+storage failover modify -enabled false -node <nodename>
+----
+
+
+.Was kommt als Nächstes?
+Der erste Knoten des HA-Paars wird aus dem Cluster entfernt, anschließend dessen HA-Partner.
+
+
+
+[[step-2-remove-a-node-from-an-asa-r2-cluster]]
+== Schritt 2: Entfernung eines Knotens aus einem ASA r2 Cluster
+
+Einen Knoten aus einem ASA r2 Cluster sollten Sie erst entfernen, nachdem Sie die zum Vorbereiten des Knotens auf die Entfernung erforderlichen Schritte abgeschlossen haben. Nachdem Sie einen Knoten aus dem Cluster entfernt haben, müssen Sie anschließend auch dessen HA-Partner entfernen.
+
+.Bevor Sie beginnen
+Es wird empfohlen, link:../get-help/manage-autosupport.html#send-autosupport-data["eine AutoSupport-Nachricht ausgeben"] den technischen Support von NetApp darüber zu informieren, dass ein Node aus dem Cluster entfernt wird.
+
+
+NOTE: Während eines automatisierten ONTAP Upgrade dürfen Sie keinen Knoten aus dem Cluster entfernen oder umbenennen.
+
+.Über diese Aufgabe
+* Wenn Sie zwei Knoten aus einem vier-Knoten-Cluster entfernen, wird Cluster HA automatisch auf den beiden verbleibenden Knoten aktiviert.
+* Alle System- und Benutzerdaten von allen mit dem Knoten verbundenen Festplatten müssen für die Benutzer unzugänglich gemacht werden, bevor ein Knoten aus dem Cluster entfernt wird.
+* Falls ein Knoten fälschlicherweise aus einem Cluster entfernt wurde, wenden Sie sich an den NetApp Support, um Unterstützung bei den Wiederherstellungsoptionen zu erhalten.
+
+
+.Schritte
+. Ändern Sie die Berechtigungsstufe auf „advanced“:
++
+[source, cli]
+----
+set -privilege advanced
+----
+. Ermitteln Sie den Knoten im Cluster, der Epsilon enthält:
++
+[source, cli]
+----
+cluster show
+----
++
+Im folgenden Beispiel hält "node0" derzeit epsilon:
+
++
+[listing]
+----
+cluster::*> cluster show
+Node                 Health  Eligibility  Epsilon
+-------------------- ------- ------------ ------------
+node0                true    true         true
+node1                true    true         false
+node2                true    true         false
+node3                true    true         false
+----
+. Falls der zu entfernende Knoten Epsilon enthält, muss Epsilon auf einen verbleibenden Knoten verschoben werden.
++
+.. Entfernung von epsilon aus dem Node:
++
+[source, cli]
+----
+cluster modify -node <name_of_node_to_be_removed> -epsilon false
+----
+.. Verschieben Sie epsilon auf einen anderen Node:
++
+[source, cli]
+----
+cluster modify -node <node_name> -epsilon true
+----
+
+
+. Aktueller primärer Knoten identifizieren:
++
+[source, cli]
+----
+cluster ring show
+----
++
+Der primäre Node ist der Node, der Prozesse wie mgmt, vldb, vifmgr, bcomd und crs enthält.
+
+. Wenn der Node, den Sie entfernen, der aktuelle primäre Node ist, muss ein anderer Node im Cluster als primärer Node gewählt werden.
++
+.. Den aktuellen primären Knoten für die Teilnahme am Cluster als nicht berechtigt markieren:
++
+[source, cli]
+----
+cluster modify -node <node_name> -eligibility false
+----
++
+Wenn der primäre Knoten nicht mehr geeignet ist, wählt das Cluster-Quorum einen der verbleibenden Knoten als neuen primären Knoten. Wenn Sie diesen Schritt auf dem ersten Knoten eines HA-Paares durchführen, markieren Sie nur diesen Knoten als nicht geeignet. Der Status des HA-Partners sollte erst geändert werden, nachdem diese Schritte auf dem Partner wiederholt wurden.
+
++
+Wenn der Partnerknoten als neuer primärer Knoten ausgewählt wird und Epsilon besitzt, müssen Sie Epsilon auf einen anderen Knoten verschieben, bevor Sie den Partnerknoten als nicht berechtigt markieren.
+
+.. Den vorherigen primären Knoten wieder für die Teilnahme am Cluster berechtigen:
++
+[source, cli]
+----
+cluster modify -node <node_name> -eligibility true
+----
+
+
+. Melden Sie sich bei der Remote-Knotenverwaltungs-LIF oder der Clusterverwaltungs-LIF auf einem Knoten an, den Sie nicht aus dem Cluster entfernen.
+. Zum Entfernen des Knotens aus dem Cluster werden der Node-Name oder die Node-IP-Adresse verwendet:
++
+Wenn Sie einen Cluster mit gemischten Versionen haben und den letzten Node mit der niedrigeren Version entfernen, verwenden Sie mit diesen Befehlen den Parameter -skip-last-low-version-node-check.
+
++
+** Der Node-Name dient zum Entfernen des Node:
++
+[source, cli]
+----
+cluster remove-node -node <node_name>
+----
+** Verwenden Sie die Node-IP-Adresse, um den Node zu entfernen:
++
+[source, cli]
+----
+cluster remove-node -cluster_ip <node_ip>
+----
++
+Eine Fehlermeldung wird generiert, wenn Bedingungen vorliegen, die Sie vor der Entfernung des Node erfüllen müssen. In diesem Fall sind die Bedingungen zu beheben, und der  `cluster remove-node` Befehl ist erneut auszuführen.
+
++
+Der Knoten startet nach erfolgreicher Entfernung aus dem Cluster automatisch neu.
+
+
+
+
+
+.Was kommt als Nächstes?
+Diese Schritte sind zu wiederholen, um den Failover-Partner aus dem Cluster zu entfernen.
+
+.Verwandte Informationen
+Weitere Informationen zum link:https://docs.netapp.com/us-en/ontap-cli/cluster-remove-node.html["cluster remove-node"] Befehl.
+
+
+
+[[step-3-optionally-erase-the-node-configuration-and-initialize-all-disks]]
+== Schritt 3: Optional können Sie die Node-Konfiguration löschen und alle Festplatten initialisieren
+
+Wenn ein Knoten, den Sie aus Ihrem ASA r2 Cluster entfernt haben, anderweitig verwendet werden soll, müssen Sie die Node-Konfiguration löschen und alle Festplatten initialisieren, bevor er einem Cluster erneut beitreten kann.
+
+.Schritte
+. Während des Bootvorgangs wird bei Aufforderung *Strg+C* gedrückt, damit das Bootmenü angezeigt wird.
+. Im Bootmenü ist die Option *(4) Konfiguration löschen und alle Datenträger initialisieren* oder die Option *(9) Erweiterte Laufwerkspartitionierung konfigurieren* auszuwählen, um die Konfiguration des Node zu löschen und alle Datenträger zu initialisieren.
+
