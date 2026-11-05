@@ -1,0 +1,64 @@
+= Manuelle Umstellung der Clients nach einer Migration einer Storage VM
+:allow-uri-read: 
+
+
+Bei einer clusterübergreifenden Migration einer Storage VM wird die Client-E/A auf den Ziel-Cluster umgestellt, und die Storage VM auf dem Quell-Cluster wird automatisch entfernt. Wenn Sie während der Migration die automatische Umstellung und Entfernung der Quell-Storage VM deaktivieren, müssen Sie diese Schritte manuell durchführen, nachdem der Migrationsstatus *Ready for source cleanup* erreicht wurde.
+
+
+
+[[manually-cut-over-clients-after-a-storage-vm-migration]]
+=== Manuelle Umstellung der Clients nach einer Migration einer Storage VM
+
+Wenn Sie die automatische Client-Umschaltung während der Migration einer Storage VM zwischen Clustern deaktivieren, ist nach dem Bereitstehen der Migrationsbeziehung für die Umschaltung eine manuelle Umschaltung erforderlich, damit die Storage VM am Ziel Daten für Clients bereitstellen kann.
+
+.Über diese Aufgabe
+Die Durchführung dieser Aufgabe erfolgt vom Ziel-Cluster aus.
+
+.Schritte
+. Manuelle Clientumstellung:
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. Vergewissern Sie sich, dass der Umstellungsvorgang abgeschlossen ist:
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.Ergebnis
+Die Daten werden Ihren Clients von der Storage VM auf Ihrem Ziel-Cluster bereitgestellt.
+
+.Was kommt als Nächstes?
+Sie können die Storage VM nun aus dem Quell-Cluster entfernen.
+
+
+
+[[manually-remove-a-storage-vm-after-migration]]
+=== Manuelles Entfernen einer Storage VM nach der Migration
+
+Wenn Sie die automatische Quellbereinigung während einer Migration einer Storage VM zwischen Clustern deaktivieren, sollten Sie nach Abschluss der Migration die Storage VM aus dem Quell-Cluster entfernen, um den Storage Platz freizugeben.
+
+.Bevor Sie beginnen
+Ihre Clients sollten Daten vom Ziel-Cluster bereitstellen.
+
+.Schritte
+. Im Quell-Cluster ist zu prüfen, ob der Status der Quell-Storage VM *Ready for source cleanup* lautet:
++
+[source, cli]
+----
+vserver migrate show
+----
+. Entfernen der Quell-Storage VM:
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.Ergebnis
+Die Storage VM in Ihrem Quell-Cluster wurde entfernt.

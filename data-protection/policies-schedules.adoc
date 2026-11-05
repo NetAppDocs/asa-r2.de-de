@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/policies-schedules.html 
 keywords: data protection, polices, schedules, protect data, snapshot policies, snapshot schedules, replication policies 
-summary: Nutzen Sie Datensicherungsrichtlinien und -Zeitpläne, um Daten anhand eines automatisierten Zeitplans zu sichern. 
+summary: Das Erstellen und Managen von Snapshot-Richtlinien, Richtlinienzeitplänen und Replikationsrichtlinien ermöglicht den automatischen Schutz von Konsistenzgruppen auf ASA r2-Systemen. 
 ---
 = Datenschutzrichtlinien und Zeitpläne auf ASA r2 Systemen verwalten
 :allow-uri-read: 
@@ -18,9 +18,9 @@ Verwenden Sie Snapshot-Richtlinien, um die Daten in Ihren Konsistenzgruppen nach
 [[create-a-new-protection-policy-schedule]]
 == Erstellen Sie einen neuen Zeitplan für Schutzrichtlinien
 
-Ein Zeitplan für Schutzrichtlinien legt fest, wie oft eine Snapshot-Richtlinie ausgeführt wird. Sie können Schichtpläne erstellen, die in regelmäßigen Intervallen ausgeführt werden, basierend auf einer Anzahl von Tagen, Stunden oder Minuten. Sie können beispielsweise einen Zeitplan erstellen, der jede Stunde oder nur einmal pro Tag ausgeführt wird. Sie können auch Zeitpläne erstellen, die zu bestimmten Zeiten an bestimmten Tagen der Woche oder des Monats ausgeführt werden. Sie können beispielsweise einen Zeitplan erstellen, der um 12:15am Uhr am 20. Eines jeden Monats ausgeführt wird.
+Der Zeitplan einer Datensicherungsstrategie legt fest, wie oft eine Snapshot-Richtlinie ausgeführt wird. Sie können Zeitpläne erstellen, die in regelmäßigen Intervallen auf der Grundlage einer Anzahl von Tagen, Stunden oder Minuten ausgeführt werden. Sie können beispielsweise einen Zeitplan erstellen, der stündlich oder nur einmal pro Tag ausgeführt wird. Sie können auch Zeitpläne erstellen, die zu bestimmten Zeiten an bestimmten Tagen der Woche oder des Monats ausgeführt werden. Sie können beispielsweise einen Zeitplan erstellen, der am 20. jedes Monats um 0:15 Uhr ausgeführt wird.
 
-Bei der Definition verschiedener Sicherungsrichtlinien-Zeitpläne erhalten Sie die Flexibilität, die Häufigkeit von Snapshots für verschiedene Applikationen zu erhöhen oder zu verringern. So können Sie für Ihre kritischen Workloads ein höheres Maß an Sicherheit und ein geringeres Risiko von Datenverlust erzielen, als für weniger kritische Workloads erforderlich wäre.
+Durch die Definition verschiedener Zeitpläne für Datensicherungsstrategien können Sie die Häufigkeit von Snapshots für unterschiedliche Applikationen flexibel erhöhen oder verringern. Dies ermöglicht einen besseren Schutz und ein geringeres Risiko von Datenverlust für Ihre kritischen Workloads als für weniger kritische Workloads.
 
 .Schritte
 . Wählen Sie *Schutz > Richtlinien* und dann *Zeitplan*.
@@ -30,7 +30,7 @@ Bei der Definition verschiedener Sicherungsrichtlinien-Zeitpläne erhalten Sie d
 
 
 .Was kommt als Nächstes?
-Nachdem Sie nun einen neuen Richtlinienzeitplan erstellt haben, können Sie den neu erstellten Zeitplan innerhalb Ihrer Richtlinien verwenden, um festzulegen, wann Snapshots erstellt werden.
+Nachdem Sie einen Richtlinienzeitplan erstellt haben, können Sie diesen in Ihren Richtlinien verwenden, um festzulegen, wann Snapshots erstellt werden.
 
 
 
@@ -49,7 +49,7 @@ Eine Snapshot-Richtlinie definiert, wie oft Snapshots erstellt werden, wie viele
 
 
 .Was kommt als Nächstes?
-Nachdem Sie jetzt eine Snapshot-Richtlinie erstellt haben, können Sie sie auf eine Konsistenzgruppe anwenden. Snapshots werden von der Konsistenzgruppe auf Grundlage der Parameter erstellt, die Sie in Ihrer Snapshot-Richtlinie festgelegt haben.
+Nachdem Sie eine Snapshot-Richtlinie erstellt haben, können Sie sie auf eine Konsistenzgruppe anwenden. ONTAP erstellt Snapshots der Konsistenzgruppe basierend auf den in Ihrer Snapshot-Richtlinie festgelegten Parametern.
 
 
 
@@ -73,7 +73,7 @@ Nachdem Ihre Daten nun durch Snapshots geschützt sind, sollten Sie link:snapsho
 [[edit-delete-or-disable-a-snapshot-policy]]
 == Bearbeiten, löschen oder deaktivieren Sie eine Snapshot-Richtlinie
 
-Bearbeiten Sie eine Snapshot-Richtlinie, um den Richtliniennamen, die maximale Anzahl an Snapshots oder das SnapMirror-Label zu ändern. Löschen Sie eine Richtlinie, um sie mit den zugehörigen Backup-Daten aus dem Cluster zu entfernen. Deaktivieren Sie eine Richtlinie, um die Erstellung oder Übertragung von Snapshots, die von der Richtlinie festgelegt wurden, vorübergehend zu beenden.
+Durch Bearbeiten einer Snapshot-Richtlinie lassen sich der Richtlinienname, die maximale Anzahl an Snapshots oder die SnapMirror Bezeichnung ändern. Durch Löschen einer Richtlinie lassen sich diese und die zugehörigen Sicherungsdaten aus Ihrem Cluster entfernen. Durch Deaktivieren einer Richtlinie lässt sich die Erstellung oder Übertragung von in der Richtlinie angegebenen Snapshots vorübergehend anhalten.
 
 .Schritte
 . Wählen Sie in System Manager *Schutz > Richtlinien* aus, und wählen Sie dann *Snapshot-Richtlinien* aus.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-consistency-groups-add-remove-snapshots.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: Erstellen Sie Snapshots der Konsistenzgruppen, um die Daten in den Speichereinheiten zu schützen, die Teil der Konsistenzgruppe sind.  Wenn Sie die Daten in keiner der Speichereinheiten in der Konsistenzgruppe mehr schützen müssen, können Sie den Snapshot-Schutz entfernen. 
+summary: Sie können einer Konsistenzgruppe Snapshot-Schutz hinzufügen, um die Daten in ihren Storage-Einheiten zu schützen, oder den Snapshot-Schutz entfernen, wenn Sie ihn nicht mehr benötigen. 
 ---
 = Schützen Sie Konsistenzgruppen auf Ihrem ASA R2-System mit Snapshots
 :allow-uri-read: 
@@ -20,7 +20,7 @@ Wenn Sie die Daten bestimmter Speichereinheiten in der Konsistenzgruppe nicht me
 [[add-snapshot-data-protection-to-a-consistency-group]]
 == Fügen Sie einer Konsistenzgruppe Snapshot Datensicherung hinzu
 
-Wenn Sie einer Konsistenzgruppe Snapshot-Datenschutz hinzufügen, werden lokale Snapshots der Konsistenzgruppe in regelmäßigen Abständen basierend auf einem vordefinierten Zeitplan erstellt.
+Wenn Sie einer Konsistenzgruppe Snapshot-Datensicherung hinzufügen, erstellt ONTAP in regelmäßigen Abständen lokale Snapshots der Konsistenzgruppe auf der Grundlage eines vordefinierten Zeitplans.
 
 Sie können Snapshots verwendenlink:restore-data.html["Daten wiederherstellen"], die verloren gehen oder beschädigt sind.
 
@@ -54,7 +54,7 @@ Wählen Sie anschließend image:icon_dropdown_arrow.gif["Blauer Pfeil, der nach 
 
 .. Wählen Sie den Richtlinienzeitplan aus.
 .. Geben Sie unter *Maximum Snapshots* die maximale Anzahl der Snapshots ein, die Sie von der Konsistenzgruppe behalten möchten.
-.. Optional unter *SnapMirror Label* ein SnapMirror Label eingeben.
+.. Optional können Sie unter *SnapMirror Bezeichnung* eine SnapMirror Bezeichnung eingeben.
 .. Wählen Sie *Speichern*.
 
 

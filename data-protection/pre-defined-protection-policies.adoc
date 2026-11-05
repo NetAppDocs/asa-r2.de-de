@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/pre-defined-protection-policies.html 
 keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication, policy, pre-defined, default, custom, policies 
-summary: Die Replikationsrichtlinie definiert, wann auf dem ASA R2-Cluster durchgeführte Updates auf den Remote-Standort repliziert werden.  ONTAP umfasst verschiedene vordefinierte Datenschutzrichtlinien, die Sie für Ihre Replikationsbeziehungen verwenden können. 
+summary: Zur Replizierung von ASA r2 Clusterdaten an einen Remote-Standort steht eine vordefinierte Datensicherungsstrategie zur Auswahl, einschließlich asynchroner Richtlinien und SnapMirror Active Sync Richtlinien. 
 ---
 = Informationen zu vordefinierten Datenschutzrichtlinien für ASA r2 Systeme
 :allow-uri-read: 
@@ -15,10 +15,18 @@ Die Replikationsrichtlinie definiert, wann auf dem ASA R2-Cluster durchgeführte
 
 Wenn die vordefinierten Richtlinien Ihren Anforderungen nicht entsprechen, können Sielink:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["Erstellen einer benutzerdefinierten Replikationsrichtlinie"] .
 
+Ab ONTAP 9.20.1 können Sie die asynchrone Backend-SnapMirror Replizierung über vorhandene FC-Fabrics mithilfe einer unterstützten Datensicherungsstrategie für asynchrone Replizierung konfigurieren. Die folgenden vordefinierten Datensicherungsstrategien unterstützen die Backend-FC-Replizierung:
 
-NOTE: ASA r2-Systeme unterstützen keine synchrone Replikation.
+* Asynchron
+* MirrorAllSnapshots
+* Spiegel und Tresor
+* XDPDefault
+
 
 ASA R2-Systeme unterstützen die folgenden vordefinierten Schutzrichtlinien.
+
+
+NOTE: ASA r2-Systeme unterstützen keine synchrone Replikation.
 
 [cols="3,4,1"]
 |===

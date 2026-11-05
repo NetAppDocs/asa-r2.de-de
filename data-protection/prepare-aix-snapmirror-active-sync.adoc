@@ -11,12 +11,12 @@ summary: Bevor Sie SnapMirror active sync für Ihre AIX-Hosts mit ONTAP 9.19.1 o
 
 
 [role="lead"]
-Ab ONTAP 9.19.1 wird Transparent Application Failover für AIX mit SnapMirror active sync in symmetrischen Aktiv/Aktiv-Konfigurationen unterstützt. SnapMirror active sync Datensicherung ermöglicht den Weiterbetrieb von Geschäftsdiensten auch bei einem vollständigen Standortausfall und unterstützt Anwendungen dabei, mithilfe einer sekundären Kopie transparent auf ein Failover umzuschalten.
+Ab ONTAP 9.19.1 unterstützt SnapMirror active sync Transparent Application Failover für AIX-Hosts in symmetrischen Aktiv/Aktiv-Konfigurationen. SnapMirror active sync ermöglicht den weiteren Betrieb von Business-Services auch bei einem vollständigen Standortausfall, indem Applikationen per transparentem Failover auf eine sekundäre Kopie umgeschaltet werden.
 
 Bevor Sie SnapMirror active sync für Ihre AIX-Hosts mit ONTAP 9.19.1 oder höher aktivieren können, muss der Host-Zugriffsmodus auf lokal eingestellt sein. Die Auswahl des Zugriffsmodus ist für andere Hosttypen nicht erforderlich. Weitere Informationen zu link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/interoperability-reference.html["Interoperabilität für SnapMirror active sync"^].
 
 .Bevor Sie beginnen
-Sie müssen ONTAP 9.19.1 oder höher ausführen. Wenn Sie ONTAP 9.18.1 oder älter ausführen, ist eine Feature Policy Variance Request (FPVR) erforderlich, um die AIX-Host-Unterstützung für SnapMirror active sync zu erhalten.
+Sie müssen ONTAP 9.19.1 oder höher ausführen. Wenn Sie ONTAP 9.18.1 oder älter ausführen, ist für die AIX-Host-Unterstützung für SnapMirror active sync ein Feature Policy Variance Request (FPVR) erforderlich.
 
 .Schritte
 . Wählen Sie im System Manager *Storage* aus.

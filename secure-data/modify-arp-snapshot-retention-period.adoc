@@ -1,19 +1,69 @@
 ---
 sidebar: sidebar 
 permalink: secure-data/modify-arp-snapshot-retention-period.html 
-keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, ai, alerts, respond, warnings, security 
-summary: Erfahren Sie, wie Sie die Aufbewahrungszeiträume von ARP-Snapshots an Ihre Speicher- und Geschäftsanforderungen anpassen. 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, ai, alerts, respond, warnings, security, snapshot response policy, protection level, alert-only 
+summary: Dieser Abschnitt beschreibt, wie Sie die ARP/AI-Snapshot-Antwortrichtlinie konfigurieren und die Aufbewahrungsfristen für ARP-Snapshots an Ihre Anforderungen an Storage und Geschäft anpassen. 
 ---
-= Ändern Sie die Aufbewahrungsfristen für ARP/AI-Snapshots auf ASA R2-Speichersystemen
+= Konfiguration von ARP/AI-Snapshot-Antwortrichtlinien und Aufbewahrungsfristen auf ASA r2 Storage-Systemen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn der autonome Ransomware-Schutz mit künstlicher Intelligenz (ARP/KI) ungewöhnliche Aktivitäten auf einem oder mehreren Speichereinheiten Ihres ASA r2 Systems erkennt, wird automatisch ein ARP Snapshot zum Schutz der Daten erstellt. Abhängig von Ihrer Speicherkapazität und Ihren geschäftlichen Anforderungen kann es sinnvoll sein, die standardmäßige ARP Snapshot-Aufbewahrungsdauer zu erhöhen oder zu verringern. So kann beispielsweise die Aufbewahrungsdauer für geschäftskritische Anwendungen verlängert werden, um längere Datenwiederherstellungsfenster zu unterstützen, oder für nicht kritische Anwendungen verkürzt werden, um Speicherplatz zu sparen.
+Wenn Autonomous Ransomware Protection with Artificial Intelligence (ARP/AI) auf einer oder mehreren Storage-Einheiten in Ihrem ASA r2 System ungewöhnliche Aktivitäten erkennt, kann es automatisch einen ARP Snapshot erstellen, um die Daten zu schützen. Ab ONTAP 9.20.1 können Sie durch Festlegen einer Snapshot-Reaktionsrichtlinie konfigurieren, ob ARP/AI diese Snapshots erstellt, unabhängig von der Ransomware-Erkennung und -Warnung durch ARP/AI, die immer aktiv bleibt. Je nach Ihrer Storage-Kapazität und Ihren Geschäftsanforderungen kann es auch sinnvoll sein, die standardmäßige Aufbewahrungsdauer für ARP Snapshots zu verlängern oder zu verkürzen.
 
-Die standardmäßige Aufbewahrungsdauer für den ARP-Snapshot variiert je nach der Aktion, die Sie als Reaktion auf die abnormale Aktivität ergreifen.
+
+
+[[configure-a-snapshot-response-policy]]
+== Konfiguration einer Snapshot-Antwortrichtlinie
+
+Die Snapshot-Reaktionsrichtlinie steuert, ob ARP/AI periodische Snapshots, angriffsbedingte Snapshots oder gar keine Snapshots erstellt. Die ARP/AI-Erkennung und -Warnung bleiben bei jeder Richtlinie aktiv; lediglich die Snapshot-Erstellung ändert sich. Sie können eine Standardrichtlinie für eine Storage VM festlegen, die von neuen Storage-Einheiten auf dieser Storage VM übernommen wird, und die Standardrichtlinie für eine einzelne Storage-Einheit überschreiben.
+
+[cols="1,3"]
+|===
+| Politik | Verhalten 
+
+
+| Periodische und proaktive Snapshots (Standard) | ARP/AI generiert Warnmeldungen und Ereignisprotokolle, erstellt in regelmäßigen Abständen Snapshots und erstellt einen zusätzlichen Snapshot, wenn ein Angriff erkannt wird. 
+
+
+| Nur proaktive Snapshots | ARP/AI generiert Warnmeldungen und Ereignisprotokolle und erstellt einen Snapshot nur dann, wenn ein Angriff erkannt wird. Regelmäßige Snapshots werden nicht erstellt. 
+
+
+| Nur Warnung | ARP/AI generiert ausschließlich Warnmeldungen und Ereignisprotokolle. ARP/AI erstellt keine Snapshots. 
+|===
+
+CAUTION: Wenn Sie die Richtlinie „Nur Warnungen“ auswählen, erstellt ARP/AI keine Snapshots. Wenn ein Ransomware-Angriff bestätigt wird, steht kein ARP/AI-Snapshot für die Datenwiederherstellung zur Verfügung. Vor der Auswahl dieser Richtlinie sollte sichergestellt werden, dass ein angemessener externer Datenschutz vorhanden ist, z. B. durch geplante Snapshots oder eine andere Backup-Lösung.
+
+
+NOTE: Wenn Sie die Snapshot-Antwortrichtlinie ändern, werden vorhandene ARP/AI-Snapshots nicht sofort gelöscht. Sie werden gelöscht, sobald ihre geplante Ablaufzeit erreicht ist.
+
+.Schritte
+Konfigurieren der Standard-Snapshot-Antwortrichtlinie für eine Storage VM:
+
+. Wählen Sie im System Manager *Cluster > Storage-VMs* aus.
+. Wählen Sie die Speicher-VM aus.
+. Im Abschnitt *Sicherheit* erfolgt neben *Anti-Ransomware* die Auswahl von image:icon_kabob.gif["Drei vertikale blaue Punkte"] und anschließend von *Anti-Ransomware-Einstellungen bearbeiten*.
+. Auswahl der Standard-Snapshot-Antwortrichtlinie für neue Storage-Einheiten, die auf der Storage VM erstellt werden.
+. Wählen Sie *Speichern*.
+
+
+Konfiguration der Snapshot-Antwortrichtlinie für eine Storage-Einheit unter Überschreibung der Standardvorgabe der Storage-VM:
+
+. In System Manager wird *Storage* ausgewählt und anschließend die Storage Einheit.
+. Wählen Sie *Sicherheit*.
+. Unter *Anti-ransomware* image:icon_kabob.gif["Drei vertikale blaue Punkte"] und anschließend *Anti-Ransomware-Einstellungen bearbeiten* auswählen.
+. Die Snapshot-Antwortrichtlinie auswählen, die auf die Storage-Einheit angewendet werden soll.
+. Wählen Sie *Speichern*.
+
+
+
+
+[[modify-arpai-snapshot-retention-periods]]
+== Ändern der Aufbewahrungsfristen für ARP/AI-Snapshots
+
+Wenn die Snapshot-Reaktionsrichtlinie für eine Storage Einheit periodische oder durch einen Angriff ausgelöste ARP-Snapshots erstellt, variiert die Standardaufbewahrungsdauer für diese Snapshots je nach den Maßnahmen, die Sie als Reaktion auf die anormale Aktivität ergreifen.
 
 [cols="2,2"]
 |===

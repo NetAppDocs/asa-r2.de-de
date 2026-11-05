@@ -17,7 +17,7 @@ SnapMirror Active Sync nutzt Peering-Cluster, um Ihre Daten im Falle eines Failo
 . Bestätigen Sie, dass zwischen den Clustern eine Cluster-Peering-Beziehung besteht.
 +
 
-NOTE: Der Standard-IP-Bereich wird von SnapMirror Active Sync für Cluster-Peer-Beziehungen benötigt. Ein benutzerdefinierter IP-Bereich wird nicht unterstützt.
+NOTE: SnapMirror active sync erfordert den Standard-IPspace für Cluster-Peer-Beziehungen. Ein benutzerdefinierter IPspace wird nicht unterstützt.
 
 +
 link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Erstellen einer Cluster-Peer-Beziehung"] .

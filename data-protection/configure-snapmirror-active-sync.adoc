@@ -11,12 +11,12 @@ summary: Erfahren Sie, wie Sie SnapMirror Active Sync konfigurieren, um die Gesc
 
 
 [role="lead"]
-Konfigurieren Sie SnapMirror Active Sync, um eine Kopie Ihrer Daten an einem sekundären Standort zu erstellen und Ihren Hostanwendungen im Katastrophenfall ein automatisches und transparentes Failover zu ermöglichen.
+Die Konfiguration von SnapMirror active sync erstellt eine Kopie Ihrer Daten an einem sekundären Standort und ermöglicht es Ihren Host-Applikationen, im Katastrophenfall automatisch und transparent ein Failover durchzuführen.
 
 Auf ASA R2-Systemen unterstützt SnapMirror Active Sync symmetrische Aktiv/Aktiv-Konfigurationen. In einer symmetrischen Aktiv/Aktiv-Konfiguration können beide Standorte für aktive E/A auf den lokalen Speicher zugreifen.
 
 .Über diese Aufgabe
-Wenn Sie das iSCSI- oder FC-Protokoll verwenden und ONTAP Tools für VMware Sphere nutzen, können Sie optional link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["Verwenden Sie ONTAP Tools für VM Ware, um SnapMirror Active Sync zu konfigurieren"^] .
+Wenn Sie das iSCSI- oder FC-Protokoll verwenden und ONTAP tools for VMware vSphere nutzen, können Sie optional link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["mit ONTAP tools for VMware vSphere SnapMirror active sync konfigurieren"^].
 
 
 NOTE: Ab ONTAP 9.19.1 unterstützt der autonome Ransomware-Schutz mit künstlicher Intelligenz (ARP/AI) primäre Lese-/Schreibspeichereinheiten in SnapMirror active sync SAN-Beziehungen auf ASA r2-Systemen. ARP/AI läuft auf den aktiven primären Speichereinheiten, erstellt ausschließlich primäre ARP-Snapshots und bietet auf maschinellem Lernen basierende Ransomware-Erkennung für diese Speichereinheiten. Zur Aktivierung von ARP/AI siehe link:../secure-data/enable-anti-ransomware-protection.html["Autonomen Ransomware-Schutz mit KI aktivieren"].
@@ -34,7 +34,7 @@ Erfahren Sie mehr über  https://docs.netapp.com/us-en/ontap/snapmirror-active-s
 . Wählen Sie einen vorhandenen Cluster-Peer aus oder wählen Sie „Einen neuen hinzufügen“ aus.
 . Wählen Sie die Speicher-VM aus.
 . Wählen Sie als Replikationsrichtlinie *AutomatedFailOverDuplex* aus.
-. Wenn Sie eine nicht einheitliche symmetrische Aktiv/Aktiv-Konfiguration erstellen, wählen Sie *Zieleinstellungen* aus und geben Sie dann den Namen der neuen Zielkonsistenzgruppe ein, die Sie erstellen, bevor Sie mit diesem Verfahren beginnen.
+. Wenn Sie eine nicht-uniforme symmetrische Aktiv/Aktiv-Konfiguration erstellen, wählen Sie *Zieleinstellungen* aus und geben dann den Namen der neuen Ziel-Konsistenzgruppe ein, die Sie vor Beginn dieses Vorgangs erstellt haben.
 . Wählen Sie *Speichern*.
 
 

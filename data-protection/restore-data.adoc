@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/restore-data.html 
 keywords: restore data, asa r2, data restoration 
-summary: Wenn Daten in einer Konsistenzgruppe beschädigt sind oder verloren gehen, können Sie die gesamte Konsistenzgruppe aus einem Remote-Snapshot wiederherstellen. 
+summary: Bei Datenverlust oder Datenbeschädigung auf Ihrem ASA r2 System ist die Wiederherstellung einer Konsistenzgruppe oder Storage-Einheit aus einem lokalen oder Remote-Snapshot möglich. 
 ---
 = Stellen Sie Daten auf ASA r2 Storage-Systemen wieder her
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Wenn Daten in einer Konsistenzgruppe beschädigt sind oder verloren geh
 
 
 [role="lead"]
-Daten in einer durch Snapshots geschützten Konsistenzgruppe oder Storage-Einheit können bei Verlust oder Beschädigung wiederhergestellt werden.
+Wenn Daten in einer Konsistenzgruppe oder Storage Einheit, die durch Snapshots geschützt ist, verloren gehen oder beschädigt werden, lassen sie sich aus einem Snapshot wiederherstellen, sodass die Daten auf den Zeitpunkt zurückgesetzt werden, zu dem der Snapshot erstellt wurde.
 
 
 
@@ -43,7 +43,7 @@ Die Seite mit den Details der Konsistenzgruppe wird geöffnet.
 .Schritte
 . Wählen Sie in System Manager *Schutz > Replikation* aus.
 . Wählen Sie *Lokale Ziele*.
-. Wählen Sie die *Quelle* aus, die Sie wiederherstellen möchten, und wählen Sie dann image:icon_kabob.gif["Drei vertikale blaue Punkte"].
+. Die *Quelle*, die wiederhergestellt werden soll, wird ausgewählt; anschließend wird image:icon_kabob.gif["Drei vertikale blaue Punkte"] ausgewählt.
 . Wählen Sie *Wiederherstellen*.
 . Wählen Sie den Cluster, die Storage-VM und die Konsistenzgruppe aus, auf der Sie Daten wiederherstellen möchten.
 . Wählen Sie den Snapshot aus, aus dem Sie wiederherstellen möchten.

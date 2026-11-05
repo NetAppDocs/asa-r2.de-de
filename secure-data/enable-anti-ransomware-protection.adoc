@@ -11,7 +11,7 @@ summary: Aktivieren Sie ARP mit KI, um potenzielle Ransomware-Bedrohungen zu erk
 
 
 [role="lead"]
-Ab ONTAP 9.17.1 kann der autonome Ransomware-Schutz mit künstlicher Intelligenz (ARP/AI) zum Schutz von Daten auf dem ASA r2 System verwendet werden. ARP/AI erkennt potenzielle Ransomware-Bedrohungen, erstellt automatisch einen ARP Snapshot und zeigt eine Warnung im System Manager an, wenn verdächtige Aktivitäten erkannt werden.
+Ab ONTAP 9.17.1 können Sie Autonomous Ransomware Protection with Artificial Intelligence (ARP/AI) verwenden, um Daten auf Ihrem ASA r2 System zu schützen. ARP/AI erkennt potenzielle Ransomware-Bedrohungen, zeigt bei verdächtigen Aktivitäten eine Warnung in System Manager an und kann abhängig von der link:modify-arp-snapshot-retention-period.html["konfigurierte Snapshot-Antwortrichtlinie"] automatisch einen ARP Snapshot erstellen.
 
 ARP verbessert die Cyber-Resilienz durch den Einsatz eines Machine-Learning-Modells für Anti-Ransomware-Analysen, das sich ständig weiterentwickelnde Formen von Ransomware in SAN-Umgebungen erkennt. Das Machine-Learning-Modell von ARP ist anhand eines großen Datensatzes von Dateien sowohl vor als auch nach einem simulierten Ransomware-Angriff vortrainiert. Dieses ressourcenintensive Training erfolgt außerhalb von ONTAP, und das resultierende vortrainierte Modell ist in ONTAP enthalten. Dieses Modell ist weder zugänglich noch veränderbar. ARP/AI ist unmittelbar nach der Aktivierung aktiv; es gibt keine link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["Lernphase"^].
 

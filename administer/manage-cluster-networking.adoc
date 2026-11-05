@@ -53,7 +53,7 @@ Sie haben eine neue Broadcast-Domäne hinzugefügt.
 [[reassign-ports-to-a-different-broadcast-domain]]
 == Weisen Sie Ports einer anderen Broadcast-Domäne neu zu
 
-Ports können nur zu einer Broadcast-Domäne gehören. Wenn Sie die Broadcast-Domäne ändern möchten, zu der ein Port gehört, müssen Sie den Port seiner vorhandenen Broadcast-Domäne einer neuen Broadcast-Domäne zuweisen.
+Ports können nur einer Broadcast-Domäne angehören. Zum Ändern der Broadcast-Domäne eines Ports wird der Port von seiner vorhandenen Broadcast-Domäne einer neuen zugewiesen.
 
 .Schritte
 . Wählen Sie im System Manager *Netzwerk > Übersicht* aus.

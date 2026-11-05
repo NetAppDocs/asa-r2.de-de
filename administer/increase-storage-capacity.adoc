@@ -21,12 +21,12 @@ Fügen Sie zu einem Node oder Shelf Laufwerke hinzu, um die Storage-Kapazität I
 Bevor Sie ein neues Laufwerk in einen Knoten oder ein Shelf einbauen, verwenden Sie das NetApp Hardware Universe, um zu bestätigen, dass das Laufwerk, das Sie hinzufügen möchten, von Ihrem ASA r2-System unterstützt wird, und um den richtigen Steckplatz für das neue Laufwerk zu identifizieren.  Die korrekten Steckplätze zum Hinzufügen von Laufwerken variieren je nach Systemmodell und ONTAP Version.  In einigen Fällen müssen Sie die Laufwerke nacheinander in bestimmte Steckplätze einbauen.
 
 .Schritte
-. Gehen Sie zum link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
+. Gehe zu link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
 . Wählen Sie unter *Produkte* Ihre Hardwarekonfigurationen aus.
 . Wählen Sie Ihr ASA r2-System aus.
 . Wählen Sie Ihre ONTAP-Version aus, und wählen Sie dann *Ergebnisse anzeigen*.
 . Wählen Sie unter der Grafik *Klicken Sie hier, um alternative Ansichten zu sehen*; wählen Sie dann die Ansicht, die Ihrer Konfiguration entspricht.
-. Überprüfen Sie anhand der Konfigurationsansicht, ob das neue Laufwerk unterstützt wird und ob der richtige Steckplatz für die Installation vorhanden ist.
+. Mithilfe der Konfigurationsansicht lässt sich bestätigen, dass Ihr neues Laufwerk unterstützt wird, und der richtige Einbauschacht für die Installation lässt sich ermitteln.
 
 
 .Ergebnis
@@ -40,7 +40,7 @@ Sie haben bestätigt, dass Ihr neues Laufwerk unterstützt wird, und Sie kennen 
 Die Mindestanzahl an Laufwerken, die in einem einzigen Vorgang hinzugefügt werden sollte, beträgt drei. Das Hinzufügen eines Einzellaufwerks kann die Leistung beeinträchtigen.
 
 .Über diese Aufgabe
-Wiederholen Sie die Schritte in diesem Verfahren für jedes Laufwerk.
+Für jedes Laufwerk ist eine Wiederholung der Schritte in diesem Verfahren erforderlich.
 
 .Schritte
 . Richtig gemahlen.
@@ -64,7 +64,7 @@ Die Laufwerk-Firmware wird automatisch (unterbrechungsfrei) auf neuen Laufwerken
 
 
 
-. Wenn der Node für die automatische Laufwerkszuweisung konfiguriert ist, können Sie warten, bis ONTAP die neuen Laufwerke einem Node automatisch zuweist. Ist der Node nicht für die automatische Laufwerkszuweisung konfiguriert oder ist er vorzuziehen, können Sie die Laufwerke manuell zuweisen.
+. Wenn Ihr Knoten für die automatische Laufwerkszuweisung konfiguriert ist, ist zu warten, bis ONTAP die neuen Laufwerke einem Knoten zuweist. Wenn Ihr Knoten nicht für die automatische Laufwerkszuweisung konfiguriert ist oder wenn Sie dies bevorzugen, sind die Laufwerke manuell zuzuweisen.
 +
 Die neuen Laufwerke werden erst erkannt, wenn sie einem Node zugewiesen sind.
 

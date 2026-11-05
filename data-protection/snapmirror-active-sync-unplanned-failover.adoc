@@ -2,22 +2,22 @@
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-unplanned-failover.html 
 keywords: asa r2, reestablish, snapmirror active sync, unplanned failover, disaster recovery 
-summary: Erfahren Sie, wie Sie SnapMirror Active Sync-Beziehungen nach einem ungeplanten Failover Ihrer ASA R2-Cluster wiederherstellen. 
+summary: Wiederherstellung von SnapMirror active sync Beziehungen nach einem ungeplanten Failover Ihrer ASA r2 Cluster. 
 ---
-= Nach einem ungeplanten Failover auf ASA r2 die SnapMirror active sync wiederherstellen
+= Wiederherstellung von SnapMirror active sync nach einem ungeplanten Failover auf ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Auf ASA r2-Systemen unterstützt SnapMirror Active Sync symmetrische Aktiv/Aktiv-Konfigurationen. In einer symmetrischen Aktiv/Aktiv-Konfiguration können beide Standorte für aktive E/A auf den lokalen Speicher zugreifen. Fällt der Quell-Cluster aus oder ist er isoliert, löst der Mediator ein automatisches ungeplantes Failover (AUFO) aus und übernimmt die gesamte E/A vom Ziel-Cluster, bis der Quell-Cluster wiederhergestellt ist.
+Nach einem ungeplanten Failover kann Ihre SnapMirror active sync Beziehung wiederhergestellt werden, damit der Betrieb auf dem ursprünglichen Quell-Cluster wieder aufgenommen wird. Auf ASA r2 Systemen unterstützt SnapMirror active sync symmetrische Aktiv/Aktiv-Konfigurationen. In einer symmetrischen Aktiv/Aktiv-Konfiguration können beide Standorte für aktive I/O auf lokales Storage zugreifen. Wenn der Quell-Cluster ausfällt oder isoliert ist, löst der ONTAP Mediator ein automatisches ungeplantes Failover (AUFO) aus und bedient alle I/O vom Ziel-Cluster, bis der Quell-Cluster wiederhergestellt ist.
 
 Wenn Sie einen AUFO Ihrer SnapMirror Aktiv-Sync-Beziehung erleben, sollten Sie die Beziehung wiederherstellen und den Betrieb auf dem ursprünglichen Quell-Cluster fortsetzen, nachdem dieser wieder online ist.
 
 .Bevor Sie beginnen
 * Die aktive Synchronisierungsbeziehung von SnapMirror muss synchronisiert sein.
-* Sie können kein geplantes Failover einleiten, wenn gerade ein unterbrechungsfreier Vorgang, beispielsweise das Verschieben einer Speichereinheit, ausgeführt wird.
+* Ein geplanter Failover kann nicht gestartet werden, wenn eine unterbrechungsfreie Operation, wie beispielsweise das Verschieben einer Storage Einheit, ausgeführt wird.
 * Der ONTAP Mediator muss konfiguriert, verbunden und im Quorum sein.
 * Um verlorene E/A-Pfade wiederherzustellen oder E/A-Pfadzustände auf Ihren Hosts zu aktualisieren, müssen Sie nach Wiederaufnahme des Betriebs des primären Speicherclusters einen Speicher-/Adapter-Rescan auf den Hosts durchführen.
 

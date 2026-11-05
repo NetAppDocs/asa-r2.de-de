@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapshot-reserve.html 
 keywords: asa r2, snapshot reserve, percentage 
-summary: Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet. 
+summary: Es wird erläutert, wie die Snapshot-Reserve Speicherplatz auf der Storage Einheit für Snapshots reserviert und wie die automatische Snapshot-Löschung ältere Snapshots entfernt, wenn die Nutzung die Reserve auf ASA r2 Systemen überschreitet. 
 ---
 = Informationen zur ONTAP Snapshot Reserve auf ASA r2 Speichersystemen
 :allow-uri-read: 
@@ -13,7 +13,7 @@ summary: Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots
 [role="lead"]
 Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet.  Dadurch wird verhindert, dass Snapshots Speicherplatz belegen, der für Benutzerdaten vorgesehen ist.
 
-Die Snapshot-Reserve wird als Prozentsatz der gesamten Speichereinheitsgröße festgelegt.  Wenn die Speichereinheit beispielsweise 50 GB groß ist und Sie die Snapshot-Reserve auf 10 % einstellen, beträgt der für Snapshots reservierte Speicherplatz 5 GB.  Wenn der von Snapshots belegte Speicherplatz 5 GB erreicht, werden ältere Snapshots automatisch gelöscht, um Platz für neue Snapshots zu schaffen.  Wenn die Speichereinheitsgröße auf 100 GB erhöht wird, erhöht sich die Snapshot-Reserve auf 10 GB.  Die maximal einstellbare Snapshot-Reserve beträgt 200 %.  Wenn Ihre Speichereinheit auf die maximale Größe von 128 TB anwächst, ermöglicht Ihnen eine 200%ige Snapshot-Reserve die Erstellung von 2 vollständigen Snapshots.
+Die Snapshot-Reserve wird als Prozentsatz der gesamten Speichereinheitsgröße festgelegt. Wenn die Speichereinheit beispielsweise 50 GB groß ist und die Snapshot-Reserve auf 10 % festgelegt wird, beträgt der für Snapshots reservierte Speicherplatz 5 GB. Wenn der von Snapshots belegte Speicherplatz auf 5 GB anwächst, werden ältere Snapshots automatisch gelöscht, um Platz für neue Snapshots zu schaffen. Wenn die Speichereinheitsgröße auf 100 GB erhöht wird, steigt die Snapshot-Reserve auf 10 GB. Die maximal festlegbare Snapshot-Reserve beträgt 200 %. Wenn die Speichereinheit auf die maximale Größe von 128 TB anwächst, können mit einer Snapshot-Reserve von 200 % zwei vollständige Snapshots erstellt werden.
 
 Standardmäßig ist die Snapshot-Reservierung auf 0 % eingestellt und die automatische Snapshot-Löschung ist nicht aktiviert.
 

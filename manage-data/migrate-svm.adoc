@@ -16,6 +16,8 @@ Ab ONTAP 9.18.1 ist es möglich, eine Storage Virtual Machine (VM) unterbrechung
 
 NOTE: Eine Storage-VM kann nicht von einer ASA MetroCluster auf einen ASA r2 Cluster migriert werden. ASA r2 Systeme unterstützen MetroCluster Konfigurationen nicht.
 
+ASA r2 Systeme unterstützen die QuickAssist Technology (QAT). ASA Systeme unterstützen QAT nicht. Ab ONTAP 9.20.1 verringert ONTAP die hohe Leselatenz und CPU-Auslastung, die nach der Migration einer Storage Virtual Machine (VM) von einem ASA System (ohne QAT) auf ein ASA r2 System (mit QAT) auftreten können.
+
 Die Migration von Storage-VMs zwischen ASA und ASA r2-Speichersystemen wird wie folgt unterstützt:
 
 [cols="2"]
@@ -51,7 +53,7 @@ Die Migration von Storage-VMs zwischen ASA und ASA r2-Speichersystemen wird wie 
 |===
 Die aktuellste Liste der ASA und ASA r2-Systeme finden Sie hier:link:https://hwu.netapp.com/["NetApp Hardware Universe"^] Die  ASA r2-Systeme werden im NetApp Hardware Universe als „ASA A-Serie/C-Serie (Neu)“ aufgeführt.
 
-Eine Storage-VM kann nur von einem ASA Cluster zu einem ASA r2-Cluster migriert werden.  Eine Migration von einem anderen ONTAP System wird nicht unterstützt.
+Sie können eine Storage VM nur von einem ASA-Cluster auf einen ASA r2 Cluster migrieren. Die Migration von jedem anderen Typ von ONTAP System auf ein ASA r2 System wird nicht unterstützt.
 
 .Bevor Sie beginnen
 Alle Knoten im ASA r2-Cluster und im ASA Cluster müssen mit ONTAP 9.18.1 oder höher laufen.  Die ONTAP 9.18.1 Patch-Versionen auf den Clusterknoten können variieren.
@@ -103,6 +105,9 @@ Sie sind nun bereit, eine Cluster-Peer-Beziehung zwischen Ihren ASA und ASA r2-C
 
 Bevor Sie eine Storage-VM von einem ASA Cluster zu einem ASA r2-Cluster migrieren können, müssen Sie eine Peer-Beziehung erstellen.  Eine Peer-Beziehung definiert Netzwerkverbindungen, die es ONTAP Clustern und Speicher-VMs ermöglichen, Daten sicher auszutauschen.
 
+.Über diese Aufgabe
+Der ASA Cluster ist der Quell-Cluster, von dem die Storage VM migriert wird, und der ASA r2 Cluster ist der Ziel-Cluster, zu dem die Storage VM migriert wird.
+
 .Bevor Sie beginnen
 Sie müssen auf jedem Knoten in den Clustern, die miteinander verbunden sind, Intercluster-LIFs mit einer der folgenden Methoden erstellt haben.
 
@@ -112,11 +117,11 @@ Sie müssen auf jedem Knoten in den Clustern, die miteinander verbunden sind, In
 
 
 .Schritte
-. Erstellen Sie auf dem ASA r2-Cluster eine Peer-Beziehung zum ASA Cluster und generieren Sie eine Passphrase:
+. Auf dem Ziel-Cluster wird eine Peer-Beziehung mit dem Quell-Cluster erstellt und eine Passphrase generiert:
 +
 [source, cli]
 ----
-cluster peer create -peer-addrs <ASA_cluster_LIF_IPs> -generate-passphrase
+cluster peer create -peer-addrs <source_cluster_LIF_IPs> -generate-passphrase
 ----
 +
 Das folgende Beispiel erstellt eine Cluster-Peer-Beziehung zwischen Cluster 1 und Cluster 2 und generiert eine systemgenerierte Passphrase:
@@ -134,13 +139,13 @@ Warning: make a note of the passphrase - it cannot be displayed again.
 
 ----
 . Kopieren Sie die generierte Passphrase.
-. Erstellen Sie auf dem ASA Cluster eine Peer-Beziehung zum ASA r2-Cluster:
+. Auf dem Quell-Cluster erstellen Sie eine Peer-Beziehung mit dem Ziel-Cluster:
 +
 [source, cli]
 ----
-cluster peer create -peer-addrs <ASA_r2_LIF_IPs>
+cluster peer create -peer-addrs <destination_cluster_LIF_IPs>
 ----
-. Geben Sie die auf dem ASA r2-Cluster generierte Passphrase ein.
+. Die auf dem Ziel-Cluster generierte Passphrase eingeben.
 . Überprüfen Sie, ob die Cluster-Peer-Beziehung erstellt wurde:
 +
 [source, cli]
@@ -165,24 +170,27 @@ cluster2             1-80-123456             Available      ok
 Die ASA und ASA r2-Cluster sind per Peering verbunden, sodass Speicher-VM-Daten sicher übertragen werden können.
 
 .Was kommt als Nächstes?
-Sie sind nun bereit, Ihre ASA -Speicher-VM für die Migration vorzubereiten.
+Sie sind bereit, die Vorabprüfung der Migration auszuführen.
 
 
 
-[[step-3-prepare-for-storage-vm-migration-from-an-asa-to-an-asa-r2-cluster]]
-== Schritt 3: Vorbereitung der Migration der Speicher-VMs von einem ASA zu einem ASA r2-Cluster
+[[step-3-execute-the-migration-pre-check]]
+== Schritt 3: Ausführen der Migrationsvorprüfung
 
-Bevor Sie eine Storage Virtual Machine (VM) von einem ASA Cluster zu einem ASA r2-Cluster migrieren, müssen Sie einen Migrations-Pre-Check durchführen und alle erforderlichen Probleme beheben.  Die Migration kann erst durchgeführt werden, wenn die Vorprüfung erfolgreich bestanden wurde.
+Bevor Sie eine Storage VM von einem ASA-Cluster zu einem ASA r2-Cluster migrieren, müssen Sie einen Migrations-Pre-Check durchführen und alle erforderlichen Probleme beheben. Die Migration kann erst nach erfolgreichem Abschluss des Pre-Checks erfolgen.
+
+.Über diese Aufgabe
+Der ASA Cluster ist der Quell-Cluster, von dem die Storage VM migriert wird, und der ASA r2 Cluster ist der Ziel-Cluster, zu dem die Storage VM migriert wird.
 
 .Schritt
-. Führen Sie auf Ihrem ASA r2-Cluster die Migrationsvorprüfung durch:
+. Vom Ziel-Cluster aus erfolgt die Migrationsvorprüfung:
 +
 [source, cli]
 ----
-vserver migrate start -vserver <storage_VM> -source-cluster <asa_cluster> -check-only true
+vserver migrate start -vserver <storage_VM> -source-cluster <sourcecluster> -check-only true
 ----
 +
-Falls Probleme behoben werden müssen, um Ihren ASA Cluster für die Migration vorzubereiten, werden das Problem und die Korrekturmaßnahme angezeigt. Das Problem sollte behoben und die Vorabprüfung wiederholt werden, bis sie erfolgreich abgeschlossen ist.
+Wenn zur Vorbereitung auf die Migration Probleme behoben werden müssen, werden das Problem und die Korrekturmaßnahme angezeigt. Nach der Behebung des Problems ist die Vorabprüfung so lange zu wiederholen, bis sie erfolgreich abgeschlossen ist.
 
 
 
@@ -199,7 +207,9 @@ Nachdem Sie Ihren ASA Cluster vorbereitet und die notwendige Cluster-Peer-Bezieh
 Bei der Migration von Speicher-VMs empfiehlt es sich, sowohl auf dem ASA -Cluster als auch auf dem ASA r2-Cluster 30 % CPU-Reserve einzuplanen, damit die CPU-Workload ausgeführt werden kann.
 
 .Über diese Aufgabe
-Nach der Migration der Speicher-VMs werden die Clients automatisch auf den ASA r2-Cluster umgeschaltet und die Speicher-VM auf dem ASA Cluster wird automatisch entfernt.  Die automatische Umstellung und die automatische Entfernung der Speicher-VMs sind standardmäßig aktiviert.  Sie können optional beide deaktivieren und die Umstellung sowie die Entfernung der Speicher-VM manuell durchführen.
+* Nach der Migration der Storage VM gehen die Client-E/A nahtlos und ohne Unterbrechung auf den Ziel-Cluster über, und die Storage VM auf dem ASA r2 Cluster wird automatisch entfernt. Die automatische Umschaltung und die automatische Entfernung der Storage VM sind standardmäßig aktiviert. Sie können optional eine oder beide Optionen deaktivieren und manuell ausführen.
+* Der ASA Cluster ist der Quell-Cluster, von dem die Storage VM migriert wird, und der ASA r2 Cluster ist der Ziel-Cluster, zu dem die Storage VM migriert wird.
+
 
 .Bevor Sie beginnen
 * Der ASA r2-Cluster muss über ausreichend freien Speicherplatz verfügen, um die migrierte Speicher-VM aufzunehmen.
@@ -215,14 +225,14 @@ Nach der Migration der Speicher-VMs werden die Clients automatisch auf den ASA r
 
 
 .Schritte
-. Starten Sie die Migration der Speicher-VMs vom ASA r2-Cluster aus:
+. Der Start der Storage VM Migration erfolgt vom Ziel-Cluster aus:
 +
 [source, cli]
 ----
-vserver migrate start -vserver <storage_VM_name> -source-cluster <ASA_cluster>
+vserver migrate start -vserver <storage_VM_name> -source-cluster <source_cluster>
 ----
 +
-Um die automatische Umschaltung zu deaktivieren, verwenden Sie die `-auto-cutover false` Parameter.  Um die automatische Entfernung der ASA -Speicher-VM zu deaktivieren, verwenden Sie die `-auto-source-cleanup false` Parameter.
+Zum Deaktivieren der automatischen Umstellung dient der  `-auto-cutover false` Parameter. Zum Deaktivieren der automatischen Entfernung der Quell-Storage-VM dient der  `-auto-source-cleanup false` Parameter.
 
 . Überwachen Sie den Status der Migration
 +
@@ -231,15 +241,81 @@ Um die automatische Umschaltung zu deaktivieren, verwenden Sie die `-auto-cutove
 vserver migrate show -vserver <storage_VM_name>
 ----
 +
-Wenn die Migration abgeschlossen ist, wird der *Status* als *migration-complete* angezeigt.
+Falls Sie die Migration vor dem automatischen Umstieg pausieren oder abbrechen müssen, verwenden Sie die `vserver migrate pause` und die `vserver migrate abort` Befehle.  Sie müssen die Migration pausieren, bevor Sie sie abbrechen können.  Die Migration kann nach dem Start der Umstellung nicht mehr abgebrochen werden.
+
++
+Wenn die automatische Umstellung aktiviert ist, wird nach Abschluss der Migration der *status* als *migration-complete* angezeigt. Wenn die automatische Umstellung deaktiviert ist, wird der *status* als *Ready for source cleanup* angezeigt.
 
 
-
-
-NOTE: Falls Sie die Migration vor dem automatischen Umstieg pausieren oder abbrechen müssen, verwenden Sie die `vserver migrate pause` und die `vserver migrate abort` Befehle.  Sie müssen die Migration pausieren, bevor Sie sie abbrechen können.  Die Migration kann nach dem Start der Umstellung nicht mehr abgebrochen werden.
 
 .Ergebnis
 Die Speicher-VM wird vom ASA Cluster zum ASA r2-Cluster migriert.  Der Name und die UUID der Speicher-VM, der Daten-LIF-Name, die IP-Adresse und Objektnamen, wie z. B. der Volumenname, bleiben unverändert.  Die UUIDs der migrierten Objekte in der Speicher-VM werden aktualisiert.
 
 .Was kommt als Nächstes?
-Wenn Sie die automatische Umstellung und die automatische Entfernung von Speicher-VMs deaktiviert haben,link:svm-post-migrate-cutover-cleanup.html["Stellen Sie Ihre ASA Clients manuell auf Ihren ASA r2-Cluster um und entfernen Sie die Speicher-VM aus dem ASA Cluster."] Die
+Wenn Sie die automatische Umstellung und die automatische Entfernung der Storage VM deaktiviert haben, umfasst die Nachmigration eine manuelle Umstellung und Bereinigung, bei der Ihre ASA Clients manuell auf Ihren Ziel-Cluster umgestellt und die Storage VM aus dem ASA Cluster entfernt wird.
+
+
+
+[[step-5-post-migration-cutover-and-cleanup]]
+== Schritt 5: Umstellung und Bereinigung nach der Migration
+
+Bei einer clusterübergreifenden Migration einer Storage VM wird die Client-E/A auf den Ziel-Cluster umgestellt, und die Storage VM auf dem Quell-Cluster wird automatisch entfernt. Wenn Sie während der Migration die automatische Umstellung und Entfernung der Quell-Storage VM deaktivieren, müssen Sie diese Schritte manuell durchführen, nachdem der Migrationsstatus *Ready for source cleanup* erreicht wurde.
+
+
+
+[[manually-cut-over-clients-after-a-storage-vm-migration]]
+=== Manuelle Umstellung der Clients nach einer Migration einer Storage VM
+
+Wenn Sie die automatische Client-Umschaltung während der Migration einer Storage VM zwischen Clustern deaktivieren, ist nach dem Bereitstehen der Migrationsbeziehung für die Umschaltung eine manuelle Umschaltung erforderlich, damit die Storage VM am Ziel Daten für Clients bereitstellen kann.
+
+.Über diese Aufgabe
+Die Durchführung dieser Aufgabe erfolgt vom Ziel-Cluster aus.
+
+.Schritte
+. Manuelle Clientumstellung:
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. Vergewissern Sie sich, dass der Umstellungsvorgang abgeschlossen ist:
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.Ergebnis
+Die Daten werden Ihren Clients von der Storage VM auf Ihrem Ziel-Cluster bereitgestellt.
+
+.Was kommt als Nächstes?
+Sie können die Storage VM nun aus dem Quell-Cluster entfernen.
+
+
+
+[[manually-remove-a-storage-vm-after-migration]]
+=== Manuelles Entfernen einer Storage VM nach der Migration
+
+Wenn Sie die automatische Quellbereinigung während einer Migration einer Storage VM zwischen Clustern deaktivieren, sollten Sie nach Abschluss der Migration die Storage VM aus dem Quell-Cluster entfernen, um den Storage Platz freizugeben.
+
+.Bevor Sie beginnen
+Ihre Clients sollten Daten vom Ziel-Cluster bereitstellen.
+
+.Schritte
+. Im Quell-Cluster ist zu prüfen, ob der Status der Quell-Storage VM *Ready for source cleanup* lautet:
++
+[source, cli]
+----
+vserver migrate show
+----
+. Entfernen der Quell-Storage VM:
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.Ergebnis
+Die Storage VM in Ihrem Quell-Cluster wurde entfernt.

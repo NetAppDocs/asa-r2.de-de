@@ -13,7 +13,7 @@ summary: ONTAP -Software-Reverts für ASA R2-Systeme folgen demselben Prozess wi
 [role="lead"]
 ONTAP -Software-Reverts für ASA R2-Systeme folgen demselben Prozess wie Reverts für andere ONTAP Systeme.
 
-Das Zurücksetzen eines ONTAP Clusters ist mit Unterbrechungen verbunden. Der Cluster muss für die Dauer des Zurücksetzens offline genommen werden. Ein Produktionscluster sollte nicht ohne Unterstützung des technischen Supports zurückgesetzt werden. Ein neuer oder Testcluster kann ohne Unterstützung zurückgesetzt werden. Falls das Zurücksetzen eines neuen oder Testsystems fehlschlägt oder zwar erfolgreich abgeschlossen wird, Sie aber mit der Clusterleistung in Ihrer Produktionsumgebung nicht zufrieden sind, sollte der technische Support zur Unterstützung kontaktiert werden.
+Das Zurücksetzen eines ONTAP Clusters ist mit Unterbrechungen verbunden. Der Cluster muss für die Dauer des Zurücksetzens offline genommen werden. Ein Produktionscluster sollte nicht ohne Unterstützung des technischen Supports zurückgesetzt werden. Ein neuer oder Testcluster kann ohne Unterstützung zurückgesetzt werden. Falls das Zurücksetzen eines neuen oder Testsystems fehlschlägt oder zwar erfolgreich abgeschlossen wird, Sie jedoch mit der Cluster-Performance in Ihrer Produktionsumgebung nicht zufrieden sind, ist Unterstützung durch den technischen Support erforderlich.
 
 Die vollständige Vorgehensweise zum Zurücksetzen ist unter link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["Einen ONTAP Cluster zurücksetzen"] zu finden.
 
@@ -32,7 +32,7 @@ Bei bestimmten ASA R2-Clusterkonfigurationen müssen Sie bestimmte Maßnahmen er
 Wenn Sie von ONTAP 9.17.1 auf einem ASA R2-System zurückkehren, sollten Sie vor Beginn der Rücksetzung die folgenden Aktionen ausführen:
 
 
-NOTE: link:space-balancing.html["Dynamischer Raumausgleich"]wird standardmäßig 14 Tage nach dem Upgrade auf ONTAP 9.17.1 oder der Initialisierung eines neuen ONTAP 9.17.1 ASA r2-Clusters aktiviert.  Nach der Aktivierung des dynamischen Speicherplatzausgleichs ist ein Downgrade von ONTAP 9.17.1 auf Ihrem ASA r2-System nicht mehr möglich.
+NOTE: link:space-balancing.html["Dynamischer Raumausgleich"] Die dynamische Speicherverteilung ist standardmäßig 14 Tage nach dem Upgrade auf ONTAP 9.17.1 oder der Initialisierung eines neuen ONTAP 9.17.1 ASA r2 Cluster aktiviert. Nach der Aktivierung der dynamischen Speicherverteilung ist auf Ihrem ASA r2 System keine Rückkehr von ONTAP 9.17.1 mehr möglich.
 
 [cols="2"]
 |===

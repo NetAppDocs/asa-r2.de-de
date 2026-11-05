@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9201.html 
+keywords: 'what"s new, release notes, 9.20.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
+summary: Informationen zu den neuen Funktionen, die in ONTAP 9.20.1 für ASA r2 Systeme verfügbar sind. 
+---
+= Was ist neu in ONTAP 9.20.1 für ASA r2 Systeme?
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Informationen zu den neuen Funktionen, die in ONTAP 9.20.1 für ASA r2 Systeme verfügbar sind.
+
+
+
+[[san-data-migration]]
+== SAN-Datenmigration
+
+[cols="2,4"]
+|===
+| Aktualisieren | Beschreibung 
+
+
+| link:../manage-data/migrate-svm-from-asa-r2.html["Unterstützung für die unterbrechungsfreie Migration von Storage VMs von ASA r2 Systemen zu ASA und AFF Systemen"] | Sie können eine Storage Virtual Machine (VM) unterbrechungsfrei von einem 2-Knoten ASA r2 Cluster auf einen 2-Knoten ASA oder einen 2-Knoten AFF Cluster migrieren. Bestehende Host-Mappings und Storage-Unit-Konfigurationen für LUNs und Namespaces bleiben während der Migration erhalten, wodurch der Betriebsaufwand und das Risiko reduziert werden. 
+
+
+| link:../manage-data/migrate-svm.html["Unterstützung für verbesserte Performance nach der Migration von Storage VMs von einem ASA System auf ein ASA r2 System"] | ONTAP reduziert zusätzliche Leselatenz und CPU-Auslastung, die nach der Migration von Storage Virtual Machines (VMs) von einem ASA System auf ein ASA r2 System auftreten können. 
+|===
+
+
+[[security]]
+== Sicherheit
+
+[cols="2,4"]
+|===
+| Aktualisieren | Beschreibung 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#fc-sp-3-authentication-and-encryption["Unterstützung für FC-SP-3 Authentifizierung und Verschlüsselung mit sicheren Broadcom HBAs"] | ONTAP unterstützt Authentifizierung und Verschlüsselung gemäß Fibre Channel Security Protocol 3 (FC-SP-3) auf sicheren Broadcom HBAs mit ASA r2 Systemen. Die FC-SP-3-Unterstützung ermöglicht eine durchgängige Hardware-Verschlüsselung und Geräteauthentifizierung zum Schutz von Daten auf der Übertragungsstrecke zwischen FC- und NVMe/FC-SAN-Hosts und ONTAP Storage Systemen und entspricht gleichzeitig den T11 Fibre Channel Sicherheitsstandards. 
+
+
+| Unterstützung für den Verfügbarkeitsschutz der Webverwaltung und für Precluster-Verbesserungen | Es wurden Verbesserungen implementiert, die die Verfügbarkeit der Web-Management-API[1] auch bei Verbindungsfluten gewährleisten. Die DHCP-Verarbeitung vor dem Cluster wurde ebenfalls optimiert, sodass eine Node-Management-LIF die DHCP-Konnektivität aufrechterhalten und erneuern kann, während auf die Clusterkonfiguration gewartet wird. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#external-key-management-for-encryption-at-rest["Unterstützung für die automatische Migration von Storage VM Volume-Verschlüsselungsschlüsseln"] | Wenn Sie einen externen Schlüsselmanager auf einer Datenspeicher-VM aktivieren, migriert ONTAP die Volume-Verschlüsselungsschlüssel dieser Storage-VM automatisch vom Schlüsselmanager im Administrationsbereich zum neuen Schlüsselmanager der Datenspeicher-VM. Dies vereinfacht den Übergang zur externen Schlüsselverwaltung und macht einen separaten manuellen Migrationsschritt im Standard-Workflow überflüssig. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#multi-admin-verification-mav["MAV Groups Unterstützung"] | MAV-Genehmigungsgruppen können neben einzelnen Administratoren auch Gruppen von Identity Provider (IdP), Active Directory (AD) und LDAP (nsswitch) als Genehmiger umfassen. Zu den unterstützten Gruppentypen gehören Entra ID, ADFS, AD-Domänengruppen und LDAP-Gruppen. Das Hinzufügen oder Entfernen von Benutzern im IdP-, AD- oder LDAP-Verzeichnis erfordert keine Änderungen an der MAV-Konfiguration. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#snmp["SNMP Unterstützung für SHA-512"] | ONTAP unterstützt die SHA-512-Authentifizierung für SNMPv3-Benutzer. Diese Erweiterung ermöglicht die Verwendung einer stärkeren SNMPv3-Authentifizierung für externe SNMP-Clients und für die Switch-Überwachung, einschließlich Switches, die eine SHA-512-Authentifizierung erfordern. 
+|===
+
+
+[[storage-efficiency]]
+== Storage-Effizienz
+
+[cols="2,4"]
+|===
+| Aktualisieren | Beschreibung 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#data-reduction-rate-drr["Unterstützung für die vereinfachte Berichterstellung zur Datenreduktionsrate der Storage-Effizienz"] | Die Datenreduktionsrate (DRR) der Storage Effizienz ermöglicht eine präzisere Bewertung der ONTAP Storage Speicherplatzeinsparungen, da nur reduzierbare Daten berücksichtigt werden. In ONTAP 9.19.1 und früheren Versionen umfasst die DRR sowohl reduzierbare als auch nicht reduzierbare Daten. 
+
+
+| Unterstützung für Performance Verbesserungen bei SAN copy offload | ONTAP verbessert die SAN-Kopierleistung für geeignete NVMe- und SCSI-Kopierworkloads. Einzelheiten erhalten Sie bei Ihrem NetApp Ansprechpartner. 
+
+
+| Optimierung des automatischen Deduplizierungsplaners (ADS) | Der automatische Deduplizierungsplaner (ADS) wurde verbessert, sodass nun mehr gleichzeitige Deduplizierungssitzungen pro Knoten sowie eine intelligentere und gezieltere Drosselung möglich sind, um die Client-E/A besser auszubalancieren. Die Deduplizierungsaktivität auf DP Volumes (von SnapMirror Übertragungen) und globale Deduplizierungssitzungen wird zusammen mit der regulären Volume-Deduplizierung optimaler verwaltet, wodurch Ressourcenkonflikte und das Wachstum der Metadaten reduziert werden. Dadurch ergeben sich Einsparungen bei der Storage-Effizienz, insbesondere bei gemischten Workloads, ohne dass Konfigurationsänderungen erforderlich sind. Diese Funktion ist standardmäßig aktiviert. 
+|===
+
+
+[[system-manager]]
+== System Manager
+
+[cols="2,4"]
+|===
+| Aktualisieren | Beschreibung 
+
+
+| link:../administer/manage-certificates.html["Unterstützung für Benachrichtigungen zum Ablauf von Zertifikaten"] | System Manager zeigt 30 Tage vor Ablauf eines Zertifikats für einen Cluster oder eine Storage Virtual Machine (SVM) eine Systemstatuswarnung im Dashboard an und aktualisiert sie täglich mit der Anzahl der bis zum Ablauf verbleibenden Tage. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#system-manager["Unterstützung für Benachrichtigungen zum Ablauf von Benutzerpasswörtern"] | Wenn die einem Benutzerkonto zugeordnete Rolle für Benachrichtigungen zum Passwortablauf konfiguriert ist, erhält der Benutzer in System Manager direkt nach der Anmeldung einen Bannerhinweis oben auf der Seite, beginnend 14 Tage vor dem Ablauf des Passworts. Die Benachrichtigung wird bei jeder Anmeldung aktualisiert und zeigt die Anzahl der verbleibenden Tage bis zum Ablauf des Passworts an. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#autosupport["Unterstützung für zusätzliche AutoSupport Warnmeldungen"] | Der System Manager zeigt neue AutoSupport Warnmeldungen an, die bei der Behebung von AutoSupport Konfigurationsproblemen helfen können. 
+|===

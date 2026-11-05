@@ -74,7 +74,7 @@ In einem Bestätigungsfenster werden die Metadateninformationen angezeigt, die a
 . Kehren Sie zum Bestätigungsfenster im System Manager zurück; wählen Sie dann *I have configured the IdP with the Host URI or metadata* aus.
 . Wählen Sie *Abmelden*, um die SAML-basierte Authentifizierung zu aktivieren.
 +
-Das IdP-System zeigt einen Authentifizierungsbildschirm an.
+Das IdP System zeigt einen Authentifizierungsbildschirm an.
 
 
 

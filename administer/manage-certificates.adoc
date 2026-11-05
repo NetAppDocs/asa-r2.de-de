@@ -17,21 +17,41 @@ Online Certificate Status Protocol (OCSP) validiert den Status von digitalen Zer
 
 
 
+[[modify-certificate-expiration-alerts]]
+== Benachrichtigungen zum Zertifikatsablauf ändern
+
+Ab ONTAP 9.20.1 zeigt System Manager 30 Tage vor Ablauf eines Zertifikats für einen Cluster oder eine Storage Virtual Machine (VM) eine Dashboard-Systemstatuswarnung an. Die Warnung wird täglich aktualisiert, um die Anzahl der verbleibenden Tage bis zum Ablauf anzuzeigen. Sie können den Standardwarnschwellenwert auf einen beliebigen Wert von 0 bis 90 Tagen ändern, ihn deaktivieren, sodass keine Warnungen angezeigt werden, oder Warnungen für bereits abgelaufene Zertifikate unterdrücken und gleichzeitig weiterhin Warnungen für bevorstehende Abläufe erhalten.
+
+.Schritte
+. Wählen Sie in System Manager *Cluster > Einstellungen* aus.
+. Wählen Sie unter *Sicherheit* neben Zertifikate die Option image:icon_arrow.gif["Blauer Pfeil, der nach rechts zeigt"].
+. Wählen Sie *Client/server certificates* aus.
+. Der Schwellenwert für die Ablaufwarnung kann aktualisiert, deaktiviert oder unterdrückt werden:
++
+** Eine Aktualisierung des *Warnschwellenwerts* auf eine beliebige Anzahl von Tagen zwischen 0 und 90 ist möglich.
+** Mit *Ablaufwarnungen deaktivieren* lässt sich die Warnung deaktivieren.
+** Mit *Benachrichtigungen über abgelaufene Zertifikate unterdrücken* werden Benachrichtigungen für bereits abgelaufene Zertifikate ausgeblendet, während Benachrichtigungen für bevorstehende Ablaufdaten weiterhin empfangen werden.
+
+
+
+
+
+
 [[generate-a-certificate-signing-request]]
 == Generieren Sie eine Anforderung zum Signieren eines Zertifikats
 
-Erstellen Sie eine Zertifikatsignierungsanforderung (CSR), um einen privaten Schlüssel zu erstellen, mit dem ein öffentliches Zertifikat erstellt werden kann.
+Zum Erstellen eines privaten Schlüssels, der zum Generieren eines öffentlichen Zertifikats verwendet werden kann, ist eine Zertifikatsignierungsanforderung (CSR) erforderlich.
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.
 . Wählen Sie unter *Security* neben *Certificates* die Option image:icon_arrow.gif["Blauer Pfeil, der nach rechts zeigt"]; und wählen Sie dann image:icon_generate_csr.png["Blaues Rechteck mit einem Pluszeichen, gefolgt von den Worten csr generieren"].
 . Geben Sie den allgemeinen Namen des Studienteilnehmers ein, und wählen Sie dann das Land aus.
-. Wenn Sie die GSR-Standardwerte ändern möchten, wählen Sie Erweiterte Tastenverwendung oder fügen Sie alternative Namen für image:icon_more_options.png["Zwei Pfeile, die diagonal entgegengesetzte Richtungen zeigen, gefolgt von den Wörtern weitere Optionen"]das Thema hinzu, wählen Sie ; und dann die gewünschten Aktualisierungen vornehmen.
+. Zum Ändern der CSR-Standardeinstellungen, zum Auswählen der erweiterten Schlüsselverwendung oder zum Hinzufügen alternativer Antragstellernamen wird image:icon_more_options.png["Zwei Pfeile, die diagonal entgegengesetzte Richtungen zeigen, gefolgt von den Wörtern weitere Optionen"] ausgewählt; anschließend lassen sich die gewünschten Aktualisierungen vornehmen.
 . Wählen Sie *Erzeugen*.
 
 
 .Ergebnis
-Sie haben eine CSR generiert, die zur Erstellung eines öffentlichen Zertifikats verwendet werden kann.
+Sie haben eine CSR generiert, die zum Generieren eines öffentlichen Zertifikats verwendet werden kann.
 
 
 
@@ -61,7 +81,7 @@ Vertrauenswürdige Zertifizierungsstellen müssen jährlich erneuert werden. Wen
 . Wählen Sie *Cluster > Einstellungen*.
 . Wählen Sie unter *Sicherheit* neben *Zertifikate* die Option image:icon_arrow.gif["Blauer Pfeil, der nach rechts zeigt"].
 . Wählen Sie *Vertrauenswürdige Zertifizierungsstellen*.
-. Wählen Sie die Zertifizierungsstelle aus, die Sie erneuern oder löschen möchten.
+. Sie wählen die vertrauenswürdige Zertifizierungsstelle aus, die Sie erneuern oder löschen möchten.
 . Erneuern oder löschen Sie die Zertifizierungsstelle.
 +
 [cols="2"]

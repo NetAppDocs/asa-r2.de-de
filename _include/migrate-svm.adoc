@@ -1,0 +1,27 @@
+= 
+:allow-uri-read: 
+
+
+.Schritte
+. Der Start der Storage VM Migration erfolgt vom Ziel-Cluster aus:
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM_name> -source-cluster <source_cluster>
+----
++
+Zum Deaktivieren der automatischen Umstellung dient der  `-auto-cutover false` Parameter. Zum Deaktivieren der automatischen Entfernung der Quell-Storage-VM dient der  `-auto-source-cleanup false` Parameter.
+
+. Überwachen Sie den Status der Migration
++
+[source, cli]
+----
+vserver migrate show -vserver <storage_VM_name>
+----
++
+Falls Sie die Migration vor dem automatischen Umstieg pausieren oder abbrechen müssen, verwenden Sie die `vserver migrate pause` und die `vserver migrate abort` Befehle.  Sie müssen die Migration pausieren, bevor Sie sie abbrechen können.  Die Migration kann nach dem Start der Umstellung nicht mehr abgebrochen werden.
+
++
+Wenn die automatische Umstellung aktiviert ist, wird nach Abschluss der Migration der *status* als *migration-complete* angezeigt. Wenn die automatische Umstellung deaktiviert ist, wird der *status* als *Ready for source cleanup* angezeigt.
+
+

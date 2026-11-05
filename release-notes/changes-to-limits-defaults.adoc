@@ -26,6 +26,9 @@ Erfahren Sie mehr über die Änderungen an Grenzwerten und Standardwerten für A
 | Funktion | Begrenzungsänderung | In Freigabe geändert... 
 
 
+| Skalierung der SCSI Registrierung persistenter Reservierungen | Die maximal unterstützte Anzahl von Registrierungen für SCSI-3 persistente Reservierungen pro LUN erhöht sich von 182 auf 256. | ONTAP 9.20.1 
+
+
 | Speicher-VMs pro Cluster | Die maximale Anzahl unterstützter virtueller Speichermaschinen (VMs) pro HA-Paar wurde von 32 auf 256 erhöht. | ONTAP 9.18.1 
 
 

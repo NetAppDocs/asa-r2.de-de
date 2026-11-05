@@ -11,7 +11,7 @@ summary: In bestimmten Situationen müssen Sie möglicherweise eine asynchrone R
 
 
 [role="lead"]
-In bestimmten Situationen müssen Sie möglicherweise eine asynchrone Replikationsbeziehung unterbrechen.  Wenn Sie beispielsweise ONTAP 9.16.1 ausführen und die Größe einer Konsistenzgruppe erhöhen möchten, die sich in einer asynchronen Replikationsbeziehung befindet, müssen Sie die Beziehung aufheben, bevor Sie die Größe der Konsistenzgruppe ändern können.
+Eine asynchrone Replizierungsbeziehung wird unterbrochen, wenn dafür erforderliche Änderungen vorgenommen werden müssen. Wenn Sie beispielsweise ONTAP 9.16.1 verwenden und die Größe einer Konsistenzgruppe in einer asynchronen Replizierungsbeziehung erhöhen möchten, muss die Beziehung unterbrochen werden, bevor die Größe der Konsistenzgruppe geändert wird.
 
 .Schritte
 . Wählen Sie in System Manager *Schutz > Replikation* aus.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapshot-reserve-modify.html 
 keywords: asa r2, snapshot reserve, percentage 
-summary: Die Snapshot-Reserve ist der Speicherplatz, der speziell für Snapshots reserviert ist.  Wenn die Snapshot-Reserve mit automatischer Snapshot-Löschung aktiviert ist, werden ältere Snapshots automatisch gelöscht, sobald der von den Snapshots belegte Speicherplatz die Snapshot-Reserve überschreitet. 
+summary: Änderungen der Snapshot-Reserve auf einer Storage Einheit oder Storage VM sowie das Aktivieren der automatischen Snapshot Löschung verhindern, dass Snapshots Speicherplatz belegen, der für Benutzerdaten vorgesehen ist. 
 ---
 = Ändern der Snapshot-Reserve auf einem ASA r2-Speichersystem
 :allow-uri-read: 
@@ -39,11 +39,11 @@ Die Snapshot-Reserve ist auf den von Ihnen angegebenen Prozentsatz eingestellt. 
 [[modify-snapshot-reserve-on-a-storage-vm]]
 == Snapshot-Reservierung auf einer Speicher-VM ändern
 
-Um für alle Speichereinheiten einer Speicher-VM die gleiche Snapshot-Reserve festzulegen, wenden Sie den gewünschten Prozentsatz auf die Speicher-VM an. .  Wenn die Snapshot-Reservierung auf die Speicher-VM angewendet wird, wird sie auf alle neu erstellten Speichereinheiten innerhalb der Speicher-VM angewendet.  Diese Einstellung gilt nicht für Speichereinheiten, die vor der Änderung der Einstellung erstellt wurden.
+Um für alle Storage-Einheiten in einer Storage VM dieselbe Snapshot-Reserve festzulegen, wird der gewünschte Prozentsatz auf die Storage VM angewendet. Wenn die Snapshot-Reserve auf die Storage VM angewendet wird, gilt sie für alle neu erstellten Storage-Einheiten innerhalb der Storage VM. Sie gilt nicht für Storage-Einheiten, die vor der Änderung der Einstellung erstellt wurden.
 
 .Schritte
 . Im System Manager wählen Sie *Cluster > Storage VMs* und anschließend *Einstellungen*.
-. Unter *Richtlinien*, neben *Schnappschüssen*, wählen Sie Folgendes aus:image:icon_kabob.gif["drei vertikale Punkte"] Wählen Sie anschließend *Standardeinstellungen für Snapshot-Reservierung festlegen/bearbeiten*.
+. Unter *Richtlinien* erfolgt neben *Snapshots* die Auswahl von image:icon_kabob.gif["drei vertikale Punkte"]; anschließend die von *Standardwert für Snapshot-Reservierung festlegen/bearbeiten*.
 . Unter *Snapshot-Reserve %* geben Sie den numerischen Wert für den Prozentsatz des Speicherplatzes der Speichereinheit ein, der für Snapshots reserviert werden soll.
 . Vergewissern Sie sich, dass die Option *Ältere Snapshots automatisch löschen* ausgewählt ist.
 . Wählen Sie *Speichern*.

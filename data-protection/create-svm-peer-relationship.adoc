@@ -11,7 +11,7 @@ summary: Erstellen Sie Peer-Beziehungen zwischen Speicher-VMs auf verschiedenen 
 
 
 [role="lead"]
-Eine Peer-Beziehung definiert Netzwerkverbindungen, die Clustern und virtuellen Speichermaschinen (VMs) den sicheren Datenaustausch ermöglichen. Erstellen Sie Peer-Beziehungen zwischen Speicher-VMs auf verschiedenen Clustern, um Datenschutz und Notfallwiederherstellung mit SnapMirror zu ermöglichen.
+Eine Peer-Beziehung definiert Netzwerkverbindungen, die es Clustern und Storage Virtual Machines (VMs) ermöglichen, Daten sicher auszutauschen. Peer-Beziehungen zwischen Storage VMs auf verschiedenen Clustern ermöglichen Datensicherung und Notfallwiederherstellung mithilfe von SnapMirror.
 
 link:https://docs.netapp.com/us-en/ontap/peering/peering-basics-concept.html["Erfahren Sie mehr über Peer-Beziehungen"^] .
 
@@ -20,7 +20,7 @@ Sie müssen eine Cluster-Peer-Beziehung zwischen dem lokalen und dem Remote-Clus
 
 .Schritte
 . Wählen Sie im System Manager *Schutz > Übersicht*.
-. Wählen Sie unter *Storage-VM-Peers* die Option *Einen Storage-VM-Peer hinzufügen* aus.
+. Unter *Storage VM peers* erfolgt die Auswahl von *Add a storage VM peer*.
 . Wählen Sie die Speicher-VM auf dem lokalen Cluster und dann die Speicher-VM auf dem Remote-Cluster aus.
 . Wählen Sie *Einen Speicher-VM-Peer hinzufügen*.
 

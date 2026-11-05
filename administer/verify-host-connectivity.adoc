@@ -16,7 +16,7 @@ Wenn bei den Host-Datenvorgängen ein Problem auftritt, können Sie mithilfe von
 .Schritte
 . Wählen Sie im System Manager *Host* aus.
 +
-Der Host-Konnektivitätsstatus wird neben dem Namen der Host-Gruppe wie folgt angezeigt:
+Der System Manager zeigt den Host-Konnektivitätsstatus neben dem Hostgruppennamen an:
 
 +
 ** *OK*: Zeigt an, dass alle Initiatoren mit beiden Knoten verbunden sind.
@@ -27,4 +27,4 @@ Der Host-Konnektivitätsstatus wird neben dem Namen der Host-Gruppe wie folgt an
 
 
 .Was kommt als Nächstes?
-Aktualisieren Sie Ihren Host, um Verbindungsprobleme zu beheben. ONTAP überprüft den Verbindungsstatus alle 15 Minuten erneut.
+Zur Behebung von Verbindungsproblemen sind Aktualisierungen auf Ihrem Host nötig. ONTAP überprüft den Verbindungsstatus alle 15 Minuten erneut.

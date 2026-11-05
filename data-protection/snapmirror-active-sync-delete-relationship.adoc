@@ -22,7 +22,7 @@ Wenn die Hostgruppe vom Quellcluster auf den Zielcluster repliziert wird und Zie
 
 .Schritte
 . Wählen Sie im System Manager *Host* aus.
-. Wählen Sie neben einem Host, der die Hostgruppe enthält, deren Replikation Sie beenden möchten,image:icon_kabob.gif["Drei vertikale blaue Punkte"] und wählen Sie dann *Bearbeiten* aus.
+. Neben einem Host, der die Hostgruppe enthält, deren Replizierung beendet werden soll, erfolgt die Auswahl von image:icon_kabob.gif["Drei vertikale blaue Punkte"] und anschließend von *Edit*.
 . Deaktivieren Sie *Hostkonfiguration replizieren* und wählen Sie dann *Aktualisieren*.
 
 

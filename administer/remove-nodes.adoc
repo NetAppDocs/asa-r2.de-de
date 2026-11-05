@@ -30,7 +30,7 @@ cluster show
 . link:../manage-data/move-storage-units.html["Bewegen"] oder link:../manage-data/delete-storage-units.html["löschen"] alle Speichereinheiten des Knotens.
 . Wenn sich auf dem zu entfernenden Knoten SCSI-Speichereinheiten (LUNs) befinden, link:https://docs.netapp.com/us-en/ontap/san-admin/modify-slm-reporting-nodes-task.html["den Knoten und seinen HA-Partner aus der Liste der Reporting-Nodes der Selective LUN Map (SLM) entfernen"^].
 +
-Wenn Sie den Knoten und seinen HA-Partner nicht aus der SLM-Berichtsknotenliste entfernen, kann der Zugriff auf die zuvor auf dem Knoten befindlichen LUNs verloren gehen, selbst wenn die LUNs auf einen anderen Knoten verschoben wurden.
+Wenn der Knoten und sein HA-Partner nicht aus der Liste der SLM Reporting-Nodes entfernt werden, kann der Zugriff auf die LUNs, die sich zuvor auf dem Knoten befanden, verloren gehen, auch wenn die LUNs auf einen anderen Knoten verschoben wurden.
 
 . link:https://docs.netapp.com/us-en/ontap/networking/delete_a_lif.html["Löschen"^] oder link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["migrieren"^] alle Netzwerkschnittstellen (LIFs) des Knotens.
 +
@@ -40,7 +40,7 @@ Die iSCSI LIF-Migration ist nur auf Ports auf dem Home-Node oder dem HA-Partner 
 
 ** Intercluster LIFs sollten gelöscht werden.
 +
-Wenn Sie Intercluster-LIFs löschen, wird eine Warnung angezeigt, die ignoriert werden kann.
+Wenn Sie Intercluster-LIFs löschen, können Sie die angezeigte Warnung ignorieren.
 
 ** Die Cluster Management LIF sollte auf einen anderen Node verschoben werden.
 
@@ -150,7 +150,7 @@ cluster modify -node <node_name> -eligibility true
 ----
 
 
-. Melden Sie sich bei der Remote-Knotenverwaltungs-LIF oder der Clusterverwaltungs-LIF auf einem Knoten an, den Sie nicht aus dem Cluster entfernen.
+. Die Anmeldung erfolgt bei der LIF für die Remote-Knotenverwaltung oder der Cluster-Management-LIF auf einem Knoten, den Sie nicht aus dem Cluster entfernen.
 . Zum Entfernen des Knotens aus dem Cluster werden der Node-Name oder die Node-IP-Adresse verwendet:
 +
 Wenn Sie einen Cluster mit gemischten Versionen haben und den letzten Node mit der niedrigeren Version entfernen, verwenden Sie mit diesen Befehlen den Parameter -skip-last-low-version-node-check.
@@ -169,7 +169,7 @@ cluster remove-node -node <node_name>
 cluster remove-node -cluster_ip <node_ip>
 ----
 +
-Eine Fehlermeldung wird generiert, wenn Bedingungen vorliegen, die Sie vor der Entfernung des Node erfüllen müssen. In diesem Fall sind die Bedingungen zu beheben, und der  `cluster remove-node` Befehl ist erneut auszuführen.
+ONTAP generiert eine Fehlermeldung, wenn Bedingungen vorliegen, die vor dem Entfernen des Knotens behoben werden müssen. Tritt dies auf, müssen die Bedingungen behoben und der  `cluster remove-node` Befehl erneut ausgeführt werden.
 
 +
 Der Knoten startet nach erfolgreicher Entfernung aus dem Cluster automatisch neu.

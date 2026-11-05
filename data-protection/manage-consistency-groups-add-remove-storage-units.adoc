@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-consistency-groups-add-remove-storage-units.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity, shrink 
-summary: Erhöhen oder verringern Sie die Größe einer Konsistenzgruppe, indem Sie die Anzahl der Speichereinheiten in der Konsistenzgruppe ändern. 
+summary: Die Größe einer Konsistenzgruppe lässt sich vergrößern oder verkleinern, indem der Gruppe Speichereinheiten hinzugefügt oder aus ihr entfernt werden. 
 ---
 = Ändern Sie die Größe der Konsistenzgruppen auf Ihrem ASA R2-System
 :allow-uri-read: 
@@ -61,7 +61,7 @@ Wenn ONTAP 9.16.1 verwendet wird und die Konsistenzgruppe, die erweitert werden 
 . Wählen Sie *mit neuen Speichereinheiten*.
 . Geben Sie die Anzahl der Einheiten, die Sie erstellen möchten, sowie die Kapazität pro Einheit ein.
 +
-Wenn Sie mehr als eine Einheit erstellen, wird jede Einheit mit der gleichen Kapazität und dem gleichen Host-Betriebssystem erstellt.  Um jeder Einheit eine andere Kapazität zuzuweisen, wählen Sie *Andere Kapazität hinzufügen*.
+Wenn Sie mehrere Einheiten erstellen, erhalten alle Einheiten dieselbe Kapazität und dasselbe Host-Betriebssystem. Für jede Einheit kann über *Andere Kapazität hinzufügen* eine andere Kapazität zugewiesen werden.
 
 . Wählen Sie *Erweitern*.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-hierarchical-consistency-groups.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: Konsistenzgruppen ermöglichen das gleichzeitige Ausführen verschiedener Aktionen auf mehreren Speichereinheiten, anstatt Aktionen einzeln auf jeder Einheit durchzuführen. In einer hierarchischen Struktur sind eine oder mehrere Konsistenzgruppen als untergeordnete Konsistenzgruppen einer übergeordneten Konsistenzgruppe konfiguriert. 
+summary: Hierarchische Konsistenzgruppen lassen sich hochstufen, herabstufen, erstellen und trennen, um Snapshots und Replizierung für mehrere Storage Einheiten auf Ihrem ASA r2 System zu managen. 
 ---
 = Verwalten Sie hierarchische Konsistenzgruppen auf Ihrem ASA R2-System
 :allow-uri-read: 
@@ -42,13 +42,13 @@ Sie können zusätzliche untergeordnete Konsistenzgruppen unter der übergeordne
 Wenn Sie eine übergeordnete Konsistenzgruppe zu einer einzelnen Konsistenzgruppe herabstufen, werden die Speichereinheiten der zugehörigen untergeordneten Konsistenzgruppen der übergeordneten Konsistenzgruppe hinzugefügt.  Die untergeordneten Konsistenzgruppen werden gelöscht und die übergeordnete Gruppe wird dann als einzelne Konsistenzgruppe verwaltet.
 
 .Bevor Sie beginnen
-Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie herabstufen möchten, in einer SnapMirror Active Sync-Beziehung steht, müssen Sielink:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] bevor die Konsistenzgruppe herabgestuft werden kann.  Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe in einer asynchronen Replikationsbeziehung steht, müssen Sielink:snapmirror-active-sync-break-relationship.html["die Beziehung abbrechen"] bevor Sie die Konsistenzgruppe herabstufen können.  Das Löschen der SnapMirror Active-Sync-Beziehung oder das Aufbrechen der asynchronen Beziehung vor dem Erweitern einer Konsistenzgruppe ist in ONTAP 9.17.1 und späteren Versionen nicht erforderlich.
+Wenn Sie ONTAP 9.16.1 verwenden und sich die Konsistenzgruppe, die Sie herabstufen möchten, in einer SnapMirror active sync-Beziehung befindet, müssen Sie link:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"], bevor die Konsistenzgruppe herabgestuft werden kann. Wenn Sie ONTAP 9.16.1 verwenden und sich die Konsistenzgruppe in einer asynchronen Replizierungsbeziehung befindet, müssen Sie link:snapmirror-active-sync-break-relationship.html["die Beziehung abbrechen"], bevor Sie die Konsistenzgruppe herabstufen können. Das Löschen der SnapMirror active sync-Beziehung oder das Aufheben der asynchronen Beziehung vor der Herabstufung einer Konsistenzgruppe ist in ONTAP 9.17.1 und höheren Versionen nicht erforderlich.
 
 .Schritte
 . Wählen Sie in System Manager *Schutz > Consistency Groups* aus.
 . Bewegen Sie den Mauszeiger über die übergeordnete Konsistenzgruppe, die Sie herunterstufen möchten.
 . Wählen Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"]; und dann *auf eine einzige Consistency Group zurückstufen*.
-. Wählen Sie *Zurückstufen*
+. Es ist *Demote* auszuwählen.
 
 
 .Was kommt als Nächstes?
@@ -113,7 +113,7 @@ Nachdem Sie eine untergeordnete Konsistenzgruppe erstellt haben, können Sielink
 Wenn Sie eine untergeordnete Konsistenzgruppe von einer übergeordneten Konsistenzgruppe trennen, wird die untergeordnete Konsistenzgruppe aus der übergeordneten Konsistenzgruppe entfernt und als einzelne Konsistenzgruppe verwaltet.  Die auf das übergeordnete Element angewendete Replikationsrichtlinie wird nicht mehr auf die getrennte untergeordnete Konsistenzgruppe angewendet.
 
 .Bevor Sie beginnen
-Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe, die Sie trennen möchten, in einer SnapMirror Active Sync-Beziehung ist, müssen Sielink:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] bevor die Konsistenzgruppe getrennt werden kann.  Wenn Sie ONTAP 9.16.1 verwenden und die Konsistenzgruppe in einer asynchronen Replikationsbeziehung steht, müssen Sielink:snapmirror-active-sync-break-relationship.html["die Beziehung abbrechen"] bevor Sie die Konsistenzgruppe trennen können.  Das Löschen der SnapMirror Active-Sync-Beziehung oder das Aufbrechen der asynchronen Beziehung vor dem Erweitern einer Konsistenzgruppe ist in ONTAP 9.17.1 und späteren Versionen nicht erforderlich.
+Wenn Sie ONTAP 9.16.1 verwenden und sich die Konsistenzgruppe, deren Verbindung Sie trennen möchten, in einer SnapMirror active sync Beziehung befindet, müssen Sie link:snapmirror-active-sync-delete-relationship.html["Löschen Sie die SnapMirror Active Sync-Beziehung"] diese Beziehung aufheben, bevor die Konsistenzgruppe getrennt werden kann. Wenn Sie ONTAP 9.16.1 verwenden und sich die Konsistenzgruppe in einer asynchronen Replizierungsbeziehung befindet, müssen Sie link:snapmirror-active-sync-break-relationship.html["die Beziehung abbrechen"] diese Beziehung aufheben, bevor Sie die Konsistenzgruppe trennen können. Das Löschen der SnapMirror active sync Beziehung oder das Aufheben der asynchronen Beziehung vor dem Trennen einer Konsistenzgruppe ist in ONTAP 9.17.1 und späteren Releases nicht erforderlich.
 
 .Schritte
 . Wählen Sie in System Manager *Schutz > Consistency Groups* aus.

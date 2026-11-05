@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-planned-failover.html 
 keywords: snapmirror active sync, planned failover, disaster recovery 
-summary: Erfahren Sie, wie Sie ein geplantes Failover der aktiven Synchronisierungsbeziehungen von SnapMirror durchführen, um Geschäftskontinuität und Notfallwiederherstellung sicherzustellen. 
+summary: Zum Testen des Failover-Prozesses oder für Wartungsarbeiten am primären Standort kann ein geplantes Failover einer SnapMirror active sync-Beziehung durchgeführt werden. 
 ---
 = Failover einer ASA r2 SnapMirror Active Sync-Beziehung
 :allow-uri-read: 

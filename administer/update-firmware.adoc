@@ -30,7 +30,7 @@ Empfohlene Updates für Speicher-Firmware, Service Processor/Baseboard Managemen
 
 
 .Ergebnis
-Empfohlene Aktualisierungen werden automatisch heruntergeladen und auf Ihrem ASA r2-System installiert, basierend auf Ihrer Auswahl für das Update.
+Empfohlene Updates werden basierend auf Ihren Update-Auswahlen automatisch heruntergeladen und auf Ihrem ASA r2 System installiert.
 
 
 
@@ -64,7 +64,7 @@ Zeigen Sie eine Liste der Firmware- und Systemdatei-Updates an, die auf das Clus
 [[edit-automatic-updates]]
 == Automatische Aktualisierungen bearbeiten
 
-Sie können festlegen, ob empfohlene Updates für Ihre Storage-Firmware, SP/BMC-Firmware und Ihre Systemdateien automatisch auf Ihrem Cluster heruntergeladen und installiert werden oder ob empfohlene Updates automatisch verworfen werden. Wenn die Installation oder das Verwerfen von Updates manuell gesteuert werden soll, kann eine Benachrichtigung ausgewählt werden, sobald ein empfohlenes Update verfügbar ist; anschließend kann die Installation oder das Verwerfen manuell ausgewählt werden.
+Empfohlene Updates für Ihre Storage-Firmware, SP/BMC-Firmware und Systemdateien können auf Ihrem Cluster automatisch heruntergeladen und installiert oder automatisch verworfen werden. Für die manuelle Steuerung der Installation oder Verwerfung können Sie festlegen, dass Sie benachrichtigt werden, wenn ein empfohlenes Update verfügbar ist, und es anschließend selbst installieren oder verwerfen.
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.
@@ -81,7 +81,7 @@ Automatische Aktualisierungen werden basierend auf Ihrer Auswahl geändert.
 [[update-firmware-manually]]
 == Aktualisieren Sie die Firmware manuell
 
-Wenn Sie die Möglichkeit haben möchten, empfohlene Updates vor dem Herunterladen und Installieren anzuzeigen, können Sie automatische Updates deaktivieren und Ihre Firmware manuell aktualisieren.
+Zur Anzeige empfohlener Updates vor dem Herunterladen und Installieren ist es erforderlich, automatische Updates zu deaktivieren und die Firmware manuell zu aktualisieren.
 
 .Schritte
 . Laden Sie die Firmware-Aktualisierungsdatei auf einen Server oder lokalen Client herunter.

@@ -46,3 +46,6 @@ Bei ungewöhnlichen Aktivitäten auf dem Speichergerät wird unter *Anti-Ransomw
 
 .Was kommt als Nächstes?
 Wenn Sie in Ihrer Speichereinheit Aktivitätsspitzen feststellen, entweder einmalige Spitzen oder eine Spitze, die für eine neue Normalität charakteristisch ist, sollten Sie diese als unbedenklich melden. Das manuelle Melden dieser Anstiege als unbedenklich trägt dazu bei, die Genauigkeit der Bedrohungsbewertungen von ARP zu verbessern. Weitere Informationen link:https://docs.netapp.com/us-en/ontap/anti-ransomware/manage-parameters-task.html#report-known-surges["Bekannte ARP/AI-Spitzen melden"^].
+
+
+NOTE: Wenn bei einer Storage Einheit link:modify-arp-snapshot-retention-period.html["Snapshot-Reaktionsrichtlinie"] nur Warnungen oder nur die Erstellung angriffsausgelöster Snapshots eingestellt ist, werden für diese Storage Einheit keine periodischen ARP-Snapshots angezeigt, selbst wenn ARP/AI aktiviert ist.

@@ -1,0 +1,15 @@
+= 
+:allow-uri-read: 
+
+
+.Schritt
+. Vom Ziel-Cluster aus erfolgt die Migrationsvorprüfung:
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM> -source-cluster <sourcecluster> -check-only true
+----
++
+Wenn zur Vorbereitung auf die Migration Probleme behoben werden müssen, werden das Problem und die Korrekturmaßnahme angezeigt. Nach der Behebung des Problems ist die Vorabprüfung so lange zu wiederholen, bis sie erfolgreich abgeschlossen ist.
+
+

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapshot-replication.html 
 keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication 
-summary: Verwenden Sie ONTAP System Manager, um Daten für Backups und Disaster Recovery an einen Remote-Standort zu kopieren. Für die Einrichtung müssen eine Replizierungsrichtlinie und eine Replikationsbeziehung erstellt werden. 
+summary: Mit ONTAP System Manager lassen sich Daten zur Datensicherung und Notfallwiederherstellung an einen Remote-Standort kopieren. Eine Replizierungsrichtlinie und eine Beziehung dienen zum Einrichten der Snapshot-Replizierung. 
 searchtitle: Replizieren von Snapshots auf ein Remote-Cluster mithilfe von ONTAP ASA r2 
 ---
 = Replizieren von Snapshots von ASA r2 Storage-Systemen zu einem Remote-Cluster
@@ -17,7 +17,7 @@ Die Snapshot-Replizierung ist ein Prozess, bei dem Konsistenzgruppen auf Ihrem A
 
 NOTE: Die Snapshot-Replikation für ein ASA R2-Speichersystem wird nur von und zu einem anderen ASA R2-Speichersystem unterstützt.  Sie können keine Snapshots von einem ASA r2-System auf ein ASA -, AFF oder FAS System oder von einem ASA -, AFF oder FAS System auf ein ASA r2-System replizieren.
 
-Um die Snapshot-Replikation einzurichten, müssen Sie eine Replikationsbeziehung zwischen Ihrem ASA r2-System und dem Remote-Standort herstellen. Die Replikationsbeziehung wird durch eine Replikationsrichtlinie geregelt. Während der Cluster-Einrichtung wird eine Standardrichtlinie zur Replizierung aller Snapshots erstellt. Sie können die Standardrichtlinie verwenden oder optional eine neue Richtlinie erstellen.
+Für die Einrichtung der Snapshot-Replikation ist eine Replikationsbeziehung zwischen Ihrem ASA r2 System und dem Remote-Standort erforderlich. Die Replikationsbeziehung wird durch eine Replikationsrichtlinie kontrolliert. Während der Cluster-Einrichtung wird eine Standardrichtlinie zur Replizierung aller Snapshots erstellt. Sie können die Standardrichtlinie verwenden oder eine neue Richtlinie erstellen.
 
 Ab ONTAP 9.17.1 können Sie asynchrone Replikationsrichtlinien auf Konsistenzgruppen in einer hierarchischen Beziehung anwenden.  Asynchrone Replikation wird für Konsistenzgruppen in hierarchischen Beziehungen in ONTAP 9.16.1 nicht unterstützt.
 
@@ -88,12 +88,12 @@ Eine Snapshot-Replikationsbeziehung stellt eine Verbindung zwischen Ihrem ASA r2
 
 Für zusätzliche Sicherheit vor Ransomware-Angriffen kann eine SnapLock für SnapVault Replikationsbeziehung erstellt werden.
 
+.Über diese Aufgabe
+* Wenn Sie eine Replikationsbeziehung erstellen, müssen Sie die entsprechende Replikationsrichtlinie für Ihre Replikationsbeziehung auswählen.  Sie können eine vordefinierte Richtlinie verwenden oder eine benutzerdefinierte Richtlinie erstellen.
+
+
 .Bevor Sie beginnen
-* link:pre-defined-protection-policies.html["Informationen zu Replikationsrichtlinien"] .
-+
-Wenn Sie eine Replikationsbeziehung erstellen, müssen Sie die entsprechende Replikationsrichtlinie für Ihre Replikationsbeziehung auswählen.  Sie können eine vordefinierte Richtlinie verwenden oder eine benutzerdefinierte Richtlinie erstellen.
-
-
+Ab ONTAP 9.20.1 können Sie die asynchrone Backend SnapMirror Replizierung über vorhandene FC-Fabrics konfigurieren. Dafür muss Ihr ONTAP System Backend für FC-Replizierung konfiguriert sein, und sowohl die FC-Fabric als auch das Intercluster IP-Netzwerk müssen betriebsbereit sein. Replizierungsdaten können über die FC-Fabric übertragen werden, das Intercluster IP-Netzwerk ist jedoch für die Clusterkommunikation und die Replizierungsverwaltungsfunktionen erforderlich. link:https://docs.netapp.com/us-en/ontap/data-protection/configure-backend-fc-replication.html["Informationen zur Konfiguration des Backends Ihres ONTAP Systems für die FC-Replikation"^].
 
 
 
@@ -101,6 +101,13 @@ Wenn Sie eine Replikationsbeziehung erstellen, müssen Sie die entsprechende Rep
 === Eine Beziehung zum Replizieren von Snapshots auf einen Remote-Cluster erstellen
 
 Schützen Sie Ihre Daten, indem Sie Snapshots auf einen Remote-Cluster replizieren. Replizierte Snapshots Ihrer Konsistenzgruppen können für die Notfallwiederherstellung oder für die Datenmigration verwendet werden.
+
+.Über diese Aufgabe
+In ONTAP 9.20.1 und höher:
+
+* Um eine SnapMirror Beziehung mithilfe der Backend-FC-Replikation herzustellen, müssen Sie eine unterstützte, vordefinierte asynchrone Datensicherungsstrategie verwenden und das FC-Transportprotokoll auswählen. Die Backend-Replikation verwendet standardmäßig das IP-Protokoll. link:pre-defined-protection-policies.html["Welche vordefinierten Replikationsrichtlinien die Backend-FC-Replikation unterstützen"].
+* Um das ausgewählte Transportprotokoll nach dem Erstellen einer Replikationsbeziehung zu ändern, müssen Sie link:snapmirror-active-sync-break-relationship.html["Unterbrechung"] die Beziehung löschen und sie dann mit dem gewünschten Transportprotokoll neu erstellen.
+
 
 .Schritte
 . Wählen Sie in System Manager *Schutz > Replikation* aus.
@@ -129,6 +136,7 @@ Die Konsistenzgruppe „_Source_“ bezieht sich auf die Konsistenzgruppe in Ihr
 
 |===
 . Wählen Sie eine Replikationsrichtlinie aus.
+. In ONTAP 9.20.1 und späteren Versionen erfolgt die Auswahl des Transportprotokolls für die Replikationsbeziehung.
 . Um den Start des Datentransfers zu verzögern, *Zieleinstellungen* auswählen und dann *Übertragung sofort starten* deaktivieren.
 +
 Die erste Datenübertragung beginnt standardmäßig sofort.
@@ -154,7 +162,8 @@ Zum Schutz vor Ransomware-Angriffen kann bei der Einrichtung der Replikationsbez
 NOTE: ASA r2 Systeme unterstützen weder SnapLock Compliance Mode noch SnapLock Enterprise Mode. Das Erstellen einer SnapLock für SnapVault Replikationsbeziehung ermöglicht lediglich die Sperrung von Ziel-Snapshots. Dadurch werden weder SnapLock Compliance noch Enterprise Mode aktiviert.
 
 .Bevor Sie beginnen
-Sie müssen link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["die SnapLock Compliance-Uhr initialisieren"].
+* Sie müssen link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["die SnapLock Compliance-Uhr initialisieren"].
+
 
 .Schritte
 . Im System Manager *Schutz > Konsistenzgruppen* auswählen und anschließend eine Konsistenzgruppe auswählen.
@@ -162,7 +171,11 @@ Sie müssen link:../secure-data/snaplock.html#initialize-the-snaplock-compliance
 . Wählen Sie unter *Remote Protection* *Replicate to a Remote Cluster* aus.
 . Wählen Sie die *Replikationsrichtlinie* aus.
 +
-Sie müssen eine _Vault_ Replikationsrichtlinie auswählen.
+Sie müssen eine _vault_-Replikationsrichtlinie auswählen. In ONTAP 9.20.1 und höher müssen Sie die _MirrorAndVault_-Richtlinie auswählen, um die Backend-FC-Replikation zu konfigurieren.
+
+. In ONTAP 9.20.1 und höheren Versionen wird ein Transportprotokoll ausgewählt.
++
+Um das ausgewählte Transportprotokoll nach dem Erstellen einer Replikationsbeziehung zu ändern, müssen Sie link:snapmirror-active-sync-break-relationship.html["Unterbrechung"] die Beziehung löschen und sie dann mit dem gewünschten Transportprotokoll neu erstellen.
 
 . Wählen Sie *Zieleinstellungen* und dann *Ziel-Snapshots sperren, um Löschung zu verhindern* aus.
 . Geben Sie den maximalen und minimalen Aufbewahrungszeitraum für Daten ein.
@@ -179,6 +192,9 @@ Ihr Transferplan muss mindestens 30 Minuten betragen, um unterstützt zu werden.
 
 .Was kommt als Nächstes?
 Nachdem Sie eine Replikationsbeziehung erstellt haben, beginnt Ihr initialer Datentransfer wie in Ihrer Replikationsrichtlinie definiert. Optional kann das Replikations-Failover getestet werden, um zu überprüfen, ob ein erfolgreiches Failover möglich ist, falls Ihr ASA r2 System offline geht.
+
+.Verwandte Informationen
+link:pre-defined-protection-policies.html["Erfahren Sie mehr über vordefinierte Schutzrichtlinien"].
 
 
 
