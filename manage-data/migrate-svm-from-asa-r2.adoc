@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/migrate-svm-from-asa-r2.html 
 keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
-summary: 'Ab ONTAP 9.20.1 können Sie eine storage virtual machine (VM) unterbrechungsfrei von einem 2-Knoten ASA r2 Cluster zu einem 2-Knoten ASA oder einem 2-Knoten AFF Cluster migrieren.' 
+summary: Die unterbrechungsfreie Migration einer Storage VM von einem 2-Knoten ASA r2 Cluster zu einem 2-Knoten ASA oder AFF Cluster ist ab ONTAP 9.20.1 möglich. 
 ---
 = Migration einer Storage VM von einem ASA r2 Cluster zu einem ASA oder AFF Cluster
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'Ab ONTAP 9.20.1 können Sie eine storage virtual machine (VM) unterbre
 
 
 [role="lead"]
-Ab ONTAP 9.20.1 können Sie eine Storage Virtual Machine (VM) unterbrechungsfrei von einem 2-Knoten ASA r2 Cluster auf einen 2-Knoten ASA oder einen 2-Knoten AFF Cluster migrieren. Eine Migration einer Storage VM kann erforderlich sein, um SAN- und NAS-Workloads zu konsolidieren, ONTAP-Funktionen zu nutzen, die für ASA r2 Systeme nicht verfügbar sind, oder im Rahmen einer Hardware-Aktualisierung Ihrer Umgebung. Bestehende Host-Mappings und Konfigurationen von Storage-Einheiten für LUNs und Namespaces bleiben während der Migration erhalten, wodurch sich der operative Aufwand und das Risiko verringern.
+Ab ONTAP 9.20.1 können Sie eine Storage Virtual Machine (VM) unterbrechungsfrei von einem 2-Knoten ASA r2 Cluster auf einen 2-Knoten ASA oder einen 2-Knoten AFF Cluster migrieren. Die Migration einer Storage Virtual Machine kann erforderlich sein, um SAN- und NAS-Workloads zu konsolidieren, ONTAP-Funktionen zu nutzen, die für ASA r2 Systeme nicht verfügbar sind, oder Ihre Hardware zu aktualisieren. Vorhandene Host-Mappings und Storage Unit-Konfigurationen für LUNs und Namespaces bleiben während der Migration erhalten, wodurch sich der operative Aufwand und das Risiko verringern.
 
 .Bevor Sie beginnen
 * Sie müssen Cluster-Administrator sein.
@@ -21,8 +21,8 @@ Ab ONTAP 9.20.1 können Sie eine Storage Virtual Machine (VM) unterbrechungsfrei
 .Über diese Aufgabe
 * Sie können eine ASA r2 Storage VM nur von einem ASA r2 Cluster mit 2 Knoten zu einem AFF Cluster mit 2 Knoten migrieren.
 +
-** Eine ASA r2 Storage VM kann nicht zu einem FAS Cluster oder zu einem ASA oder AFF Cluster mit mehr als 2 Knoten migriert werden.
-** Die Migration einer ASA r2 Storage VM aus einem ASA r2 Cluster mit mehr als 2 Knoten ist nicht möglich.
+** Eine ASA r2 Storage VM kann nicht zu einem FAS Cluster oder zu einem ASA oder AFF Cluster mit mehr als zwei Knoten migriert werden.
+** Die Migration einer ASA r2 Storage VM aus einem ASA r2 Cluster mit mehr als zwei Knoten ist nicht möglich.
 
 
 * Die Datenmigration von einem ASA r2 Cluster zu einem AFF Cluster ist nicht umkehrbar.
@@ -30,7 +30,7 @@ Ab ONTAP 9.20.1 können Sie eine Storage Virtual Machine (VM) unterbrechungsfrei
 Eine Migration kann vor der Umstellung abgebrochen werden, aber nach Einleitung der Umstellung ist eine Unterbrechung oder Rückgängigmachung der Migration nicht mehr möglich. Nach Abschluss der Migration können keine Daten mehr von einem AFF Cluster auf einen ASA r2 Cluster migriert werden.
 
 +
-Sie können link:migrate-svm.html["Migration einer SVM von einem ASA zu einem ASA r2 Cluster"].
+Sie können link:migrate-svm.html["Migrieren einer Storage VM von einem ASA zu einem ASA r2 Cluster"].
 
 * Sie können jeweils nur eine Storage VM gleichzeitig migrieren.
 * Die Storage VM kann maximal 400 Storage Einheiten enthalten.
@@ -120,7 +120,7 @@ Bevor Sie eine Storage Virtual Machine (VM) von einem ASA r2 Cluster migrieren, 
 
 .Schritte
 . link:../data-protection/snapmirror-active-sync-break-relationship.html["Alle vorhandenen Replikationsbeziehungen entfernen"].
-. link:../data-protection/snapmirror-active-sync-delete-relationship.html["Entfernen vorhandener SnapMirrror Active Sync-Beziehungen"].
+. link:../data-protection/snapmirror-active-sync-delete-relationship.html["Entfernen vorhandener SnapMirror active sync-Beziehungen"].
 . Prüfung, ob IPsec aktiviert ist:
 +
 [source, cli]
@@ -137,22 +137,22 @@ security ipsec config modify -is-enabled -false
 +
 Weitere Informationen zum link:https://docs.netapp.com/us-en/ontap-cli/security-ipsec-config-show.html["security ipsec config show"^] Befehl.
 
-.. Prüfung von iPv6- und virtuellen IP (VIP) LIFs:
+.. Prüfung von IPv6- und virtuellen IP (VIP) LIFs:
 +
 [source, cli]
 ----
 network interface show -vserver <storage_vm_name> -fields address-family, is-vip
 ----
 +
-Für iPv6 LIFs ist der  `-address-family`  `ipv6`. Für VIP LIFs ist der  `-is-vip`Parameter  `true`.
+Für IPv6 LIFs ist der  `-address-family`  `ipv6`. Für VIP LIFs ist der  `-is-vip`Parameter  `true`.
 
-.. Falls IPv6- oder VIP-LIFs vorhanden sind, müssen diese entfernt werden:
+.. Sofern IPv6- oder VIP-LIFs vorhanden sind, sind diese zu entfernen:
 +
 [source, cli]
 ----
 network interface delete -vserver <storage_vm_name> - lif <lif_name>
 ----
-.. Prüfen Sie, dass auf der Storage VM keine IPv6- oder VIP-LIFs mehr vorhanden sind:
+.. Sicherzustellen ist, dass auf der Storage VM keine IPv6- oder VIP-LIFs mehr vorhanden sind:
 +
 [source, cli]
 ----
@@ -221,7 +221,7 @@ Sie können nun Ihre Storage VM von Ihrem ASA r2 Cluster migrieren.
 
 Nachdem Sie die erforderliche Cluster Peer-Beziehung zwischen den ASA r2 und ASA oder AFF Clustern erstellt und die Schritte zur Vorbereitung beider Cluster abgeschlossen haben, können Sie mit der Migration der Storage VMs beginnen.
 
-Bei der Migration von Storage VMs empfiehlt es sich, sowohl auf dem ASA r2 Cluster als auch auf dem AFF Cluster 30 % CPU-Reserve freizuhalten, damit die CPU-Workload der Migration ausgeführt werden kann.
+Als Best Practice empfiehlt sich auf dem ASA r2 Cluster und dem AFF Cluster eine CPU-Reserve von 30 %, damit die Migrations-Workload ausgeführt werden kann.
 
 .Über diese Aufgabe
 * Nach der Migration der Storage VM gehen die Client-E/A nahtlos und ohne Unterbrechung auf den Ziel-Cluster über, und die Storage VM auf dem ASA r2 Cluster wird automatisch entfernt. Die automatische Umschaltung und die automatische Entfernung der Storage VM sind standardmäßig aktiviert. Sie können optional eine oder beide Optionen deaktivieren und manuell ausführen.

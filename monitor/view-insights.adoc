@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: monitor/view-insights.html 
 keywords: view, insights, optimize, cluster, performance, best practices, configuration, security 
-summary: Zeigen Sie in ONTAP System Manager Einblicke an, um Best Practices und Konfigurationsänderungen zu ermitteln, die Sie auf Ihrem ASA r2-System implementieren können, um die Sicherheit und Performance des Clusters zu optimieren. 
+summary: Mithilfe der Insights in System Manager lassen sich Best Practices und Konfigurationsänderungen identifizieren, die die Sicherheit und Performance Ihres ASA r2 Cluster optimieren. 
 ---
 = Cluster-Sicherheit und -Performance mit ASA r2 System Insights optimieren
 :allow-uri-read: 
@@ -13,7 +13,7 @@ summary: Zeigen Sie in ONTAP System Manager Einblicke an, um Best Practices und 
 [role="lead"]
 Zeigen Sie _Insights_ im ONTAP-System-Manager an, um Best Practices und Konfigurationsänderungen zu ermitteln, die Sie auf Ihrem ASA r2-System implementieren können, um Clustersicherheit und -Leistung zu optimieren.
 
-Angenommen, Sie haben Network Time Protocol (NTP)-Server für Ihren Cluster konfiguriert. Ihnen ist jedoch nicht bewusst, dass Sie weniger als die empfohlene Anzahl von NTP-Servern für eine optimale Clusterzeitverwaltung haben. Zur Vermeidung von Problemen, die bei ungenauer Clusterzeit auftreten können, benachrichtigt Insights Sie darüber, dass zu wenige NTP-Server konfiguriert sind, und bietet Optionen, um mehr über das Problem zu erfahren, es zu beheben oder es zu ignorieren.
+Angenommen, Sie haben beispielsweise weniger als die empfohlene Anzahl an NTP-Servern (Network Time Protocol) für Ihren Cluster konfiguriert. Um Probleme durch eine ungenaue Clusterzeit zu vermeiden, benachrichtigt Sie Insights darüber, dass zu wenige NTP-Server konfiguriert sind, und bietet Ihnen Optionen, weitere Informationen zu erhalten, das Problem zu beheben oder die Meldung zu ignorieren.
 
 image:insights.png["Screenshot der Seite „Einblicke in System Manager“"]
 

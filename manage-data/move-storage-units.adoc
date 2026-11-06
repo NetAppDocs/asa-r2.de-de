@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/move-storage-units.html 
 keywords: move lun, lun move, move namespace, move storage unit, asa r2 
-summary: Wenn in einer Storage-Verfügbarkeitszone der Speicherplatz knapp ist, können Sie Storage-Einheiten auf eine andere Storage-Verfügbarkeitszone verschieben, um die Storage-Auslastung im Cluster auszugleichen. 
+summary: Das Verschieben von Speichereinheiten in eine andere Storage Verfügbarkeitszone gleicht die Storage Auslastung im gesamten Cluster aus, wenn in einer Zone der Speicherplatz knapp wird. 
 ---
 = Verschieben Sie Speichereinheiten auf ASA r2-Speichersystemen
 :allow-uri-read: 
@@ -13,7 +13,7 @@ summary: Wenn in einer Storage-Verfügbarkeitszone der Speicherplatz knapp ist, 
 [role="lead"]
 Wenn in einer Storage-Verfügbarkeitszone der Speicherplatz knapp ist, können Sie Storage-Einheiten auf eine andere Storage-Verfügbarkeitszone verschieben, um die Storage-Auslastung im Cluster auszugleichen.
 
-Sie können eine Storage-Einheit verschieben, während die Storage-Einheit online ist und Daten bereitstellt. Der Verschiebungsvorgang ist unterbrechungsfrei.
+Sie können eine Storage Einheit verschieben, während sie online ist und Daten bereitstellt. Der Verschiebungsvorgang erfolgt ohne Unterbrechung.
 
 .Bevor Sie beginnen
 * Sie müssen ONTAP 9.16.1 oder höher ausführen.

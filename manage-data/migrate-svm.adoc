@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/migrate-svm.html 
 keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
-summary: Wenn in einer Storage-Verfügbarkeitszone der Speicherplatz knapp ist, können Sie Storage-Einheiten auf eine andere Storage-Verfügbarkeitszone verschieben, um die Storage-Auslastung im Cluster auszugleichen. 
+summary: Unterbrechungsfreie Migration einer Storage VM von einem ASA Cluster zu einem ASA r2 Cluster, einschließlich der Überprüfung der Storage VM, des Cluster Peerings, der Durchführung der Vorabprüfung und der Migration. 
 ---
 = Migrieren einer Speicher-VM von einem ASA -Cluster zu einem ASA r2-Cluster
 :allow-uri-read: 
@@ -16,7 +16,7 @@ Ab ONTAP 9.18.1 ist es möglich, eine Storage Virtual Machine (VM) unterbrechung
 
 NOTE: Eine Storage-VM kann nicht von einer ASA MetroCluster auf einen ASA r2 Cluster migriert werden. ASA r2 Systeme unterstützen MetroCluster Konfigurationen nicht.
 
-ASA r2 Systeme unterstützen die QuickAssist Technology (QAT). ASA Systeme unterstützen QAT nicht. Ab ONTAP 9.20.1 verringert ONTAP die hohe Leselatenz und CPU-Auslastung, die nach der Migration einer Storage Virtual Machine (VM) von einem ASA System (ohne QAT) auf ein ASA r2 System (mit QAT) auftreten können.
+ASA r2 Systeme unterstützen die QuickAssist Technology (QAT). ASA Systeme unterstützen QAT nicht. Ab ONTAP 9.20.1 reduziert ONTAP die hohe Leselatenz und CPU-Auslastung, die nach der Migration einer Storage-VM von einem ASA System (ohne QAT) auf ein ASA r2 System (mit QAT) auftreten können.
 
 Die Migration von Storage-VMs zwischen ASA und ASA r2-Speichersystemen wird wie folgt unterstützt:
 
@@ -249,7 +249,7 @@ Wenn die automatische Umstellung aktiviert ist, wird nach Abschluss der Migratio
 
 
 .Ergebnis
-Die Speicher-VM wird vom ASA Cluster zum ASA r2-Cluster migriert.  Der Name und die UUID der Speicher-VM, der Daten-LIF-Name, die IP-Adresse und Objektnamen, wie z. B. der Volumenname, bleiben unverändert.  Die UUIDs der migrierten Objekte in der Speicher-VM werden aktualisiert.
+Die Storage VM wird vom ASA Cluster zum ASA r2 Cluster migriert. Der Name und die UUID der Storage VM, der Name der Daten-LIF, die IP-Adresse und Objektnamen wie der Volume-Name bleiben unverändert. Die UUID der migrierten Objekte in der Storage VM wird aktualisiert.
 
 .Was kommt als Nächstes?
 Wenn Sie die automatische Umstellung und die automatische Entfernung der Storage VM deaktiviert haben, umfasst die Nachmigration eine manuelle Umstellung und Bereinigung, bei der Ihre ASA Clients manuell auf Ihren Ziel-Cluster umgestellt und die Storage VM aus dem ASA Cluster entfernt wird.

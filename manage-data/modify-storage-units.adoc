@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/modify-storage-units.html 
 keywords: increase storage units, resize luns, resize namespaces, san, nvme,  increase lun size, increase namespace, increase, modify, edit, luns, namespaces, modify quality of service, qos, host mapping, mapping host 
-summary: 'Reagieren Sie auf Änderungen an der Performance und den Daten Ihres Storage-Systems, indem Sie Storage-Einheiten bearbeiten, um die Kapazität zu erhöhen, QoS-Richtlinien (Quality of Service) zu aktualisieren oder die Host-Zuordnungen zu ändern.' 
+summary: 'Storage Einheiten lassen sich ändern, um die Kapazität zu erhöhen, Quality of Service (QoS)-Richtlinien zu aktualisieren oder Hostzuordnungen als Reaktion auf Änderungen der System Performance und der Daten anzupassen.' 
 ---
 = Ändern Sie die Speichereinheiten auf ASA r2-Speichersystemen
 :allow-uri-read: 

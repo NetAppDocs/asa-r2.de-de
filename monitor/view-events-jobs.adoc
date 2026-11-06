@@ -60,7 +60,7 @@ Konfigurieren Sie das System so, dass eine Benachrichtigung an bestimmte E-Mail-
 
 .Schritte
 . Wählen Sie in System Manager *Cluster > Einstellungen* aus.
-. Wählen Sie neben *Benachrichtigungsverwaltung* image:icon_kabob.gif["Drei vertikale blaue Punkte"].
+. Neben *Benachrichtigungsverwaltung* können Sie image:icon_kabob.gif["Drei vertikale blaue Punkte"] auswählen.
 . Um ein Ereignisziel zu konfigurieren, wählen Sie *Ereignisziele anzeigen* und dann *Ereignisziele*. Wählen Sie zum Konfigurieren eines Überwachungsprotokollziels *Überwachungsziele anzeigen* aus, und wählen Sie dann *Überwachungsziele* aus.
 . Wählen Sie image:icon_add_blue_bg.png["Blaues Rechteck mit Pluszeichen, gefolgt vom Wort Add in weißen Buchstaben"].
 . Geben Sie die Zielinformationen ein, und wählen Sie dann *Hinzufügen*.

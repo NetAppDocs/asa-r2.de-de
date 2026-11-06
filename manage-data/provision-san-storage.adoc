@@ -29,7 +29,7 @@ Ab ONTAP 9.18.1 können Sie die Snapshot-Reserve ändern und die automatische Sn
 
 link:../data-protection/snapshot-reserve.html["Erfahren Sie mehr über Snapshot-Reservierung auf ASA r2-Systemen."].
 
-Speichereinheiten werden standardmäßig mit Thin Provisioning bereitgestellt. Thin Provisioning ermöglicht es der Speichereinheit, bis zur zugewiesenen Größe zu wachsen, ohne den Speicherplatz im Voraus zu reservieren. Der Speicherplatz wird dynamisch aus dem verfügbaren freien Speicherplatz nach Bedarf zugewiesen. Dadurch erzielen Sie eine höhere Speichereffizienz, indem Sie Ihren verfügbaren Speicherplatz _überdimensionieren_. Angenommen, Sie haben 1 TB freien Speicherplatz und müssen vier 1-TB-Speichereinheiten erstellen. Anstatt Ihrem System sofort 3 TB zusätzliche Speicherkapazität hinzuzufügen, können Sie die Speichereinheiten erstellen, die Speichernutzung überwachen und Ihre Speicherkapazität erhöhen, sobald die Speichereinheiten tatsächlich Speicherplatz belegen. Erfahren Sie mehr über link:https://docs.netapp.com/us-en/ontap/concepts/thin-provisioning-concept.html["Thin Provisioning"^].
+Storage-Einheiten sind standardmäßig Thin Provisioning bereitgestellt. Thin Provisioning ermöglicht es der Storage-Einheit, bis zur zugewiesenen Größe zu wachsen, ohne den Speicherplatz im Voraus zu reservieren. Der Speicherplatz wird bei Bedarf dynamisch aus dem verfügbaren freien Speicherplatz zugewiesen. Dadurch lässt sich eine höhere Storage-Effizienz erzielen, indem der verfügbare Speicherplatz überprovisioniert wird. Angenommen, Sie haben 1 TB freien Speicherplatz und müssen vier Storage-Einheiten mit jeweils 1 TB erstellen. Anstatt Ihrem System sofort 3 TB zusätzliche Storage-Kapazität hinzuzufügen, können Sie die Storage-Einheiten erstellen, die Speicherauslastung überwachen und die Storage-Kapazität erhöhen, sobald die Storage-Einheiten tatsächlich Speicherplatz belegen. Weitere Informationen zu link:https://docs.netapp.com/us-en/ontap/concepts/thin-provisioning-concept.html["Thin Provisioning"^].
 
 .Schritte
 . Wählen Sie im System Manager *Storage* und anschließend ausimage:icon_add_blue_bg.png["Rechteckiges Symbol mit blauem Hintergrund und das Wort hinzufügen zentriert in weißen Buchstaben"].
@@ -44,7 +44,7 @@ Um die Arbeitslastverteilung innerhalb der Speicherverfügbarkeitszone zu optimi
 . Geben Sie die Kapazität der Speichereinheit ein, und wählen Sie dann das Host-Betriebssystem aus.
 +
 
-CAUTION: Wenn Sie mehr als eine Speichereinheit erstellen, wird jede Einheit mit der gleichen Kapazität erstellt. Multiplizieren Sie die Anzahl der Speichereinheiten, die Sie erstellen, mit der gewünschten Kapazität, um sicherzustellen, dass Sie genügend nutzbaren Speicherplatz haben. Wenn Sie nicht genügend freien Speicherplatz haben und sich für eine Überbelegung entscheiden, überwachen Sie die Auslastung genau, um Speicherplatzmangel und Datenverlust zu vermeiden.
+CAUTION: Wenn Sie mehr als eine Storage-Einheit erstellen, wird jede Einheit mit derselben Kapazität erstellt. Zur Sicherstellung von ausreichend nutzbarem Speicherplatz ist die Anzahl der zu erstellenden Storage-Einheiten mit der gewünschten Kapazität zu multiplizieren. Wenn nicht genügend freier Speicherplatz vorhanden ist und Sie sich für eine Überprovisionierung entscheiden, ist die Auslastung genau zu überwachen, um zu vermeiden, dass der Speicherplatz ausgeht und Daten verloren gehen.
 
 +
 Ab ONTAP 9.19.1 müssen Sie beim Erstellen einer AIX-LUN, die Sie für SnapMirror active sync-Schutz aktivieren möchten, unter *Hostinformationen* die Option *lokal* für den *Zugriffsmodus* auswählen. Dies ist erforderlich, um ein transparentes Anwendungs-Failover zu ermöglichen.
@@ -273,7 +273,7 @@ Nachdem Sie die Speichereinheiten erstellt, die Hostinitiatoren hinzugefügt und
 Verwenden Sie eine Zone pro Initiator und schließen Sie alle Ziel-Ports in jeder Zone an.
 
 . Entdecken Sie die neue Speichereinheit.
-. Initialisieren Sie die Speichereinheit und ein CREATE-Dateisystem.
+. Initialisierung der Storage Einheit und Erstellung eines Dateisystems.
 . Überprüfen Sie, ob Ihr Host Daten auf der Speichereinheit lesen und schreiben kann.
 
 
